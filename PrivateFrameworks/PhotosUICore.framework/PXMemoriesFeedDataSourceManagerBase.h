@@ -19,7 +19,9 @@
 @property (nonatomic, retain) PHFetchResult *memoriesFetchResult;
 @property (readonly) Class superclass;
 
++ (id)_updatedFetchResultsForMemoriesForDatasource:(id)arg1 changeDetails:(id)arg2 changeInstance:(id)arg3;
 + (id)generateEntriesFromMemories:(id)arg1 startingFromIndex:(unsigned long long)arg2 maximumNumberOfEntries:(unsigned long long)arg3 finalMemoryIndex:(out unsigned long long*)arg4;
++ (bool)shouldGroupTogetherMemoriesWithCreationDate:(id)arg1 andCreationDate:(id)arg2;
 
 - (void).cxx_destruct;
 - (unsigned long long)_firstUngroupedMemoryIndex;
@@ -37,7 +39,8 @@
 - (id)initWithPhotoLibrary:(id)arg1;
 - (void)markCurrentMemoriesAsNotPending;
 - (id)memoriesFetchResult;
-- (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
+- (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
+- (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)resetMemoriesFetchResult;
 - (void)setMemoriesFetchResult:(id)arg1;
 - (void)startGeneratingMemories;

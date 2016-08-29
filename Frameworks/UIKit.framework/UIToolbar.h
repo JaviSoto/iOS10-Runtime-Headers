@@ -18,6 +18,7 @@
         unsigned int barStyle : 3; 
         unsigned int barTranslucence : 3; 
         unsigned int isLocked : 1; 
+        unsigned int linkedBeforeWhitetailAndInitializedFromCoder : 1; 
     }  _toolbarFlags;
 }
 

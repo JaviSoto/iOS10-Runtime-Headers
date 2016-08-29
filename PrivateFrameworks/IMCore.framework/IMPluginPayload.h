@@ -100,6 +100,7 @@
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
+- (id)__ck_photoCompositionMediaObjects;
 - (id)__ck_photoCompositionString;
 - (id)__ck_superFormatStringTransferGUIDs:(id*)arg1 mediaObjects:(id*)arg2;
 - (id)cleansedCopy;

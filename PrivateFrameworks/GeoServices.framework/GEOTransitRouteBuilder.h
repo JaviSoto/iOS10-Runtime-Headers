@@ -24,9 +24,7 @@
 - (void)_buildRouteFromSteps:(id)arg1;
 - (void)_buildTransitStepInfo:(id)arg1;
 - (bool)_index:(unsigned long long)arg1 matchesArray:(unsigned int*)arg2 ofLength:(unsigned long long)arg3;
-- (bool)_isWalkingOnlyRoute:(id)arg1;
 - (id)_legForSteps:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 route:(id)arg2;
-- (long long)_legTypeForTransitManeuver:(int)arg1;
 - (void)_reset;
 - (id)_sectionForRoute:(id)arg1 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 stepIndex:(unsigned long long)arg3 bounds:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg4 currentTransitLineColor:(id)arg5 startDistance:(double)arg6;
 - (bool)_shouldBreakPointSectionAtStep:(id)arg1 previousStep:(id)arg2;

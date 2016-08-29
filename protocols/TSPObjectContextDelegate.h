@@ -20,17 +20,17 @@
 - (void)gilligan_data:(TSPData *)arg1 didMoveFromPackageIdentifier:(unsigned char)arg2 packageLocator:(NSString *)arg3 toPackageIdentifier:(unsigned char)arg4 packageLocator:(NSString *)arg5;
 - (bool)gilligan_isRemoteData:(TSPData *)arg1;
 - (bool)ignoreDocumentSupport;
+- (bool)isDocumentSupportRequiredForContext:(TSPObjectContext *)arg1;
 - (bool)isDocumentSupportTemporary;
 - (bool)isInCollaborationModeForContext:(TSPObjectContext *)arg1;
 - (bool)isInReadOnlyModeForContext:(TSPObjectContext *)arg1;
-- (void)makeDocumentReadOnly;
 - (NSDictionary *)packageDataForWrite;
 - (NSSet *)persistenceWarningsForData:(TSPData *)arg1 flags:(unsigned long long)arg2;
 - (void)presentPersistenceError:(NSError *)arg1;
 - (bool)preserveDocumentRevisionIdentifierForSaveURL:(NSURL *)arg1;
 - (void)requestAutosave;
-- (void)resumeAutosave;
+- (void)resumeAutosaveWithReason:(NSString *)arg1;
 - (bool)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1;
-- (void)suspendAutosave;
+- (void)suspendAutosaveWithReason:(NSString *)arg1;
 
 @end

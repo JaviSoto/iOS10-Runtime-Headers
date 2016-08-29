@@ -8,7 +8,7 @@
     bool  _auxTableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> * _auxTranslator;
     NSBundle * _auxTranslatorBundle;
-    NSLock * _contentLock;
+    NSRecursiveLock * _contentLock;
     <SCROBrailleTranslatorProtocol> * _nemethTranslator;
     bool  _tableSupportsContractedBraille;
     bool  _tableSupportsEightDotBraille;
@@ -32,6 +32,7 @@
 - (bool)auxiliaryTableSupportsEightDotBraille;
 - (void)dealloc;
 - (id)init;
+- (void)lockAuxiliaryTable;
 - (id)primaryTableIdentifier;
 - (bool)primaryTableSupportsContractedBraille;
 - (bool)primaryTableSupportsEightDotBraille;
@@ -43,5 +44,6 @@
 - (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
 - (id)textForPrintBraille:(id)arg1 contracted:(bool)arg2 eightDot:(bool)arg3 locations:(id*)arg4;
 - (id)textForPrintBraille:(id)arg1 primaryTable:(bool)arg2 contracted:(bool)arg3 eightDot:(bool)arg4 locations:(id*)arg5;
+- (void)unlockAuxiliaryTable;
 
 @end

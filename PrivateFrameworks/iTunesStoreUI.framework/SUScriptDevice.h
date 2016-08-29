@@ -28,6 +28,7 @@
 @property (readonly) NSString *capabilityNameWiFi;
 @property (readonly) unsigned int deviceTypeIdentifier;
 @property (readonly) NSNumber *diskSpaceAvailable;
+@property (readonly) SUScriptDictionary *diskUsageDictionary;
 @property (readonly) long long freeSpaceEffortLevelAutomaticOnly;
 @property (readonly) long long freeSpaceEffortLevelDoNothing;
 @property (readonly) long long freeSpaceEffortLevelManualSpaceManagement;
@@ -133,6 +134,7 @@
 - (void)dealloc;
 - (unsigned int)deviceTypeIdentifier;
 - (id)diskSpaceAvailable;
+- (id)diskUsageDictionary;
 - (long long)freeSpaceEffortLevelAutomaticOnly;
 - (long long)freeSpaceEffortLevelDoNothing;
 - (long long)freeSpaceEffortLevelManualSpaceManagement;
@@ -207,6 +209,7 @@
 - (id)restrictionYouTubeAllowed;
 - (id)scriptAttributeKeys;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setDiskUsageDictionary:(id)arg1;
 - (id)valueForRestriction:(id)arg1;
 
 @end

@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) NSSet *syncableDataclasses;
 @property (nonatomic) int visibility;
 
++ (id)allIdentifiers;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

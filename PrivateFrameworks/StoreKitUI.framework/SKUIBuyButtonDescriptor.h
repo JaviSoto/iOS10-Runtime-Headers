@@ -2,23 +2,33 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIBuyButtonDescriptor : NSObject <NSCopying, NSMutableCopying> {
+@interface SKUIBuyButtonDescriptor : NSObject {
     NSString * _buttonText;
     long long  _buttonType;
     NSString * _confirmationText;
     unsigned long long  _elementType;
+    bool  _highlighted;
     long long  _itemIdentifier;
+    long long  _progressType;
+    bool  _shouldSuppressEnabled;
+    bool  _showingConfirmation;
+    bool  _showsUniversal;
     SKUIStoreIdentifier * _storeIdentifier;
     NSString * _variantIdentifier;
 }
 
-@property (nonatomic, readonly, copy) NSString *buttonText;
-@property (nonatomic, readonly) long long buttonType;
-@property (nonatomic, readonly, copy) NSString *confirmationText;
-@property (nonatomic, readonly) unsigned long long elementType;
-@property (nonatomic, readonly) long long itemIdentifier;
-@property (nonatomic, readonly) SKUIStoreIdentifier *storeIdentifier;
-@property (nonatomic, readonly) NSString *variantIdentifier;
+@property (nonatomic, copy) NSString *buttonText;
+@property (nonatomic) long long buttonType;
+@property (nonatomic, copy) NSString *confirmationText;
+@property (nonatomic) unsigned long long elementType;
+@property (nonatomic) bool highlighted;
+@property (nonatomic) long long itemIdentifier;
+@property (nonatomic) long long progressType;
+@property (nonatomic) bool shouldSuppressEnabled;
+@property (nonatomic) bool showingConfirmation;
+@property (nonatomic) bool showsUniversal;
+@property (nonatomic, retain) SKUIStoreIdentifier *storeIdentifier;
+@property (nonatomic, retain) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
 - (id)buttonText;
@@ -26,10 +36,25 @@
 - (bool)canPerformLocalActionWithItemState:(id)arg1;
 - (bool)canPersonalizeUsingItemState:(id)arg1;
 - (id)confirmationText;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)elementType;
+- (bool)highlighted;
 - (long long)itemIdentifier;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (long long)progressType;
+- (void)setButtonText:(id)arg1;
+- (void)setButtonType:(long long)arg1;
+- (void)setConfirmationText:(id)arg1;
+- (void)setElementType:(unsigned long long)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setItemIdentifier:(long long)arg1;
+- (void)setProgressType:(long long)arg1;
+- (void)setShouldSuppressEnabled:(bool)arg1;
+- (void)setShowingConfirmation:(bool)arg1;
+- (void)setShowsUniversal:(bool)arg1;
+- (void)setStoreIdentifier:(id)arg1;
+- (void)setVariantIdentifier:(id)arg1;
+- (bool)shouldSuppressEnabled;
+- (bool)showingConfirmation;
+- (bool)showsUniversal;
 - (id)storeIdentifier;
 - (id)variantIdentifier;
 

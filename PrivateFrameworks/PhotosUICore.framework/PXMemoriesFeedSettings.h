@@ -11,6 +11,7 @@
     bool  _forceReloadAfterRefresh;
     unsigned long long  _groupsPerBatch;
     double  _memoryGroupingInterval;
+    long long  _memoryGroupingMethod;
     bool  _useSlowAnimations;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic) bool forceReloadAfterRefresh;
 @property (nonatomic) unsigned long long groupsPerBatch;
 @property (nonatomic) double memoryGroupingInterval;
+@property (nonatomic) long long memoryGroupingMethod;
 @property (nonatomic) bool useSlowAnimations;
 
 + (id)settingsControllerModule;
@@ -36,6 +38,7 @@
 - (bool)forceReloadAfterRefresh;
 - (unsigned long long)groupsPerBatch;
 - (double)memoryGroupingInterval;
+- (long long)memoryGroupingMethod;
 - (void)setAdditionalContentThreshold:(double)arg1;
 - (void)setAlwaysShowOnboarding:(bool)arg1;
 - (void)setDataSourceType:(long long)arg1;
@@ -45,6 +48,7 @@
 - (void)setForceReloadAfterRefresh:(bool)arg1;
 - (void)setGroupsPerBatch:(unsigned long long)arg1;
 - (void)setMemoryGroupingInterval:(double)arg1;
+- (void)setMemoryGroupingMethod:(long long)arg1;
 - (void)setUseSlowAnimations:(bool)arg1;
 - (bool)useSlowAnimations;
 

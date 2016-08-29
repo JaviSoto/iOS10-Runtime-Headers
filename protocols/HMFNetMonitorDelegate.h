@@ -3,7 +3,7 @@
 
 @protocol HMFNetMonitorDelegate <NSObject>
 
-@required
+@optional
 
 - (void)networkMonitorIsReachable:(HMFNetMonitor *)arg1;
 - (void)networkMonitorIsUnreachable:(HMFNetMonitor *)arg1;

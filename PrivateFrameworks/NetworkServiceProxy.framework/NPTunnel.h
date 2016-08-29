@@ -11,6 +11,12 @@
     bool  _persistMetrics;
     NSObject<OS_dispatch_queue> * _queue;
     NetworkServiceProxyConnectionStats * _stats;
+    NSNumber * _telemetryRatio;
+    NSString * _telemetryService;
+    NSURL * _telemetryURL;
+    double  _timeIntervalSinceLastUsage;
+    double  _timeToFirstByte;
+    double  _timeToFirstRequest;
 }
 
 @property (readonly) bool canHandleMoreData;
@@ -24,6 +30,12 @@
 @property bool persistMetrics;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (retain) NetworkServiceProxyConnectionStats *stats;
+@property (retain) NSNumber *telemetryRatio;
+@property (retain) NSString *telemetryService;
+@property (retain) NSURL *telemetryURL;
+@property (readonly) double timeIntervalSinceLastUsage;
+@property double timeToFirstByte;
+@property double timeToFirstRequest;
 
 - (void).cxx_destruct;
 - (void)acknowledgeData:(unsigned long long)arg1 sentToFlow:(id)arg2;
@@ -63,8 +75,19 @@
 - (void)setIsViable:(bool)arg1;
 - (void)setPersistMetrics:(bool)arg1;
 - (void)setStats:(id)arg1;
+- (void)setTelemetryRatio:(id)arg1;
+- (void)setTelemetryService:(id)arg1;
+- (void)setTelemetryURL:(id)arg1;
+- (void)setTimeToFirstByte:(double)arg1;
+- (void)setTimeToFirstRequest:(double)arg1;
 - (bool)shouldTunnelFlow:(id)arg1;
 - (void)start;
 - (id)stats;
+- (id)telemetryRatio;
+- (id)telemetryService;
+- (id)telemetryURL;
+- (double)timeIntervalSinceLastUsage;
+- (double)timeToFirstByte;
+- (double)timeToFirstRequest;
 
 @end

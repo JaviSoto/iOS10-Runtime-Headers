@@ -20,11 +20,13 @@
 
 + (id)activitiesForFileURL:(id)arg1 sourceIsManaged:(bool)arg2;
 + (long long)activityCategory;
++ (void)enumerateAvailableApplicationsInPreferredOrderForOpeningDocument:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)openInActivitiesForItems:(id)arg1 sourceIsManaged:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
+- (id)_firstMatchingDocumentProxyForActivityItems:(id)arg1;
 - (id)_nonImportActivityTitle;
 - (void)_performOpenWithUserInfo:(id)arg1;
 - (bool)actionIsImport;
@@ -35,6 +37,7 @@
 - (id)documentProxy;
 - (id)initWithApplicationProxy:(id)arg1 documentProxy:(id)arg2 sourceIsManaged:(bool)arg3 actionIsImport:(bool)arg4;
 - (void)performActivity;
+- (void)prepareWithActivityItems:(id)arg1;
 - (void)setActionIsImport:(bool)arg1;
 - (void)setApplicationProxy:(id)arg1;
 - (void)setDocumentProxy:(id)arg1;

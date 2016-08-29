@@ -8,6 +8,7 @@
     NSLayoutConstraint * _moreButtonHiddenConstraint;
     NSLayoutConstraint * _moreButtonVisibleConstraint;
     SFResultSection * _section;
+    unsigned long long  _sectionHeaderType;
     UILabel * _titleLabel;
 }
 
@@ -16,9 +17,8 @@
 @property (nonatomic, retain) NSLayoutConstraint *moreButtonHiddenConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *moreButtonVisibleConstraint;
 @property (nonatomic, retain) SFResultSection *section;
+@property (readonly) unsigned long long sectionHeaderType;
 @property (nonatomic, retain) UILabel *titleLabel;
-
-+ (bool)canCellExpand:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)delegate;
@@ -29,6 +29,7 @@
 - (id)moreButtonVisibleConstraint;
 - (id)moreResultsPunchout;
 - (id)section;
+- (unsigned long long)sectionHeaderType;
 - (void)setDelegate:(id)arg1;
 - (void)setFloating:(bool)arg1;
 - (void)setMoreButton:(id)arg1;

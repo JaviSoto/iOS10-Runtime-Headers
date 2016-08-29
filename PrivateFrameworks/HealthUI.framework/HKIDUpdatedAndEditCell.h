@@ -18,6 +18,7 @@
 @property (nonatomic, retain) UIButton *editButton;
 @property (getter=isEditButtonHidden, nonatomic) bool hideEditButton;
 @property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) NSString *titleText;
 
 - (void).cxx_destruct;
 - (void)_editButtonTapped:(id)arg1;
@@ -35,6 +36,8 @@
 - (void)setEditButton:(id)arg1;
 - (void)setHideEditButton:(bool)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (void)setTitleText:(id)arg1;
 - (id)titleLabel;
+- (id)titleText;
 
 @end

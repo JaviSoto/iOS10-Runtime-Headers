@@ -8,7 +8,6 @@
     NSMapTable * _fencePointerToTraceMap;
     NSMapTable * _fencePointerToTriggerPortMap;
     NSObject<OS_dispatch_queue> * _queue;
-    NSHashTable * _reportableFencePointers;
     NSMapTable * _triggerPortToDeathWatcherMap;
     NSMapTable * _triggerPortToFencePointersMap;
     NSHashTable * _validDeathWatchersTable;

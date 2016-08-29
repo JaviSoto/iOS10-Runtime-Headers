@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/UpNextWidget.framework/UpNextWidget
  */
 
-@interface UpNextWidget.TravelAdvisoryView : UpNextWidget.GutterizedView {
+@interface UpNextWidget.TravelAdvisoryView : UIView {
     void arrowImageView;
     void label;
-    void travelAdvisoryText;
+    void text;
 }
 
-@property (nonatomic, readonly) UIView *forLastBaselineLayout;
-@property (nonatomic, retain) NSAttributedString *travelAdvisoryText;
+@property (nonatomic, retain) NSAttributedString *text;
 
 - (id /* block */).cxx_destruct;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setTravelAdvisoryText:(id)arg1;
-- (id)travelAdvisoryText;
-- (id)viewForLastBaselineLayout;
+- (double)lastBaselineOffsetFromBottom;
+- (void)layoutSubviews;
+- (void)setText:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)text;
 
 @end

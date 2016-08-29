@@ -8,13 +8,14 @@
     unsigned int  _powerNotificationConnection;
     unsigned int  _powerNotificationNotifier;
     struct IONotificationPort { } * _powerNotificationPort;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedPowerAssertion;
 
 - (void)dealloc;
-- (bool)holdPowerAssertion:(id)arg1;
+- (void)holdPowerAssertion:(id)arg1;
 - (id)init;
-- (bool)releasePowerAssertion:(id)arg1;
+- (void)releasePowerAssertion:(id)arg1;
 
 @end

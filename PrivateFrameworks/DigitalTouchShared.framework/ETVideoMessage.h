@@ -8,6 +8,7 @@
     ETSketchMessage * _introMessage;
     unsigned long long  _mediaType;
     NSURL * _mediaURL;
+    double  _messageDuration;
     bool  _pauseTimeCompression;
     NSMutableArray * _playingMessages;
     UIImage * _stillImage;
@@ -35,6 +36,7 @@
 - (bool)isAnimated;
 - (unsigned long long)mediaType;
 - (id)mediaURL;
+- (double)messageDuration;
 - (id)messageTypeAsString;
 - (bool)pauseTimeCompression;
 - (id)playingMessages;

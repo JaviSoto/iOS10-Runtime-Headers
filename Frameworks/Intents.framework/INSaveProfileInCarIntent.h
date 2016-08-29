@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSaveProfileInCarIntent : INIntent <INSaveProfileInCarIntent>
+@interface INSaveProfileInCarIntent : INIntent <INSaveProfileInCarIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

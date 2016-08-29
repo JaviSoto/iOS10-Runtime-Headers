@@ -4,6 +4,7 @@
 
 @interface CNFoundationError : NSObject
 
++ (id)errorWithCode:(unsigned long long)arg1 userInfo:(id)arg2;
 + (id)errorWithErrno;
 + (id)errorWithErrno:(int)arg1;
 + (id)errorWithErrno:(int)arg1 userInfo:(id)arg2;

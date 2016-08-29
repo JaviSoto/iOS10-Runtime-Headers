@@ -15,6 +15,8 @@
     unsigned int  _mailboxID;
     long long  _messageIDHash;
     unsigned int  _read;
+    unsigned int  _sortDateReceivedInterval;
+    unsigned int  _sortUid;
     unsigned int  _uid;
     unsigned int  _uidIsLibraryID;
 }
@@ -43,6 +45,8 @@
 @property (nonatomic) long long messageIDHash;
 @property (nonatomic, readonly) bool read;
 @property (nonatomic) bool read;
+@property (nonatomic) unsigned int sortDateReceivedInterval;
+@property (nonatomic) unsigned int sortUid;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int uid;
 @property (nonatomic) unsigned int uid;
@@ -78,8 +82,12 @@
 - (void)setMailboxID:(unsigned int)arg1;
 - (void)setMessageIDHash:(long long)arg1;
 - (void)setRead:(bool)arg1;
+- (void)setSortDateReceivedInterval:(unsigned int)arg1;
+- (void)setSortUid:(unsigned int)arg1;
 - (void)setUid:(unsigned int)arg1;
 - (void)setUidIsLibraryID:(bool)arg1;
+- (unsigned int)sortDateReceivedInterval;
+- (unsigned int)sortUid;
 - (unsigned int)uid;
 - (bool)uidIsLibraryID;
 

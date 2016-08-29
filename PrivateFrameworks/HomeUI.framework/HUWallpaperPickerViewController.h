@@ -37,9 +37,9 @@
 - (void)loadAssetCollections;
 - (id)namedSectionTitle;
 - (id)namedWallpaperController;
-- (void)namedWallpaperController:(id)arg1 didChooseWallpaper:(id)arg2;
+- (void)namedWallpaperController:(id)arg1 didChooseWallpaper:(id)arg2 image:(id)arg3;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)photoCollectionController:(id)arg1 didChooseWallpaper:(id)arg2;
+- (void)photoCollectionController:(id)arg1 didChooseWallpaper:(id)arg2 image:(id)arg3;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)setAssetCollections:(id)arg1;
 - (void)setAssetCollectionsToAssetFetchResults:(id)arg1;
@@ -52,7 +52,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
-- (void)wallpaperEditing:(id)arg1 didFinishWithWallpaper:(id)arg2;
+- (void)wallpaperEditing:(id)arg1 didFinishWithWallpaper:(id)arg2 image:(id)arg3;
 - (void)wallpaperEditingDidCancel:(id)arg1;
 
 @end

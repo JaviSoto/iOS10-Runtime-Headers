@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetAvailableRestaurantReservationBookingDefaultsIntentResponse : INIntentResponse {
+@interface INGetAvailableRestaurantReservationBookingDefaultsIntentResponse : INIntentResponse <INGetAvailableRestaurantReservationBookingDefaultsIntentResponseExport> {
     NSDate * _defaultBookingDate;
     unsigned long long  _defaultPartySize;
     NSNumber * _maximumPartySize;
@@ -11,11 +11,15 @@
 }
 
 @property (nonatomic, readonly) long long code;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSDate *defaultBookingDate;
 @property (nonatomic, readonly) unsigned long long defaultPartySize;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *maximumPartySize;
 @property (nonatomic, retain) NSNumber *minimumPartySize;
 @property (nonatomic, copy) INImage *providerImage;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

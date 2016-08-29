@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCAccountHandler : NSObject {
+@interface BRCAccountHandler : NSObject <MCProfileConnectionObserver> {
     NSString * _currentAccountID;
     <BRCAccountHandlerDelegate> * _delegate;
     bool  _hasSetMigrationComplete;
     NSObject<OS_dispatch_queue> * _migrationStatusSetterQueue;
+    NSObject<OS_dispatch_queue> * _pushQueue;
     NSObject<OS_dispatch_queue> * _queue;
     BRCAccountSession * _session;
     NSMutableDictionary * _syncPolicyByFolderType;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BRCAccountHandlerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *pushQueue;
 @property (nonatomic, readonly) BRCAccountSession *session;
+@property (readonly) Class superclass;
 
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)accountIDPath;
@@ -34,11 +40,14 @@
 - (bool)_loadCurrentOnDiskAccountSessionWithError:(id*)arg1;
 - (void)_updateAccountToAccountID:(id)arg1;
 - (bool)createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
+- (void)dealloc;
 - (id)delegate;
 - (void)destroyCurrentSessionSynchronously;
 - (id)init;
 - (void)jetsamCloudDocsApps;
 - (void)markMigrationCompletedForDSID:(id)arg1;
+- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (id)pushQueue;
 - (void)reloadSyncedFolderPolicies;
 - (void)reloadSyncedFolderPoliciesDisableiCloudDesktop:(bool)arg1;
 - (id)session;

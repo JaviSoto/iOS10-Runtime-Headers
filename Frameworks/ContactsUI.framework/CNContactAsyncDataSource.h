@@ -27,7 +27,6 @@
 @property (nonatomic, copy) CNContactStoreFilter *filter;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *indexSections;
-@property (nonatomic, readonly) CNContact *meContact;
 @property (nonatomic, readonly) NSString *meContactIdentifier;
 @property (nonatomic, retain) <CNSchedulerProvider> *reloadSchedulerProvider;
 @property (nonatomic, retain) CNManualObservable *reloadStream;

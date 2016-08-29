@@ -4,21 +4,21 @@
 
 @interface HFCharacteristicValueDisplayError : NSObject {
     unsigned long long  _category;
-    unsigned long long  _remoteAccessState;
+    <HFCharacteristicOperationContextProviding> * _contextProvider;
     NSError * _underlyingError;
 }
 
 @property (nonatomic) unsigned long long category;
-@property (nonatomic) unsigned long long remoteAccessState;
+@property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (nonatomic, copy) NSError *underlyingError;
 
-+ (id)errorWithUnderlyingError:(id)arg1 remoteAccessState:(unsigned long long)arg2;
++ (id)errorWithUnderlyingError:(id)arg1 contextProvider:(id)arg2;
 
 - (void).cxx_destruct;
 - (unsigned long long)category;
-- (unsigned long long)remoteAccessState;
+- (id)contextProvider;
 - (void)setCategory:(unsigned long long)arg1;
-- (void)setRemoteAccessState:(unsigned long long)arg1;
+- (void)setContextProvider:(id)arg1;
 - (void)setUnderlyingError:(id)arg1;
 - (id)underlyingError;
 

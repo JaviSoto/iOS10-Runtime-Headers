@@ -4,9 +4,11 @@
 
 @interface GEOPDAddressObjectGeocodingResult : PBCodable <NSCopying> {
     NSMutableArray * _disambiguationLabels;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)disambiguationLabelType;
 
@@ -25,6 +27,7 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (void)_addTopicsToSearchRequest:(id)arg1;
 - (void)_setupRanker;
+- (unsigned long long)_userAgentToMKSearchFoundationFeedbackClientType:(id)arg1;
 - (id)awaitBag;
 - (id)bag;
 - (void)bagDidLoad:(id)arg1 error:(id)arg2;
@@ -46,6 +47,7 @@
 - (void)didEngageSection:(id)arg1;
 - (void)didEngageSuggestion:(id)arg1;
 - (void)didErrorOccur:(id)arg1;
+- (void)didGoToSite:(id)arg1;
 - (void)didRankSections:(id)arg1;
 - (void)didReceiveResultsAfterTimeout:(id)arg1;
 - (void)didStartSearch:(id)arg1;

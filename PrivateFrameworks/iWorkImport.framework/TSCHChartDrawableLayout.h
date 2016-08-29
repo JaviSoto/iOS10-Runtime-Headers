@@ -118,6 +118,7 @@
 - (void)validate;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
 - (id)visibleGeometries;
+- (void)willBeAddedToLayoutController:(id)arg1;
 - (int)wrapFitType;
 
 @end

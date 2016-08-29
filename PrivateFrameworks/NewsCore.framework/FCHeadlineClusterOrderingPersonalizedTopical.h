@@ -9,6 +9,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (id)orderTopicsWithClusteredHeadlines:(id)arg1 additionalHeadlines:(id)arg2 personalizer:(id)arg3 tagNameProvider:(id /* block */)arg4;
+- (id)orderTopicsWithClusteredHeadlines:(id)arg1 additionalHeadlines:(id)arg2 scoresByArticleID:(id)arg3 personalizer:(id)arg4 tagNameProvider:(id /* block */)arg5;
 
 @end

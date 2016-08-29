@@ -51,7 +51,7 @@
 
 - (void)_addSceneGeometryObserver:(id)arg1;
 - (unsigned long long)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
-- (void)_handleSceneClientMessage:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)_dispatchClientMessageWithBlock:(id /* block */)arg1;
 - (void)_invalidateWithTransitionContext:(id)arg1;
 - (bool)_lockedForMutation;
 - (void)_removeSceneGeometryObserver:(id)arg1;
@@ -66,6 +66,7 @@
 - (id)clientProcess;
 - (id)clientProvider;
 - (id)clientSettings;
+- (void)clientWillInvalidate:(id)arg1;
 - (id)contentView;
 - (id)contextHostManager;
 - (id)contextManager;

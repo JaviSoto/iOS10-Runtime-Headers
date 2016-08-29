@@ -42,6 +42,7 @@
 - (id)accessoryServers;
 - (void)addAccessoryServer:(id)arg1;
 - (id)category;
+- (void)dealloc;
 - (id)description;
 - (id)descriptionForTransportTypes;
 - (id)descriptionNonBlocking;

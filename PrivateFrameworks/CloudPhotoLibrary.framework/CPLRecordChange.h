@@ -57,6 +57,7 @@
 - (long long)dequeueOrder;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)estimatedRecordSize;
 - (bool)hasChangeType:(unsigned long long)arg1;
 - (unsigned long long)hash;
 - (id)identifier;

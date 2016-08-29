@@ -5,8 +5,6 @@
 
 @required
 
-- (void)didFindPaymentDeviceNearby:(PKRemoteDevice *)arg1;
-- (void)didLosePaymentDeviceNearby:(PKRemoteDevice *)arg1;
 - (void)didReceiveCancellationForRemotePaymentRequest:(PKRemotePaymentRequest *)arg1;
 - (void)didReceivePayment:(PKPayment *)arg1 forRemotePaymentRequest:(PKRemotePaymentRequest *)arg2;
 - (void)didReceivePaymentClientUpdate:(PKPaymentClientUpdate *)arg1 forRemotePaymentRequest:(PKRemotePaymentRequest *)arg2;

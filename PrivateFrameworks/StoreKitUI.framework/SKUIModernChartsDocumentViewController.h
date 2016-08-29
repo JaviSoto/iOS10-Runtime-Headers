@@ -34,6 +34,7 @@
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
 - (void)resourceLoader:(id)arg1 didLoadAllForReason:(long long)arg2;
+- (void)resourceLoaderDidBeginLoading:(id)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventRepresentation : NSObject <NSCopying, NSSecureCoding> {
+@interface AXEventRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
     NSData * _HIDAttributeData;
     unsigned long long  _HIDTime;
     AXEventAccelerometerInfoRepresentation * _accelerometerInfo;
+    AXEventData * _accessibilityData;
     unsigned long long  _additionalFlags;
     NSString * _clientId;
     unsigned int  _contextId;
@@ -43,17 +44,21 @@
 @property (nonatomic, retain) NSData *HIDAttributeData;
 @property (nonatomic) unsigned long long HIDTime;
 @property (nonatomic, retain) AXEventAccelerometerInfoRepresentation *accelerometerInfo;
+@property (nonatomic, retain) AXEventData *accessibilityData;
 @property (nonatomic) unsigned long long additionalFlags;
 @property (nonatomic, retain) NSString *clientId;
 @property (nonatomic) unsigned int contextId;
 @property (nonatomic, retain) struct __IOHIDEvent { }*creatorHIDEvent;
 @property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int didUpdateMask;
 @property (nonatomic, readonly) unsigned long long fingerCount;
 @property (nonatomic) int flags;
 @property (nonatomic, retain) AXEventGameControllerInfoRepresentation *gameControllerInfo;
 @property (nonatomic) long long generationCount;
 @property (nonatomic, retain) AXEventHandInfoRepresentation *handInfo;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool isBuiltIn;
 @property (nonatomic, readonly) bool isCancel;
 @property (nonatomic, readonly) bool isChordChange;
@@ -71,6 +76,7 @@
 @property (nonatomic) long long scrollAmount;
 @property (nonatomic) unsigned long long senderID;
 @property (nonatomic) int subtype;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int taskPort;
 @property (nonatomic) unsigned long long time;
 @property (nonatomic) unsigned int type;
@@ -97,15 +103,21 @@
 
 - (id)HIDAttributeData;
 - (unsigned long long)HIDTime;
+- (bool)_HIDEventIsAccessibilityEvent:(struct __IOHIDEvent { }*)arg1;
+- (id)_accessibilityDataFromRealEvent:(struct __IOHIDEvent { }*)arg1;
+- (struct __IOHIDEvent { }*)_accessibilityEventFromRealEvent:(struct __IOHIDEvent { }*)arg1;
+- (void)_applyAccessibilityDataToRealEvent:(struct __IOHIDEvent { }*)arg1;
 - (unsigned int)_contextIDFromHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (struct __IOHIDEvent { }*)_newAccelerometerHIDEventRef;
 - (struct __IOHIDEvent { }*)_newButtonHIDEventRef;
 - (struct __IOHIDEvent { }*)_newHandHIDEventRef;
 - (struct __IOHIDEvent { }*)_newKeyboardHIDEventRef;
 - (id)_senderNameForID;
-- (id)_tabularDescription;
 - (id)accelerometerInfo;
+- (id)accessibilityData;
+- (id)accessibilityEventRepresentationTabularDescription;
 - (unsigned long long)additionalFlags;
+- (void)applyAccessibilityDataToCreatorHIDEvent;
 - (id)clientId;
 - (unsigned int)contextId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -150,6 +162,7 @@
 - (long long)scrollAmount;
 - (unsigned long long)senderID;
 - (void)setAccelerometerInfo:(id)arg1;
+- (void)setAccessibilityData:(id)arg1;
 - (void)setAdditionalFlags:(unsigned long long)arg1;
 - (void)setClientId:(id)arg1;
 - (void)setContextId:(unsigned int)arg1;

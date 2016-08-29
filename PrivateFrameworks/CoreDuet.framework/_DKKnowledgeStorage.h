@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (void)closeStorage;
 - (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
+- (unsigned long long)deleteAllEventsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (unsigned long long)deleteEventsMatchingPredicate:(id)arg1 limit:(unsigned long long)arg2;
 - (unsigned long long)deleteEventsStartingEarlierThanDate:(id)arg1 limit:(unsigned long long)arg2;
 - (bool)deleteObjects:(id)arg1 error:(id*)arg2;
@@ -25,6 +26,7 @@
 - (unsigned long long)deleteObjectsOlderThanDate:(id)arg1 limit:(unsigned long long)arg2;
 - (unsigned long long)deleteOldObjectsIfNeededToLimitTotalNumber:(unsigned long long)arg1 limit:(unsigned long long)arg2;
 - (bool)deleteStorage;
+- (id)errorForException:(id)arg1;
 - (unsigned long long)eventCount;
 - (id)eventCountPerStreamName;
 - (id)executeQuery:(id)arg1 error:(id*)arg2;

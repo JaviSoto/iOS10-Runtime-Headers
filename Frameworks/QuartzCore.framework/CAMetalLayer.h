@@ -28,6 +28,7 @@
 - (struct CGSize { double x1; double x2; })drawableSize;
 - (bool)framebufferOnly;
 - (id)init;
+- (bool)isDrawableAvailable;
 - (void)layerDidBecomeVisible:(bool)arg1;
 - (bool)lowLatency;
 - (unsigned long long)maximumDrawableCount;

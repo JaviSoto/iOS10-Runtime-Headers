@@ -18,9 +18,11 @@
         } size; 
     }  __desiredContentsRect;
     UIView * _contentView;
+    bool  _hasPlaceholder;
     PXImageRequester * _imageRequester;
     PXFocusableUIImageView * _imageView;
     UIColor * _placeholderColor;
+    UIImage * _placeholderImage;
     bool  _shouldAllowFocus;
 }
 
@@ -32,6 +34,7 @@
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, retain) PXImageRequester *imageRequester;
 @property (nonatomic, retain) UIColor *placeholderColor;
+@property (nonatomic, retain) UIImage *placeholderImage;
 @property (nonatomic) bool shouldAllowFocus;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
@@ -51,9 +54,11 @@
 - (id)init;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)placeholderColor;
+- (id)placeholderImage;
 - (void)prepareForReuse;
 - (void)setImageRequester:(id)arg1;
 - (void)setPlaceholderColor:(id)arg1;
+- (void)setPlaceholderImage:(id)arg1;
 - (void)setShouldAllowFocus:(bool)arg1;
 - (bool)shouldAllowFocus;
 - (id)view;

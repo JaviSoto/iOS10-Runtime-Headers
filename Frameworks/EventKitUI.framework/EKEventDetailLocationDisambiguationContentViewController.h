@@ -36,6 +36,7 @@
 - (void)_selectCircle;
 - (void)_selectRow:(unsigned long long)arg1;
 - (bool)_shouldEnableAddButton;
+- (void)_updateMapRegion;
 - (void)cancelTapped:(id)arg1;
 - (void)doneTapped:(id)arg1;
 - (id)initWithLocation:(id)arg1 pois:(id)arg2 completionBlock:(id /* block */)arg3;

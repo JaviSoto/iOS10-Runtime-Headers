@@ -2,47 +2,36 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKIncrementalSearchBar : UIToolbar <UISearchBarDelegate> {
-    UIBarButtonItem * _doneBarButtonItem;
-    UIBarButtonItem * _downBarButtonItem;
+@interface HKIncrementalSearchBar : UIView {
     NSString * _matchDisplayText;
-    <HKIncrementalSearchBarDelegate> * _searchBarDelegate;
-    _SearchEntryWithMatchDisplay * _searchEntry;
-    UIBarButtonItem * _upBarButtonItem;
+    _SearchBarContent * _searchBarContent;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) UIBarButtonItem *doneBarButtonItem;
-@property (nonatomic, readonly) UIBarButtonItem *downBarButtonItem;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *matchDisplayText;
+@property (nonatomic, readonly) _SearchBarContent *searchBarContent;
 @property (nonatomic, retain) <HKIncrementalSearchBarDelegate> *searchBarDelegate;
-@property (nonatomic, readonly) _SearchEntryWithMatchDisplay *searchEntry;
 @property (nonatomic, retain) NSString *searchText;
-@property (readonly) Class superclass;
-@property (nonatomic, readonly) UIBarButtonItem *upBarButtonItem;
 
 + (bool)_hasUppercaseCharacters:(id)arg1;
 + (id)_patternFromSearchString:(id)arg1 quoteForJavascript:(bool)arg2;
 + (id)regularExpressionFromString:(id)arg1 quoteForJavascript:(bool)arg2 caseless:(bool*)arg3;
 
 - (void).cxx_destruct;
+- (void)_lowerKeyboard;
 - (void)activateSearch:(bool)arg1;
+- (bool)canBecomeFirstResponder;
+- (void)dealloc;
 - (void)doneAction:(id)arg1;
-- (id)doneBarButtonItem;
-- (void)downAction:(id)arg1;
-- (id)downBarButtonItem;
 - (id)init;
+- (id)inputAccessoryView;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (void)layoutSubviews;
+- (bool)keyboardIsDown;
+- (bool)keyboardIsUp;
 - (id)matchDisplayText;
-- (bool)searchBar:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (id)searchBarContent;
 - (id)searchBarDelegate;
-- (void)searchBarSearchButtonClicked:(id)arg1;
-- (bool)searchBarShouldEndEditing:(id)arg1;
-- (id)searchEntry;
+- (bool)searchIsActive;
+- (void)searchKeyboardDidHide:(id)arg1;
 - (id)searchText;
 - (void)setDownEnabled:(bool)arg1;
 - (void)setMatchDisplayText:(id)arg1;
@@ -50,8 +39,5 @@
 - (void)setSearchBarDelegate:(id)arg1;
 - (void)setSearchText:(id)arg1;
 - (void)setUpEnabled:(bool)arg1;
-- (void)upAction:(id)arg1;
-- (id)upBarButtonItem;
-- (double)widthOfBarButtonItem:(id)arg1;
 
 @end

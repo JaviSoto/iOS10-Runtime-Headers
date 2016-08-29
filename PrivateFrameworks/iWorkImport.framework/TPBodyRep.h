@@ -10,7 +10,6 @@
 @property (nonatomic, readonly) TPBodyLayout *bodyLayout;
 
 - (id)bodyLayout;
-- (id)colorBehindLayer:(id)arg1;
 - (void)dealloc;
 - (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
 - (id)hitRepChrome:(struct CGPoint { double x1; double x2; })arg1;

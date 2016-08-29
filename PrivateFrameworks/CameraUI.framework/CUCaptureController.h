@@ -219,6 +219,7 @@
 - (void)_updateMaximumNumberOfStillImageRequestsAfterCapturedRequestIfNecessary:(id)arg1;
 - (void)_updateMaximumNumberOfStillImageRequestsAfterEnqueuingRequestWithFlashMode:(long long)arg1 HDRMode:(long long)arg2 burstIdentifier:(id)arg3;
 - (bool)_useSmoothFocus;
+- (id)_zoomMonitoringKeyPaths;
 - (void)_zoomResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
 - (int)applyCaptureConfiguration:(id)arg1;
 - (void)attemptToEndInterruptions;
@@ -255,10 +256,11 @@
 - (void)handleSessionInterruptionEnded;
 - (void)handleSessionInterruptionForReason:(long long)arg1;
 - (id)init;
-- (id)initWithCaptureConfiguration:(id)arg1 locationController:(id)arg2 motionController:(id)arg3 burstController:(id)arg4 protectionController:(id)arg5 powerController:(id)arg6 remoteShutterController:(id)arg7;
+- (id)initWithCaptureConfiguration:(id)arg1 engineOptions:(long long)arg2 locationController:(id)arg3 motionController:(id)arg4 burstController:(id)arg5 protectionController:(id)arg6 powerController:(id)arg7 remoteShutterController:(id)arg8;
 - (id)interruptionDelegate;
 - (bool)intervalometer:(id)arg1 didGenerateCaptureRequest:(id)arg2;
 - (void)intervalometerDidReachMaximumCount:(id)arg1;
+- (void)invalidateController;
 - (bool)isCaptureAvailable;
 - (bool)isCapturingBurst;
 - (bool)isCapturingPanorama;
@@ -318,6 +320,7 @@
 - (bool)startCapturingPanoramaWithRequest:(id)arg1 error:(id*)arg2;
 - (bool)startCapturingVideoWithRequest:(id)arg1 error:(id*)arg2;
 - (void)startMonitoringForHDRSuggestions;
+- (void)startRampToVideoZoomFactor:(double)arg1 withDuration:(double)arg2;
 - (void)startRampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;
 - (id)stillImageCapturingVideoDelegate;
 - (void)stillImageRequest:(id)arg1 didCompleteStillImageCaptureWithResult:(id)arg2;

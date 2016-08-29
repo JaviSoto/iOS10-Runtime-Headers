@@ -17,5 +17,6 @@
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)setShouldShowProgressFooter:(bool)arg1;
 - (bool)shouldShowProgressFooter;
+- (id)targetIndexPathForInteractivelyMovingItem:(id)arg1 withPosition:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

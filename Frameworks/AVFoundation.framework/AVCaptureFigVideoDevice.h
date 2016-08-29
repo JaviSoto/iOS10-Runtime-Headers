@@ -117,6 +117,7 @@
     AVCaptureDeviceControlRequestQueue * _manualExposureControlRequests;
     AVCaptureDeviceControlRequestQueue * _manualFocusControlRequests;
     AVCaptureDeviceControlRequestQueue * _manualWhiteBalanceControlRequests;
+    float  _minAvailableVideoZoomFactor;
     NSObject<OS_dispatch_queue> * _observedHighFrequencyPropertiesQueue;
     NSMutableDictionary * _observedHighFrequencyPropertyCounts;
     long long  _origin;
@@ -218,6 +219,7 @@
 - (void)_setImageControlMode:(long long)arg1;
 - (void)_setIsStillImageStabilizationScene:(bool)arg1;
 - (void)_setLowLightBoostEnabled:(bool)arg1;
+- (void)_setMinAvailableVideoZoomFactor:(double)arg1;
 - (void)_setStillImageStabilizationAutomaticallyEnabled:(bool)arg1;
 - (void)_setStillImageStabilizationDetectionEnabled:(bool)arg1;
 - (void)_setTorchActive:(bool)arg1;
@@ -328,6 +330,7 @@
 - (struct { int x1; int x2; })maxH264PhotoDimensions;
 - (struct { int x1; int x2; })maxH264VideoDimensions;
 - (float)maxWhiteBalanceGain;
+- (double)minAvailableVideoZoomFactor;
 - (float)minExposureTargetBias;
 - (int)minMacroblocksForHighProfileAbove30fps;
 - (int)minMacroblocksForHighProfileUpTo30fps;

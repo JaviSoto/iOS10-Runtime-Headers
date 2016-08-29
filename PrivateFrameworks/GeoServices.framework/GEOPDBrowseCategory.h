@@ -9,6 +9,7 @@
     GEOStyleAttributes * _styleAttributes;
     NSMutableArray * _subCategorys;
     NSData * _suggestionEntryMetadata;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *displayString;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
 @property (nonatomic, retain) NSMutableArray *subCategorys;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)subCategoryType;
 
@@ -55,6 +57,7 @@
 - (id)subCategorys;
 - (unsigned long long)subCategorysCount;
 - (id)suggestionEntryMetadata;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

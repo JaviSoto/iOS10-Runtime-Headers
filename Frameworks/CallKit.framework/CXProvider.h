@@ -27,7 +27,6 @@
 @property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (long long)authorizationStatus;
 
 - (void).cxx_destruct;
 - (id)_pendingActionWithUUID:(id)arg1;
@@ -48,7 +47,6 @@
 - (id)delegateQueue;
 - (oneway void)handleActionTimeout:(id)arg1;
 - (oneway void)handleAudioSessionActivationStateChangedTo:(bool)arg1;
-- (oneway void)handleAuthorizationChangedTo:(bool)arg1;
 - (void)handleConnectionInvalidation;
 - (void)handleMediaServicesWereResetNotification:(id)arg1;
 - (id)hostProtocolDelegate;
@@ -68,6 +66,7 @@
 - (id)privateDelegate;
 - (id)queue;
 - (void)registerCurrentConfiguration;
+- (void)reportAudioFinishedForCallWithUUID:(id)arg1;
 - (void)reportCallWithUUID:(id)arg1 changedFrequencyData:(id)arg2 forDirection:(long long)arg3;
 - (void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(long long)arg3;
 - (void)reportCallWithUUID:(id)arg1 endedAtDate:(id)arg2 privateReason:(long long)arg3;
@@ -79,7 +78,6 @@
 - (void)reportOutgoingCallWithUUID:(id)arg1 connectedAtDate:(id)arg2;
 - (void)reportOutgoingCallWithUUID:(id)arg1 sentInvitationAtDate:(id)arg2;
 - (void)reportOutgoingCallWithUUID:(id)arg1 startedConnectingAtDate:(id)arg2;
-- (void)requestAuthorization;
 - (bool)requiresProxyingAVAudioSessionState;
 - (void)sendProviderDidBegin;
 - (void)setCompletionQueue:(id)arg1;

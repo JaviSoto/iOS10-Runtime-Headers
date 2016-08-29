@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreFollowRecommendationsOperation : MSVOperation {
+@interface MPStoreFollowRecommendationsOperation : MPAsyncOperation {
     MPStoreModelArtistBuilder * _artistBuilder;
-    MSVOperationQueue * _operationQueue;
+    NSOperationQueue * _operationQueue;
     MPStoreFollowRecommendationsRequest * _request;
     id /* block */  _responseHandler;
 }
@@ -15,7 +15,8 @@
 + (id)activeDSID;
 
 - (void).cxx_destruct;
-- (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2 allowingAuthentication:(bool)arg3;
+- (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2;
+- (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (id)_followRecommendationsFromPlatformValue:(id)arg1;
 - (id)_reccomendedArtistsURLFromBag:(id)arg1 accountDSID:(id)arg2;
 - (id)_resultsDictionaryFromURLValue:(id)arg1;

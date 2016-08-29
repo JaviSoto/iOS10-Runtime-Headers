@@ -7,7 +7,8 @@
 
 - (void)cancelInteractiveTransition;
 - (void)finishInteractiveTransition;
-- (void)hintDismissalWithProgress:(double)arg1;
+- (void)hintDismissalWithCommitProgress:(double)arg1 overallProgress:(double)arg2;
+- (bool)isCancelled;
 - (bool)isPresenting;
 - (void)setTransitionAnimatorDelegate:(id <NCLongLookAnimatorDelegate>)arg1;
 - (<NCLongLookAnimatorDelegate> *)transitionAnimatorDelegate;

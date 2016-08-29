@@ -10,7 +10,7 @@
     HUQuickControlSegmentedControl * _colorPickerModeSegmentedControl;
     HUColorPickerView * _colorPickerView;
     <HUQuickControlColorViewInteractionDelegate> * _interactionDelegate;
-    HUQuickControlSimpleViewProfile * _profile;
+    HUQuickControlViewProfile * _profile;
     HFColorPaletteColor * _selectedColor;
     HUQuickControlCircleButton * _switchButton;
     NSLayoutConstraint * _switchButtonHeightConstraint;
@@ -28,7 +28,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) <HUQuickControlColorViewInteractionDelegate> *interactionDelegate;
-@property (nonatomic, retain) HUQuickControlSimpleViewProfile *profile;
+@property (nonatomic, copy) HUQuickControlViewProfile *profile;
+@property (nonatomic, retain) id secondaryValue;
 @property (nonatomic, retain) HFColorPaletteColor *selectedColor;
 @property (getter=isSelectedColorInPalette, nonatomic, readonly) bool selectedColorInPalette;
 @property (nonatomic) long long sizeSubclass;

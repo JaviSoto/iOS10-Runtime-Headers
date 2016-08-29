@@ -3,30 +3,30 @@
  */
 
 @interface _HMCameraProfile : _HMAccessoryProfile {
-    NSArray * _controls;
+    NSMutableArray * _controls;
     _HMCameraAudioControl * _microphoneControl;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     _HMCameraSettingsControl * _settingsControl;
     _HMCameraSnapshotControl * _snapshotControlInternal;
     _HMCameraAudioControl * _speakerControl;
     _HMCameraStreamControl * _streamControlInternal;
 }
 
-@property (nonatomic, readonly) NSArray *controls;
+@property (nonatomic, readonly) NSMutableArray *controls;
 @property (nonatomic, readonly) _HMCameraAudioControl *microphoneControl;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) _HMCameraSettingsControl *settingsControl;
 @property (nonatomic, readonly) _HMCameraSnapshotControl *snapshotControlInternal;
 @property (nonatomic, readonly) _HMCameraAudioControl *speakerControl;
 @property (nonatomic, readonly) _HMCameraStreamControl *streamControlInternal;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_registerNotificationHandlers;
+- (void)configureWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
 - (id)controls;
-- (id)initUuid:(id)arg1 accessory:(id)arg2 services:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5 msgDispatcher:(id)arg6 home:(id)arg7;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)microphoneControl;
-- (id)propertyQueue;
-- (void)setPropertyQueue:(id)arg1;
 - (id)settingsControl;
 - (id)snapshotControlInternal;
 - (id)speakerControl;

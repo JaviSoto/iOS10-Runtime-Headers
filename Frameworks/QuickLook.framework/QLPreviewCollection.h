@@ -103,7 +103,6 @@
 - (id)pinchRotationTracker;
 - (void)previewItemViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)previewItemViewController:(id)arg1 wantsFullScreen:(bool)arg2;
-- (void)previewItemViewController:(id)arg1 wantsNavbarHidden:(bool)arg2;
 - (void)previewItemViewController:(id)arg1 wantsToOpenURL:(id)arg2;
 - (void)previewItemViewControllerDidEditPreview:(id)arg1;
 - (void)previewItemViewControllerEnteredEditMode:(id)arg1;
@@ -119,7 +118,6 @@
 - (void)setFullScreen:(bool)arg1;
 - (void)setIsAvailable:(bool)arg1;
 - (void)setLoadingString:(id)arg1;
-- (void)setNavbarHidden:(bool)arg1;
 - (void)setPageViewController:(id)arg1;
 - (void)setPinchGesture:(id)arg1;
 - (void)setPinchRotationTracker:(id)arg1;

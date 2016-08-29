@@ -11,6 +11,7 @@
     unsigned int  _maxNumCategoriesPerEntry;
     double  _requestLocalTimestamp;
     GEOLatLng * _significantLocation;
+    PBUnknownFields * _unknownFields;
     int  _userPreferredTransportType;
 }
 
@@ -21,6 +22,7 @@
 @property (nonatomic) unsigned int maxNumCategoriesPerEntry;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) GEOLatLng *significantLocation;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) int userPreferredTransportType;
 
 - (int)StringAsUserPreferredTransportType:(id)arg1;
@@ -47,6 +49,7 @@
 - (void)setSignificantLocation:(id)arg1;
 - (void)setUserPreferredTransportType:(int)arg1;
 - (id)significantLocation;
+- (id)unknownFields;
 - (int)userPreferredTransportType;
 - (id)userPreferredTransportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;

@@ -13,6 +13,8 @@
 + (bool)ignoreReadOnly;
 + (void)nukeCaches;
 + (unsigned long long)playbackFrameRateMode;
++ (long long)playbackPixelCount;
 + (bool)shouldPlaySlowMoWhenPreviewing;
++ (bool)updateProjectAndCachesOnPhotosLibraryChange;
 
 @end

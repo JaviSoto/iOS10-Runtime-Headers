@@ -4,31 +4,24 @@
 
 @interface MPModelLibraryResponse : MPModelResponse <MPModelResponseDetailedKeepLocalStatusRequesting> {
     MPMediaLibraryConnectionAssertion * _libraryAssertion;
-    struct vector<std::__1::shared_ptr<mlcore::Query>, std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > > { 
-        struct shared_ptr<mlcore::Query> {} *__begin_; 
-        struct shared_ptr<mlcore::Query> {} *__end_; 
-        struct __compressed_pair<std::__1::shared_ptr<mlcore::Query> *, std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > > { 
-            struct shared_ptr<mlcore::Query> {} *__first_; 
-        } __end_cap_; 
-    }  _sectionItemQueries;
+    NSArray * _sectionKeepLocalStatusConfigurations;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MPMediaLibraryConnectionAssertion *libraryAssertion;
-@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<mlcore::Query>' */ struct  sectionItemQueries; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > >=^{shared_ptr<mlcore::Query>}}} */
+@property (nonatomic, copy) NSArray *sectionKeepLocalStatusConfigurations;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 - (id)libraryAssertion;
 - (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(long long)arg1 responseHandler:(id /* block */)arg2;
-- (struct vector<std::__1::shared_ptr<mlcore::Query>, std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > > { struct shared_ptr<mlcore::Query> {} *x1; struct shared_ptr<mlcore::Query> {} *x2; struct __compressed_pair<std::__1::shared_ptr<mlcore::Query> *, std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > > { struct shared_ptr<mlcore::Query> {} *x_3_1_1; } x3; })sectionItemQueries;
+- (id)sectionKeepLocalStatusConfigurations;
 - (void)setLibraryAssertion:(id)arg1;
-- (void)setSectionItemQueries:(struct vector<std::__1::shared_ptr<mlcore::Query>, std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > > { struct shared_ptr<mlcore::Query> {} *x1; struct shared_ptr<mlcore::Query> {} *x2; struct __compressed_pair<std::__1::shared_ptr<mlcore::Query> *, std::__1::allocator<std::__1::shared_ptr<mlcore::Query> > > { struct shared_ptr<mlcore::Query> {} *x_3_1_1; } x3; })arg1;
+- (void)setSectionKeepLocalStatusConfigurations:(id)arg1;
 
 @end

@@ -21,7 +21,7 @@
 @property (nonatomic, retain) HMDApplicationData *appData;
 @property (nonatomic, readonly) NSString *associatedServiceType;
 @property (nonatomic, retain) HMDBulletinBoardNotification *bulletinBoardNotification;
-@property (nonatomic, readonly, copy) NSArray *characteristics;
+@property (nonatomic, copy) NSArray *characteristics;
 @property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (readonly, copy) NSString *debugDescription;
@@ -41,7 +41,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_readRequiredBTLECharacteristicValues;
+- (void)_createNotification;
+- (void)_readRequiredBTLECharacteristicValues:(bool)arg1;
 - (void)_setServiceProperties:(id)arg1;
 - (void)_shouldServiceBeHidden;
 - (bool)_supportsBulletinNotification;
@@ -75,6 +76,7 @@
 - (id)serviceType;
 - (void)setAppData:(id)arg1;
 - (void)setBulletinBoardNotification:(id)arg1;
+- (void)setCharacteristics:(id)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setLinkedServices:(id)arg1;
@@ -83,6 +85,7 @@
 - (void)setProvidedName:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (id)type;
+- (void)updateAccessory:(id)arg1;
 - (bool)updateAssociatedServiceType:(id)arg1 error:(id*)arg2;
 - (void)updateLastKnownValues;
 - (void)updateName:(id)arg1;

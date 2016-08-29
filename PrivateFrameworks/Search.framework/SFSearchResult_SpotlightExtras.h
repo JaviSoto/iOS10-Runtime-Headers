@@ -10,6 +10,7 @@
     NSNumber * _fileIdentifier;
     NSString * _filename;
     bool  _isParsecResult;
+    NSArray * _launchDates;
     NSString * _launchString;
     NSNumber * _parentFileIdentifier;
     NSString * _protectionClass;
@@ -17,6 +18,9 @@
     unsigned long long  _rank;
     unsigned long long  _score;
     unsigned long long  _topHitScore;
+    NSData * _userActivityData;
+    NSString * _userActivitySecondaryString;
+    NSString * _userActivityType;
 }
 
 @property (nonatomic) bool coreSpotlightSourced;
@@ -26,6 +30,7 @@
 @property (nonatomic, retain) NSNumber *fileIdentifier;
 @property (nonatomic, retain) NSString *filename;
 @property (nonatomic) bool isParsecResult;
+@property (nonatomic, retain) NSArray *launchDates;
 @property (nonatomic, retain) NSString *launchString;
 @property (nonatomic, retain) NSNumber *parentFileIdentifier;
 @property (nonatomic, retain) NSString *protectionClass;
@@ -33,6 +38,9 @@
 @property (nonatomic) unsigned long long rank;
 @property (nonatomic) unsigned long long score;
 @property (nonatomic) unsigned long long topHitScore;
+@property (nonatomic, retain) NSData *userActivityData;
+@property (nonatomic, retain) NSString *userActivitySecondaryString;
+@property (nonatomic, retain) NSString *userActivityType;
 
 + (bool)supportsSecureCoding;
 
@@ -46,7 +54,9 @@
 - (id)filename;
 - (id)initWithCoder:(id)arg1;
 - (bool)isParsecResult;
+- (id)launchDates;
 - (id)launchString;
+- (id)objectForFeedback;
 - (id)parentFileIdentifier;
 - (id)protectionClass;
 - (id)queryString;
@@ -59,6 +69,7 @@
 - (void)setFileIdentifier:(id)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setIsParsecResult:(bool)arg1;
+- (void)setLaunchDates:(id)arg1;
 - (void)setLaunchString:(id)arg1;
 - (void)setParentFileIdentifier:(id)arg1;
 - (void)setProtectionClass:(id)arg1;
@@ -67,6 +78,12 @@
 - (void)setScore:(unsigned long long)arg1;
 - (void)setTopHitScore:(unsigned long long)arg1;
 - (void)setUrl:(id)arg1;
+- (void)setUserActivityData:(id)arg1;
+- (void)setUserActivitySecondaryString:(id)arg1;
+- (void)setUserActivityType:(id)arg1;
 - (unsigned long long)topHitScore;
+- (id)userActivityData;
+- (id)userActivitySecondaryString;
+- (id)userActivityType;
 
 @end

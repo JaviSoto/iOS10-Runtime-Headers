@@ -94,6 +94,7 @@
 - (void)addManifestDownloadWithURL:(id)arg1 placeholderMetadata:(id)arg2;
 - (void)addMediaLibrary:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)addRelationshipForParentAdamId:(id)arg1 withChildAdamIds:(id)arg2;
 - (id)appUpdatesStore;
 - (id)appstoredUpdatesStore;
 - (void)beginObservingLibraryItems:(id)arg1;
@@ -136,6 +137,7 @@
 - (void)reloadSoftwareUpdatesFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)removeMediaLibrary:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)removeRelationshipsForParentAdamId:(id)arg1;
 - (id)stateForItemWithIdentifier:(long long)arg1;
 - (id)stateForItemWithStoreIdentifier:(id)arg1;
 

@@ -16,17 +16,18 @@
 
 - (void).cxx_destruct;
 - (void)_createRequestOperationAnimationCoordinatorForInitialContentPresentation:(bool)arg1;
+- (void)_performRequestOperationAlongsideAnimations;
 - (id)_prepareHintTextForNotificationRequest:(id)arg1 movingFromIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (void)_reloadNotificationViewControllerForHintTextAtIndexPath:(id)arg1;
 - (void)_reloadNotificationViewControllerForHintTextAtIndexPaths:(id)arg1;
-- (void)_unsetRequestOperationAnimationCoordinator;
+- (void)_updateRaiseToListenRequest;
 - (void)clearAll;
 - (void)clearAllNonPersistent;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 performUpdatesAlongsideLayout:(id)arg2;
 - (void)fadeIn;
 - (bool)hasContent;
-- (void)hideMessagePreviewForNotificationSectionIdentifier:(id)arg1;
+- (bool)hasVisibleContent;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (id)init;
 - (void)insertNotificationRequest:(id)arg1;
@@ -37,6 +38,7 @@
 - (id)notificationRequestWithHintText;
 - (void)notificationViewController:(id)arg1 didCommitToLongLookPresentation:(bool)arg2 withCoordinator:(id)arg3;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)reloadRequestsWithSuppressedContent;
 - (void)removeNotificationRequest:(id)arg1;
 - (id)requestOperationAnimationCoordinator;
 - (void)setLastDismissalTransitionCoordinator:(id)arg1;
@@ -44,7 +46,6 @@
 - (void)setNotificationRequestWithHintText:(id)arg1;
 - (void)setRequestOperationAnimationCoordinator:(id)arg1;
 - (bool)shouldAddHintTextForNotificationViewController:(id)arg1;
-- (void)showMessagePreviewForNotificationSectionIdentifier:(id)arg1;
 - (void)showRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 
 @end

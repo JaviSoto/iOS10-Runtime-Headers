@@ -17,5 +17,6 @@
 - (void)setHandlerOptions:(void *)arg1 forContentType:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: unsigned int, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)synchronizeWithMobileInstallation;
 - (void)updateApplication:(void *)arg1 mobileInstallationChanges:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)updateContainerUnit:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
 
 @end

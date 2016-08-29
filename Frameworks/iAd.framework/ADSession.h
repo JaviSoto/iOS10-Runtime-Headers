@@ -54,6 +54,7 @@
 - (void)reportPrerollRequest;
 - (void)requestAttributionDetailsWithBlock:(id /* block */)arg1;
 - (void)requestSponsoredSearchData:(id /* block */)arg1;
+- (void)requestSponsoredSearchDataAndRequestID:(id /* block */)arg1;
 - (void)requestSponsoredSearchURL:(id /* block */)arg1;
 - (void)requestTrendingSearchData:(id /* block */)arg1;
 - (void)requestTrendingSearchURL:(id /* block */)arg1;

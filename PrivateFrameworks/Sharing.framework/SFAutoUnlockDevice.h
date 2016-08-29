@@ -3,6 +3,7 @@
  */
 
 @interface SFAutoUnlockDevice : SFPeerDevice <NSSecureCoding> {
+    bool  _bluetoothCloudPaired;
     NSUUID * _bluetoothID;
     bool  _keyExists;
     NSString * _modelName;
@@ -11,6 +12,7 @@
     bool  _unlockEnabled;
 }
 
+@property (nonatomic) bool bluetoothCloudPaired;
 @property (nonatomic, retain) NSUUID *bluetoothID;
 @property (nonatomic) bool keyExists;
 @property (nonatomic, retain) NSString *modelName;
@@ -22,14 +24,17 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)bluetoothCloudPaired;
 - (id)bluetoothID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)keyExists;
 - (id)modelName;
 - (id)proxyBluetoothID;
 - (id)results;
+- (void)setBluetoothCloudPaired:(bool)arg1;
 - (void)setBluetoothID:(id)arg1;
 - (void)setKeyExists:(bool)arg1;
 - (void)setModelName:(id)arg1;

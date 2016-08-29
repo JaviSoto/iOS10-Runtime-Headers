@@ -63,6 +63,7 @@
 - (void)setNeedsPersistenceUpdate:(bool)arg1;
 - (bool)supportsCloudUpload;
 - (void)updateWithCPLMemoryChange:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)updatedKeyAsset;
 - (void)willSave;
 
 @end

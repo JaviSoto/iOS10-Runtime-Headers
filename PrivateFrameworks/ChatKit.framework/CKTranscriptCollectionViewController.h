@@ -103,6 +103,7 @@
 - (double)_balloonHorizontalOffsetForParentChatItem:(id)arg1 contentAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 responsibleChatItems:(id*)arg3 individualOffsets:(id*)arg4;
 - (void)_collectionViewDidRestAsync:(bool)arg1;
 - (void)_deferredStartPlayback;
+- (void)_diffAssociatedItemsWithOldAssociatedItems:(id)arg1 removedAssociatedIndexes:(id*)arg2 insertedAssociatedIndexes:(id*)arg3;
 - (void)_downgradeMessageAtIndexPath:(id)arg1;
 - (void)_handleAssociatedMessageCellTapEvent:(id)arg1 isDoubleTap:(bool)arg2;
 - (void)_hideBalloonViewIfNecessaryForCell:(id)arg1 indexPath:(id)arg2;
@@ -125,7 +126,6 @@
 - (void)_startPlaybackWithIndexPaths:(id)arg1;
 - (void)_tearDownLoggingTapGestureRecognizer;
 - (void)_updateEffectViewFocusPoint:(id)arg1 effect:(id)arg2;
-- (void)_updateEffectViewFocusPoints;
 - (void)_updatePluginPlaybackManagerForInsertedChatItems:(id)arg1;
 - (void)addInvisibleInkEffectPauseReasons:(long long)arg1;
 - (void)addressBookChanged:(id)arg1;
@@ -187,6 +187,7 @@
 - (void)configureCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)configureSpeakerButtonCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (id)conversation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertedBoundsToCullFromView:(id)arg1;
 - (void)cullCellSubviews;
 - (id)currentEffectDecorationViews;
 - (id)currentEffectForCollectionView:(id)arg1 layout:(id)arg2;
@@ -321,6 +322,7 @@
 - (void)transferUpdated:(id)arg1;
 - (bool)transitionedFromComposing;
 - (id)updateAnimationGroup;
+- (void)updateEffectViewFocusPoints;
 - (void)updateInvisibleInkEffectsPaused;
 - (void)updateTranscript:(id /* block */)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(bool)arg6 completion:(id /* block */)arg7;

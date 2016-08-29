@@ -50,6 +50,7 @@
 - (void)addTokenString:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4;
 - (void)appleKeyboardsInternalSettingsChanged:(id)arg1;
 - (void)appleKeyboardsPreferencesChanged:(id)arg1;
+- (bool)bufferIsCompatibleWithContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg1 contextLength:(unsigned long long)arg2;
 - (id)bufferedTokenStrings;
 - (void)dealloc;
 - (id)delegate;

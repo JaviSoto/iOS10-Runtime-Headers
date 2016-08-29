@@ -114,6 +114,7 @@
 - (id)supportedDataclassesForAccountType:(id)arg1;
 - (id)syncableDataclassesForAccountType:(id)arg1;
 - (id)tetheredSyncSourceTypeForDataclass:(id)arg1;
+- (void)triggerKeychainMigrationIfNecessary:(id /* block */)arg1;
 - (id)typeIdentifierForDomain:(id)arg1;
 - (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
 - (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;

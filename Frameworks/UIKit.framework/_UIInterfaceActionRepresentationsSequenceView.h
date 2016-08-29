@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)_applyVisualStyle;
 - (void)_applyVisualStyleToSeparatedContentSequenceView;
+- (double)_contentFitCanScrollThreshold;
 - (void)_disableSeparatedContentSequenceViewToFit;
 - (void)_enableSeparatedContentSequenceViewToFit;
 - (bool)_isHorizontalLayout;

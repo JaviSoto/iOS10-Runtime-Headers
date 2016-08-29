@@ -4,6 +4,7 @@
 
 @interface HDSubserver : NSObject {
     HDClient * _client;
+    HDDaemon * _daemon;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
     HDServer * _server;

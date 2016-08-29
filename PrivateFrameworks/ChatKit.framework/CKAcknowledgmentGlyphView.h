@@ -3,7 +3,6 @@
  */
 
 @interface CKAcknowledgmentGlyphView : UIView {
-    long long  _acknowledgmentType;
     double  _animationDuration;
     UIColor * _glyphColor;
     struct CGPoint { 
@@ -17,7 +16,9 @@
 @property (nonatomic, retain) UIColor *glyphColor;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } glyphOffset;
 
++ (void)cacheGlyphView:(id)arg1;
 + (id)glyphViewForAcknowledgmentType:(long long)arg1;
++ (id)viewCache;
 
 - (void).cxx_destruct;
 - (long long)acknowledgmentType;

@@ -6,8 +6,7 @@
     double  _addToTabDuration;
     double  _addToTabEndRotation;
     double  _addToTabFadeOutDelay;
-    double  _addToTabPopDuration;
-    double  _addToTabPopScale;
+    double  _addToTabOpacity;
     double  _addToTabRotationDelay;
     double  _addToTabScaleDelay;
     bool  _addToTabSimulate;
@@ -20,6 +19,7 @@
     double  _assetsWidgetPlaceholderAspectRatio;
     long long  _curationAlgorithm;
     double  _defaultPriorityWidgetsLoadingDelay;
+    long long  _detailViewsToKeepLoaded;
     long long  _editorialLayoutActivityFeedItemCountThreshold;
     bool  _editorialLayoutAvoidSmallestTile;
     long long  _editorialLayoutColumns;
@@ -32,6 +32,7 @@
     bool  _peopleWidgetDisableSocialGroup;
     long long  _peopleWidgetMaximumNumberOfPeople;
     bool  _placesWidgetShowOnlyPlaceholder;
+    bool  _purgeOnMemoryWarning;
     bool  _showActionsWidget;
     bool  _showAssetsWidget;
     bool  _showDemoDynamicWidget;
@@ -48,8 +49,7 @@
 @property (nonatomic) double addToTabDuration;
 @property (nonatomic) double addToTabEndRotation;
 @property (nonatomic) double addToTabFadeOutDelay;
-@property (nonatomic) double addToTabPopDuration;
-@property (nonatomic) double addToTabPopScale;
+@property (nonatomic) double addToTabOpacity;
 @property (nonatomic) double addToTabRotationDelay;
 @property (nonatomic) double addToTabScaleDelay;
 @property (nonatomic) bool addToTabSimulate;
@@ -62,6 +62,7 @@
 @property (nonatomic) double assetsWidgetPlaceholderAspectRatio;
 @property (nonatomic) long long curationAlgorithm;
 @property (nonatomic) double defaultPriorityWidgetsLoadingDelay;
+@property (nonatomic) long long detailViewsToKeepLoaded;
 @property (nonatomic) long long editorialLayoutActivityFeedItemCountThreshold;
 @property (nonatomic) bool editorialLayoutAvoidSmallestTile;
 @property (nonatomic) long long editorialLayoutColumns;
@@ -74,6 +75,7 @@
 @property (nonatomic) bool peopleWidgetDisableSocialGroup;
 @property (nonatomic) long long peopleWidgetMaximumNumberOfPeople;
 @property (nonatomic) bool placesWidgetShowOnlyPlaceholder;
+@property (nonatomic) bool purgeOnMemoryWarning;
 @property (nonatomic) bool showActionsWidget;
 @property (nonatomic) bool showAssetsWidget;
 @property (nonatomic) bool showDemoDynamicWidget;
@@ -92,8 +94,7 @@
 - (double)addToTabDuration;
 - (double)addToTabEndRotation;
 - (double)addToTabFadeOutDelay;
-- (double)addToTabPopDuration;
-- (double)addToTabPopScale;
+- (double)addToTabOpacity;
 - (double)addToTabRotationDelay;
 - (double)addToTabScaleDelay;
 - (bool)addToTabSimulate;
@@ -106,6 +107,7 @@
 - (double)assetsWidgetPlaceholderAspectRatio;
 - (long long)curationAlgorithm;
 - (double)defaultPriorityWidgetsLoadingDelay;
+- (long long)detailViewsToKeepLoaded;
 - (long long)editorialLayoutActivityFeedItemCountThreshold;
 - (bool)editorialLayoutAvoidSmallestTile;
 - (long long)editorialLayoutColumns;
@@ -118,11 +120,11 @@
 - (bool)peopleWidgetDisableSocialGroup;
 - (long long)peopleWidgetMaximumNumberOfPeople;
 - (bool)placesWidgetShowOnlyPlaceholder;
+- (bool)purgeOnMemoryWarning;
 - (void)setAddToTabDuration:(double)arg1;
 - (void)setAddToTabEndRotation:(double)arg1;
 - (void)setAddToTabFadeOutDelay:(double)arg1;
-- (void)setAddToTabPopDuration:(double)arg1;
-- (void)setAddToTabPopScale:(double)arg1;
+- (void)setAddToTabOpacity:(double)arg1;
 - (void)setAddToTabRotationDelay:(double)arg1;
 - (void)setAddToTabScaleDelay:(double)arg1;
 - (void)setAddToTabSimulate:(bool)arg1;
@@ -136,6 +138,7 @@
 - (void)setCurationAlgorithm:(long long)arg1;
 - (void)setDefaultPriorityWidgetsLoadingDelay:(double)arg1;
 - (void)setDefaultValues;
+- (void)setDetailViewsToKeepLoaded:(long long)arg1;
 - (void)setEditorialLayoutActivityFeedItemCountThreshold:(long long)arg1;
 - (void)setEditorialLayoutAvoidSmallestTile:(bool)arg1;
 - (void)setEditorialLayoutColumns:(long long)arg1;
@@ -148,6 +151,7 @@
 - (void)setPeopleWidgetDisableSocialGroup:(bool)arg1;
 - (void)setPeopleWidgetMaximumNumberOfPeople:(long long)arg1;
 - (void)setPlacesWidgetShowOnlyPlaceholder:(bool)arg1;
+- (void)setPurgeOnMemoryWarning:(bool)arg1;
 - (void)setShowActionsWidget:(bool)arg1;
 - (void)setShowAssetsWidget:(bool)arg1;
 - (void)setShowDemoDynamicWidget:(bool)arg1;

@@ -89,6 +89,7 @@
 @property (getter=isExpectedEndpointOnPairedClientDevice, nonatomic) bool expectedEndpointOnPairedClientDevice;
 @property (nonatomic) int faceTimeIDStatus;
 @property (nonatomic, readonly) long long faceTimeTransportType;
+@property (nonatomic, readonly) TUHandle *handle;
 @property (nonatomic, copy) NSString *hardPauseDigits;
 @property (nonatomic, readonly, retain) NSString *hardPauseDigitsDisplayString;
 @property (nonatomic) int hardPauseDigitsState;
@@ -133,10 +134,10 @@
 @property (nonatomic, copy) NSString *sourceIdentifier;
 @property (nonatomic, readonly) double startTime;
 @property (nonatomic, readonly) int status;
-@property (getter=isStatusFinal, nonatomic, readonly) bool statusFinal;
 @property (nonatomic, readonly) bool statusIsProvisional;
 @property (readonly, copy) NSString *suggestedDisplayName;
 @property (nonatomic, readonly) bool supportsDTMFTones;
+@property (getter=isThirdPartyVideo, nonatomic, readonly) bool thirdPartyVideo;
 @property (nonatomic) int transitionStatus;
 @property (getter=isTTY, nonatomic, readonly) bool tty;
 @property (nonatomic, readonly) int ttyType;
@@ -163,7 +164,6 @@
 
 - (void).cxx_destruct;
 - (void)_handleStatusChange;
-- (bool)_isDestinationID:(id)arg1 equalToDestinationIDForVideoUpgrade:(id)arg2;
 - (int)abUID;
 - (void)answerWithRequest:(id)arg1;
 - (id)audioCategory;
@@ -207,6 +207,7 @@
 - (int)faceTimeIDStatus;
 - (long long)faceTimeTransportType;
 - (void)groupWithOtherCall:(id)arg1;
+- (id)handle;
 - (id)hardPauseDigits;
 - (id)hardPauseDigitsDisplayString;
 - (int)hardPauseDigitsState;
@@ -244,8 +245,8 @@
 - (bool)isOutgoing;
 - (bool)isSendingAudio;
 - (bool)isSendingVideo;
-- (bool)isStatusFinal;
 - (bool)isTTY;
+- (bool)isThirdPartyVideo;
 - (bool)isUplinkMuted;
 - (bool)isUsingBaseband;
 - (bool)isVideo;

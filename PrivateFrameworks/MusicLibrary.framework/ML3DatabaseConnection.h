@@ -36,7 +36,6 @@
 @property (nonatomic) <ML3DatabaseConnectionDelegate> *connectionDelegate;
 @property (nonatomic, readonly) NSUUID *currentTransactionID;
 @property (nonatomic, readonly) NSString *databasePath;
-@property (nonatomic) const void*iTunesExtensions;
 @property (nonatomic, readonly) bool isInTransaction;
 @property (nonatomic, readonly) bool isOpen;
 @property (setter=setReadOnly:, nonatomic) bool isReadOnly;
@@ -109,7 +108,6 @@
 - (bool)executeUpdate:(id)arg1;
 - (bool)executeUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;
 - (void)flush;
-- (const void*)iTunesExtensions;
 - (id)init;
 - (id)initWithDatabasePath:(id)arg1;
 - (bool)isEqual:(id)arg1;
@@ -145,7 +143,6 @@
 - (void)setCheckpointStatementThreshold:(unsigned long long)arg1;
 - (void)setConnectionDelegate:(id)arg1;
 - (void)setCurrentTransactionID:(id)arg1;
-- (void)setITunesExtensions:(const void*)arg1;
 - (void)setJournalingMode:(unsigned long long)arg1;
 - (void)setLogQueryPlans:(bool)arg1;
 - (void)setProfilingLevel:(int)arg1;

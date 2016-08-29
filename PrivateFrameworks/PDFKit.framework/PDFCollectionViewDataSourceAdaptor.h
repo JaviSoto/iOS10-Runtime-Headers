@@ -13,7 +13,7 @@
 @property (retain) NSObject<PDFCollectionViewDataSource> *wrappedDataSource;
 
 - (void).cxx_destruct;
-- (unsigned long long)_fittingItemsStrideForCollectionView:(id)arg1 outTotalItems:(unsigned long long*)arg2;
+- (double)_fittingItemsStrideForCollectionView:(id)arg1 outTotalItems:(unsigned long long*)arg2;
 - (bool)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

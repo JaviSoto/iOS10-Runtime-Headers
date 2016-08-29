@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)acknowledgmentGlyphView;
 - (void)configureWithMessageAcknowledgmentDescriptor:(id)arg1 initiallySelected:(bool)arg2;
+- (void)dealloc;
 - (id)delegate;
 - (bool)displaySelected;
 - (id)draft;

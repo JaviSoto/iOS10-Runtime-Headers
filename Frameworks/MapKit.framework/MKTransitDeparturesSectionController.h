@@ -20,6 +20,7 @@
 - (id)_descriptionForDepartureDate:(id)arg1 canIncludeDate:(bool)arg2;
 - (bool)_isDateLastDeparture:(id)arg1 withNextDepartureDate:(id)arg2 forSequence:(id)arg3;
 - (id)_nextLastDepartureDateForSequence:(id)arg1 afterDate:(id)arg2;
+- (id)_pagingFilter;
 - (void)_serviceGapDate:(out id*)arg1 string:(out id*)arg2 forSequence:(id)arg3 withDepartureIndex:(unsigned long long)arg4;
 - (void)_setNeedsBuildRows;
 - (bool)departuresAreVehicleSpecific;

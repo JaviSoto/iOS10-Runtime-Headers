@@ -15,9 +15,8 @@
 - (void).cxx_destruct;
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
 - (void)_createItemProvidersWithHome:(id)arg1;
-- (void)_didFinishUpdateTransactionWithAffectedItems:(id)arg1;
+- (id)_itemForSorting;
 - (id)_itemProviders;
-- (bool)_requiresNotificationsForCharacteristic:(id)arg1;
 - (id)favoriteItemProvider;
 - (id)initWithDelegate:(id)arg1 itemType:(unsigned long long)arg2;
 - (unsigned long long)itemType;

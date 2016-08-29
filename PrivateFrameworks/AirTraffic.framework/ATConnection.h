@@ -25,7 +25,6 @@
 - (void)connection:(id)arg1 updatedAssets:(id)arg2;
 - (void)connection:(id)arg1 updatedProgress:(id)arg2;
 - (void)connectionWasInterrupted:(id)arg1;
-- (void)dataMigrationFinished;
 - (void)dealloc;
 - (id)delegate;
 - (id)getAssetMetrics;

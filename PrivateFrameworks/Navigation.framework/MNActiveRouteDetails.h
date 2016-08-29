@@ -49,6 +49,8 @@
 @property (nonatomic) int transportType;
 
 - (void).cxx_destruct;
+- (int)StringAsNavigationType:(id)arg1;
+- (int)StringAsTransportType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decoderData;
@@ -71,6 +73,7 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)navigationType;
+- (id)navigationTypeAsString:(int)arg1;
 - (id)origin;
 - (bool)readFrom:(id)arg1;
 - (unsigned int)reconnectionRouteIndex;
@@ -97,6 +100,7 @@
 - (void)setTransportType:(int)arg1;
 - (id)suggestedRoute;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

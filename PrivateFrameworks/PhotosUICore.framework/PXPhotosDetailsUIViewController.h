@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPhotosDetailsUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXWidgetCompositionDelegate, UIViewControllerPreviewingDelegate> {
+@interface PXPhotosDetailsUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXPurgeableController, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXWidgetCompositionDelegate, UIViewControllerPreviewingDelegate> {
     Class  __barsControllerClass;
     PXWidgetComposition * __composition;
     bool  __hasAppeared;
@@ -19,6 +19,7 @@
     PXPhotosDetailsSpecManager * __specManager;
     PXSwipeSelectionManager * __swipeSelectionManager;
     PXPhotosDetailsViewModel * __viewModel;
+    NSMutableArray * __widgetDisablingDimmingViews;
     NSMapTable * __widgetOptions;
     PXWidgetSpec * __widgetSpec;
     NSArray * __widgets;
@@ -31,6 +32,7 @@
         double right; 
     }  _contentEdgeInsets;
     PXPhotosDetailsContext * _context;
+    bool  _empty;
     unsigned long long  _occludedContentEdges;
     unsigned long long  _options;
 }
@@ -51,6 +53,7 @@
 @property (nonatomic, readonly) PXPhotosDetailsSpecManager *_specManager;
 @property (setter=_setSwipeSelectionManager:, nonatomic, retain) PXSwipeSelectionManager *_swipeSelectionManager;
 @property (nonatomic, readonly) PXPhotosDetailsViewModel *_viewModel;
+@property (nonatomic, readonly) NSMutableArray *_widgetDisablingDimmingViews;
 @property (nonatomic, readonly) NSMapTable *_widgetOptions;
 @property (setter=_setWidgetSpec:, nonatomic, retain) PXWidgetSpec *_widgetSpec;
 @property (nonatomic, readonly) NSArray *_widgets;
@@ -60,6 +63,7 @@
 @property (nonatomic, readonly) PXPhotosDetailsContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEmpty, nonatomic) bool empty;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool keepsSourceRegionOfInterestContent;
 @property (nonatomic) unsigned long long occludedContentEdges;
@@ -119,9 +123,11 @@
 - (void)_updateScrollViewControllerContentInset;
 - (void)_updateStatusBarTitle;
 - (void)_updateTitleAndSubtitle;
+- (void)_updateWidgetDisablingWithAnimationOptions:(id)arg1;
 - (void)_updateWidgetSpec;
 - (id)_viewModel;
 - (id)_widgetAtLocation:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)_widgetDisablingDimmingViews;
 - (id)_widgetOptions;
 - (id)_widgetSpec;
 - (id)_widgets;
@@ -137,6 +143,7 @@
 - (id)initWithContext:(id)arg1 configuration:(id)arg2;
 - (id)initWithContext:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isEmpty;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (unsigned long long)occludedContentEdges;
 - (unsigned long long)options;
@@ -149,6 +156,7 @@
 - (id)previewActionItems;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)purgeIfPossible;
 - (bool)px_canPerformPinchTransitionWithMasterViewController:(id)arg1;
 - (bool)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
 - (bool)px_canPerformZoomTransitionWithMasterViewController:(id)arg1;
@@ -164,14 +172,17 @@
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
 - (void)setActionPerformerDelegate:(id)arg1;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEmpty:(bool)arg1;
 - (void)setOccludedContentEdges:(unsigned long long)arg1;
 - (bool)shouldUpdateStatusBarTitle;
 - (id)standaloneMapViewController;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)widgetComposition:(id)arg1 didUpdateCompositionWithDefaultAnimationOptions:(id)arg2;
 - (long long)widgetComposition:(id)arg1 loadingPriorityForWidget:(id)arg2;
 - (bool)widgetComposition:(id)arg1 requestViewControllerDismissalAnimated:(bool)arg2;
 - (bool)widgetComposition:(id)arg1 shouldUseEdgeToEdgeLayoutForWidget:(id)arg2;

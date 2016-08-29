@@ -15,6 +15,7 @@
     id /* block */  _showPreviewOfEventAtTime;
     NSDate * _startDate;
     id /* block */  _tableViewCellHook;
+    NSTimeZone * _timeZone;
     NSString * _title;
 }
 
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ tableViewCellHook;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
@@ -77,10 +79,12 @@
 - (void)setShowPreviewOfEventAtTime:(id /* block */)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTableViewCellHook:(id /* block */)arg1;
+- (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id /* block */)showPreviewOfEventAtTime;
 - (id)startDate;
 - (id /* block */)tableViewCellHook;
+- (id)timeZone;
 - (id)title;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
 

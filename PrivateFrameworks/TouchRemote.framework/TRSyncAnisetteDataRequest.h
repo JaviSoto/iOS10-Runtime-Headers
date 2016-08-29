@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRSyncAnisetteDataRequest : TRNearbyServicesCommunicationAbstractMessage {
+@interface TRSyncAnisetteDataRequest : TRRequestMessage {
     NSData * _simData;
 }
 

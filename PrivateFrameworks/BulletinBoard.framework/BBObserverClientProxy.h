@@ -49,7 +49,7 @@
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)handleResponse:(id)arg1;
+- (void)handleResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (unsigned long long)incrementedTransactionIDForBulletinID:(id)arg1;
 - (id)initWithServer:(id)arg1 connection:(id)arg2 calloutQueue:(id)arg3;
 - (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
@@ -59,6 +59,7 @@
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeeds:(unsigned long long)arg3;
 - (void)removeSection:(id)arg1;
 - (void)removeTransaction:(id)arg1;
+- (void)requestNoticesBulletinsForAllSections;
 - (void)requestNoticesBulletinsForSectionID:(id)arg1;
 - (id)server;
 - (void)setBulletinIDsToTransaction:(id)arg1;

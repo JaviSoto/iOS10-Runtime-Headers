@@ -6,6 +6,5 @@
 
 - (bool)isTopHit;
 - (id)parsecDomainIdentifier;
-- (id)sfSearchResultValue;
 
 @end

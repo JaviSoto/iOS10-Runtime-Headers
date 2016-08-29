@@ -19,6 +19,7 @@
 - (void)cancelAllTimers;
 - (void)cancelTimerForIdentifier:(id)arg1;
 - (void)cancelTimerForSequenceNumber:(unsigned long long)arg1;
+- (void)dealloc;
 - (id)init;
 - (id)initWithQueue:(id)arg1 timerCallback:(id /* block */)arg2;
 - (void)setIdentifier:(id)arg1 forSequenceNumber:(unsigned long long)arg2;

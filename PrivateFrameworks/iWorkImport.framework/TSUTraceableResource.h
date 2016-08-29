@@ -3,6 +3,7 @@
  */
 
 @interface TSUTraceableResource : NSObject {
+    NSHashTable * _monitoredTokens;
     NSString * _name;
     bool  _printTimeoutAsError;
     NSObject<OS_dispatch_queue> * _queue;

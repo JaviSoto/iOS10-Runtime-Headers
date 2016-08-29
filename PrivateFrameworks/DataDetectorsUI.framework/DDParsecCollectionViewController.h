@@ -4,7 +4,7 @@
 
 @interface DDParsecCollectionViewController : UINavigationController <DDParsecHostVCInterface, UIAdaptivePresentationControllerDelegate, UINavigationControllerDelegate> {
     NSArray * _actions;
-    UIView * _blurView;
+    UIVisualEffectView * _blurView;
     NSDictionary * _context;
     id /* block */  _dismissCompletionHandler;
     <DDParsecCollectionDelegate> * _parsecDelegate;
@@ -20,6 +20,7 @@
     bool  _sheetMode;
     bool  _showingError;
     bool  _showingFTE;
+    long long  _style;
     UITapGestureRecognizer * _tapGesture;
 }
 
@@ -29,9 +30,12 @@
 @property (copy) id /* block */ dismissCompletionHandler;
 @property (readonly) unsigned long long hash;
 @property <DDParsecCollectionDelegate> *parsecDelegate;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_blurEffect;
+- (id)_blurEffectWithTraitCollection:(id)arg1;
 - (void)_interactionEnded;
 - (void)_updatePreferredContentSize;
 - (id)actions;
@@ -42,11 +46,13 @@
 - (void)doneButtonPressed:(id)arg1;
 - (void)doneButtonPressed:(id)arg1 punchout:(bool)arg2;
 - (void)fetchRemoteViewControllerWithValidInput:(bool)arg1;
+- (void)getStatusBarHidden:(id /* block */)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithResult:(struct __DDResult { }*)arg1 context:(id)arg2;
 - (id)initWithString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)interactionEndedWithPunchout:(bool)arg1;
 - (void)openParsecURL:(id)arg1;
+- (void)openTrailerPunchout:(id)arg1;
 - (id)parsecDelegate;
 - (void)presentRemoteCollection:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
@@ -57,13 +63,16 @@
 - (void)setParsecDelegate:(id)arg1;
 - (void)setPreviewMode:(bool)arg1;
 - (void)setSheetMode:(bool)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)showError:(id)arg1;
 - (void)showSpinner;
 - (void)showingErrorView:(bool)arg1;
 - (void)showingFTE:(bool)arg1;
+- (long long)style;
 - (void)updateVisualMode;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

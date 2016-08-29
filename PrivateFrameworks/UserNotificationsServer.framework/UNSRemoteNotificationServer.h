@@ -36,6 +36,7 @@
 + (id)environmentFromAuditToken:(struct { unsigned int x1[8]; }*)arg1;
 
 - (void).cxx_destruct;
+- (id)_initWithSettingsService:(id)arg1 notificationRepository:(id)arg2 systemStateProvider:(id)arg3 attachmentsService:(id)arg4 applicationLauncher:(id)arg5 queue:(id)arg6 extensionQueue:(id)arg7 apsQueue:(id)arg8 applicationStateMonitor:(id)arg9;
 - (id)_portNameForEnvironmentName:(id)arg1;
 - (void)_queue_addAppDescriptions:(id)arg1;
 - (id)_queue_allTopicsForApplication:(id)arg1;
@@ -47,12 +48,15 @@
 - (void)_queue_appDidGetKilledByUser:(id)arg1;
 - (void)_queue_appImportanceChanged:(id)arg1;
 - (void)_queue_appStateDidChange:(id)arg1;
+- (void)_queue_applicationsDidAuthorizeNotificationSettings:(id)arg1;
+- (void)_queue_applicationsDidDenyNotificationSettings:(id)arg1;
 - (void)_queue_backgroundRefreshApplicationsDidChange;
 - (void)_queue_calculateTopics;
 - (bool)_queue_canDeliverMessageToBundle:(id)arg1;
 - (void)_queue_connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)_queue_connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
-- (void)_queue_deliverNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3 willShowAlert:(bool)arg4;
+- (void)_queue_deliverBackgroundContentAvailablePushForNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)_queue_deliverNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3;
 - (void)_queue_didReceiveIncomingMessage:(id)arg1;
 - (void)_queue_invalidateTokenForBundleIdentifier:(id)arg1;
 - (bool)_queue_isAppDebugging:(id)arg1;
@@ -76,11 +80,11 @@
 - (void)_queue_setBackgroundAppRefreshAllowed:(bool)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_setBackgroundDeliveryDisabled:(bool)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_tryToModifyNotificationRequest:(id)arg1 bundleIdentifier:(id)arg2 message:(id)arg3;
-- (void)_queue_userNotificationSettingsDidChange:(id)arg1;
 - (void)_queue_userNotificationsChangedStateForBundleIdentifier:(id)arg1 becameEnabled:(bool)arg2;
-- (void)_userNotificationSettingsDidChange:(id)arg1;
 - (void)allowsRemoteNotificationsForBundleIdentifier:(id)arg1 withResult:(id /* block */)arg2;
 - (void)applicationProcessDebuggingStateDidChange:(id)arg1;
+- (void)applicationsDidAuthorizeNotificationSettings:(id)arg1;
+- (void)applicationsDidDenyNotificationSettings:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)backgroundRefreshApplicationsDidChange;
@@ -89,7 +93,6 @@
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)dealloc;
 - (id)initWithSettingsService:(id)arg1 notificationRepository:(id)arg2 systemStateProvider:(id)arg3 attachmentsService:(id)arg4 applicationLauncher:(id)arg5;
-- (id)initWithSettingsService:(id)arg1 notificationRepository:(id)arg2 systemStateProvider:(id)arg3 attachmentsService:(id)arg4 applicationLauncher:(id)arg5 queue:(id)arg6 extensionQueue:(id)arg7 apsQueue:(id)arg8;
 - (void)invalidateTokenForRemoteNotificationsForBundleIdentifier:(id)arg1;
 - (id)observer;
 - (void)processManager:(id)arg1 didAddProcess:(id)arg2;

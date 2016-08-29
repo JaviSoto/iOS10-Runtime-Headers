@@ -11,9 +11,11 @@
 - (void)remoteInteractionSessionTextSessionDidBegin:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionTextSessionDidChange:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionTextSessionDidEnd:(SFRemoteTextSessionInfo *)arg1;
+- (void)serviceError:(NSError *)arg1;
 - (void)serviceReceivedEvent:(SFEventMessage *)arg1;
 - (void)serviceReceivedRequest:(SFRequestMessage *)arg1;
 - (void)serviceReceivedResponse:(SFResponseMessage *)arg1;
+- (void)sessionError:(NSError *)arg1;
 - (void)sessionReceivedEvent:(SFEventMessage *)arg1;
 - (void)sessionReceivedRequest:(SFRequestMessage *)arg1;
 - (void)sessionReceivedResponse:(SFResponseMessage *)arg1;

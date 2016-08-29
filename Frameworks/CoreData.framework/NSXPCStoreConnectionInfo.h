@@ -3,7 +3,7 @@
  */
 
 @interface NSXPCStoreConnectionInfo : NSObject {
-    NSPersistentStoreCoordinator * _coordinator;
+    NSXPCStoreServerPerConnectionCache * _cache;
     NSDictionary * _entitlements;
     int  _lock;
     struct { 
@@ -13,10 +13,11 @@
 }
 
 - (struct { unsigned int x1[8]; })auditToken;
+- (id)cache;
 - (void)dealloc;
 - (id)description;
 - (id)entitlements;
-- (id)initForToken:(struct { unsigned int x1[8]; })arg1 entitlementNames:(id)arg2 coordinator:(id)arg3;
+- (id)initForToken:(struct { unsigned int x1[8]; })arg1 entitlementNames:(id)arg2 cache:(id)arg3;
 - (id)persistentStoreCoordinator;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;

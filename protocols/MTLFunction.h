@@ -6,8 +6,7 @@
 @required
 
 - (<MTLDevice> *)device;
-- (unsigned long long)functionConstantIndexByName:(NSString *)arg1 type:(unsigned long long*)arg2;
-- (NSArray *)functionConstants;
+- (NSDictionary *)functionConstantsDictionary;
 - (unsigned long long)functionType;
 - (NSString *)label;
 - (NSString *)name;

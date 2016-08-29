@@ -86,6 +86,7 @@
 - (void)_handleBadPasswordResponse;
 - (bool)_handleUnauthorizedAccessError:(id)arg1;
 - (bool)_includeGeneralHeaders;
+- (id)_osLogDescription;
 - (id)_requestForLogging;
 - (void)_sendTimeSpentInNetworkingToProvider;
 - (bool)_shouldCreateCredentialForBasicOrDigestAuthChallenge:(id)arg1;

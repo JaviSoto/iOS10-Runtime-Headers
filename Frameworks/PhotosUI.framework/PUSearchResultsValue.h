@@ -31,6 +31,7 @@
 @property (readonly) unsigned long long hash;
 @property (setter=_setMemoryUUID:, retain) id memoryUUID;
 @property (readonly) double score;
+@property (readonly) unsigned long long searchCategories;
 @property (readonly, copy) NSString *searchString;
 @property (nonatomic, readonly) NSArray *searchTokens;
 @property (setter=_setSelectedDisplayTitle:, retain) NSString *selectedDisplayTitle;
@@ -49,7 +50,6 @@
 - (void)_setSelectedDisplayTitle:(id)arg1;
 - (void)_setUUIDs:(id)arg1;
 - (id)additionalUUIDs;
-- (unsigned long long)aggdCategoryMask;
 - (id)albumUUID;
 - (unsigned long long)approximateCount;
 - (id)assetLocalIdentifiersForPreview;
@@ -69,6 +69,7 @@
 - (id)memoryUUID;
 - (void)performAggdSelectionLog;
 - (double)score;
+- (unsigned long long)searchCategories;
 - (id)searchString;
 - (id)searchTokens;
 - (id)selectedDisplayTitle;

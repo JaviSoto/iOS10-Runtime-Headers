@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)addSubview:(id)arg1;
+- (void)addSubviewToScrollView:(struct NSObject { Class x1; }*)arg1;
 - (void)applyScrollInfo:(id)arg1;
 - (id)contentCoordinateSpace;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -24,6 +25,7 @@
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(bool)arg3;
 - (id)scrollView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewActiveRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewConstrainedVisibleRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewContentBounds;
 - (struct CGSize { double x1; double x2; })scrollViewContentSize;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

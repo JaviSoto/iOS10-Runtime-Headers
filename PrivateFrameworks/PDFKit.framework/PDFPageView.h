@@ -15,7 +15,6 @@
 - (void)PDFCoachMarkComplete:(id)arg1;
 - (void)_addPDFAnnotationButtonWidget:(id)arg1;
 - (void)_addPDFAnnotationChoiceWidget:(id)arg1;
-- (void)_addPDFAnnotationTextWidgetTextField:(id)arg1;
 - (void)_addPDFAnnotationTextWidgetTextView:(id)arg1;
 - (void)_setupPageAnnotations;
 - (void)addCoachMark:(id)arg1;
@@ -23,6 +22,7 @@
 - (void)buttonWidgetChanged:(id)arg1;
 - (void)dealloc;
 - (long long)displayBox;
+- (bool)hasBackgroundImage;
 - (void)hideTileLayer:(bool)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isPageVisible;
@@ -46,10 +46,18 @@
 - (void)setPage:(id)arg1;
 - (void)setSearchSelection:(id)arg1;
 - (void)setSelection:(id)arg1;
+- (void)setShouldAntiAlias:(bool)arg1;
+- (void)setState:(long long)arg1 onButtonWidgetAnnotation:(id)arg2 withButton:(id)arg3;
+- (void)setStringValue:(id)arg1 onChoiceWidgetAnnotation:(id)arg2 withTextField:(id)arg3;
+- (void)setStringValue:(id)arg1 onTextWidgetAnnotation:(id)arg2 withTextView:(id)arg3;
+- (void)setVisibilityDelegateIndex:(unsigned long long)arg1;
 - (bool)textFieldShouldBeginEditing:(id)arg1;
 - (bool)textFieldShouldEndEditing:(id)arg1;
 - (void)textWidgetChangedTextField:(id)arg1;
 - (void)textWidgetChangedTextView:(id)arg1;
+- (void)textWidgetDidBeginEditingTextField:(id)arg1;
+- (void)textWidgetDidEndEditingTextField:(id)arg1;
 - (void)updateVisibility;
+- (unsigned long long)visibilityDelegateIndex;
 
 @end

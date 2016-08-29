@@ -13,8 +13,10 @@
 - (void).cxx_destruct;
 - (void)_processPeopleSuggestions:(id)arg1 doRetry:(bool)arg2;
 - (void)_refreshPeopleSuggestionsAndRetryIfNoResults:(bool)arg1;
+- (void)clearCaches;
 - (id)init;
 - (id)initWithMock:(id /* block */)arg1;
 - (void)refreshMockPeopleSuggestions;
+- (void)waitForData;
 
 @end

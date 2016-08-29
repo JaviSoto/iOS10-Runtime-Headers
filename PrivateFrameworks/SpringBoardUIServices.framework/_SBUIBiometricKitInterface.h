@@ -7,6 +7,7 @@
     <_SBUIBiometricKitInterfaceDelegate> * _delegate;
     unsigned long long  _enrolledIdentitiesCount;
     int  _enrollmentChangedNotifyToken;
+    bool  _isFingerOn;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,9 +25,10 @@
 - (int)enableBackgroundFdet:(bool)arg1;
 - (bool)hasEnrolledIdentities;
 - (id)init;
+- (bool)isFingerOn;
 - (unsigned long long)lockoutState;
 - (void)matchResult:(id)arg1 withDetails:(id)arg2;
-- (int)matchWithMode:(unsigned long long)arg1;
+- (int)matchWithMode:(unsigned long long)arg1 andCredentialSet:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)statusMessage:(unsigned int)arg1;
 

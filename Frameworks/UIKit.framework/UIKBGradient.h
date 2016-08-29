@@ -15,6 +15,7 @@
     bool  _usesRGBColors;
 }
 
+@property (nonatomic, readonly) NSString *flatColorName;
 @property (nonatomic) bool horizontal;
 @property (nonatomic) double opacity;
 @property (nonatomic, readonly) bool usesRGBColors;
@@ -28,6 +29,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)flatColorName;
 - (bool)horizontal;
 - (id)initWith3Colors:(id)arg1 middleLocation:(double)arg2;
 - (id)initWithFlatColor:(id)arg1;

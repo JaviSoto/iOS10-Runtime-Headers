@@ -6,6 +6,7 @@
     FCFeedViewportBookmark * _adjustedFromBookmark;
     FCFeedViewportBookmark * _adjustedToBookmark;
     FCCloudContext * _context;
+    FCFeedDescriptor * _feedDescriptor;
     FCFeedViewportBookmark * _fromBookmark;
     double  _maxArticleAge;
     FCFeedViewportDiff * _resultDiff;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) FCFeedViewportBookmark *adjustedFromBookmark;
 @property (nonatomic, retain) FCFeedViewportBookmark *adjustedToBookmark;
 @property (nonatomic, retain) FCCloudContext *context;
+@property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, copy) FCFeedViewportBookmark *fromBookmark;
 @property (nonatomic) double maxArticleAge;
 @property (nonatomic, retain) FCFeedViewportDiff *resultDiff;
@@ -30,6 +32,7 @@
 - (id)adjustedFromBookmark;
 - (id)adjustedToBookmark;
 - (id)context;
+- (id)feedDescriptor;
 - (id)fromBookmark;
 - (double)maxArticleAge;
 - (void)operationWillFinishWithError:(id)arg1;
@@ -39,6 +42,7 @@
 - (void)setAdjustedFromBookmark:(id)arg1;
 - (void)setAdjustedToBookmark:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setFeedDescriptor:(id)arg1;
 - (void)setFromBookmark:(id)arg1;
 - (void)setMaxArticleAge:(double)arg1;
 - (void)setResultDiff:(id)arg1;

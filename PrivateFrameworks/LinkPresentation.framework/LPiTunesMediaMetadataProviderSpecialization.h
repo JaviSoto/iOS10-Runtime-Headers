@@ -11,22 +11,22 @@
     NSURLSession * _session;
     NSString * _storefrontCountryCode;
     NSString * _storefrontIdentifier;
+    long long  _type;
     <LPiTunesMediaUnresolvedMetadata> * _unresolvedMetadata;
 }
 
-+ (id)artworkURLFromDictionary:(id)arg1 height:(long long)arg2 width:(long long)arg3 cropStyle:(id)arg4 format:(id)arg5;
 + (id)assetArrayFromScreenshotArray:(id)arg1;
 + (id)assetArrayFromScreenshotDictionary:(id)arg1 usingPreferredPlatformArray:(id)arg2;
 + (id)assetArrayScreenshotArray:(id)arg1;
-+ (id)assetFromScreenshotDictionary:(id)arg1;
 + (long long)determineOrientationOfScreenshotsInArray:(id)arg1;
++ (id)extractOffers:(id)arg1;
 + (id)specializedMetadataProviderForURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)done;
 - (void)fail;
-- (id)initWithIdentifier:(id)arg1 storefrontCountryCode:(id)arg2 forURL:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 storefrontCountryCode:(id)arg3 forURL:(id)arg4;
 - (id)processResponseDictionary:(id)arg1;
 - (void)resolve;
 - (id)schema;

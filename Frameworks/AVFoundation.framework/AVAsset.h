@@ -22,6 +22,7 @@
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (id)assetProxyWithPropertyList:(id)arg1;
++ (id)assetWithData:(id)arg1 contentType:(id)arg2 options:(id)arg3;
 + (id)assetWithURL:(id)arg1;
 + (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(bool)arg4;
 
@@ -62,6 +63,7 @@
 - (void)_setFragmentMindingInterval:(double)arg1;
 - (void)_setIsAssociatedWithFragmentMinder:(bool)arg1;
 - (void)_tracksDidChange;
+- (id)_tracksWithClass:(Class)arg1;
 - (id)_weakReference;
 - (id)alternateTrackGroups;
 - (id)audioAlternatesTrackGroup;
@@ -83,6 +85,7 @@
 - (bool)hasProtectedContent;
 - (unsigned long long)hash;
 - (id)init;
+- (id)initWithData:(id)arg1 contentType:(id)arg2 options:(id)arg3;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (bool)isCompatibleWithAirPlayVideo;
 - (bool)isCompatibleWithSavedPhotosAlbum;
@@ -161,6 +164,12 @@
 + (id)keyPathsForValuesAffectingNaturalSizeWithPreferredTransforms;
 
 - (struct CGSize { double x1; double x2; })naturalSizeWithPreferredTransforms;
+
+// Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
+
+- (id)vcp_enabledTracksWithMediaType:(id)arg1;
+- (id)vcp_firstEnabledTrackWithMediaType:(id)arg1;
+- (bool)vcp_isMontage;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

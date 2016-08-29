@@ -8,6 +8,7 @@
     unsigned long long  _allStationsIndex;
     id  _currentlyPlayingRadioStation;
     MCDRadioDataSource * _dataSource;
+    bool  _didInitiatePlayback;
     NSArray * _featuredStations;
     bool  _featuredStationsFinishedLoading;
     unsigned long long  _featuredStationsIndex;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) id currentlyPlayingRadioStation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didInitiatePlayback;
 @property (nonatomic) bool featuredStationsFinishedLoading;
 @property (nonatomic) unsigned long long featuredStationsIndex;
 @property (readonly) unsigned long long hash;
@@ -60,6 +62,7 @@
 - (unsigned long long)allStationsIndex;
 - (id)currentlyPlayingRadioStation;
 - (void)dealloc;
+- (bool)didInitiatePlayback;
 - (void)didStartPlaying:(id)arg1;
 - (void)errorViewDidTapButton:(id)arg1;
 - (void)featuredStationsDidUpdate:(id)arg1;
@@ -76,6 +79,7 @@
 - (void)setActivityIndicator:(id)arg1;
 - (void)setAllStationsIndex:(unsigned long long)arg1;
 - (void)setCurrentlyPlayingRadioStation:(id)arg1;
+- (void)setDidInitiatePlayback:(bool)arg1;
 - (void)setFeaturedStationsFinishedLoading:(bool)arg1;
 - (void)setFeaturedStationsIndex:(unsigned long long)arg1;
 - (void)setLoadingTimer:(id)arg1;

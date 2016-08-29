@@ -15,6 +15,7 @@
     NSXPCConnection * _connection;
     NSDate * _connectionDate;
     CKDClientContext * _context;
+    long long  _hasTCCAuthorizationTernary;
     bool  _holdAllOperations;
     NSOperationQueue * _operationQueue;
     NSMutableDictionary * _operationStatisticsByClassName;
@@ -26,6 +27,8 @@
     NSObject<OS_dispatch_queue> * _setupQueue;
     NSString * _sourceApplicationBundleIdentifier;
     NSObject<OS_dispatch_queue> * _statusQueue;
+    NSOperationQueue * _tccAuthOpQueue;
+    NSObject<OS_dispatch_queue> * _tccAuthQueue;
     CKWatchdog * _watchdog;
 }
 
@@ -43,6 +46,7 @@
 @property (nonatomic, retain) CKDClientContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) long long hasTCCAuthorizationTernary;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool holdAllOperations;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
@@ -56,6 +60,8 @@
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *statusQueue;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSOperationQueue *tccAuthOpQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *tccAuthQueue;
 @property (nonatomic, retain) CKWatchdog *watchdog;
 
 + (id)sharedClientThrottlingOperationQueue;
@@ -63,7 +69,7 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)CKStatusReportArray;
-- (long long)_accountStatusWithClientContext:(id)arg1;
+- (void)_accountStatusWithClientContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_addOperationWithOperationInfo:(id)arg1 factoryBlock:(id /* block */)arg2;
 - (long long)_applicationPermissionStatusFromUserPrivacySetting:(long long)arg1;
 - (id)_clientPrefixEntitlement;
@@ -80,6 +86,8 @@
 - (bool)_hasEntitlementForKey:(id)arg1;
 - (bool)_hasEnvironmentEntitlement;
 - (bool)_isConnectionAuthorizedForOperation:(id)arg1 error:(id*)arg2;
+- (bool)_lockedHasTCCAuthorization;
+- (void)_lockedSetHasTCCAuthorizationTernary:(long long)arg1;
 - (id)_operationStatusReport:(id)arg1;
 - (void)_setApplicationPermission:(unsigned long long)arg1 enabled:(bool)arg2 setupInfo:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_setupClientWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -132,6 +140,7 @@
 - (void)getNewWebSharingIdentityWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getTCCAuthorizationWithCompletion:(id /* block */)arg1;
 - (bool)hasAllowAccessBeforeFirstUnlockSinceBootEntitlement;
 - (bool)hasAllowAccessDuringBuddyEntitlement;
 - (bool)hasCloudKitSystemServiceEntitlement;
@@ -144,6 +153,7 @@
 - (bool)hasParticipantPIIEntitlement;
 - (bool)hasProtectionDataEntitlement;
 - (bool)hasTCCAuthorization;
+- (long long)hasTCCAuthorizationTernary;
 - (bool)holdAllOperations;
 - (id)initWithConnection:(id)arg1;
 - (bool)isLongLived;
@@ -205,6 +215,8 @@
 - (void)setConnectionDate:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2 setupInfo:(id)arg3;
+- (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 setupInfo:(id)arg4;
+- (void)setHasTCCAuthorizationTernary:(long long)arg1;
 - (void)setHoldAllOperations:(bool)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setOperationStatisticsByClassName:(id)arg1;
@@ -214,6 +226,8 @@
 - (void)setSetupQueue:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setStatusQueue:(id)arg1;
+- (void)setTccAuthOpQueue:(id)arg1;
+- (void)setTccAuthQueue:(id)arg1;
 - (void)setWatchdog:(id)arg1;
 - (id)setupQueue;
 - (void)showAssetCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
@@ -222,6 +236,8 @@
 - (void)statusGroupsForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)statusQueue;
 - (void)systemAvailabilityChanged:(unsigned long long)arg1;
+- (id)tccAuthOpQueue;
+- (id)tccAuthQueue;
 - (void)tearDown;
 - (void)tossConfigWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updatePushTokens;

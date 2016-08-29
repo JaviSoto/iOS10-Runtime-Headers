@@ -31,6 +31,7 @@
     bool  _supportsWLAN;
     bool  _supportsWiFi;
     bool  _supportsiMessage;
+    bool  _wantsForcedCelluarQueries;
 }
 
 @property (nonatomic, readonly) NSDictionary *CTNetworkInformation;
@@ -92,6 +93,7 @@
 @property (nonatomic, readonly) NSDictionary *telephonyCapabilities;
 @property (nonatomic, readonly) NSString *userAgentString;
 @property (nonatomic, readonly) bool wantsBreakBeforeMake;
+@property (nonatomic, readonly) bool wantsForcedCelluarQueries;
 
 + (id)sharedInstance;
 
@@ -181,6 +183,7 @@
 - (id)telephonyCapabilities;
 - (id)userAgentString;
 - (bool)wantsBreakBeforeMake;
+- (bool)wantsForcedCelluarQueries;
 - (bool)wifiAllowedForBundleId:(id)arg1;
 
 @end

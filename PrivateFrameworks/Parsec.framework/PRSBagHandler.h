@@ -5,6 +5,7 @@
 @interface PRSBagHandler : NSObject {
     bool  _active;
     NSSet * _appBlacklist;
+    PARBag * _bag;
     NSObject<OS_dispatch_queue> * _bagQueue;
     long long  _cat_score_enum;
     long long  _cep_probability_factor;
@@ -28,6 +29,7 @@
     PRSRankingKnobs * _ranking_server_knobs;
     double  _searchRenderTimeout;
     long long  _status;
+    NSMutableArray * _tasks;
     bool  _waitingForLocation;
 }
 
@@ -50,7 +52,7 @@
 @property (nonatomic, readonly) NSString *lookupFirstUseDescription2;
 @property (nonatomic, readonly) NSString *lookupFirstUseLearnMore;
 @property (nonatomic, retain) NSDictionary *model_parameter_values;
-@property (nonatomic, retain) PRSRankingKnobs *ranking_server_knobs;
+@property (retain) PRSRankingKnobs *ranking_server_knobs;
 @property (readonly) double searchRenderTimeout;
 @property (nonatomic) long long status;
 
@@ -79,6 +81,7 @@
 - (id)fteLearnMoreString;
 - (id)fteLocString;
 - (id)geoUserSessionEntity;
+- (void)getFTEStringsWithReply:(id /* block */)arg1;
 - (id)init;
 - (bool)isEnabled;
 - (bool)isLocaleSupported:(id)arg1;
@@ -88,6 +91,8 @@
 - (id)model_parameter_values;
 - (void)parseCEPFromData:(id)arg1 forClient:(id)arg2;
 - (id)ranking_server_knobs;
+- (void)refreshGUID;
+- (void)removeTask:(id)arg1;
 - (double)searchRenderTimeout;
 - (bool)searchSupported:(bool)arg1;
 - (bool)sessionReady;
@@ -110,6 +115,9 @@
 - (void)setStatus:(long long)arg1;
 - (long long)status;
 - (id)supportedServices;
+- (void)triggerTaskWhenReady:(id)arg1;
+- (void)updateFromSession:(id)arg1 bag:(id)arg2 forClient:(id)arg3 error:(id)arg4;
+- (void)updateWithBagDictionary:(id)arg1 error:(id)arg2;
 - (void)updateWithDictionary:(id)arg1;
 - (id)userId;
 

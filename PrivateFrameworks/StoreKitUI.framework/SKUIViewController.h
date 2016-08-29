@@ -28,6 +28,8 @@
 - (id)_defaultLeftBarButtonItems;
 - (id)_defaultRightBarButtonItemsIsCompact:(bool)arg1;
 - (id)_getIPadSearchController;
+- (void)_presentWishlistFromPopover:(id)arg1;
+- (void)_presentWishlistFromSheet;
 - (void)_reloadForOrientation:(long long)arg1;
 - (void)_setWishlistButtonHidden:(bool)arg1;
 - (void)_showDialogWithError:(id)arg1;
@@ -36,6 +38,7 @@
 - (void)_wishlistPopoverDidDismiss;
 - (id)clientContext;
 - (void)dealloc;
+- (void)forceOrientationBackToSupportedOrientation;
 - (id)initWithTabBarItem:(id)arg1;
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)operationQueue;
@@ -45,6 +48,7 @@
 - (void)setOperationQueue:(id)arg1;
 - (void)showDefaultNavigationItems;
 - (void)showDefaultNavigationItemsForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)showDefaultNavigationItemsIsCompact:(bool)arg1;
 - (void)showError:(id)arg1;
 - (bool)showingError;
 - (void)skui_viewWillAppear:(bool)arg1;

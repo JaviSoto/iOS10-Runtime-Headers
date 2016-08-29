@@ -6,11 +6,13 @@
     double  _duration;
     NSString * _fbq;
     NSString * _parsecStatus;
+    NSString * _partialClientIp;
 }
 
 @property (nonatomic) double duration;
 @property (nonatomic, copy) NSString *fbq;
 @property (nonatomic, copy) NSString *parsecStatus;
+@property (nonatomic, copy) NSString *partialClientIp;
 
 + (bool)supportsSecureCoding;
 
@@ -19,10 +21,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fbq;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartSearch:(id)arg1 responseSize:(long long)arg2 statusCode:(long long)arg3 parsecStatus:(id)arg4 parsecDuration:(double)arg5 fbq:(id)arg6 networkTimingData:(id)arg7;
+- (id)initWithStartSearch:(id)arg1 responseSize:(long long)arg2 statusCode:(long long)arg3 parsecStatus:(id)arg4 parsecDuration:(double)arg5 fbq:(id)arg6 partialClientIp:(id)arg7 networkTimingData:(id)arg8;
 - (id)parsecStatus;
+- (id)partialClientIp;
 - (void)setDuration:(double)arg1;
 - (void)setFbq:(id)arg1;
 - (void)setParsecStatus:(id)arg1;
+- (void)setPartialClientIp:(id)arg1;
 
 @end

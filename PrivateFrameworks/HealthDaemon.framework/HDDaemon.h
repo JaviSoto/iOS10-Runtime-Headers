@@ -32,7 +32,6 @@
     NSObject<OS_dispatch_queue> * _mainQueue;
     HDNanoSyncManager * _nanoSyncManager;
     HDPluginManager * _pluginManager;
-    HDDatabase * _primaryPersonDatabase;
     HDPrimaryProfile * _primaryProfile;
     HDProcessStateManager * _processStateManager;
     NSObject<OS_dispatch_queue> * _queue;
@@ -75,7 +74,6 @@
 @property (readonly) NSObject<OS_dispatch_queue> *mainQueue;
 @property (nonatomic, retain) HDNanoSyncManager *nanoSyncManager;
 @property (readonly) HDPluginManager *pluginManager;
-@property (nonatomic, retain) HDDatabase *primaryPersonDatabase;
 @property (nonatomic, retain) HDPrimaryProfile *primaryProfile;
 @property (readonly) HDProcessStateManager *processStateManager;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
@@ -90,8 +88,10 @@
 - (void).cxx_destruct;
 - (id)IDSServiceWithIdentifier:(id)arg1;
 - (void)_applyPPTUpdatesWithDatabase:(id)arg1;
+- (void)_handleSigterm;
 - (void)_localeChanged:(id)arg1;
 - (bool)_motionTrackingAvailable;
+- (id)_newAWDSubmissionManager;
 - (id)_newBehavior;
 - (id)_newCompanionWorkoutCreditManager;
 - (id)_newContentProtectionMangaer;
@@ -116,7 +116,6 @@
 - (void)_setupMemoryWarningHandler;
 - (id)_setupSignal:(int)arg1 handler:(id /* block */)arg2;
 - (bool)_shouldInitializeDaemon;
-- (void)_terminating;
 - (void)_terminationCleanup;
 - (void)_unregisterLaunchEventDynamicallyForNotification:(const char *)arg1;
 - (void)_updateCurrentDeviceName;
@@ -140,6 +139,7 @@
 - (id)deviceManager;
 - (id)diagnosticDescription;
 - (void)didUpdateActiveWorkoutServers;
+- (void)exitImmediately:(bool)arg1 reason:(id)arg2;
 - (id)firstPartyWorkoutSnapshot;
 - (id)fitnessAppBadgeManager;
 - (id)fitnessFriendsManager;
@@ -147,6 +147,7 @@
 - (bool)healthDataReceived:(id)arg1 provenance:(id)arg2 error:(id*)arg3;
 - (id)healthDatabase;
 - (id)healthDeviceManager;
+- (id)healthDirectorySizeInBytes;
 - (id)healthDomainAccessorWithPairedDevice:(id)arg1;
 - (id)healthLiteUserDefaultsDomain;
 - (id)healthServiceManager;
@@ -161,6 +162,7 @@
 - (id)nanoPairedDeviceRegistry;
 - (id)nanoSyncManager;
 - (id)newClientWithConnection:(id)arg1;
+- (void)obliterateAndTerminateAsyncWithReason:(id)arg1;
 - (id)pairedSyncCoordinatorWithServiceName:(id)arg1;
 - (void)pauseAllActiveWorkoutsWithCompletion:(id /* block */)arg1;
 - (void)performBlockWithPowerAssertionIdentifier:(id)arg1 transactionName:(id)arg2 powerAssertionInterval:(double)arg3 block:(id /* block */)arg4;
@@ -168,7 +170,6 @@
 - (bool)persistAndNotifyDataObjects:(id)arg1 device:(id)arg2 error:(id*)arg3;
 - (id)pluginDataCollectorsForCollectionManager:(id)arg1;
 - (id)pluginManager;
-- (id)primaryPersonDatabase;
 - (id)primaryProfile;
 - (id)processStateManager;
 - (id)queue;
@@ -195,7 +196,6 @@
 - (void)setFitnessAppBadgeManager:(id)arg1;
 - (void)setFitnessFriendsManager:(id)arg1;
 - (void)setNanoSyncManager:(id)arg1;
-- (void)setPrimaryPersonDatabase:(id)arg1;
 - (void)setPrimaryProfile:(id)arg1;
 - (void)setRoutineGateway:(id)arg1;
 - (void)setServiceConnectionManager:(id)arg1;
@@ -206,7 +206,7 @@
 - (id)subscriptionManager;
 - (id)syncEngine;
 - (id)temporaryProfile;
-- (void)terminate;
+- (void)terminateWithReason:(id)arg1;
 - (void)unregisterForLaunchNotification:(const char *)arg1;
 - (id)userCharacteristicsManager;
 - (id)viewOnWakeService;

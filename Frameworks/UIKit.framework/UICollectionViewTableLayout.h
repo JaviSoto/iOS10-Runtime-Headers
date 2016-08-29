@@ -111,6 +111,7 @@
 @property (nonatomic, retain) NSMutableArray *insertIndexPaths;
 @property (getter=_isTableHeaderAutohiding, nonatomic, readonly) bool isTableHeaderAutohiding;
 @property (nonatomic, retain) UICollectionViewTableLayoutSwipeActionPullView *leftSwipeView;
+@property (getter=_marginWidth, nonatomic, readonly) double marginWidth;
 @property (nonatomic, readonly) UIColor *multiselectCheckmarkColor;
 @property (getter=_numberOfSections, nonatomic, readonly) long long numberOfSections;
 @property (nonatomic, readonly) bool overlapsSectionHeaderViews;
@@ -205,6 +206,7 @@
 - (id)_layoutAttributesForSeparatorWithIndexPath:(id)arg1;
 - (id)_layoutAttributesForViewElementKind:(id)arg1;
 - (bool)_makePullViewActive:(id)arg1 atIndexPath:(id)arg2;
+- (double)_marginWidth;
 - (double)_maxTitleWidthForFooterInSection:(long long)arg1;
 - (double)_maxTitleWidthForHeaderInSection:(long long)arg1;
 - (void)_moveCell:(id)arg1 toSwipeOffset:(double)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
@@ -286,9 +288,11 @@
 - (id)insertIndexPaths;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)invalidationContextForInteractivelyMovingItems:(id)arg1 withTargetPosition:(struct CGPoint { double x1; double x2; })arg2 previousIndexPaths:(id)arg3 previousPosition:(struct CGPoint { double x1; double x2; })arg4;
 - (bool)isEditing;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForInteractivelyMovingItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)leftSwipeView;

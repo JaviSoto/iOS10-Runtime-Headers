@@ -4,12 +4,14 @@
 
 @interface HMDAudioStreamInterface : HMDStreamInterface <AVCAudioStreamDelegate> {
     AVCAudioStream * _audioStream;
+    unsigned long long  _audioStreamSetting;
     <HMDAudioStreamInterfaceDelegate> * _delegate;
     double  _rtcpSendIntervalSec;
     bool  _streamStarted;
 }
 
 @property (nonatomic, retain) AVCAudioStream *audioStream;
+@property (nonatomic) unsigned long long audioStreamSetting;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) <HMDAudioStreamInterfaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -40,9 +42,10 @@
 - (bool)_initializeStreamRemoteSocketReceiver:(id)arg1;
 - (void)_pauseStream;
 - (void)_resumeStream;
-- (void)_setAudioSetting:(unsigned long long)arg1;
 - (void)_startStream:(id)arg1;
+- (void)_updateAudioSetting:(unsigned long long)arg1;
 - (id)audioStream;
+- (unsigned long long)audioStreamSetting;
 - (void)dealloc;
 - (id)delegate;
 - (long long)direction;
@@ -55,8 +58,8 @@
 - (double)rtcpSendIntervalSec;
 - (double)rtcpTimeOutIntervalSec;
 - (double)rtpTimeOutIntervalSec;
-- (void)setAudioSetting:(unsigned long long)arg1;
 - (void)setAudioStream:(id)arg1;
+- (void)setAudioStreamSetting:(unsigned long long)arg1;
 - (void)setDirection:(long long)arg1;
 - (void)setMute:(bool)arg1;
 - (void)setRtcpEnabled:(bool)arg1;
@@ -76,5 +79,6 @@
 - (void)streamDidStop:(id)arg1;
 - (bool)streamStarted;
 - (id)syncSource;
+- (void)updateAudioSetting:(unsigned long long)arg1;
 
 @end

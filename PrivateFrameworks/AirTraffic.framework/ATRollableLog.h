@@ -28,6 +28,7 @@
 - (id)_fullFilePathWithGenerationNumber:(int)arg1;
 - (void)_loadUpHandle;
 - (void)_rollLogs;
+- (void)_setFilePermissions:(id)arg1;
 - (void)_statFileIfNecessaryForRollingCheck;
 - (id)compressFile:(id)arg1;
 - (id)fh;

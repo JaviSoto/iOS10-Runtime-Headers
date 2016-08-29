@@ -4,7 +4,7 @@
 
 @interface HUQuickControlTemperatureController : HUQuickControlController
 
-@property (nonatomic, readonly) HFSimpleIncrementalControlItem *controlItem;
+@property (nonatomic, readonly) HFTemperatureThresholdControlItem *controlItem;
 
 + (Class)controlItemClass;
 + (bool)matchesControlItem:(id)arg1;

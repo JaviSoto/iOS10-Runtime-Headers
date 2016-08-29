@@ -15,6 +15,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *observers;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsContentExtensions;
 
 + (id)currentNotificationCenter;
 + (bool)supportsContentExtensions;
@@ -49,5 +50,6 @@
 - (void)setNotificationRequests:(id)arg1;
 - (void)setNotificationRequests:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setObservers:(id)arg1;
+- (bool)supportsContentExtensions;
 
 @end

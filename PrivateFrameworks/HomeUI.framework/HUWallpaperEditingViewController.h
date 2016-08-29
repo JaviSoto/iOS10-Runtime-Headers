@@ -6,6 +6,7 @@
     UIButton * _cancelButton;
     UIVisualEffectView * _cancelButtonBackgroundView;
     <HUWallpaperEditingViewControllerDelegate> * _delegate;
+    UIImage * _image;
     UIImageView * _imageView;
     UIScrollView * _scrollView;
     UIButton * _setButton;
@@ -20,6 +21,7 @@
 @property (nonatomic) <HUWallpaperEditingViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIButton *setButton;
@@ -36,8 +38,9 @@
 - (id)cancelButton;
 - (id)cancelButtonBackgroundView;
 - (id)delegate;
+- (id)image;
 - (id)imageView;
-- (id)initWithWallpaper:(id)arg1 delegate:(id)arg2;
+- (id)initWithWallpaper:(id)arg1 image:(id)arg2 delegate:(id)arg3;
 - (long long)preferredStatusBarUpdateAnimation;
 - (bool)prefersStatusBarHidden;
 - (id)scrollView;
@@ -46,6 +49,7 @@
 - (void)setCancelButton:(id)arg1;
 - (void)setCancelButtonBackgroundView:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setImage:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setSetButton:(id)arg1;

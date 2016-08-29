@@ -14,6 +14,7 @@
     NSString * _searchString;
     int  _searchType;
     int  _sortOrder;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSString *searchString;
 @property (nonatomic) int searchType;
 @property (nonatomic) int sortOrder;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (int)StringAsSearchType:(id)arg1;
@@ -69,6 +71,7 @@
 - (void)setViewportInfo:(id)arg1;
 - (int)sortOrder;
 - (id)sortOrderAsString:(int)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

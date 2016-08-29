@@ -52,6 +52,7 @@
 - (id)initWithFirstName:(id)arg1 phoneticFirstName:(id)arg2 middleName:(id)arg3 phoneticMiddleName:(id)arg4 lastName:(id)arg5 phoneticLastName:(id)arg6 organizationName:(id)arg7 jobTitle:(id)arg8 nickname:(id)arg9 relatedNames:(id)arg10 streetNames:(id)arg11 cityNames:(id)arg12 score:(double)arg13 source:(id)arg14;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)jobTitle;
 - (id)lastName;
 - (id)middleName;

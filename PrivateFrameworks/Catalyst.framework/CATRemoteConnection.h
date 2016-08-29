@@ -11,7 +11,9 @@
     CATRemoteConnectionSocketOptions * _socketOptions;
     bool  _usesSSL;
     NSObject<OS_dispatch_source> * mConnectionTimeoutTimer;
+    NSMutableArray * mEnqueuedStreamEvents;
     NSError * mInterruptionError;
+    bool  mIsScheduled;
     CATHTTPMessageParser * mMessageParser;
     long long  mPeerTrustState;
     NSMutableArray * mPendingSendDataContexts;
@@ -36,6 +38,7 @@
 + (void)createConnectionPairWithConnection:(id*)arg1 andConnection:(id*)arg2;
 
 - (void).cxx_destruct;
+- (void)_stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)close;
 - (void)configureStreamSocketOptions;
 - (void)connectionDidInterruptWithError:(id)arg1;
@@ -55,6 +58,8 @@
 - (void)delegateDidSecureUsingClientIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2;
 - (void)delegateDidSecureUsingServerIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2;
 - (void)delegateDidSendData:(id)arg1 userInfo:(id)arg2;
+- (id)description;
+- (void)enqueueEvent:(unsigned long long)arg1 forStream:(id)arg2;
 - (bool)evaluatePeerTrust:(struct __SecTrust { }*)arg1;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (id)initWithNetService:(id)arg1;

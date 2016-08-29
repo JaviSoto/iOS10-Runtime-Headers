@@ -42,6 +42,7 @@
 
 + (id)sharedAudioSystemController;
 + (id)sharedSystemController;
++ (id)sourceIdentifierForRouteID:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_handleDownlinkMuteDidChangeNotification:(id)arg1;
@@ -56,6 +57,7 @@
 - (id)_pickableRoutesForVoiceMailWithForceNewRequest:(bool)arg1;
 - (void)_updateCachedState;
 - (id)bestGuessPickableRoutesForAnyCall;
+- (id)currentlyPickedRouteIdForCategory:(id)arg1 andMode:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (bool)isDownlinkMuted;

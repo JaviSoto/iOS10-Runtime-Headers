@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSScene : NSObject {
-    NSArray * _layers;
-}
+@interface FBSScene : NSObject
 
 @property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
 @property (nonatomic, readonly, retain) NSArray *contexts;

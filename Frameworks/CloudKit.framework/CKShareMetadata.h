@@ -92,10 +92,6 @@
 - (void)setShare:(id)arg1;
 - (id)share;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-
-- (id)brc_documentName;
-
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (void)_decryptDataWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2;

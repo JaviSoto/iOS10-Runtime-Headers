@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFURLSessionTaskTransactionMetrics : NSURLSessionTaskTransactionMetrics {
+@interface __NSCFURLSessionTaskTransactionMetrics : NSURLSessionTaskTransactionMetrics <NSSecureCoding> {
     bool  __cellular;
     bool  __localCache;
     unsigned int  __redirected;
@@ -27,6 +27,8 @@
     NSDate * _secureConnectionStartDate;
 }
 
++ (bool)supportsSecureCoding;
+
 - (bool)_cellular;
 - (id)_initWithPerformanceTiming:(struct __PerformanceTiming { }*)arg1;
 - (bool)_localCache;
@@ -39,8 +41,10 @@
 - (id)description;
 - (id)domainLookupEndDate;
 - (id)domainLookupStartDate;
+- (void)encodeWithCoder:(id)arg1;
 - (id)fetchStartDate;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (bool)isProxyConnection;
 - (bool)isReusedConnection;
 - (id)networkProtocolName;

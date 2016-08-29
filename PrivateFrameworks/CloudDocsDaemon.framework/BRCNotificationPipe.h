@@ -34,8 +34,12 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) BRCNotificationManager *manager;
+@property (retain) BRCItemID *oldWatchedAncestorItemID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
+@property (retain) BRFileObjectID *watchedAncestorFileObjectID;
+@property (retain) NSString *watchedAncestorFilenameToItem;
+@property (retain) BRCItemID *watchedAncestorItemID;
 
 - (void).cxx_destruct;
 - (void)__flush;
@@ -59,10 +63,15 @@
 - (void)invalidateIfWatchingAppLibraryIDs:(id)arg1;
 - (void)invalidateReceiverIfWatchingAppLibraryIDs:(id)arg1;
 - (id)manager;
+- (id)oldWatchedAncestorItemID;
 - (void)processProgressUpdates:(id)arg1;
 - (void)processUpdates:(id)arg1;
 - (id)queue;
 - (void)setDelegate:(id)arg1;
+- (void)setOldWatchedAncestorItemID:(id)arg1;
+- (void)setWatchedAncestorFileObjectID:(id)arg1;
+- (void)setWatchedAncestorFilenameToItem:(id)arg1;
+- (void)setWatchedAncestorItemID:(id)arg1;
 - (void)watchItemAtURL:(id)arg1 lookup:(id)arg2 options:(unsigned short)arg3 reply:(id /* block */)arg4;
 - (void)watchItemAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id /* block */)arg3;
 - (void)watchItemInProcessAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id /* block */)arg3;
@@ -70,5 +79,8 @@
 - (void)watchScopes:(unsigned short)arg1 appLibraryIDs:(id)arg2 gatheringDone:(id /* block */)arg3;
 - (void)watchScopes:(unsigned short)arg1 gatheringDone:(id /* block */)arg2;
 - (void)watchScopes:(unsigned short)arg1 trustedAppLibraryIDs:(id)arg2 gatheringDone:(id /* block */)arg3;
+- (id)watchedAncestorFileObjectID;
+- (id)watchedAncestorFilenameToItem;
+- (id)watchedAncestorItemID;
 
 @end

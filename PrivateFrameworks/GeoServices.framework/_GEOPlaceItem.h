@@ -208,6 +208,7 @@
 - (id)initWithPlace:(id)arg1;
 - (id)initWithPlaceResult:(id)arg1;
 - (bool)isDisputed;
+- (bool)isEqualToMapItem:(id)arg1;
 - (bool)isEventAllDay;
 - (bool)isValid;
 - (id)name;

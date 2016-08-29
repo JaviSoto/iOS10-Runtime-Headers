@@ -46,9 +46,9 @@
 + (void)_accountForHypothesizerSendingHypothesis;
 + (void)_accountForLocationEnhancementSuccess;
 + (void)_accountForNoLocationEnhancementNeeded;
-+ (double)_maximumAllowableTravelTime;
-+ (double)_minimumAllowableTravelTime;
 + (double)fuzzyMaximumInitialUpdateIntervalBeforeStartDate;
++ (double)maximumAllowableTravelTime;
++ (double)minimumAllowableTravelTime;
 
 - (void).cxx_destruct;
 - (void)_accountForGeocodedEventEncounter;

@@ -59,8 +59,6 @@
 - (id)inviterID;
 - (bool)isCurrentUser;
 - (bool)isEqual:(id)arg1;
-- (bool)isEquivalentToParticipant:(id)arg1;
-- (bool)isEquivalentToParticipantWithPermissions:(id)arg1;
 - (long long)originalAcceptanceStatus;
 - (long long)originalParticipantType;
 - (long long)originalPermission;

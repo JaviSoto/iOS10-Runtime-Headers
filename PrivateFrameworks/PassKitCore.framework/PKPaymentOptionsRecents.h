@@ -3,10 +3,14 @@
  */
 
 @interface PKPaymentOptionsRecents : NSObject {
+    CNContact * _cachedMeContact;
+    bool  _meCardCachingEnabled;
+    <NSObject> * _meContactDidChangeNotificationObserver;
     CRRecentContactsLibrary * _recentContactsLibrary;
 }
 
 @property (nonatomic, readonly) CNContact *meCard;
+@property (getter=isMeCardCachingEnabled, nonatomic) bool meCardCachingEnabled;
 @property (nonatomic, retain) CRRecentContactsLibrary *recentContactsLibrary;
 
 + (id)_coreRecentsKindForPreference:(id)arg1;
@@ -25,6 +29,7 @@
 - (void)deleteRecent:(id)arg1;
 - (void)deleteRecentsForPreference:(id)arg1 callbackQueue:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
+- (bool)isMeCardCachingEnabled;
 - (id)meCard;
 - (id)meCardEntriesForPreference:(id)arg1;
 - (void)meCardEntriesForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
@@ -33,6 +38,7 @@
 - (id)recentsForPreference:(id)arg1;
 - (void)recentsForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)saveContactToCoreRecents:(id)arg1 preference:(id)arg2;
+- (void)setMeCardCachingEnabled:(bool)arg1;
 - (void)setRecentContactsLibrary:(id)arg1;
 
 @end

@@ -2,16 +2,20 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRestaurant : NSObject <NSCopying, NSSecureCoding> {
+@interface INRestaurant : NSObject <INRestaurantExport, NSCopying, NSSecureCoding> {
     CLLocation * _location;
     NSString * _name;
     NSString * _restaurantIdentifier;
     NSString * _vendorIdentifier;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) CLLocation *location;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *restaurantIdentifier;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *vendorIdentifier;
 
 + (bool)supportsSecureCoding;

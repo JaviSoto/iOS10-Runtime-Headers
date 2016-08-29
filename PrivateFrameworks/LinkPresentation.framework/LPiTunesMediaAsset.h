@@ -4,16 +4,21 @@
 
 @interface LPiTunesMediaAsset : NSObject {
     NSURL * _URL;
+    NSDictionary * _colors;
     NSString * _name;
 }
 
-@property (nonatomic, retain) NSURL *URL;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSDictionary *colors;
+@property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (id)initWithURL:(id)arg1 name:(id)arg2;
+- (id)colors;
+- (id)initWithURL:(id)arg1 colors:(id)arg2 name:(id)arg3;
+- (id)metadata;
 - (id)name;
+- (void)setColors:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setURL:(id)arg1;
 

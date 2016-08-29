@@ -7,15 +7,21 @@
 }
 
 @property (getter=get_enableTravelAdvisoriesForAutomaticBehavior, setter=set_enableTravelAdvisoriesForAutomaticBehavior:, nonatomic) bool enableTravelAdvisoriesForAutomaticBehavior;
+@property (getter=get_sqlProfileLoggingEnabled, setter=set_sqlProfileLoggingEnabled:, nonatomic) bool sqlProfileLoggingEnabled;
 @property (getter=get_suggestEventLocations, setter=set_suggestEventLocations:, nonatomic) bool suggestEventLocations;
+@property (getter=get_suggestedLocationsTestMode, setter=set_suggestedLocationsTestMode:, nonatomic) bool suggestedLocationsTestMode;
 
 + (id)shared;
 
 - (void).cxx_destruct;
 - (bool)get_enableTravelAdvisoriesForAutomaticBehavior;
+- (bool)get_sqlProfileLoggingEnabled;
 - (bool)get_suggestEventLocations;
+- (bool)get_suggestedLocationsTestMode;
 - (id)init;
 - (void)set_enableTravelAdvisoriesForAutomaticBehavior:(bool)arg1;
+- (void)set_sqlProfileLoggingEnabled:(bool)arg1;
 - (void)set_suggestEventLocations:(bool)arg1;
+- (void)set_suggestedLocationsTestMode:(bool)arg1;
 
 @end

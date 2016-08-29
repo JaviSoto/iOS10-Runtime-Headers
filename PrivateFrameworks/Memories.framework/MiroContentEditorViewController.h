@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroContentEditorViewController : UIViewController <MiroApplicationTestingEditorControlling, MiroAssetSuggestionsCollectionViewControllerDelegate, MiroEditorClipCellDataSource, MiroEditorClipCellDelegate, MiroEditorClipCollectionDataSource, MiroEditorClipCollectionDelegate, MiroEditorControllerDelegate, MiroTrimmerDelegate, UINavigationBarDelegate> {
+@interface MiroContentEditorViewController : UIViewController <MiroApplicationTestingEditorControlling, MiroAssetSuggestionsCollectionViewControllerDelegate, MiroAutoEditDownloadProgressControllerDelegate, MiroEditorClipCellDataSource, MiroEditorClipCellDelegate, MiroEditorClipCollectionDataSource, MiroEditorClipCollectionDelegate, MiroEditorControllerDelegate, MiroTrimmerDelegate, UINavigationBarDelegate> {
     UIBarButtonItem * _addBarButtonItem;
     NSString * _assetIdentifierToSnapToAfterAutoEdit;
     MiroAutoEditor * _autoEditor;
@@ -27,11 +27,9 @@
     bool  _isPerformingInteractiveMovement;
     CALayer * _maskLayerCompact;
     CALayer * _maskLayerRegular;
-    bool  _progressIncludesDownload;
-    RoundProgressViewController * _progressViewController;
+    MiroAutoEditDownloadProgressController * _progressController;
     long long  _removeClipEnteredCount;
     id /* block */  _revertUserAssetChangesBlock;
-    bool  _shouldHandleProgressUpdates;
     bool  _shouldNoteUserChangedAudioLevelForClip;
     double  _shouldNoteUserTrimmedClipWithPreviousDuration;
     UITapGestureRecognizer * _thumbnailTapGR;
@@ -87,11 +85,9 @@
 @property (nonatomic) bool isPerformingInteractiveMovement;
 @property (nonatomic, retain) CALayer *maskLayerCompact;
 @property (nonatomic, retain) CALayer *maskLayerRegular;
-@property (nonatomic) bool progressIncludesDownload;
-@property (nonatomic, retain) RoundProgressViewController *progressViewController;
+@property (nonatomic, retain) MiroAutoEditDownloadProgressController *progressController;
 @property (nonatomic) long long removeClipEnteredCount;
 @property (nonatomic, copy) id /* block */ revertUserAssetChangesBlock;
-@property (nonatomic) bool shouldHandleProgressUpdates;
 @property (nonatomic) bool shouldNoteUserChangedAudioLevelForClip;
 @property (nonatomic) double shouldNoteUserTrimmedClipWithPreviousDuration;
 @property (readonly) Class superclass;
@@ -124,10 +120,12 @@
 - (void)_addAssets:(id)arg1 removeAssets:(id)arg2;
 - (void)_addHighlightRectsToThumbnailForCell:(id)arg1;
 - (void)_addPOIInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toClip:(id)arg2;
-- (void)_alertSomeAssetsFailedToDownload:(unsigned long long)arg1 completion:(id /* block */)arg2;
+- (void)_adjustSnappedClipWhenSplitScreenClosesWorkaround;
+- (void)_alertSomeAssetsFailed:(unsigned long long)arg1 unsupported:(unsigned long long)arg2;
+- (void)_alertSomeAssetsFailedToDownload:(unsigned long long)arg1;
+- (void)_alertSomeAssetsFailedWithTitle:(id)arg1 message:(id)arg2 okActionBlock:(id /* block */)arg3;
 - (id)_assetsToAddToUsedAssetsForNewSelectedAssets:(id)arg1;
 - (id)_assetsToRemoveFromUsedAssetsForNewSelectedAssets:(id)arg1;
-- (void)_cancelProgress:(id)arg1;
 - (void)_commitEditChangesAndRefreshDebugOverlays:(id)arg1;
 - (void)_configureBottomToolbarForEverythingElse;
 - (void)_configureBottomToolbarForiPhonePortrait;
@@ -142,12 +140,8 @@
 - (void)_configureTopToolbarForiPhonePortrait;
 - (id)_debugBarButtonItems;
 - (void)_didEndEditingForClip:(id)arg1;
-- (void)_dismissProgressUserDidCancel:(bool)arg1 completion:(id /* block */)arg2;
-- (void)_dismissProgressWithCompletion:(id /* block */)arg1;
 - (id)_editorCellForIndexPath:(id)arg1;
 - (id)_faceRectsInViewSpaceForCell:(id)arg1;
-- (void)_handleAutoEditorChangedDownloadProgressNotification:(id)arg1;
-- (void)_handleAutoEditorChangedProgressNotification:(id)arg1;
 - (void)_handleAutoEditorDidCancelNotification:(id)arg1;
 - (void)_handleAutoEditorDidEndNotification:(id)arg1;
 - (void)_handleAutoEditorWillBeginNotification:(id)arg1;
@@ -157,7 +151,6 @@
 - (void)_muteClip:(id)arg1;
 - (unsigned long long)_nearestClipIndexForAssetID:(id)arg1 andClipMidTime:(int)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_poiRectInViewSpaceForCell:(id)arg1;
-- (void)_presentProgressWithCompletion:(id /* block */)arg1;
 - (void)_reloadCollectionViewsWithHintSnapToIndex:(unsigned long long)arg1;
 - (void)_removeClip:(id)arg1 atIndexPath:(id)arg2;
 - (bool)_removePOIsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromClip:(id)arg2;
@@ -194,6 +187,7 @@
 - (id)bottomPlayPauseBarButtonItem;
 - (id)bottomToolbar;
 - (id)clipCollection:(id)arg1 clipAtIndex:(long long)arg2;
+- (void)clipCollection:(id)arg1 didBeginDisplayingCell:(id)arg2 indexPath:(id)arg3;
 - (void)clipCollection:(id)arg1 didCancelInteractiveMovementForItemAtIndexPath:(id)arg2;
 - (void)clipCollection:(id)arg1 didEndDisplayingCell:(id)arg2 indexPath:(id)arg3;
 - (void)clipCollection:(id)arg1 didEndInteractiveMovementForItemAtIndexPath:(id)arg2;
@@ -244,8 +238,11 @@
 - (long long)preferredStatusBarStyle;
 - (bool)prefersStatusBarHidden;
 - (void)prepareForSegue:(id)arg1 sender:(id)arg2;
-- (bool)progressIncludesDownload;
-- (id)progressViewController;
+- (id)progressController;
+- (void)progressController:(id)arg1 didDismissSuccessfully:(bool)arg2;
+- (void)progressController:(id)arg1 noteUserCancelledDuring:(unsigned long long)arg2;
+- (void)progressController:(id)arg1 willDismissSuccessfully:(bool)arg2;
+- (id)progressControllerRootViewController:(id)arg1;
 - (void)removeClipAtIndexPath:(id)arg1;
 - (long long)removeClipEnteredCount;
 - (id /* block */)revertUserAssetChangesBlock;
@@ -273,11 +270,9 @@
 - (void)setIsPerformingInteractiveMovement:(bool)arg1;
 - (void)setMaskLayerCompact:(id)arg1;
 - (void)setMaskLayerRegular:(id)arg1;
-- (void)setProgressIncludesDownload:(bool)arg1;
-- (void)setProgressViewController:(id)arg1;
+- (void)setProgressController:(id)arg1;
 - (void)setRemoveClipEnteredCount:(long long)arg1;
 - (void)setRevertUserAssetChangesBlock:(id /* block */)arg1;
-- (void)setShouldHandleProgressUpdates:(bool)arg1;
 - (void)setShouldNoteUserChangedAudioLevelForClip:(bool)arg1;
 - (void)setShouldNoteUserTrimmedClipWithPreviousDuration:(double)arg1;
 - (void)setThumbnailTapGR:(id)arg1;
@@ -304,9 +299,9 @@
 - (void)setTrimmerTopConstraint:(id)arg1;
 - (void)setTrimmerTrailingConstraint:(id)arg1;
 - (void)setTrimmingCell:(id)arg1;
-- (bool)shouldHandleProgressUpdates;
 - (bool)shouldNoteUserChangedAudioLevelForClip;
 - (double)shouldNoteUserTrimmedClipWithPreviousDuration;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)thumbnailTapGR;
 - (id)timelineBottomConstraint;
 - (id)timelineHeightConstraint;

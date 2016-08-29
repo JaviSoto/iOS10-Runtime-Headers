@@ -2,15 +2,8 @@
    Image: /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/DifferentialPrivacy
  */
 
-@interface _DPJSONOutputHelper : NSObject {
-    unsigned long long  _version;
-}
+@interface _DPJSONOutputHelper : NSObject
 
-@property (nonatomic, readonly) unsigned long long version;
-
-- (id)init;
-- (id)initWithVersion:(unsigned long long)arg1;
-- (id)submissionContentForSegments:(id)arg1;
-- (unsigned long long)version;
++ (id)submissionContentForSegments:(id)arg1;
 
 @end

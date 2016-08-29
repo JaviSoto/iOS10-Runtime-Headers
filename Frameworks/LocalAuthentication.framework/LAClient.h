@@ -36,10 +36,11 @@
 - (void)externalizedContextWithReply:(id /* block */)arg1;
 - (void)failProcessedEvent:(long long)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
 - (id)initWithExistingContext:(id)arg1;
-- (void)invalidate;
+- (void)invalidateWithMessage:(id)arg1;
 - (void)invalidatedWithError:(id)arg1;
 - (void)isCredentialSet:(long long)arg1 reply:(id /* block */)arg2;
 - (void)prearmTouchIdWithReply:(id /* block */)arg1;
+- (void)resetWithReply:(id /* block */)arg1;
 - (id)serverPropertyForOption:(long long)arg1 error:(id*)arg2;
 - (void)serverPropertyForOption:(long long)arg1 reply:(id /* block */)arg2;
 - (void)setCredential:(id)arg1 forProcessedEvent:(long long)arg2 credentialType:(long long)arg3 reply:(id /* block */)arg4;

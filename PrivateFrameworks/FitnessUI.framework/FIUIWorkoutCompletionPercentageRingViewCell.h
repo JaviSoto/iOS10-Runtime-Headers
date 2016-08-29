@@ -21,7 +21,7 @@
 + (double)_ringToTypeSpacing;
 + (double)_ringTopPadding;
 + (double)_typeToPercentageSpacing;
-+ (double)rowHeightForWorkout:(id)arg1;
++ (double)rowHeightForWorkout:(id)arg1 width:(double)arg2;
 
 - (void).cxx_destruct;
 - (void)animateRingWithCompletion:(id /* block */)arg1;

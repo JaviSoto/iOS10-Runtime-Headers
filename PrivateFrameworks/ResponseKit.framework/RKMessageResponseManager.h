@@ -10,7 +10,6 @@
 @property (retain) RKResponseCollection *collection;
 @property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 
-+ (id)getEntities:(id)arg1;
 + (id)sharedManager;
 
 - (void).cxx_destruct;

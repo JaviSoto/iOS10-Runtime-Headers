@@ -5,7 +5,7 @@
 @interface FBUpdateSceneTransaction : FBTransaction <FBSceneManagerObserver, FBSynchronizedTransaction> {
     FBSSceneDefinition * _definition;
     bool  _destroyed;
-    FBWaitForSceneDestructionTransaction * _destuctionTransaction;
+    FBWaitForSceneDestructionTransaction * _destructionTransaction;
     bool  _didCommit;
     FBSSceneParameters * _parameters;
     bool  _readyToCommit;

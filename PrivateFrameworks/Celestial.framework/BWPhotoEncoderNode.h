@@ -6,9 +6,14 @@
     struct FigPhotoCompressionSession { } * _compressionSession;
     bool  _croppingEnabled;
     NSDictionary * _inputColorInfo;
+    FigCapturePixelConverter * _jpegPixelConverter;
     NSObject<OS_dispatch_group> * _previewGenerationGroup;
     NSObject<OS_dispatch_queue> * _previewGenerationQueue;
     FigCapturePixelConverter * _previewPixelConverter;
+    struct { 
+        int width; 
+        int height; 
+    }  _sourceVideoDimensions;
 }
 
 + (void)_addQualityOptionsToDictionary:(id)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 stillImageSettings:(id)arg3;
@@ -32,5 +37,7 @@
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setCroppingEnabled:(bool)arg1;
 - (void)setInputColorInfo:(id)arg1;
+- (void)setSourceVideoDimensions:(struct { int x1; int x2; })arg1;
+- (struct { int x1; int x2; })sourceVideoDimensions;
 
 @end

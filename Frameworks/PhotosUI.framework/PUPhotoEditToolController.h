@@ -58,6 +58,7 @@
 - (void)animateBecomingActiveTool;
 - (void)animateResigningActiveTool;
 - (void)baseLivePhotoInvalidated;
+- (void)basePhotoInvalidated;
 - (bool)canResetToDefaultValue;
 - (void)dealloc;
 - (id)delegate;

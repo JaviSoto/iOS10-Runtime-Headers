@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) double transitionProgress;
 
 - (void).cxx_destruct;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)_cancelPreviewInteraction;
 - (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(double)arg2 ended:(bool)arg3;
 - (void)previewInteractionDidCancel:(id)arg1;
 - (void)reset;

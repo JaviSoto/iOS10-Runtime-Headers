@@ -37,6 +37,7 @@
 - (void)_presentRemoteApprovalViewControllerWithEscapeOfferMask:(unsigned long long)arg1;
 - (void)_presentRemoteSecretControllerWithNewestDevice:(id)arg1;
 - (void)_presentRootController:(id)arg1 completion:(id /* block */)arg2;
+- (id)_remoteApprovalEscapeOption;
 - (id)_remoteSecretControllerForDevice:(id)arg1;
 - (id)_remoteSecretControllerForNewestDevice:(id)arg1;
 - (id)_resetAccountDataEscapeOption;

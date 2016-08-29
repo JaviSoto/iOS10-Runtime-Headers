@@ -17,13 +17,13 @@
 
 + (id)attributedStringWithMatchHighlightedWithString:(id)arg1 withinString:(id)arg2 usingAttributes:(id)arg3 insideFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 + (id)attributesByHighlightingAttributes:(id)arg1;
-+ (id)authorNameToHighlightForNote:(id)arg1 fromSearchResult:(id)arg2;
-+ (id)bestMatchOfString:(id)arg1 withinString:(id)arg2;
++ (id)authorNameToHighlightForNote:(id)arg1 fromSearchResult:(id)arg2 matchWordBoundaries:(bool)arg3;
++ (id)bestMatchOfString:(id)arg1 withinString:(id)arg2 matchWordBoundaries:(bool)arg3;
 + (id)bestMatchTokensForString:(id)arg1;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForAttributedString:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2;
 + (bool)canFitAttributedString:(id)arg1 ellipses:(id)arg2 shouldPrefixWithEllipses:(bool)arg3 insideFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
-+ (id)firstMatchOfString:(id)arg1 withinString:(id)arg2;
-+ (id)regularExpressionForSearchingWithString:(id)arg1;
++ (id)firstMatchOfString:(id)arg1 withinString:(id)arg2 matchWordBoundaries:(bool)arg3;
++ (id)regularExpressionForSearchingWithString:(id)arg1 matchWordBoundaries:(bool)arg2;
 + (id)snippetWithMatchHighlightedForNote:(id)arg1 fromSearchResult:(id)arg2 usingAttributes:(id)arg3 insideFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 + (id)stringMatchHighlightedForAttributedString:(id)arg1 fromSearchResult:(id)arg2;
 + (id)stringMatchHighlightedForString:(id)arg1 atributedString:(id)arg2 searchString:(id)arg3;
@@ -32,6 +32,7 @@
 
 - (void).cxx_destruct;
 - (id)bestMatchWithinString:(id)arg1;
+- (id)bestMatchWithinString:(id)arg1 matchWordBoundaries:(bool)arg2;
 - (long long)compareByModificationDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

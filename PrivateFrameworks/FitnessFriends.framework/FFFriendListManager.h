@@ -11,12 +11,14 @@
     HKActivitySummaryQuery * _meQuery;
     long long  _meQueryRetries;
     FIUIModel * _model;
+    FIUIClientToken * _modelQueryToken;
     NSObject<OS_dispatch_queue> * _readWriteQueue;
+    bool  _shouldGenerateDemoData;
     FIUIWorkoutDataProvider * _workoutDataProvider;
 }
 
 - (void).cxx_destruct;
-- (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_calendarDayChangedNotification:(id)arg1;
 - (id)_copyFriends;
 - (void)_createFakeFriends;
@@ -44,13 +46,12 @@
 - (void)_stopQueries;
 - (id)allActiveFriendsAsRecipients;
 - (id)allDestinationsForActiveOrPendingFriends;
-- (bool)canShowActivitySharing;
 - (void)dealloc;
 - (void)enumerateValidDisplayModesForFilter:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)friendWithUUID:(id)arg1;
 - (bool)hasAnyFriendsSetup;
 - (id)init;
-- (id)initWithModel:(id)arg1;
+- (id)initWithModel:(id)arg1 andWorkoutDataProvider:(id)arg2;
 - (id)me;
 - (unsigned long long)numberOfFriendsWithInvitesAwaitingResponseFromMe;
 - (id)sectionForFriendsHidingDataFromMe;

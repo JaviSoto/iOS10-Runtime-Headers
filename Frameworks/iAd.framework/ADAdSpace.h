@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@interface ADAdSpace : NSObject <ADAdSpaceRemoteViewControllerDelegate, ADAdSpace_RPC, ADPrivacyViewControllerInternalDelegate, UIViewControllerTransitioningDelegate> {
+@interface ADAdSpace : NSObject <ADAdSpaceRemoteViewControllerDelegate, ADAdSpace_RPC, ADPrivacyViewControllerInternalDelegate, ADWebViewActionViewControllerDelegate, UIViewControllerTransitioningDelegate> {
     bool  _actionViewControllerReadyForPresentation;
     bool  _actionViewControllerWantsDismissal;
     NSDictionary * _adToLoad;
@@ -13,10 +13,12 @@
     ADAdActionPublicAttributes * _currentActionPublicAttributes;
     ADAdImpressionPublicAttributes * _currentAdImpressionPublicAttributes;
     bool  _fastVisibilityContextIsFeed;
+    bool  _gettingSnapshot;
     NSString * _identifier;
     UIImageView * _imageView;
     bool  _isModalInterstitial;
     double  _lastSlowCheck;
+    long long  _lastSnapshottingOrientation;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -48,6 +50,7 @@
     bool  _shouldPresentActionViewControllerWhenReady;
     long long  _visibility;
     bool  _visibilityCheckScheduled;
+    ADWebViewActionViewController * _webViewActionViewController;
 }
 
 @property (nonatomic) bool actionViewControllerReadyForPresentation;
@@ -64,11 +67,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool fastVisibilityContextIsFeed;
+@property (nonatomic) bool gettingSnapshot;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic) bool isModalInterstitial;
 @property (nonatomic) double lastSlowCheck;
+@property (nonatomic) long long lastSnapshottingOrientation;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } nativeAdFrame;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } placeholderImageRect;
 @property (nonatomic, retain) _ADRemoteViewController *portraitOnlyViewController;
@@ -84,6 +89,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) long long visibility;
 @property (nonatomic) bool visibilityCheckScheduled;
+@property (nonatomic, retain) ADWebViewActionViewController *webViewActionViewController;
 
 + (long long)_modalTansitionStyleForTransitionType:(int)arg1;
 
@@ -91,6 +97,7 @@
 - (void)_clientApplicationDidEnterBackground;
 - (void)_closeConnectionIfNecessary;
 - (void)_considerPresentingActionViewController;
+- (void)_considerPresentingWebViewActionViewController;
 - (bool)_contextForFeldsparClientIsFeed:(id)arg1;
 - (void)_presentPrivacyViewController;
 - (void)_remote_actionViewControllerReadyForPresentation;
@@ -111,6 +118,7 @@
 - (void)_remote_setRequiresFastVisibilityTestOnly:(bool)arg1;
 - (void)_remote_updateViewControllerSupportedOrientations:(unsigned long long)arg1;
 - (void)_requestServiceAdSpace;
+- (void)_resetWebActionViewController;
 - (void)_updateAllProperties;
 - (bool)actionViewControllerReadyForPresentation;
 - (bool)actionViewControllerWantsDismissal;
@@ -137,13 +145,16 @@
 - (void)determineActionForTapAtLocation:(struct CGPoint { double x1; double x2; })arg1 inFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 completeHandler:(id /* block */)arg3;
 - (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withTapLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (bool)fastVisibilityContextIsFeed;
+- (bool)gettingSnapshot;
 - (id)identifier;
 - (id)imageView;
 - (id)initForRecipient:(id)arg1;
 - (void)installCreativeView;
+- (void)installImageView;
 - (void)interstitialWasRemovedFromSuperview;
 - (bool)isModalInterstitial;
 - (double)lastSlowCheck;
+- (long long)lastSnapshottingOrientation;
 - (void)loadAd:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nativeAdFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })placeholderImageRect;
@@ -156,6 +167,7 @@
 - (bool)remoteViewControllerShouldAnimate:(id)arg1;
 - (void)reportNativeClickEvent;
 - (bool)requiresFastVisibiltyTestOnly;
+- (void)safariViewControllerDidFinish:(id)arg1;
 - (id)serverURL;
 - (id)serviceAdSpace;
 - (bool)serviceAdSpaceRequestInProgress;
@@ -170,10 +182,12 @@
 - (void)setCurrentActionPublicAttributes:(id)arg1;
 - (void)setCurrentAdImpressionPublicAttributes:(id)arg1;
 - (void)setFastVisibilityContextIsFeed:(bool)arg1;
+- (void)setGettingSnapshot:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setIsModalInterstitial:(bool)arg1;
 - (void)setLastSlowCheck:(double)arg1;
+- (void)setLastSnapshottingOrientation:(long long)arg1;
 - (void)setNativeAdFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPlaceholderImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPortraitOnlyViewController:(id)arg1;
@@ -186,6 +200,7 @@
 - (void)setShouldPresentActionViewControllerWhenReady:(bool)arg1;
 - (void)setVisibility:(long long)arg1;
 - (void)setVisibilityCheckScheduled:(bool)arg1;
+- (void)setWebViewActionViewController:(id)arg1;
 - (bool)shouldPresentActionViewControllerWhenReady;
 - (void)showAdTransparency;
 - (void)showPlaceholderImage:(bool)arg1;
@@ -194,5 +209,7 @@
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (long long)visibility;
 - (bool)visibilityCheckScheduled;
+- (id)webViewActionViewController;
+- (void)webViewActionViewControllerHomeButtonWasTapped:(id)arg1;
 
 @end

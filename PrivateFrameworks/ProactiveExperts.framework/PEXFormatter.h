@@ -3,6 +3,8 @@
  */
 
 @interface PEXFormatter : NSObject {
+    NSDateFormatter * _birthdayFormatter;
+    NSDateFormatter * _chineseBirthdayFormatter;
     NSCache * _dateFormatCache;
     long long  _dateFormatCacheOnce;
     NSDateFormatter * _dateFormatter;
@@ -10,7 +12,10 @@
     NSLocale * _locale;
     NSCache * _localizedLabelCache;
     long long  _localizedLabelCacheOnce;
+    NSDateFormatter * _longEventFormatter;
     NSDictionary * _queryCriteria;
+    NSDateFormatter * _shortEventFormatter;
+    NSDateFormatter * _yearlessChineseBirthdayFormatter;
 }
 
 + (id)formatterWithQueryCriteria:(id)arg1;
@@ -20,6 +25,11 @@
 - (id)_dateFormatForTemplate:(id)arg1;
 - (id)_dateFromComponents:(id)arg1 destinationCalendar:(id)arg2;
 - (bool)_isYearlessComponents:(id)arg1;
+- (id)_makeBirthdayFormatter;
+- (id)_makeChineseBirthdayFormatter;
+- (id)_makeLongEventFormatter;
+- (id)_makeShortEventFormatter;
+- (id)_makeYearlessChineseBirthdayFormatter;
 - (void)_precacheDateFormats;
 - (void)_precacheLabelLocalizations;
 - (id)formattedBirthday:(id)arg1;

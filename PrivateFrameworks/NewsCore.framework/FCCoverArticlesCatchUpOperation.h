@@ -4,37 +4,27 @@
 
 @interface FCCoverArticlesCatchUpOperation : FCOperation {
     FCCloudContext * _context;
-    NSDate * _date;
     NSError * _error;
-    NSDictionary * _feedContextByFeedID;
-    NSArray * _feedItems;
-    NSArray * _supplementalFeedItems;
+    NSArray * _headlines;
+    NSArray * _supplementalHeadlines;
 }
 
 @property (nonatomic, retain) FCCloudContext *context;
-@property (nonatomic, retain) NSDate *date;
 @property (retain) NSError *error;
-@property (copy) NSDictionary *feedContextByFeedID;
-@property (copy) NSArray *feedItems;
-@property (copy) NSArray *supplementalFeedItems;
-
-+ (void)initialize;
+@property (copy) NSArray *headlines;
+@property (copy) NSArray *supplementalHeadlines;
 
 - (void).cxx_destruct;
-- (void)_generateSupplementaFeedRequestsWithCompletionHandler:(id /* block */)arg1;
+- (id)_supplementalCoverArticleListIDs;
 - (id)context;
-- (id)date;
 - (id)error;
-- (id)feedContextByFeedID;
-- (id)feedItems;
+- (id)headlines;
 - (void)performOperation;
 - (void)setContext:(id)arg1;
-- (void)setDate:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setFeedContextByFeedID:(id)arg1;
-- (void)setFeedItems:(id)arg1;
-- (void)setSupplementalFeedItems:(id)arg1;
-- (id)supplementalFeedItems;
+- (void)setHeadlines:(id)arg1;
+- (void)setSupplementalHeadlines:(id)arg1;
+- (id)supplementalHeadlines;
 - (bool)validateOperation;
 
 @end

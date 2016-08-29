@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)attributes;
+- (id)description;
 - (bool)hasPrefetchedData;
 - (id)initWithAttributes:(id)arg1;
 - (void)setAttributes:(id)arg1;

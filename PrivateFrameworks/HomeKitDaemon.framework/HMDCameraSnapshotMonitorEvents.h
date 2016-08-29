@@ -4,6 +4,7 @@
 
 @interface HMDCameraSnapshotMonitorEvents : NSObject <HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
     HMDAccessory * _accessory;
+    HMDBulletinBoard * _bulletinBoard;
     NSString * _bulletinImagesDirectory;
     NSMutableSet * _characteristicsList;
     NSString * _logID;
@@ -16,6 +17,7 @@
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
+@property (nonatomic, readonly) HMDBulletinBoard *bulletinBoard;
 @property (nonatomic, readonly) NSString *bulletinImagesDirectory;
 @property (nonatomic, readonly) NSMutableSet *characteristicsList;
 @property (readonly, copy) NSString *debugDescription;
@@ -35,16 +37,21 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_characteristicsUpdated:(id)arg1;
+- (void)_characteristicsUpdated:(id)arg1 modifiedCharacteristics:(id)arg2;
+- (void)_enableNotificationForCharacteristics:(id)arg1;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
+- (void)_handleRemoteNotification:(id)arg1;
 - (void)_handleSnapshotResponse:(id)arg1 cameraSessionID:(id)arg2 changedCharacteristics:(id)arg3 response:(id)arg4 responseTimer:(id)arg5;
 - (void)_monitorForEventsForServices:(id)arg1;
+- (void)_sendReleaseSnapshot:(id)arg1;
 - (void)_subscribeToNotifications;
 - (id)accessory;
+- (id)bulletinBoard;
 - (id)bulletinImagesDirectory;
 - (id)characteristicsList;
 - (void)dealloc;
 - (void)handleAccessoryReachable:(id)arg1;
+- (void)handleRemoteNotificationGenerated:(id)arg1;
 - (id)initWithSnapshotManager:(id)arg1 accessory:(id)arg2 workQueue:(id)arg3 msgDispatcher:(id)arg4;
 - (id)logID;
 - (id)logIdentifier;

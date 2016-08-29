@@ -19,6 +19,7 @@
 + (id)defaultKeys;
 
 - (void).cxx_destruct;
+- (void)_cacheIndentationLevelWithSortPathComponents:(id)arg1;
 - (void)_modelChanged;
 - (void)_removeCachedValues;
 - (bool)attributesModified:(id)arg1;

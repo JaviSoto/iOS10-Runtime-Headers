@@ -23,6 +23,7 @@
 - (id)initWithDomain:(long long)arg1 itemIdentifier:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)itemIdentifier;
 
 @end

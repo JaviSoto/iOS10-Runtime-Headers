@@ -261,6 +261,7 @@
 - (void)updateDeviceCollectionWithQueue:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)updateSecurePropertiesWithQueue:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)userIsCheckingForUpdate;
+- (id)waitForActivePairedDevice;
 - (id)waitForDeviceCollectionBlocks;
 - (void)waitForPairingStorePathPairingID:(id /* block */)arg1;
 - (id)xpcConnection;

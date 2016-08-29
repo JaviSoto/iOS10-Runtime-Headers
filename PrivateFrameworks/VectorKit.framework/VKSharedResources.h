@@ -30,6 +30,13 @@
         } __ptr_; 
     }  _isoAlphaAtlas;
     GEOResourceManifestConfiguration * _manifestConfiguration;
+    unsigned int  _referenceCount;
+    struct mutex { 
+        struct _opaque_pthread_mutex_t { 
+            long long __sig; 
+            BOOL __opaque[56]; 
+        } __m_; 
+    }  _referenceCountingLock;
     VKResourceManager * _resourceManager;
     struct shared_ptr<ggl::StandardLibrary> { 
         struct StandardLibrary {} *__ptr_; 
@@ -50,7 +57,7 @@
 @property (nonatomic, readonly) VKIconManager *iconManager;
 @property (nonatomic, readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*isoAlphaAtlas;
 @property (nonatomic, readonly) VKResourceManager *resourceManager;
-@property (nonatomic, readonly) const struct StandardLibrary { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; struct ShaderLibraryDescriptor {} *x4; /* Warning: unhandled struct encoding: '{vector<ggl::ShaderLibrary::FunctionEntry' */ struct x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; union x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; const void*x24; void*x25; void*x26; void*x27; void*x28; double x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; struct x49; void*x50; void*x51; void*x52; long x53; void*x54; out void*x55; in void*x56; void*x57; void*x58; void*x59; void*x60; long x61; void*x62; out void*x63; in void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; bool x87; void*x88; bycopy void*x89; bycopy void*x90; unsigned long x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void* x109[ /* ? */ ]; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; }*shaderLibrary; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > >=^{shared_ptr<ggl::Shader>}}}{shared_ptr<ggl::ShaderLibraryData>=^{ShaderLibraryData}^{__shared_weak_count}}} */
+@property (nonatomic, readonly) const struct StandardLibrary { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; struct ShaderLibraryDescriptor {} *x4; /* Warning: unhandled struct encoding: '{vector<ggl::ShaderLibrary::FunctionEntry' */ struct x5; }*shaderLibrary; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > >=^{shared_ptr<ggl::Shader>}}}{shared_ptr<ggl::ShaderLibraryData>=^{ShaderLibraryData}^{__shared_weak_count}}} */
 @property (nonatomic, readonly) VKShieldManager *shieldManager;
 @property (nonatomic, readonly) struct shared_ptr<md::StylesheetVendor> { struct StylesheetVendor {} *x1; struct __shared_weak_count {} *x2; } stylesheetVendor;
 
@@ -59,6 +66,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_initWithConfiguration:(id)arg1 device:(const struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; }*)arg2 standardLibrary:(const struct shared_ptr<ggl::StandardLibrary> { struct StandardLibrary {} *x1; struct __shared_weak_count {} *x2; }*)arg3;
+- (void)addResourceUser;
 - (struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*)alphaAtlas;
 - (void)dealloc;
 - (struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; }*)device;
@@ -68,8 +76,9 @@
 - (id)iconManager;
 - (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)isoAlphaAtlas;
 - (void)purge;
+- (void)removeResourceUser;
 - (id)resourceManager;
-- (const struct StandardLibrary { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; struct ShaderLibraryDescriptor {} *x4; struct vector<ggl::ShaderLibrary::FunctionEntry, std::__1::allocator<ggl::ShaderLibrary::FunctionEntry> > { struct FunctionEntry {} *x_5_1_1; struct FunctionEntry {} *x_5_1_2; struct __compressed_pair<ggl::ShaderLibrary::FunctionEntry *, std::__1::allocator<ggl::ShaderLibrary::FunctionEntry> > { struct FunctionEntry {} *x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::ShaderLibrary::ShaderEntry, std::__1::allocator<ggl::ShaderLibrary::ShaderEntry> > { struct ShaderEntry {} *x_6_1_1; struct ShaderEntry {} *x_6_1_2; struct __compressed_pair<ggl::ShaderLibrary::ShaderEntry *, std::__1::allocator<ggl::ShaderLibrary::ShaderEntry> > { struct ShaderEntry {} *x_3_2_1; } x_6_1_3; } x6; struct vector<std::__1::shared_ptr<ggl::Shader>, std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > > { struct shared_ptr<ggl::Shader> {} *x_7_1_1; struct shared_ptr<ggl::Shader> {} *x_7_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::Shader> *, std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > > { struct shared_ptr<ggl::Shader> {} *x_3_2_1; } x_7_1_3; } x7; struct shared_ptr<ggl::ShaderLibraryData> { struct ShaderLibraryData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }*)shaderLibrary;
+- (const struct StandardLibrary { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; struct ShaderLibraryDescriptor {} *x4; struct vector<ggl::ShaderLibrary::FunctionEntry, std::__1::allocator<ggl::ShaderLibrary::FunctionEntry> > { struct FunctionEntry {} *x_5_1_1; struct FunctionEntry {} *x_5_1_2; struct __compressed_pair<ggl::ShaderLibrary::FunctionEntry *, std::__1::allocator<ggl::ShaderLibrary::FunctionEntry> > { struct FunctionEntry {} *x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::ShaderLibrary::ShaderEntry, std::__1::allocator<ggl::ShaderLibrary::ShaderEntry> > { struct ShaderEntry {} *x_6_1_1; struct ShaderEntry {} *x_6_1_2; struct __compressed_pair<ggl::ShaderLibrary::ShaderEntry *, std::__1::allocator<ggl::ShaderLibrary::ShaderEntry> > { struct ShaderEntry {} *x_3_2_1; } x_6_1_3; } x6; struct vector<std::__1::shared_ptr<ggl::Shader>, std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > > { struct shared_ptr<ggl::Shader> {} *x_7_1_1; struct shared_ptr<ggl::Shader> {} *x_7_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::Shader> *, std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > > { struct shared_ptr<ggl::Shader> {} *x_3_2_1; } x_7_1_3; } x7; }*)shaderLibrary;
 - (id)shieldManager;
 - (struct shared_ptr<md::StylesheetVendor> { struct StylesheetVendor {} *x1; struct __shared_weak_count {} *x2; })stylesheetVendor;
 

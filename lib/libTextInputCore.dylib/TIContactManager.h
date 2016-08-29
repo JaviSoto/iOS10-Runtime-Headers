@@ -4,6 +4,7 @@
 
 @interface TIContactManager : NSObject <TIKeyboardActivityObserving> {
     TIContactCollection * _contactCollection;
+    NSUUID * _contactCollectionUUID;
     TIContactCollection * _contacts;
     int  _loadState;
     <TIContactLoading> * _loader;
@@ -12,6 +13,7 @@
     NSMutableArray * _toNotifyOnce;
 }
 
+@property (nonatomic, copy) NSUUID *contactCollectionUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -21,6 +23,7 @@
 
 - (id /* block */)addContactObserver:(id /* block */)arg1;
 - (void)addContactObserver:(id /* block */)arg1 addOnce:(bool)arg2;
+- (id)contactCollectionUUID;
 - (void)contactStoreChanged;
 - (void)dealloc;
 - (void)doAdd:(id /* block */)arg1 addOnce:(bool)arg2;
@@ -32,6 +35,7 @@
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)prepareForNotification:(id)arg1;
 - (void)removeContactObserver:(id /* block */)arg1;
+- (void)setContactCollectionUUID:(id)arg1;
 - (void)sync;
 - (void)unload;
 

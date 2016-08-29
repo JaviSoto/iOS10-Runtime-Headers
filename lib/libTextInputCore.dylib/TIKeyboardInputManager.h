@@ -14,6 +14,8 @@
     TIKeyboardState * _keyboardState;
     TIKeyboardLayoutState * _layoutState;
     unsigned long long  _maxCandidateCount;
+    bool  m_didAttemptUpdateEmojiPreferences;
+    EMFEmojiPreferencesClient * m_emojiPreferencesClient;
 }
 
 @property (nonatomic, copy) id /* block */ candidateGenerationCompletionHandler;
@@ -115,6 +117,7 @@
 - (id)keyboardFeatureSpecialization;
 - (id)keyboardState;
 - (void)lastAcceptedCandidateCorrected;
+- (void)logEmojiUsageFromCandidateBar:(id)arg1;
 - (id)markedText;
 - (unsigned long long)maxCandidateCount;
 - (unsigned long long)maximumShortcutLengthAllowed;
@@ -167,6 +170,7 @@
 - (bool)stringEndsWord:(id)arg1;
 - (id)suffixOfDesiredString:(id)arg1 toAppendToInputString:(id)arg2 withInputIndex:(unsigned long long)arg3 afterDeletionCount:(unsigned long long*)arg4;
 - (bool)suppliesCompletions;
+- (bool)supportsLearning;
 - (bool)supportsNumberKeySelection;
 - (bool)supportsSetPhraseBoundary;
 - (bool)suppressCompletionsForFieldEditor;
@@ -184,6 +188,7 @@
 - (id)titleForSortingMethod:(id)arg1;
 - (void)trackProactiveMetrics:(id)arg1 keyboardState:(id)arg2;
 - (void)trimInput;
+- (void)updateEmojiPreferencesClient;
 - (id)usageTrackingKeyForStatistic:(id)arg1;
 - (bool)usesAutoDeleteWord;
 - (bool)usesCandidateSelection;

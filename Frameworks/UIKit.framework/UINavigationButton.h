@@ -99,10 +99,12 @@
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (id)_enclosingBar;
+- (id)_externalTitleColorForState:(unsigned long long)arg1;
 - (id)_externalUnfocusedBorderColor;
 - (double)_fontScaleAdjustment;
 - (bool)_hasBaselineAlignedAbsoluteVerticalPosition:(out double*)arg1 withinNavBar:(id)arg2 forSize:(struct CGSize { double x1; double x2; })arg3;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)_isCarPlaySystemTypeButton;
 - (bool)_isExternalRoundedRectButton;
 - (bool)_isFontScaleInvalid;
 - (bool)_isModernButton;
@@ -150,6 +152,7 @@
 - (bool)_wantsAccessibilityButtonShapes;
 - (bool)_wantsBlendModeForAccessibilityBackgrounds;
 - (long long)barStyle;
+- (long long)buttonType;
 - (bool)canBecomeFocused;
 - (bool)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
 - (int)controlSize;

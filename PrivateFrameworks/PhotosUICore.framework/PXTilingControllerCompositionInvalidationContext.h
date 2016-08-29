@@ -10,6 +10,8 @@
 @property (nonatomic, retain) <NSObject> *animationOptions;
 @property (nonatomic, retain) PXTilingController *originatingTilingController;
 
++ (id)defaultAnimationOptionsForTilingController:(id)arg1 withInvalidationContexts:(id)arg2;
+
 - (void).cxx_destruct;
 - (id)animationOptions;
 - (id)description;

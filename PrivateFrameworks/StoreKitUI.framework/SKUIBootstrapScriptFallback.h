@@ -16,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (readonly) bool isBagAvailable;
 @property double maximumAge;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) long long state;
@@ -38,6 +39,7 @@
 - (id)initWithCacheFolder:(id)arg1 filename:(id)arg2;
 - (id)initWithFilename:(id)arg1;
 - (void)invalidate;
+- (bool)isBagAvailable;
 - (double)maximumAge;
 - (id)queue;
 - (id)retrieveScript:(id*)arg1;

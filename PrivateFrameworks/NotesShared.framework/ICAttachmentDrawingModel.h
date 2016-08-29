@@ -18,14 +18,13 @@
 - (id)drawing;
 - (id)drawingDocument;
 - (void)drawingPreviewIsUpToDate;
-- (void)generatePreviews;
 - (bool)generatePreviewsDuringCloudActivity;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
 - (bool)hasPreviews;
 - (struct UIImage { Class x1; }*)imageForActivityItem;
 - (id)initWithAttachment:(id)arg1;
-- (bool)isReadyToPresent;
 - (void)mergeWithMergeableData:(id)arg1;
 - (bool)needToGeneratePreviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

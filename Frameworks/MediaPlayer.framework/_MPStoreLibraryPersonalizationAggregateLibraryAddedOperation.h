@@ -3,10 +3,7 @@
  */
 
 @interface _MPStoreLibraryPersonalizationAggregateLibraryAddedOperation : MPAsyncOperation {
-    struct shared_ptr<mlcore::LibraryView> { 
-        struct LibraryView {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    }  _libraryView;
+    MPMediaLibraryView * _libraryView;
     struct vector<long long, std::__1::allocator<long long> > { 
         long long *__begin_; 
         long long *__end_; 
@@ -17,17 +14,17 @@
     id /* block */  _responseHandler;
 }
 
-@property (nonatomic) struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; } libraryView;
+@property (nonatomic) MPMediaLibraryView *libraryView;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{vector<long long' */ struct  persistentIDs; /* unknown property attribute:  std::__1::allocator<long long> >=^q}} */
 @property (nonatomic, copy) id /* block */ responseHandler;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)execute;
-- (struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; })libraryView;
+- (id)libraryView;
 - (struct vector<long long, std::__1::allocator<long long> > { long long *x1; long long *x2; struct __compressed_pair<long long *, std::__1::allocator<long long> > { long long *x_3_1_1; } x3; })persistentIDs;
 - (id /* block */)responseHandler;
-- (void)setLibraryView:(struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)setLibraryView:(id)arg1;
 - (void)setPersistentIDs:(struct vector<long long, std::__1::allocator<long long> > { long long *x1; long long *x2; struct __compressed_pair<long long *, std::__1::allocator<long long> > { long long *x_3_1_1; } x3; })arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
 

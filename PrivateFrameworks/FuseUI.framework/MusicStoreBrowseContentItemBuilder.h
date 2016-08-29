@@ -20,6 +20,7 @@
         unsigned int playlist : 1; 
         unsigned int radioStation : 1; 
         unsigned int song : 1; 
+        unsigned int aucType : 1; 
     }  _requestedBrowseContentItemProperties;
     MPStoreModelSongBuilder * _songBuilder;
 }

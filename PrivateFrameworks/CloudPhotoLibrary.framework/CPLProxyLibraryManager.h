@@ -44,6 +44,7 @@
 - (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(bool)arg3 proposedTaskIdentifier:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)beginInMemoryDownloadOfResource:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelTask:(id)arg1;
+- (void)checkHasBackgroundDownloadOperationsWithCompletionHandler:(id /* block */)arg1;
 - (void)closeWithCompletionHandler:(id /* block */)arg1;
 - (void)cloudCacheGetDescriptionForRecordWithIdentifier:(id)arg1 related:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)compactFileCacheWithCompletionHandler:(id /* block */)arg1;

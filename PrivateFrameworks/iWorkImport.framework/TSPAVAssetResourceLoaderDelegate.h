@@ -23,6 +23,7 @@
 - (id)delegateQueue;
 - (id)init;
 - (id)initWithData:(id)arg1;
+- (void)resourceLoader:(id)arg1 didCancelLoadingRequest:(id)arg2;
 - (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 
 @end

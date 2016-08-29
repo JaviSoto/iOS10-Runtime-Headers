@@ -7,8 +7,9 @@
 @property (nonatomic) unsigned long long bottom;
 @property (nonatomic, retain) NSData *ckCursor;
 @property (nonatomic, retain) NSNumber *feedItemCount;
+@property (nonatomic, retain) NSSet *feedItemIndexes;
 @property (nonatomic, readonly) FCFeedRange *feedRange;
-@property (nonatomic) bool reachedNext;
+@property (nonatomic, retain) NSDate *lastAccessDate;
 @property (nonatomic) unsigned long long top;
 
 - (void)awakeFromFetch;

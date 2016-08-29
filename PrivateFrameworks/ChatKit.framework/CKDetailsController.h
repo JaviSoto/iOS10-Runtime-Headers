@@ -24,6 +24,7 @@
     CKDetailsMapViewCell * _mapViewCell;
     FMFMapViewController * _mapViewController;
     CKEntity * _presentedEntity;
+    id  _selfWeakWrapper;
     CNContactStore * _suggestionsEnabledContactStore;
     CKDetailsTableView * _tableView;
     UIVisualEffectView * _visualEffectView;
@@ -53,6 +54,7 @@
 @property (nonatomic, retain) CKDetailsMapViewCell *mapViewCell;
 @property (nonatomic, retain) FMFMapViewController *mapViewController;
 @property (nonatomic, retain) CKEntity *presentedEntity;
+@property (nonatomic, retain) id selfWeakWrapper;
 @property (nonatomic, retain) CNContactStore *suggestionsEnabledContactStore;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKDetailsTableView *tableView;
@@ -64,7 +66,7 @@
 - (bool)_fmfExpirationDateIsValid;
 - (void)_handleKeyboardWillHideNotification:(id)arg1;
 - (void)_handleKeyboardWillShowNotification:(id)arg1;
-- (void)_presentRemoveRecipientSheetForRecipient:(id)arg1 fromView:(id)arg2;
+- (void)_presentRemoveRecipientSheetForHandle:(id)arg1 fromView:(id)arg2;
 - (void)_requestCallTypeForEntity:(id)arg1 withAddresses:(id)arg2 withLabels:(id)arg3 faceTimeAudioEnabled:(bool)arg4;
 - (void)_showContactCardForEntity:(id)arg1 fromView:(id)arg2;
 - (void)_toggleSharingStateFromABCard;
@@ -114,7 +116,6 @@
 - (void)handleCancelAction:(id)arg1;
 - (void)handleDoneAction:(id)arg1;
 - (void)handleFriendshipStatusChanged:(id)arg1;
-- (void)handleLocationChanged:(id)arg1;
 - (void)handleTapOnChromeAvatar:(id)arg1;
 - (id)indexPathForCell:(id)arg1;
 - (id)initWithConversation:(id)arg1;
@@ -149,6 +150,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)segmentedControlCellForIndexPath:(id)arg1;
+- (id)selfWeakWrapper;
 - (void)sendCurrentLocation;
 - (void)setAddRecipientsController:(id)arg1;
 - (void)setAttachmentCollectionManager:(id)arg1;
@@ -171,6 +173,7 @@
 - (void)setMapViewCell:(id)arg1;
 - (void)setMapViewController:(id)arg1;
 - (void)setPresentedEntity:(id)arg1;
+- (void)setSelfWeakWrapper:(id)arg1;
 - (void)setSuggestionsEnabledContactStore:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (void)setVisualEffectView:(id)arg1;

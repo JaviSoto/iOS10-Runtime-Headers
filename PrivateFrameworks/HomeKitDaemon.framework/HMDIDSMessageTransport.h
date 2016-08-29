@@ -27,6 +27,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (unsigned long long)restriction;
+
 - (void).cxx_destruct;
 - (void)_pendingResponseTimeoutFor:(id)arg1;
 - (void)_removePendingResponseTimerForTransaction:(id)arg1;

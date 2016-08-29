@@ -10,12 +10,13 @@
 - (double)_systemFontSize;
 - (bool)_titleFitsInActionSheet:(id)arg1;
 - (id)callProvider;
+- (bool)canBePerformedByOpeningURL;
 - (id)contactAndLabelForPhoneNumber:(id*)arg1;
 - (id)contactsMatchingPhoneNumber:(id)arg1 inContactStore:(id)arg2;
 - (int)interactionType;
 - (id)labelToUseForPhoneNumber:(id)arg1 ofContact:(id)arg2;
 - (id)localizedCallStringForName:(id)arg1 usingCallRelay:(bool)arg2;
 - (id)localizedName;
-- (void)perform;
+- (void)performFromView:(id)arg1;
 
 @end

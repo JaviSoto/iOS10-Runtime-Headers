@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKFullScreenEffectManager : NSObject {
+@interface CKFullScreenEffectManager : NSObject <CKFullScreenEffectDelegate> {
     CKFullScreenEffect * _currentEffect;
     NSObject<CKFullScreenEffectManagerDelegate> * _delegate;
     NSTimer * _effectDurationTimer;
@@ -11,9 +11,13 @@
 }
 
 @property (nonatomic, retain) CKFullScreenEffect *currentEffect;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<CKFullScreenEffectManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSTimer *effectDurationTimer;
 @property (nonatomic, retain) NSMutableArray *effectQueue;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CKScheduledUpdater *triggerUpdater;
 
 + (id)localizedMaskStringForEffectWithIdentifier:(id)arg1;
@@ -29,6 +33,7 @@
 - (id)effectIdentifiers;
 - (id)effectQueue;
 - (void)endHoldingUpdatesForKey:(id)arg1;
+- (void)fullScreenEffectDidPrepareSoundEffect:(id)arg1;
 - (id)fullscreenEffectMap;
 - (id)init;
 - (id)localizedDisplayNameForEffectWithIdentifier:(id)arg1;

@@ -23,7 +23,7 @@
 - (id)delegate;
 - (void)finishBroadcastWithHandler:(id /* block */)arg1;
 - (id)init;
-- (id)initWithExtensionBundleID:(id)arg1;
+- (id)initWithExtensionBundleID:(id)arg1 broadcastURL:(id)arg2;
 - (bool)isBroadcasting;
 - (bool)isPaused;
 - (void)pauseBroadcast;

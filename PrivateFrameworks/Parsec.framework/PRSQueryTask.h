@@ -11,6 +11,7 @@
     NSString * _keyboardLanguage;
     NSArray * _parsecCategoryOrder;
     long long  _queryId;
+    unsigned long long  _queryIdent;
     NSString * _queryString;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _ranking_inputs;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSString *keyboardLanguage;
 @property (nonatomic, retain) NSArray *parsecCategoryOrder;
 @property long long queryId;
+@property unsigned long long queryIdent;
 @property (nonatomic, retain) NSString *queryString;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSDictionary *ranking_inputs;
@@ -53,6 +55,7 @@
 - (id)keyboardLanguage;
 - (id)parsecCategoryOrder;
 - (long long)queryId;
+- (unsigned long long)queryIdent;
 - (id)queryString;
 - (id)queue;
 - (id)ranking_inputs;
@@ -67,6 +70,7 @@
 - (void)setKeyboardLanguage:(id)arg1;
 - (void)setParsecCategoryOrder:(id)arg1;
 - (void)setQueryId:(long long)arg1;
+- (void)setQueryIdent:(unsigned long long)arg1;
 - (void)setQueryString:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRanking_inputs:(id)arg1;

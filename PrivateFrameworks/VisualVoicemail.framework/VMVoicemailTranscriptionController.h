@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)_afPrefsChanged:(id)arg1;
 - (void)_setupRecognizer;
+- (void)cancelQueuedTranscriptions;
 - (void)enqueueTranscriptionOperationWithURL:(id)arg1 andHandler:(id /* block */)arg2 priority:(long long)arg3 timeout:(double)arg4;
 - (id)init;
 - (id)recognizer;

@@ -5,6 +5,7 @@
 @interface SPUtils : NSObject
 
 + (id)SPURLQueryAllowedCharacterSet;
++ (id)UIColorFromString:(id)arg1;
 + (bool)appExtensionFirstUnlock;
 + (id)companionConnectionClientIdentifier:(bool)arg1;
 + (id)deserializeObject:(id)arg1;
@@ -13,6 +14,7 @@
 + (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned long long)arg2;
 + (bool)isApplicationCompanionConnectionClientIdentifier:(id)arg1;
 + (bool)isRTL;
++ (bool)isRunningInAnyDemoMode;
 + (bool)isRunningInF201DemoMode;
 + (bool)isRunningInF5DemoMode;
 + (id)localizedStringForSystemLanguage:(id)arg1 fromBundlePath:(id)arg2;

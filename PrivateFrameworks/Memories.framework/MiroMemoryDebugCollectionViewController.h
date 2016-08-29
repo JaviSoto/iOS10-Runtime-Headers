@@ -2,25 +2,32 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroMemoryDebugCollectionViewController : UICollectionViewController <MiroMemoryDebugCollectionViewControllerProtocol> {
+@interface MiroMemoryDebugCollectionViewController : UICollectionViewController <MiroMemoryDebugCollectionViewControllerProtocol, UIAlertViewDelegate> {
     UIAlertView * _alertView;
     MiroAutoEditController * _autoEditController;
+    bool  _cancelled;
+    PHFetchResult * _curatedAssets;
     unsigned long long  _currentSortType;
     <MiroMemoryDebugCollectionViewControllerDelegate> * _delegate;
+    bool  _hackReuseCell;
     bool  _isSaveMode;
     MiroMemory * _memory;
     UIProgressView * _progressView;
     UIBarButtonItem * _sortBarButton;
     NSArray * _sortTitles;
     UIView * _textContainerView;
+    bool  _textOnly;
 }
 
 @property (nonatomic, retain) UIAlertView *alertView;
 @property (nonatomic, retain) MiroAutoEditController *autoEditController;
+@property bool cancelled;
+@property (nonatomic, retain) PHFetchResult *curatedAssets;
 @property (nonatomic) unsigned long long currentSortType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MiroMemoryDebugCollectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool hackReuseCell;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isSaveMode;
 @property (retain) MiroMemory *memory;
@@ -29,21 +36,26 @@
 @property (nonatomic, retain) NSArray *sortTitles;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *textContainerView;
+@property (nonatomic) bool textOnly;
 
 - (void).cxx_destruct;
 - (id)alertView;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)autoEditController;
 - (void)bringUpActions:(id)arg1;
 - (void)bringUpSortOptions:(id)arg1;
+- (bool)cancelled;
 - (void)closeMemoryTransition:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)curatedAssets;
 - (unsigned long long)currentSortType;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
 - (void)done:(id)arg1;
 - (id)findAutoLayoutClipFor:(id)arg1;
+- (bool)hackReuseCell;
 - (void)image:(id)arg1 didFinishSavingWithError:(id)arg2 contextInfo:(void*)arg3;
 - (bool)isSaveMode;
 - (id)memory;
@@ -55,20 +67,26 @@
 - (void)saveDebugPanelForMemory:(id)arg1;
 - (void)setAlertView:(id)arg1;
 - (void)setAutoEditController:(id)arg1;
+- (void)setCancelled:(bool)arg1;
+- (void)setCuratedAssets:(id)arg1;
 - (void)setCurrentSortType:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHackReuseCell:(bool)arg1;
 - (void)setIsSaveMode:(bool)arg1;
 - (void)setMemory:(id)arg1;
 - (void)setProgressView:(id)arg1;
 - (void)setSortBarButton:(id)arg1;
 - (void)setSortTitles:(id)arg1;
 - (void)setTextContainerView:(id)arg1;
+- (void)setTextOnly:(bool)arg1;
 - (void)showMemoryTransitions;
 - (void)showScoreLog;
+- (void)showTextVersion;
 - (void)showTextViewWith:(id)arg1;
 - (id)sortBarButton;
 - (id)sortTitles;
 - (id)textContainerView;
+- (bool)textOnly;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

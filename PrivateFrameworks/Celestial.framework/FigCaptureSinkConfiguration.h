@@ -17,6 +17,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _irisMovieVideoFrameDuration;
+    FigCaptureIrisPreparedSettings * _irisPreparedSettings;
     bool  _optimizesImagesForOfflineVideoStabilization;
     bool  _quadraHighResStillImageCaptureEnabled;
     NSString * _sinkID;
@@ -32,6 +33,7 @@
 @property (nonatomic) bool irisMovieCaptureEnabled;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } irisMovieDuration;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } irisMovieVideoFrameDuration;
+@property (nonatomic, retain) FigCaptureIrisPreparedSettings *irisPreparedSettings;
 @property (nonatomic) bool optimizesImagesForOfflineVideoStabilization;
 @property (nonatomic) bool quadraHighResStillImageCaptureEnabled;
 @property (nonatomic, copy) NSString *sinkID;
@@ -54,6 +56,7 @@
 - (bool)irisMovieCaptureEnabled;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })irisMovieDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })irisMovieVideoFrameDuration;
+- (id)irisPreparedSettings;
 - (bool)isEqual:(id)arg1;
 - (bool)optimizesImagesForOfflineVideoStabilization;
 - (bool)quadraHighResStillImageCaptureEnabled;
@@ -61,6 +64,7 @@
 - (void)setIrisMovieCaptureEnabled:(bool)arg1;
 - (void)setIrisMovieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setIrisMovieVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setIrisPreparedSettings:(id)arg1;
 - (void)setOptimizesImagesForOfflineVideoStabilization:(bool)arg1;
 - (void)setQuadraHighResStillImageCaptureEnabled:(bool)arg1;
 - (void)setSinkID:(id)arg1;

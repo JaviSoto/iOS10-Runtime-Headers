@@ -34,7 +34,6 @@
     CBCharacteristic * _pairingsCharacteristic;
     bool  _removeOnDisconnect;
     HAPSecuritySession * _securitySession;
-    bool  _securitySessionOpen;
     bool  _securitySessionOpening;
     CBCharacteristic * _serialNumberCharacteristic;
     bool  _startPairingRequested;
@@ -76,7 +75,6 @@
 @property (nonatomic, retain) CBCharacteristic *pairingsCharacteristic;
 @property (nonatomic) bool removeOnDisconnect;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpen, nonatomic) bool securitySessionOpen;
 @property (getter=isSecuritySessionOpening, nonatomic) bool securitySessionOpening;
 @property (nonatomic, retain) CBCharacteristic *serialNumberCharacteristic;
 @property (nonatomic) bool startPairingRequested;
@@ -177,7 +175,6 @@
 - (double)idleConnectionTimeoutInSec;
 - (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 connectionIdleTime:(unsigned char)arg7 browser:(id)arg8 keyStore:(id)arg9;
 - (bool)isDisconnecting;
-- (bool)isSecuritySessionOpen;
 - (bool)isSecuritySessionOpening;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)manufacturerCharacteristic;
@@ -243,7 +240,6 @@
 - (void)setPairingsCharacteristic:(id)arg1;
 - (void)setRemoveOnDisconnect:(bool)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpen:(bool)arg1;
 - (void)setSecuritySessionOpening:(bool)arg1;
 - (void)setSerialNumberCharacteristic:(id)arg1;
 - (void)setStartPairingRequested:(bool)arg1;

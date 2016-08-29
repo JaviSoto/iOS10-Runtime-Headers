@@ -38,6 +38,7 @@
 - (id)contact;
 - (id)initWithContact:(id)arg1;
 - (id)initWithContact:(id)arg1 schedulerProvider:(id)arg2;
+- (id)initWithDiscoveringEnvironment:(id)arg1;
 - (id)initWithSchedulerProvider:(id)arg1;
 - (id)initWithSchedulerProvider:(id)arg1 idsAvailabilityProvider:(id)arg2;
 - (id)makeModelObservableForActionType:(id)arg1;

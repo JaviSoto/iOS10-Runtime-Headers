@@ -3,14 +3,14 @@
  */
 
 @interface PUInteractiveSwipeDismissalController : PUInteractiveDismissalController <UIGestureRecognizerDelegate> {
-    NSMutableSet * __dependentScrollViews;
+    NSHashTable * __dependentScrollViews;
     PUChangeDirectionValueFilter * __dismissGestureDirectionValueFilter;
     UIPanGestureRecognizer * __panGestureRecognizer;
     PUSwipedDownTileTracker * __swipedDownTileTracker;
     bool  _handlingPanGestureRecognizer;
 }
 
-@property (nonatomic, readonly) NSMutableSet *_dependentScrollViews;
+@property (nonatomic, readonly) NSHashTable *_dependentScrollViews;
 @property (setter=_setDismissGestureDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_dismissGestureDirectionValueFilter;
 @property (setter=_setPanGestureRecognizer:, nonatomic, retain) UIPanGestureRecognizer *_panGestureRecognizer;
 @property (setter=_setSwipedDownTileTracker:, nonatomic, retain) PUSwipedDownTileTracker *_swipedDownTileTracker;

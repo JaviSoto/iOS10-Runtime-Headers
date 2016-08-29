@@ -18,6 +18,7 @@
     GEOPDHours * _hours;
     GEOPDPhoto * _photo;
     GEOPDPlaceInfo * _placeInfo;
+    GEOPDPlacecardURL * _placecardUrl;
     GEOPDRating * _rating;
     GEOPDRawAttribute * _rawAttribute;
     GEOPDRestaurantReservationLink * _restaurantReservationLink;
@@ -62,6 +63,7 @@
 @property (nonatomic, readonly) bool hasHours;
 @property (nonatomic, readonly) bool hasPhoto;
 @property (nonatomic, readonly) bool hasPlaceInfo;
+@property (nonatomic, readonly) bool hasPlacecardUrl;
 @property (nonatomic, readonly) bool hasRating;
 @property (nonatomic, readonly) bool hasRawAttribute;
 @property (nonatomic, readonly) bool hasRestaurantReservationLink;
@@ -80,6 +82,7 @@
 @property (nonatomic, retain) GEOPDHours *hours;
 @property (nonatomic, retain) GEOPDPhoto *photo;
 @property (nonatomic, retain) GEOPDPlaceInfo *placeInfo;
+@property (nonatomic, retain) GEOPDPlacecardURL *placecardUrl;
 @property (nonatomic, retain) GEOPDRating *rating;
 @property (nonatomic, retain) GEOPDRawAttribute *rawAttribute;
 @property (nonatomic, retain) GEOPDRestaurantReservationLink *restaurantReservationLink;
@@ -128,6 +131,7 @@
 - (bool)hasHours;
 - (bool)hasPhoto;
 - (bool)hasPlaceInfo;
+- (bool)hasPlacecardUrl;
 - (bool)hasRating;
 - (bool)hasRawAttribute;
 - (bool)hasRestaurantReservationLink;
@@ -149,6 +153,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)photo;
 - (id)placeInfo;
+- (id)placecardUrl;
 - (id)rating;
 - (id)rawAttribute;
 - (bool)readFrom:(id)arg1;
@@ -170,6 +175,7 @@
 - (void)setHours:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setPlaceInfo:(id)arg1;
+- (void)setPlacecardUrl:(id)arg1;
 - (void)setRating:(id)arg1;
 - (void)setRawAttribute:(id)arg1;
 - (void)setRestaurantReservationLink:(id)arg1;

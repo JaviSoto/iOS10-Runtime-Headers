@@ -30,6 +30,7 @@
 @property (nonatomic, copy) NSArray *selectedQuickCalcFunctions;
 @property (nonatomic, readonly) NSArray *sheets;
 @property (nonatomic, readonly, retain) TSKTreeNode *sidebarOrder;
+@property (nonatomic, readonly) TSSStylesheet *stylesheet;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long tableCount;
 @property (nonatomic, retain) TNTheme *theme;
@@ -99,7 +100,6 @@
 - (void)setRemovedAllQuickCalcFunctions:(bool)arg1;
 - (void)setSelectedQuickCalcFunctions:(id)arg1;
 - (void)setSidebarChildren:(id)arg1 forSheet:(id)arg2;
-- (void)setStylesheet:(id)arg1;
 - (void)setStylesheet:(id)arg1 andThemeForImport:(id)arg2;
 - (void)setStylesheetForUpgradeToSingleStylesheet:(id)arg1;
 - (void)setTheme:(id)arg1;

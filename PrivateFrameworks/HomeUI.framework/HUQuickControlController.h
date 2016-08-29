@@ -55,6 +55,7 @@
 - (void)interactionCoordinator:(id)arg1 interactionStateDidChange:(bool)arg2;
 - (void)interactionCoordinator:(id)arg1 viewValueDidChange:(id)arg2;
 - (id)modelValue;
+- (void)modelValueDidChange;
 - (id)overrideSecondaryStatusText;
 - (id)overrideStatusText;
 - (void)setDelegate:(id)arg1;

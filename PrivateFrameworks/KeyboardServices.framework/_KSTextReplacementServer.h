@@ -27,6 +27,7 @@
 
 - (void).cxx_destruct;
 - (bool)_cancelPendingUpdateForClient:(id)arg1;
+- (void)_performCleanup;
 - (void)addEntries:(id)arg1 removeEntries:(id)arg2 forClient:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)buddySetupDidFinish;
@@ -47,7 +48,9 @@
 - (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id /* block */)arg2;
 - (void)registerForPushNotifications;
 - (void)removeAllEntries;
+- (void)requestPeriodicSync;
 - (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
+- (void)runMigration;
 - (void)scheduleSyncTask;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setListener:(id)arg1;

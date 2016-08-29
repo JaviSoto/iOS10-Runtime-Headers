@@ -26,7 +26,6 @@
 - (void).cxx_destruct;
 - (void)_addToLibraryButtonTapped:(id)arg1;
 - (void)_initLockScreenMediaControlsView;
-- (struct CGSize { double x1; double x2; })_screenSizeWithRespectToOrientation;
 - (void)_trackActionsButtonTapped:(id)arg1;
 - (unsigned long long)addToLibraryButtonStyle;
 - (bool)addToLibraryButtonVisible;

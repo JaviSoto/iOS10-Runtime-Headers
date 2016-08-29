@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRestaurantGuest : INPerson {
+@interface INRestaurantGuest : INPerson <INRestaurantGuestExport> {
     NSString * _emailAddress;
     NSString * _phoneNumber;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *emailAddress;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *phoneNumber;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

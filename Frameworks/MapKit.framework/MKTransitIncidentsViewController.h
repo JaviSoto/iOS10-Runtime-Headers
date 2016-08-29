@@ -14,6 +14,7 @@
 - (void)_updateTitle;
 - (void)dealloc;
 - (id)incidents;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithIncidents:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setIncidents:(id)arg1;

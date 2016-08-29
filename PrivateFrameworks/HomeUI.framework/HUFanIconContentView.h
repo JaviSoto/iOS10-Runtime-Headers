@@ -3,8 +3,6 @@
  */
 
 @interface HUFanIconContentView : HUIconContentView {
-    NSLayoutConstraint * _aspectRatioConstraint;
-    double  _baseImageAspectRatio;
     UIImageView * _baseView;
     UIVisualEffectView * _baseVisualEffectView;
     HUNonAnimatingTintImageView * _bladesView;
@@ -14,8 +12,6 @@
     HUApplier * _speedRampApplier;
 }
 
-@property (nonatomic, retain) NSLayoutConstraint *aspectRatioConstraint;
-@property (nonatomic) double baseImageAspectRatio;
 @property (nonatomic, retain) UIImageView *baseView;
 @property (nonatomic, retain) UIVisualEffectView *baseVisualEffectView;
 @property (nonatomic, retain) HUNonAnimatingTintImageView *bladesView;
@@ -30,19 +26,14 @@
 - (void)_updateImages;
 - (void)_updateRotationAnimationFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2 rotationSpeed:(double)arg3 shouldRampSpeed:(bool)arg4;
 - (void)_updateVisualEffects;
-- (id)aspectRatioConstraint;
-- (double)baseImageAspectRatio;
 - (id)baseView;
 - (id)baseVisualEffectView;
 - (id)bladesView;
 - (id)bladesVisualEffectView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (double)rotationSpeed;
 - (unsigned long long)rotationState;
-- (void)setAspectRatioConstraint:(id)arg1;
-- (void)setBaseImageAspectRatio:(double)arg1;
 - (void)setBaseView:(id)arg1;
 - (void)setBaseVisualEffectView:(id)arg1;
 - (void)setBladesView:(id)arg1;

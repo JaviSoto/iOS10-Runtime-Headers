@@ -5,9 +5,10 @@
 @interface BSTransaction : NSObject <BSWatchdogProviding> {
     bool  _aborted;
     BSAuditHistory * _auditHistory;
-    unsigned long long  _auditHistoryDestination;
-    NSObject<OS_os_log> * _auditHistoryLog;
+    bool  _auditHistoryEnabled;
     NSMutableArray * _blockObservers;
+    bool  _cachedDefaultBasedAuditHistoryEnabled;
+    NSString * _cachedDescriptionProem;
     NSMutableArray * _childTransactionRelationships;
     id /* block */  _completionBlock;
     NSMutableSet * _debugLogCategories;
@@ -27,8 +28,7 @@
 
 @property (getter=isAborted, nonatomic, readonly) bool aborted;
 @property (nonatomic, readonly, retain) NSArray *allErrors;
-@property (nonatomic) unsigned long long auditHistoryDestination;
-@property (nonatomic, retain) NSObject<OS_os_log> *auditHistoryLog;
+@property (getter=isAuditHistoryEnabled, nonatomic) bool auditHistoryEnabled;
 @property (nonatomic, readonly, retain) NSArray *childTransactions;
 @property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, copy) id /* block */ completionBlock;
@@ -47,15 +47,12 @@
 @property (nonatomic, readonly) unsigned long long state;
 @property (readonly) Class superclass;
 
-+ (id)_defaultAuditHistoryLog;
++ (id)_defaultTransactionLog;
 
 - (void)_abortForError:(id)arg1;
-- (void)_addAuditHistory:(id)arg1;
-- (void)_addAuditHistoryAndDebugLogWithFormat:(id)arg1;
 - (void)_addAuditHistoryItem:(id)arg1;
 - (void)_addChildTransactionRelationship:(id)arg1;
 - (void)_addDebugLogCategory:(id)arg1;
-- (void)_addDebugLogger:(id)arg1;
 - (void)_addLifeAssertion:(id)arg1 ignoringAuditHistory:(bool)arg2;
 - (void)_addParentTransaction:(id)arg1 withSchedulingPolicy:(unsigned long long)arg2;
 - (bool)_areChildTransactionsComplete;
@@ -72,8 +69,6 @@
 - (id)_createErrorWithCode:(long long)arg1 reason:(id)arg2 description:(id)arg3 precipitatingError:(id)arg4;
 - (id)_customizedDescriptionProperties;
 - (id)_debugLogCategories;
-- (void)_debugLogWithFormat:(id)arg1;
-- (id)_debugLoggers;
 - (bool)_debugLoggingEnabled;
 - (id)_descriptionForDebugging:(bool)arg1 indentLevel:(unsigned long long)arg2;
 - (id)_descriptionForDebugging:(bool)arg1 indentLevel:(unsigned long long)arg2 visited:(id)arg3;
@@ -102,6 +97,7 @@
 - (bool)_hasChildTransaction:(id)arg1;
 - (bool)_hasParentTransaction:(id)arg1;
 - (bool)_inFinishedWorkingState;
+- (void)_initializeAuditHistoryIfNecessary;
 - (void)_interruptWithReason:(id)arg1 force:(bool)arg2;
 - (bool)_isDoingWork;
 - (bool)_isRootTransaction;
@@ -116,7 +112,6 @@
 - (void)_preventTransactionCompletionForReason:(id)arg1 ignoringAuditHistory:(bool)arg2 andExecuteBlock:(id /* block */)arg3;
 - (void)_removeChildTransactionRelationship:(id)arg1;
 - (void)_removeDebugLogCategory:(id)arg1;
-- (void)_removeDebugLogger:(id)arg1;
 - (void)_removeLifeAssertion:(id)arg1 ignoringAuditHistory:(bool)arg2;
 - (bool)_removeMilestones:(id)arg1 ignoringAuditHistory:(bool)arg2;
 - (void)_removeParentTransaction:(id)arg1;
@@ -141,8 +136,6 @@
 - (void)addObserver:(id)arg1;
 - (id)allErrors;
 - (id)auditHistory;
-- (unsigned long long)auditHistoryDestination;
-- (id)auditHistoryLog;
 - (void)begin;
 - (id)childTransactions;
 - (id)childTransactionsOfClass:(Class)arg1;
@@ -159,6 +152,7 @@
 - (void)interrupt;
 - (void)interruptWithReason:(id)arg1;
 - (bool)isAborted;
+- (bool)isAuditHistoryEnabled;
 - (bool)isComplete;
 - (bool)isFailed;
 - (bool)isFinishedWorking;
@@ -179,8 +173,7 @@
 - (bool)removeMilestones:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)satisfyMilestone:(id)arg1;
-- (void)setAuditHistoryDestination:(unsigned long long)arg1;
-- (void)setAuditHistoryLog:(id)arg1;
+- (void)setAuditHistoryEnabled:(bool)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (bool)shouldWatchdog:(id*)arg1;
 - (unsigned long long)state;

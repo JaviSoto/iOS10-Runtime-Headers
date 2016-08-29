@@ -15,6 +15,7 @@
 + (id)selectionPathWithSelectionArray:(id)arg1;
 
 - (id)UUIDDescription;
+- (id)autofillSelection;
 - (id)cellSelection;
 - (id)containedCellTextEditingSelection;
 - (id)controlCellSelection;
@@ -31,6 +32,7 @@
 - (bool)isEditingTableCell;
 - (bool)isEditingTableName;
 - (bool)isEqual:(id)arg1;
+- (id)leastSpecificSelectionOfClass:(Class)arg1;
 - (id)mostSpecificSelectionConformingToProtocol:(id)arg1;
 - (id)mostSpecificSelectionOfClass:(Class)arg1;
 - (id)orderedSelections;

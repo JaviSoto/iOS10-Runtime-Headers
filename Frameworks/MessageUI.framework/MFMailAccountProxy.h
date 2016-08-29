@@ -16,7 +16,6 @@
 @property (nonatomic, readonly) id mailAccount;
 @property (nonatomic, readonly) bool restrictsRepliesAndForwards;
 @property (nonatomic, readonly) bool supportsMailDrop;
-@property (nonatomic, readonly) bool supportsSoftBankCodePoints;
 @property (nonatomic, readonly) bool supportsThreadOperations;
 @property (nonatomic, readonly) NSString *uniqueID;
 @property (nonatomic, readonly) NSString *username;
@@ -36,7 +35,6 @@
 - (id)mailAccount;
 - (bool)restrictsRepliesAndForwards;
 - (bool)supportsMailDrop;
-- (bool)supportsSoftBankCodePoints;
 - (bool)supportsThreadOperations;
 - (id)uniqueID;
 - (id)username;

@@ -14,6 +14,7 @@
 
 + (id)_defaultColors;
 + (id)defaultColorPalette;
++ (id)warmWhiteColor;
 
 - (void).cxx_destruct;
 - (id)_initWithColors:(id)arg1;

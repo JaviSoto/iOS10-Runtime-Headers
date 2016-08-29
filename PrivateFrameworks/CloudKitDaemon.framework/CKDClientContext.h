@@ -34,6 +34,7 @@
     NSString * _contextID;
     NSDictionary * _fakeEntitlements;
     NSMutableDictionary * _fakeErrorByClassName;
+    NSMutableDictionary * _fakeResponseOperationResultByClassNameByItemID;
     bool  _finishedAppProxySetup;
     CKDFlowControlManager * _flowControlManager;
     CKDPublicIdentityLookupService * _foregroundPublicIdentityLookupService;
@@ -96,6 +97,7 @@
 @property (nonatomic) long long darkWakeEnabled;
 @property (nonatomic, retain) NSDictionary *fakeEntitlements;
 @property (nonatomic, retain) NSMutableDictionary *fakeErrorByClassName;
+@property (nonatomic, retain) NSMutableDictionary *fakeResponseOperationResultByClassNameByItemID;
 @property (nonatomic) bool finishedAppProxySetup;
 @property (nonatomic, retain) CKDFlowControlManager *flowControlManager;
 @property (nonatomic, retain) CKDPublicIdentityLookupService *foregroundPublicIdentityLookupService;
@@ -178,6 +180,7 @@
 - (bool)canAccessProtectionData;
 - (bool)canSetDeviceIdentifier;
 - (bool)captureResponseHTTPHeaders;
+- (void)checkAccountAccessWithCompletion:(id /* block */)arg1;
 - (void)clearAssetCache;
 - (void)clearAssetCacheWithDatabaseScope:(long long)arg1;
 - (void)clearAuthTokensForRecordWithID:(id)arg1 databaseScope:(long long)arg2;
@@ -194,6 +197,7 @@
 - (id)description;
 - (id)fakeEntitlements;
 - (id)fakeErrorByClassName;
+- (id)fakeResponseOperationResultByClassNameByItemID;
 - (void)finishSetupWithClientProxy:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)finishedAppProxySetup;
 - (id)flowControlManager;
@@ -255,6 +259,8 @@
 - (void)setFakeEntitlements:(id)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
 - (void)setFakeErrorByClassName:(id)arg1;
+- (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3;
+- (void)setFakeResponseOperationResultByClassNameByItemID:(id)arg1;
 - (void)setFinishedAppProxySetup:(bool)arg1;
 - (void)setFlowControlManager:(id)arg1;
 - (void)setForegroundPublicIdentityLookupService:(id)arg1;

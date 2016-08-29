@@ -7,6 +7,7 @@
 
 + (bool)canAuthenticate;
 
+- (bool)anyPeerHasEnabledViewsInSet:(NSSet *)arg1 error:(id*)arg2;
 - (CDPContext *)cdpContext;
 - (int)circleStatus:(id*)arg1;
 - (bool)hasNonViewAwarePeers;

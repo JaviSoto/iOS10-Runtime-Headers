@@ -119,6 +119,7 @@
 - (void)_updateFlickrCredentialTypeToOAuth;
 - (void)_updateIdentityServicesAccountDescription;
 - (void)_updateIdentityServicesAccountTypeToSupportAuthenticationAndMultipleAccounts;
+- (void)_updateMacOSServerAccountDescription;
 - (void)_updateOSXServerAccountDescription;
 - (void)_updateTencentWeiboCredentialTypeToOAuth2;
 - (void)_updateVimeoCredentialTypeToOAuth;

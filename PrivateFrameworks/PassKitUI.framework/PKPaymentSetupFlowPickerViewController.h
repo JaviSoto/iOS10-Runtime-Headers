@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivtySpinnerViewControllerProcotol> {
+@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerViewControllerProtocol> {
+    PKPaymentSetupCardDetailsFooterView * _footerView;
     PKTableHeaderView * _headerView;
     NSMutableArray * _pickerItems;
+    <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
     PKPaymentWebService * _webService;
 }
 
@@ -13,17 +15,21 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKTableHeaderView *headerView;
 @property (nonatomic, readonly) NSArray *pickerItems;
+@property (nonatomic, readonly) <PKPaymentSetupViewControllerDelegate> *setupDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PKPaymentWebService *webService;
 
 - (void).cxx_destruct;
 - (void)_setNavigationBarEnabled:(bool)arg1;
+- (void)_setupLater:(id)arg1;
 - (void)addPickerItem:(id)arg1;
+- (id)footerView;
 - (id)headerView;
 - (void)hideActivitySpinner;
-- (id)initWithWebService:(id)arg1 context:(long long)arg2;
+- (id)initWithWebService:(id)arg1 setupDelegate:(id)arg2 context:(long long)arg3;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pickerItems;
+- (id)setupDelegate;
 - (void)showActivitySpinner;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

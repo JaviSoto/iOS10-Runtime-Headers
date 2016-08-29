@@ -30,7 +30,7 @@
 - (void)clearedInfoForClearingBulletinsFromDate:(id)arg1 toDate:(id)arg2 lastClearedInfo:(id)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
-- (void)deliverBulletinActionResponse:(id)arg1;
+- (void)deliverBulletinActionResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (id)description;
 - (void)getAspectRatioForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(bool)arg3 withHandler:(id /* block */)arg4;

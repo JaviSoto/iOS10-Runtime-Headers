@@ -39,12 +39,14 @@
 - (id)_associatedObject;
 - (void)_clearAssetSyncPlaylistDependentDefaults;
 - (id)_companionSidePerDeviceDefaults;
+- (id)_defaultPlaylistPersistentID;
 - (void)_handleRemoteChangeIgnoringSenderPID:(bool)arg1;
+- (void)_migrateDataIfNecessary;
 - (void)_perDeviceSettingsDidResetNotification:(id)arg1;
+- (id)_playlistPersistentIDForKind:(int)arg1;
 - (void)_reloadPropertiesFromDefaults;
 - (void)_resetDomainAccessor;
 - (void)_setNeedsSynchronize;
-- (void)_transferObsoleteFields;
 - (void)_writePropertiesToDefaults;
 - (id)assetSyncAutofillSyncIDs;
 - (id)assetSyncLimit;

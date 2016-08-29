@@ -19,6 +19,7 @@
     NSMutableSet * __tilesInUse;
     PXTilingController * __tilingController;
     <PXActionPerformerDelegate> * _actionPerformerDelegate;
+    bool  _allowCreateMemoryAction;
     bool  _allowRevealInMomentAction;
     PXPhotosDetailsContext * _context;
     bool  _isPerformingChanges;
@@ -51,6 +52,7 @@
 @property (nonatomic, readonly) NSMutableSet *_tilesInUse;
 @property (nonatomic, readonly) PXTilingController *_tilingController;
 @property (nonatomic) <PXActionPerformerDelegate> *actionPerformerDelegate;
+@property (nonatomic) bool allowCreateMemoryAction;
 @property (nonatomic) bool allowRevealInMomentAction;
 @property (nonatomic, readonly) bool allowUserInteractionWithSubtitle;
 @property (nonatomic, readonly) long long contentLayoutStyle;
@@ -74,6 +76,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
@@ -123,6 +126,7 @@
 - (bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)actionPerformerDelegate;
 - (void)actionRowTileSelected:(id)arg1;
+- (bool)allowCreateMemoryAction;
 - (bool)allowRevealInMomentAction;
 - (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg2;
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1 layout:(id)arg2;
@@ -136,6 +140,7 @@
 - (void)reusableObjectPool:(id)arg1 didCreateReusableObject:(id)arg2;
 - (void)reusableObjectPool:(id)arg1 didEvictReusableObject:(id)arg2;
 - (void)setActionPerformerDelegate:(id)arg1;
+- (void)setAllowCreateMemoryAction:(bool)arg1;
 - (void)setAllowRevealInMomentAction:(bool)arg1;
 - (void)setContext:(id)arg1;
 - (void)setSpec:(id)arg1;

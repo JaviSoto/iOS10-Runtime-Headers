@@ -10,6 +10,7 @@
     long long  _networkStatus;
     NSMutableArray * _songs;
     NSMutableDictionary * _songsByUID;
+    NSString * _tokenForInitializationLock;
 }
 
 @property (nonatomic, retain) NSMutableSet *assetsInFlight;
@@ -19,7 +20,9 @@
 @property (nonatomic) long long networkStatus;
 @property (nonatomic, retain) NSMutableArray *songs;
 @property (nonatomic, retain) NSMutableDictionary *songsByUID;
+@property (nonatomic, retain) NSString *tokenForInitializationLock;
 
++ (void)callMeBeforeSharedInstanceToPreventNetworkAccess;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -33,6 +36,7 @@
 - (void)_setupReachability;
 - (void)_updateFromCloud;
 - (id)assetsInFlight;
+- (void)clearAllMemoryAndCachesForPregenerate;
 - (id)cloudManager;
 - (bool)contactedCloud;
 - (void)dealloc;
@@ -40,6 +44,7 @@
 - (id)fetchSongsWithOptions:(id)arg1;
 - (id)flexReachability;
 - (id)init;
+- (void)initializeInternalProperties;
 - (long long)networkStatus;
 - (void)networkStatusChanged:(id)arg1;
 - (void)purgeAllLocalCachedAssetsWithIDs:(id)arg1;
@@ -52,9 +57,11 @@
 - (void)setNetworkStatus:(long long)arg1;
 - (void)setSongs:(id)arg1;
 - (void)setSongsByUID:(id)arg1;
+- (void)setTokenForInitializationLock:(id)arg1;
 - (id)songs;
 - (id)songsByUID;
 - (bool)supportForCloud;
+- (id)tokenForInitializationLock;
 - (void)unregisterSongWithD:(id)arg1;
 - (void)updateFromCloud;
 

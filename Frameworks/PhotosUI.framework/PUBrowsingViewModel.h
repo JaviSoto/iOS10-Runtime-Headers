@@ -26,6 +26,7 @@
     id  _lastChromeVisibilityChangeContext;
     long long  _lastChromeVisibilityChangeReason;
     PUMediaProvider * _mediaProvider;
+    int  _ongoingEnumerations;
     bool  _presentingOverOneUp;
     struct CGSize { 
         double width; 

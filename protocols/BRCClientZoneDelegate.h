@@ -5,8 +5,6 @@
 
 @required
 
-- (void)clientZoneDidBecomeBackground:(BRCClientZone *)arg1;
-- (void)clientZoneDidBecomeForeground:(BRCClientZone *)arg1;
 - (void)didChangeSyncStatusForContainerMetadataForContainer:(BRCClientZone *)arg1;
 - (void)didChangeSyncStatusForZoneHealthForContainer:(BRCClientZone *)arg1;
 - (void)didInitialSyncDownForClientZone:(BRCClientZone *)arg1;

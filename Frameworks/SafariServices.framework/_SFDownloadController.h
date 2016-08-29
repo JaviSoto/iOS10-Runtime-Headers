@@ -32,9 +32,11 @@
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
 - (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
 - (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)_downloadDidCancel:(id)arg1;
 - (void)_downloadDidFinish:(id)arg1;
 - (void)_downloadDidStart:(id)arg1;
 - (void)_endDownloadBackgroundTask;
+- (void)cancel;
 - (void)clearFluidProgressState;
 - (bool)createFluidProgressState;
 - (id)delegate;

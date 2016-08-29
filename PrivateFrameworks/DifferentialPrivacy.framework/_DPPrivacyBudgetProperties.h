@@ -17,8 +17,6 @@
 + (id)budgetPropertiesForKey:(id)arg1;
 + (id)budgetPropertiesFromDictionary:(id)arg1;
 + (id)budgetPropertiesFromFile:(id)arg1;
-+ (id)defaultBudgetDictionaryWithKey:(id)arg1;
-+ (id)defaultBudgetPropertiesWithKey:(id)arg1;
 + (void)initializeAllBudgetProperties;
 
 - (void).cxx_destruct;

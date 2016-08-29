@@ -12,8 +12,10 @@
 - (long long)appSwitcherPredictionExpiry;
 - (double)calendarEventLocationLookaheadTimeSeconds;
 - (id)donationBlacklistApps;
+- (id)donationBlacklistWebsites;
+- (id)donationWhitelistApps;
+- (id)donationWhitelistWebsites;
 - (long long)expirySeconds;
-- (double)geocodeTimeoutSeconds;
 - (id)init;
 - (double)linguisticTriggerExpirySeconds;
 - (double)locationAppLastUseTimeoutSeconds;
@@ -24,7 +26,8 @@
 - (id)locationPredictionBlacklistApps;
 - (double)pasteboardItemExpirySeconds;
 - (unsigned long long)quickTypePredictionLimit;
-- (double)spotlightUserActionExpirySeconds;
+- (bool)shouldUseWhitelistApps;
+- (bool)shouldUseWhitelistWebsite;
 - (unsigned long long)userActivityBatchSize;
 - (double)userActivityCandidateScore;
 - (double)userActivityExpirySeconds;

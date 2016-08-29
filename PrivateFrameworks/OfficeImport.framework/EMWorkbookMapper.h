@@ -47,7 +47,6 @@
 - (void)finishMappingWithState:(id)arg1;
 - (bool)hasMultipleSheets;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
-- (bool)isMultiPage;
 - (void)mapBodyStyleAt:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(bool)arg4;
 - (struct CGSize { double x1; double x2; })pageSizeForDevice;

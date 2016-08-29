@@ -5,7 +5,7 @@
 
 @required
 
-- (void)appHistoryAddLaunch:(void *)arg1 fromSpotlight:(void *)arg2 date:(void *)arg3 timeZone:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: NSString *, bool, NSDate *, NSTimeZone *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)appHistoryAddLaunch:(void *)arg1 launchReason:(void *)arg2 date:(void *)arg3 timeZone:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: NSString *, NSString *, NSDate *, NSTimeZone *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)appHistoryClear:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)appHistoryStartDeltaRecording:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)appHistoryStopDeltaRecording:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*

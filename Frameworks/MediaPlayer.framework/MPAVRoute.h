@@ -40,6 +40,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithAVRouteDescription:(id)arg1;
+- (id)_productIdentifier;
 - (void)_routingControllerPickedRouteNotification:(id)arg1;
 - (id)auxiliaryDevices;
 - (id)avRouteDescription;

@@ -12,6 +12,7 @@
     NSNumber * _connectionFallbackReason;
     NSString * _connectionMethod;
     NSArray * _connectionMethodHistory;
+    NSNumber * _firstTxByteDelay;
     NSDictionary * _flowNetworkInterfaceType;
     NSNumber * _meanPing;
     NSNumber * _metricsCount;
@@ -34,6 +35,7 @@
 @property (nonatomic, copy) NSNumber *connectionFallbackReason;
 @property (nonatomic, copy) NSString *connectionMethod;
 @property (nonatomic, copy) NSArray *connectionMethodHistory;
+@property (nonatomic, copy) NSNumber *firstTxByteDelay;
 @property (nonatomic, copy) NSDictionary *flowNetworkInterfaceType;
 @property (nonatomic, copy) NSNumber *meanPing;
 @property (nonatomic, copy) NSNumber *metricsCount;
@@ -56,6 +58,7 @@
 - (id)connectionFallbackReason;
 - (id)connectionMethod;
 - (id)connectionMethodHistory;
+- (id)firstTxByteDelay;
 - (id)flowNetworkInterfaceType;
 - (id)meanPing;
 - (id)metricsCount;
@@ -74,6 +77,7 @@
 - (void)setConnectionMetricsFromStream:(id)arg1 isPop:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)setConnectionMetricsFromStreamForDirect:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setConnectionMetricsFromStreamForPOP:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setFirstTxByteDelay:(id)arg1;
 - (void)setFlowNetworkInterfaceType:(id)arg1;
 - (void)setMeanPing:(id)arg1;
 - (void)setMetricsCount:(id)arg1;

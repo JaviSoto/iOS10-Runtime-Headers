@@ -44,6 +44,7 @@
 - (double)_interColumnSpacing;
 - (void)_loadImagesForGalleryComponent:(id)arg1 columnIndex:(long long)arg2;
 - (id)_lockupImageForComponent:(id)arg1;
+- (id)_lockupPlaceholderForComponent:(id)arg1;
 - (struct SKUILockupStyle { long long x1; long long x2; unsigned long long x3; })_lockupStyleForComponent:(id)arg1 columnIndex:(long long)arg2;
 - (id)_missingItemLoader;
 - (id)_newSizeToFitArtworkRequestWithArtwork:(id)arg1 columnIndex:(long long)arg2;

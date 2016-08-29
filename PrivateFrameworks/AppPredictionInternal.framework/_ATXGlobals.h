@@ -14,6 +14,7 @@
 - (int)extraAppsToLog;
 - (id)init;
 - (id)initWithAssetClass:(Class)arg1;
+- (double)launchSequenceDecayHalfLife;
 - (double)sessionObjectLogSamplingRate;
 - (double)spotlightLaunchDecayHalflife;
 

@@ -40,8 +40,10 @@
 @property (nonatomic, readonly) UILabel *textLabel;
 
 - (void).cxx_destruct;
+- (void)_createIconViews;
+- (id)_immutableVerticalConstraintsForContentSubview:(id)arg1;
+- (void)_updateIcon;
 - (id)containerView;
-- (void)createIconViews;
 - (id)dynamicConstraints;
 - (bool)hideIcon;
 - (double)iconAlpha;
@@ -69,7 +71,6 @@
 - (void)setIconView:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)updateConstraints;
-- (void)updateIcon;
 - (void)updateUIWithAnimation:(bool)arg1;
 
 @end

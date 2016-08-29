@@ -68,6 +68,7 @@
 - (id)shim_shadowView;
 - (bool)shouldUseBlendModeForBackgrounds;
 - (double)topInset;
+- (void)transitionBackgroundViews;
 - (void)updateBackground;
 
 @end

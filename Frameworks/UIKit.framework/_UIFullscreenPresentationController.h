@@ -16,6 +16,7 @@
     }  _counterRotatedOriginalBounds;
     UIView * _counterRotatedView;
     long long  _originalOrientation;
+    bool  _presentingViewControllerHandledCounterRotation;
     id /* block */  finalRotationBlock;
 }
 

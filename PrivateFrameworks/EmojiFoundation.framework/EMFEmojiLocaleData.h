@@ -15,6 +15,7 @@
 + (id)emojiLocaleDataWithLocaleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
+- (unsigned long long)cfCompareFlagsFromNSOptions:(unsigned long long)arg1;
 - (void)dealloc;
 - (struct __EmojiLocaleDataWrapper { }*)emojiLocaleDataRef;
 - (id)emojiTokens;

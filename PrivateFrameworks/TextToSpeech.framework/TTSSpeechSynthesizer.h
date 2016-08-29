@@ -48,10 +48,12 @@
 @property (nonatomic, retain) NSString *voiceIdentifier;
 @property (nonatomic) float volume;
 
++ (id)_speechServiceForVoiceIdentifier:(id)arg1;
 + (id)allAvailableVoices;
 + (id)availableLanguageCodes;
 + (id)availableVoices;
 + (id)availableVoicesForLanguageCode:(id)arg1;
++ (bool)employSpeechMarkupForType:(long long)arg1 identifier:(id)arg2 withLanguage:(id)arg3;
 + (void)initialize;
 + (bool)isSystemSpeaking;
 + (void)refreshAllAvailableVoices;

@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDEventTrigger : HMDTrigger <HMDLocationDelegate> {
+@interface HMDEventTrigger : HMDTrigger <HMDLocationDelegate, HMFTimerDelegate> {
     NSMutableArray * _characteristicEvents;
     NSPredicate * _evaluationCondition;
     NSMutableArray * _locationEvents;
     NSArray * _recurrences;
+    HMFTimer * _secureTriggerConfirmationTimer;
 }
 
 @property (nonatomic, retain) NSMutableArray *characteristicEvents;
@@ -16,6 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *locationEvents;
 @property (nonatomic, readonly) NSArray *recurrences;
+@property (nonatomic, retain) HMFTimer *secureTriggerConfirmationTimer;
 @property (readonly) Class superclass;
 
 + (bool)__validateRecurrences:(id)arg1;
@@ -49,9 +51,12 @@
 - (id)characteristicEvents;
 - (id)compareValueOfCharacteristic:(id)arg1 againstValue:(id)arg2 operatorType:(id)arg3;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (bool)containsSecureActionSet;
 - (id)dateComponentsFromDate:(id)arg1;
 - (id)dateTodayMatchingComponents:(id)arg1;
-- (void)didDetermineState:(long long)arg1 forRegion:(id)arg2;
+- (void)dealloc;
+- (void)didEnterRegion:(id)arg1;
+- (void)didExitRegion:(id)arg1;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)evaluationCondition;
@@ -63,12 +68,15 @@
 - (id)locationEvents;
 - (id)recurrences;
 - (void)removeAccessory:(id)arg1;
+- (id)secureTriggerConfirmationTimer;
 - (void)sendTriggerFiredNotification:(id)arg1;
 - (void)setCharacteristicEvents:(id)arg1;
 - (void)setLocationEvents:(id)arg1;
+- (void)setSecureTriggerConfirmationTimer:(id)arg1;
 - (bool)shouldEncodeLastFireDate:(id)arg1;
 - (id)sunrise;
 - (id)sunset;
+- (void)timerDidFire:(id)arg1;
 - (unsigned long long)triggerType;
 
 @end

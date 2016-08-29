@@ -61,7 +61,10 @@
 + (id)keyPathForSunriseSunsetDataDictionary;
 + (id)keyPathForThermalPressureLevel;
 + (id)keyPathForWatchActiveStatus;
++ (id)keyPathForWatchBatteryLevel;
 + (id)keyPathForWatchNearbyStatus;
++ (id)keyPathForWatchPluginStatus;
++ (id)keyPathForWatchThermalPressureLevel;
 + (id)keyPathForWiFiConnectionQuality;
 + (id)keyPathForWiredConnectionQuality;
 + (id)nextSunriseKey;

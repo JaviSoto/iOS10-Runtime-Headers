@@ -27,7 +27,7 @@
 - (id)defaultSectionInfo;
 - (id)defaultSubsectionInfos;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
-- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
+- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)description;
 - (id)displayNameForFilterID:(id)arg1;
 - (id)displayNameForSubsectionID:(id)arg1;

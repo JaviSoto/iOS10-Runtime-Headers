@@ -40,6 +40,7 @@
 - (id)_existentFaceObjectIDs;
 - (id)_mutableKeyFaceObjectIDsAndUUIDs;
 - (id)_mutableObjectIDsAndUUIDs;
+- (void)_prefetchFacesAndPersonRelationship:(id)arg1 inContext:(id)arg2;
 - (void)_prepareFacesHelperIfNeeded;
 - (void)_prepareKeyFaceHelperIfNeeded;
 - (void)_setOriginalFaceGroup:(id)arg1;
@@ -57,7 +58,7 @@
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (bool)isClientEntitled;
 - (bool)isMutated;
 - (bool)isNew;

@@ -31,8 +31,8 @@
 - (id)persistenceWarningsForData:(id)arg1 flags:(unsigned long long)arg2;
 - (void)presentPersistenceError:(id)arg1;
 - (void)requestAutosave;
-- (void)resumeAutosave;
+- (void)resumeAutosaveWithReason:(id)arg1;
 - (void)setIgnoreDocumentSupport:(bool)arg1;
-- (void)suspendAutosave;
+- (void)suspendAutosaveWithReason:(id)arg1;
 
 @end

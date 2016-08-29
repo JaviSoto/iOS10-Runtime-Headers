@@ -21,6 +21,7 @@
 @property (readonly) NSUUID *friendUUID;
 @property (nonatomic, retain) NSDictionary *friendWorkouts;
 @property (nonatomic, readonly) bool hasInviteRequestFromMe;
+@property (nonatomic, readonly) bool inviteRequestToMeWasAccepted;
 @property (nonatomic, readonly) bool isActivityDataCurrentlyVisibleToMe;
 @property (nonatomic, readonly) bool isAwaitingInviteResponseFromMe;
 @property (nonatomic, readonly) bool isFriendshipCurrentlyActive;
@@ -54,6 +55,7 @@
 - (id)init;
 - (id)initWithActivitySnapshots:(id)arg1 friendAchievements:(id)arg2 friendWorkouts:(id)arg3 contact:(id)arg4;
 - (id)initWithCoder:(id)arg1;
+- (bool)inviteRequestToMeWasAccepted;
 - (bool)isActivityDataCurrentlyVisibleToMe;
 - (bool)isActivityDataVisibleToMeForDate:(id)arg1;
 - (bool)isAwaitingInviteResponseFromMe;
@@ -65,6 +67,7 @@
 - (void)setFriendWorkouts:(id)arg1;
 - (void)setSnapshots:(id)arg1;
 - (id)snapshots;
+- (id)timeZone;
 
 // Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
 

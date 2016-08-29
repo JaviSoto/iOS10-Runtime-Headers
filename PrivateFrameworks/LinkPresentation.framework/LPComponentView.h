@@ -5,7 +5,6 @@
 @interface LPComponentView : UIView
 
 - (void)componentViewDidMoveToWindow;
-- (double)contentAspectRatio;
 - (void)didMoveToWindow;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

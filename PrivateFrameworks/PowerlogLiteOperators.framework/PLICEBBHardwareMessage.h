@@ -28,7 +28,6 @@
 @property (retain) NSNumber *triggerCnt;
 @property (retain) NSNumber *triggerId;
 
-+ (id)entryEventBackwardDefinitionBBIceAnyHwStats;
 + (id)entryEventBackwardDefinitionBBIceEventMetrics;
 + (id)entryEventBackwardDefinitionBBIcePeriodicMetrics;
 
@@ -52,6 +51,7 @@
 - (id)metricId;
 - (id)metricIdArr;
 - (id)pbc;
+- (void)pdcchStateStatsFor:(id)arg1 forEntry:(id)arg2;
 - (void)protocolHistForClass:(id)arg1 forEntry:(id)arg2;
 - (void)rrcModeHistForClass:(id)arg1 forEntry:(id)arg2;
 - (void)setBbMonotonic:(id)arg1;

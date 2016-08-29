@@ -6,6 +6,7 @@
     bool  _didCheckActionResponseDelegate;
     UIViewController<UNNotificationContentExtension> * _extensionViewController;
     <_UNNotificationExtensionHostInterface> * _hostService;
+    long long  _invalidationOnceToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +25,8 @@
 - (void)_didReceiveNotification:(id)arg1;
 - (void)_didReceiveNotificationResponse:(id)arg1;
 - (id)_extensionBundleIdentifier;
-- (void)_loadAudioAccessoryView;
+- (void)_invalidateExtensionContext;
+- (void)_loadAudioAccessoryViewForNotification:(id)arg1;
 - (void)_mediaPause;
 - (void)_mediaPlay;
 - (void)_performSelectorOnExtension:(SEL)arg1;
@@ -34,6 +36,7 @@
 - (void)_willAppearInRemoteViewController:(id)arg1;
 - (void)addChildViewController:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;
+- (void)dealloc;
 - (bool)didCheckActionResponseDelegate;
 - (id)extensionViewController;
 - (id)hostService;
@@ -46,6 +49,9 @@
 - (void)setExtensionViewController:(id)arg1;
 - (void)setHostService:(id)arg1;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)willMoveToParentViewController:(id)arg1;

@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) unsigned long long operationType;
 @property (nonatomic, readonly) unsigned long long versionFlags;
 
++ (id)cloudForcePushSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id /* block */)arg2;
 + (id)cloudMergeSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id /* block */)arg2;
 + (id)cloudPushSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id /* block */)arg2;
 + (id)idsMergeSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id /* block */)arg2;

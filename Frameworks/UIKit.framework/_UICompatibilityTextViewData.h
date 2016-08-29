@@ -7,6 +7,7 @@
     bool  m_becomesEditableWithGestures;
     DOMHTMLElement * m_body;
     bool  m_clearsOnInsertion;
+    bool  m_didFreezeTextContainerSize;
     bool  m_editable;
     bool  m_editing;
     UIFont * m_font;

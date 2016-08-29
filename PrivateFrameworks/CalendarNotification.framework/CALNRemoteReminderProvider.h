@@ -22,6 +22,7 @@
 - (void)acknowledgeLocationAlertWithURL:(id)arg1 entityID:(id)arg2;
 - (id)actionButtonColorForAlertInfo:(id)arg1;
 - (id)actionButtonTitleForAlertInfo:(id)arg1;
+- (void)alertInfosFired:(id)arg1;
 - (bool)allowsLocationAlerts;
 - (void)bulletinAcknowledgedWithResponse:(id)arg1 acknowledgeAlarm:(bool)arg2 extraActions:(id /* block */)arg3;
 - (id)bulletinRequestForAlertInfo:(id)arg1;
@@ -35,6 +36,7 @@
 - (id)defaultSectionInfo;
 - (id)defaultURLForAlertInfo:(id)arg1;
 - (id)entityScheme;
+- (void)firstUnlock;
 - (void)handleBulletinActionResponse:(id)arg1;
 - (void)handleDarwinNotification:(id)arg1;
 - (id)initWithNotificationFetchBlock:(id /* block */)arg1;

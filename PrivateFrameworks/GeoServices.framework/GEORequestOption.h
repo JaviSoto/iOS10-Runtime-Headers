@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORequestOption : PBCodable <GEOSurchargeOption, NSCopying> {
+@interface GEORequestOption : PBCodable <GEOSurchargeType, NSCopying> {
     int  _enumValue;
     struct { 
         unsigned int enumValue : 1; 

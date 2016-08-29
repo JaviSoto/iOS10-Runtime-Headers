@@ -47,6 +47,7 @@
 - (id)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newComputePipelineStateWithImageFilterFunctionsSPI:(id)arg1 imageFilterFunctionInfo:(const struct { bool x1; unsigned long long x2; struct { /* ? */ } *x3; }*)arg2 error:(id*)arg3;
 - (id)newDefaultLibrary;
+- (id)newDefaultLibraryWithBundle:(id)arg1 error:(id*)arg2;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
 - (id)newHeapWithDescriptor:(id)arg1;
 - (id)newLibraryWithData:(id)arg1 error:(id*)arg2;

@@ -35,6 +35,7 @@
 - (bool)effectViewNeedsReset;
 - (id)hostView;
 - (void)hostViewDidLayoutSubviews;
+- (void)hostViewDidUpdateSnapshot:(id)arg1;
 - (id)initWithHostView:(id)arg1;
 - (void)invisibleInkEffectViewWasUncovered:(id)arg1;
 - (bool)isEnabled;

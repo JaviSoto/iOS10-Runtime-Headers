@@ -78,6 +78,7 @@
 @property (nonatomic, readonly) long long toFieldBackdropStyle;
 @property (nonatomic, readonly) UIColor *toFieldTextColor;
 @property (nonatomic, readonly) UIColor *transcriptBackgroundColor;
+@property (nonatomic, readonly) UIColor *transcriptBigEmojiColor;
 @property (nonatomic, readonly) UIColor *transcriptDeemphasizedTextColor;
 @property (nonatomic, readonly) UIColor *transcriptSeparatorColor;
 @property (nonatomic, readonly) UIColor *transcriptTextColor;
@@ -214,6 +215,7 @@
 - (long long)toFieldBackdropStyle;
 - (id)toFieldTextColor;
 - (id)transcriptBackgroundColor;
+- (id)transcriptBigEmojiColor;
 - (id)transcriptDeemphasizedTextColor;
 - (id)transcriptSeparatorColor;
 - (id)transcriptTextColor;

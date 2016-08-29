@@ -16,7 +16,6 @@
     }  _gradientFrame;
     CALayer * _gradientLayer;
     UIImage * _maskImage;
-    double  _maskMaxCapInset;
     UIView<CKGradientReferenceView> * _referenceView;
     CATransformLayer * _trackingLayer;
 }
@@ -25,7 +24,6 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } gradientFrame;
 @property (nonatomic, retain) CALayer *gradientLayer;
 @property (nonatomic, retain) UIImage *maskImage;
-@property (nonatomic) double maskMaxCapInset;
 @property (nonatomic) UIView<CKGradientReferenceView> *referenceView;
 @property (nonatomic, retain) CATransformLayer *trackingLayer;
 
@@ -44,13 +42,11 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)maskImage;
-- (double)maskMaxCapInset;
 - (id)referenceView;
 - (void)setColors:(id)arg1;
 - (void)setGradientFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGradientLayer:(id)arg1;
 - (void)setMaskImage:(id)arg1;
-- (void)setMaskMaxCapInset:(double)arg1;
 - (void)setReferenceView:(id)arg1;
 - (void)setTrackingLayer:(id)arg1;
 - (id)trackingLayer;

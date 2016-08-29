@@ -4,25 +4,21 @@
 
 @interface HMDConnectionProxy : NSObject <HMDaemonConnection> {
     bool  _activated;
-    unsigned long long  _activeMessageCount;
-    NSObject<OS_dispatch_group> * _activeMessageTracker;
     HMDApplicationRegistry * _appRegistry;
     NSString * _clientName;
     bool  _entitledForAPIAccess;
     bool  _entitledForBackgroundMode;
+    bool  _entitledForBridgeSPIAccess;
     bool  _entitledForSPIAccess;
-    NSMutableSet * _pendingRequests;
     NSDictionary * _privateAccessEntitlement;
     HMDProcessInfo * _processInfo;
-    bool  _ready;
     HMFMessageDispatcher * _recvDispatcher;
+    HMDXPCRequestTracker * _requestTracker;
     NSObject<OS_dispatch_queue> * _workQueue;
     NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic) bool activated;
-@property (nonatomic) unsigned long long activeMessageCount;
-@property (nonatomic, retain) NSObject<OS_dispatch_group> *activeMessageTracker;
 @property (nonatomic, readonly) NSSet *activeRequests;
 @property (nonatomic) HMDApplicationRegistry *appRegistry;
 @property (nonatomic, readonly) NSString *applicationBundleIdentifier;
@@ -37,15 +33,15 @@
 @property (nonatomic, readonly) NSString *effectiveLocationBundleIdentifier;
 @property (getter=isEntitledForAPIAccess, nonatomic, readonly) bool entitledForAPIAccess;
 @property (getter=isEntitledForBackgroundMode, nonatomic, readonly) bool entitledForBackgroundMode;
+@property (getter=isEntitledForBridgeSPIAccess, nonatomic, readonly) bool entitledForBridgeSPIAccess;
 @property (getter=isEntitledForSPIAccess, nonatomic, readonly) bool entitledForSPIAccess;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, retain) NSMutableSet *pendingRequests;
 @property (nonatomic, retain) NSDictionary *privateAccessEntitlement;
 @property (nonatomic) HMDProcessInfo *processInfo;
-@property (nonatomic) bool ready;
 @property (nonatomic, retain) HMFMessageDispatcher *recvDispatcher;
 @property (nonatomic, readonly) id remoteProxy;
+@property (nonatomic, readonly) HMDXPCRequestTracker *requestTracker;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *teamIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
@@ -56,8 +52,6 @@
 - (void)_notifyOfNewIncomingClientMessage;
 - (void)activate;
 - (bool)activated;
-- (unsigned long long)activeMessageCount;
-- (id)activeMessageTracker;
 - (id)activeRequests;
 - (id)appRegistry;
 - (id)applicationBundleIdentifier;
@@ -78,24 +72,20 @@
 - (bool)isAuthorizedForMicrophoneAccess;
 - (bool)isEntitledForAPIAccess;
 - (bool)isEntitledForBackgroundMode;
+- (bool)isEntitledForBridgeSPIAccess;
 - (bool)isEntitledForSPIAccess;
 - (id)name;
-- (id)pendingRequests;
 - (id)privateAccessEntitlement;
 - (id)processInfo;
-- (bool)ready;
 - (void)recheckinWithName:(id)arg1;
 - (id)recvDispatcher;
 - (id)remoteProxy;
+- (id)requestTracker;
 - (void)setActivated:(bool)arg1;
-- (void)setActiveMessageCount:(unsigned long long)arg1;
-- (void)setActiveMessageTracker:(id)arg1;
 - (void)setAppRegistry:(id)arg1;
 - (void)setClientName:(id)arg1;
-- (void)setPendingRequests:(id)arg1;
 - (void)setPrivateAccessEntitlement:(id)arg1;
 - (void)setProcessInfo:(id)arg1;
-- (void)setReady:(bool)arg1;
 - (void)setRecvDispatcher:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;

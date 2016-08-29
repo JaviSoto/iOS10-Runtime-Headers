@@ -66,7 +66,7 @@
 - (id)initWithContext:(id)arg1 fromArray:(id)arg2 presetID:(unsigned long long)arg3;
 - (id)initWithContext:(id)arg1 fromDictionary:(id)arg2 withPreset:(unsigned long long)arg3;
 - (bool)isEqual:(id)arg1;
-- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1 styleComparisonBlock:(id /* block */)arg2;
 - (void)loadFromArchive:(const struct TableStyleNetworkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; }*)arg1 withUnarchiver:(id)arg2;
 - (unsigned long long)presetID;
 - (void)saveToArchive:(struct TableStyleNetworkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; }*)arg1 archiver:(id)arg2;

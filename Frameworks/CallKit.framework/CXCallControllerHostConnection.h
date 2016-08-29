@@ -4,7 +4,6 @@
 
 @interface CXCallControllerHostConnection : NSObject <CXCallControllerHostProtocol, CXCallControllerVendorProtocol> {
     NSString * _applicationIdentifier;
-    bool  _authorized;
     NSBundle * _bundle;
     NSSet * _capabilities;
     NSXPCConnection * _connection;
@@ -14,7 +13,6 @@
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
-@property (getter=isAuthorized, nonatomic) bool authorized;
 @property (nonatomic, copy) NSBundle *bundle;
 @property (nonatomic, copy) NSSet *capabilities;
 @property (nonatomic, retain) NSXPCConnection *connection;
@@ -41,7 +39,6 @@
 - (bool)hasVoIPBackgroundMode;
 - (id)init;
 - (id)initWithConnection:(id)arg1 serialQueue:(id)arg2;
-- (bool)isAuthorized;
 - (bool)isPermittedToUsePrivateAPI;
 - (bool)isPermittedToUsePublicAPI;
 - (id)remoteObjectProxy;
@@ -50,7 +47,6 @@
 - (oneway void)requestTransaction:(id)arg1 forExtensionIdentifier:(id)arg2 reply:(id /* block */)arg3;
 - (id)serialQueue;
 - (void)setApplicationIdentifier:(id)arg1;
-- (void)setAuthorized:(bool)arg1;
 - (void)setBundle:(id)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)setConnection:(id)arg1;

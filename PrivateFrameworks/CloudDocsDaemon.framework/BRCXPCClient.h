@@ -52,9 +52,10 @@
 - (void)_startMonitoringProcessIfNeeded;
 - (void)_startSharingOperationAfterAcceptation:(struct _BRCFrameworkOperation { Class x1; id x2; int x3; id x4; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x5; void*x6; unsigned char x7; void*x8; }*)arg1 client:(id)arg2 item:(id)arg3;
 - (void)_stopMonitoringProcess;
-- (void)accessLogicalOrPhysicalURL:(id)arg1 accessKind:(long long)arg2 asynchronously:(bool)arg3 handler:(id /* block */)arg4;
+- (void)accessLogicalOrPhysicalURL:(id)arg1 accessKind:(long long)arg2 dbAccessKind:(long long)arg3 asynchronously:(bool)arg4 handler:(id /* block */)arg5;
 - (void)addAppLibrary:(id)arg1;
 - (id)bundleID;
+- (bool)canAccessLogicalOrPhysicalURL:(id)arg1 accessKind:(long long)arg2;
 - (bool)canAccessPath:(const char *)arg1 accessKind:(long long)arg2;
 - (bool)canAccessPhysicalURL:(id)arg1;
 - (id)clientPriviledgesDescriptor;

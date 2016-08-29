@@ -4,9 +4,12 @@
 
 @interface BWDeviceMotionActivityDetector : NSObject {
     BWMotionSampleRingBuffer * _motionDataRingBuffer;
+    bool  _motionMetadataStatusChecked;
     bool  _newMotionDataAvailable;
     struct OpaqueFigSimpleMutex { } * _ringMutex;
+    bool  _robustMethodEnabled;
     bool  _stationary;
+    bool  _unusableMotionData;
 }
 
 @property (getter=isStationary, nonatomic, readonly) bool stationary;

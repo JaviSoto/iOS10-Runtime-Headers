@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsUI.framework/CloudDocsUI
  */
 
-@interface _UIDocumentTargetSelectionController : UIViewController <_UIDocumentPickerServiceViewController> {
+@interface _UIDocumentTargetSelectionController : UIViewController <_UIDocumentPickerServiceInvalidating, _UIDocumentPickerServiceViewController> {
     bool  _completedInitialDisplay;
     UINavigationController * _containedNavigationController;
     NSString * _containerName;
@@ -43,6 +43,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItemsToMove:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)invalidate;
 - (id)itemsToMove;
 - (id)navControllerForPalette;
 - (id)pickableTypes;

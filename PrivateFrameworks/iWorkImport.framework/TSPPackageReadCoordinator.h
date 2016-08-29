@@ -21,6 +21,7 @@
     TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
     NSObject<OS_dispatch_queue> * _ioCompletionQueue;
     NSObject<OS_dispatch_queue> * _ioQueue;
+    bool  _losesDataOnWrite;
     TSPObject * _metadataObject;
     NSObject<OS_dispatch_queue> * _objectQueue;
     NSMapTable * _objects;
@@ -89,7 +90,7 @@
     unsigned long long  _readVersion;
     unsigned long long  _saveToken;
     bool  _skipDocumentUpgrade;
-    unsigned long long  _writeVersion;
+    NSSet * _unsupportedFeatureIdentifiers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -98,19 +99,18 @@
 @property (nonatomic, readonly) TSPDocumentRevision *documentRevision;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isReadingFromDocument;
+@property (nonatomic, readonly) bool losesDataOnWrite;
 @property (nonatomic, readonly) TSPObject *metadataObject;
 @property (nonatomic, readonly) long long preferredPackageType;
-@property (nonatomic, readonly) unsigned long long readVersion;
 @property (nonatomic, readonly) unsigned long long saveToken;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long writeVersion;
+@property (nonatomic, readonly) NSSet *unsupportedFeatureIdentifiers;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)baseObjectUUID;
 - (bool)canRetainObjectReferencedByWeakLazyReference;
 - (id)context;
-- (void)didReadMetadata:(id)arg1;
 - (void)didReadObjects:(id)arg1 forComponent:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)didReferenceExternalObject:(id)arg1 withIdentifier:(long long)arg2;
 - (bool)didRequireUpgrade;
@@ -125,6 +125,7 @@
 - (id)init;
 - (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(bool)arg6 skipDocumentUpgrade:(bool)arg7;
 - (bool)isReadingFromDocument;
+- (bool)losesDataOnWrite;
 - (id)metadataObject;
 - (long long)metadataObjectIdentifier;
 - (id)newObjectUUIDForObjectIdentifier:(long long)arg1;
@@ -133,12 +134,12 @@
 - (unsigned char)packageIdentifier;
 - (void)persistedObjectUUIDMap:(id)arg1 foundDuplicateUUID:(id)arg2 firstObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg3 secondObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg4;
 - (id)persistedObjectUUIDMap:(id)arg1 needsDescriptionForComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3;
+- (void)postprocessMetadata:(id)arg1;
 - (long long)preferredPackageType;
 - (void)prepareForFullDocumentUpgrade;
 - (void)prepareForFullDocumentUpgradeImpl;
 - (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(bool)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
-- (void)processMetadata:(id)arg1;
-- (void)processMetadata:(id)arg1 fileFormatVersion:(unsigned long long)arg2;
+- (void)preprocessMetadata:(id)arg1;
 - (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)readComponentAsync:(id)arg1;
 - (bool)readComponentIfNeededAsync:(id)arg1;
@@ -146,7 +147,6 @@
 - (void)readPackageMetadataWithComponent:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (id)readPackageMetadataWithError:(id*)arg1;
 - (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
-- (unsigned long long)readVersion;
 - (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(bool)arg4 allowUnknownObject:(bool)arg5 fromParentObject:(id)arg6 completion:(id /* block */)arg7;
 - (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(bool)arg3 allowUnknownObject:(bool)arg4 fromParentObject:(id)arg5 completion:(id /* block */)arg6;
 - (void)reader:(id)arg1 didResetObjectIdentifierForObject:(id)arg2 originalObjectIdentifier:(long long)arg3;
@@ -158,7 +158,7 @@
 - (void)setError:(id)arg1;
 - (long long)sourceType;
 - (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(bool)arg2;
+- (id)unsupportedFeatureIdentifiers;
 - (void)updateObjectContextForSuccessfulRead;
-- (unsigned long long)writeVersion;
 
 @end

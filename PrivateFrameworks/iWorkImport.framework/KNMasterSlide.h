@@ -76,8 +76,10 @@
 - (id)p_defaultTagForDrawable:(id)arg1;
 - (id)p_defaultThumbnailTextForPlaceholder:(id)arg1;
 - (id)packageLocator;
+- (id)referencedStyles;
 - (void)removeBuild:(id)arg1;
 - (void)removeBuildChunk:(id)arg1 rollbackGeneratedIdentifier:(bool)arg2;
+- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setBodyListStyles:(id)arg1;
 - (void)setBodyParagraphStyles:(id)arg1;

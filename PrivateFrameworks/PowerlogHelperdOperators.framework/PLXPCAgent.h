@@ -22,6 +22,7 @@
     PLXPCListenerOperatorComposition * _SiriXPCListener;
     PLXPCListenerOperatorComposition * _SpotlightXPCListener;
     PLXPCListenerOperatorComposition * _SymptomsNetworkAdvisory;
+    PLXPCListenerOperatorComposition * _ThermalLevelXPCListener;
     PLXPCListenerOperatorComposition * _UIKitActivityXPCListener;
     PLXPCListenerOperatorComposition * _UIKitAlertXPCListener;
     PLXPCListenerOperatorComposition * _UIKitKeyboardXPCListener;
@@ -58,6 +59,7 @@
 @property (retain) PLXPCListenerOperatorComposition *SiriXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *SpotlightXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *SymptomsNetworkAdvisory;
+@property (retain) PLXPCListenerOperatorComposition *ThermalLevelXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *UIKitActivityXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *UIKitAlertXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *UIKitKeyboardXPCListener;
@@ -86,6 +88,7 @@
 + (id)entryEventForwardDefinitionInCallService;
 + (id)entryEventForwardDefinitionSafariFetcher;
 + (id)entryEventForwardDefinitionSiri;
++ (id)entryEventForwardDefinitionThermalLevel;
 + (id)entryEventForwardDefinitionUIKitActivity;
 + (id)entryEventForwardDefinitionUIKitAlert;
 + (id)entryEventForwardDefinitionUIKitKeyboard;
@@ -125,6 +128,7 @@
 - (id)SiriXPCListener;
 - (id)SpotlightXPCListener;
 - (id)SymptomsNetworkAdvisory;
+- (id)ThermalLevelXPCListener;
 - (id)UIKitActivityXPCListener;
 - (id)UIKitAlertXPCListener;
 - (id)UIKitKeyboardXPCListener;
@@ -149,6 +153,7 @@
 - (void)logEventForwardInCallService:(id)arg1;
 - (void)logEventForwardSafariFetcherStatus:(id)arg1;
 - (void)logEventForwardSiri:(id)arg1;
+- (void)logEventForwardThermalLevel:(id)arg1;
 - (void)logEventForwardUIKitActivity:(id)arg1;
 - (void)logEventForwardUIKitAlert:(id)arg1;
 - (void)logEventForwardUIKitKeyboard:(id)arg1;
@@ -197,6 +202,7 @@
 - (void)setSymptomsNetworkAdvisory:(id)arg1;
 - (void)setTelNotificationXPCListener:(id)arg1;
 - (void)setTestMarkerXPCListener:(id)arg1;
+- (void)setThermalLevelXPCListener:(id)arg1;
 - (void)setUIKitActivityXPCListener:(id)arg1;
 - (void)setUIKitAlertXPCListener:(id)arg1;
 - (void)setUIKitKeyboardXPCListener:(id)arg1;

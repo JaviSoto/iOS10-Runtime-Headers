@@ -56,7 +56,6 @@
 - (void)getBookmarkDataForURL:(id)arg1 andAllowAccessByBundleID:(id)arg2 reply:(id /* block */)arg3;
 - (void)getBookmarkDataForURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)getContainerForURL:(id)arg1 reply:(id /* block */)arg2;
-- (void)getContainerForURLFast:(id)arg1 reply:(id /* block */)arg2;
 - (void)getContainerLastServerUpdateWithID:(id)arg1 reply:(id /* block */)arg2;
 - (void)getContainerStatusWithID:(id)arg1 reply:(id /* block */)arg2;
 - (void)getContainerURLForID:(id)arg1 forPid:(int)arg2 reply:(id /* block */)arg3;
@@ -85,8 +84,11 @@
 - (void)iWorkForceSyncContainerID:(id)arg1 ownedByMe:(bool)arg2 reply:(id /* block */)arg3;
 - (void)jetsamCloudDocsAppsWithReply:(id /* block */)arg1;
 - (void)joinShareAtURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)lookupExcludedExtensionsForLogoutWithReply:(id /* block */)arg1;
+- (void)lookupExcludedFilenamesForLogoutWithReply:(id /* block */)arg1;
 - (void)overwriteAccessTimeForItemAtURL:(id)arg1 atime:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)performSelfCheck:(id)arg1 reply:(id /* block */)arg2;
+- (void)postiCloudDriveAppInstallationNotificaionWithReply:(id /* block */)arg1;
 - (void)presentAcceptDialogsForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
 - (void)presentAcceptDialogsForShareURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)presyncContainerWithID:(id)arg1 reply:(id /* block */)arg2;
@@ -114,6 +116,7 @@
 - (void)startOperation:(id)arg1 toCopySharingInfoAtURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopySharingWebAuthTokenForContainerID:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopyShortTokenAtURL:(id)arg2 reply:(id /* block */)arg3;
+- (void)startOperation:(id)arg1 toEvictItemAtURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toLookupShareParticipants:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toModifyRecordAccessAtURL:(id)arg2 allowAccess:(bool)arg3 reply:(id /* block */)arg4;
 - (void)startOperation:(id)arg1 toPrepFolderForSharingAt:(id)arg2 reply:(id /* block */)arg3;
@@ -121,7 +124,9 @@
 - (void)startOperation:(id)arg1 toUnshareShare:(id)arg2 forceDelete:(bool)arg3 reply:(id /* block */)arg4;
 - (void)startOperation:(id)arg1 toUploadAllFilesInContainer:(id)arg2 reply:(id /* block */)arg3;
 - (void)thumbnailChangedForItemAtURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)trashItemAtURL:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)updateContainerMetadataForID:(id)arg1;
+- (oneway void)updatePrivilegesDescriptor;
 - (void)waitForFileSystemChangeProcessingWithReply:(id /* block */)arg1;
 - (void)waitUntilIdle:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)willAcceptShareAtURL:(id)arg1;

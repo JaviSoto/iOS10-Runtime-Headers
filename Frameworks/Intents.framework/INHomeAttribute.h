@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INHomeAttribute : NSObject <NSCopying, NSSecureCoding> {
+@interface INHomeAttribute : NSObject <INHomeAttributeExport, NSCopying, NSSecureCoding> {
     bool  _boolValue;
     double  _doubleValue;
     NSString * _stringValue;
@@ -11,8 +11,12 @@
 }
 
 @property (nonatomic, readonly) bool boolValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double doubleValue;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *stringValue;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly) long long valueType;
 

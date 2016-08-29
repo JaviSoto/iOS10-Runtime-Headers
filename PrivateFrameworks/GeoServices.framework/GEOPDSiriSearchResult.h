@@ -9,12 +9,14 @@
     }  _has;
     bool  _isChainResultSet;
     NSMutableArray * _resultDetourInfos;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 @property (nonatomic) bool hasIsChainResultSet;
 @property (nonatomic) bool isChainResultSet;
 @property (nonatomic, retain) NSMutableArray *resultDetourInfos;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)disambiguationLabelType;
 + (Class)resultDetourInfoType;
@@ -44,6 +46,7 @@
 - (void)setHasIsChainResultSet:(bool)arg1;
 - (void)setIsChainResultSet:(bool)arg1;
 - (void)setResultDetourInfos:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

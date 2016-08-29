@@ -4,6 +4,7 @@
 
 @interface PARResponse : NSObject {
     NSArray * _corrections;
+    GEOUserSessionEntity * _geoUserSessionEntity;
     NSString * _prefix;
     NSString * _query;
     NSArray * _rawResponse;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *corrections;
+@property (nonatomic, retain) GEOUserSessionEntity *geoUserSessionEntity;
 @property (nonatomic, readonly) NSString *prefix;
 @property (nonatomic, readonly) NSString *query;
 @property (nonatomic, readonly) NSArray *rawResponse;
@@ -29,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (id)corrections;
+- (id)geoUserSessionEntity;
 - (id)prefix;
 - (id)query;
 - (id)rawResponse;
@@ -36,6 +39,7 @@
 - (id)reply;
 - (id)results;
 - (id)sections;
+- (void)setGeoUserSessionEntity:(id)arg1;
 - (void)setResults:(id)arg1;
 - (id)suggestions;
 

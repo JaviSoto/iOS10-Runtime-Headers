@@ -4,31 +4,26 @@
 
 @interface HMVendorDataManager : NSObject {
     long long  _dataVersion;
-    NSDictionary * _database;
     NSObject<OS_dispatch_queue> * _databaseQueue;
+    NSDictionary * _vendorModelEntries;
 }
 
 @property (nonatomic) long long dataVersion;
-@property (nonatomic, retain) NSDictionary *database;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *databaseQueue;
+@property (nonatomic, readonly) NSDictionary *vendorModelEntries;
 
-+ (void)initialize;
 + (id)sharedVendorDataManager;
 
 - (void).cxx_destruct;
-- (bool)_boolForManufacturer:(id)arg1 model:(id)arg2 key:(id)arg3;
-- (id)_modelDictionaryForManufacturer:(id)arg1 model:(id)arg2;
-- (id)_stringForManufacturer:(id)arg1 model:(id)arg2 key:(id)arg3;
-- (bool)additionalSetupNeededForManufacturer:(id)arg1 model:(id)arg2;
+- (id)_modelEntryForManufacturer:(id)arg1 model:(id)arg2;
+- (void)_parseManufacturersList:(id)arg1;
 - (id)bundleIDForManufacturer:(id)arg1 model:(id)arg2;
 - (long long)dataVersion;
-- (id)database;
 - (id)databaseQueue;
 - (id)init;
-- (bool)overrideForManufacturer:(id)arg1 model:(id)arg2;
 - (void)setDataVersion:(long long)arg1;
-- (void)setDatabase:(id)arg1;
 - (void)setDatabaseQueue:(id)arg1;
 - (id)storeIDForManufacturer:(id)arg1 model:(id)arg2;
+- (id)vendorModelEntries;
 
 @end

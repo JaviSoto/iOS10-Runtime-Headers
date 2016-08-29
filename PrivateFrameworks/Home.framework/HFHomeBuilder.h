@@ -2,21 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFHomeBuilder : HFItemBuilder <HFWallpaperBuilder> {
-    NAFuture * _loadedWallpaperFuture;
+@interface HFHomeBuilder : HFItemBuilder {
     NSString * _name;
     NSString * _userNotes;
-    HFWallpaper * _wallpaper;
+    HFWallpaperEditCollectionBuilder * _wallpaperBuilder;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NAFuture *loadedWallpaperFuture;
 @property (nonatomic, copy) NSString *name;
-@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *userNotes;
-@property (nonatomic, retain) HFWallpaper *wallpaper;
+@property (nonatomic, retain) HFWallpaperEditCollectionBuilder *wallpaperBuilder;
 
 + (Class)homeKitRepresentationClass;
 
@@ -24,19 +18,15 @@
 - (id)commitItem;
 - (id)createHome;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (id)loadedWallpaperFuture;
 - (id)name;
 - (id)performValidation;
 - (void)setHome:(id)arg1;
-- (void)setLoadedWallpaperFuture:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setUserNotes:(id)arg1;
-- (void)setWallpaper:(id)arg1;
+- (void)setWallpaperBuilder:(id)arg1;
 - (id)updateName;
 - (id)updateUserNotes;
-- (id)updateWallpaper;
 - (id)userNotes;
-- (id)wallpaper;
-- (id)wallpaperFuture;
+- (id)wallpaperBuilder;
 
 @end

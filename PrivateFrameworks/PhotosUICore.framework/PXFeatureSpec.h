@@ -5,12 +5,12 @@
 @interface PXFeatureSpec : NSObject {
     double  __displayScale;
     PXExtendedTraitCollection * __extendedTraitCollection;
+    PXLayoutMetricInterpolator * __horizontalContentGuideInsetsInterpolator;
     struct CGSize { 
         double width; 
         double height; 
     }  __layoutReferenceSize;
     bool  __shouldUseMiniMargins;
-    PXLayoutMetricInterpolator * __verticalContentGuideInsetsInterpolator;
     NSCache * __viewSpecCache;
     NSArray * _collectionTileImageOverlaySpecs;
     NSArray * _collectionTileImageOverlaySpecsHighlighted;
@@ -22,9 +22,9 @@
 
 @property (nonatomic, readonly) double _displayScale;
 @property (nonatomic, readonly) PXExtendedTraitCollection *_extendedTraitCollection;
+@property (nonatomic, readonly) PXLayoutMetricInterpolator *_horizontalContentGuideInsetsInterpolator;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } _layoutReferenceSize;
 @property (nonatomic, readonly) bool _shouldUseMiniMargins;
-@property (nonatomic, readonly) PXLayoutMetricInterpolator *_verticalContentGuideInsetsInterpolator;
 @property (nonatomic, readonly) NSCache *_viewSpecCache;
 @property (nonatomic, readonly) double collectionTileImageCornerRadius;
 @property (nonatomic, readonly) NSArray *collectionTileImageOverlaySpecs;
@@ -42,10 +42,10 @@
 - (long long)_capitalizationStyleFromTextAttributes:(id)arg1 defaultCapitalizationStyle:(long long)arg2;
 - (double)_displayScale;
 - (id)_extendedTraitCollection;
+- (id)_horizontalContentGuideInsetsInterpolator;
 - (struct CGSize { double x1; double x2; })_layoutReferenceSize;
 - (bool)_shouldUseMiniMargins;
 - (id)_textAttributesForFontName:(id)arg1 fontSize:(double)arg2 lineHeight:(double)arg3 tracking:(double)arg4 stroke:(double)arg5;
-- (id)_verticalContentGuideInsetsInterpolator;
 - (id)_viewSpecCache;
 - (double)collectionTileImageCornerRadius;
 - (struct UIColor { Class x1; }*)collectionTileImageOverlayColor;

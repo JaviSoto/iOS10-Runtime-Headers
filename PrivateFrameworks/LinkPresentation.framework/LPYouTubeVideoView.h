@@ -18,7 +18,7 @@
 - (bool)isMuted;
 - (void)setMuted:(bool)arg1;
 - (void)setPlaying:(bool)arg1;
-- (bool)shouldContinuePlayingAfterResumingApp;
+- (bool)shouldShowMuteButton;
 - (bool)usesSharedAudioSession;
 - (void)youTubePlayer:(id)arg1 didChangeToState:(long long)arg2;
 - (void)youTubePlayer:(id)arg1 didReceiveError:(id)arg2;

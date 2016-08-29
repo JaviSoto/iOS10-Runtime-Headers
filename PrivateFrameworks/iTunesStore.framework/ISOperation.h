@@ -35,6 +35,7 @@
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
+- (void).cxx_destruct;
 - (void)_addSubOperation:(id)arg1;
 - (void)_failAfterException;
 - (void)_keepAliveTimer:(id)arg1;
@@ -48,7 +49,6 @@
 - (bool)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
 - (id)copyActivePowerAssertionIdentifiers;
 - (id)copySerializationLocks;
-- (void)dealloc;
 - (id)delegate;
 - (void)dispatchCompletionBlock;
 - (id)error;

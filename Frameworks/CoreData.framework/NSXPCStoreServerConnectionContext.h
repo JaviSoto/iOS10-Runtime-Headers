@@ -9,6 +9,7 @@
 }
 
 - (struct { unsigned int x1[8]; })auditToken;
+- (id)cache;
 - (void)dealloc;
 - (id)description;
 - (id)entitlements;

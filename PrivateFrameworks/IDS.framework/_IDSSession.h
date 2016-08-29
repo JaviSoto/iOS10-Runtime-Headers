@@ -4,6 +4,7 @@
 
 @interface _IDSSession : NSObject <IDSBaseSocketPairConnectionDelegate, IDSDaemonListenerProtocol> {
     NSString * _accountID;
+    bool  _alwaysSkipSelf;
     id  _boostContext;
     NSString * _clientUUID;
     unsigned long long  _connectionCountHint;
@@ -19,6 +20,7 @@
     bool  _isLegacy;
     bool  _isMuted;
     bool  _needsToWaitForPreConnectionData;
+    bool  _preferCellularForCallSetup;
     NSMutableDictionary * _preferences;
     unsigned long long  _preferredAddressFamily;
     NSObject<OS_dispatch_queue> * _queue;
@@ -76,7 +78,7 @@
 - (void)sendInvitationWithOptions:(id)arg1;
 - (void)sendSessionMessage:(id)arg1;
 - (void)session:(id)arg1 audioEnabled:(bool)arg2;
-- (void)session:(id)arg1 invitationSentToTokens:(id)arg2;
+- (void)session:(id)arg1 invitationSentToTokens:(id)arg2 shouldBreakBeforeMake:(bool)arg3;
 - (void)session:(id)arg1 muted:(bool)arg2;
 - (void)sessionAcceptReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)sessionCancelReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;

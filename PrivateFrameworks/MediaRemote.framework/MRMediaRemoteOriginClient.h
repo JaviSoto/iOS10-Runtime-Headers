@@ -4,7 +4,6 @@
 
 @interface MRMediaRemoteOriginClient : NSObject {
     bool  _canBeNowPlayingApp;
-    id /* block */  _commandHandlerBlock;
     NSMutableDictionary * _commandHandlerBlocks;
     bool  _isOverrideApp;
     int  _notifyDidLaunchToken;
@@ -14,6 +13,7 @@
     struct _MROrigin { } * _origin;
     id /* block */  _playbackQueueCallback;
     unsigned int  _routeDiscoveryMode;
+    NSObject<OS_dispatch_queue> * _serialQueue;
     NSArray * _supportedCommands;
     NSMutableDictionary * _transactionCallbacks;
 }

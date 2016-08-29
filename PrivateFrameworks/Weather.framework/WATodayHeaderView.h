@@ -85,5 +85,6 @@
 - (id)temperatureHighLowLabel;
 - (id)temperatureLabel;
 - (id)temperatureLow;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

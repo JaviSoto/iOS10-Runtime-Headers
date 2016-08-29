@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)filterByAddingRule:(id)arg1;
+- (id)filterByClearingRules;
 - (id)filterByRemovingRuleAtIndex:(unsigned long long)arg1;
 - (unsigned long long)filterIndex;
 - (id)filterWithRule:(id)arg1 atIndex:(unsigned long long)arg2;

@@ -13,9 +13,9 @@
 @property (readonly) Class superclass;
 
 + (Class)dataClassForFamily:(unsigned long long)arg1;
-+ (id)dataForFamily:(unsigned long long)arg1 fromFileURL:(id)arg2;
++ (id)dataForFamily:(unsigned long long)arg1 fromFileURL:(id)arg2 error:(id*)arg3;
 + (id)dataFromFileURL:(id)arg1;
-+ (bool)isFileAtURL:(id)arg1 validForFamily:(unsigned long long)arg2;
++ (bool)isFileAtURL:(id)arg1 validForFamily:(unsigned long long)arg2 error:(id*)arg3;
 + (bool)isFileValid:(id)arg1;
 
 - (void).cxx_destruct;

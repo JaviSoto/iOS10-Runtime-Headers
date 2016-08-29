@@ -22,6 +22,7 @@
 @property (nonatomic) <SBUIIconForceTouchControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SBUIIconForceTouchViewController *iconForceTouchViewController;
 @property (nonatomic, readonly) long long layout;
 @property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
@@ -30,6 +31,7 @@
 + (void)_dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 + (id)_iconForceTouchControllerHashTable;
 + (bool)_isPeekingOrShowing;
++ (bool)_isWidgetVisible:(id)arg1;
 + (id)_windows;
 
 - (void).cxx_destruct;
@@ -43,6 +45,7 @@
 - (id)dataSource;
 - (id)delegate;
 - (void)dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)iconForceTouchViewController;
 - (void)iconForceTouchViewControllerDidDismiss:(id)arg1;
 - (void)iconForceTouchViewControllerWillDismiss:(id)arg1;
 - (id)init;

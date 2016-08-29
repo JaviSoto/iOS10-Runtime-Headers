@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityLockupContainerCollectionViewCell : UICollectionViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityVerticalLockupViewDelegate, MusicEntityViewDownloadInformationObserving, MusicEntityViewPlaybackStatusObserving> {
+@interface MusicEntityLockupContainerCollectionViewCell : UICollectionViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityVerticalLockupViewDelegate> {
     UITraitCollection * _cachedTraitCollection;
-    struct MusicEntityDownloadInformation { 
-        long long downloadStatus; 
-        double downloadProgress; 
-    }  _downloadInformation;
     bool  _entityDisabled;
     UIColor * _hairlineColor;
     UIView * _hairlineView;
@@ -46,12 +42,10 @@
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
 - (void)setEntityDisabled:(bool)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)setHairlineColor:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
-- (void)setPlaybackStatus:(id)arg1;
 - (void)setSelected:(bool)arg1;
 - (void)setShowsHairline:(bool)arg1;
 - (void)setTextLateralEdgePadding:(double)arg1;

@@ -26,6 +26,8 @@
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
 @property (readonly) BWNodeOutput *videoCaptureOutput;
+@property (nonatomic, copy) NSDictionary *videoCaptureOutputColorInfoOverride;
+@property (nonatomic) bool videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 
 + (id)cameraSourceNodeWithCaptureDevice:(id)arg1;
 + (void)initialize;
@@ -46,11 +48,15 @@
 - (void)setLivePreviewFormatIndex:(int)arg1;
 - (void)setOutputDimensions:(struct { int x1; int x2; })arg1;
 - (void)setStillImageCaptureFormatIndex:(int)arg1;
+- (void)setVideoCaptureOutputColorInfoOverride:(id)arg1;
+- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (bool)start:(id*)arg1;
 - (int)stillImageCaptureFormatIndex;
 - (id)stillImageOutput;
 - (bool)stop:(id*)arg1;
 - (id)videoCaptureOutput;
+- (id)videoCaptureOutputColorInfoOverride;
+- (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (void)willStop;
 
 @end

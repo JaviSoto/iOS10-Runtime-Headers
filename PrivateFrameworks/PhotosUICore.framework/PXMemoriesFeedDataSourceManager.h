@@ -20,6 +20,7 @@
 - (unsigned long long)_firstUngroupedMemoryIndex;
 - (void)_generateAdditionalEntriesWithOldDataSource:(id)arg1 startingIndex:(unsigned long long)arg2 sync:(bool)arg3;
 - (void)_handleFinishedGeneratingAdditionalEntriesWithNewDataSource:(id)arg1 changeDetails:(id)arg2 firstUngroupedMemoryIndex:(unsigned long long)arg3;
+- (unsigned long long)_indexOfEntry:(id)arg1 inSortedEntries:(id)arg2 options:(unsigned long long)arg3;
 - (unsigned long long)_indexOfEntryForMemory:(id)arg1 inSortedEntries:(id)arg2 options:(unsigned long long)arg3;
 - (bool)_isGeneratingAdditionalEntries;
 - (void)_setFirstUngroupedMemoryIndex:(unsigned long long)arg1;

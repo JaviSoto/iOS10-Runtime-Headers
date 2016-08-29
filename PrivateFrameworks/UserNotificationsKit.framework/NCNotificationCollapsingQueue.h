@@ -14,8 +14,10 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)_collapsedCountForCollapsibleRequests:(id)arg1;
+- (id)_collapsedNotificationRequestForNotificationRequest:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_collapsedNotificationRequestFromCollapsibleRequests:(id)arg1;
 - (unsigned long long)_indexOfRequestMatchingNotificationRequest:(id)arg1;
+- (void)_insertPreemptingNotificationRequest:(id)arg1;
 - (id)_requestsCollapsibleWithNotificationRequest:(id)arg1;
 - (void)addNotificationRequest:(id)arg1;
 - (unsigned long long)collapsingThreshold;
@@ -26,6 +28,7 @@
 - (id)init;
 - (id)notificationRequestsCoalescebleWithCoalescedRequest:(id)arg1;
 - (id)peekNextNotificationRequest;
+- (id)peekNextNotificationRequestPassingTest:(id /* block */)arg1;
 - (void)removeNotificationRequest:(id)arg1;
 - (void)replaceNotificationRequest:(id)arg1;
 - (id)requests;

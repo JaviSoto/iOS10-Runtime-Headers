@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetRideStatusIntent : INIntent <INGetRideStatusIntent>
+@interface INGetRideStatusIntent : INIntent <INGetRideStatusIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

@@ -63,7 +63,6 @@
 - (void)_resetIdleTimer;
 - (void)_resetTrainingManager;
 - (void)_resignActive;
-- (void)_resumeActive;
 - (void)_resumeGLDrawing;
 - (void)_resumeTraining;
 - (void)_retryAfterBadMicAlert;
@@ -73,7 +72,6 @@
 - (void)_setupMode;
 - (void)_setupTrainingStates;
 - (void)_setupViews;
-- (void)_showAVVCNotReadyAlertCompletion:(id /* block */)arg1;
 - (void)_showBadMicAlertCompletion:(id /* block */)arg1;
 - (void)_showBadMicAlertWithCompletion:(id /* block */)arg1;
 - (void)_showEnrollmentSuccessView;
@@ -108,6 +106,7 @@
 - (void)getScreenshotImageForDebugController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)hasRetriedTraining;
 - (id)init;
+- (id)interpretAudioSource:(int)arg1;
 - (long long)interpretSessionManagerStatus:(int)arg1 forInstruction:(long long)arg2;
 - (id)presentedViewControllerForDebugController;
 - (void)radarButtonPressed:(id)arg1;

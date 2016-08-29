@@ -248,6 +248,7 @@
 - (id)internalDetourInfo;
 - (bool)isDisputed;
 - (bool)isEqual:(id)arg1;
+- (bool)isEqualToMapItem:(id)arg1;
 - (bool)isEventAllDay;
 - (bool)isValid;
 - (id)mapRegion;

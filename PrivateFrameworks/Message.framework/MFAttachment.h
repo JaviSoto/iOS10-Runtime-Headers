@@ -8,16 +8,12 @@
     NSString * _disposition;
     NSProgress * _downloadProgress;
     id /* block */  _fetchCompletionBlock;
-    id /* block */  _fetchProgressBlock;
+    bool  _isAutoArchive;
     bool  _isDataAvailableLocally;
-    bool  _isUserFacing;
     unsigned long long  _lastProgressBytes;
     double  _lastProgressTime;
-    NSMutableDictionary * _metadata;
     MFMimePart * _part;
     MFAttachmentPlaceholder * _placeholder;
-    unsigned long long  _progressInterval;
-    double  _progressTimeInterval;
     NSURL * _url;
     bool  _wantsCompletionBlockOffMainThread;
 }
@@ -29,11 +25,10 @@
 @property (nonatomic) unsigned long long decodedFileSize;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *disposition;
-@property (nonatomic, readonly) NSProgress *downloadProgress;
+@property (nonatomic, retain) NSProgress *downloadProgress;
 @property (nonatomic) unsigned long long encodedFileSize;
 @property (nonatomic, retain) NSString *eventID;
 @property (nonatomic, copy) id /* block */ fetchCompletionBlock;
-@property (copy) id /* block */ fetchProgressBlock;
 @property (nonatomic, copy) NSString *fileName;
 @property (readonly) NSString *fileUTType;
 @property (readonly) unsigned long long hash;
@@ -45,7 +40,6 @@
 @property (readonly) bool isContainedInRFC822;
 @property (readonly) bool isDataAvailableLocally;
 @property bool isPlaceholder;
-@property (nonatomic) bool isUserFacing;
 @property (nonatomic) unsigned long long lastProgressBytes;
 @property (nonatomic) double lastProgressTime;
 @property (nonatomic, retain) MFMailDropMetadata *mailDropMetadata;
@@ -54,8 +48,6 @@
 @property (nonatomic, retain) MFMimePart *part;
 @property (readonly) NSString *path;
 @property (nonatomic, retain) MFAttachmentPlaceholder *placeholder;
-@property (nonatomic) unsigned long long progressInterval;
-@property (nonatomic) double progressTimeInterval;
 @property (nonatomic, copy) NSString *remoteImageFileName;
 @property (readonly) bool shouldAutoDownload;
 @property (readonly) Class superclass;
@@ -95,7 +87,6 @@
 - (id)fetchLocalData;
 - (id)fetchLocalData:(id*)arg1 stripPrivateMetadata:(bool)arg2;
 - (id)fetchPlaceholderData;
-- (id /* block */)fetchProgressBlock;
 - (id)fileAttributes;
 - (id)fileName;
 - (id)fileNameByStrippingZipIfNeeded:(bool)arg1;
@@ -118,7 +109,6 @@
 - (bool)isMailDrop;
 - (bool)isMailDropPhotoArchive;
 - (bool)isPlaceholder;
-- (bool)isUserFacing;
 - (unsigned long long)lastProgressBytes;
 - (double)lastProgressTime;
 - (id)mailDropMetadata;
@@ -127,21 +117,19 @@
 - (id)part;
 - (id)path;
 - (id)placeholder;
-- (unsigned long long)progressInterval;
-- (double)progressTimeInterval;
 - (id)readFromDisk;
 - (id)remoteImageFileName;
+- (void)resetProgress;
 - (void)setAttachmentManager:(id)arg1;
 - (void)setContentID:(id)arg1;
 - (void)setCustomConsumer:(id)arg1;
 - (void)setDecodedFileSize:(unsigned long long)arg1;
 - (void)setDisposition:(id)arg1;
+- (void)setDownloadProgress:(id)arg1;
 - (void)setEncodedFileSize:(unsigned long long)arg1;
 - (void)setFetchCompletionBlock:(id /* block */)arg1;
-- (void)setFetchProgressBlock:(id /* block */)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setIsPlaceholder:(bool)arg1;
-- (void)setIsUserFacing:(bool)arg1;
 - (void)setLastProgressBytes:(unsigned long long)arg1;
 - (void)setLastProgressTime:(double)arg1;
 - (void)setMailDropMetadata:(id)arg1;
@@ -149,8 +137,6 @@
 - (void)setMimeType:(id)arg1;
 - (void)setPart:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setProgressInterval:(unsigned long long)arg1;
-- (void)setProgressTimeInterval:(double)arg1;
 - (void)setRemoteImageFileName:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setWantsCompletionBlockOffMainThread:(bool)arg1;
@@ -158,6 +144,7 @@
 - (unsigned long long)sizeOnDisk;
 - (id)textEncodingGuessWithData:(id)arg1;
 - (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
+- (void)updateProgressWithCurrentBytes:(unsigned long long)arg1;
 - (id)url;
 - (bool)wantsCompletionBlockOffMainThread;
 - (void)writeToDiskWithData:(id)arg1;
@@ -200,7 +187,7 @@
 - (bool)isRestrictedMIMEType;
 - (struct CGSize { double x1; double x2; })markupSizeForImageScale:(unsigned long long)arg1;
 - (id)markupStringForCompositionWithPrependedBlankLine:(bool)arg1 imageScale:(unsigned long long)arg2;
-- (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(double)arg3;
+- (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(double)arg3 allowAttachmentElement:(bool)arg4;
 - (id)meetingStorePersistentID;
 - (bool)needsColorspaceConversion;
 - (id)pass;

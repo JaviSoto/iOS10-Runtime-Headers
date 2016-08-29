@@ -11,6 +11,7 @@
     unsigned long long  _completedAssetParts;
     id /* block */  _completionBlock;
     NSString * _dataclass;
+    bool  _downloadOnly;
     float  _downloadProgress;
     NSError * _error;
     NSURL * _icon;
@@ -45,6 +46,7 @@
 @property (nonatomic) unsigned long long completedAssetParts;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) NSString *dataclass;
+@property (nonatomic) bool downloadOnly;
 @property (nonatomic) float downloadProgress;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSURL *icon;
@@ -88,6 +90,7 @@
 - (id /* block */)completionBlock;
 - (id)dataclass;
 - (id)description;
+- (bool)downloadOnly;
 - (float)downloadProgress;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
@@ -122,6 +125,7 @@
 - (void)setCompletedAssetParts:(unsigned long long)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setDataclass:(id)arg1;
+- (void)setDownloadOnly:(bool)arg1;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setError:(id)arg1;
 - (void)setIcon:(id)arg1;

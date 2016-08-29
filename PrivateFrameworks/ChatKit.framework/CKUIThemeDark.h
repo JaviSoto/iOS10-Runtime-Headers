@@ -56,6 +56,7 @@
 - (long long)toFieldBackdropStyle;
 - (id)toFieldTextColor;
 - (id)transcriptBackgroundColor;
+- (id)transcriptBigEmojiColor;
 - (id)transcriptSeparatorColor;
 - (id)transcriptTextColor;
 - (id)typingIndicatorDotColor;

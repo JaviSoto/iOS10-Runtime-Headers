@@ -6,10 +6,7 @@
     bool  _allowsCollectionsInSelectedEntities;
     bool  _allowsMultipleSelection;
     MusicClientContext * _clientContext;
-    NSString * _collectionName;
-    bool  _hidesRightBarButtonItem;
     bool  _includeStoreItemsInSearch;
-    bool  _invokedForPlaylistEditing;
     <MusicMediaPickerDelegate> * _mediaPickerDelegate;
     NSMutableArray * _pickedEntities;
     unsigned long long  _pickedEntitiesCount;
@@ -24,13 +21,10 @@
 @property (nonatomic) bool allowsCollectionsInSelectedEntities;
 @property (nonatomic) bool allowsMultipleSelection;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
-@property (nonatomic, copy) NSString *collectionName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool hidesRightBarButtonItem;
 @property (nonatomic) bool includeStoreItemsInSearch;
-@property (getter=isInvokedForPlaylistEditing, nonatomic) bool invokedForPlaylistEditing;
 @property (nonatomic) <MusicMediaPickerDelegate> *mediaPickerDelegate;
 @property (nonatomic, readonly) NSArray *pickedEntities;
 @property (nonatomic, copy) NSString *prompt;
@@ -57,12 +51,9 @@
 - (bool)allowsCollectionsInSelectedEntities;
 - (bool)allowsMultipleSelection;
 - (id)clientContext;
-- (id)collectionName;
 - (void)finish;
-- (bool)hidesRightBarButtonItem;
 - (bool)includeStoreItemsInSearch;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (bool)isInvokedForPlaylistEditing;
 - (id)mediaPickerDelegate;
 - (void)musicSearchViewController:(id)arg1 didSelectStoreItemWithID:(id)arg2;
 - (void)musicSearchViewControllerDidFinish:(id)arg1 withSearchBar:(id)arg2;
@@ -78,10 +69,7 @@
 - (void)setAllowsCollectionsInSelectedEntities:(bool)arg1;
 - (void)setAllowsMultipleSelection:(bool)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setCollectionName:(id)arg1;
-- (void)setHidesRightBarButtonItem:(bool)arg1;
 - (void)setIncludeStoreItemsInSearch:(bool)arg1;
-- (void)setInvokedForPlaylistEditing:(bool)arg1;
 - (void)setMediaPickerDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setSelectedEntitiesForActiveSession:(id)arg1;

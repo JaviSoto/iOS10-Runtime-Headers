@@ -4,6 +4,7 @@
 
 @interface _DECPredictionStore : NSObject {
     _DECSqliteDatabase * _db;
+    NSConditionLock * _initLock;
     struct _opaque_pthread_mutex_t { 
         long long __sig; 
         BOOL __opaque[56]; 
@@ -13,9 +14,12 @@
 }
 
 + (id)_initializeDatabase:(id)arg1 newDatabaseCreated:(bool*)arg2 simulateCrash:(bool)arg3;
++ (bool)_isDatabaseIntegrityViolated:(id)arg1;
 + (id)_recreateCorruptDatabase:(id)arg1 simulateCrash:(bool)arg2;
 
 - (void).cxx_destruct;
+- (void)_blockUntilReady;
+- (void)_initStoreWithPath:(id)arg1 shouldSimulateCrash:(bool)arg2;
 - (void)_migrate;
 - (id)_migrationPlan;
 - (void)_writeResult:(id)arg1;
@@ -27,7 +31,7 @@
 - (id)initWithPath:(id)arg1;
 - (id)initWithPath:(id)arg1 shouldSimulateCrash:(bool)arg2;
 - (id)initWithSqliteDatabase:(id)arg1;
-- (bool)insertResultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 result:(id)arg3;
+- (long long)insertResultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 result:(id)arg3;
 - (void)queuedInsertResultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 result:(id)arg3;
 - (id)resultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2;
 - (id)resultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 error:(id*)arg3;

@@ -11,6 +11,7 @@
     long long  _layoutStyle;
     long long  _mode;
     bool  _pulsing;
+    bool  _showDisabled;
     struct CAMShutterButtonSpec { 
         double outerRingDiameter; 
         double outerRingStrokeWidth; 
@@ -35,6 +36,7 @@
 @property (nonatomic) long long layoutStyle;
 @property (nonatomic) long long mode;
 @property (getter=isPulsing, nonatomic) bool pulsing;
+@property (nonatomic) bool showDisabled;
 @property (nonatomic) struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; } spec;
 @property (getter=isSpinning, nonatomic) bool spinning;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tappableEdgeInsets;
@@ -80,9 +82,11 @@
 - (void)setMode:(long long)arg1;
 - (void)setMode:(long long)arg1 animated:(bool)arg2;
 - (void)setPulsing:(bool)arg1;
+- (void)setShowDisabled:(bool)arg1;
 - (void)setSpec:(struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })arg1;
 - (void)setSpinning:(bool)arg1;
 - (void)setTappableEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)showDisabled;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })spec;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tappableEdgeInsets;

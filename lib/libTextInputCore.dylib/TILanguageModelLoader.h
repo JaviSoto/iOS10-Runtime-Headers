@@ -5,6 +5,7 @@
 @interface TILanguageModelLoader : NSObject {
     TILanguageModelAdaptationContext * _adaptationContext;
     NSString * _clientIdentifier;
+    <TIContactFetchingDelegate> * _contactFetchingDelegate;
     NSString * _dynamicResourcePath;
     TIInputMode * _inputMode;
     NSArray * _mobileAssets;
@@ -18,6 +19,7 @@
 
 @property (nonatomic, retain) TILanguageModelAdaptationContext *adaptationContext;
 @property (nonatomic, retain) NSString *clientIdentifier;
+@property (nonatomic) <TIContactFetchingDelegate> *contactFetchingDelegate;
 @property (nonatomic, readonly) NSString *dynamicResourcePath;
 @property (nonatomic, readonly) TIInputMode *inputMode;
 @property (nonatomic, readonly) NSArray *mobileAssets;
@@ -27,6 +29,7 @@
 
 + (void)clearDynamicLearningCaches;
 + (void)clearDynamicResourcesAtPath:(id)arg1;
++ (void)contactStoreDidChange:(id)arg1;
 + (void)dropResourcesExcludingInputModes:(id)arg1 flushCache:(bool)arg2;
 + (void)flushDynamicLearningCaches;
 + (id)knownClients;
@@ -36,18 +39,22 @@
 + (void)resetClientAndRecipientCache;
 + (void)setAsynchronousLoad:(bool)arg1;
 + (id)sharedLanguageModelLoaderForInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3;
++ (void)startObservingContactStore;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)adaptationContext;
 - (void)clearDynamicLearningCaches;
 - (id)clientIdentifier;
+- (id)contactFetchingDelegate;
 - (void)dealloc;
 - (id)dynamicResourcePath;
+- (void)findRecordsMatchingRecipient:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)flushDynamicLearningCaches;
 - (id)initWithInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3;
 - (id)inputMode;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })languageModelForAdaptationContext:(id)arg1;
+- (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })lightweightLanguageModel;
 - (void)lookupRecordForRecipientIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)mobileAssets;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })model;
@@ -56,6 +63,7 @@
 - (id)recipientIdentifier;
 - (void)setAdaptationContext:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
+- (void)setContactFetchingDelegate:(id)arg1;
 - (void)setLanguageModelClientIdentifier:(id)arg1;
 - (void)setLanguageModelRecipientIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)setModel:(struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })arg1;

@@ -5,6 +5,7 @@
 @interface HMAccessory : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMThreadSafeMutableArrayCollection * _accessories;
     NSNumber * _accessoryFlags;
+    HMThreadSafeMutableArrayCollection * _accessoryInternalProfiles;
     HMThreadSafeMutableArrayCollection * _accessoryProfiles;
     unsigned long long  _additionalSetupStatus;
     HMApplicationData * _applicationData;
@@ -17,7 +18,10 @@
     <HMAccessoryDelegate> * _delegate;
     HMDelegateCaller * _delegateCaller;
     bool  _discoveredBridgeableAccessory;
+    NSString * _firmwareVersion;
     HMHome * _home;
+    NSString * _manufacturer;
+    NSString * _model;
     HMFMessageDispatcher * _msgDispatcher;
     NSString * _name;
     bool  _paired;
@@ -25,6 +29,7 @@
     bool  _reachable;
     long long  _reachableTransports;
     HMRoom * _room;
+    NSString * _serialNumber;
     unsigned long long  _transportTypes;
     NSUUID * _uniqueIdentifier;
     NSArray * _uniqueIdentifiersForBridgeAccessories;
@@ -34,6 +39,7 @@
 
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessories;
 @property (nonatomic, retain) NSNumber *accessoryFlags;
+@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessoryInternalProfiles;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessoryProfiles;
 @property (nonatomic) unsigned long long additionalSetupStatus;
 @property (nonatomic, readonly) HMApplicationData *applicationData;
@@ -50,17 +56,21 @@
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool discoveredBridgeableAccessory;
+@property (retain) NSString *firmwareVersion;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
 @property (nonatomic, readonly) bool hf_hasSetFavorite;
 @property (nonatomic, readonly) bool hf_isFavorite;
+@property (nonatomic, readonly) bool hf_requiresFirmwareUpdate;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly, copy) NSArray *identifiersForBridgedAccessories;
+@property (retain) NSString *manufacturer;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (retain) NSString *model;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) bool paired;
@@ -68,6 +78,7 @@
 @property (getter=isReachable, nonatomic) bool reachable;
 @property (nonatomic) long long reachableTransports;
 @property (nonatomic) HMRoom *room;
+@property (retain) NSString *serialNumber;
 @property (nonatomic, readonly, copy) NSArray *services;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long transportTypes;
@@ -86,8 +97,7 @@
 - (void)_configureClientQueue:(id)arg1;
 - (void)_configureMessageDispatcher:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (void)_copyFrom:(id)arg1;
-- (void)_createCameraProfiles:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4 home:(id)arg5;
-- (void)_enableNotification:(bool)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_createCameraProfilesWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
 - (id)_findCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)_findService:(id)arg1;
 - (void)_handleAccessoryCategoryChanged:(id)arg1;
@@ -124,6 +134,7 @@
 - (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)accessories;
 - (id)accessoryFlags;
+- (id)accessoryInternalProfiles;
 - (id)accessoryProfiles;
 - (unsigned long long)additionalSetupStatus;
 - (id)applicationData;
@@ -140,6 +151,7 @@
 - (id)description;
 - (bool)discoveredBridgeableAccessory;
 - (void)encodeWithCoder:(id)arg1;
+- (id)firmwareVersion;
 - (id)home;
 - (id)identifier;
 - (id)identifiersForBridgedAccessories;
@@ -150,8 +162,10 @@
 - (bool)isBlocked;
 - (bool)isBridged;
 - (bool)isReachable;
+- (id)manufacturer;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
+- (id)model;
 - (id)msgDispatcher;
 - (id)name;
 - (void)notifyDelegateOfAppDataUpdateForService:(id)arg1;
@@ -159,9 +173,11 @@
 - (id)propertyQueue;
 - (long long)reachableTransports;
 - (id)room;
+- (id)serialNumber;
 - (id)services;
 - (void)setAccessories:(id)arg1;
 - (void)setAccessoryFlags:(id)arg1;
+- (void)setAccessoryInternalProfiles:(id)arg1;
 - (void)setAccessoryProfiles:(id)arg1;
 - (void)setAdditionalSetupStatus:(unsigned long long)arg1;
 - (void)setApplicationData:(id)arg1;
@@ -174,7 +190,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setDiscoveredBridgeableAccessory:(bool)arg1;
+- (void)setFirmwareVersion:(id)arg1;
 - (void)setHome:(id)arg1;
+- (void)setManufacturer:(id)arg1;
+- (void)setModel:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPaired:(bool)arg1;
@@ -182,6 +201,7 @@
 - (void)setReachable:(bool)arg1;
 - (void)setReachableTransports:(long long)arg1;
 - (void)setRoom:(id)arg1;
+- (void)setSerialNumber:(id)arg1;
 - (void)setTransportTypes:(unsigned long long)arg1;
 - (void)setUniqueIdentifiersForBridgeAccessories:(id)arg1;
 - (void)setUniqueIdentifiersForBridgedAccessories:(id)arg1;
@@ -198,14 +218,15 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
+- (long long)hf_appPunchOutReason;
 - (id)hf_dateAdded;
 - (id)hf_displayName;
 - (bool)hf_hasSetFavorite;
 - (bool)hf_isBridge;
 - (bool)hf_isCamera;
 - (bool)hf_isFavorite;
-- (bool)hf_isPotentiallyLegacy;
 - (id)hf_prettyDescription;
+- (bool)hf_requiresFirmwareUpdate;
 - (id)hf_serviceNameComponents;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIsFavorite:(bool)arg1;

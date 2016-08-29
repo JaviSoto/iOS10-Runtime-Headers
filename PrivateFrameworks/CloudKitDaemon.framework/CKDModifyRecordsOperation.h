@@ -88,6 +88,7 @@
 - (void)_prepareParentPCS;
 - (bool)_prepareRecordsForSave;
 - (void)_reportRecordsInFlight;
+- (bool)_shouldToposortInContainerID:(id)arg1;
 - (bool)_topoSortRecords;
 - (id)_topoSortRecordsForHandlers:(id)arg1;
 - (void)_uploadAssets;

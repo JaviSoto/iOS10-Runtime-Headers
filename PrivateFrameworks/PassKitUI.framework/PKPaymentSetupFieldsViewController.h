@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (id)_contextSpecificStringForAggDKey:(id)arg1;
 - (void)_handleNextButtonTapped:(id)arg1;
+- (void)_setIdleTimerDisabled:(bool)arg1 title:(id)arg2 subtitle:(id)arg3;
 - (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_triggerNextActionLoop;
 - (id)allCells;

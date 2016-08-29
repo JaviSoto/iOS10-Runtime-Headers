@@ -14,7 +14,6 @@
 - (HKQuantity *)energyBurnedGoalToday;
 - (HKQuantity *)energyBurnedGoalYesterday;
 - (long long)mostRecentWorkoutAnchor;
-- (unsigned long long)numberOfWorkoutsCompletedAfterDate:(NSDate *)arg1 beforeDate:(NSDate *)arg2 minimumWorkoutDuration:(double)arg3;
 - (unsigned long long)standingHoursToday;
 - (unsigned long long)standingHoursYesterday;
 - (unsigned long long)stepsTakenToday;

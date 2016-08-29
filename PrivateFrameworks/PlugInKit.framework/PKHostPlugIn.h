@@ -23,6 +23,7 @@
     unsigned long long  _state;
     <PKPlugIn> * _supersededBy;
     NSUUID * _supersedingUUID;
+    bool  _terminating;
     unsigned int  _useCount;
 }
 
@@ -64,6 +65,7 @@
 @property (readonly) Class superclass;
 @property (retain) <PKPlugIn> *supersededBy;
 @property (retain) NSUUID *supersedingUUID;
+@property bool terminating;
 @property (readonly) NSDate *timestamp;
 @property (readonly) NSURL *url;
 @property unsigned int useCount;
@@ -122,6 +124,7 @@
 - (void)setState:(unsigned long long)arg1;
 - (void)setSupersededBy:(id)arg1;
 - (void)setSupersedingUUID:(id)arg1;
+- (void)setTerminating:(bool)arg1;
 - (void)setUseCount:(unsigned int)arg1;
 - (void)setUserElection:(long long)arg1;
 - (void)set_replyQueue:(id)arg1;
@@ -134,6 +137,7 @@
 - (id)supersededBy;
 - (id)supersedingUUID;
 - (void)suspend;
+- (bool)terminating;
 - (void)unwind:(unsigned long long)arg1 force:(bool)arg2;
 - (bool)useBundle:(id)arg1 error:(id*)arg2;
 - (unsigned int)useCount;

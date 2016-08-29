@@ -10,18 +10,19 @@
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
     NSObject<OS_dispatch_queue> * _persistQueue;
+    NSMutableDictionary * _placeholderContactsByUUID;
 }
 
 @property (nonatomic, copy) NSSet *contacts;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSSet *placeholderContacts;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginTransaction;
 - (id)_contactStoreContactWithIdentifier:(id)arg1;
-- (id)_contactsMigratedFromFriendKit;
 - (void)_endTransaction;
 - (id)_findMatchingContactStoreContactForDestinations:(id)arg1;
 - (void)_notifyObservers;
@@ -35,8 +36,12 @@
 - (id)contacts;
 - (id)createContactWithDestinations:(id)arg1;
 - (id)init;
+- (id)placeholderContactWithUUID:(id)arg1;
+- (id)placeholderContacts;
 - (void)removeObserver:(id)arg1;
+- (void)removePlaceholderContact:(id)arg1;
 - (void)saveContact:(id)arg1;
+- (void)savePlaceholderContact:(id)arg1;
 - (void)setContacts:(id)arg1;
 - (void)setContactsUsingTransaction:(id /* block */)arg1;
 

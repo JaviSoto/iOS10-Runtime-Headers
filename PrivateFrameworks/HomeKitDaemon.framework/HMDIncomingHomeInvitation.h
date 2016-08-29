@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (struct NSDictionary { Class x1; }*)bulletinContext;
+- (id)describeWithFormat;
 - (void)encodeWithCoder:(id)arg1;
 - (id)homeName;
 - (id)homeUUID;

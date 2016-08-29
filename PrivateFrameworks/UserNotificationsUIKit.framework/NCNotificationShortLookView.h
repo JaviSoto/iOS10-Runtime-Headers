@@ -4,11 +4,13 @@
 
 @interface NCNotificationShortLookView : NCShortLookView <NCNotificationStaticContentAccepting> {
     NCLookViewFontProvider * _fontProvider;
+    NCNotificationGrabberView * _grabberView;
     NCNotificationContentView * _notificationContentView;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;
 @property (nonatomic, copy) NSDate *date;
+@property (getter=isDateAllDay, nonatomic, readonly) bool dateAllDay;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -23,14 +25,19 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *thumbnail;
 @property (nonatomic) long long thumbnailViewContentMode;
+@property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (bool)_configureHeaderContentViewIfNecessary;
 - (void)_configureNotificationContentViewIfNecessary;
 - (id)_fontProvider;
+- (id)_grabberView;
+- (void)_layoutGrabber;
+- (id)_newNotificationContentView;
 - (id)_notificationContentView;
 - (void)_setFontProvider:(id)arg1;
+- (bool)_shouldShowGrabber;
 - (id)accessoryView;
 - (bool)adjustForContentSizeCategoryChange;
 - (bool)adjustsFontForContentSizeCategory;

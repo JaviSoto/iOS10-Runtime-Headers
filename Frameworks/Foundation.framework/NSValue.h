@@ -274,4 +274,10 @@
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 
+// Image: /usr/lib/libIOAccessoryManager.dylib
+
++ (id)valueWithDockState:(struct DockState { int x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct UnsignedWide { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[6]; bool x6; bool x7; double x8; double x9; })arg1;
+
+- (struct DockState { int x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct UnsignedWide { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[6]; bool x6; bool x7; double x8; double x9; })dockStateValue;
+
 @end

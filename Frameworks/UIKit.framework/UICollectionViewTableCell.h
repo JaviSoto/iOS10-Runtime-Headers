@@ -4,13 +4,15 @@
 
 @interface UICollectionViewTableCell : UICollectionViewCell <UITable_UITableViewCellDelegate> {
     long long  _accessoryType;
+    UIShadowView * _borderShadowBottomView;
+    UIShadowView * _borderShadowTopView;
+    bool  _borderShadowVisible;
     UICollectionViewLayout * _currentLayout;
     bool  _editing;
+    bool  _interactiveMoveEffectsVisible;
     double  _offsetForRevealingDeleteConfirmationButton;
-    struct CGPoint { 
-        double x; 
-        double y; 
-    }  _reorderingCenter;
+    double  _reorderingCenterX;
+    UIView * _selectedBackgroundViewToRestoreWhenInteractiveMoveEnds;
     UITableViewCell * _swipeToDeleteCell;
     UIView * _swipeableView;
     UITableViewCollectionCell * _tableViewCell;
@@ -23,6 +25,7 @@
 @property (nonatomic, readonly) bool allowsMultipleSelection;
 @property (nonatomic, readonly) bool allowsMultipleSelectionDuringEditing;
 @property (getter=_backgroundInset, nonatomic, readonly) double backgroundInset;
+@property (nonatomic) bool borderShadowVisible;
 @property (getter=_bottomPadding, nonatomic, readonly) double bottomPadding;
 @property (nonatomic, readonly) bool canBeEdited;
 @property (nonatomic) UICollectionViewLayout *currentLayout;
@@ -44,6 +47,8 @@
 @property (nonatomic) long long indentationLevel;
 @property (nonatomic) double indentationWidth;
 @property (getter=_indexFrame, nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } indexFrame;
+@property (nonatomic) bool interactiveMoveEffectsVisible;
+@property (getter=_marginWidth, nonatomic, readonly) double marginWidth;
 @property (nonatomic, retain) UIView *multipleSelectionBackgroundView;
 @property (nonatomic, readonly) UIColor *multiselectCheckmarkColor;
 @property (getter=_numberOfSections, nonatomic, readonly) long long numberOfSections;
@@ -87,7 +92,7 @@
 - (void)_animateDeletionOfRowWithCell:(id)arg1;
 - (void)_animateSwipeCancelation;
 - (double)_backgroundInset;
-- (void)_beginReorderingForCell:(id)arg1;
+- (void)_beginReorderingForCell:(id)arg1 touch:(id)arg2;
 - (double)_bottomPadding;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calloutTargetRectForCell:(id)arg1;
 - (bool)_canFocusCell:(id)arg1;
@@ -102,25 +107,30 @@
 - (double)_deleteConfirmationHorizontalOffset;
 - (double)_deleteConfirmationHorizontalVelocity;
 - (void)_didInsertRowForTableCell:(id)arg1;
-- (void)_draggingReorderingCell:(id)arg1 yDelta:(double)arg2;
+- (void)_draggingReorderingCell:(id)arg1 yDelta:(double)arg2 touch:(id)arg3;
 - (void)_endReorderingForCell:(id)arg1 wasCancelled:(bool)arg2 animated:(bool)arg3;
 - (void)_endSwipeToDeleteGesture:(bool)arg1;
 - (void)_endSwipeToDeleteRowDidDelete:(bool)arg1;
 - (void)_finishedRemovingRemovalButtonForTableCell:(id)arg1;
 - (void)_highlightCell:(id)arg1 animated:(bool)arg2 scrollPosition:(long long)arg3 highlight:(bool)arg4;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_indexFrame;
+- (void)_insertInteractiveMoveShadowViews;
 - (void)_installSwipeToDeleteGobbler;
 - (bool)_isCellReorderable:(id)arg1;
 - (bool)_isEditingForSwipeDeletion;
 - (bool)_isInModalViewController;
+- (bool)_isInteractiveMoveShadowInstalled;
 - (bool)_isShowingIndex;
+- (void)_layoutInteractiveMoveShadow;
 - (void)_layoutTableViewCell;
+- (double)_marginWidth;
 - (long long)_numberOfRowsInSection:(long long)arg1;
 - (long long)_numberOfSections;
 - (double)_offsetForRevealingDeleteConfirmationButton;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (long long)_popoverControllerStyle;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_rawSeparatorInset;
+- (void)_removeInteractiveMoveShadowViews;
 - (void)_removeWasCanceledForCell:(id)arg1;
 - (id)_reorderingCell;
 - (void)_revealDeleteConfirmationButtonWithWidth:(double)arg1;
@@ -147,6 +157,7 @@
 - (id)_titleForDeleteConfirmationButton:(id)arg1;
 - (double)_topPadding;
 - (void)_updateCell:(id)arg1 withValue:(id)arg2;
+- (void)_updateCollectionViewInteractiveMovementTargetPositionForTouch:(id)arg1;
 - (void)_updateEditing;
 - (void)_updateInternalCellForTableLayout:(bool)arg1 animated:(bool)arg2;
 - (void)_userSelectCell:(id)arg1;
@@ -158,6 +169,7 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)awakeFromNib;
 - (id)backgroundView;
+- (bool)borderShadowVisible;
 - (bool)canBeEdited;
 - (id)currentLayout;
 - (id)detailTextLabel;
@@ -174,6 +186,7 @@
 - (long long)indentationLevel;
 - (double)indentationWidth;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)interactiveMoveEffectsVisible;
 - (bool)isEditing;
 - (bool)isHighlighted;
 - (bool)isInTableLayout;
@@ -192,6 +205,7 @@
 - (void)setAccessoryType:(long long)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
+- (void)setBorderShadowVisible:(bool)arg1;
 - (void)setCurrentLayout:(id)arg1;
 - (void)setEditing:(bool)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
@@ -201,6 +215,7 @@
 - (void)setHighlighted:(bool)arg1;
 - (void)setIndentationLevel:(long long)arg1;
 - (void)setIndentationWidth:(double)arg1;
+- (void)setInteractiveMoveEffectsVisible:(bool)arg1;
 - (void)setMultipleSelectionBackgroundView:(id)arg1;
 - (void)setSelected:(bool)arg1;
 - (void)setSelectedBackgroundView:(id)arg1;

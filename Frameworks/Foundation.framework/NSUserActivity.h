@@ -174,6 +174,8 @@
 + (void)deleteInteractionsWithGroupIdentifier:(id)arg1;
 + (void)deleteInteractionsWithIdentifiers:(id)arg1;
 
+- (id)_intentsIdentifier;
+- (void)_setInteraction:(id)arg1 donate:(bool)arg2;
 - (id)cacheIdentifier;
 - (void)generateCachePayloadWithCompletion:(id /* block */)arg1;
 - (id)inInteraction;

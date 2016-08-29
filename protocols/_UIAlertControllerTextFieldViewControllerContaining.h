@@ -6,6 +6,7 @@
 @required
 
 - (void)_returnKeyPressedInLastTextField;
+- (bool)_shouldSupportReturnKeyPresses;
 - (UIView *)_textFieldContainingViewWithTextField:(UITextField *)arg1;
 
 @end

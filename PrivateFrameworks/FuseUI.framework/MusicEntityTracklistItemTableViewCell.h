@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate, MusicEntityViewDownloadInformationObserving, MusicEntityViewPlaybackStatusObserving> {
+@interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate> {
     bool  _entityDisabled;
     double  _leadingTextColumnWidth;
     MusicEntityTracklistItemView * _tracklistItemView;
@@ -30,12 +30,10 @@
 - (double)leadingTextColumnWidth;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
 - (void)setEntityDisabled:(bool)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setLeadingTextColumnWidth:(double)arg1;
-- (void)setPlaybackStatus:(id)arg1;
 - (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)tracklistItemView:(id)arg1 didSelectPlayButtonAction:(unsigned long long)arg2;
 - (void)tracklistItemViewDidSelectContextualActionsButton:(id)arg1;

@@ -9,7 +9,7 @@
     NSDictionary * _options;
     HMDCameraSessionID * _sessionID;
     HMDSnapshotFile * _snapshotFile;
-    HMDSnapshotRequestHandler * _snapshotRequestHandler;
+    <HMDSnapshotRequestHandlerProtocol> * _snapshotRequestHandler;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSDictionary *options;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (nonatomic, retain) HMDSnapshotFile *snapshotFile;
-@property (nonatomic, readonly) HMDSnapshotRequestHandler *snapshotRequestHandler;
+@property (nonatomic, readonly) <HMDSnapshotRequestHandlerProtocol> *snapshotRequestHandler;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 

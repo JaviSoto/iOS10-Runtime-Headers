@@ -36,5 +36,6 @@
 - (void)setAllowsDownloads:(bool)arg1;
 - (void)setLocalSongsByMood:(id)arg1;
 - (void)setMoodsDownloading:(id)arg1;
+- (id)unusedLocalSongsForMoodID:(id)arg1;
 
 @end

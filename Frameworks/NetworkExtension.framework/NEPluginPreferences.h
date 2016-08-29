@@ -10,6 +10,7 @@
 @property (readonly) NSString *pluginType;
 @property struct __SCPreferences { }*prefs;
 
++ (id)copyIdentifiersOfInstalledVPNApps;
 + (bool)isAppInstalled:(id)arg1;
 + (bool)isEnabledForPluginType:(id)arg1 applicationRemoved:(bool)arg2;
 + (void)removePreferencesForPluginType:(id)arg1;

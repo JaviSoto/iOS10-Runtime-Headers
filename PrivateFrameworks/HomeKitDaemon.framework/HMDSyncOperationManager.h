@@ -5,18 +5,19 @@
 @interface HMDSyncOperationManager : NSObject <HMFTimerDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableArray * _cloudMergeOperations;
-    HMFTimer * _cloudPushDelayTimer;
+    HMFExponentialBackoffTimer * _cloudPushDelayTimer;
     NSMutableArray * _cloudPushOperations;
     HMDHomeManager * _homeManager;
     NSMutableArray * _idsMergeOperations;
     long long  _pauseCloudPushLevel;
     NSObject<OS_dispatch_queue> * _propertyQueue;
+    bool  _syncLoopDialogDisplayed;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic, retain) NSMutableArray *cloudMergeOperations;
-@property (nonatomic, retain) HMFTimer *cloudPushDelayTimer;
+@property (nonatomic, retain) HMFExponentialBackoffTimer *cloudPushDelayTimer;
 @property (nonatomic, retain) NSMutableArray *cloudPushOperations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -26,6 +27,7 @@
 @property (nonatomic) long long pauseCloudPushLevel;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
+@property (getter=wasSyncLoopDialogDisplayed, nonatomic) bool syncLoopDialogDisplayed;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
@@ -54,7 +56,9 @@
 - (void)setHomeManager:(id)arg1;
 - (void)setIdsMergeOperations:(id)arg1;
 - (void)setPauseCloudPushLevel:(long long)arg1;
+- (void)setSyncLoopDialogDisplayed:(bool)arg1;
 - (void)timerDidFire:(id)arg1;
+- (bool)wasSyncLoopDialogDisplayed;
 - (id)workQueue;
 
 @end

@@ -7,10 +7,12 @@
     <SFAirDropBrowserDelegate> * _delegate;
     NSMutableDictionary * _nodes;
     NSArray * _people;
+    NSString * _sessionID;
 }
 
 @property <SFAirDropBrowserDelegate> *delegate;
 @property (nonatomic, readonly) NSArray *people;
+@property (nonatomic, copy) NSString *sessionID;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -18,7 +20,9 @@
 - (void)handleBrowserCallBack;
 - (id)init;
 - (id)people;
+- (id)sessionID;
 - (void)setDelegate:(id)arg1;
+- (void)setSessionID:(id)arg1;
 - (void)start;
 - (void)stop;
 - (void)updateDiscoveredPeople;

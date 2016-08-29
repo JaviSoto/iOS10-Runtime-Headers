@@ -48,6 +48,7 @@
 - (bool)isRejected;
 - (bool)isUserCreated;
 - (id)movieData;
+- (id)propertiesDescription;
 - (double)score;
 - (void)setAssetList:(id)arg1;
 - (void)setAssetListPredicate:(id)arg1;

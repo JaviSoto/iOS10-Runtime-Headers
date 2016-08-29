@@ -25,15 +25,14 @@
 
 - (void).cxx_destruct;
 - (void)_beginInteractivePresentation:(bool)arg1 animated:(bool)arg2 ifPossibleForInitiator:(long long)arg3 completion:(id /* block */)arg4;
-- (void)_configureViewController:(id)arg1 forInteractivePresentation:(bool)arg2;
-- (void)_configureViewControllerForPresentation:(id)arg1;
+- (void)_configureViewController:(id)arg1 forInteractivePresentation:(bool)arg2 withInitiator:(long long)arg3;
 - (void)_endPresentationIfPossible:(bool)arg1;
 - (void)_handleTransitionProgress:(id)arg1;
 - (id)delegate;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (bool)hasCommittedToPresentingLongLookViewController;
-- (void)hintLongLookDismissalWithProgress:(double)arg1;
+- (void)hintLongLookDismissalWithCommitProgress:(double)arg1 overallProgress:(double)arg2;
 - (id)initWithShortLookViewController:(id)arg1;
 - (void)longLookTransitionDelegate:(id)arg1 didBeginTransitionWithAnimator:(id)arg2;
 - (void)longLookTransitionDelegate:(id)arg1 didEndTransitionWithAnimator:(id)arg2 completed:(bool)arg3;

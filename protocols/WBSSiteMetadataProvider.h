@@ -13,7 +13,7 @@
 
 @optional
 
-- (NSOperation *)operationForRequest:(WBSSiteMetadataRequest *)arg1 withProcessPool:(WKProcessPool *)arg2;
+- (NSOperation *)operationForRequest:(WBSSiteMetadataRequest *)arg1;
 - (void)stopWatchingUpdatesForRequest:(WBSSiteMetadataRequest *)arg1;
 
 @end

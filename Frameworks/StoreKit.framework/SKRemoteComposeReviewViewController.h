@@ -15,9 +15,12 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void)_keyboardVisibilityDidChangeNotification:(id)arg1;
 - (id)composeReviewViewController;
+- (void)dealloc;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 - (void)didPrepareWithResult:(id)arg1 error:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)promptForStarRating;
 - (void)setComposeReviewViewController:(id)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;

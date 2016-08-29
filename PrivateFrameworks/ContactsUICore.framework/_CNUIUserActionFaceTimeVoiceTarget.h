@@ -4,7 +4,7 @@
 
 @interface _CNUIUserActionFaceTimeVoiceTarget : CNUIUserActionTarget
 
-- (id)actionsForContact:(id)arg1 schedulerProvider:(id)arg2 discoveringEnvironment:(id)arg3;
+- (id)actionsForContact:(id)arg1 discoveringEnvironment:(id)arg2;
 - (id)init;
 
 @end

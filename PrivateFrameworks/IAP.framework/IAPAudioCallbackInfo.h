@@ -20,6 +20,7 @@
 + (id)sharedInstance;
 
 - (void)_deviceStateChanged:(id)arg1;
+- (void)_handleiAPDaemonDied:(id)arg1;
 - (void)_pauseOnHeadphoneDisconnectChanged:(id)arg1;
 - (void)_volumeChanged:(id)arg1;
 - (void)_volumeControlSupportChanged:(id)arg1;

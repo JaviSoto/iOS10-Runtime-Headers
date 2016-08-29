@@ -13,6 +13,7 @@
         unsigned long long location; 
         unsigned long long length; 
     }  _possibleRange;
+    NSNumber * _useDoubleMonthStyle;
     double  _width;
 }
 
@@ -30,10 +31,10 @@
 - (unsigned long long)_defaultIndexForComponent:(long long)arg1;
 - (long long)_numberOfItemsForComponent:(long long)arg1;
 - (id)_stringForComponent:(long long)arg1 index:(unsigned long long)arg2;
+- (bool)_useDoubleMonthStyle;
 - (double)_widthForComponent:(long long)arg1;
 - (id)date;
 - (id)initShowingDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 useDarkAppearance:(bool)arg4;
-- (void)layoutSubviews;
 - (long long)numberOfComponentsInPickerView:(id)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;

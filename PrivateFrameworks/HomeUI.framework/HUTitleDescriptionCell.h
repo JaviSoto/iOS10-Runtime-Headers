@@ -4,10 +4,14 @@
 
 @interface HUTitleDescriptionCell : HUIconCell {
     UIFont * _descriptionFont;
+    UIImage * _descriptionIcon;
+    UIImageView * _descriptionIconView;
     UILabel * _descriptionLabel;
     NSString * _descriptionText;
     bool  _hideDescription;
+    bool  _hideDescriptionIcon;
     bool  _hideTitle;
+    NSArray * _horizontalLabelConstraints;
     double  _textAlpha;
     UIFont * _titleFont;
     UILabel * _titleLabel;
@@ -16,10 +20,14 @@
 }
 
 @property (nonatomic, retain) UIFont *descriptionFont;
+@property (nonatomic, retain) UIImage *descriptionIcon;
+@property (nonatomic, readonly) UIImageView *descriptionIconView;
 @property (nonatomic, readonly) UILabel *descriptionLabel;
 @property (nonatomic, retain) NSString *descriptionText;
 @property (nonatomic) bool hideDescription;
+@property (nonatomic) bool hideDescriptionIcon;
 @property (nonatomic) bool hideTitle;
+@property (nonatomic, retain) NSArray *horizontalLabelConstraints;
 @property (nonatomic) double textAlpha;
 @property (nonatomic, retain) UIFont *titleFont;
 @property (nonatomic, readonly) UILabel *titleLabel;
@@ -27,20 +35,28 @@
 @property (nonatomic, retain) NSArray *verticalLabelConstraints;
 
 - (void).cxx_destruct;
-- (void)addDescriptionLabel;
-- (void)addTitleLabel;
+- (void)_addDescriptionIconView;
+- (void)_addDescriptionLabel;
+- (void)_addTitleLabel;
 - (id)descriptionFont;
+- (id)descriptionIcon;
+- (id)descriptionIconView;
 - (id)descriptionLabel;
 - (id)descriptionText;
 - (bool)hideDescription;
+- (bool)hideDescriptionIcon;
 - (bool)hideTitle;
+- (id)horizontalLabelConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setDescriptionFont:(id)arg1;
+- (void)setDescriptionIcon:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
 - (void)setDisabled:(bool)arg1;
 - (void)setHideDescription:(bool)arg1;
+- (void)setHideDescriptionIcon:(bool)arg1;
 - (void)setHideTitle:(bool)arg1;
+- (void)setHorizontalLabelConstraints:(id)arg1;
 - (void)setTextAlpha:(double)arg1;
 - (void)setTitleFont:(id)arg1;
 - (void)setTitleText:(id)arg1;
@@ -50,8 +66,10 @@
 - (id)titleLabel;
 - (id)titleText;
 - (void)updateConstraints;
+- (void)updateHorizontalLabelConstraints;
 - (void)updateTitle;
 - (void)updateUIWithAnimation:(bool)arg1;
+- (void)updateVerticalLabelConstraints;
 - (id)verticalLabelConstraints;
 
 @end

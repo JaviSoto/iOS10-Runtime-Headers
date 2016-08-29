@@ -3,6 +3,7 @@
  */
 
 @interface HUElasticApplier : HUApplier {
+    bool  _applyOnlyOnProgressChanges;
     bool  _completesWhenAtRest;
     double  _currentVelocity;
     CADisplayLink * _displayLink;
@@ -15,6 +16,7 @@
     double  _tension;
 }
 
+@property (nonatomic) bool applyOnlyOnProgressChanges;
 @property (nonatomic) bool completesWhenAtRest;
 @property (nonatomic) double currentVelocity;
 @property (nonatomic, retain) CADisplayLink *displayLink;
@@ -30,6 +32,7 @@
 - (void)_displayLinkTick;
 - (void)_invalidateDisplayLinkIfNecessary;
 - (void)_updateProgressForInitialUpdate:(bool)arg1;
+- (bool)applyOnlyOnProgressChanges;
 - (bool)complete:(bool)arg1;
 - (bool)completesWhenAtRest;
 - (double)currentVelocity;
@@ -42,6 +45,7 @@
 - (bool)progressBeginsFromInitialInputProgress;
 - (id /* block */)progressInputBlock;
 - (unsigned long long)restingFrameCount;
+- (void)setApplyOnlyOnProgressChanges:(bool)arg1;
 - (void)setCompletesWhenAtRest:(bool)arg1;
 - (void)setCurrentVelocity:(double)arg1;
 - (void)setDisplayLink:(id)arg1;

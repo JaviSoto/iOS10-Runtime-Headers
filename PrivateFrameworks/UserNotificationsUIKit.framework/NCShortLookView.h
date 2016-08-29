@@ -6,7 +6,6 @@
     bool  _backgroundBlurred;
     UIView * _backgroundView;
     bool  _banner;
-    UIView * _clippingView;
     double  _cornerRadius;
     UIView * _customContentView;
     UIView * _headerContainerView;
@@ -26,6 +25,7 @@
 @property (nonatomic) double cornerRadius;
 @property (nonatomic, readonly) UIView *customContentView;
 @property (nonatomic, copy) NSDate *date;
+@property (getter=isDateAllDay, nonatomic) bool dateAllDay;
 @property (nonatomic) long long dateFormatStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -36,19 +36,19 @@
 @property (nonatomic, readonly) long long lookStyle;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) bool usesBackgroundView;
 @property (nonatomic, readonly) UIButton *utilityButton;
 
-+ (id)_shadowImage;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_shadowImage:(id)arg1 frameForShortLookBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
++ (id)_shadowImageMask;
 + (double)titleInset;
 
 - (void).cxx_destruct;
 - (id)_backgroundMaterialView;
 - (void)_configureBackgroundView:(id)arg1;
 - (void)_configureBackgroundViewIfNecessary;
-- (void)_configureClippingViewIfNecessary;
 - (bool)_configureCustomContentViewIfNecessary;
 - (void)_configureHeaderContainerViewIfNecessary;
 - (bool)_configureHeaderContentViewIfNecessary;
@@ -74,6 +74,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isBackgroundBlurred;
 - (bool)isBanner;
+- (bool)isDateAllDay;
 - (bool)isHeaderHidden;
 - (void)layoutSubviews;
 - (long long)lookStyle;
@@ -84,15 +85,18 @@
 - (void)setColorInfusionView:(id)arg1;
 - (void)setCornerRadius:(double)arg1;
 - (void)setDate:(id)arg1;
+- (void)setDateAllDay:(bool)arg1;
 - (void)setDateFormatStyle:(long long)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setHeaderHeedsHorizontalLayoutMargins:(bool)arg1;
 - (void)setHeaderNeedsLayout;
 - (void)setIcon:(id)arg1;
+- (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUsesBackgroundView:(bool)arg1;
 - (void)setUtilityView:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFitsContentWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)timeZone;
 - (id)title;
 - (void)traitCollectionDidChange:(id)arg1;
 - (bool)usesBackgroundView;

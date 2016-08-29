@@ -87,6 +87,7 @@
 - (void)supportedDataclassesForAccountType:(id)arg1 handler:(id /* block */)arg2;
 - (void)syncableDataclassesForAccountType:(id)arg1 handler:(id /* block */)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id /* block */)arg2;
+- (void)triggerKeychainMigrationIfNecessary:(id /* block */)arg1;
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;

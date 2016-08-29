@@ -3,7 +3,6 @@
  */
 
 @interface AVCaptureSessionInternal : NSObject {
-    bool  adjustingDeviceActiveColorSpace;
     AVCaptureDevice * adjustingDeviceActiveFormat;
     bool  adjustingVideoDeviceHDREnabled;
     bool  authorizedToUseCameraInMultipleForegroundAppLayout;

@@ -23,8 +23,8 @@
 + (bool)isCompatibleCompanionDevice:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)__initializeNearbyDevices;
-- (void)_updateNearbyDevices:(id)arg1;
+- (void)__initializeConnectedDevices;
+- (void)_updateConnectedDevices:(id)arg1;
 - (id)clientQueue;
 - (id)companion;
 - (id)delegate;
@@ -32,7 +32,7 @@
 - (void)notifyDelegateOfCompanionChange:(id)arg1;
 - (id)propertyQueue;
 - (id)service;
-- (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
+- (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)setCompanion:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

@@ -54,6 +54,7 @@
 - (id)remoteAccessDeviceForHome:(id)arg1;
 - (id)remoteGateways;
 - (void)removeHome:(id)arg1;
+- (void)reset;
 - (id)secureRemoteTransport;
 - (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)setAdminMsgFilter:(id)arg1;

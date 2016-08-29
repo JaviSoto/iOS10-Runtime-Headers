@@ -29,7 +29,7 @@
 - (void).cxx_destruct;
 - (bool)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (bool)__finishIfCancelled;
-- (void)_addVersion:(id)arg1 forEtag:(id)arg2;
+- (void)_addVersion:(id)arg1;
 - (bool)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (void)_senderInvalidate;
 - (bool)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id*)arg2;

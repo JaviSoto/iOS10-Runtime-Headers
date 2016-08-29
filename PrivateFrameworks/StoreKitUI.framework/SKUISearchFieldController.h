@@ -22,6 +22,7 @@
     NSString * _trendingSearchURLString;
 }
 
+@property (nonatomic, readonly) bool canBecomeActive;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, readonly) UIViewController *contentsController;
 @property (readonly, copy) NSString *debugDescription;
@@ -41,9 +42,12 @@
 - (id)URLForTrendingSearchPageView:(id)arg1;
 - (void)_adjustInsetsForResultsTableView:(id)arg1;
 - (void)_loadResultsForSearchRequest:(id)arg1;
+- (bool)_presentsInPopover:(id)arg1;
 - (void)_reloadData;
 - (void)_reloadTrendingVisibility;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
+- (void)becomeActive;
+- (bool)canBecomeActive;
 - (id)clientContext;
 - (id)contentsController;
 - (id)delegate;
@@ -59,7 +63,8 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBarAccessoryText;
 - (void)searchBarSearchButtonClicked:(id)arg1;
-- (bool)searchBarShouldBeginTouches:(id)arg1;
+- (bool)searchBarShouldBeginEditing:(id)arg1;
+- (bool)searchBarShouldClear:(id)arg1;
 - (id)searchControllerClientContext:(id)arg1;
 - (void)searchControllerWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)searchHintsURLString;

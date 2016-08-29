@@ -62,12 +62,13 @@
 - (bool)_deleteWithSpan:(long long)arg1 error:(id*)arg2;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(bool)arg3;
 - (id)_effectiveTimeZone;
-- (bool)_eventIsTheOnlyRemainingRecurrence;
+- (bool)_eventIsTheOnlyRemainingOccurrence;
 - (bool)_fetchedEventIsConflict:(id)arg1 forStartDate:(id)arg2 endDate:(id)arg3;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
 - (bool)_isAllDay;
 - (bool)_isInitialOccurrenceDate:(id)arg1;
 - (bool)_isSimpleRepeatingEvent;
+- (bool)_noRemainingEarlierOccurrences;
 - (bool)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
 - (long long)_parentParticipationStatus;
 - (id)_persistentEvent;
@@ -220,6 +221,7 @@
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (long long)status;
 - (id)structuredLocation;
+- (id)structuredLocationWithoutPrediction;
 - (id)suggestionInfo;
 - (bool)timeChanged;
 - (id)title;

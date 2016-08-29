@@ -15,14 +15,13 @@
     <MPUControlCenterMediaControlsViewDelegate> * _delegate;
     unsigned long long  _displayMode;
     MPUEmptyNowPlayingView * _emptyNowPlayingView;
+    MPULayoutInterpolator * _labelsLeadingHeightPhoneLayoutInterpolator;
     MPULayoutInterpolator * _landscapeMarginLayoutInterpolator;
     unsigned long long  _layoutStyle;
     MPULayoutInterpolator * _marginLayoutInterpolator;
     MPAVRoute * _pickedRoute;
     MPUAVRouteHeaderView * _pickedRouteHeaderView;
     UIView * _routingContainerView;
-    UIImageView * _routingIconImageView;
-    MPUAVRouteHeaderLabel * _routingTitleLabel;
     UIView * _routingView;
     MPUControlCenterTimeView * _timeView;
     MPUControlCenterMetadataView * _titleLabel;
@@ -45,7 +44,6 @@
 @property (nonatomic) unsigned long long layoutStyle;
 @property (nonatomic, retain) MPAVRoute *pickedRoute;
 @property (nonatomic, readonly) MPUAVRouteHeaderView *pickedRouteHeaderView;
-@property (nonatomic, readonly) MPUAVRouteHeaderLabel *routingTitleLabel;
 @property (nonatomic, retain) UIView *routingView;
 @property (readonly) Class superclass;
 @property (nonatomic) bool useCompactStyle;
@@ -56,7 +54,6 @@
 - (void)_init;
 - (void)_layoutExpandedRoutingViewUsingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_layoutPad;
-- (void)_layoutPadMediaControlsUsingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_layoutPhoneCompactStyle;
 - (void)_layoutPhoneLandscape;
 - (void)_layoutPhoneRegularStyle;
@@ -81,7 +78,6 @@
 - (void)layoutSubviews;
 - (id)pickedRoute;
 - (id)pickedRouteHeaderView;
-- (id)routingTitleLabel;
 - (id)routingView;
 - (void)setArtworkImage:(id)arg1;
 - (void)setDelegate:(id)arg1;

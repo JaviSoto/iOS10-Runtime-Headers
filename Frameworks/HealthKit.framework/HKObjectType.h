@@ -51,7 +51,6 @@
 - (id)_initWithDefinition:(struct { long long x1; char *x2; char *x3; long long x4; char *x5; char *x6; }*)arg1;
 - (id)_predicateForSDKVersion:(unsigned int)arg1;
 - (bool)_requiresAuthorization;
-- (id)_safeDescription;
 - (long long)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)dataObjectClass;

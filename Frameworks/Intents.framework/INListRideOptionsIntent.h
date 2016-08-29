@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INListRideOptionsIntent : INIntent <INListRideOptionsIntent>
+@interface INListRideOptionsIntent : INIntent <INListRideOptionsIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

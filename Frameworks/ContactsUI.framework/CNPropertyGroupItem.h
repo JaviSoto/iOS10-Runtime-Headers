@@ -94,6 +94,7 @@
 - (id)placeholderString;
 - (id)property;
 - (void)rejectSuggestion;
+- (id)replacementForInvalidValue:(id)arg1;
 - (void)saveChangesImmediately:(bool)arg1;
 - (void)setAllowsEmail:(bool)arg1;
 - (void)setAllowsIMessage:(bool)arg1;

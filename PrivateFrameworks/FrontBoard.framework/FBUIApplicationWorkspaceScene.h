@@ -33,8 +33,8 @@
 - (void)_workspaceQueue_dropSuspendingProcessAssertion;
 - (void)_workspaceQueue_invalidate;
 - (long long)_workspaceQueue_lifecycleStateForSettings:(id)arg1;
-- (id)_workspaceQueue_newProcessAssertionForReason:(unsigned int)arg1 withName:(id)arg2 transitionContext:(id)arg3;
-- (void)_workspaceQueue_performGracefulExitWithCompletion:(id /* block */)arg1;
+- (id)_workspaceQueue_newProcessAssertionForReason:(unsigned int)arg1 withName:(id)arg2 transitionContext:(id)arg3 acquireSynchronously:(bool)arg4;
+- (void)_workspaceQueue_performGracefulExitWithDeliveryConfirmation:(id /* block */)arg1;
 - (int)_workspaceQueue_pid;
 - (id)_workspaceQueue_process;
 - (void)_workspaceQueue_takeAssertionsForDeactivation:(bool)arg1 transitionContext:(id)arg2;

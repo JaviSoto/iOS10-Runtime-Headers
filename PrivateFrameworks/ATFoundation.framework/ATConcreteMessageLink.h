@@ -29,8 +29,7 @@
     NSMutableDictionary * _sentRequestsByID;
     ATSignatureProvider * _signatureProvider;
     ATSocket * _socket;
-    NSMutableSet * _streamReaders;
-    NSMutableSet * _streamWriters;
+    NSMutableDictionary * _streamReadersByID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetAudioSourceInCarIntent : INIntent <INSetAudioSourceInCarIntent>
+@interface INSetAudioSourceInCarIntent : INIntent <INSetAudioSourceInCarIntentExport>
 
 @property (nonatomic, readonly) long long audioSource;
 @property (readonly, copy) NSString *debugDescription;

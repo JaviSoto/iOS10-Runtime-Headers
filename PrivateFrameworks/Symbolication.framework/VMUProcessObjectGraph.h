@@ -52,6 +52,7 @@
 - (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void*)arg8;
 - (bool)is64bit;
 - (id)labelForNode:(unsigned int)arg1;
+- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (id)nodeDescription:(unsigned int)arg1;
 - (id)nodeDescription:(unsigned int)arg1 withDestinationNode:(unsigned int)arg2 referenceInfo:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg3;
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;

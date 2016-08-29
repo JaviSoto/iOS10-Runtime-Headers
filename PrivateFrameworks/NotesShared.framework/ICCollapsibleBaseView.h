@@ -6,8 +6,10 @@
     bool  _collapsed;
     struct UIView { Class x1; } * _contentView;
     NSLayoutConstraint * _leadingConstraint;
+    double  _leadingSpace;
     bool  _setupComplete;
     NSLayoutConstraint * _trailingConstraint;
+    double  _trailingSpace;
     NSLayoutConstraint * _zeroWidthConstraint;
 }
 

@@ -3,11 +3,12 @@
  */
 
 @interface WBSWebViewMetadataFetchOperation : WBSSiteMetadataFetchOperation <WKNavigationDelegate> {
-    WKProcessPool * _processPool;
+    <WBSWebViewMetadataFetchOperationDelegate> * _delegate;
     WKWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WBSWebViewMetadataFetchOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
@@ -20,11 +21,11 @@
 - (void)cancel;
 - (void)clearWebView;
 - (void)dealloc;
+- (id)delegate;
 - (id)description;
 - (void)didCreateWebView;
 - (void)didFailFetch;
-- (id)initWithRequest:(id)arg1;
-- (id)initWithRequest:(id)arg1 processPool:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)setUpWebViewIfNeeded;
 - (void)start;
 - (void)startOffscreenFetching;

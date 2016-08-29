@@ -22,6 +22,7 @@
     NSArray * _markedTextArray;
     long long  _maxCount;
     unsigned long long  _queryID;
+    unsigned long long  _queryIdent;
     NSArray * _searchDomains;
     NSString * _searchString;
     unsigned long long  _whyQuery;
@@ -46,6 +47,7 @@
 @property (nonatomic, readonly) NSString *keyboardPrimaryLanguage;
 @property (nonatomic, readonly) NSArray *markedTextArray;
 @property (nonatomic) long long maxCount;
+@property (nonatomic) unsigned long long queryIdent;
 @property (nonatomic, readonly) NSArray *searchDomains;
 @property (nonatomic, readonly) NSString *searchString;
 @property (nonatomic) unsigned long long whyQuery;
@@ -80,6 +82,7 @@
 - (id)keyboardPrimaryLanguage;
 - (id)markedTextArray;
 - (long long)maxCount;
+- (unsigned long long)queryIdent;
 - (id)searchDomains;
 - (id)searchString;
 - (void)setContentFilters:(long long)arg1;
@@ -91,6 +94,7 @@
 - (void)setInternal:(bool)arg1;
 - (void)setIsWideScreen:(bool)arg1;
 - (void)setMaxCount:(long long)arg1;
+- (void)setQueryIdent:(unsigned long long)arg1;
 - (void)setWhyQuery:(unsigned long long)arg1;
 - (unsigned long long)whyQuery;
 

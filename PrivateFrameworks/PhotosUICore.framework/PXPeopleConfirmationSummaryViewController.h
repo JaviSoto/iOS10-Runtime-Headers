@@ -25,5 +25,6 @@
 - (id)summaryLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

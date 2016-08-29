@@ -6,6 +6,7 @@
     PFAssetAdjustments * __adjustments;
     AVAudioMix * _audioMix;
     bool  _beganExport;
+    NSString * _customAccessibilityLabel;
     AVAssetExportSession * _exportSession;
     NSObject<OS_dispatch_queue> * _externalIsolation;
     NSString * _generatedFileName;
@@ -21,6 +22,7 @@
 }
 
 @property (setter=_setAdjustments:, nonatomic, retain) PFAssetAdjustments *_adjustments;
+@property (nonatomic, copy) NSString *customAccessibilityLabel;
 @property (nonatomic, copy) NSString *generatedFileName;
 @property (setter=_setOperationError:, nonatomic, retain) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
@@ -40,12 +42,14 @@
 - (void)_setVideoURL:(id)arg1;
 - (void)_validateMetadata;
 - (void)cancel;
+- (id)customAccessibilityLabel;
 - (id)generatedFileName;
 - (id)initWithVideoURL:(id)arg1 adjustmentData:(id)arg2;
 - (void)main;
 - (id)operationError;
 - (id)outputDirectoryURL;
 - (float)progress;
+- (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setGeneratedFileName:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
 - (void)setShouldStripLocation:(bool)arg1;

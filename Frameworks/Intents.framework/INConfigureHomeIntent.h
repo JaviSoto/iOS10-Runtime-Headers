@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INConfigureHomeIntent : INIntent <INConfigureHomeIntent>
+@interface INConfigureHomeIntent : INIntent <INConfigureHomeIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

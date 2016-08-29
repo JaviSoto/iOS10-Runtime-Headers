@@ -83,6 +83,7 @@
 - (id)schemaVersion;
 - (id)select:(id)arg1 from:(id)arg2;
 - (id)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4;
+- (void)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4 orderBy:(id)arg5 limit:(id)arg6 block:(id /* block */)arg7;
 - (id)selectAllFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllObjectsOfClass:(Class)arg1;
 - (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;

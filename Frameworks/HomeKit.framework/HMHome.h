@@ -117,6 +117,7 @@
 - (void)_configureOutgoingInvitiation:(id)arg1;
 - (void)_continuePairingForAccessoryWithUUID:(id)arg1 setupCode:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)_createFailedAccessoriesListFromError:(id)arg1;
+- (void)_enableNotification:(bool)arg1 forCharacteristics:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_enableNotifications:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_enableRemoteAccess:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_executeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -194,6 +195,7 @@
 - (void)_updateInvitation:(id)arg1 invitationState:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updateLocation:(id)arg1;
 - (void)_updateName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_userDidConfirmExecution:(bool)arg1 ofTriggerWithIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)accessories;
 - (id)accessoryWithUUID:(id)arg1;
 - (id)actionSetWithName:(id)arg1;
@@ -224,6 +226,7 @@
 - (void)configure:(id)arg1 primary:(bool)arg2 messageDispatcher:(id)arg3 pendingRequests:(id)arg4 delegateCaller:(id)arg5 isAdminUser:(bool)arg6;
 - (void)continuePairingForAccessoryWithUUID:(id)arg1 setupCode:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)createActionSetWithName:(id)arg1 type:(id)arg2 uuid:(id)arg3;
+- (id)createAndAddActionSetWithName:(id)arg1 type:(id)arg2 uuid:(id)arg3;
 - (id)currentAccessories;
 - (id)currentActionSets;
 - (id)currentActions;
@@ -241,6 +244,7 @@
 - (id)delegateCaller;
 - (id)description;
 - (void)didUpdateAuthorization:(int)arg1;
+- (void)enableNotification:(bool)arg1 forCharacteristics:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)enableNotifications:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)enableRemoteAccess:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)encodeWithCoder:(id)arg1;
@@ -282,6 +286,7 @@
 - (void)performBatchCharacteristicRequest:(id)arg1;
 - (id)propertyQueue;
 - (void)queryRemoteAccessWithCompletionHandler:(id /* block */)arg1;
+- (void)reEnableNotifications;
 - (void)removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -351,6 +356,8 @@
 - (void)updateApplicationData:(id)arg1 forRoom:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)updateApplicationData:(id)arg1 forServiceGroup:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)userDidConfirmExecution:(bool)arg1 ofTrigger:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)userDidConfirmExecution:(bool)arg1 ofTriggerWithIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)users;
 - (id)uuid;
 - (id)zoneWithName:(id)arg1;
@@ -371,6 +378,8 @@
 - (id)hf_displayName;
 - (id)hf_home;
 - (bool)hf_homeHasOnboarded;
+- (bool)hf_isCurrentLocationHome;
+- (bool)hf_isUserAtHome;
 - (id)hf_notesApplicationData;
 - (unsigned long long)hf_remoteAccessState;
 - (id)hf_reorderableActionSetsList;

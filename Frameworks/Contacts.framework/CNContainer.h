@@ -8,6 +8,7 @@
     int  _iOSLegacyIdentifier;
     NSString * _identifier;
     NSString * _name;
+    CNContainerPermissions * _permissions;
     CNContainer * _snapshot;
     long long  _type;
 }
@@ -17,10 +18,12 @@
 @property (nonatomic, readonly) int iOSLegacyIdentifier;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) CNContainerPermissions *permissions;
 @property (nonatomic, readonly, copy) CNContainer *snapshot;
 @property (nonatomic, readonly) long long type;
 
 + (id)identifierProvider;
++ (id)makeDefaultContainerPermissions;
 + (id)makeIdentifier;
 + (id)makeIdentifierString;
 + (id)predicateForContainerOfContactWithIdentifier:(id)arg1;
@@ -47,7 +50,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContainer:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 accountIdentifier:(id)arg2 name:(id)arg3 type:(long long)arg4;
+- (id)initWithIdentifier:(id)arg1 accountIdentifier:(id)arg2 name:(id)arg3 type:(long long)arg4 permissions:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 type:(long long)arg2;
@@ -55,6 +58,7 @@
 - (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
+- (id)permissions;
 - (id)snapshot;
 - (long long)type;
 

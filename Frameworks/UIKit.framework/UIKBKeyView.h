@@ -8,6 +8,7 @@
     long long  _cachedSelector;
     unsigned long long  _cachedShiftState;
     NSString * _cachedTraitsHashString;
+    double  _endingTransitionDuration;
     NSMutableDictionary * _keyLayers;
     UIKeyboardMenuView * _popupMenu;
     bool  _renderAsMask;
@@ -43,6 +44,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } displayInsets;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawFrame;
+@property (nonatomic) double endingTransitionDuration;
 @property (nonatomic, retain) UIKBRenderFactory *factory;
 @property (nonatomic, readonly) bool hasRendered;
 @property (readonly) unsigned long long hash;
@@ -61,6 +63,7 @@
 - (void)_populateLayer:(id)arg1 withContents:(id)arg2;
 - (bool)_shouldUpdateLayers;
 - (bool)_viewShouldBeOpaque;
+- (bool)allowBackgroundCachingForRenderFlags:(long long)arg1;
 - (bool)cacheDeferable;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
@@ -79,6 +82,7 @@
 - (void)displayLayer:(id)arg1;
 - (void)drawContentsOfRenderers:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawFrame;
+- (double)endingTransitionDuration;
 - (id)factory;
 - (unsigned long long)focusableVariantCount;
 - (bool)hasRendered;
@@ -100,6 +104,7 @@
 - (void)setCachedShiftState:(unsigned long long)arg1;
 - (void)setCachedTraitsHashString:(id)arg1;
 - (void)setDrawFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setEndingTransitionDuration:(double)arg1;
 - (void)setFactory:(id)arg1;
 - (void)setPopupMenu:(id)arg1;
 - (void)setRenderAsMask:(bool)arg1;

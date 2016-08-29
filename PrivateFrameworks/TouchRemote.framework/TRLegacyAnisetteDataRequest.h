@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRLegacyAnisetteDataRequest : TRNearbyServicesCommunicationAbstractMessage {
+@interface TRLegacyAnisetteDataRequest : TRRequestMessage {
     NSString * _dsid;
 }
 

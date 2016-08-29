@@ -30,7 +30,7 @@
     NSISVariable * _minYVariable;
     UIView * _owningView;
     NSLayoutXAxisAnchor * _rightAnchor;
-    NSMutableSet * _stashedLayoutVariableObservations;
+    NSMapTable * _stashedLayoutVariableObservations;
     NSArray * _systemConstraints;
     NSLayoutYAxisAnchor * _topAnchor;
     NSLayoutXAxisAnchor * _trailingAnchor;
@@ -46,7 +46,7 @@
 @property (nonatomic, readonly, retain) NSISVariable *_minXVariable;
 @property (nonatomic, readonly, retain) NSISVariable *_minYVariable;
 @property (setter=_setShouldBeArchived:, nonatomic) bool _shouldBeArchived;
-@property (nonatomic, readonly, retain) NSMutableSet *_stashedLayoutVariableObservations;
+@property (nonatomic, readonly, retain) NSMapTable *_stashedLayoutVariableObservations;
 @property (setter=_setSystemConstraints:, nonatomic, retain) NSArray *_systemConstraints;
 @property (nonatomic, readonly) bool _useManualLayoutFrame;
 @property (readonly) NSLayoutYAxisAnchor *bottomAnchor;
@@ -92,9 +92,12 @@
 - (void)_snipReferencingConstraints;
 - (id)_stashedLayoutVariableObservations;
 - (id)_systemConstraints;
+- (id)_uili_existingBaseFrameVariables;
 - (id)_uili_existingLayoutVariables;
-- (void)_uili_removeLayoutVariableObservations;
-- (void)_uili_stashLayoutVariableObservation:(id)arg1;
+- (id)_uili_observableLayoutEngineForBaseFrameVariables:(bool)arg1;
+- (void)_uili_removeLayoutVariableObservationsOnlyToSupportTAMICChange:(bool)arg1;
+- (bool)_uili_requiresObservationForVariable:(id)arg1;
+- (void)_uili_stashLayoutVariableObservation:(id)arg1 forVariable:(id)arg2;
 - (bool)_useManualLayoutFrame;
 - (id)bottomAnchor;
 - (id)centerXAnchor;

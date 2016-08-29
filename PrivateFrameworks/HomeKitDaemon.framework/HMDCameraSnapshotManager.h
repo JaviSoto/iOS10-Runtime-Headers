@@ -12,7 +12,8 @@
     HMFMessageDispatcher * _msgDispatcher;
     NSMutableArray * _pendingRemoteSnapshotRequestDuringStreamSetup;
     NSMutableArray * _pendingSnapshotRequestDuringStreamSetup;
-    HMDSnapshotRequestHandler * _snapshotRequestHandler;
+    HMDSnapshotCacheRequestHandler * _snapshotCacheRequestHandler;
+    <HMDSnapshotRequestHandlerProtocol> * _snapshotRequestHandler;
     HMDSnapshotSlotManager * _snapshotSlotManager;
     HMDCameraStreamSnapshotHandler * _streamSnapshotHandler;
     NSUUID * _uniqueIdentifier;
@@ -33,19 +34,21 @@
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) NSMutableArray *pendingRemoteSnapshotRequestDuringStreamSetup;
 @property (nonatomic, readonly) NSMutableArray *pendingSnapshotRequestDuringStreamSetup;
-@property (nonatomic, readonly) HMDSnapshotRequestHandler *snapshotRequestHandler;
+@property (nonatomic, readonly) HMDSnapshotCacheRequestHandler *snapshotCacheRequestHandler;
+@property (nonatomic, readonly) <HMDSnapshotRequestHandlerProtocol> *snapshotRequestHandler;
 @property (nonatomic, readonly) HMDSnapshotSlotManager *snapshotSlotManager;
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (void)clearAllImages;
++ (void)auditSnapshotDirectories:(id)arg1;
 + (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_endSession:(id)arg1;
 - (id)_findSessionWithID:(id)arg1;
+- (void)_handleGetMostRecentSnapshotRequest:(id)arg1;
 - (void)_handleReleaseSnapshot:(id)arg1;
 - (void)_handleSnapshotReceived:(id)arg1;
 - (void)_handleSnapshotRemoteRequest:(id)arg1;
@@ -86,6 +89,7 @@
 - (void)setCurrentLocalSession:(id)arg1;
 - (void)setCurrentRemoteSessions:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
+- (id)snapshotCacheRequestHandler;
 - (void)snapshotLocal:(id)arg1 didSaveSnapshotFile:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
 - (void)snapshotRelayReceiver:(id)arg1 didSaveSnapshotFile:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
 - (void)snapshotRelayReceiver:(id)arg1 didStartGettingImage:(id)arg2 sessionID:(id)arg3;

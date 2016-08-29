@@ -3,25 +3,24 @@
  */
 
 @interface CDPPassphraseEntryPane : DevicePINPane {
-    bool  _formPresentation;
     CDPPaneHeaderView * _headerView;
     double  _keyboardOffset;
 }
 
-@property (nonatomic) bool formPresentation;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } availableHeaderRect;
 
 - (void).cxx_destruct;
 - (void)_keyboardLayoutChanged;
 - (void)_layoutHeaderRect;
-- (void)_layoutPinViewWithHeight:(double)arg1;
+- (void)_layoutPinView;
 - (void)_layoutSubviews;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })availableHeaderRect;
 - (void)dealloc;
-- (bool)formPresentation;
+- (void)didFinishResizingHeaderView;
+- (void)didFinishResizingPinView;
 - (id)headerView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isSmallScreen;
 - (double)keyboardHeightOffset;
 - (void)layoutSubviews;
-- (void)setFormPresentation:(bool)arg1;
 
 @end

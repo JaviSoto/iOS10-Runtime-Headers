@@ -3,6 +3,7 @@
  */
 
 @interface MSPMapsPushDaemonRemoteProxy : NSObject <MSPMapsPushDaemonProxy, MSPMapsPushDaemonProxyObserver> {
+    MSPUserRoutingPreferences * _cachedUserRoutingPreferences;
     NSXPCConnection * _connection;
     NSMutableArray * _observers;
 }
@@ -19,6 +20,7 @@
 - (void)addObserver:(id)arg1;
 - (void)checkin;
 - (void)clearBulletinWithRecordID:(id)arg1;
+- (void)clearCachedUserRoutingPreferences;
 - (void)clearCurrentAnnouncement;
 - (void)clearParkedCarBulletin;
 - (void)clearTrafficConditionsBulletin;
@@ -34,6 +36,7 @@
 - (void)fetchFavoritesSerializedRepresentationWithCompletion:(id /* block */)arg1;
 - (void)fetchHistorySerializedRepresentationWithCompletion:(id /* block */)arg1;
 - (void)fetchProblemStatus;
+- (void)fetchUserRoutingPreferencesWithCompletion:(id /* block */)arg1;
 - (void)historyDidChange;
 - (id)init;
 - (void)openConnection;
@@ -55,5 +58,6 @@
 - (void)simulateAnnouncement:(id)arg1;
 - (void)simulateProblemResolution;
 - (oneway void)updateMapsModelBackupAttributesIfNeeded;
+- (id)userRoutingPrefrencesFromSettingsWithFreshness:(double)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INControlHomeIntent : INIntent <INControlHomeIntent>
+@interface INControlHomeIntent : INIntent <INControlHomeIntentExport>
 
 @property (nonatomic, readonly, copy) INHomeAttribute *attribute;
 @property (readonly, copy) NSString *debugDescription;

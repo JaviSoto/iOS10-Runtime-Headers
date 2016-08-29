@@ -5,7 +5,8 @@
 
 @required
 
-- (void)notificationViewController:(NCNotificationViewController *)arg1 executeAction:(NCNotificationAction *)arg2 withParameters:(NSDictionary *)arg3;
+- (void)notificationViewController:(void *)arg1 executeAction:(void *)arg2 withParameters:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: NCNotificationViewController *, NCNotificationAction *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)notificationViewController:(void *)arg1 requestPermissionToExecuteAction:(void *)arg2 withParameters:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: NCNotificationViewController *, NCNotificationAction *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 
 @optional
 

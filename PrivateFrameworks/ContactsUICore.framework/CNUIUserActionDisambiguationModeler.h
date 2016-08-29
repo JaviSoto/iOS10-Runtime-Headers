@@ -5,15 +5,15 @@
 @interface CNUIUserActionDisambiguationModeler : NSObject {
     <CNUIDefaultUserActionFetcher> * _defaultActionFetcher;
     <CNUIUserActionDiscoveringEnvironment> * _discoveringEnvironment;
-    <CNUIUserActionDiscovering> * _discoveringHelper;
     <CNUIUserActionRanking> * _rankingHelper;
+    <CNUIUserActionTargetDiscovering> * _targetDiscoveringHelper;
     bool  _tracksChanges;
 }
 
 @property (nonatomic, retain) <CNUIDefaultUserActionFetcher> *defaultActionFetcher;
 @property (nonatomic, retain) <CNUIUserActionDiscoveringEnvironment> *discoveringEnvironment;
-@property (nonatomic, retain) <CNUIUserActionDiscovering> *discoveringHelper;
 @property (nonatomic, retain) <CNUIUserActionRanking> *rankingHelper;
+@property (nonatomic, retain) <CNUIUserActionTargetDiscovering> *targetDiscoveringHelper;
 @property (nonatomic) bool tracksChanges;
 
 + (id)descriptorForRequiredKeys;
@@ -21,29 +21,30 @@
 - (void).cxx_destruct;
 - (id)defaultActionChangedObservable;
 - (id)defaultActionFetcher;
-- (id)defaultActionFromActions:(id)arg1 schedulerProvider:(id)arg2;
-- (id)defaultActionFromActions:(id)arg1 trackingChanges:(bool)arg2 schedulerProvider:(id)arg3;
-- (id)discoverActionsForContact:(id)arg1 actionType:(id)arg2 schedulerProvider:(id)arg3;
-- (id)discoverActionsForContact:(id)arg1 actionType:(id)arg2 trackingChanges:(bool)arg3 schedulerProvider:(id)arg4;
+- (id)defaultActionFromActions:(id)arg1;
+- (id)defaultActionFromActions:(id)arg1 trackingChanges:(bool)arg2;
+- (id)discoverActionsForContact:(id)arg1 actionType:(id)arg2;
+- (id)discoverActionsForContact:(id)arg1 actionType:(id)arg2 trackingChanges:(bool)arg3;
 - (id)discoveringEnvironment;
-- (id)discoveringHelper;
 - (id)init;
-- (id)initWithDiscoveringHelper:(id)arg1 rankingHelper:(id)arg2 defaultActionFetcher:(id)arg3 discoveringEnvironment:(id)arg4;
-- (id)initWithIDSAvailablilityProvider:(id)arg1;
-- (id)modelsWithContact:(id)arg1 actionType:(id)arg2 schedulerProvider:(id)arg3;
-- (id)modelsWithDefaultAction:(id)arg1 actions:(id)arg2 recentActions:(id)arg3 directoryServiceActions:(id)arg4 foundOnDeviceActions:(id)arg5 schedulerProvider:(id)arg6;
+- (id)initWithDiscoveringEnvironment:(id)arg1;
+- (id)initWithTargetDiscoveringHelper:(id)arg1 rankingHelper:(id)arg2 defaultActionFetcher:(id)arg3 discoveringEnvironment:(id)arg4;
+- (id)modelsWithContact:(id)arg1 actionType:(id)arg2;
+- (id)modelsWithDefaultAction:(id)arg1 actions:(id)arg2 recentActions:(id)arg3 directoryServiceActions:(id)arg4 foundOnDeviceActions:(id)arg5 sorts:(bool)arg6 throttles:(bool)arg7;
 - (id)rankingHelper;
 - (id)recentActionChangedObservable;
-- (id)recentActionsFromActions:(id)arg1 schedulerProvider:(id)arg2;
-- (id)recentActionsFromActions:(id)arg1 trackingChanges:(bool)arg2 schedulerProvider:(id)arg3;
+- (id)recentActionsFromActions:(id)arg1;
+- (id)recentActionsFromActions:(id)arg1 trackingChanges:(bool)arg2;
+- (id)schedulerProvider;
 - (void)setContactStore:(id)arg1;
 - (void)setDefaultActionFetcher:(id)arg1;
 - (void)setDiscoveringEnvironment:(id)arg1;
-- (void)setDiscoveringHelper:(id)arg1;
 - (void)setRankingHelper:(id)arg1;
+- (void)setTargetDiscoveringHelper:(id)arg1;
 - (void)setTracksChanges:(bool)arg1;
-- (id)sortActionsOnModel:(id)arg1 schedulerProvider:(id)arg2;
-- (id)targetsChangedObservableForActionType:(id)arg1 schedulerProvider:(id)arg2;
+- (id)sortActionsOnModel:(id)arg1;
+- (id)targetDiscoveringHelper;
+- (id)targetsChangedObservableForActionType:(id)arg1;
 - (id)thirdPartyActionsForContactProperty:(id)arg1;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;
 - (bool)tracksChanges;

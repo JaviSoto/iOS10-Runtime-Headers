@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (Class)_JSITunesStoreClass;
-- (Class)_scrollingTabBarControllerClass;
 - (bool)_sendNativeBackButtonMetricEvents;
 - (id)activeDocument;
 - (void)dealloc;

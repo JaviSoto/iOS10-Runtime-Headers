@@ -19,7 +19,6 @@
 - (void)_internalPreferencesDidChangeExternally;
 - (void)_languageCodeDidChangeExternally;
 - (id)_mappedLanguageCodeArrayFor:(id)arg1;
-- (id)_originalOrReplacementLanguageCodeFor:(id)arg1;
 - (void)_ouputVoiceDidChangeExternally;
 - (void)_preferencesDidChangeExternally;
 - (void)_registerForInteralPrefs;

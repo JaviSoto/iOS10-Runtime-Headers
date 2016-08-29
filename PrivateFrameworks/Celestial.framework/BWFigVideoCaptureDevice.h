@@ -27,6 +27,7 @@
     struct OpaqueFigSampleBufferProcessor { } * _autofocusProcessor;
     NSObject<OS_dispatch_queue> * _autofocusProcessorQueue;
     struct OpaqueFigSimpleMutex { } * _autofocusStatusMutex;
+    bool  _automaticStillImageDegradedSphereModeEnabled;
     bool  _awbStable;
     struct CGRect { 
         struct CGPoint { 
@@ -66,7 +67,11 @@
         unsigned int readNoise_8x; 
         unsigned int aeAvg; 
         unsigned char aeLimitsReached; 
+        unsigned char aeStable; 
+        int afStatus; 
+        int focusingMethod; 
         unsigned int motionDataStatus; 
+        float motionDataBiasErrorEstimate; 
         long long frameCount; 
     }  _currentFrameStatistics;
     int  _currentImageControlMode;
@@ -124,9 +129,13 @@
         int height; 
     }  _maxISPCropDimensions;
     float  _maxISPZoomFactor;
+    int  _maxSkippedFramesForStillImageCaptureRetry;
     float  _maxTorchLevel;
     struct OpaqueFigFlatDictionaryKeySpec { } * _metadataKeySpec;
     NSDictionary * _moduleInfoByPortType;
+    float  _motionDataBiasErrorEstimateThresholdAbandon;
+    float  _motionDataBiasErrorEstimateThresholdDegraded;
+    NSString * _nonLocalizedName;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     int  _numberOfCompletedStillCaptures;
     NSMutableDictionary * _observedProperties;
@@ -145,28 +154,24 @@
     int  _skippedFramesCountForStillImageCaptureRetry;
     NSObject<OS_dispatch_semaphore> * _startStopSemaphore;
     bool  _stillImageCaptureEnabled;
-    bool  _stillImageCaptureInProgress;
+    bool  _stillImageCaptureNowAfterAutofocusTimeoutSupported;
     NSDictionary * _stillImageCaptureNowOptions;
     BWStillImageCaptureSettings * _stillImageCaptureSettings;
     int  _stillImageCaptureStateLock;
     NSDictionary * _stillImageCaptureStreamProperties;
+    int  _stillImageContrastBasedAutofocusTimeout;
     NSObject<OS_dispatch_queue> * _stillImageDispatchQueue;
     bool  _stillImageISPChromaNoiseReductionEnabled;
+    int  _stillImagePhaseDetectionAutofocusTimeout;
     bool  _stillImageStabilizationAutomaticallyEnabled;
     double  _stillImageStabilizationIntegrationTimeThreshold;
     bool  _stillImageStabilizationScene;
     struct OpaqueFigCaptureStream { } * _stream;
     BWFigVideoCaptureStream * _streamConfiguration;
-    float  _streamFocusDistance;
-    int  _streamFocusPosition;
-    int  _streamFocusStatus;
-    int  _streamGainLag;
-    bool  _streamInProgress;
-    int  _streamLock;
-    BWFigVideoCaptureStream * _streamLockingEnabled;
-    float  _streamMaxGain;
+    NSString * _streamName;
     NSDictionary * _streamProperties;
-    float  _streamTotalStrength;
+    float  _streamStarting;
+    double  _streamStopping;
     NSDictionary * _supportedProperties;
     bool  _supportsHDR;
     bool  _supportsSIS;
@@ -184,7 +189,6 @@
 }
 
 @property (readonly) NSArray *activePortTypes;
-@property (readonly) NSDictionary *cameraInfo;
 @property (readonly) NSDictionary *cameraInfoByPortTypeForSBPs;
 @property (readonly) NSDictionary *cameraTuningParametersDictionary;
 @property (readonly, copy) NSString *debugDescription;
@@ -221,10 +225,11 @@
 - (void)_postNotificationWithPayload:(id)arg1 notificationPayload:(id)arg2;
 - (void)_resetStillImageCaptureRequestState;
 - (id)_sensorIDDictionaryFromCameraTuningParametersForStream:(struct OpaqueFigCaptureStream { }*)arg1;
-- (void)_serviceAutoTorchNotification:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1;
+- (void)_serviceAutoTorchNotification:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1;
 - (void)_serviceCompletedRequestNotifications:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_serviceLowLightBoostActiveNotification:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_servicePropertyChangeNotifications:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_serviceRetryStillImageCaptureUsingFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1;
 - (void)_serviceZoomForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 updateISPZoom:(bool)arg2;
 - (int)_setAutofocusProcessorImageControlModeProperty:(int)arg1;
 - (int)_setAutofocusProcessorProperty:(struct __CFString { }*)arg1 propertyValue:(void*)arg2;
@@ -233,10 +238,12 @@
 - (int)_setupAutofocusSampleBufferProcessor;
 - (int)_setupFeature1SampleBufferProcessor;
 - (bool)_shouldUseSphereForStillImageCaptureTakingIntoAccountExposureDuration:(bool)arg1 deviceMotionActivity:(bool)arg2;
-- (id)_stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
-- (int)_stillImageSceneTypeForFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1 flashSceneDetectionEnabled:(bool)arg2 hdrSceneDetectionEnabled:(bool)arg3 sisSceneDetectionEnabled:(bool)arg4;
+- (unsigned int)_stillImageCaptureInProgressSubstateForFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 captureType:(int)arg2;
+- (id)_stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
+- (int)_stillImageSceneTypeForFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 flashSceneDetectionEnabled:(bool)arg2 hdrSceneDetectionEnabled:(bool)arg3 sisSceneDetectionEnabled:(bool)arg4;
 - (void)_teardownAutoFocusSampleBufferProcessor;
 - (void)_teardownFeature1SampleBufferProcessor;
+- (void)_terminateCaptureAndEmitStillImageCaptureError:(int)arg1 stillImageCaptureNowOptions:(id)arg2 stillImageCaptureStreamProperties:(id)arg3;
 - (int)_updateAutoFocusRectIfNeededForZoomFactor:(float)arg1;
 - (int)_updateExposureRectIfNeededForZoomFactor:(float)arg1;
 - (void)_updateExposureStateForAutofocusProperty:(struct __CFString { }*)arg1;
@@ -245,6 +252,7 @@
 - (void)_updateImageControlModeStateForAutofocusProperty:(struct __CFString { }*)arg1 propertyValue:(void*)arg2;
 - (void)_updateWhiteBalanceStateForAutofocusProperty:(struct __CFString { }*)arg1 propertyValue:(void*)arg2;
 - (void)_updateZoomCapabilitiesForActiveFormatIndex:(long long)arg1;
+- (void)_validateSphereModeBasedOnMotionDataBiasErrorEstimate:(bool*)arg1 useStillDegradedMode:(bool*)arg2;
 - (id)activePortTypes;
 - (int)autoImageControlMode;
 - (id)cameraInfo;
@@ -273,7 +281,7 @@
 - (float)exposureTargetBias;
 - (float)exposureTargetOffset;
 - (id)fvcd_streamConfiguration;
-- (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1;
+- (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1;
 - (struct { float x1; float x2; float x3; })grayWorldDeviceWhiteBalanceGains;
 - (id)initWithAttributes:(id)arg1 streamAttributes:(id)arg2 forPID:(int)arg3 clientIDOut:(int*)arg4 deviceAvailabilityChangedHandler:(id /* block */)arg5;
 - (bool)isFlashScene;
@@ -289,13 +297,15 @@
 - (id)moduleInfoByPortType;
 - (struct OpaqueFigCaptureISPProcessingSession { }*)newISPProcessingSessionWithType:(int)arg1;
 - (int)position;
+- (void)prepareToCaptureStillImageNow:(id /* block */)arg1;
 - (bool)quadraHighResStillImageCaptureEnabled;
 - (void)rampToVideoZoomFactor:(float)arg1 withRampType:(int)arg2 rate:(float)arg3 duration:(double)arg4 commandID:(int)arg5;
 - (void)registerForAEMatrixMetadata;
-- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 clientBracketMode:(int)arg5;
+- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 clientBracketMode:(int)arg5;
 - (id)sensorIDDictionaryByPortType;
 - (int)setAlternateOutputSizeAndCrop:(id)arg1;
 - (bool)setAutoFlashEnabled:(bool)arg1 error:(id*)arg2;
+- (void)setAutoFocusSensorCalibrationData:(id)arg1;
 - (int)setAutoImageControlMode:(int)arg1;
 - (int)setAutomaticallyAdjustsImageControlMode:(bool)arg1;
 - (int)setAutomaticallyAdjustsTorch:(bool)arg1;
@@ -330,7 +340,7 @@
 - (void)setZoomFactor:(float)arg1;
 - (void)startupFaceDetectionIfNeeded;
 - (bool)stillImageCaptureEnabled;
-- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
+- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
 - (id)supportedFormats;
 - (bool)supportsProperty:(struct __CFString { }*)arg1;
 - (void)unregisterForAEMatrixMetadata;

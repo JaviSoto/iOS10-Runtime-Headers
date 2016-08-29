@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) NSArray *supportedGeoLocationSources;
 @property (nonatomic, readonly, copy) NSString *userAgent;
 @property (nonatomic, readonly, copy) NSString *version;
+@property (nonatomic, readonly) NSURL *warmURL;
 
 + (bool)supportsSecureCoding;
 
@@ -81,5 +82,6 @@
 - (id)urlForIdentifier:(id)arg1;
 - (id)userAgent;
 - (id)version;
+- (id)warmURL;
 
 @end

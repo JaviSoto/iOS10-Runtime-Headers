@@ -22,7 +22,7 @@
 @property (nonatomic, copy) id /* block */ connectionCallback;
 @property (nonatomic, retain) NSMutableArray *launchdSources;
 @property (nonatomic, retain) NSMutableDictionary *resolveContainers;
-@property (nonatomic) NSObject<OS_dispatch_queue> *resolveContainersSyncQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *resolveContainersSyncQueue;
 @property (nonatomic, copy) NSString *serviceDomain;
 @property (nonatomic, copy) id /* block */ serviceNameCollisionCallback;
 @property (nonatomic, copy) NSString *serviceType;

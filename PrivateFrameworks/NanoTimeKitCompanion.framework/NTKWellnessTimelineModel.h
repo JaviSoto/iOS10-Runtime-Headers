@@ -3,18 +3,20 @@
  */
 
 @interface NTKWellnessTimelineModel : NSObject {
-    HKAnchoredObjectQuery * _calorieGoalAnchoredObjectQuery;
     HKQuantityType * _calorieGoalType;
     HKUnit * _countUnit;
-    HKCurrentActivityCacheQuery * _currentActivityCacheAndStatisticsQuery;
-    _HKCurrentActivitySummaryQuery * _currentActivitySummaryQuery;
     _HKDelayedOperation * _delayedProcessingOperation;
     HKHealthStore * _healthStore;
     HKUnit * _kcalUnit;
     HKUnit * _minuteUnit;
     NSObject<OS_dispatch_queue> * _queue;
+    HKQueryAnchor * _queue_calorieGoalAnchor;
+    HKAnchoredObjectQuery * _queue_calorieGoalAnchoredObjectQuery;
+    HKObserverQuery * _queue_calorieGoalObserverQuery;
     HKSortedSampleArray * _queue_calorieGoals;
+    HKCurrentActivityCacheQuery * _queue_currentActivityCacheAndStatisticsQuery;
     HKActivitySummary * _queue_currentActivitySummary;
+    _HKCurrentActivitySummaryQuery * _queue_currentActivitySummaryQuery;
     NSArray * _queue_exerciseActivityStatisticsQuantityInfos;
     NSArray * _queue_moveActivityStatisticsQuantityInfos;
     NSArray * _queue_sortedEntriesKeys;
@@ -32,16 +34,26 @@
 - (void)_broadcastHistoricalDataLoaded:(bool)arg1 toSubscriber:(id)arg2;
 - (void)_broadcastHistoricalDataWasUpdatedToSubscribers;
 - (void)_broadcastToAllSubscribersHistoricalDataLoaded:(bool)arg1;
+- (id)_createCalorieGoalObserverQuery;
+- (void)_fetchCalorieGoalSamples;
 - (void)_handleTimeChange;
 - (id)_queue_calorieGoalSampleForDate:(id)arg1;
+- (void)_queue_fetchCalorieGoalSamples;
 - (bool)_queue_historicalDataLoaded;
 - (void)_queue_processMoveActivityStatistics:(id)arg1 exerciseActivityStatistics:(id)arg2 standActivityStatistics:(id)arg3;
-- (void)_queue_processNewCalorieGoals:(id)arg1;
+- (void)_queue_processNewCalorieGoals:(id)arg1 deletedSamples:(id)arg2;
+- (void)_queue_restartQueries;
+- (void)_queue_restartQueriesIfQueryInUse:(id)arg1;
 - (id)_queue_standHourForDate:(id)arg1;
 - (void)_queue_startQueries;
 - (void)_queue_stopQueries;
+- (void)_queue_updateCalorieGoalsWithSamples:(id)arg1 deletedSamples:(id)arg2 anchor:(id)arg3;
+- (void)_queue_updateCurrentActivitySummaryWithSummary:(id)arg1;
 - (void)_queue_updateMoveActivityStatistics:(id)arg1 exerciseActivityStatistics:(id)arg2 standActivityStatistics:(id)arg3;
-- (id)_statisticsCollectionQueryForType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 prediate:(id)arg4 intervalComponents:(id)arg5;
+- (void)_restartQueriesIfQueryInUse:(id)arg1;
+- (void)_updateCalorieGoalsWithSamples:(id)arg1 deletedSamples:(id)arg2 anchor:(id)arg3;
+- (void)_updateCurrentActivitySummaryWithSummary:(id)arg1;
+- (void)_updateMoveActivityStatistics:(id)arg1 exerciseActivityStatistics:(id)arg2 standActivityStatistics:(id)arg3;
 - (id)_wellnessEntryModelFromActivitySummary:(id)arg1;
 - (void)addSubscriber:(id)arg1;
 - (void)dealloc;

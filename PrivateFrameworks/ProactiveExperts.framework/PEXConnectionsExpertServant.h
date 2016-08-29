@@ -18,7 +18,6 @@
 - (id)cutoffLinguisticTriggerTime;
 - (id)cutoffLocationAppLastUseTime;
 - (id)cutoffPasteboardItemTime;
-- (id)cutoffSpotlightUserActionTime;
 - (id)duetSource;
 - (id)init;
 - (id)parameters;

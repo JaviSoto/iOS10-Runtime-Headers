@@ -61,6 +61,7 @@
 @property (nonatomic, readonly) bool aa_isNotesMigrated;
 @property (setter=aa_setPrimaryAccount:, nonatomic) bool aa_isPrimaryAccount;
 @property (setter=aa_setPrimaryEmailVerified:, nonatomic) bool aa_isPrimaryEmailVerified;
+@property (nonatomic, readonly) bool aa_isSandboxAccount;
 @property (setter=aa_setSyncedAccount:, nonatomic) bool aa_isSyncedAccount;
 @property (setter=aa_setUndergoingRepair:, nonatomic) bool aa_isUndergoingRepair;
 @property (setter=aa_setUsesCloudDocs:, nonatomic) bool aa_isUsingCloudDocs;
@@ -101,6 +102,7 @@
 @property bool calIsEnabledForCalendar;
 @property bool calIsEnabledForReminders;
 @property (readonly) bool calIsExchangeAccount;
+@property (readonly) bool calIsGenericCalDAVAccount;
 @property (readonly) bool calIsMissingParentAccount;
 @property bool calLocalDataMigrationHasTakenPlace;
 @property (copy) NSString *calMainPrincipalUID;
@@ -301,6 +303,7 @@
 - (bool)aa_isPCSErrorTransient:(struct __CFError { }*)arg1;
 - (bool)aa_isPrimaryAccount;
 - (bool)aa_isPrimaryEmailVerified;
+- (bool)aa_isSandboxAccount;
 - (bool)aa_isSyncedAccount;
 - (bool)aa_isUndergoingRepair;
 - (bool)aa_isUsingCloudDocs;
@@ -370,8 +373,8 @@
 - (id)_diffPropertiesWithAccount:(id)arg1 firstPropertyOnly:(bool)arg2;
 - (id)_diffWithAccount:(id)arg1 firstPropertyOnly:(bool)arg2;
 - (id)_schemeStringForUseSSL:(bool)arg1;
+- (void)_setCalInternalValue:(id)arg1 forAccountPropertyKey:(id)arg2;
 - (void)_setIsEnabled:(bool)arg1 forDataclass:(id)arg2;
-- (void)_setValue:(id)arg1 forAccountPropertyKey:(id)arg2;
 - (id)_updateURL:(id)arg1 withHost:(id)arg2 port:(id)arg3 useSSL:(id)arg4;
 - (bool)_useSSLForSchemeString:(id)arg1;
 - (void)addPrincipal:(id)arg1 withUID:(id)arg2;
@@ -390,6 +393,7 @@
 - (bool)calIsEnabledForCalendar;
 - (bool)calIsEnabledForReminders;
 - (bool)calIsExchangeAccount;
+- (bool)calIsGenericCalDAVAccount;
 - (bool)calIsMissingParentAccount;
 - (bool)calLocalDataMigrationHasTakenPlace;
 - (id)calMainPrincipalUID;
@@ -503,6 +507,7 @@
 - (bool)ic_hasICloudEmailAddress;
 - (bool)ic_isManagedAppleID;
 - (bool)ic_isNotesMigrated;
+- (bool)ic_isPrimaryAppleAccount;
 - (bool)ic_supportsHTMLNotes;
 
 @end

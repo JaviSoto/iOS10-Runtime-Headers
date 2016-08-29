@@ -9,6 +9,7 @@
     struct { 
         unsigned int abConfigValueType : 1; 
     }  _has;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *abConfigKey;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) bool hasAbConfigKey;
 @property (nonatomic, readonly) bool hasAbConfigValue;
 @property (nonatomic) bool hasAbConfigValueType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (int)StringAsAbConfigValueType:(id)arg1;
 - (id)abConfigKey;
@@ -39,6 +41,7 @@
 - (void)setAbConfigValue:(id)arg1;
 - (void)setAbConfigValueType:(int)arg1;
 - (void)setHasAbConfigValueType:(bool)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

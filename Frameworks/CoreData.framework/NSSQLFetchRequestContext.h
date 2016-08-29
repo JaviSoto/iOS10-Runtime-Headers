@@ -11,9 +11,11 @@
     int  _fileProtectionLevel;
     bool  _isFaultRequest;
     NSMutableSet * _objectIDsToRegister;
+    NSMutableSet * _objectsToAwaken;
     NSFetchRequest * _originalRequest;
     NSSQLFetchRequestContext * _parentContext;
     NSDictionary * _prefetchingSubstitutionVariables;
+    NSMutableArray * _resultFaultsThatWereFired;
     bool  _shouldUseBatches;
     NSSQLEntity * _sqlEntity;
     NSSQLModel * _sqlModel;
@@ -25,11 +27,13 @@
 @property (nonatomic, readonly) NSString *externalDataLinksDirectory;
 @property (nonatomic, readonly) NSString *externalDataReferencesDirectory;
 @property (nonatomic, readonly) NSFaultHandler *faultHandler;
+@property (nonatomic, readonly, retain) NSArray *faultsThatWereFired;
 @property (nonatomic, readonly) _PFFetchPlanHeader *fetchPlan;
 @property (nonatomic, readonly) NSSQLiteStatement *fetchStatement;
 @property (nonatomic, readonly) int fileProtectionLevel;
 @property (nonatomic) bool isFaultRequest;
 @property (nonatomic, readonly) NSArray *objectIDsToRegisterWithContext;
+@property (nonatomic, readonly) NSArray *objectsToAwaken;
 @property (nonatomic, readonly) NSFetchRequest *originalRequest;
 @property (nonatomic, readonly) NSSQLFetchRequestContext *parentContext;
 @property (nonatomic, retain) NSDictionary *prefetchingSubstitutionVariables;
@@ -44,7 +48,9 @@
 - (void)_preparePredicate:(id)arg1;
 - (void)_setFetchStatement:(id)arg1;
 - (void)_setupBindVariablesForCachedStatement:(id)arg1 usingValues:(id)arg2;
+- (void)addFaultsThatWereFired:(id)arg1;
 - (void)addObjectIDsToRegister:(id)arg1;
+- (void)addObjectsToAwaken:(id)arg1;
 - (void)cacheStatement:(id)arg1;
 - (id)cachedStatement;
 - (id)createChildContextForNestedFetchRequest:(id)arg1;
@@ -55,6 +61,7 @@
 - (id)externalDataLinksDirectory;
 - (id)externalDataReferencesDirectory;
 - (id)faultHandler;
+- (id)faultsThatWereFired;
 - (id)fetchPlan;
 - (id)fetchStatement;
 - (int)fileProtectionLevel;
@@ -66,6 +73,7 @@
 - (id)manyToOnePrefetchRequestForRelationshipNamed:(id)arg1 onEntity:(id)arg2;
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (id)objectIDsToRegisterWithContext;
+- (id)objectsToAwaken;
 - (id)originalRequest;
 - (id)parentContext;
 - (void)persistRows:(id)arg1;

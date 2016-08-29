@@ -14,6 +14,7 @@
 
 + (id)hiddenPeopleDataSourceWithFetchLimit:(unsigned long long)arg1;
 + (id)importantPeopleDataSourceWithFetchLimit:(unsigned long long)arg1;
++ (id /* block */)manualOrderComparator;
 + (id)otherPeopleDataSourceWithFetchLimit:(unsigned long long)arg1;
 
 - (id)_applyChanges:(id)arg1;
@@ -21,12 +22,12 @@
 - (id)_itemsArrayFromObjects:(id)arg1;
 - (id)_membersForModelObjects:(id)arg1;
 - (void)_updateMember:(id)arg1 WithModelObject:(id)arg2;
+- (void)cancelImageLoadingForItem:(id)arg1;
 - (id /* block */)defaultComparator;
 - (id)initWithName:(id)arg1 fetchResultBlock:(id /* block */)arg2;
 - (id)initWithName:(id)arg1 objects:(id)arg2;
 - (id)initWithName:(id)arg1 personType:(long long)arg2 fetchLimit:(unsigned long long)arg3;
 - (id)initWithName:(id)arg1 personType:(long long)arg2 objects:(id)arg3;
-- (id /* block */)manualOrderComparator;
 - (long long)personType;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)setPersonType:(long long)arg1;

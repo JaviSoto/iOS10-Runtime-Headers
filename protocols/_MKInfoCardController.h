@@ -7,10 +7,14 @@
 
 + (double)headerHeightInMinimalMode;
 
+- (GEOAutomobileOptions *)automobileOptions;
 - (double)currentHeaderMinimalModeInterpolationFactor;
 - (void)hideTitle:(bool)arg1;
 - (<UIScrollViewDelegate> *)scrollViewDelegate;
+- (void)setAutomobileOptions:(GEOAutomobileOptions *)arg1;
 - (void)setCurrentHeaderMinimalModeInterpolationFactor:(double)arg1;
 - (void)setScrollViewDelegate:(id <UIScrollViewDelegate>)arg1;
+- (void)setTransitOptions:(GEOTransitOptions *)arg1;
+- (GEOTransitOptions *)transitOptions;
 
 @end

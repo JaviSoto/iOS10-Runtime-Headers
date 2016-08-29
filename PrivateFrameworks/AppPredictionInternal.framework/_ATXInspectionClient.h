@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)appHistoryAddLaunch:(id)arg1 fromSpotlight:(bool)arg2 date:(id)arg3 timeZone:(id)arg4 reply:(id /* block */)arg5;
+- (void)appHistoryAddLaunch:(id)arg1 launchReason:(id)arg2 date:(id)arg3 timeZone:(id)arg4 reply:(id /* block */)arg5;
 - (void)appHistoryClear:(id /* block */)arg1;
 - (void)appHistoryStartDeltaRecording:(id /* block */)arg1;
 - (void)appHistoryStopDeltaRecording:(id /* block */)arg1;

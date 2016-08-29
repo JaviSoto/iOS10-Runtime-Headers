@@ -12,6 +12,7 @@
     double  _bannerImageScale;
     NSArray * _blockedStorefrontIDs;
     long long  _contentProvider;
+    NSString * _coverArticleListID;
     FCAssetHandle * _coverImageAssetHandle;
     FCHeadlineTemplate * _defaultHeadlineTemplate;
     NSString * _defaultSectionID;
@@ -33,7 +34,7 @@
     bool  _isPublic;
     NSDate * _loadDate;
     FCAssetHandle * _logoImageAssetHandle;
-    NSString * _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSString * _name;
     FCAssetHandle * _nameImageAssetHandle;
     FCAssetHandle * _nameImageForDarkBackgroundAssetHandle;
@@ -64,7 +65,6 @@
         double width; 
         double height; 
     }  _nameImageMaskSize;
-    FCAssetHandle * _nameImageMaskWidgetAssetHandle;
     FCAssetHandle * _nameImageMaskWidgetHQAssetHandle;
     FCAssetHandle * _nameImageMaskWidgetLQAssetHandle;
     struct CGSize { 
@@ -88,7 +88,9 @@
     NSArray * _relatedTopicIDsForOnboarding;
     NSString * _replacementID;
     long long  _score;
+    NSArray * _sectionFeedConfigurations;
     NSArray * _sectionIDs;
+    FCInterestToken * _tagInterestToken;
     NTPBTagRecord * _tagRecord;
     FCInterestToken * _tagRecordInterestToken;
     unsigned long long  _tagType;
@@ -108,6 +110,7 @@
 @property (nonatomic) double bannerImageScale;
 @property (nonatomic, readonly) NSArray *blockedStorefrontIDs;
 @property (nonatomic, readonly) long long contentProvider;
+@property (nonatomic, readonly, copy) NSString *coverArticleListID;
 @property (nonatomic, readonly) FCAssetHandle *coverImageAssetHandle;
 @property (nonatomic, readonly) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
@@ -142,7 +145,7 @@
 @property (nonatomic, retain) NSDate *loadDate;
 @property (nonatomic, readonly) NSArray *loadableFonts;
 @property (nonatomic, readonly) FCAssetHandle *logoImageAssetHandle;
-@property (nonatomic, readonly, copy) NSString *minimumNewsVersion;
+@property (nonatomic, readonly) long long minimumNewsVersion;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) FCAssetHandle *nameImageAssetHandle;
 @property (nonatomic, readonly) FCAssetHandle *nameImageForDarkBackgroundAssetHandle;
@@ -152,7 +155,6 @@
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskAssetHandle;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } nameImageMaskInsets;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } nameImageMaskSize;
-@property (nonatomic, readonly) FCAssetHandle *nameImageMaskWidgetAssetHandle;
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskWidgetHQAssetHandle;
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskWidgetLQAssetHandle;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } nameImageSize;
@@ -173,10 +175,12 @@
 @property (nonatomic, readonly) NSArray *relatedTopicIDsForOnboarding;
 @property (nonatomic, readonly, copy) NSString *replacementID;
 @property (nonatomic, readonly) long long score;
+@property (nonatomic, copy) NSArray *sectionFeedConfigurations;
 @property (nonatomic, readonly, copy) NSArray *sectionIDs;
 @property (nonatomic, readonly) long long statusBarStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsNotifications;
+@property (nonatomic, retain) FCInterestToken *tagInterestToken;
 @property (nonatomic, readonly) NTPBTagRecord *tagRecord;
 @property (nonatomic, readonly) FCInterestToken *tagRecordInterestToken;
 @property (nonatomic, readonly) unsigned long long tagType;
@@ -184,7 +188,7 @@
 @property (nonatomic, readonly, copy) NSString *versionKey;
 
 - (void).cxx_destruct;
-- (id)_feedIDForBin:(long long)arg1 paid:(bool)arg2;
+- (id)_feedConfigurationForSection:(id)arg1;
 - (void)_inflateFromJSONDictionary:(id)arg1;
 - (void)_inflateFromJSONDictionary:(id)arg1 withVersion:(long long)arg2;
 - (void)_inflateFromVersionlessJSONDictionary:(id)arg1;
@@ -203,6 +207,7 @@
 - (id)blockedStorefrontIDs;
 - (long long)contentProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)coverArticleListID;
 - (id)coverImageAssetHandle;
 - (id)data;
 - (id)defaultBannerImage;
@@ -217,6 +222,7 @@
 - (id)foregroundColor;
 - (id)foregroundColorHexString;
 - (id)freeFeedIDForBin:(long long)arg1;
+- (id)freeFeedIDForSection:(id)arg1 bin:(long long)arg2;
 - (id)groupTitleColor;
 - (id)groupTitleColorHexString;
 - (unsigned long long)hash;
@@ -249,7 +255,7 @@
 - (id)loadDate;
 - (id)loadableFonts;
 - (id)logoImageAssetHandle;
-- (id)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)name;
 - (id)nameImageAssetHandle;
 - (id)nameImageForDarkBackgroundAssetHandle;
@@ -259,11 +265,11 @@
 - (id)nameImageMaskAssetHandle;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageMaskInsets;
 - (struct CGSize { double x1; double x2; })nameImageMaskSize;
-- (id)nameImageMaskWidgetAssetHandle;
 - (id)nameImageMaskWidgetHQAssetHandle;
 - (id)nameImageMaskWidgetLQAssetHandle;
 - (struct CGSize { double x1; double x2; })nameImageSize;
 - (id)paidFeedIDForBin:(long long)arg1;
+- (id)paidFeedIDForSection:(id)arg1 bin:(long long)arg2;
 - (id)parentID;
 - (id)pinnedArticleIDs;
 - (id)pptFeedIDOverride;
@@ -283,6 +289,7 @@
 - (id)relatedTopicIDsForOnboarding;
 - (id)replacementID;
 - (long long)score;
+- (id)sectionFeedConfigurations;
 - (id)sectionIDs;
 - (void)setBackgroundColorHexString:(id)arg1;
 - (void)setBannerImageBaselineOffsetPercentage:(double)arg1;
@@ -292,8 +299,11 @@
 - (void)setGroupTitleColorHexString:(id)arg1;
 - (void)setLoadDate:(id)arg1;
 - (void)setPptFeedIDOverride:(id)arg1;
+- (void)setSectionFeedConfigurations:(id)arg1;
+- (void)setTagInterestToken:(id)arg1;
 - (long long)statusBarStyle;
 - (bool)supportsNotifications;
+- (id)tagInterestToken;
 - (id)tagRecord;
 - (id)tagRecordInterestToken;
 - (unsigned long long)tagType;

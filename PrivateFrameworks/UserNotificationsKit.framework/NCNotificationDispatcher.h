@@ -34,10 +34,14 @@
 - (id)alertingController;
 - (id)delegate;
 - (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsCoalescedWith:(id)arg2;
+- (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsPassingTest:(id /* block */)arg2;
 - (void)destination:(id)arg1 didDismissNotificationRequest:(id)arg2;
-- (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4;
+- (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
+- (void)destination:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
 - (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
+- (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
 - (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2 suppressAlerts:(bool)arg3;
 - (void)destinationDidBecomeReadyToReceiveNotifications:(id)arg1;
 - (id)destinationsRegistry;
 - (id)init;
@@ -60,6 +64,7 @@
 - (void)setSectionSettings:(id)arg1;
 - (void)setSourceDelegates:(id)arg1;
 - (id)sourceDelegates;
+- (void)unregisterDestination:(id)arg1;
 - (void)updateNotificationSectionSettings:(id)arg1;
 - (void)withdrawNotificationWithRequest:(id)arg1;
 

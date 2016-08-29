@@ -63,6 +63,7 @@
 - (id)adjustmentsModeBar:(id)arg1 levelSliderForMode:(id)arg2;
 - (void)adjustmentsModeBarDidChangeModeListExpandedState:(id)arg1;
 - (void)adjustmentsModeBarDidChangeSelectedMode:(id)arg1;
+- (void)basePhotoInvalidated;
 - (bool)canResetToDefaultValue;
 - (void)didBecomeActiveTool;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

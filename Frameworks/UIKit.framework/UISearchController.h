@@ -123,7 +123,7 @@
 - (bool)isActive;
 - (void)loadView;
 - (bool)obscuresBackgroundDuringPresentation;
-- (id)preferredFocusedItem;
+- (id)preferredFocusEnvironments;
 - (id)searchBar;
 - (id)searchResultsController;
 - (id)searchResultsUpdater;
@@ -139,6 +139,7 @@
 - (void)set_resultsControllerViewContainer:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)transitionDuration:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

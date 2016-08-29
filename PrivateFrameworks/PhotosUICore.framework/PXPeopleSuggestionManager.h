@@ -13,6 +13,7 @@
     <PXFaceCollection> * _faceCollection;
     bool  _mute;
     NSMutableArray * _rejectedSuggestions;
+    NSMutableArray * _skippedSuggestions;
     NSIndexPath * _suggestionIndexPath;
     unsigned long long  _userConfirmationsCount;
 }
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) <PXFaceCollection> *faceCollection;
 @property bool mute;
 @property (nonatomic, retain) NSMutableArray *rejectedSuggestions;
+@property (nonatomic, retain) NSMutableArray *skippedSuggestions;
 @property (retain) NSIndexPath *suggestionIndexPath;
 @property (nonatomic) unsigned long long userConfirmationsCount;
 
@@ -52,6 +54,7 @@
 - (id)init;
 - (id)initWithFaceCollection:(id)arg1;
 - (void)markCurrentSuggestionAsConfirmed:(bool)arg1;
+- (void)markCurrentSuggestionAsSkipped;
 - (bool)mute;
 - (void)preloadSounds;
 - (id)rejectedSuggestions;
@@ -65,8 +68,10 @@
 - (void)setFaceCollection:(id)arg1;
 - (void)setMute:(bool)arg1;
 - (void)setRejectedSuggestions:(id)arg1;
+- (void)setSkippedSuggestions:(id)arg1;
 - (void)setSuggestionIndexPath:(id)arg1;
 - (void)setUserConfirmationsCount:(unsigned long long)arg1;
+- (id)skippedSuggestions;
 - (id)suggestionIndexPath;
 - (void)undo;
 - (unsigned long long)userConfirmationsCount;

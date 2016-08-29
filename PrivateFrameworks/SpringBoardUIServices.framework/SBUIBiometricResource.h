@@ -12,9 +12,9 @@
     bool  _isFingerDetectionEnabled;
     bool  _isFingerDetectionEnabledThroughBiometricChannel;
     bool  _isFingerDetectionEnabledThroughHIDChannel;
-    bool  _isFingerOn;
     bool  _isMatchingAllowed;
     bool  _isMatchingEnabled;
+    SBFMobileKeyBag * _keybag;
     unsigned long long  _lastEvent;
     unsigned long long  _matchMode;
     NSMutableOrderedSet * _matchingAssertions;
@@ -22,8 +22,8 @@
     MCProfileConnection * _profileConnection;
     bool  _screenIsOn;
     bool  _shouldSendFingerOffNotification;
+    SBFCredentialSet * _unlockCredentialSet;
     bool  _wasMatchingBeforeKeybagStateChangeOccurred;
-    bool  _wasMatchingDisabledAtTimeOfAuthentication;
 }
 
 @property (nonatomic, retain) <SBUIBiometricAuthenticationPolicy> *authenticationPolicy;
@@ -34,12 +34,15 @@
 @property (getter=isFingerDetectEnabled, nonatomic, readonly) bool fingerDetectEnabled;
 @property (getter=isFingerOn, nonatomic, readonly) bool fingerOn;
 @property (nonatomic, readonly) bool hasBiometricAuthenticationCapabilityEnabled;
+@property (nonatomic, readonly) bool hasEnrolledFingers;
 @property (readonly) unsigned long long hash;
+@property (getter=_keybagInterface, setter=_setKeybagInterface:, nonatomic, retain) SBFMobileKeyBag *keybagInterface;
 @property (nonatomic, readonly) unsigned long long matchMode;
 @property (getter=isMatchingAllowed, nonatomic, readonly) bool matchingAllowed;
 @property (getter=isMatchingEnabled, nonatomic, readonly) bool matchingEnabled;
 @property (getter=_profileConnection, setter=_setProfileConnection:, nonatomic, retain) MCProfileConnection *profileConnection;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) SBFCredentialSet *unlockCredentialSet;
 
 + (id)sharedInstance;
 
@@ -50,16 +53,20 @@
 - (id)_biometricKitInterface;
 - (void)_deviceWillWake;
 - (void)_fingerDetectAllowedStateMayHaveChangedForReason:(id)arg1;
+- (id)_keybagInterface;
 - (void)_matchingAllowedStateMayHaveChangedForReason:(id)arg1;
 - (void)_notifyObserversOfEvent:(unsigned long long)arg1;
 - (id)_profileConnection;
 - (void)_profileSettingsChanged:(id)arg1;
+- (void)_reallyReallyUpdateMatchMode;
+- (void)_reallySetAuthenticated:(bool)arg1 keybagState:(id)arg2;
 - (void)_reevaluateFingerDetection;
 - (void)_reevaluateMatching;
 - (void)_removeFingerDetectionWantedAssertion:(id)arg1;
 - (void)_removeMatchingAssertion:(id)arg1;
 - (void)_setAuthenticated:(bool)arg1;
 - (void)_setBiometricKitInterface:(id)arg1;
+- (void)_setKeybagInterface:(id)arg1;
 - (void)_setProfileConnection:(id)arg1;
 - (bool)_shouldSignpost;
 - (void)_stopMatching;
@@ -77,6 +84,7 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (bool)hasBiometricAuthenticationCapabilityEnabled;
+- (bool)hasEnrolledFingers;
 - (id)init;
 - (bool)isFingerDetectEnabled;
 - (bool)isFingerOn;
@@ -90,7 +98,9 @@
 - (void)refreshMatchMode;
 - (void)removeObserver:(id)arg1;
 - (void)setAuthenticationPolicy:(id)arg1;
+- (void)setUnlockCredentialSet:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
+- (id)unlockCredentialSet;
 
 @end

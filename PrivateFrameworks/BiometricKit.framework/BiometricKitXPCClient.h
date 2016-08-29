@@ -24,6 +24,7 @@
 - (int)enrollContinue;
 - (void)enrollResult:(id)arg1;
 - (bool)fileRadarWithLogs:(id)arg1 withDescription:(id)arg2;
+- (int)forceBioLockoutForUser:(unsigned int)arg1;
 - (long long)getBioLockoutStateForUser:(unsigned int)arg1;
 - (id)getCalibrationDataInfo;
 - (int)getCountersignedStoreToken:(id*)arg1;

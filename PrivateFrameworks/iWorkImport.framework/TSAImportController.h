@@ -46,8 +46,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool ignoreDocumentSupport;
 @property (nonatomic, readonly) <TSKImporter> *importer;
-@property (nonatomic, readonly) NSArray *incompatibleMovieInfosUnplayableOnAllDevices;
-@property (nonatomic, readonly) NSArray *incompatibleMovieInfosUnplayableOnThisDevice;
+@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
+@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
 @property (nonatomic, readonly) bool isBrowsingVersions;
 @property (nonatomic, readonly) bool isDocumentSupportTemporary;
 @property (nonatomic, readonly) bool isImportCancelled;
@@ -69,7 +69,7 @@
 - (id)_prepareTemplate:(id)arg1;
 - (bool)_saveContextToTemporaryURL:(id)arg1 passphrase:(id)arg2 originalURL:(id)arg3 documentUUID:(id)arg4 error:(id*)arg5;
 - (void)_setPresentedItemURL:(id)arg1;
-- (void)addIncompatibleMovieInfo:(id)arg1 withCompatibilityLevel:(long long)arg2;
+- (void)addIncompatibleMediaContainer:(id)arg1 incompatibleData:(id)arg2 compatibilityLevel:(long long)arg3;
 - (void)addPersistenceWarnings:(id)arg1;
 - (void)addWarning:(id)arg1;
 - (id)additionalDocumentPropertiesForWrite;

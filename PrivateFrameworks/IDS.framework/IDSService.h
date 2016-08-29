@@ -9,6 +9,7 @@
 @property (nonatomic, readonly, retain) _IDSService *_internal;
 @property (nonatomic, readonly, copy) NSSet *accounts;
 @property (nonatomic, readonly, copy) NSArray *devices;
+@property (nonatomic, readonly, copy) NSSet *internalAccounts;
 @property (getter=isActive, nonatomic, readonly) bool isActive;
 
 // Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
@@ -34,6 +35,7 @@
 - (id)initWithService:(id)arg1 manuallyAckMessages:(bool)arg2;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2;
 - (id)internal;
+- (id)internalAccounts;
 - (bool)isPretendingToBeFull;
 - (long long)maxHomeKitPayloadSize;
 - (SEL)protobufActionForIncomingRequestsOfType:(unsigned short)arg1;

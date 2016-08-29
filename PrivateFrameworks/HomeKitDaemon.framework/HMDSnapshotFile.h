@@ -4,6 +4,7 @@
 
 @interface HMDSnapshotFile : NSObject <HMFLogging> {
     HAPOSTransaction * _createSlotIdentifierTransaction;
+    NSString * _directory;
     NSString * _filePath;
     NSNumber * _slotIdentifier;
     CAContext * _snapshotContext;
@@ -13,6 +14,7 @@
 @property (nonatomic, retain) HAPOSTransaction *createSlotIdentifierTransaction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *directory;
 @property (nonatomic, readonly) NSString *filePath;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *slotIdentifier;
@@ -23,17 +25,21 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (id)copyFileAtPath:(id)arg1 snapshotTimestamp:(id)arg2;
 - (id)createSlotIdentifierTransaction;
 - (struct CGImage { }*)createSnapshotCGImageRef:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)directory;
 - (id)filePath;
 - (unsigned long long)hash;
+- (id)initWithFilePath:(id)arg1 snapshotTimestamp:(id)arg2;
 - (id)initWithImageDirectory:(id)arg1;
 - (id)initWithImageDirectory:(id)arg1 data:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)logIdentifier;
 - (void)setCreateSlotIdentifierTransaction:(id)arg1;
+- (void)setFileData:(id)arg1 snapshotTimestamp:(id)arg2;
 - (void)setSlotIdentifier:(id)arg1;
 - (void)setSnapshotContext:(id)arg1;
 - (id)slotIdentifier;

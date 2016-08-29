@@ -9,7 +9,6 @@
 }
 
 - (void)_enqueue:(id)arg1;
-- (id)_startingValues;
 - (void)dealloc;
 - (id)initWithObservable:(id)arg1 count:(unsigned long long)arg2;
 - (id)subscribe:(id)arg1;

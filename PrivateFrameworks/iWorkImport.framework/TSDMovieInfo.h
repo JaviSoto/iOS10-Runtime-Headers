@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMovieInfo : TSDMediaInfo <TSDMixing> {
+@interface TSDMovieInfo : TSDMediaInfo <TSDCompatibilityAwareMediaContainer, TSDMixing> {
     bool  mAudioOnly;
     TSPData * mAudioOnlyImageData;
     double  mEndTime;
@@ -26,7 +26,11 @@
 
 @property (getter=isAudioOnly, nonatomic) bool audioOnly;
 @property (nonatomic, retain) TSPData *audioOnlyImageData;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) double endTime;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) TSPData *importedAuxiliaryMovieData;
 @property (nonatomic, copy) NSString *importedAuxiliaryMovieDataOriginalFilename;
 @property (nonatomic) unsigned long long loopOption;
@@ -36,6 +40,7 @@
 @property (nonatomic) double posterTime;
 @property (nonatomic) double startTime;
 @property (getter=isStreaming, nonatomic) bool streaming;
+@property (readonly) Class superclass;
 @property (nonatomic) float volume;
 
 + (double)defaultPosterTimeForDuration:(double)arg1;
@@ -45,6 +50,7 @@
 - (id)animationFilters;
 - (id)audioOnlyImageData;
 - (bool)canChangeWrapType;
+- (bool)canResetMediaSize;
 - (bool)containsProperty:(int)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -70,6 +76,7 @@
 - (id)makeAVAsset;
 - (id)makeAVAssetWithOptions:(id)arg1;
 - (id)makePosterImageGeneratorWithAVAsset:(id)arg1;
+- (id)mediaDataForDragging;
 - (id)mediaDisplayName;
 - (id)mediaFileType;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
@@ -78,6 +85,7 @@
 - (id)movieRemoteURL;
 - (bool)needsDownload;
 - (id)objectForProperty:(int)arg1;
+- (id)p_makePosterImageDataWithAVAsset:(id)arg1 inContext:(id)arg2;
 - (void)p_setPropertiesFromLoadedAsset:(id)arg1;
 - (id)posterImageData;
 - (double)posterTime;

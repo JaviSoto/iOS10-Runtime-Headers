@@ -11,6 +11,8 @@
 - (void).cxx_destruct;
 - (id)applicationController;
 - (id)initWithAppContext:(id)arg1 applicationController:(id)arg2;
+- (void)launchComplete:(id)arg1;
 - (void)launchFailed;
+- (void)sendDocumentMessage:(id)arg1 :(id)arg2 :(id)arg3;
 
 @end

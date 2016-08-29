@@ -29,6 +29,7 @@
 - (void)_promoteJoinsForSubqueryScopedKeypath:(id)arg1;
 - (void)_promoteJoinsForSubqueryScopedKeypaths;
 - (void)_setVariableColumn:(id)arg1;
+- (bool)canDoDirectJoinGivenPredicate:(id)arg1;
 - (void)dealloc;
 - (id)fetchIntermediateForKeypathExpression:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;

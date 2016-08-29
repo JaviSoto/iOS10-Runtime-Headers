@@ -14,7 +14,7 @@
     bool  _residentCapable;
     bool  _supportsCloudDataSync;
     bool  _supportsKeychainSync;
-    NSNumber * _version;
+    HMDHomeKitVersion * _version;
 }
 
 @property (nonatomic) HMDAccount *account;
@@ -33,7 +33,7 @@
 @property (readonly) Class superclass;
 @property bool supportsCloudDataSync;
 @property bool supportsKeychainSync;
-@property (nonatomic, retain) NSNumber *version;
+@property (nonatomic, retain) HMDHomeKitVersion *version;
 
 + (id)accountIdentifierFromDevice:(id)arg1 error:(id*)arg2;
 + (id)accountIdentifierFromDeviceUniqueIdentifier:(id)arg1 error:(id*)arg2;
@@ -80,6 +80,7 @@
 - (id)productInfo;
 - (id)propertyQueue;
 - (void)setAccount:(id)arg1;
+- (void)setAccountIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProductInfo:(id)arg1;
 - (void)setRemoteGatewayCapable:(bool)arg1;

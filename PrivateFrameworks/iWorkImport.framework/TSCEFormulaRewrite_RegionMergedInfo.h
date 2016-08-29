@@ -15,6 +15,7 @@
 @property (nonatomic) const struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*mergeSource;
 
 - (void)dealloc;
+- (id)description;
 - (id)initWithMergeRegion:(id)arg1 mergeSource:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)mergeRegion;
 - (const struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*)mergeSource;

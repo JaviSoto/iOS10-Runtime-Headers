@@ -20,10 +20,13 @@
 @property (nonatomic, copy) NSString *sectionID;
 @property (nonatomic, copy) NSString *topicID;
 
++ (id)feedContextForChannel:(id)arg1 sectionID:(id)arg2;
 + (id)feedContextForCoverArticlesFeed;
++ (id)feedContextForEditorialChannel:(id)arg1 sectionID:(id)arg2;
 + (id)feedContextForEditorialTag:(id)arg1;
 + (id)feedContextForHiddenFeed;
 + (id)feedContextForTag:(id)arg1;
++ (id)feedContextForTopStoriesChannel:(id)arg1 sectionID:(id)arg2;
 + (id)feedContextForTopStoriesTag:(id)arg1;
 
 - (void).cxx_destruct;

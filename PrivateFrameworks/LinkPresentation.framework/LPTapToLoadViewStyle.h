@@ -20,7 +20,7 @@
 - (id)backgroundColor;
 - (id)caption;
 - (id)height;
-- (id)init;
+- (id)initWithPlatform:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHeight:(id)arg1;
 - (void)setTapHighlightColor:(id)arg1;

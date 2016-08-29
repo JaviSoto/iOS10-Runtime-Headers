@@ -3,8 +3,8 @@
  */
 
 @interface WGMajorListViewController : WGWidgetListViewController <WGWidgetListFooterViewDelegate> {
+    WGCollapsingView * _collapsingView;
     WGWidgetListFooterView * _footerView;
-    WGSnapshotView * _snapshotView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,5 +26,6 @@
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeHiddenInGroup:(id)arg3;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeVisibleInGroup:(id)arg3;
 - (id)widgetListFooterView:(id)arg1 customBackgroundViewForItem:(id)arg2;
+- (void)widgetListFooterViewAvailableNewWidgetsUpdated:(id)arg1;
 
 @end

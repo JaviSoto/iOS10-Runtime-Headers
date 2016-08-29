@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSecureRemoteMessageTransport : HMFMessageTransport <HMDSecureSessionDelegate, HMFLogging, HMFMessageTransportDelegate> {
+@interface HMDSecureRemoteMessageTransport : HMFMessageTransport <HMDRemoteDeviceMonitorDelegate, HMDSecureSessionDelegate, HMFLogging, HMFMessageTransportDelegate> {
     HMDAccountRegistry * _accountRegistry;
     NSMapTable * _activeClientSecureSessions;
     NSMapTable * _activeServerSecureSessions;
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableDictionary * _currentHomeConfigurations;
+    HMDRemoteDeviceMonitor * _deviceMonitor;
     HMDRemoteIdentityRegistry * _identityRegistry;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     HMDRemoteMessageNotifications * _sessionNotifications;
     NSArray * _transports;
-    NSHashTable * _unreachableDevices;
 }
 
 @property (nonatomic, readonly) HMDAccountRegistry *accountRegistry;
@@ -22,13 +22,13 @@
 @property (nonatomic, retain) NSMutableDictionary *currentHomeConfigurations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) HMDRemoteDeviceMonitor *deviceMonitor;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDRemoteIdentityRegistry *identityRegistry;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, retain) HMDRemoteMessageNotifications *sessionNotifications;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *transports;
-@property (nonatomic, readonly) NSHashTable *unreachableDevices;
 
 + (id)logCategory;
 + (id)shortDescription;
@@ -41,16 +41,16 @@
 - (void)_handleNotificationResponseForMessage:(id)arg1 responsePayload:(id)arg2 responseError:(id)arg3 responseHandler:(id /* block */)arg4;
 - (void)_handlePingMessage:(id)arg1;
 - (bool)_handleReceivedMessage:(id)arg1 transport:(id)arg2;
-- (void)_handleReceivedMessageFromDevice:(id)arg1;
-- (void)_handleSecureClientMessage:(id)arg1 fromDevice:(id)arg2;
+- (void)_handleSecureClientMessage:(id)arg1 fromDevice:(id)arg2 transport:(id)arg3;
 - (void)_handleSecureServerMessage:(id)arg1 fromDevice:(id)arg2 transport:(id)arg3;
-- (void)_handleUnhandledMessage:(id)arg1;
 - (bool)_haveAllCapabilities:(id)arg1;
 - (void)_openSecureSessionToDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_pingDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_preferredTransportForMessage:(id)arg1;
 - (void)_reallyOpenSecureSessionToDevice:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_sendPingToDevice:(id)arg1 timeout:(double)arg2 restriction:(unsigned long long)arg3 responseHandler:(id /* block */)arg4;
 - (void)_sendSecureMessage:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateDeviceInformationFromMessage:(id)arg1;
 - (id)accountRegistry;
 - (id)activeClientSecureSessions;
 - (id)activeServerSecureSessions;
@@ -60,16 +60,17 @@
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
+- (id)deviceMonitor;
 - (void)electDeviceForUser:(id)arg1 destination:(id)arg2 deviceCapabilities:(id)arg3 responseTimeout:(double)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
-- (void)handlePingResponseFromDevice:(id)arg1 success:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (id)identityRegistry;
 - (id)initWithTransports:(id)arg1 identityRegistry:(id)arg2 accountRegistry:(id)arg3;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
-- (void)notifyDeviceReacahbilityChange:(bool)arg1 device:(id)arg2;
 - (void)openSecureSessionToDevice:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)pingDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)prepareAnswerForRequestedCapabilities:(id)arg1;
 - (id)propertyQueue;
 - (void)removeHome:(id)arg1;
+- (void)reset;
 - (void)secureSession:(id)arg1 receivedRequestToSendMessage:(id)arg2;
 - (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)sessionNotifications;
@@ -77,7 +78,6 @@
 - (void)setSessionNotifications:(id)arg1;
 - (id)shortDescription;
 - (id)transports;
-- (id)unreachableDevices;
 - (void)updateHome:(id)arg1 configurationVersion:(long long)arg2;
 
 @end

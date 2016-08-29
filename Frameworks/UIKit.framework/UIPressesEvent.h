@@ -26,7 +26,7 @@
 - (void)_registerForTerminalEvent:(id)arg1;
 - (void)_removePhysicalButton:(id)arg1;
 - (id)_respondersForWindow:(id)arg1;
-- (id)_terminalRegistrants;
+- (id)_terminalRegistrantsForPressType:(long long)arg1;
 - (id)_triggeringPhysicalButton;
 - (void)_unregisterForTerminalEvent:(id)arg1;
 - (id)_windows;

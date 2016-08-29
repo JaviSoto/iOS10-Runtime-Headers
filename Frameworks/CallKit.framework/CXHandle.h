@@ -20,6 +20,7 @@
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithType:(long long)arg1;
 - (id)initWithType:(long long)arg1 value:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToHandle:(id)arg1;

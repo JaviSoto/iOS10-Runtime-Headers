@@ -14,6 +14,7 @@
 - (id)_debugBadgeWithColors:(id)arg1;
 - (id)_debugImageForBadgeType:(unsigned long long)arg1;
 - (id)imageForBadgeType:(unsigned long long)arg1;
+- (id)imageForCacheKey:(unsigned long long)arg1;
 - (struct UIOffset { double x1; double x2; })imageOffsetForBadgeType:(unsigned long long)arg1;
 - (id)initWithStyle:(long long)arg1;
 

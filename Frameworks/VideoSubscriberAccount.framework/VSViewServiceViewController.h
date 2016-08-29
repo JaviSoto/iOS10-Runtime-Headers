@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSViewServiceViewController : UIViewController <VSIdentityProviderControllerDelegate, VSIdentityProviderPickerViewControllerDelegate, VSViewServiceProtocol> {
+@interface VSViewServiceViewController : UIViewController <VSIdentityProviderControllerDelegate, VSIdentityProviderPickerViewControllerDelegate, VSRemoteNotifierDelegate, VSViewServiceProtocol> {
     VSAccountStore * _accountStore;
     VSViewServiceRequest * _currentRequest;
     NSUUID * _currentRequestID;
@@ -11,6 +11,7 @@
     bool  _identityProviderPickerRequired;
     bool  _presentedInHost;
     NSOperationQueue * _privateQueue;
+    VSRemoteNotifier * _remoteNotifier;
 }
 
 @property (nonatomic, retain) VSAccountStore *accountStore;
@@ -24,6 +25,7 @@
 @property (getter=isIdentityProviderPickerRequired, nonatomic) bool identityProviderPickerRequired;
 @property (getter=isPresentedInHost, nonatomic) bool presentedInHost;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
+@property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
 @property (readonly) Class superclass;
 
 + (id)_exportedInterface;
@@ -32,8 +34,8 @@
 - (void).cxx_destruct;
 - (id)_account;
 - (void)_completeRequest:(id)arg1 withResponse:(id)arg2;
-- (void)_completeRequestWithIdentityProviderResponse:(id)arg1;
 - (void)_completeRequestWithResponse:(id)arg1;
+- (void)_completeRequestWithResponse:(id)arg1 fromIdentityProvider:(id)arg2;
 - (void)_didCancelRequest;
 - (void)_dismissInHostIfNecessary;
 - (id)_identityProviderRequestForViewServiceRequest:(id)arg1;
@@ -45,6 +47,8 @@
 - (void)_popToRootViewController;
 - (void)_presentError:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_presentInHostIfNecessary;
+- (void)_presentViewController:(id)arg1;
+- (void)_presentWelcomeMessageForIdentityProvider:(id)arg1 withLogoCacheURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_pushViewController:(id)arg1;
 - (void)_replaceLastViewControllerWithViewController:(id)arg1 animated:(bool)arg2;
 - (void)_request:(id)arg1 didFailWithError:(id)arg2;
@@ -72,6 +76,8 @@
 - (bool)isIdentityProviderPickerRequired;
 - (bool)isPresentedInHost;
 - (id)privateQueue;
+- (id)remoteNotifier;
+- (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
 - (void)setAccountStore:(id)arg1;
 - (void)setCurrentRequest:(id)arg1;
 - (void)setCurrentRequestID:(id)arg1;
@@ -80,5 +86,6 @@
 - (void)setIdentityProviderPickerRequired:(bool)arg1;
 - (void)setPresentedInHost:(bool)arg1;
 - (void)setPrivateQueue:(id)arg1;
+- (void)setRemoteNotifier:(id)arg1;
 
 @end

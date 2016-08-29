@@ -4,9 +4,10 @@
 
 @interface FCPurchaseLookupRecordSource : FCRecordSource
 
-+ (unsigned long long)dataSizeLimit;
 + (unsigned long long)defaultFetchOperationCachePolicy;
 + (double)defaultFetchOperationMaximumCachedAge;
++ (unsigned long long)highThresholdDataSizeLimit;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)recordType;
 + (id)storeFilename;
 + (unsigned long long)storeVersion;

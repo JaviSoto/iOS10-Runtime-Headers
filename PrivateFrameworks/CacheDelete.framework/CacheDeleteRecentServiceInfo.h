@@ -22,6 +22,7 @@
 - (id)initWithAmount:(id)arg1 atUrgency:(int)arg2 pushed:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)log;
+- (int)normalizeUrgency:(int)arg1;
 - (bool)updateAmount:(id)arg1 atUrgency:(int)arg2;
 - (void)updateDiagnostics:(id)arg1 atUrgency:(int)arg2;
 - (bool)validate:(double)arg1 atUrgency:(int)arg2;

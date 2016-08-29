@@ -4,12 +4,14 @@
 
 @interface PXKitSettings : PXSettings {
     bool  _allowCapitalization;
+    bool  _allowFontFallback;
     bool  _defaultAsyncTextRenderingEnabled;
     long long  _defaultLabelTypesettingMode;
     bool  _defaultTextAutoscalingEnabled;
     double  _defaultTextMinimumScaleFactor;
     bool  _defaultTextTruncationEnabled;
     double  _defaultTruncatedTextMinimumScaleFactor;
+    bool  _defaultUseShapeLayerForText;
     long long  _deviceGraphicsQuality;
     bool  _drawTypographicGuidelines;
     bool  _simulateSlowTextTypesetting;
@@ -18,12 +20,14 @@
 }
 
 @property (nonatomic) bool allowCapitalization;
+@property (nonatomic) bool allowFontFallback;
 @property (nonatomic) bool defaultAsyncTextRenderingEnabled;
 @property (nonatomic) long long defaultLabelTypesettingMode;
 @property (nonatomic) bool defaultTextAutoscalingEnabled;
 @property (nonatomic) double defaultTextMinimumScaleFactor;
 @property (nonatomic) bool defaultTextTruncationEnabled;
 @property (nonatomic) double defaultTruncatedTextMinimumScaleFactor;
+@property (nonatomic) bool defaultUseShapeLayerForText;
 @property (nonatomic) long long deviceGraphicsQuality;
 @property (nonatomic) bool drawTypographicGuidelines;
 @property (nonatomic) bool simulateSlowTextTypesetting;
@@ -34,21 +38,25 @@
 + (id)sharedInstance;
 
 - (bool)allowCapitalization;
+- (bool)allowFontFallback;
 - (bool)defaultAsyncTextRenderingEnabled;
 - (long long)defaultLabelTypesettingMode;
 - (bool)defaultTextAutoscalingEnabled;
 - (double)defaultTextMinimumScaleFactor;
 - (bool)defaultTextTruncationEnabled;
 - (double)defaultTruncatedTextMinimumScaleFactor;
+- (bool)defaultUseShapeLayerForText;
 - (long long)deviceGraphicsQuality;
 - (bool)drawTypographicGuidelines;
 - (void)setAllowCapitalization:(bool)arg1;
+- (void)setAllowFontFallback:(bool)arg1;
 - (void)setDefaultAsyncTextRenderingEnabled:(bool)arg1;
 - (void)setDefaultLabelTypesettingMode:(long long)arg1;
 - (void)setDefaultTextAutoscalingEnabled:(bool)arg1;
 - (void)setDefaultTextMinimumScaleFactor:(double)arg1;
 - (void)setDefaultTextTruncationEnabled:(bool)arg1;
 - (void)setDefaultTruncatedTextMinimumScaleFactor:(double)arg1;
+- (void)setDefaultUseShapeLayerForText:(bool)arg1;
 - (void)setDefaultValues;
 - (void)setDeviceGraphicsQuality:(long long)arg1;
 - (void)setDrawTypographicGuidelines:(bool)arg1;

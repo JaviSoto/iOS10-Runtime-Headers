@@ -4,11 +4,20 @@
 
 @interface PRSRankingKnobs : NSObject {
     long long  _cat_score_enum;
+    double  _category_promotion_count_weight;
+    long long  _category_promotion_decay;
+    double  _category_promotion_last_engaged_weight;
+    bool  _cook_sqf;
+    bool  _cook_sqf_fallback_qi_cep;
+    bool  _cook_sqf_topdown;
     double  _device_expert_factor;
     double  _device_freq_factor;
+    long long  _device_freq_window;
     double  _device_launch_factor;
     double  _device_score_ratio;
+    bool  _didGetKnobValues;
     double  _glance_support_factor;
+    double  _min_coreduet_threshold;
     double  _min_device_cep;
     double  _min_server_cep;
     double  _min_server_score;
@@ -16,19 +25,31 @@
     double  _pseudo_zero_cep;
     double  _server_default_score;
     double  _server_score_decrement;
+    long long  _shortcut_window;
     double  _std_dev_factor;
     double  _std_dev_threshold;
+    bool  _text_features_demotion;
     long long  _text_features_num_chars;
     double  _top_server_score_factor;
     bool  _use_server_default_score;
+    long long  _user_activity_promotion_threshold;
 }
 
 @property (nonatomic) long long cat_score_enum;
+@property (nonatomic) double category_promotion_count_weight;
+@property (nonatomic) long long category_promotion_decay;
+@property (nonatomic) double category_promotion_last_engaged_weight;
+@property (nonatomic) bool cook_sqf;
+@property (nonatomic) bool cook_sqf_fallback_qi_cep;
+@property (nonatomic) bool cook_sqf_topdown;
 @property (nonatomic) double device_expert_factor;
 @property (nonatomic) double device_freq_factor;
+@property (nonatomic) long long device_freq_window;
 @property (nonatomic) double device_launch_factor;
 @property (nonatomic) double device_score_ratio;
+@property (nonatomic) bool didGetKnobValues;
 @property (nonatomic) double glance_support_factor;
+@property (nonatomic) double min_coreduet_threshold;
 @property (nonatomic) double min_device_cep;
 @property (nonatomic) double min_server_cep;
 @property (nonatomic) double min_server_score;
@@ -36,18 +57,31 @@
 @property (nonatomic) double pseudo_zero_cep;
 @property (nonatomic) double server_default_score;
 @property (nonatomic) double server_score_decrement;
+@property (nonatomic) long long shortcut_window;
 @property (nonatomic) double std_dev_factor;
 @property (nonatomic) double std_dev_threshold;
+@property (nonatomic) bool text_features_demotion;
 @property (nonatomic) long long text_features_num_chars;
 @property (nonatomic) double top_server_score_factor;
 @property (nonatomic) bool use_server_default_score;
+@property (nonatomic) long long user_activity_promotion_threshold;
 
 - (long long)cat_score_enum;
+- (double)category_promotion_count_weight;
+- (long long)category_promotion_decay;
+- (double)category_promotion_last_engaged_weight;
+- (bool)cook_sqf;
+- (bool)cook_sqf_fallback_qi_cep;
+- (bool)cook_sqf_topdown;
 - (double)device_expert_factor;
 - (double)device_freq_factor;
+- (long long)device_freq_window;
 - (double)device_launch_factor;
 - (double)device_score_ratio;
+- (bool)didGetKnobValues;
 - (double)glance_support_factor;
+- (id)init;
+- (double)min_coreduet_threshold;
 - (double)min_device_cep;
 - (double)min_server_cep;
 - (double)min_server_score;
@@ -56,11 +90,20 @@
 - (double)server_default_score;
 - (double)server_score_decrement;
 - (void)setCat_score_enum:(long long)arg1;
+- (void)setCategory_promotion_count_weight:(double)arg1;
+- (void)setCategory_promotion_decay:(long long)arg1;
+- (void)setCategory_promotion_last_engaged_weight:(double)arg1;
+- (void)setCook_sqf:(bool)arg1;
+- (void)setCook_sqf_fallback_qi_cep:(bool)arg1;
+- (void)setCook_sqf_topdown:(bool)arg1;
 - (void)setDevice_expert_factor:(double)arg1;
 - (void)setDevice_freq_factor:(double)arg1;
+- (void)setDevice_freq_window:(long long)arg1;
 - (void)setDevice_launch_factor:(double)arg1;
 - (void)setDevice_score_ratio:(double)arg1;
+- (void)setDidGetKnobValues:(bool)arg1;
 - (void)setGlance_support_factor:(double)arg1;
+- (void)setMin_coreduet_threshold:(double)arg1;
 - (void)setMin_device_cep:(double)arg1;
 - (void)setMin_server_cep:(double)arg1;
 - (void)setMin_server_score:(double)arg1;
@@ -68,15 +111,21 @@
 - (void)setPseudo_zero_cep:(double)arg1;
 - (void)setServer_default_score:(double)arg1;
 - (void)setServer_score_decrement:(double)arg1;
+- (void)setShortcut_window:(long long)arg1;
 - (void)setStd_dev_factor:(double)arg1;
 - (void)setStd_dev_threshold:(double)arg1;
+- (void)setText_features_demotion:(bool)arg1;
 - (void)setText_features_num_chars:(long long)arg1;
 - (void)setTop_server_score_factor:(double)arg1;
 - (void)setUse_server_default_score:(bool)arg1;
+- (void)setUser_activity_promotion_threshold:(long long)arg1;
+- (long long)shortcut_window;
 - (double)std_dev_factor;
 - (double)std_dev_threshold;
+- (bool)text_features_demotion;
 - (long long)text_features_num_chars;
 - (double)top_server_score_factor;
 - (bool)use_server_default_score;
+- (long long)user_activity_promotion_threshold;
 
 @end

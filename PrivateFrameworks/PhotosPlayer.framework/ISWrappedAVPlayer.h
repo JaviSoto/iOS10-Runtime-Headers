@@ -7,8 +7,10 @@
     <ISWrappedAVPlayerDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSObject<OS_dispatch_queue> * _ivarQueue;
+    void * _ivarQueueIdentifier;
     AVPlayerItem * _ivarQueue_currentItem;
     NSError * _ivarQueue_error;
+    NSError * _ivarQueue_itemError;
     struct { 
         long long value; 
         int timescale; 
@@ -20,6 +22,7 @@
     long long  _ivarQueue_status;
     float  _ivarQueue_volume;
     NSMutableDictionary * _observersByID;
+    void * _playerQueueIdentifier;
     AVPlayer * _playerQueue_avPlayer;
 }
 
@@ -47,6 +50,7 @@
 - (void)attachToPlayerLayerIfNeeded:(id)arg1;
 - (void)cancelPendingPrerolls;
 - (id)currentItem;
+- (id)currentItemError;
 - (long long)currentItemStatus;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)dealloc;

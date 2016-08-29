@@ -221,10 +221,12 @@
 + (id)predicateForContactsLinkedToContactWithIdentifier:(id)arg1;
 + (id)predicateForContactsMatchingEmailAddress:(id)arg1;
 + (id)predicateForContactsMatchingFullTextSearch:(id)arg1 containerIdentifiers:(id)arg2 groupIdentifiers:(id)arg3;
++ (id)predicateForContactsMatchingInstantMessageAddress:(id)arg1;
 + (id)predicateForContactsMatchingName:(id)arg1;
 + (id)predicateForContactsMatchingName:(id)arg1 options:(unsigned long long)arg2;
 + (id)predicateForContactsMatchingPhoneNumber:(id)arg1;
 + (id)predicateForContactsMatchingPostalAddress:(id)arg1;
++ (id)predicateForContactsMatchingSocialProfile:(id)arg1;
 + (id)predicateForContactsMatchingString:(id)arg1 accountIdentifier:(id)arg2 containerIdentifier:(id)arg3 groupIdentifier:(id)arg4;
 + (id)predicateForContactsWithIdentifiers:(id)arg1;
 + (id)predicateForContactsWithOrganizationName:(id)arg1;

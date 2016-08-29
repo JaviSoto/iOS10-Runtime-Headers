@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INBookRestaurantReservationIntent : INIntent <NSCopying> {
+@interface INBookRestaurantReservationIntent : INIntent <INBookRestaurantReservationIntentExport, NSCopying> {
     NSDate * _bookingDate;
+    NSDateComponents * _bookingDateComponents;
     NSString * _bookingIdentifier;
     INRestaurantGuest * _guest;
     NSString * _guestProvidedSpecialRequestText;
@@ -13,18 +14,24 @@
 }
 
 @property (nonatomic, copy) NSDate *bookingDate;
+@property (nonatomic, copy) NSDateComponents *bookingDateComponents;
 @property (nonatomic, copy) NSString *bookingIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) INRestaurantGuest *guest;
 @property (nonatomic, copy) NSString *guestProvidedSpecialRequestText;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long partySize;
 @property (nonatomic, copy) INRestaurant *restaurant;
 @property (nonatomic, copy) INRestaurantOffer *selectedOffer;
+@property (readonly) Class superclass;
 
 + (id)intentDescription;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bookingDate;
+- (id)bookingDateComponents;
 - (id)bookingIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,6 +43,7 @@
 - (id)restaurant;
 - (id)selectedOffer;
 - (void)setBookingDate:(id)arg1;
+- (void)setBookingDateComponents:(id)arg1;
 - (void)setBookingIdentifier:(id)arg1;
 - (void)setGuest:(id)arg1;
 - (void)setGuestProvidedSpecialRequestText:(id)arg1;

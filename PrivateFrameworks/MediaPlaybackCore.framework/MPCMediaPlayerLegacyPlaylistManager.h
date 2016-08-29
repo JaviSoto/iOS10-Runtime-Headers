@@ -10,6 +10,7 @@
     long long  _hardQueueInsertionIndex;
     NSMutableArray * _hardQueueSourceContexts;
     MPMutableBidirectionalDictionary * _identifiersToIndexes;
+    bool  _ignoreHardQueueInvalidation;
     bool  _ignoreNextIndexChanges;
     bool  _ignoreSoftQueueInvalidation;
     MPAVItem * _lastPlayedSoftQueueItem;
@@ -58,6 +59,7 @@
 - (id)_playlistIterationForQueueFeeder:(id)arg1 withMaxQueueIndexToPreload:(unsigned long long)arg2;
 - (long long)_prepareToQueuePlaybackIndex:(long long)arg1 selectionDirection:(long long)arg2;
 - (id)_queueFeeder:(id)arg1 itemForIdentifier:(id)arg2;
+- (bool)_removeHardQueueItems;
 - (id)_removeSoftQueueSourceContextAtIndex:(long long)arg1;
 - (long long)_softQueueIndexForIndex:(long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_softQueuePlaylistIndexRangeIncludingCurrentItem:(bool)arg1;
@@ -65,7 +67,6 @@
 - (id)_sourceContextForPlaylistIndex:(unsigned long long)arg1;
 - (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(long long)arg2 completionHandler:(id /* block */)arg3;
-- (void)beginEnumeratingQueueFeeder;
 - (bool)canSkipToPreviousItem;
 - (void)clearHardQueue;
 - (void)clearSoftQueue;
@@ -74,7 +75,7 @@
 - (unsigned long long)displayCountForItem:(id)arg1;
 - (unsigned long long)displayIndexForItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)endEnumeratingQueueFeeder;
+- (void)finalizeStateRestorationWithCompletionHandler:(id /* block */)arg1;
 - (void)handlePlaybackFailureForItem:(id)arg1;
 - (long long)hardQueueInsertionIndex;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })hardQueuePlaylistIndexRange;

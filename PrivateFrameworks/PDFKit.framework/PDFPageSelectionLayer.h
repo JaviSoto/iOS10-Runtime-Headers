@@ -9,6 +9,7 @@
 - (void).cxx_destruct;
 - (id)_activeColor;
 - (id)_createMagnifier;
+- (struct CGImage { }*)_createMagnifierContentsImage:(struct CGSize { double x1; double x2; })arg1;
 - (id)_createSelectionLollipop:(double)arg1 isLeftSide:(bool)arg2;
 - (void)_generateRects;
 - (void)_generateSelectionIsFirstPage:(bool)arg1 isLastPage:(bool)arg2;
@@ -28,6 +29,7 @@
 - (void)setDisplayBox:(long long)arg1;
 - (void)setPage:(id)arg1;
 - (void)setSelection:(id)arg1;
+- (void)updateRotation;
 - (void)updateSelectionHandleGeometry;
 
 @end

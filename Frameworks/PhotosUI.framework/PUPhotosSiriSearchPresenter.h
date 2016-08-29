@@ -46,7 +46,7 @@
 - (void).cxx_destruct;
 - (void)_mergeSearchResults;
 - (void)_pingTimerFire:(id)arg1;
-- (void)_pushGridForPhotosWithUUIDs:(id)arg1 additionalUUIDs:(id)arg2 intent:(id)arg3 title:(id)arg4 completion:(id /* block */)arg5;
+- (void)_pushGridForPhotosWithUUIDs:(id)arg1 additionalUUIDs:(id)arg2 intent:(id)arg3 title:(id)arg4 searchCategories:(unsigned long long)arg5 completion:(id /* block */)arg6;
 - (id)_searchIndex;
 - (id)_searchResultsDataSource;
 - (id)_searchResultsPingTimer;

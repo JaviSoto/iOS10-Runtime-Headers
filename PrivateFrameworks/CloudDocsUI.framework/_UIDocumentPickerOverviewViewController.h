@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsUI.framework/CloudDocsUI
  */
 
-@interface _UIDocumentPickerOverviewViewController : UITableViewController {
+@interface _UIDocumentPickerOverviewViewController : _UIContainerHuggingTableViewController {
     NSArray * _allPickers;
     NSArray * _auxiliaryOptions;
     NSString * _currentExtensionIdentifier;
@@ -37,9 +37,12 @@
 - (void)setFileTypes:(id)arg1;
 - (void)setManage:(bool)arg1;
 - (void)setMode:(unsigned long long)arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContents;

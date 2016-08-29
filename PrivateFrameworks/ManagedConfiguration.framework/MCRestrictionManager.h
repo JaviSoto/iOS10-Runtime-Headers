@@ -129,7 +129,6 @@
 - (id)memberQueueClientRestrictionsForClientUUID:(id)arg1;
 - (id)memberQueueClientTypeForClientUUID:(id)arg1;
 - (id)memberQueueCombinedProfileRestrictions;
-- (void)memberQueueCommitUserSettingsToDisk;
 - (id)memberQueueEffectiveUserSettings;
 - (id)memberQueueRestrictions;
 - (id)memberQueueSystemClientRestrictions;

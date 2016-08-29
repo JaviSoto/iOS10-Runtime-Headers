@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
+@interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, CAAnimationDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     bool  _allowsEditingExistingPhoto;
     NSDictionary * _animationContextDictionary;
     bool  _applyImageChangesToAllPeople;

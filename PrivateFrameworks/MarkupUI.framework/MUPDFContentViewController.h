@@ -4,12 +4,14 @@
 
 @interface MUPDFContentViewController : MUContentViewController <MUContentViewControllerAKControllerSubdelegate, MUContentViewControllerProtocol, PDFPageVisibilityDelegate, PDFViewDelegatePrivate> {
     bool  _constraintsAreHorizontal;
+    bool  _didSetup;
     struct UIEdgeInsets { 
         double top; 
         double left; 
         double bottom; 
         double right; 
     }  _edgeInsets;
+    bool  _forcesPDFViewTopAlignment;
     bool  _navigationModeHorizontal;
     MUPDFPageLabelView * _pageLabelView;
     PDFDocument * _pdfDocument;
@@ -35,8 +37,10 @@
 @property bool constraintsAreHorizontal;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property bool didSetup;
 @property (nonatomic, readonly) NSString *documentUnlockedWithPassword;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) bool forcesPDFViewTopAlignment;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool navigationModeHorizontal;
 @property (readonly) unsigned long long pageCount;
@@ -58,6 +62,7 @@
 @property double viewTransitionPreviousScale;
 
 - (void).cxx_destruct;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_compensatingAffineTransformForPage:(id)arg1;
 - (void)_createPDFView;
 - (void)_installOverlayForPageView:(id)arg1 ofPage:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)_loadContentForAnnotationController:(id)arg1;
@@ -66,8 +71,7 @@
 - (struct CGPoint { double x1; double x2; })_minimumContentOffset;
 - (void)_prepareToRotate;
 - (void)_recoverFromRotation;
-- (void)_teardownPDFView;
-- (void)_uninstallAllAnnotationControllerOverlays;
+- (void)_teardownPDFViewIfNecessary;
 - (void)_uninstallOverlayAtIndex:(unsigned long long)arg1;
 - (void)_updateMinMaxZoomFactor;
 - (void)_updatePDFViewDisplayMode;
@@ -86,8 +90,10 @@
 - (void)dealloc;
 - (void)didEnterToolMode;
 - (void)didExitToolMode;
+- (bool)didSetup;
 - (id)documentUnlockedWithPassword;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (bool)forcesPDFViewTopAlignment;
 - (bool)hasHighlightableSelection;
 - (void)highlight:(id)arg1;
 - (id)highlightableSelectionCharacterIndexesOnPageAtIndex:(unsigned long long)arg1;
@@ -95,7 +101,6 @@
 - (id)initWithPDFDocument:(id)arg1 andPDFReader:(id)arg2 annotationController:(id)arg3;
 - (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned long long)arg1;
 - (void)loadDocumentWithCompletionHandler:(id /* block */)arg1;
-- (void)loadView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned long long)arg1;
 - (id)menuItems:(id)arg1 forPage:(id)arg2;
 - (bool)navigationModeHorizontal;
@@ -105,13 +110,16 @@
 - (id)pdfDocument;
 - (id)pdfReader;
 - (id)pdfView;
-- (void)pdfView:(id)arg1 didRemoveView:(id)arg2 forPage:(id)arg3 atIndex:(unsigned long long)arg4;
-- (void)pdfView:(id)arg1 willAddView:(id)arg2 forPage:(id)arg3 atIndex:(unsigned long long)arg4;
+- (void)pdfView:(id)arg1 didAddView:(id)arg2 forPage:(id)arg3 atIndex:(unsigned long long)arg4;
+- (void)pdfView:(id)arg1 willRemoveView:(id)arg2 forPage:(id)arg3 atIndex:(unsigned long long)arg4;
 - (void)pdfViewDidChangeCurrentPage:(id)arg1;
+- (void)pdfViewDidChangeCurrentSelection:(id)arg1;
 - (bool)pdfViewShouldPopulateMenu:(id)arg1;
 - (id)quadPointsForCharacterIndexes:(id)arg1 onPageAtIndex:(unsigned long long)arg2;
 - (void)setConstraintsAreHorizontal:(bool)arg1;
+- (void)setDidSetup:(bool)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setForcesPDFViewTopAlignment:(bool)arg1;
 - (void)setNavigationModeHorizontal:(bool)arg1;
 - (void)setPageLabelView:(id)arg1;
 - (void)setPdfReader:(id)arg1;
@@ -131,12 +139,15 @@
 - (bool)shouldDetectFormElements;
 - (bool)shouldPlaceFormElementAtPoint:(struct CGPoint { double x1; double x2; })arg1 onOverlayAtPageIndex:(unsigned long long)arg2;
 - (bool)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned long long)arg2;
+- (bool)shouldShowAnnotationsOfType:(id)arg1;
 - (bool)showsThumbnailView;
 - (id)sourceContentReplacedAnnotationMaps;
+- (void)teardown;
 - (id)thumbnailView;
 - (id)thumbnailViewHolder;
 - (id)thumbnailViewHolderConstraints;
 - (id)thumbnailViewHolderRevealConstraint;
+- (void)uninstallAllAnnotationControllerOverlays;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (bool)viewIsTransitioningBetweenSizes;

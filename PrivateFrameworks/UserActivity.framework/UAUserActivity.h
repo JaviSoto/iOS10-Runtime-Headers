@@ -27,6 +27,7 @@
     int  _forwardToCoreSpotlightIndexerCount;
     NSMutableDictionary * _frameworkPayload;
     long long  _inWillSaveCallback;
+    bool  _indexInProcess;
     bool  _invalidated;
     NSMutableSet * _keywords;
     double  _lastSaveTime;
@@ -277,6 +278,7 @@
 - (id)uniqueIdentifier;
 - (void)updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
 - (id)userActivityInfoForSelf;
+- (id)userActivityInfoForSelfWithPayload:(bool)arg1;
 - (id)userInfo;
 - (id)webpageURL;
 - (void)willSynchronizeUserActivityWithHandler:(id /* block */)arg1;

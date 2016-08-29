@@ -4,6 +4,7 @@
 
 @interface UpNextWidget.MainViewController : UIViewController <NCWidgetProviding> {
     void blankViewController;
+    void contentSizeCategoryDidChangeObservationToken;
     void contentUnavailableViewController;
     void currentViewController;
     void detailedViewController;
@@ -18,17 +19,19 @@
     void lastLargestDisplayModeIsCompactKey;
     void mainView;
     void model;
-    void previousSize;
     void stackedCellViewController;
+    void timeListener.storage;
 }
 
 - (id /* block */).cxx_destruct;
 - (void)beginRequestWithExtensionContext:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)widgetActiveDisplayModeDidChangeWithActiveDisplayMode:(long long)arg1 withMaximumSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)widgetPerformUpdateWithCompletionHandler:(id /* block */)arg1;
 

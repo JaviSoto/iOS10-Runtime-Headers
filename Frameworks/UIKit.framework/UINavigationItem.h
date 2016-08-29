@@ -3,6 +3,7 @@
  */
 
 @interface UINavigationItem : NSObject <NSCoding> {
+    bool  __backgroundHidden;
     UIView * __canvasView;
     double  __idealCustomTitleWidth;
     UINavigationBar * __owningNavigationBar;
@@ -35,6 +36,7 @@
 }
 
 @property (setter=_setAbbreviatedBackButtonTitles:, nonatomic, copy) NSArray *_abbreviatedBackButtonTitles;
+@property (setter=_setBackgroundHidden:, nonatomic) bool _backgroundHidden;
 @property (setter=_setCanvasView:, nonatomic, retain) UIView *_canvasView;
 @property (setter=_setFontScaleAdjustment:, nonatomic) double _fontScaleAdjustment;
 @property (setter=_setIdealCustomTitleWidth:, nonatomic) double _idealCustomTitleWidth;
@@ -67,6 +69,7 @@
 - (id)_abbreviatedBackButtonTitles;
 - (bool)_accumulateViewsFromItems:(id)arg1 isLeft:(bool)arg2 refreshViews:(bool)arg3;
 - (void)_addDefaultTitleViewToNavigationBarIfNecessary;
+- (bool)_backgroundHidden;
 - (id)_barButtonForBackButtonIndicator;
 - (id)_buttonForBackButtonIndicator;
 - (id)_canvasView;
@@ -111,6 +114,7 @@
 - (void)_setAbbreviatedBackButtonTitles:(id)arg1;
 - (void)_setBackButtonPressed:(bool)arg1;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(long long)arg2;
+- (void)_setBackgroundHidden:(bool)arg1;
 - (void)_setCanvasView:(id)arg1;
 - (void)_setCustomLeftRightView:(id)arg1 left:(bool)arg2;
 - (void)_setCustomLeftView:(id)arg1;
@@ -207,8 +211,11 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
+- (bool)_pu_shouldUpdateBarButtonItems:(id)arg1 withNewBarButtonItems:(id)arg2;
 - (id)pu_banner;
 - (void)pu_setBanner:(id)arg1;
+- (bool)pu_shouldUpdateLeftBarButtonItems:(id)arg1;
+- (bool)pu_shouldUpdateRightBarButtonItems:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

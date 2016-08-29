@@ -21,6 +21,7 @@
 @property (nonatomic) unsigned char userConfidence;
 
 - (void).cxx_destruct;
+- (void)adjustByMultiplier:(float)arg1 adding:(int)arg2;
 - (id)asAdvertisementData;
 - (id)description;
 - (unsigned short)deviceClass;
@@ -30,6 +31,7 @@
 - (id)init;
 - (id)initWithAudioData:(id)arg1;
 - (id)initWithDeviceID:(id)arg1 data:(id)arg2;
+- (bool)isATrump;
 - (bool)isMe;
 - (unsigned short)pHash;
 - (void)setDeviceClass:(unsigned short)arg1;

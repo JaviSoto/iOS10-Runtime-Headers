@@ -15,6 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) bool hasContactsUIEntitlement;
 @property (readonly) unsigned long long hash;
+@property (readonly) bool internalAccessLevelGranted;
 @property (readonly) Class superclass;
 @property (readonly) bool testingAccessLevelGranted;
 
@@ -27,6 +28,7 @@
 - (id)connection;
 - (bool)hasContactsUIEntitlement;
 - (id)initWithClientConnection:(id)arg1;
+- (bool)internalAccessLevelGranted;
 - (void)setConnection:(id)arg1;
 - (bool)testingAccessLevelGranted;
 

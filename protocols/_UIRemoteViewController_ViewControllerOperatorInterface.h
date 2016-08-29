@@ -18,7 +18,7 @@
 - (void)__viewServiceDidPromoteFirstResponder;
 - (void)__viewServiceDidRegisterScrollToTopView;
 - (void)__viewServiceDidUnregisterScrollToTopView;
-- (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 hidden:(bool)arg2 updateAnimation:(long long)arg3;
+- (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 hidden:(long long)arg2 updateAnimation:(long long)arg3;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(long long)arg1 animationSettings:(BSAnimationSettings *)arg2;
 - (void)__viewServiceDidUpdateTintColor:(UIColor *)arg1 duration:(double)arg2;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fence:(BKSAnimationFenceHandle *)arg2;

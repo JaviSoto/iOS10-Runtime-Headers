@@ -29,6 +29,8 @@
 @property (nonatomic) unsigned long long width;
 
 + (id)_formatRequirementsByResolvingFormatRequirements:(id)arg1 withFormatRequirements:(id)arg2;
++ (int)colorSpacePropertiesForSourceThatSupportsWideColor:(bool)arg1 sourceColorSpace:(int)arg2 sourcePixelFormat:(unsigned int)arg3 sourceDimensions:(struct { int x1; int x2; })arg4 requestedPixelFormat:(unsigned int)arg5;
++ (int)colorSpacePropertiesWithSourceColorSpace:(int)arg1 sourcePixelFormat:(unsigned int)arg2 sourceDimensions:(struct { int x1; int x2; })arg3 requestedPixelFormat:(unsigned int)arg4;
 + (id)formatByResolvingRequirements:(id)arg1;
 + (void)initialize;
 + (id)pixelBufferAttachmentsForColorSpaceProperties:(int)arg1;

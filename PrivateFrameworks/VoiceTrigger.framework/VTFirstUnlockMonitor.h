@@ -3,22 +3,19 @@
  */
 
 @interface VTFirstUnlockMonitor : VTEventMonitor {
+    bool  _firstUnlocked;
     int  _notifyToken;
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
+- (bool)_checkFirstUnlocked;
 - (void)_didReceiveFirstUnlock:(bool)arg1;
 - (void)_didReceiveFirstUnlockInQueue:(bool)arg1;
-- (void)_startMonitoring;
+- (void)_notifyObserver:(id)arg1 withUnlocked:(bool)arg2;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (bool)isFirstUnlocked;
-- (void)removeObserver:(id)arg1;
 
 @end

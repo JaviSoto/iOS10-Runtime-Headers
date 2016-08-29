@@ -8,7 +8,6 @@
 
 @property (nonatomic, readonly) NSError *error;
 
-+ (void)initialize;
 + (id)uploadCompletedWithError:(id)arg1;
 + (id)uuid;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityHorizontalLockupTableViewHeaderFooterView : MusicTableViewSelectableHeaderFooterView <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityViewDownloadInformationObserving> {
+@interface MusicEntityHorizontalLockupTableViewHeaderFooterView : MusicTableViewSelectableHeaderFooterView <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate> {
     MusicEntityHorizontalLockupView * _lockupView;
 }
 
@@ -27,7 +27,6 @@
 - (void)layoutSubviews;
 - (id)lockupView;
 - (void)setContentDescriptor:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
 - (void)setEntityDisabled:(bool)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)updateForAsynchronousPropertyLoadCompleted;

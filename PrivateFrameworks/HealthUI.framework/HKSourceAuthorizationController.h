@@ -28,7 +28,7 @@
 - (long long)_authorizationStatusWithType:(id)arg1;
 - (id)_enabledTypesInSection:(long long)arg1;
 - (void)_reloadDocumentAuthorizationRecords;
-- (void)_reloadTypeAuthRecords;
+- (void)_reloadTypeAuthorizationRecords;
 - (void)_setAuthorizationStatuses:(id)arg1;
 - (void)_updateAuthorizationStatusWithTypes:(id)arg1;
 - (bool)allTypesEnabled;

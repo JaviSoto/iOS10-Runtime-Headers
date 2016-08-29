@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *fmipSiriToken;
 @property (nonatomic, readonly) NSString *iCloudAuthToken;
 @property (nonatomic, readonly) bool isManagedAppleID;
+@property (nonatomic, readonly) bool isSandboxAccount;
 @property (nonatomic, readonly) NSString *lastName;
 @property (nonatomic, readonly) bool notesMigrated;
 @property (nonatomic, readonly) NSString *primaryEmail;
@@ -31,6 +32,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (bool)isManagedAppleID;
+- (bool)isSandboxAccount;
 - (id)lastName;
 - (bool)notesMigrated;
 - (id)primaryEmail;

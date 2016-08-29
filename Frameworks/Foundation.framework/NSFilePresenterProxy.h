@@ -30,6 +30,7 @@
 - (id)_clientProxy;
 - (void)_settleNonCoordinatedChanges;
 - (void)accommodateDeletionWithSubitemPath:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)allowedForURL:(id)arg1;
 - (void)dealloc;
 - (void)disconnect;
 - (bool)disconnected;

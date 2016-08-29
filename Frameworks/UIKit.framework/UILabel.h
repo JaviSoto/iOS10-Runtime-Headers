@@ -132,6 +132,7 @@
 + (Class)layerClass;
 
 - (void).cxx_destruct;
+- (id)__currentDefaultColor;
 - (void)_accessibilityButtonShapesChangedNotification:(id)arg1;
 - (void)_accessibilityButtonShapesParametersDidChange;
 - (double)_actualScaleFactor;
@@ -169,7 +170,7 @@
 - (id)_image;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_invalidateAsNeededForNewSize:(struct CGSize { double x1; double x2; })arg1 oldSize:(struct CGSize { double x1; double x2; })arg2 withLinkCheck:(bool)arg3;
-- (void)_invalidateDefaultAttributes;
+- (void)_invalidateCachedDefaultAttributes;
 - (void)_invalidateIntrinsicContentSizeNeedingLayout:(bool)arg1;
 - (void)_invalidateLayout;
 - (void)_invalidateSynthesizedAttributedTextAndLayout;
@@ -202,6 +203,7 @@
 - (void)_setLastLineBaselineFrameOriginY:(double)arg1;
 - (void)_setLineBreakMode:(long long)arg1;
 - (void)_setMinimumFontSize:(double)arg1;
+- (void)_setNeedsDisplayForInvalidatedContents;
 - (void)_setNeedsUpdateConstraintsNeedingLayout:(bool)arg1;
 - (void)_setShadow:(id)arg1;
 - (void)_setShadowUIOffset:(struct UIOffset { double x1; double x2; })arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UpNextWidget.framework/UpNextWidget
  */
 
-@interface UpNextWidget.DetailedViewController : UIViewController {
+@interface UpNextWidget.DetailedViewController : UIViewController <CLLocationManagerDelegate> {
     void detailedView;
     void largeEventView;
     void largeReminderView;
@@ -10,9 +10,11 @@
     void lastKnownHypothesis;
     void lastKnownMapImage;
     void lastKnownViewWidth;
+    void locationManager;
+    void needsMapPlaceholder;
+    void needsNewMapSnapshot;
     void outstandingHypothesizer;
     void outstandingSnapshotter;
-    void previousSize;
     void showExpandedMode;
     void smallElementsView;
     void timelinessAuthority;
@@ -31,6 +33,7 @@
 - (id)lastKnownHypothesis;
 - (id)lastKnownMapImage;
 - (void)loadView;
+- (void)locationManager:(id)arg1 didChangeAuthorization:(int)arg2;
 - (void)refreshWithAlarms:(id)arg1 events:(id)arg2 reminders:(id)arg3;
 - (void)restoreWithHypothesis:(id)arg1 mapImage:(id)arg2 showExpandedMode:(bool)arg3 lastKnownCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg4;
 - (void)setLastKnownCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
@@ -38,7 +41,7 @@
 - (void)setLastKnownMapImage:(id)arg1;
 - (void)setShowExpandedMode:(bool)arg1;
 - (bool)showExpandedMode;
-- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

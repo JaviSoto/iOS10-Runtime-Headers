@@ -2,16 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRHeartbeatRequest : TRNearbyServicesCommunicationAbstractMessage {
-    unsigned long long  _heartbeatIdentifier;
-}
-
-@property (nonatomic) unsigned long long heartbeatIdentifier;
-
-- (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)heartbeatIdentifier;
-- (id)initWithCoder:(id)arg1;
-- (void)setHeartbeatIdentifier:(unsigned long long)arg1;
+@interface TRHeartbeatRequest : TRRequestMessage
 
 @end

@@ -9,6 +9,8 @@
 
 - (id)animatedImageForWidth:(double)arg1;
 - (id)generateThumbnailsForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (id /* block */)imageEdgeEnhancementBlockIfNecessary;
+- (bool)needsAnimation;
 - (id)notificationCenter;
 - (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (void)saveAnimatedPreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;

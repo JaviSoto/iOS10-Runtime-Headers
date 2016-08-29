@@ -14,7 +14,6 @@
             /* Warning: Unrecognized filer type: '^' using 'void*' */ void*__a_; 
         } fRef; 
     }  fMandatoryAttributes;
-    NSSet * fPreciousFontLanguages;
     id /* block */  fProgressCallbackBlock;
     NSMutableDictionary * fProgressParams;
 }

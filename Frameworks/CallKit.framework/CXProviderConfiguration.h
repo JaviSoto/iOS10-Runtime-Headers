@@ -6,7 +6,7 @@
     unsigned int  _audioSessionID;
     NSArray * _emergencyNumbers;
     NSArray * _handoffIdentifiers;
-    NSData * _iconMaskImageData;
+    NSData * _iconTemplateImageData;
     NSString * _localizedName;
     unsigned long long  _maximumCallGroups;
     unsigned long long  _maximumCallsPerCallGroup;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSArray *emergencyNumbers;
 @property (nonatomic, copy) NSArray *handoffIdentifiers;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSData *iconMaskImageData;
+@property (nonatomic, copy) NSData *iconTemplateImageData;
 @property (nonatomic, copy) NSString *localizedName;
 @property (nonatomic) unsigned long long maximumCallGroups;
 @property (nonatomic) unsigned long long maximumCallsPerCallGroup;
@@ -46,7 +46,7 @@
 - (id)emergencyNumbers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handoffIdentifiers;
-- (id)iconMaskImageData;
+- (id)iconTemplateImageData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocalizedName:(id)arg1;
@@ -60,7 +60,7 @@
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setEmergencyNumbers:(id)arg1;
 - (void)setHandoffIdentifiers:(id)arg1;
-- (void)setIconMaskImageData:(id)arg1;
+- (void)setIconTemplateImageData:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
 - (void)setMaximumCallGroups:(unsigned long long)arg1;
 - (void)setMaximumCallsPerCallGroup:(unsigned long long)arg1;

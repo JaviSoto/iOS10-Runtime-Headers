@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (id)initWithPageIndex:(unsigned long long)arg1 pageController:(id)arg2;
 - (unsigned long long)nextWidowPullsDownFromCharIndex;
-- (const struct TSWPTargetHint { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct _NSRange { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; unsigned long long x3; struct _NSRange { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; unsigned long long x5; unsigned long long x6; }*)p_targetFirstHint;
-- (const struct TSWPTargetHint { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct _NSRange { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; unsigned long long x3; struct _NSRange { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; unsigned long long x5; unsigned long long x6; }*)p_targetLastHint;
+- (const struct TSWPTargetHint { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct _NSRange { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; unsigned long long x3; struct _NSRange { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; unsigned long long x5; unsigned long long x6; bool x7; }*)p_targetFirstHint;
+- (const struct TSWPTargetHint { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct _NSRange { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; unsigned long long x3; struct _NSRange { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; unsigned long long x5; unsigned long long x6; bool x7; }*)p_targetLastHint;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (unsigned long long)startAnchoredCharIndex;
 - (unsigned long long)startCharIndex;

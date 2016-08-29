@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INStartVideoCallIntent : INIntent <INStartVideoCallIntent>
+@interface INStartVideoCallIntent : INIntent <INStartVideoCallIntentExport>
 
 @property (nonatomic) long long audioRoute;
 @property (nonatomic, readonly, copy) NSArray *contacts;

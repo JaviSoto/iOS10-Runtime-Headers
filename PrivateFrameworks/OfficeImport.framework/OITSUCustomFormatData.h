@@ -48,6 +48,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned short)currencyCodeIndex;
+- (void)dealloc;
 - (unsigned char)decimalWidth;
 - (bool)formatContainsIntegerToken;
 - (id)formatString;

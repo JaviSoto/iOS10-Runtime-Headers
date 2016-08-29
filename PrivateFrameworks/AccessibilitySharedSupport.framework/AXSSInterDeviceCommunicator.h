@@ -14,6 +14,7 @@
     MCPeerID * _master;
     unsigned long long  _numberOfBurstPacketsRemaining;
     <AXSSInterDeviceSearchObserver> * _searchObserver;
+    AXSSInterDeviceSecurityHelper * _securityHelper;
     IDSService * _service;
     MCSession * _session;
     MCPeerID * _slave;
@@ -41,6 +42,7 @@
 @property (nonatomic) unsigned long long numberOfBurstPacketsRemaining;
 @property (nonatomic) <AXSSInterDeviceSearchObserver> *searchObserver;
 @property (nonatomic, readonly) NSArray *searchResults;
+@property (nonatomic, retain) AXSSInterDeviceSecurityHelper *securityHelper;
 @property (nonatomic, readonly) IDSService *service;
 @property (nonatomic, retain) MCSession *session;
 @property (nonatomic, retain) MCPeerID *slave;
@@ -58,6 +60,7 @@
 - (void)_handleTimeoutAsPotentialSlave;
 - (id)_messageForSelection:(bool)arg1 settings:(id)arg2;
 - (id)_messageForSwitchEvent:(id)arg1 index:(unsigned long long)arg2;
+- (void)_removePeerFromAvailableDevices:(id)arg1;
 - (void)_sendDataToSlave:(id)arg1;
 - (void)_sendDummyPacket;
 - (bool)_setUpSessionIfNecessary;
@@ -94,6 +97,7 @@
 - (void)search;
 - (id)searchObserver;
 - (id)searchResults;
+- (id)securityHelper;
 - (void)selectSearchResult:(id)arg1 settings:(id)arg2;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
@@ -101,6 +105,7 @@
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (id)session;
 - (void)session:(id)arg1 didFinishReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 atURL:(id)arg4 withError:(id)arg5;
+- (void)session:(id)arg1 didReceiveCertificate:(id)arg2 fromPeer:(id)arg3 certificateHandler:(id /* block */)arg4;
 - (void)session:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3;
 - (void)session:(id)arg1 didReceiveStream:(id)arg2 withName:(id)arg3 fromPeer:(id)arg4;
 - (void)session:(id)arg1 didStartReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 withProgress:(id)arg4;
@@ -115,6 +120,7 @@
 - (void)setMaster:(id)arg1;
 - (void)setNumberOfBurstPacketsRemaining:(unsigned long long)arg1;
 - (void)setSearchObserver:(id)arg1;
+- (void)setSecurityHelper:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSlave:(id)arg1;
 - (void)setState:(long long)arg1;

@@ -12,8 +12,10 @@
     unsigned long long  _mirroringStyle;
     UISwitch * _mirroringSwitch;
     bool  _mirroringSwitchVisible;
+    bool  _pendingSelection;
     MPAVRoute * _route;
     UILabel * _routeNameLabel;
+    UIActivityIndicatorView * _spinnerView;
     UILabel * _subtitleTextLabel;
 }
 
@@ -22,6 +24,7 @@
 @property (nonatomic) unsigned long long iconStyle;
 @property (nonatomic) unsigned long long mirroringStyle;
 @property (nonatomic) bool mirroringSwitchVisible;
+@property (getter=isPendingSelection, nonatomic) bool pendingSelection;
 @property (nonatomic, retain) MPAVRoute *route;
 
 - (void).cxx_destruct;
@@ -38,6 +41,7 @@
 - (unsigned long long)iconStyle;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (bool)isDebugCell;
+- (bool)isPendingSelection;
 - (void)layoutSubviews;
 - (unsigned long long)mirroringStyle;
 - (bool)mirroringSwitchVisible;
@@ -48,7 +52,8 @@
 - (void)setMirroringStyle:(unsigned long long)arg1;
 - (void)setMirroringSwitchVisible:(bool)arg1;
 - (void)setMirroringSwitchVisible:(bool)arg1 animated:(bool)arg2;
+- (void)setPendingSelection:(bool)arg1;
 - (void)setRoute:(id)arg1;
-- (void)tintColorDidChange;
+- (void)setTintColor:(id)arg1;
 
 @end

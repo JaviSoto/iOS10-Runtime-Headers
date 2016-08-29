@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) int clientProcessID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
 @property (nonatomic, copy) NSString *fullName;
 @property (readonly) unsigned long long hash;
@@ -62,6 +63,7 @@
 - (int)clientProcessID;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (void)didMutate;
+- (id)displayName;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)facesHelper;
 - (id)fullName;
@@ -70,7 +72,7 @@
 - (bool)inPersonNamingModel;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (bool)isClientEntitled;
 - (bool)isMutated;
 - (bool)isNew;
@@ -86,6 +88,7 @@
 - (id)rejectedFacesGroupHelper;
 - (void)removeFaces:(id)arg1;
 - (void)removeRejectedFaces:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInPersonNamingModel:(bool)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface AWDSharingAirDropSessionInfo : PBCodable <NSCopying> {
+    NSString * _browserID;
     NSString * _bundleID;
     unsigned int  _firstDiscovery;
     struct { 
@@ -27,8 +28,10 @@
     unsigned int  _transfersInitiated;
 }
 
+@property (nonatomic, retain) NSString *browserID;
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic) unsigned int firstDiscovery;
+@property (nonatomic, readonly) bool hasBrowserID;
 @property (nonatomic, readonly) bool hasBundleID;
 @property (nonatomic) bool hasFirstDiscovery;
 @property (nonatomic) bool hasLegacyMode;
@@ -51,12 +54,14 @@
 @property (nonatomic) unsigned int transfersInitiated;
 
 - (void).cxx_destruct;
+- (id)browserID;
 - (id)bundleID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)firstDiscovery;
+- (bool)hasBrowserID;
 - (bool)hasBundleID;
 - (bool)hasFirstDiscovery;
 - (bool)hasLegacyMode;
@@ -76,6 +81,7 @@
 - (bool)readFrom:(id)arg1;
 - (unsigned int)sessionDuration;
 - (id)sessionID;
+- (void)setBrowserID:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setFirstDiscovery:(unsigned int)arg1;
 - (void)setHasFirstDiscovery:(bool)arg1;

@@ -35,6 +35,7 @@
 + (bool)automaticallyNotifiesObserversOfUserVolume;
 + (bool)automaticallyNotifiesObserversOfUsesAirPlayVideoWhileAirPlayScreenIsActive;
 + (bool)automaticallyNotifiesObserversOfUsesAudioOnlyModeForExternalPlayback;
++ (bool)automaticallyNotifiesObserversOfUsesLegacyAutomaticWaitingBehavior;
 + (bool)automaticallyNotifiesObserversOfVibrationPattern;
 + (void)initialize;
 + (bool)isIAPDExtendedModeActive;
@@ -158,6 +159,7 @@
 - (void)_setPreventsSleepDuringVideoPlayback:(bool)arg1;
 - (void)_setStoppingFadeOutDuration:(float)arg1;
 - (void)_setUserVolume:(float)arg1;
+- (void)_setUsesLegacyAutomaticWaitingBehavior:(bool)arg1;
 - (void)_setWantsVolumeChangesWhenPausedOrInactive:(bool)arg1;
 - (bool)_shouldDetachVideoLayersFromFigPlayer;
 - (bool)_shouldLogPerformanceData;
@@ -177,6 +179,7 @@
 - (float)_userVolume;
 - (bool)_usesAudioOnlyModeForExternalPlayback;
 - (bool)_usesExternalPlaybackWhileExternalScreenIsActive;
+- (bool)_usesLegacyAutomaticWaitingBehavior;
 - (id)_videoLayers;
 - (id)_weakReference;
 - (void)_willAccessKVOForKey:(id)arg1;

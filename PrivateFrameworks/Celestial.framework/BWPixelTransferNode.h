@@ -51,6 +51,7 @@
     bool  _passesBuffersThroughWhenPossible;
     int  _rotationDegrees;
     struct OpaqueVTImageRotationSession { } * _rotationSession;
+    int  _rotationSessionColorSpaceProperties;
     bool  _rotationSessionFlipHorizontal;
     bool  _rotationSessionFlipVertical;
     bool  _rotationSessionLowSpeed;

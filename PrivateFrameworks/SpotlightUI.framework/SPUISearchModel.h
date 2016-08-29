@@ -36,7 +36,7 @@
 - (id)createZKWSearchQuery;
 - (void)deactivate;
 - (void)dealloc;
-- (void)finishRanking:(id)arg1;
+- (void)finishRanking:(id)arg1 blendingDuration:(double)arg2;
 - (void)handleOptionsForNewSections:(id)arg1;
 - (id)initForZKWLevel:(int)arg1;
 - (void)invalidateCurrentQuery;

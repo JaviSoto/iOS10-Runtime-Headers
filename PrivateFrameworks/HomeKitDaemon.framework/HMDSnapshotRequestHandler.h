@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotRequestHandler : NSObject <HMDCameraStreamSnapshotHandlerDelegate, HMFLogging, HMFTimerDelegate> {
+@interface HMDSnapshotRequestHandler : NSObject <HMDCameraStreamSnapshotHandlerDelegate, HMDSnapshotRequestHandlerProtocol, HMFLogging, HMFTimerDelegate> {
     HMDAccessory * _accessory;
     NSString * _imageCacheDirectory;
     NSString * _logString;
@@ -33,7 +33,7 @@
 - (void)_saveSnapshotFile:(id)arg1;
 - (id)accessory;
 - (id)imageCacheDirectory;
-- (id)initWithAccessory:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 imageCacheDirectory:(id)arg4;
+- (id)initWithAccessory:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 imageCacheDirectory:(id)arg4 logID:(id)arg5;
 - (id)logIdentifier;
 - (id)logString;
 - (id)mostRecentSnapshot;

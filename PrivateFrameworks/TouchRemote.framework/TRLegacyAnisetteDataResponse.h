@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRLegacyAnisetteDataResponse : TRNearbyServicesCommunicationAbstractMessage {
+@interface TRLegacyAnisetteDataResponse : TRResponseMessage {
     AKAnisetteData * _anisetteData;
 }
 

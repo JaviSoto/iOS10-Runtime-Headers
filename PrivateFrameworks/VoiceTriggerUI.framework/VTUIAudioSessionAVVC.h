@@ -15,6 +15,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_hasCorrectInputAudioRoute;
+- (bool)_hasCorrectOutputAudioRoute;
+- (int)audioSource;
 - (float)averagePower;
 - (long long)convertStopReason:(long long)arg1;
 - (id)delegate;

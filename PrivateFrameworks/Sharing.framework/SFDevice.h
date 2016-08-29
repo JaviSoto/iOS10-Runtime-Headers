@@ -18,6 +18,7 @@
     bool  _needsSetup;
     bool  _paired;
     bool  _wakeDevice;
+    bool  _watchLocked;
 }
 
 @property (nonatomic) bool autoUnlockEnabled;
@@ -35,6 +36,7 @@
 @property (nonatomic) bool needsSetup;
 @property (nonatomic) bool paired;
 @property (nonatomic) bool wakeDevice;
+@property (nonatomic) bool watchLocked;
 
 + (bool)supportsSecureCoding;
 
@@ -68,7 +70,9 @@
 - (void)setNeedsSetup:(bool)arg1;
 - (void)setPaired:(bool)arg1;
 - (void)setWakeDevice:(bool)arg1;
+- (void)setWatchLocked:(bool)arg1;
 - (void)updateWithBLEDevice:(id)arg1;
 - (bool)wakeDevice;
+- (bool)watchLocked;
 
 @end

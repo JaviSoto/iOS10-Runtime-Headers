@@ -4,14 +4,12 @@
 
 @interface _QPQueryRanker : NSObject {
     _QPQueryRankerConfiguration * _configuration;
-    _DKDataProtectionStateMonitor * _dataProtectionMonitor;
     _QPQueryRankerParameters * _parameters;
     <_DKKnowledgeQuerying><_DKKnowledgeDeleting> * _store;
 }
 
 @property (retain) _QPQueryRankerParameters *parameters;
 @property (retain) <_DKKnowledgeQuerying><_DKKnowledgeDeleting> *store;
-@property (readonly) bool userHasAuthenticated;
 
 + (id /* block */)functionFromExpressionString:(id)arg1;
 + (id)rankerWithParameters:(id)arg1;
@@ -28,6 +26,5 @@
 - (void)setStore:(id)arg1;
 - (void)setupConfiguration;
 - (id)store;
-- (bool)userHasAuthenticated;
 
 @end

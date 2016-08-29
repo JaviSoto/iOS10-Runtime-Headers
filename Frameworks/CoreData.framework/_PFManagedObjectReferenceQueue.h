@@ -13,7 +13,6 @@
     int  _spinLock;
 }
 
-- (bool)_GC_queueForDealloc:(id)arg1;
 - (void)_contextDidDealloc;
 - (bool)_isDeallocating;
 - (void)_processReferenceQueue:(bool)arg1;

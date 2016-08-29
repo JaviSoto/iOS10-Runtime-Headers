@@ -8,6 +8,7 @@
     unsigned long long  _currentAttachedAudioCount;
     unsigned long long  _currentAttachedImageCount;
     unsigned long long  _currentAttachedVideoCount;
+    MSMessage * _message;
     <MFMessageComposeViewControllerDelegate> * _messageComposeDelegate;
     NSMutableArray * _mutableAttachmentURLs;
     NSArray * _recipients;
@@ -19,6 +20,7 @@
 @property (nonatomic) unsigned long long currentAttachedAudioCount;
 @property (nonatomic) unsigned long long currentAttachedImageCount;
 @property (nonatomic) unsigned long long currentAttachedVideoCount;
+@property (nonatomic, copy) MSMessage *message;
 @property (nonatomic) <MFMessageComposeViewControllerDelegate> *messageComposeDelegate;
 @property (nonatomic, copy) NSMutableArray *mutableAttachmentURLs;
 @property (nonatomic, copy) NSArray *recipients;
@@ -64,6 +66,7 @@
 - (void)dealloc;
 - (void)disableUserAttachments;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)message;
 - (id)messageComposeDelegate;
 - (id)mutableAttachmentURLs;
 - (id)recipients;
@@ -71,6 +74,7 @@
 - (void)setCurrentAttachedAudioCount:(unsigned long long)arg1;
 - (void)setCurrentAttachedImageCount:(unsigned long long)arg1;
 - (void)setCurrentAttachedVideoCount:(unsigned long long)arg1;
+- (void)setMessage:(id)arg1;
 - (void)setMessageComposeDelegate:(id)arg1;
 - (void)setModalPresentationStyle:(long long)arg1;
 - (void)setMutableAttachmentURLs:(id)arg1;

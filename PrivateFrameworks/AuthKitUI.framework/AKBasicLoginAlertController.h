@@ -81,6 +81,7 @@
 - (void)setForgotIDAction:(id /* block */)arg1;
 - (void)setForgotPasswordAction:(id /* block */)arg1;
 - (void)setGeneratedCode:(id)arg1;
+- (void)setPasscodeFieldDisabled:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setReason:(id)arg1;
 - (void)setRegenerateCodeAction:(id /* block */)arg1;

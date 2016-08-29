@@ -4,14 +4,15 @@
 
 @interface PKPassFooterView : UIView <PKPassFooterContentViewDelegate> {
     PKPassFooterContentView * _contentView;
+    unsigned char  _contentViewVisibility;
     bool  _isBackgrounded;
-    bool  _isVisible;
     PKPassView * _passView;
     long long  _paymentApplicationState;
     PKPaymentSessionHandle * _sessionHandle;
     NSObject<OS_dispatch_source> * _sessionStartTimer;
     unsigned long long  _sessionToken;
     long long  _state;
+    unsigned char  _visibility;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +24,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_advanceContentViewVisibilityToState:(unsigned char)arg1 animated:(bool)arg2;
+- (void)_advanceVisibilityToState:(unsigned char)arg1 animated:(bool)arg2;
 - (bool)_canApplyContentViewForPersonalizedApplication;
 - (bool)_canApplyContentViewForValueAddedService;
 - (void)_configureForPersonalizedPaymentApplicationWithContext:(id)arg1;

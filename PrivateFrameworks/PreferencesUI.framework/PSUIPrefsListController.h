@@ -17,7 +17,7 @@
     FLPreferencesController * _followupController;
     PSSpecifier * _gameCenterSpecifier;
     PSSpecifier * _homeKitSpecifier;
-    HMHomeManager * _homeManager;
+    PSUIHomeKitVisibilityArbitrator * _homeKitVisibilityArbitrator;
     NSDictionary * _iconCache;
     NSObject<OS_dispatch_queue> * _iconCacheQueue;
     bool  _initiallyLoadingThirdPartySpecifiers;
@@ -74,7 +74,7 @@
 - (void)_localeChanged;
 - (void)_newCarrierNotification;
 - (id)_primarySpecifierOrdering;
-- (void)_reallyLoadThirdPartySpecifiersForProxies:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_reallyLoadThirdPartySpecifiersForApps:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_setAirplaneMode:(bool)arg1;
 - (void)_setupiCloudSpecifier:(id)arg1;
 - (void)_setupiCloudSpecifier:(id)arg1 withPrimaryAccount:(id)arg2;
@@ -119,7 +119,6 @@
 - (void)insertMovedThirdPartySpecifiersAnimated:(bool)arg1;
 - (void)insertOrderedSpecifier:(id)arg1 animated:(bool)arg2;
 - (bool)isBundleIDHiddenDueToRestrictions:(id)arg1;
-- (bool)isHomeKitInUse;
 - (bool)isSpecifierHiddenDueToRestrictions:(id)arg1;
 - (void)lazyLoadSpecialBundleForSpecifier:(id)arg1;
 - (void)loadPPTTestSpecifiers:(int)arg1;

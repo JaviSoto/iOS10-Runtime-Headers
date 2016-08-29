@@ -21,7 +21,6 @@
 @property (getter=isPlayable, nonatomic, readonly) bool playable;
 @property (readonly) Class superclass;
 
-- (bool)canResetMediaSize;
 - (void)dealloc;
 - (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;

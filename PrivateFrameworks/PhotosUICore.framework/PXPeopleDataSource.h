@@ -12,6 +12,8 @@
     NSArray * _members;
     NSString * _name;
     <NSFastEnumeration> * _objects;
+    NSArray * _originalMembers;
+    <NSFastEnumeration> * _originalObjects;
     id /* block */  _reloadBlock;
     NSObject<OS_dispatch_queue> * _reloadQueue;
     id /* block */  _sortComparator;
@@ -28,6 +30,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) unsigned long long numberOfMembers;
 @property (nonatomic, retain) <NSFastEnumeration> *objects;
+@property (nonatomic, retain) NSArray *originalMembers;
+@property (nonatomic, retain) <NSFastEnumeration> *originalObjects;
 @property (nonatomic, copy) id /* block */ reloadBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *reloadQueue;
 @property (nonatomic, copy) id /* block */ sortComparator;
@@ -58,6 +62,8 @@
 - (id)name;
 - (unsigned long long)numberOfMembers;
 - (id)objects;
+- (id)originalMembers;
+- (id)originalObjects;
 - (unsigned long long)photoQuantityAtIndex:(unsigned long long)arg1;
 - (id /* block */)reloadBlock;
 - (id)reloadQueue;
@@ -70,6 +76,8 @@
 - (void)setMembers:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setObjects:(id)arg1;
+- (void)setOriginalMembers:(id)arg1;
+- (void)setOriginalObjects:(id)arg1;
 - (void)setReloadBlock:(id /* block */)arg1;
 - (void)setReloadQueue:(id)arg1;
 - (void)setSortComparator:(id /* block */)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface MiroMovieDisplayContainerViewController : UIViewController <MiroPlayerControlling, MiroPosterDelegate, PHAirPlayControllerContentProvider, PHAirPlayControllerRouteObserver> {
+    bool  _airplayActive;
     UIView * _airplayPosterView;
     MiroAutoEditor * _autoEditor;
     AVPlayer * _avPlayer;
@@ -19,6 +20,7 @@
     UIImageView * _secondaryPosterImageView;
 }
 
+@property (nonatomic) bool airplayActive;
 @property (nonatomic) UIView *airplayPosterView;
 @property (nonatomic, retain) MiroAutoEditor *autoEditor;
 @property (nonatomic, retain) AVPlayer *avPlayer;
@@ -50,6 +52,9 @@
 - (void)airPlayControllerRouteAvailabilityChanged:(id)arg1;
 - (void)airPlayControllerScreenAvailabilityChanged:(id)arg1;
 - (id)airPlayScreenController;
+- (bool)airplayActive;
+- (void)airplayOff;
+- (void)airplayOn;
 - (id)airplayPosterView;
 - (id)autoEditor;
 - (id)avPlayer;
@@ -82,6 +87,7 @@
 - (void)removeProVideoTimeObserver;
 - (id)savedAudioCategory;
 - (id)secondaryPosterImageView;
+- (void)setAirplayActive:(bool)arg1;
 - (void)setAirplayPosterView:(id)arg1;
 - (void)setAutoEditor:(id)arg1;
 - (void)setAvPlayer:(id)arg1;

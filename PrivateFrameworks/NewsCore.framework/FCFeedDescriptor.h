@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) long long feedSortMethod;
 @property (nonatomic) long long feedType;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hideAccessoryText;
 @property (nonatomic, readonly) NSArray *iAdCategories;
 @property (nonatomic, readonly) long long iAdContentProvider;
 @property (nonatomic, readonly) NSString *iAdFeedID;
@@ -53,6 +54,7 @@
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
 - (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
 - (unsigned long long)hash;
+- (bool)hideAccessoryText;
 - (id)iAdCategories;
 - (long long)iAdContentProvider;
 - (id)iAdFeedID;

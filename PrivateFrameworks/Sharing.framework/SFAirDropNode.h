@@ -6,6 +6,7 @@
     NSString * _contactIdentifier;
     UIImage * _displayIcon;
     NSString * _displayName;
+    bool  _me;
     bool  _monogram;
     id  _node;
     NSString * _realName;
@@ -20,6 +21,7 @@
 @property (retain) NSString *contactIdentifier;
 @property (retain) UIImage *displayIcon;
 @property (retain) NSString *displayName;
+@property (getter=isMe) bool me;
 @property (getter=isMonogram) bool monogram;
 @property (retain) id node;
 @property (retain) NSString *realName;
@@ -41,6 +43,7 @@
 - (unsigned long long)hash;
 - (id)init;
 - (bool)isEqual:(id)arg1;
+- (bool)isMe;
 - (bool)isMonogram;
 - (bool)isUnknown;
 - (id)node;
@@ -49,6 +52,7 @@
 - (void)setContactIdentifier:(id)arg1;
 - (void)setDisplayIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setMe:(bool)arg1;
 - (void)setMonogram:(bool)arg1;
 - (void)setNode:(id)arg1;
 - (void)setRealName:(id)arg1;

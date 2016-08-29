@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKRemoteDevice : NSObject <NSSecureCoding> {
+@interface PKRemoteDevice : NSObject <NSCopying, NSSecureCoding> {
     NSUUID * _bluetoothUUID;
     PKRemotePaymentInstrument * _defaultRemotePaymentInstrument;
     bool  _deviceDisabled;
@@ -10,6 +10,7 @@
     bool  _isLocked;
     NSDate * _lastSeen;
     NSString * _modelIdentifier;
+    long long  _proximityState;
     NSArray * _remotePaymentInstruments;
     long long  _type;
     NSString * _uniqueID;
@@ -17,12 +18,14 @@
 }
 
 @property (nonatomic, retain) NSUUID *bluetoothUUID;
+@property (nonatomic, readonly) bool canMakePayments;
 @property (nonatomic, retain) PKRemotePaymentInstrument *defaultRemotePaymentInstrument;
 @property (nonatomic) bool deviceDisabled;
 @property (nonatomic, retain) NSString *deviceName;
 @property (nonatomic) bool isLocked;
 @property (nonatomic, retain) NSDate *lastSeen;
 @property (nonatomic, retain) NSString *modelIdentifier;
+@property (nonatomic) long long proximityState;
 @property (nonatomic, retain) NSArray *remotePaymentInstruments;
 @property (nonatomic) long long type;
 @property (nonatomic, copy) NSString *uniqueID;
@@ -35,6 +38,8 @@
 - (void).cxx_destruct;
 - (long long)_deviceTypeForModelIdentifier:(id)arg1;
 - (id)bluetoothUUID;
+- (bool)canMakePayments;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultRemotePaymentInstrument;
 - (id)description;
 - (bool)deviceDisabled;
@@ -48,6 +53,7 @@
 - (bool)isLocked;
 - (id)lastSeen;
 - (id)modelIdentifier;
+- (long long)proximityState;
 - (id)remotePaymentInstruments;
 - (void)setBluetoothUUID:(id)arg1;
 - (void)setDefaultRemotePaymentInstrument:(id)arg1;
@@ -56,6 +62,7 @@
 - (void)setIsLocked:(bool)arg1;
 - (void)setLastSeen:(id)arg1;
 - (void)setModelIdentifier:(id)arg1;
+- (void)setProximityState:(long long)arg1;
 - (void)setRemotePaymentInstruments:(id)arg1;
 - (void)setType:(long long)arg1;
 - (void)setUniqueID:(id)arg1;

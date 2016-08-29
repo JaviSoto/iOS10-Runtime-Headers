@@ -4,13 +4,18 @@
 
 @interface CKBrowserSelectionFlowLayout : UICollectionViewFlowLayout {
     CADisplayLink * _displayLink;
+    bool  _inDisplayLinkAnimation;
+    NSIndexPath * _indexPathToDelete;
     bool  _insideDisplayLinkCallback;
     NSDictionary * _layoutInfo;
     unsigned long long  _numberOfColumns;
     unsigned long long  _numberOfItemsPerRow;
 }
 
+@property (nonatomic, readonly) <CKBrowserSelectionFlowLayoutDelegate> *delegate;
 @property (nonatomic, retain) CADisplayLink *displayLink;
+@property (getter=isInDisplayLinkAnimation, nonatomic) bool inDisplayLinkAnimation;
+@property (nonatomic, retain) NSIndexPath *indexPathToDelete;
 @property (nonatomic) bool insideDisplayLinkCallback;
 @property (nonatomic, retain) NSDictionary *layoutInfo;
 @property (nonatomic) unsigned long long numberOfColumns;
@@ -21,25 +26,35 @@
 
 - (void).cxx_destruct;
 - (void)_invalidateLayout;
+- (bool)_itemsFitsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (struct CGSize { double x1; double x2; })_layoutContentSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sectionInsetsForPhone:(id)arg1;
 - (bool)canDeletePluginAtIndexPath:(id)arg1;
 - (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (id)delegate;
 - (id)displayLink;
 - (void)displayLinkFired:(id)arg1;
+- (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
+- (double)flowLayoutHeight;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForCellAtIndexPath:(id)arg1;
 - (bool)iconShouldJitterAtIndexPath:(id)arg1;
+- (id)indexPathToDelete;
 - (bool)insideDisplayLinkCallback;
 - (void)invalidateLayoutWithContext:(id)arg1;
+- (bool)isInDisplayLinkAnimation;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutInfo;
-- (double)layoutWidth;
 - (unsigned long long)numberOfColumns;
 - (unsigned long long)numberOfItemsPerRow;
 - (unsigned long long)numberOfRows;
+- (void)prepareForCollectionViewUpdates:(id)arg1;
 - (void)prepareLayout;
 - (void)prepareScrollViewForShowAnimation:(id)arg1;
 - (void)scrollView:(id)arg1 didScrollByDeltaX:(double)arg2;
 - (void)setDisplayLink:(id)arg1;
+- (void)setInDisplayLinkAnimation:(bool)arg1;
+- (void)setIndexPathToDelete:(id)arg1;
 - (void)setInsideDisplayLinkCallback:(bool)arg1;
 - (void)setLayoutInfo:(id)arg1;
 - (void)setNumberOfColumns:(unsigned long long)arg1;
@@ -47,5 +62,6 @@
 - (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)startDisplayLink;
 - (void)stopDisplayLink;
+- (void)updateMarginsAndInsetsForTraitCollection:(id)arg1;
 
 @end

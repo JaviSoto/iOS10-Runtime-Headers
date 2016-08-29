@@ -77,7 +77,7 @@
 - (id)settingsControlManager;
 - (void)streamControlManager:(id)arg1 didFail:(id)arg2;
 - (void)streamControlManagerDidNegotiateStream:(id)arg1 selectedParameters:(id)arg2;
-- (void)streamControlManagerDidReceiveFirstFrame:(id)arg1;
+- (void)streamControlManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned long long)arg2;
 - (void)streamControlManagerDidReconfigureStream:(id)arg1;
 - (void)streamControlManagerDidSetupRemoteConnection:(id)arg1;
 - (void)streamControlManagerDidStartStream:(id)arg1 slotIdentifier:(id)arg2;

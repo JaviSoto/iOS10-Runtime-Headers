@@ -2,44 +2,45 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPServer : NSObject <HMFHTTPClientConnectionDelegate> {
+@interface HMFHTTPServer : NSObject <HMFHTTPClientConnectionDelegate, _HMFCFHTTPServerDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableArray * _connections;
     <HMFHTTPServerDelegate> * _delegate;
-    struct _CFHTTPServer { } * _httpServerRef;
+    _HMFCFHTTPServer * _internal;
     NSString * _name;
     HMFMutableNetService * _netService;
     unsigned long long  _options;
     unsigned long long  _port;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMutableArray * _requestHandlers;
     NSString * _serviceType;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
-@property (nonatomic, readonly, copy) NSArray *connections;
+@property (readonly, copy) NSArray *connections;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPServerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) struct _CFHTTPServer { }*httpServerRef;
+@property (nonatomic, retain) _HMFCFHTTPServer *internal;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) HMFMutableNetService *netService;
 @property (nonatomic, readonly) unsigned long long options;
-@property (nonatomic, readonly) unsigned long long port;
-@property (nonatomic, readonly, copy) NSArray *requestHandlers;
+@property (readonly) unsigned long long port;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (readonly, copy) NSArray *requestHandlers;
 @property (nonatomic, readonly, copy) NSString *serviceType;
 @property (readonly) Class superclass;
 
 + (id)shortDescription;
 
 - (void).cxx_destruct;
-- (void)_handleClosedConnection:(struct _CFHTTPServerConnection { }*)arg1;
-- (void)_handleOpenedConnection:(struct _CFHTTPServerConnection { }*)arg1;
+- (void)_handleClosedConnection:(id)arg1;
+- (void)_handleOpenedConnection:(id)arg1;
 - (void)_handleReceivedRequest:(id)arg1 connection:(id)arg2;
-- (void)_invalidateServer;
 - (void)_stopWithError:(id)arg1;
+- (void)addConnection:(id)arg1;
 - (id)clientQueue;
-- (void)connection:(id)arg1 didCloseWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)connections;
 - (void)dealloc;
@@ -47,17 +48,23 @@
 - (id)delegate;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
-- (struct _CFHTTPServer { }*)httpServerRef;
 - (id)init;
 - (id)initWithServiceType:(id)arg1 name:(id)arg2 port:(unsigned long long)arg3 options:(unsigned long long)arg4;
+- (id)internal;
 - (id)name;
 - (id)netService;
 - (unsigned long long)options;
 - (unsigned long long)port;
+- (id)propertyQueue;
 - (void)registerRequestHandler:(id)arg1;
+- (void)removeConnection:(id)arg1;
 - (id)requestHandlers;
+- (void)server:(id)arg1 didCloseConnection:(id)arg2;
+- (void)server:(id)arg1 didOpenConnection:(id)arg2;
+- (void)serverDidInvalidate:(id)arg1;
 - (id)serviceType;
 - (void)setDelegate:(id)arg1;
+- (void)setInternal:(id)arg1;
 - (id)shortDescription;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (void)stop;

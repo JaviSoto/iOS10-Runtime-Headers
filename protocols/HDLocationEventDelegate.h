@@ -5,8 +5,7 @@
 
 @required
 
-- (void)elevationUpdated:(CMElevationData *)arg1;
+- (void)elevationUpdated:(unsigned long long)arg1;
 - (void)locationSeriesSampleUpdated:(HKLocationSeriesSample *)arg1;
-- (void)locationUpdated:(CLLocation *)arg1;
 
 @end

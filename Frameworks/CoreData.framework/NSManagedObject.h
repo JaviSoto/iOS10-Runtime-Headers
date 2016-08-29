@@ -176,7 +176,6 @@
 - (void)diffOrderedSets:(id)arg1 :(id)arg2 :(id*)arg3 :(id*)arg4 :(id*)arg5 :(id*)arg6 :(id*)arg7;
 - (id)entity;
 - (unsigned long long)faultingState;
-- (void)finalize;
 - (bool)hasChanges;
 - (bool)hasFaultForRelationshipNamed:(id)arg1;
 - (bool)hasPersistentChangedValues;

@@ -7,6 +7,7 @@
     NSTimer * _beginScanningForwardTimer;
     NSLayoutConstraint * _bottomControlsContainerViewHeightLayoutConstraint;
     bool  _bottomControlsSingleRowLayoutPossible;
+    bool  _clientStatusBarHidden;
     bool  _controlsVisibilityHasBeenManagedBefore;
     AVButton * _doneButton;
     UILabel * _elapsedTimeLabel;
@@ -14,6 +15,7 @@
     AVButton * _fullScreenButton;
     AVButton * _gotoEndOfSeekableRangesButton;
     bool  _gotoEndOfSeekableRangesButtonEnabled;
+    bool  _ignoreNextStatusBarDidHideNotification;
     bool  _isScanningBackward;
     bool  _isScanningForward;
     NSMutableArray * _layoutConstraints;
@@ -55,6 +57,7 @@
     bool  _showsVolumeSlider;
     AVButton * _skipBackwardThirtySecondsButton;
     bool  _skipBackwardThirtySecondsButtonEnabled;
+    id  _statusBarHiddenObserver;
     bool  _supportForce;
     NSLayoutConstraint * _topControlsContainerViewHeightLayoutConstraint;
     UIView * _upperControlsSubContainerView;
@@ -91,6 +94,8 @@
 - (void)_skipBackwardThirtySecondsButtonTouchDown:(id)arg1;
 - (void)_skipBackwardThirtySecondsButtonTouchUpInside:(id)arg1;
 - (void)_skipBackwardThirtySecondsButtonTouchUpOutside:(id)arg1;
+- (void)_startKeepingStatusBarHidden;
+- (void)_stopKeepingStatusBarHidden;
 - (void)_updateScaleButton;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -141,6 +146,8 @@
 - (void)updateScrubberMinimumValue:(float)arg1;
 - (void)updateScrubberValue:(float)arg1;
 - (void)updateViewConstraints;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 

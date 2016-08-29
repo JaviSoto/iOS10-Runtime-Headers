@@ -22,6 +22,7 @@
     struct sqlite3_stmt { } * _likelyRouteInsert;
     struct sqlite3_stmt { } * _locationErrorInsert;
     struct sqlite3_stmt { } * _locationInsert;
+    struct sqlite3_stmt { } * _matchInfoInsert;
     struct sqlite3_stmt { } * _motionDataInsert;
     NSDate * _recordingStartTime;
     struct sqlite3_stmt { } * _routeLegEndGuidanceUpdate;
@@ -66,8 +67,9 @@
 - (void)_logSqliteErrorWithResult:(int)arg1 file:(const char *)arg2 line:(int)arg3;
 - (void)_openExistingTrace;
 - (void)_prepareStatements;
-- (void)_recordLocationEvent:(long long)arg1 coordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 rawCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg3 timestamp:(double)arg4 horizontalAccuracy:(double)arg5 verticalAccuracy:(double)arg6 altitude:(double)arg7 speed:(double)arg8 speedAccuracy:(double)arg9 course:(double)arg10 rawCourse:(double)arg11 type:(int)arg12 courseAccuracy:(double)arg13 correctedCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg14 correctedCourse:(double)arg15 matchType:(int)arg16 activeTransportType:(int)arg17 matchInfo:(id)arg18;
+- (void)_recordLocationEvent:(long long)arg1 coordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 rawCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg3 timestamp:(double)arg4 horizontalAccuracy:(double)arg5 verticalAccuracy:(double)arg6 altitude:(double)arg7 speed:(double)arg8 speedAccuracy:(double)arg9 course:(double)arg10 rawCourse:(double)arg11 type:(int)arg12 courseAccuracy:(double)arg13 correctedCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg14 correctedCourse:(double)arg15 matchType:(int)arg16 activeTransportType:(int)arg17 matchInfo:(id)arg18 correctedLocation:(id)arg19;
 - (void)_recordLocationEvent:(long long)arg1 location:(id)arg2 correctedLocation:(id)arg3;
+- (void)_recordLocationMatchInfoOnWriteQueue:(id)arg1 forLocationID:(int)arg2;
 - (void)_serializationError:(id)arg1;
 - (id)backgroundGuardDelegate;
 - (void)beginTransaction;
@@ -98,6 +100,7 @@
 - (void)recordMotionUpdate:(unsigned long long)arg1 exitType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
 - (void)recordRouteDeselected;
 - (void)recordRouteError:(id)arg1;
+- (void)recordRouteError:(id)arg1 forRouteRequest:(id)arg2;
 - (void)recordRouteRequest:(id)arg1 waypoints:(id)arg2;
 - (void)recordRouteResponse:(id)arg1 forRouteRequest:(id)arg2;
 - (void)recordRouteSelected:(id)arg1 routeIndex:(unsigned long long)arg2;

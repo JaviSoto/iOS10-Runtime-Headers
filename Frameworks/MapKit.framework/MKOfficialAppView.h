@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (bool)_appIsInstalled;
 - (void)_commonInit;
-- (void)_createView;
+- (void)_createConstraints;
 - (void)_punchOutButtonSelected:(id)arg1;
 - (void)_updateLabelText;
 - (void)contentSizeDidChange;

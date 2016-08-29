@@ -5,13 +5,13 @@
 @interface _HMFCFHTTPServerRequest : HMFHTTPRequestInternal {
     NSMutableData * _bodyData;
     struct __CFReadStream { } * _bodyStream;
-    HMFHTTPClientConnection * _connection;
+    _HMFCFHTTPServerConnection * _connection;
     struct _CFHTTPServerRequest { } * _requestRef;
 }
 
 @property (nonatomic, readonly) NSMutableData *bodyData;
 @property (nonatomic, readonly) struct __CFReadStream { }*bodyStream;
-@property (nonatomic, readonly) HMFHTTPClientConnection *connection;
+@property (nonatomic, readonly) _HMFCFHTTPServerConnection *connection;
 @property (nonatomic, readonly) struct _CFHTTPServerRequest { }*requestRef;
 
 - (void).cxx_destruct;

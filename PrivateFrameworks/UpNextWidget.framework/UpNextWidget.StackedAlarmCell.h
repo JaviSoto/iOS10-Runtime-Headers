@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSURL *clockAppSectionURL;
 @property (nonatomic) bool showRowSeparator;
 
++ (id)constraintsForBindingFrameWithView:(id)arg1 toFrameOfView:(id)arg2;
 + (bool)requiresConstraintBasedLayout;
 
 - (id /* block */).cxx_destruct;

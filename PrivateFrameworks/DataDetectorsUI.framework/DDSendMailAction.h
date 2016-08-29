@@ -9,11 +9,12 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (bool)canBePerformedByOpeningURL;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (int)interactionType;
 - (id)localizedName;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
-- (void)perform;
+- (void)performFromView:(id)arg1;
 - (id)viewController;
 
 @end

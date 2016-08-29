@@ -3,7 +3,7 @@
  */
 
 @interface __PGButton : UIButton {
-    _UIBackdropView * _backdropView;
+    PGBackdropView * _backdropView;
     UIImage * _backgroundImage;
     long long  _buttonStyle;
     UIImageView * _foregroundImageView;

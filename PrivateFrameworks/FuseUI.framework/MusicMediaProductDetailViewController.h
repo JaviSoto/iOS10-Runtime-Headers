@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicEntityProviderDownloadInformationControllerObserver, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate, MusicTransferObserver, UIViewControllerRestoration> {
+@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate, UIViewControllerRestoration> {
     bool  _allowsProductHairline;
     MPArtworkCatalog * _artworkCatalog;
     UIBarButtonItem * _cancelButtonItem;
@@ -10,13 +10,8 @@
     <MusicEntityProviding> * _containerEntityProvider;
     MusicEntityValueContext * _containerEntityValueContext;
     MusicMediaProductDetailHeaderConfiguration * _detailHeaderConfiguration;
-    struct MusicEntityDownloadInformation { 
-        long long downloadStatus; 
-        double downloadProgress; 
-    }  _downloadInformation;
     UIImage * _editedContentArtworkImage;
     bool  _editingWasCancelled;
-    MusicEntityProviderDownloadInformationController * _entityProviderDownloadInformationController;
     bool  _forContentCreation;
     bool  _hasDetailTintInformation;
     bool  _hasPresentedExplicitByDefaultAlert;
@@ -38,7 +33,6 @@
     }  _previousMaximumHeaderSize;
     UIViewController * _relatedContentViewController;
     <MusicEntityProviding> * _tracklistEntityProvider;
-    MusicTransferAggregator * _transferAggregator;
 }
 
 @property (nonatomic, readonly) MusicEntityValueContext *_containerEntityValueContext;
@@ -70,7 +64,6 @@
 - (bool)_editingWasCancelled;
 - (id)_effectiveNavigationItem;
 - (void)_handleCancelButtonTapped:(id)arg1;
-- (void)_handleClientContextTransferAggregatorDidChangeNotification:(id)arg1;
 - (void)_handleContainerEntityProviderDidInvalidateNotification:(id)arg1;
 - (id)_loadDetailHeaderConfiguration;
 - (id)_loadProductHeaderContentViewController;
@@ -80,9 +73,7 @@
 - (id)_mediaProductHeaderContentViewController;
 - (void)_presentExplicitByDefaultAlertIfNeeded;
 - (long long)_productDescriptionTextStyle;
-- (void)_registerForClientContextTransferAggregatorDidChangeNotification;
 - (void)_reloadContainerEntityValueContextProperties;
-- (void)_reloadTransferAggregator;
 - (void)_sendPendingTintInformationDispatchEvents;
 - (void)_setNeedsDetailHeaderConfigurationUpdate;
 - (bool)_shouldAutomaticallyPopForMissingContainerEntityValueProvider;
@@ -99,7 +90,6 @@
 - (id)containerScrollView;
 - (void)dealloc;
 - (void)detailTintInformationDidChange;
-- (void)downloadInformationController:(id)arg1 downloadInformationDidChange:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg2;
 - (id)editedContentArtworkImage;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4;
@@ -125,8 +115,6 @@
 - (void)showingSplitDetailViewControllerDidChange;
 - (id)tracklistEntityProvider;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)transferAggregator:(id)arg1 downloadStatusChangedAtIndexes:(id)arg2;
-- (void)transferAggregatorDownloadsDidChange:(id)arg1;
 - (void)updateWithHeaderHeight:(double)arg1 maximumHeaderHeight:(double)arg2 headerVerticalOffset:(double)arg3 transitionProgress:(double)arg4;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

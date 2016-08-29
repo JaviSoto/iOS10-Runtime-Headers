@@ -5,6 +5,7 @@
 @interface CKMessageEntryTextView : EMKTextView {
     NSString * _autocorrectionContext;
     bool  _hideCaret;
+    double  _placeHolderWidth;
     UIColor * _placeholderColor;
     UILabel * _placeholderLabel;
     bool  _preventingResignFirstResponder;
@@ -18,6 +19,7 @@
 @property (nonatomic, copy) NSString *autocorrectionContext;
 @property (nonatomic, copy) NSAttributedString *compositionText;
 @property (nonatomic) bool hideCaret;
+@property (nonatomic) double placeHolderWidth;
 @property (nonatomic, copy) UIColor *placeholderColor;
 @property (nonatomic, retain) UILabel *placeholderLabel;
 @property (nonatomic, copy) NSString *placeholderText;
@@ -42,6 +44,7 @@
 - (bool)isShowingDictationPlaceholder;
 - (bool)isSingleLine;
 - (void)layoutSubviews;
+- (double)placeHolderWidth;
 - (id)placeholderColor;
 - (id)placeholderLabel;
 - (id)placeholderText;
@@ -57,6 +60,7 @@
 - (void)setCompositionText:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setHideCaret:(bool)arg1;
+- (void)setPlaceHolderWidth:(double)arg1;
 - (void)setPlaceholderColor:(id)arg1;
 - (void)setPlaceholderLabel:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;

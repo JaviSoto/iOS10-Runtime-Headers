@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreFollowOperation : MSVOperation {
-    MSVOperationQueue * _operationQueue;
+@interface MPStoreFollowOperation : MPAsyncOperation {
+    NSOperationQueue * _operationQueue;
     MPModelPerson * _person;
     id /* block */  _responseHandler;
     bool  _unfollow;
@@ -16,7 +16,8 @@
 + (id)activeDSID;
 
 - (void).cxx_destruct;
-- (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2 allowingAuthentication:(bool)arg3;
+- (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2;
+- (void)_finishWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)_followURL:(id)arg1 accountDSID:(id)arg2;
 - (void)execute;
 - (id)person;

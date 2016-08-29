@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUServiceGridViewController : HUControllableItemCollectionViewController {
-    bool  _embedsMargins;
+@interface HUServiceGridViewController : HUControllableItemCollectionViewController <UICollectionViewDelegateFlowLayout> {
+    unsigned long long  _contentMargins;
     bool  _shouldShowLoadingState;
 }
 
-@property (nonatomic) bool embedsMargins;
-@property (nonatomic) HUGridLayoutOptions *layoutOptions;
+@property (nonatomic) unsigned long long contentMargins;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HUGridLayoutOptions *layoutOptions;
 @property (nonatomic) bool shouldShowLoadingState;
+@property (readonly) Class superclass;
 
 - (id)_defaultLayoutOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_layoutSectionHeaders;
@@ -20,13 +24,14 @@
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
-- (bool)embedsMargins;
+- (unsigned long long)contentMargins;
 - (id)initWithItemManager:(id)arg1;
 - (id)initWithItemManager:(id)arg1 collectionViewLayout:(id)arg2;
 - (bool)itemManager:(id)arg1 performBatchUpdateBlock:(id /* block */)arg2;
 - (id)layoutOptions;
+- (void)layoutOptionsDidChange;
 - (id)layoutOptionsForSection:(long long)arg1;
-- (void)setEmbedsMargins:(bool)arg1;
+- (void)setContentMargins:(unsigned long long)arg1;
 - (void)setLayoutOptions:(id)arg1;
 - (void)setShouldShowLoadingState:(bool)arg1;
 - (bool)shouldShowLoadingState;

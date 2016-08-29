@@ -3,9 +3,9 @@
  */
 
 @interface TSDFPSCounter : NSObject {
-    NSMutableArray * _dateArray;
     double  _endTimeInterval;
     unsigned long long  _frameCount;
+    NSMutableArray * _sampleArray;
     double  _startTimeInterval;
 }
 
@@ -17,8 +17,10 @@
 - (id)fpsGraphString;
 - (id)fpsSummaryString;
 - (id)init;
+- (id)p_fpsInfo:(bool)arg1;
 - (id)p_fpsSummaryStringIncludingGraph:(bool)arg1;
-- (id)p_getFPSInfo:(bool)arg1;
+- (id)p_modeFromArray:(id)arg1;
+- (double)p_standardDeviationFromArray:(id)arg1 mean:(double)arg2;
 - (void)reset;
 
 @end

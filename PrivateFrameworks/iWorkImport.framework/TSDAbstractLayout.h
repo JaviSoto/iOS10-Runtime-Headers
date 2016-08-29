@@ -84,6 +84,7 @@
 - (void)setInterimPositionY:(double)arg1;
 - (void)setParent:(id)arg1;
 - (bool)shouldSnapWhileResizing;
+- (bool)supportsCalloutAttributes;
 - (bool)supportsFlipping;
 - (bool)supportsInspectorPositioning;
 - (bool)supportsParentRotation;

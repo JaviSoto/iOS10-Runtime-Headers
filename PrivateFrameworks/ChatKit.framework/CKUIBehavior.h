@@ -4,10 +4,10 @@
 
 @interface CKUIBehavior : NSObject {
     long long  _HUDStyle;
+    UIImage * _arouetReplyImage;
     UIImage * _dictationReplyImage;
     UIImage * _digitalTouchReplyImage;
     UIImage * _emojiReplyImage;
-    double  _locationShareBalloonContactImageDiameter;
     UIImage * _messageReplyImage;
     double  _waveformMaxWidth;
 }
@@ -23,6 +23,8 @@
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentTopBackgroundName;
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentTopName;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } aggregateAcknowledgmentTranscriptBalloonSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } appIconSize;
+@property (nonatomic, readonly) UIImage *arouetReplyImage;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } attachmentBalloonSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } attachmentBrowserDefaultSizeForSquare;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } attachmentBrowserFeedLayoutSectionInset;
@@ -169,7 +171,9 @@
 @property (nonatomic, readonly) bool lowClearanceInLandscape;
 @property (nonatomic, readonly) bool mailIsWhitelisted;
 @property (nonatomic, readonly) double maxAudioRecordingDuration;
+@property (nonatomic, readonly) double maxHorizontalDragVelocityToStartReorderingDrawerPlugins;
 @property (nonatomic, readonly) unsigned long long maxNumLiveBrowserViewsToKeepInViewHierarchy;
+@property (nonatomic, readonly) unsigned long long maxNumberOfItemsPerAppDrawerPage;
 @property (nonatomic, readonly) double maxPrimaryColumnWidth;
 @property (nonatomic, readonly) double maxTranscriptPortraitHeight;
 @property (nonatomic, readonly) double maxTranscriptPortraitWidth;
@@ -281,6 +285,7 @@
 @property (nonatomic, readonly) bool showsCompositionPanel;
 @property (nonatomic, readonly) bool showsConversationListCellChevronImage;
 @property (nonatomic, readonly) bool showsFileSizeInSubtitle;
+@property (nonatomic, readonly) bool showsLoadMoreItem;
 @property (nonatomic, readonly) bool showsNoMessagesDialog;
 @property (nonatomic, readonly) bool showsPlaceCardForBalloonViewTitleTap;
 @property (nonatomic, readonly) bool showsProgressInNavigationBar;
@@ -383,6 +388,8 @@
 - (id)aggregateAcknowledgmentTopBackgroundName;
 - (id)aggregateAcknowledgmentTopName;
 - (struct CGSize { double x1; double x2; })aggregateAcknowledgmentTranscriptBalloonSize;
+- (struct CGSize { double x1; double x2; })appIconSize;
+- (id)arouetReplyImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsetsWithTailShape:(BOOL)arg1;
 - (struct CGSize { double x1; double x2; })attachmentBalloonSize;
@@ -569,7 +576,9 @@
 - (bool)mailIsWhitelisted;
 - (struct CGSize { double x1; double x2; })mapThumbnailFillSizeForWidth:(double)arg1;
 - (double)maxAudioRecordingDuration;
+- (double)maxHorizontalDragVelocityToStartReorderingDrawerPlugins;
 - (unsigned long long)maxNumLiveBrowserViewsToKeepInViewHierarchy;
+- (unsigned long long)maxNumberOfItemsPerAppDrawerPage;
 - (double)maxPrimaryColumnWidth;
 - (double)maxPrimaryColumnWidthForInterfaceOrientation:(long long)arg1;
 - (double)maxTranscriptPortraitHeight;
@@ -694,6 +703,7 @@
 - (bool)showsCompositionPanel;
 - (bool)showsConversationListCellChevronImage;
 - (bool)showsFileSizeInSubtitle;
+- (bool)showsLoadMoreItem;
 - (bool)showsNoMessagesDialog;
 - (bool)showsPlaceCardForBalloonViewTitleTap;
 - (bool)showsProgressInNavigationBar;

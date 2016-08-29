@@ -158,6 +158,7 @@
 - (id)subcalAccountID;
 - (unsigned long long)supportedEventAvailabilities;
 - (id)symbolicColorName;
+- (id)syncHash;
 - (id)title;
 - (long long)type;
 - (bool)validate:(id*)arg1;

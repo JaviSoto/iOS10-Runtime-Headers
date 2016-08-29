@@ -10,6 +10,7 @@
     NSData * _clientAuditTokenData;
     NSMutableDictionary * _httpHeaders;
     bool  _ignoresCaches;
+    NSLock * _lock;
     NSNumber * _userIdentifier;
     bool  _usesCachedBagsOnly;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic) long long bagType;
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (nonatomic, retain) NSData *clientAuditTokenData;
+@property (nonatomic, readonly) NSString *clientBundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -31,6 +33,7 @@
 
 + (id)contextWithBagType:(long long)arg1;
 
+- (id)_init;
 - (id)allHTTPHeaders;
 - (long long)allowedRetryCount;
 - (bool)allowsBootstrapCellularData;
@@ -38,6 +41,7 @@
 - (long long)bagType;
 - (id)cacheKey;
 - (id)clientAuditTokenData;
+- (id)clientBundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;

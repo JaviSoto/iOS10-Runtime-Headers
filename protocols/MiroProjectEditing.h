@@ -12,7 +12,6 @@
 - (void)moveClipAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (int)projectFrameRate;
 - (void)removeClip:(id <MiroClip>)arg1;
-- (void)setAudioLevel:(unsigned long long)arg1 forClip:(id <MiroClip>)arg2;
 - (bool)shouldRemoveClip:(id <MiroClip>)arg1;
 - (bool)shouldTrimClip:(id <MiroClip>)arg1 startTime:(float)arg2 endTime:(float)arg3;
 - (bool)trimClip:(id <MiroClip>)arg1 startTime:(float)arg2 endTime:(float)arg3;

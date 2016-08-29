@@ -4,9 +4,10 @@
 
 @interface PKPaymentMessage : NSObject <NSSecureCoding> {
     bool  _allowDeepLink;
+    bool  _archiveOnNextTransaction;
+    bool  _archived;
     NSString * _content;
     NSDate * _expirationDate;
-    bool  _expiresOnNextTransaction;
     bool  _hasAssociatedPaymentApplication;
     NSString * _identifier;
     NSDate * _messageDate;
@@ -14,37 +15,42 @@
 }
 
 @property (nonatomic) bool allowDeepLink;
+@property (nonatomic) bool archiveOnNextTransaction;
+@property (getter=isArchived, nonatomic) bool archived;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSDate *expirationDate;
-@property (nonatomic) bool expiresOnNextTransaction;
 @property (nonatomic) bool hasAssociatedPaymentApplication;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDate *messageDate;
 @property (nonatomic, copy) NSString *serviceIdentifier;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 + (id)paymentMessageWithDictionary:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)allowDeepLink;
+- (bool)archiveOnNextTransaction;
 - (id)content;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (bool)expiresOnNextTransaction;
 - (bool)hasAssociatedPaymentApplication;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isArchived;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToPaymentMessage:(id)arg1;
+- (bool)isValid;
 - (id)messageDate;
 - (id)serviceIdentifier;
 - (void)setAllowDeepLink:(bool)arg1;
+- (void)setArchiveOnNextTransaction:(bool)arg1;
+- (void)setArchived:(bool)arg1;
 - (void)setContent:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
-- (void)setExpiresOnNextTransaction:(bool)arg1;
 - (void)setHasAssociatedPaymentApplication:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDate:(id)arg1;

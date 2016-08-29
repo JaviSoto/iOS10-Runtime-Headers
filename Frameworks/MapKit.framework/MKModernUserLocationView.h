@@ -10,14 +10,17 @@
     bool  _isShowingStaleColor;
     bool  _rotateInnerImageToMatchCourse;
     bool  _shouldInnerPulse;
+    bool  _shouldShowOuterRing;
 }
 
 @property (nonatomic, retain) UIImage *innerImageMask;
 @property (nonatomic) bool rotateInnerImageToMatchCourse;
 @property (nonatomic) bool shouldInnerPulse;
+@property (nonatomic) bool shouldShowOuterRing;
 
 + (double)baseDiameter;
 + (double)innerDiameter;
++ (double)outerRingWidth;
 
 - (void).cxx_destruct;
 - (struct CGColor { }*)_accuracyFillColor;
@@ -25,6 +28,7 @@
 - (id)_baseDimmingLayer;
 - (id)_baseLayer;
 - (void)_dealloc;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_innerCircleLayerDefaultTransform;
 - (id)_innerPulseAnimation;
 - (id)_layerToMatchAccuracyRing;
 - (id)_pulseAnimation;
@@ -51,7 +55,9 @@
 - (void)setInnerImageMask:(id)arg1;
 - (void)setRotateInnerImageToMatchCourse:(bool)arg1;
 - (void)setShouldInnerPulse:(bool)arg1;
+- (void)setShouldShowOuterRing:(bool)arg1;
 - (bool)shouldInnerPulse;
+- (bool)shouldShowOuterRing;
 - (void)tintColorDidChange;
 
 @end

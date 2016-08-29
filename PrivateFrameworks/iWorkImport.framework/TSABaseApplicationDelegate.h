@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) NSArray *applicationTemplateVariants;
 @property (nonatomic) TSADocumentRoot *documentRoot;
 @property (nonatomic, retain) <TSADownloadDelegate> *downloadDelegate;
+@property (nonatomic, readonly) NSArray *iWorkAuthorPrivateIDs;
 @property (nonatomic, readonly) NSArray *importableDocumentTypes;
 @property (nonatomic, readonly) NSString *nativeDocumentExtension;
 @property (nonatomic, readonly) NSString *nativeDocumentType;
@@ -26,26 +27,33 @@
 - (bool)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)applicationTemplateVariants;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (void)clearIWorkAuthorColorIndex;
+- (void)clearIWorkAuthorName;
+- (void)clearIWorkAuthorPrivateID;
 - (unsigned long long)collaboratorColorIndexForDocumentShareID:(id)arg1;
-- (id)collaboratorName;
 - (id)collaboratorNameForDocumentShareID:(id)arg1;
-- (id)collaboratorNameForDocumentShareID:(id)arg1 documentPreferences:(id)arg2;
 - (id)collaboratorPersonIDForDocumentShareID:(id)arg1;
+- (void)dealloc;
 - (id)documentPreferenceKeyPrefix;
 - (id)documentRoot;
 - (Class)documentRootClass;
 - (id)downloadDelegate;
 - (id)existingNestedDocumentPathForPath:(id)arg1;
+- (void)generateIWorkAuthorPrivateIDIfNecessary;
 - (bool)hasIWorkAuthorName;
 - (id)iCloudDocumentPreferenceKeyForDocumentShareID:(id)arg1 isMatchingKey:(bool*)arg2;
 - (id)iCloudPreferenceKeys;
 - (id)iCloudPreferencesForDocumentShareID:(id)arg1;
 - (unsigned long long)iWorkAuthorColorIndex;
 - (id)iWorkAuthorName;
+- (id)iWorkAuthorPrivateID;
+- (id)iWorkAuthorPrivateIDs;
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
+- (bool)isICloudDocumentPreference:(id)arg1 validForKey:(id)arg2;
 - (bool)isReadableDocumentType:(id)arg1;
+- (bool)isValidIWorkAuthorColorIndex:(unsigned long long)arg1;
 - (double)maximumAspectRatioForPreviewImage;
 - (double)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentExtension;
@@ -67,6 +75,7 @@
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;
 - (void)ubiquitousKeyValueStoreDidChange:(id)arg1;
+- (id)validICloudPreferencesForPreferences:(id)arg1 invalidKeys:(id*)arg2;
 - (void)wakeUpDownloadManager;
 
 @end

@@ -8,7 +8,7 @@
     bool  _shouldMessageMainThread;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -38,7 +38,7 @@
 
 - (void).cxx_destruct;
 - (void)_callSessionEnded:(id)arg1;
-- (void)_createStreamSocket;
+- (void)_createStreamSocket:(id)arg1;
 - (void)_receiveByteCheckTimerFired;
 - (void)_sendTimerFired;
 - (void)_setReceiveByteHandler;

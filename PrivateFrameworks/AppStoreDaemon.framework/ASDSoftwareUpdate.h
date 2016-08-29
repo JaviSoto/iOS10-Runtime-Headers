@@ -4,6 +4,7 @@
 
 @interface ASDSoftwareUpdate : NSObject <NSCopying, NSSecureCoding> {
     NSDate * _installDate;
+    NSDate * _timestamp;
     NSDictionary * _updateDictionary;
     long long  _updateState;
 }
@@ -13,6 +14,7 @@
 @property (nonatomic, copy) NSDate *installDate;
 @property (nonatomic, readonly) long long parentalControlsRank;
 @property (nonatomic, readonly) long long storeItemIdentifier;
+@property (nonatomic, copy) NSDate *timestamp;
 @property (nonatomic, readonly) NSDictionary *updateDictionary;
 @property (nonatomic) long long updateState;
 
@@ -28,8 +30,10 @@
 - (id)installDate;
 - (long long)parentalControlsRank;
 - (void)setInstallDate:(id)arg1;
+- (void)setTimestamp:(id)arg1;
 - (void)setUpdateState:(long long)arg1;
 - (long long)storeItemIdentifier;
+- (id)timestamp;
 - (id)updateDictionary;
 - (long long)updateState;
 

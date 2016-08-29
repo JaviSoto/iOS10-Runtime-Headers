@@ -6,12 +6,16 @@
     NSString * _game;
     LPImage * _icon;
     LPImage * _image;
+    unsigned int  _maximumNumberOfPlayers;
+    unsigned int  _minimumNumberOfPlayers;
     unsigned int  _numberOfPlayers;
 }
 
 @property (nonatomic, copy) NSString *game;
 @property (nonatomic, retain) LPImage *icon;
 @property (nonatomic, retain) LPImage *image;
+@property (nonatomic) unsigned int maximumNumberOfPlayers;
+@property (nonatomic) unsigned int minimumNumberOfPlayers;
 @property (nonatomic) unsigned int numberOfPlayers;
 
 + (bool)supportsSecureCoding;
@@ -24,6 +28,8 @@
 - (id)image;
 - (id)initWithCoder:(id)arg1;
 - (id)invitationText;
+- (unsigned int)maximumNumberOfPlayers;
+- (unsigned int)minimumNumberOfPlayers;
 - (unsigned int)numberOfPlayers;
 - (id)playerCountText;
 - (id)presentationPropertiesForTransformer:(id)arg1;
@@ -32,6 +38,8 @@
 - (void)setGame:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setMaximumNumberOfPlayers:(unsigned int)arg1;
+- (void)setMinimumNumberOfPlayers:(unsigned int)arg1;
 - (void)setNumberOfPlayers:(unsigned int)arg1;
 
 @end

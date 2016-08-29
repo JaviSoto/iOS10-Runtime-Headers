@@ -3,13 +3,13 @@
  */
 
 @interface HUGridFlowLayout : UICollectionViewFlowLayout <HUControllableCollectionViewLayout> {
-    HFWallpaper * _blurredWallpaper;
+    HFWallpaperSlice * _blurredWallpaperSlice;
     HUGridLayoutOptions * _layoutOptions;
     NSMutableDictionary * _overrideAttributesByIndexPath;
     HUWallpaperView * _wallpaperView;
 }
 
-@property (nonatomic, retain) HFWallpaper *blurredWallpaper;
+@property (nonatomic, retain) HFWallpaperSlice *blurredWallpaperSlice;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -24,7 +24,7 @@
 - (void)_invalidateCollectionViewLayoutsForSubviewsOfView:(id)arg1;
 - (id)_modifiedLayoutAttributesForAttributes:(id)arg1;
 - (void)applyOverrideAttributes:(id)arg1 toItemAtIndexPath:(id)arg2;
-- (id)blurredWallpaper;
+- (id)blurredWallpaperSlice;
 - (void)clearAllOverrideAttributes;
 - (void)clearOverrideAttributesForItemAtIndexPath:(id)arg1;
 - (id)init;
@@ -33,7 +33,7 @@
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutOptions;
 - (id)overrideAttributesByIndexPath;
-- (void)setBlurredWallpaper:(id)arg1;
+- (void)setBlurredWallpaperSlice:(id)arg1;
 - (void)setLayoutOptions:(id)arg1;
 - (void)setWallpaperView:(id)arg1;
 - (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

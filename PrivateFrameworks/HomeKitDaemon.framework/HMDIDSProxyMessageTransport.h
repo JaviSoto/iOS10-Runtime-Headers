@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) HMDCompanionManager *companionManager;
 @property (nonatomic, readonly) HMDWatchManager *watchManager;
 
++ (unsigned long long)restriction;
 + (bool)transportSupportsDevice:(id)arg1;
 
 - (void).cxx_destruct;
@@ -25,6 +26,7 @@
 - (id)remoteMessageFromMessage:(id)arg1;
 - (id)sendMessage:(id)arg1 destination:(id)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
+- (id)watchDeviceForDevice:(id)arg1;
 - (id)watchManager;
 
 @end

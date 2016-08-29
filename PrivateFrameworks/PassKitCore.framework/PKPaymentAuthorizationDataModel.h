@@ -5,6 +5,7 @@
 @interface PKPaymentAuthorizationDataModel : NSObject <PKPaymentValidating> {
     NSArray * _acceptedPasses;
     NSSet * _allAcceptedRemotePaymentInstruments;
+    NSArray * _allRemoteDevices;
     NSSet * _allUnavailableRemotePaymentInstruments;
     CNContact * _billingAddress;
     CNContact * _cachedRecentAddress;
@@ -12,6 +13,7 @@
     unsigned long long  _holdPendingUpdatesCount;
     NSString * _hostAppLocalizedName;
     NSString * _hostApplicationIdentifier;
+    bool  _ignoreProximity;
     NSMapTable * _instrumentToDeviceMap;
     NSMutableArray * _items;
     PKPassLibrary * _library;
@@ -23,7 +25,6 @@
     PKPaymentOptionsRecents * _recents;
     PKRemoteDevice * _remoteDevice;
     NSMutableDictionary * _remoteDeviceToAcceptedInstruments;
-    NSArray * _remoteDevices;
     PKRemotePaymentInstrument * _remotePaymentInstrument;
     CNContact * _shippingAddress;
     bool  _shippingEditable;
@@ -41,6 +42,8 @@
 
 @property (nonatomic, readonly) NSArray *acceptedPasses;
 @property (nonatomic, readonly) NSSet *allAcceptedRemotePaymentInstruments;
+@property (nonatomic, readonly) NSArray *allNearbyRemoteDevices;
+@property (nonatomic, readonly) NSArray *allRemoteDevices;
 @property (nonatomic, readonly) NSSet *allUnavailableRemotePaymentInstruments;
 @property (nonatomic, retain) CNContact *billingAddress;
 @property (nonatomic, retain) CNContact *cachedRecentAddress;
@@ -83,6 +86,7 @@
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
 - (void)_ensurePlaceholderItems;
+- (id)_filterPaymentPassesUsingConfiguration:(id)arg1;
 - (id)_inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
 - (id)_inAppPrivateLabelPaymentPasses;
 - (void)_notifyModelChanged;
@@ -92,6 +96,8 @@
 - (id)acceptedPasses;
 - (id)acceptedRemotePaymentInstrumentsForRemoteDevice:(id)arg1;
 - (id)allAcceptedRemotePaymentInstruments;
+- (id)allNearbyRemoteDevices;
+- (id)allRemoteDevices;
 - (id)allUnavailableRemotePaymentInstruments;
 - (id)automaticallyPresentedPass;
 - (void)beginUpdates;
@@ -159,5 +165,6 @@
 - (id)unavailablePasses;
 - (id /* block */)updateHandler;
 - (void)updateRemoteDevices:(id)arg1;
+- (void)updateRemoteDevices:(id)arg1 ignoreProximity:(bool)arg2;
 
 @end

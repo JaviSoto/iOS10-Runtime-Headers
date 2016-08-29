@@ -169,7 +169,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentServiceReceivedInterruption;
 - (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
-- (void)summaryView:(id)arg1 didDeleteMessage:(id)arg2;
+- (void)summaryView:(id)arg1 didArchiveMessage:(id)arg2;
 - (void)willBecomeHiddenAnimated:(bool)arg1;
 - (void)willBecomeVisibleAnimated:(bool)arg1;
 

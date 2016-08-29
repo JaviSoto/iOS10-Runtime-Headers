@@ -3,7 +3,7 @@
  */
 
 @interface NWConnection : NSObject {
-    NSObject<OS_nw_connection> * _internalConnection;
+    NWConcrete_nw_connection * _internalConnection;
     long long  _internalConnectionState;
     NSError * _internalError;
     bool  _internalHasBetterPath;
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) NWEndpoint *endpoint;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) bool hasBetterPath;
-@property (nonatomic, retain) NSObject<OS_nw_connection> *internalConnection;
+@property (nonatomic, retain) NWConcrete_nw_connection *internalConnection;
 @property long long internalConnectionState;
 @property (retain) NSError *internalError;
 @property bool internalHasBetterPath;

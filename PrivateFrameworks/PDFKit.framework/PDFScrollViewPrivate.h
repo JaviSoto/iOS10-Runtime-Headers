@@ -3,11 +3,17 @@
  */
 
 @interface PDFScrollViewPrivate : NSObject {
+    bool  allowBoundsUpdates;
+    bool  allowScrolling;
+    bool  allowUpdates;
     PDFDocument * document;
     PDFDocumentView * documentView;
+    bool  forcesTopAlignment;
     bool  hasQueuedUpdate;
-    bool  m_allowScrolling;
+    bool  isZooming;
     double  oldMagnification;
+    NSDate * pageSyncDate;
+    bool  scheduledPageSync;
 }
 
 - (void).cxx_destruct;

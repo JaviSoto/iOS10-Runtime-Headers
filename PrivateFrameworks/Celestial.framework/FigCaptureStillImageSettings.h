@@ -30,6 +30,7 @@
     unsigned int  _rawOutputFormat;
     float  _scaleFactor;
     long long  _settingsID;
+    int  _settingsProvider;
     unsigned int  _shutterSound;
     bool  _squareCropEnabled;
     double  _stillImageCaptureAbsoluteStartTime;
@@ -68,6 +69,7 @@
 @property (nonatomic) unsigned int rawOutputFormat;
 @property (nonatomic) float scaleFactor;
 @property (nonatomic) long long settingsID;
+@property (nonatomic) int settingsProvider;
 @property (nonatomic) unsigned int shutterSound;
 @property (nonatomic) bool squareCropEnabled;
 @property (nonatomic) double stillImageCaptureAbsoluteStartTime;
@@ -90,6 +92,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; }*)exposureDurations;
 - (float*)exposureTargetBiases;
+- (id)figCaptureIrisPreparedSettingsRepresentation;
 - (int)flashMode;
 - (id)imageGroupIdentifier;
 - (id)init;
@@ -135,6 +138,7 @@
 - (void)setSISMode:(int)arg1;
 - (void)setScaleFactor:(float)arg1;
 - (void)setSettingsID:(long long)arg1;
+- (void)setSettingsProvider:(int)arg1;
 - (void)setShutterSound:(unsigned int)arg1;
 - (void)setSquareCropEnabled:(bool)arg1;
 - (void)setStillImageCaptureAbsoluteStartTime:(double)arg1;
@@ -143,6 +147,7 @@
 - (void)setVtCompressionProperties:(id)arg1;
 - (void)setWideColorMode:(int)arg1;
 - (long long)settingsID;
+- (int)settingsProvider;
 - (unsigned int)shutterSound;
 - (bool)squareCropEnabled;
 - (double)stillImageCaptureAbsoluteStartTime;

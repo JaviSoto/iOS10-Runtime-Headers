@@ -18,8 +18,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)_achievementsInSet:(id)arg1 missingFromSet:(id)arg2;
-
 - (void).cxx_destruct;
 - (id)_achievementsGroupedByActivityCacheIndex:(id)arg1;
 - (void)_addWorkout:(id)arg1;
@@ -44,7 +42,6 @@
 - (id)init;
 - (id)initWithProfile:(id)arg1 targetQueue:(id)arg2;
 - (long long)mostRecentWorkoutAnchor;
-- (unsigned long long)numberOfWorkoutsCompletedAfterDate:(id)arg1 beforeDate:(id)arg2 minimumWorkoutDuration:(double)arg3;
 - (void)runAchievementsFixupAsDryRun:(bool)arg1 persistingResultingKeyValues:(bool)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)standingHoursToday;
 - (unsigned long long)standingHoursYesterday;

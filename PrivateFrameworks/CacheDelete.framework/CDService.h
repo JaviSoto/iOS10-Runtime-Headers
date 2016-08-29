@@ -4,6 +4,7 @@
 
 @interface CDService : NSObject <CDService> {
     NSString * _ID;
+    bool  __dead;
     bool  __inFlight;
     NSSet * _desiredNotifications;
     bool  _doNotQuery;
@@ -11,12 +12,14 @@
     bool  _doesPurge;
     bool  _multiUserOnly;
     bool  _noQuota;
+    NSObject<OS_dispatch_queue> * _requestQueue;
     bool  _rootOnly;
     id /* block */  _serviceInvalidationHandler;
     NSObject<OS_dispatch_queue> * _serviceQueue;
 }
 
 @property (nonatomic, retain) NSString *ID;
+@property (nonatomic) bool _dead;
 @property (nonatomic) bool _inFlight;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -28,6 +31,7 @@
 @property (nonatomic, readonly) bool inFlight;
 @property (nonatomic) bool multiUserOnly;
 @property (nonatomic) bool noQuota;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *requestQueue;
 @property (nonatomic) bool rootOnly;
 @property (nonatomic, copy) id /* block */ serviceInvalidationHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serviceQueue;
@@ -39,6 +43,7 @@
 
 - (void).cxx_destruct;
 - (id)ID;
+- (bool)_dead;
 - (bool)_inFlight;
 - (void)_serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)_serviceCancelPurge:(id /* block */)arg1;
@@ -57,6 +62,7 @@
 - (id)initWithInfo:(id)arg1;
 - (bool)multiUserOnly;
 - (bool)noQuota;
+- (id)requestQueue;
 - (bool)rootOnly;
 - (void)serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)serviceCancelPurge:(id /* block */)arg1;
@@ -73,9 +79,11 @@
 - (void)setID:(id)arg1;
 - (void)setMultiUserOnly:(bool)arg1;
 - (void)setNoQuota:(bool)arg1;
+- (void)setRequestQueue:(id)arg1;
 - (void)setRootOnly:(bool)arg1;
 - (void)setServiceInvalidationHandler:(id /* block */)arg1;
 - (void)setServiceQueue:(id)arg1;
+- (void)set_dead:(bool)arg1;
 - (void)set_inFlight:(bool)arg1;
 
 @end

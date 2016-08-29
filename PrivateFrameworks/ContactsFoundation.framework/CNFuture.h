@@ -27,6 +27,7 @@
 + (id)lazyFutureWithBlock:(id /* block */)arg1;
 + (id)promiseFuture;
 + (id)recover:(id)arg1 withBlock:(id /* block */)arg2;
++ (id)sequence:(id)arg1;
 
 - (void)_flushCompletionBlocks;
 - (bool)_nts_isFinished;

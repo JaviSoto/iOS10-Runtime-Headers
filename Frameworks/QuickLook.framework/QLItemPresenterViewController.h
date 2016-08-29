@@ -36,6 +36,7 @@
 - (id)errorViewController;
 - (id)init;
 - (bool)isLoaded;
+- (bool)isLoading;
 - (void)isReadyForDisplayWithCompletionHandler:(id /* block */)arg1;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)loadingFailed;

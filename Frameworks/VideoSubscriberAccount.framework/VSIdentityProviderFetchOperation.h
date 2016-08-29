@@ -3,29 +3,25 @@
  */
 
 @interface VSIdentityProviderFetchOperation : VSAsyncOperation {
-    NSError * _error;
-    VSIdentityProvider * _identityProvider;
     NSString * _identityProviderID;
     NSOperationQueue * _privateQueue;
+    VSFailable * _result;
 }
 
-@property (nonatomic, copy) NSError *error;
-@property (nonatomic, copy) VSIdentityProvider *identityProvider;
 @property (nonatomic, copy) NSString *identityProviderID;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
+@property (nonatomic, retain) VSFailable *result;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)error;
 - (void)executionDidBegin;
-- (id)identityProvider;
 - (id)identityProviderID;
 - (id)init;
 - (id)initWithIdentityProviderID:(id)arg1;
 - (id)privateQueue;
-- (void)setError:(id)arg1;
-- (void)setIdentityProvider:(id)arg1;
+- (id)result;
 - (void)setIdentityProviderID:(id)arg1;
 - (void)setPrivateQueue:(id)arg1;
+- (void)setResult:(id)arg1;
 
 @end

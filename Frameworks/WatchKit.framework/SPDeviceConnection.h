@@ -56,7 +56,6 @@
 - (void)fetchWatchAppBundleURLWithinCompanionAppWithWatchAppIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAlwaysInstallForPairedDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAlwaysInstallWithCompletion:(id /* block */)arg1;
-- (bool)hasEntitlement:(id /* block */)arg1 caller:(const char *)arg2;
 - (void)hideUserNotification;
 - (id)init;
 - (void)installAllApplications;

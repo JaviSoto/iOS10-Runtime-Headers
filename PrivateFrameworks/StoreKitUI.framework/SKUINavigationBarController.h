@@ -47,6 +47,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)detachFromNavigationItem:(id)arg1;
+- (void)detachNavigationItemControllers;
 - (id)existingSearchBarControllers;
 - (id)fallbackTitleView;
 - (id)initWithNavigationBarViewElement:(id)arg1;

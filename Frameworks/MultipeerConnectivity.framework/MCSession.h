@@ -11,6 +11,7 @@
     long long  _encryptionPreference;
     unsigned int  _gckPID;
     struct OpaqueGCKSession { } * _gckSession;
+    unsigned long long  _maxPeers;
     MCPeerID * _myPeerID;
     NSMutableDictionary * _peerIDMap;
     NSMutableDictionary * _peerStates;
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly) long long encryptionPreference;
 @property (nonatomic) unsigned int gckPID;
 @property (nonatomic) struct OpaqueGCKSession { }*gckSession;
+@property (nonatomic) unsigned long long maxPeers;
 @property (nonatomic, readonly) MCPeerID *myPeerID;
 @property (nonatomic, retain) NSMutableDictionary *peerIDMap;
 @property (nonatomic, retain) NSMutableDictionary *peerStates;
@@ -65,6 +67,7 @@
 - (bool)isAWDLDisabled;
 - (bool)isEncryptionPreferenceCompatible:(long long)arg1;
 - (void)logSessionInfo;
+- (unsigned long long)maxPeers;
 - (id)myPeerID;
 - (void)nearbyConnectionDataForPeer:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)peerDidDeclineInvitation:(id)arg1;
@@ -85,6 +88,7 @@
 - (void)setGckSession:(struct OpaqueGCKSession { }*)arg1;
 - (void)setHeartbeatTimeout:(unsigned long long)arg1;
 - (void)setICETimeoutForced:(bool)arg1;
+- (void)setMaxPeers:(unsigned long long)arg1;
 - (void)setPeerIDMap:(id)arg1;
 - (void)setPeerStates:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
@@ -107,6 +111,7 @@
 - (void)syncHandleNetworkEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 pid:(unsigned int)arg2 freeEventWhenDone:(bool*)arg3;
 - (void)syncHandleXDataDataPacket:(char *)arg1 packetSize:(int)arg2 forPeer:(id)arg3 state:(id)arg4;
 - (void)syncLogConnectedPeers;
+- (void)syncLogMaxConnectedPeers;
 - (void)syncPeer:(id)arg1 changeStateTo:(long long)arg2 shouldForceCallback:(bool)arg3;
 - (id)syncQueue;
 - (void)syncSendData:(id)arg1 toPeers:(id)arg2 withDataMode:(long long)arg3;

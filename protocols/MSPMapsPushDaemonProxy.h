@@ -16,6 +16,7 @@
 - (void)fetchCurrentAnnouncement:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEOAnnouncement *, void*
 - (void)fetchDevicePushToken:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
 - (void)fetchProblemStatus;
+- (void)fetchUserRoutingPreferencesWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, MSPUserRoutingPreferences *, NSError *, void*
 - (void)problemStatusResponseWithNotificationID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEORPProblemStatusResponse *, void*
 - (void)registerForTopic;
 - (void)removeProblemStatusResponseWithNotificationID:(NSString *)arg1;

@@ -8,6 +8,7 @@
 - (UIColor *)backgroundColor;
 - (NSString *)bottomCaption;
 - (LPCaptionBarPresentationProperties *)captionBar;
+- (LPiTunesPlaybackInformation *)iTunesPlaybackInformation;
 - (LPImage *)icon;
 - (LPImage *)image;
 - (bool)isPreliminary;
@@ -16,10 +17,7 @@
 - (NSString *)mediaTopCaption;
 - (LPCaptionBarPresentationProperties *)mediaTopCaptionBar;
 - (NSString *)quotedText;
-- (NSString *)storeIdentifier;
-- (NSString *)storefrontIdentifier;
 - (long long)style;
-- (bool)supportsiTunesPlayback;
 - (NSString *)topCaption;
 - (NSString *)trailingBottomCaption;
 - (NSString *)trailingTopCaption;

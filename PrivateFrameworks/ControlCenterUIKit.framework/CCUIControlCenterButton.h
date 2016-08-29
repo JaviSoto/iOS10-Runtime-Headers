@@ -32,6 +32,7 @@
 @property (nonatomic, retain) NSString *text;
 
 + (id)_buttonWithSelectedColor:(id)arg1 text:(id)arg2 type:(unsigned long long)arg3;
++ (id)capsuleButtonWithText:(id)arg1;
 + (id)circularButtonWithSelectedColor:(id)arg1;
 + (id)roundRectButton;
 + (id)roundRectButtonWithText:(id)arg1;
@@ -45,8 +46,10 @@
 - (bool)_drawingAsSelected;
 - (id)_effectiveSelectedColor;
 - (id)_glyphImageForState:(long long)arg1;
+- (bool)_isCapsuleButton;
 - (bool)_isCircleButton;
 - (bool)_isRectButton;
+- (bool)_isRectTextButton;
 - (bool)_isTextButton;
 - (void)_pressAction;
 - (void)_setButtonType:(unsigned long long)arg1;

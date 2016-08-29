@@ -32,6 +32,7 @@
 - (void)setNeedsTilesUpdate;
 - (void)setPage:(id)arg1;
 - (void)setParentView:(id)arg1;
+- (void)setShouldAntiAlias:(bool)arg1;
 - (void)tileDrawingComplete:(id)arg1;
 - (void)updateTiles;
 

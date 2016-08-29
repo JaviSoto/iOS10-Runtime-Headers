@@ -4,7 +4,6 @@
 
 @interface MusicEntityEditableVerticalLockupView : MusicEntityVerticalLockupView {
     UIView * _artworkEditingOverlayView;
-    MusicNowPlayingFloatingButton * _cameraButton;
     bool  _editing;
 }
 
@@ -12,10 +11,8 @@
 @property (getter=isEditing, nonatomic) bool editing;
 
 - (void).cxx_destruct;
-- (void)_cameraButtonTapped:(id)arg1;
 - (void)_layoutEditingSubviews;
 - (void)_layoutEditingSubviewsForEditing:(bool)arg1 editingViewsAlpha:(double)arg2;
-- (void)dealloc;
 - (bool)isEditing;
 - (void)layoutSubviews;
 - (void)setEditing:(bool)arg1;

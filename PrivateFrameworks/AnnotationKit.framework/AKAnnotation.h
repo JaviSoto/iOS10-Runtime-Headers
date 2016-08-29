@@ -8,6 +8,7 @@
     long long  _akSerializationVersion;
     id /* block */  _appearanceOverride;
     AKAnnotation * _childAnnotation;
+    NSString * _customPlaceholderText;
     bool  _editsDisableAppearanceOverride;
     struct CGRect { 
         struct CGPoint { 
@@ -41,6 +42,7 @@
 @property long long akSerializationVersion;
 @property (copy) id /* block */ appearanceOverride;
 @property AKAnnotation *childAnnotation;
+@property (copy) NSString *customPlaceholderText;
 @property (readonly) NSString *displayName;
 @property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawingBounds;
 @property bool editsDisableAppearanceOverride;
@@ -63,10 +65,10 @@
 @property bool textIsFixedWidth;
 
 + (id)annotationWithData:(id)arg1;
++ (id)defaultPlaceholderText;
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
-+ (id)placeholderText;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -77,6 +79,7 @@
 - (id /* block */)appearanceOverride;
 - (id)childAnnotation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customPlaceholderText;
 - (id)dataRepresentation;
 - (void)dealloc;
 - (id)displayName;
@@ -105,6 +108,7 @@
 - (void)setAkSerializationVersion:(long long)arg1;
 - (void)setAppearanceOverride:(id /* block */)arg1;
 - (void)setChildAnnotation:(id)arg1;
+- (void)setCustomPlaceholderText:(id)arg1;
 - (void)setEditsDisableAppearanceOverride:(bool)arg1;
 - (void)setInitialDrawingBoundsForAppearanceOverride:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setIsDraggingHandle:(bool)arg1;

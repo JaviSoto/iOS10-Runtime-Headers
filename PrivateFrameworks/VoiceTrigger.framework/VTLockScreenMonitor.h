@@ -3,22 +3,20 @@
  */
 
 @interface VTLockScreenMonitor : VTEventMonitor {
+    unsigned char  _lockScreenState;
     int  _notifyToken;
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
-- (void)_didLockScreenStateChanged:(unsigned char)arg1;
-- (void)_didLockScreenStateChangedInQueue:(unsigned char)arg1;
-- (void)_startMonitoring;
+- (unsigned char)_checkLockScreenState;
+- (void)_didReceiveLockScreenStateChanged:(unsigned char)arg1;
+- (void)_didReceiveLockScreenStateChangedInQueue:(unsigned char)arg1;
+- (void)_notifyObserver:(id)arg1 withLockScreenState:(unsigned char)arg2;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (unsigned char)lockScreenState;
-- (void)removeObserver:(id)arg1;
+- (id)lockScreenStateDescription:(unsigned char)arg1;
 
 @end

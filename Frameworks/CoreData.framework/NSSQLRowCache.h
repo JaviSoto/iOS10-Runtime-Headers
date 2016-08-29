@@ -10,7 +10,7 @@
 + (void)initialize;
 
 - (void)dealloc;
-- (id)initWithSQLCore:(id)arg1;
+- (id)initWithPersistentStore:(id)arg1;
 - (id)sqlCore;
 
 @end

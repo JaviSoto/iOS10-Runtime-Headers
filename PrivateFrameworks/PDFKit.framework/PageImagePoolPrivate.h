@@ -5,16 +5,22 @@
 @interface PageImagePoolPrivate : NSObject {
     int  activePageIndex;
     PDFDocumentView * documentView;
+    NSObject<OS_dispatch_group> * forceUpdateWorkGroup;
+    bool  forceUseMainThread;
+    int  forcedWorkCount;
     bool  hasReduceTransparency;
+    NSMutableDictionary * highResPageImages;
+    bool  isCancled;
     bool  isQueuedForWork;
-    NSMutableDictionary * pageImages;
+    NSMutableDictionary * lowResPageImages;
+    NSMutableDictionary * mediumResPageImages;
     int  pageRangeHighRes;
     int  pageRangeLowRes;
     int  pageRangeMediumRes;
-    NSMutableDictionary * pageRenderQuality;
     int  pageResolutionHighRes;
     int  pageResolutionLowRes;
     int  pageResolutionMediumRes;
+    bool  willForceUpdateWork;
     NSObject<OS_dispatch_queue> * workQueue;
 }
 

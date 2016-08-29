@@ -161,6 +161,7 @@
 - (double)timestamp;
 - (id)title;
 - (unsigned long long)uniqueIdentifier;
+- (bool)validateUniqueIdentifier:(id*)arg1 error:(id*)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

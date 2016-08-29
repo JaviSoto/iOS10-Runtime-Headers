@@ -21,6 +21,8 @@
 @property (nonatomic, readonly) bool showsYear;
 @property (nonatomic) bool usesDarkAppearance;
 
++ (bool)_preventsAppearanceProxyCustomization;
+
 - (void).cxx_destruct;
 - (Class)_classForDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 representingCardExpiration:(bool)arg4;
 - (void)_dateValueChanged:(struct UIView { Class x1; }*)arg1;

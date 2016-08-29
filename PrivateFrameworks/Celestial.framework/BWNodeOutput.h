@@ -89,6 +89,7 @@
 - (void)emitIrisReferenceMovieRequestWithInfo:(id)arg1;
 - (void)emitNodeError:(id)arg1;
 - (void)emitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)emitStillImageReferenceFrameBracketedCaptureSequenceNumberMessageWithSequenceNumber:(int)arg1;
 - (id)format;
 - (id)formatRequirements;
 - (int)indexOfInputWhichDrivesThisOutput;

@@ -53,6 +53,7 @@
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (bool)_setSetting:(unsigned long long)arg1 enabled:(bool)arg2 forPass:(id)arg3;
+- (id)_synchronousInAppRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 completion:(id /* block */)arg3;
 - (void)activatePaymentPass:(id)arg1 withActivationData:(id)arg2 completion:(id /* block */)arg3;
 - (void)addPasses:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -83,8 +84,11 @@
 - (void)hasInAppPaymentPassesForNetworks:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)hasInAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (bool)hasPassesOfType:(unsigned long long)arg1;
+- (id)inAppPaymentPassesForNetworks:(id)arg1;
+- (id)inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
 - (void)inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)inAppPaymentPassesForNetworks:(id)arg1 withHandler:(id /* block */)arg2;
+- (id)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1;
 - (void)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1 resumeNotificationName:(id)arg2 interfaceType:(unsigned long long)arg3;

@@ -19,7 +19,7 @@
 - (void)_addAutoEditScore:(id)arg1 lastLaneOfTypeOffset:(double*)arg2;
 - (void)_addRangeLayerWithColor:(id)arg1 x:(double)arg2 y:(double)arg3 width:(double)arg4 height:(double)arg5;
 - (void)_addRangeLayerWithColor:(id)arg1 x:(double)arg2 y:(double)arg3 width:(double)arg4 markEnds:(bool)arg5;
-- (id)_attributedStringWithColoredLabelsForKeys:(id)arg1;
+- (id)_attributedStringWithColoredLabelsForKeys:(id)arg1 withRangeModelsByType:(id)arg2;
 - (id)_rangeModelsByType:(id)arg1;
 - (void)_resetRangeModelLayers;
 - (id)asset;
@@ -32,6 +32,7 @@
 - (id)colorPatternForRating:(unsigned long long)arg1 baseColor:(id)arg2;
 - (id)colorWithPatternColors:(id)arg1 baseColor:(id)arg2;
 - (int)duration;
+- (bool)isOverlapWithPreviousRangeForIndex:(unsigned long long)arg1 inRangeModels:(id)arg2;
 - (id)label;
 - (void)reloadRanges;
 - (void)setAsset:(id)arg1;

@@ -6,26 +6,35 @@
     NSHashTable * _childViewControllersAtViewWillAppearTime;
     NSHashTable * _childViewControllersAtViewWillDisappearTime;
     NSMapTable * _installedChildViewControllersKeyedByCell;
+    bool  _isUpdatingTableView;
+    NSMutableArray * _tableViewUpdateBlockQueue;
 }
 
 @property (nonatomic, retain) NSHashTable *childViewControllersAtViewWillAppearTime;
 @property (nonatomic, retain) NSHashTable *childViewControllersAtViewWillDisappearTime;
 @property (nonatomic, retain) NSMapTable *installedChildViewControllersKeyedByCell;
+@property (nonatomic) bool isUpdatingTableView;
+@property (nonatomic, retain) NSMutableArray *tableViewUpdateBlockQueue;
 
 - (void).cxx_destruct;
+- (void)_performTableViewUpdateBlock:(id /* block */)arg1;
 - (id)childViewControllersAtViewWillAppearTime;
 - (id)childViewControllersAtViewWillDisappearTime;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
 - (id)installedChildViewControllersKeyedByCell;
+- (bool)isUpdatingTableView;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setChildViewControllersAtViewWillAppearTime:(id)arg1;
 - (void)setChildViewControllersAtViewWillDisappearTime:(id)arg1;
 - (void)setInstalledChildViewControllersKeyedByCell:(id)arg1;
+- (void)setIsUpdatingTableView:(bool)arg1;
+- (void)setTableViewUpdateBlockQueue:(id)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableViewUpdateBlockQueue;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;

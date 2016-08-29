@@ -9,7 +9,6 @@
 - (void)notifyHostedPIDsOfSuppression:(bool)arg1;
 - (void)retrieveDebugInformation:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
 - (void)retrieveMoreDebugInformationWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)setDebugLevel:(long long)arg1;
 - (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(NSString *)arg2 forKeyboard:(bool)arg3 withLevel:(double)arg4;
 - (void)setWindowHostingPID:(int)arg1 active:(bool)arg2;
 - (void)signalKeyboardChangeComplete;

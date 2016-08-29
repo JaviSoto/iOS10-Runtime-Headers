@@ -5,13 +5,15 @@
 @interface _DPReportGenerator : NSObject <_DPMaintenance>
 
 + (id)filterNonConformingRecordsFrom:(id)arg1;
++ (id)queryKeysForPattern:(id)arg1 storage:(id)arg2;
++ (id)queryRecordsForKey:(id)arg1 storage:(id)arg2;
++ (id)randomize:(id)arg1;
 
 - (id)generateReport;
 - (id)generateReportForKeys:(id)arg1 allowAnyKey:(bool)arg2 storage:(id)arg3;
 - (id)generateReportUsing:(id)arg1;
 - (bool)markSubmitted:(id)arg1;
 - (bool)markSubmitted:(id)arg1 storage:(id)arg2;
-- (id)queryForKey:(id)arg1 storage:(id)arg2;
 - (void)scheduleMaintenance;
 - (void)scheduleMaintenanceWithName:(id)arg1;
 

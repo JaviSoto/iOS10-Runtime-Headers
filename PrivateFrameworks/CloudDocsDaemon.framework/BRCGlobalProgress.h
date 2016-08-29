@@ -30,6 +30,7 @@
 - (void)_cancelDownloadForDocumentID:(id)arg1 destroyIfLast:(bool)arg2 willRetryTransfer:(bool)arg3;
 - (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2;
 - (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(bool)arg3;
+- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(bool)arg3 pendingQuota:(bool)arg4;
 - (void)_createDownloadMetadataWithCompletedUnitCount:(long long)arg1 totalUnitCount:(long long)arg2;
 - (void)_createNewGlobalProgressInGroup:(id)arg1 completedUnitCount:(long long)arg2 totalUnitCount:(long long)arg3;
 - (void)_createNewIndeterminateGlobalProgress;
@@ -45,6 +46,7 @@
 - (void)_updateDocument:(id)arg1;
 - (void)_updateGlobalProgress;
 - (void)addProgress:(id)arg1 forDocument:(id)arg2 inGroup:(BOOL)arg3;
+- (void)clearOutOfQuotaState;
 - (void)dealloc;
 - (void)didDeleteDocument:(id)arg1;
 - (void)didUpdateClientZone:(id)arg1;

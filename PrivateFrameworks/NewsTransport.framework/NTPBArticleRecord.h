@@ -20,6 +20,7 @@
     struct { 
         unsigned int backendArticleVersion : 1; 
         unsigned int behaviorFlags : 1; 
+        unsigned int minimumNewsVersion : 1; 
         unsigned int publisherArticleVersion : 1; 
         unsigned int thumbnailFocalFrame : 1; 
         unsigned int thumbnailHQMetadata : 1; 
@@ -45,7 +46,7 @@
     bool  _isFeatureCandidate;
     bool  _isPaid;
     bool  _isSponsored;
-    NSString * _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSMutableArray * _moreFromPublisherArticleIds;
     NSString * _primaryAudience;
     NTPBDate * _publishDate;
@@ -122,7 +123,7 @@
 @property (nonatomic) bool hasIsFeatureCandidate;
 @property (nonatomic) bool hasIsPaid;
 @property (nonatomic) bool hasIsSponsored;
-@property (nonatomic, readonly) bool hasMinimumNewsVersion;
+@property (nonatomic) bool hasMinimumNewsVersion;
 @property (nonatomic, readonly) bool hasPrimaryAudience;
 @property (nonatomic, readonly) bool hasPublishDate;
 @property (nonatomic) bool hasPublisherArticleVersion;
@@ -161,7 +162,7 @@
 @property (nonatomic) bool isFeatureCandidate;
 @property (nonatomic) bool isPaid;
 @property (nonatomic) bool isSponsored;
-@property (nonatomic, retain) NSString *minimumNewsVersion;
+@property (nonatomic) long long minimumNewsVersion;
 @property (nonatomic, retain) NSMutableArray *moreFromPublisherArticleIds;
 @property (nonatomic, retain) NSString *primaryAudience;
 @property (nonatomic, retain) NTPBDate *publishDate;
@@ -322,7 +323,7 @@
 - (bool)isPaid;
 - (bool)isSponsored;
 - (void)mergeFrom:(id)arg1;
-- (id)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)moreFromPublisherArticleIds;
 - (id)moreFromPublisherArticleIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)moreFromPublisherArticleIdsCount;
@@ -355,6 +356,7 @@
 - (void)setHasIsFeatureCandidate:(bool)arg1;
 - (void)setHasIsPaid:(bool)arg1;
 - (void)setHasIsSponsored:(bool)arg1;
+- (void)setHasMinimumNewsVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasStoryType:(bool)arg1;
 - (void)setHasThumbnailFocalFrame:(bool)arg1;
@@ -374,7 +376,7 @@
 - (void)setIsFeatureCandidate:(bool)arg1;
 - (void)setIsPaid:(bool)arg1;
 - (void)setIsSponsored:(bool)arg1;
-- (void)setMinimumNewsVersion:(id)arg1;
+- (void)setMinimumNewsVersion:(long long)arg1;
 - (void)setMoreFromPublisherArticleIds:(id)arg1;
 - (void)setPrimaryAudience:(id)arg1;
 - (void)setPublishDate:(id)arg1;

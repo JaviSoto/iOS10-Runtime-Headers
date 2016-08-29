@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetProfileInCarIntent : INIntent <INSetProfileInCarIntent>
+@interface INSetProfileInCarIntent : INIntent <INSetProfileInCarIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSNumber *defaultProfile;

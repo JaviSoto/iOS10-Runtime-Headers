@@ -9,6 +9,7 @@
     NSString * _definitionIdentifier;
     NSNumber * _value;
     bool  _viewed;
+    unsigned long long  _workoutActivityType;
 }
 
 @property (nonatomic, retain) NSUUID *UUID;
@@ -17,17 +18,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *definitionIdentifier;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSData *extraData;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *value;
 @property (getter=isViewed, nonatomic) bool viewed;
+@property (nonatomic) unsigned long long workoutActivityType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_achievementWithUUID:(id)arg1 definitionIdentifier:(id)arg2 completedDate:(id)arg3 value:(id)arg4 extraData:(id)arg5 alerted:(bool)arg6;
-+ (id)_allAchievementTypeNames;
-+ (Class)_classForDefinitionIdentifier:(id)arg1;
++ (id)_achievementWithUUID:(id)arg1 definitionIdentifier:(id)arg2 completedDate:(id)arg3 value:(id)arg4 workoutActivityType:(unsigned long long)arg5 alerted:(bool)arg6;
 + (id)_formatValue:(id)arg1 usingFormatterNamed:(id)arg2;
 + (id)_nextUUID;
 + (id)_valueFromPlaceholder:(id)arg1 withAchievement:(id)arg2 context:(id)arg3;
@@ -39,11 +38,9 @@
 - (id)UUID;
 - (id)_achievementDefinition;
 - (id)_buildKeyWithPrefix:(id)arg1 definitionIdentifier:(id)arg2 includingUserName:(bool)arg3 isWheelchairUser:(bool)arg4;
-- (void)_decodeExtraDataWithCoder:(id)arg1;
-- (void)_encodeExtraDataWithCoder:(id)arg1;
 - (void)_getLocalizedStringTable:(id*)arg1 bundle:(id*)arg2 includesDefinitionIdentifier:(bool*)arg3;
-- (bool)_hasExtraData;
 - (id)_initWithDefinitionIdentifier:(id)arg1 completedDate:(id)arg2 value:(id)arg3;
+- (id)_initWithDefinitionIdentifier:(id)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned long long)arg4;
 - (bool)_isWheelchairUser;
 - (id)_localizedStringWithContext:(id)arg1;
 - (id)_pluralizeLocalizedString:(id)arg1 completeNumberOfTimes:(long long)arg2;
@@ -53,7 +50,6 @@
 - (id)definitionIdentifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)extraData;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (bool)isAlerted;
@@ -73,11 +69,12 @@
 - (void)setAlerted:(bool)arg1;
 - (void)setCompletedDate:(id)arg1;
 - (void)setDefinitionIdentifier:(id)arg1;
-- (void)setExtraData:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setViewed:(bool)arg1;
+- (void)setWorkoutActivityType:(unsigned long long)arg1;
 - (id)value;
+- (unsigned long long)workoutActivityType;
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 

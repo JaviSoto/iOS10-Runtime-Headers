@@ -6,14 +6,19 @@
     UIViewController<NCNotificationCustomContent> * _contentViewController;
     <NCNotificationCustomContentDelegate> * _delegate;
     bool  _hasMinimalActions;
+    NCNotificationRequest * _notificationRequest;
+    NCNotificationAction * _presentationSourceAction;
 }
 
+@property (nonatomic, readonly) NSString *contentExtensionIdentifier;
 @property (nonatomic, retain) UIViewController<NCNotificationCustomContent> *contentViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasMinimalActions;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NCNotificationRequest *notificationRequest;
+@property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,8 +28,10 @@
 - (id)contentViewController;
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
+- (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)customContentDidLoadExtension:(id)arg1;
 - (unsigned long long)customContentLocation;
+- (void)customContentRequestsDismiss:(id)arg1;
 - (bool)defaultContentHidden;
 - (id)delegate;
 - (void)didReceiveNotificationRequest:(id)arg1;
@@ -33,13 +40,16 @@
 - (void)loadAudioAccessoryView;
 - (void)loadExtension;
 - (void)loadView;
+- (id)notificationRequest;
 - (bool)performAction:(id)arg1 forNotification:(id)arg2;
 - (bool)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
 - (void)playAudioMessage;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (id)presentationSourceAction;
 - (void)setContentViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasMinimalActions:(bool)arg1;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setNotificationRequest:(id)arg1;
+- (void)setPresentationSourceAction:(id)arg1;
 
 @end

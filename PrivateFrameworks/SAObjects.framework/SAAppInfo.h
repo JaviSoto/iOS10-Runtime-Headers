@@ -13,6 +13,7 @@
 @property (nonatomic) bool betaApp;
 @property (nonatomic, copy) NSString *carPlayAlternativeDisplayName;
 @property (nonatomic, copy) NSDictionary *carPlayAlternativeDisplayNameMap;
+@property (nonatomic, copy) NSString *containerName;
 @property (nonatomic, copy) NSString *displayAppName;
 @property (nonatomic, copy) NSDictionary *displayAppNameMap;
 @property (nonatomic, retain) SAGlance *glance;
@@ -42,6 +43,7 @@
 - (bool)betaApp;
 - (id)carPlayAlternativeDisplayName;
 - (id)carPlayAlternativeDisplayNameMap;
+- (id)containerName;
 - (id)displayAppName;
 - (id)displayAppNameMap;
 - (id)encodedClassName;
@@ -62,6 +64,7 @@
 - (void)setBetaApp:(bool)arg1;
 - (void)setCarPlayAlternativeDisplayName:(id)arg1;
 - (void)setCarPlayAlternativeDisplayNameMap:(id)arg1;
+- (void)setContainerName:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
 - (void)setGlance:(id)arg1;

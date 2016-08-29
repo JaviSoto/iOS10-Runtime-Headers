@@ -9,6 +9,7 @@
     CKServerChangeToken * _previousServerChangeToken;
     id /* block */  _recordZoneWithIDChangedBlock;
     id /* block */  _recordZoneWithIDWasDeletedBlock;
+    NSMutableArray * _requestInfos;
     unsigned long long  _resultsLimit;
     CKServerChangeToken * _serverChangeToken;
     id /* block */  _serverChangeTokenUpdatedBlock;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
 @property (nonatomic, copy) id /* block */ recordZoneWithIDChangedBlock;
 @property (nonatomic, copy) id /* block */ recordZoneWithIDWasDeletedBlock;
+@property (nonatomic, retain) NSMutableArray *requestInfos;
 @property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
 @property (nonatomic, copy) id /* block */ serverChangeTokenUpdatedBlock;
@@ -48,6 +50,7 @@
 - (id)previousServerChangeToken;
 - (id /* block */)recordZoneWithIDChangedBlock;
 - (id /* block */)recordZoneWithIDWasDeletedBlock;
+- (id)requestInfos;
 - (unsigned long long)resultsLimit;
 - (id)serverChangeToken;
 - (id /* block */)serverChangeTokenUpdatedBlock;
@@ -57,6 +60,7 @@
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setRecordZoneWithIDChangedBlock:(id /* block */)arg1;
 - (void)setRecordZoneWithIDWasDeletedBlock:(id /* block */)arg1;
+- (void)setRequestInfos:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setServerChangeToken:(id)arg1;
 - (void)setServerChangeTokenUpdatedBlock:(id /* block */)arg1;

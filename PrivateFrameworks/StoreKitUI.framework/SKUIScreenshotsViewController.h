@@ -46,8 +46,9 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (id)slideshowViewController:(id)arg1 imageAtIndex:(long long)arg2;
-- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2 size:(struct CGSize { double x1; double x2; }*)arg3;
+- (id)slideshowViewController:(id)arg1 dataConsumerAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 placeholderImageAtIndex:(long long)arg2;
 - (id)slideshowViewController:(id)arg1 poppedImageViewAtIndex:(long long)arg2;
 - (void)slideshowViewController:(id)arg1 scrollToImageAtIndex:(long long)arg2;
 - (id)viewForZoomingInScrollView:(id)arg1;

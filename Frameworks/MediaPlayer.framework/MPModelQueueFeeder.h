@@ -7,6 +7,7 @@
     NSHashTable * _activeModelObjectPlaybackItemMetadataInstances;
     id /* block */  _finalTracklistLoadingCompletionHandler;
     bool  _hasFoundStartItem;
+    bool  _hasLoadedFinalResponse;
     NSOperationQueue * _operationQueue;
     MPPlaceholderAVItem * _placeholderAVItem;
     MPModelRequest * _request;
@@ -68,6 +69,7 @@
 - (bool)hasValidItemAtIndex:(unsigned long long)arg1;
 - (id)identifierAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
+- (unsigned long long)indexOfMediaItem:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
@@ -78,11 +80,13 @@
 - (id)mediaItemAtIndex:(unsigned long long)arg1;
 - (void)modelObjectPlaybackItemMetadataWillDeallocate:(id)arg1;
 - (id)modelPlayEvent;
+- (id)playbackInfoForIdentifier:(id)arg1;
 - (bool)playerPreparesItemsForPlaybackAsynchronously;
 - (long long)realRepeatType;
 - (long long)realShuffleType;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)reloadWithPlaybackContext:(id)arg1 requireFinalTracklist:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)restoreState:(id /* block */)arg1;
 - (bool)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
 - (unsigned long long)shuffleController:(id)arg1 countOfItemIdentifier:(id)arg2 withMaximumCount:(unsigned long long)arg3;
 - (id)shuffleController:(id)arg1 identifierForItemAtIndex:(unsigned long long)arg2;

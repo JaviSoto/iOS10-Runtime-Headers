@@ -11,7 +11,7 @@
 - (oneway void)xpc_cancelCountdown;
 - (oneway void)xpc_endBurstCaptureWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (oneway void)xpc_endVideo;
-- (oneway void)xpc_fetchCurrentState:(void *)arg1; // needs 1 arg types, found 10: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, float, int, int, int, void*
+- (oneway void)xpc_fetchCurrentState:(void *)arg1; // needs 1 arg types, found 14: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, float, int, int, int, int, int, int, bool, void*
 - (oneway void)xpc_setCameraMode:(void *)arg1 interruptCapture:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: int, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (oneway void)xpc_setFlashMode:(int)arg1;
 - (oneway void)xpc_setFocusPoint:(NSValue *)arg1;

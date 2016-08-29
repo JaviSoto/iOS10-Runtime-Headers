@@ -9,6 +9,16 @@
     bool  _isDisplayingVideo;
     bool  _isReadyForVideoDisplay;
     UIImage * _placeholderImage;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _placeholderImageContentsRect;
     UIImageView * _previewImageView;
     NSArray * _previewImageViewConstraints;
     _PUVideoView * _videoView;
@@ -22,6 +32,7 @@
 @property (nonatomic) bool isDisplayingVideo;
 @property (nonatomic) bool isReadyForVideoDisplay;
 @property (nonatomic, retain) UIImage *placeholderImage;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } placeholderImageContentsRect;
 @property (nonatomic) unsigned long long videoViewContentMode;
 
 - (void).cxx_destruct;
@@ -41,12 +52,14 @@
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)placeholderImage;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })placeholderImageContentsRect;
 - (void)setAllowsEdgeAntialiasing:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsDisplayingPlaceholder:(bool)arg1;
 - (void)setIsDisplayingVideo:(bool)arg1;
 - (void)setIsReadyForVideoDisplay:(bool)arg1;
 - (void)setPlaceholderImage:(id)arg1;
+- (void)setPlaceholderImageContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setVideoViewContentMode:(unsigned long long)arg1;
 - (unsigned long long)videoViewContentMode;
 

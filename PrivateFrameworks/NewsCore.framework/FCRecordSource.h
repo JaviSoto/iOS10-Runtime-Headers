@@ -22,15 +22,18 @@
 @property (nonatomic, readonly) FCKeyValueStore *localStore;
 @property (readonly) Class superclass;
 
++ (id)canaryRecordName;
 + (id)changeTagFromCKRecord:(id)arg1;
-+ (unsigned long long)dataSizeLimit;
 + (unsigned long long)defaultFetchOperationCachePolicy;
 + (double)defaultFetchOperationMaximumCachedAge;
++ (unsigned long long)highThresholdDataSizeLimit;
 + (id)identifierFromCKRecord:(id)arg1;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)modificationDateFromCKRecord:(id)arg1;
 + (id)recordType;
 + (id)storeFilename;
 + (unsigned long long)storeVersion;
++ (bool)supportsDeletions;
 
 - (void).cxx_destruct;
 - (id)_ckRecordIDFromIdentifier:(id)arg1;
@@ -46,9 +49,10 @@
 - (id)cacheCoordinator;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
 - (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
+- (id)cachedRecordsWithIDs:(id)arg1;
 - (id)contentDatabase;
 - (id)desiredKeys;
-- (void)enableFlushing;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)fetchCoordinator;
 - (void)fetchCoordinator:(id)arg1 addFetchOperation:(id)arg2 context:(id)arg3;
 - (id)fetchCoordinator:(id)arg1 fetchOperationForKeys:(id)arg2 context:(id)arg3 qualityOfService:(long long)arg4 relativePriority:(long long)arg5;

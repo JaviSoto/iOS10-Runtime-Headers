@@ -16,6 +16,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void)_debug_fetchAllAvailableExperiments:(id /* block */)arg1;
+- (void)_debug_setActiveExperimentBranchDictionaryRepresentation:(id)arg1;
 - (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
 - (void)dealloc;
 - (id)delegate;

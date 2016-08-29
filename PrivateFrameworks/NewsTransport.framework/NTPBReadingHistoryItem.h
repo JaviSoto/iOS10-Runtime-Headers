@@ -6,9 +6,11 @@
     NSString * _articleID;
     unsigned int  _flags;
     struct { 
+        unsigned int maxVersionRead : 1; 
         unsigned int flags : 1; 
     }  _has;
     NTPBDate * _lastVisitedDate;
+    unsigned long long  _maxVersionRead;
 }
 
 @property (nonatomic, readonly, copy) NSString *articleID;
@@ -24,10 +26,13 @@
 @property (nonatomic, readonly) bool hasArticleID;
 @property (nonatomic) bool hasFlags;
 @property (nonatomic, readonly) bool hasLastVisitedDate;
+@property (nonatomic) bool hasMaxVersionRead;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSDate *lastVisitedAt;
 @property (nonatomic, retain) NTPBDate *lastVisitedDate;
+@property (nonatomic, readonly) unsigned long long maxVersionRead;
+@property (nonatomic) unsigned long long maxVersionRead;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
@@ -41,15 +46,19 @@
 - (bool)hasArticleID;
 - (bool)hasFlags;
 - (bool)hasLastVisitedDate;
+- (bool)hasMaxVersionRead;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)lastVisitedDate;
+- (unsigned long long)maxVersionRead;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setHasFlags:(bool)arg1;
+- (void)setHasMaxVersionRead:(bool)arg1;
 - (void)setLastVisitedDate:(id)arg1;
+- (void)setMaxVersionRead:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

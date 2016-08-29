@@ -42,6 +42,7 @@
 - (bool)isReset;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (void)reset;
+- (void)resetAfterStepError;
 - (id)retainedTemporaryBoundObject:(id)arg1;
 - (void)setReset:(bool)arg1;
 - (void)setTemporaryBoundObjects:(id)arg1;

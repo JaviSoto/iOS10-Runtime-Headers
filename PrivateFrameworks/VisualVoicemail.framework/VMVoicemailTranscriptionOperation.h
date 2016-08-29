@@ -11,6 +11,7 @@
     SFSpeechRecognitionTask * _task;
     double  _timeSinceLastReceivedResult;
     double  _timeout;
+    id /* block */  _timeoutBlock;
 }
 
 @property (nonatomic) SFSpeechRecognizer *recognizer;
@@ -19,16 +20,19 @@
 @property (nonatomic, retain) SFSpeechRecognitionTask *task;
 @property (nonatomic) double timeSinceLastReceivedResult;
 @property (nonatomic) double timeout;
+@property (nonatomic, copy) id /* block */ timeoutBlock;
 
 - (void).cxx_destruct;
 - (void)_completeOperation;
 - (void)cancel;
+- (void)cancelTimeout;
 - (void)dealloc;
 - (id)initWithRecognizer:(id)arg1 URL:(id)arg2 forceOfflineRecognition:(bool)arg3 resultBlock:(id /* block */)arg4;
 - (bool)isAsynchronous;
 - (bool)isExecuting;
 - (bool)isFinished;
 - (id)recognizer;
+- (void)registerForTimeoutCancellingPreviousIfNecessary;
 - (id)request;
 - (id /* block */)resultBlock;
 - (void)setRecognizer:(id)arg1;
@@ -37,9 +41,11 @@
 - (void)setTask:(id)arg1;
 - (void)setTimeSinceLastReceivedResult:(double)arg1;
 - (void)setTimeout:(double)arg1;
+- (void)setTimeoutBlock:(id /* block */)arg1;
 - (void)start;
 - (id)task;
 - (double)timeSinceLastReceivedResult;
 - (double)timeout;
+- (id /* block */)timeoutBlock;
 
 @end

@@ -27,6 +27,9 @@
 @property (nonatomic) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } slowMotionTimeRange;
 @property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } slowMotionTimeRange;
 
+// Image: /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
+
++ (id)defaultSlowMotionAdjustmentsForAsset:(id)arg1;
 + (float)defaultSlowMotionRateForNominalFrameRate:(float)arg1;
 + (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })defaultSlowMotionTimeRangeForDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 + (id)defaultVideoAdjustmentsURLForVideoURL:(id)arg1;
@@ -52,5 +55,9 @@
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })slowMotionRampOut;
 - (float)slowMotionRate;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })slowMotionTimeRange;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)videoAdjustmentsFromAssetAdjustmentsIfRecognized:(id)arg1;
 
 @end

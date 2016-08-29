@@ -6,13 +6,17 @@
     NSLock * _buttonDelegateChangeLock;
     NSMutableDictionary * _buttonEventHandlers;
     struct __IOHIDEventSystemClient { } * _buttonHIDSystemClient;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     NSObject<OS_dispatch_queue> * _mButtonEventQueue;
+    DSTestAutomation * _testAutomation;
 }
 
 @property (nonatomic, retain) NSLock *buttonDelegateChangeLock;
 @property (nonatomic, retain) NSMutableDictionary *buttonEventHandlers;
 @property (nonatomic) struct __IOHIDEventSystemClient { }*buttonHIDSystemClient;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *mButtonEventQueue;
+@property (nonatomic, retain) DSTestAutomation *testAutomation;
 
 + (id)sharedInstance;
 
@@ -22,6 +26,7 @@
 - (id)buttonEventHandlers;
 - (struct __IOHIDEventSystemClient { }*)buttonHIDSystemClient;
 - (void)cleanUpSystemClient;
+- (id)delegateQueue;
 - (id)handlersForButton:(unsigned long long)arg1;
 - (id)init;
 - (id)mButtonEventQueue;
@@ -30,9 +35,12 @@
 - (void)setButtonDelegateChangeLock:(id)arg1;
 - (void)setButtonEventHandlers:(id)arg1;
 - (void)setButtonHIDSystemClient:(struct __IOHIDEventSystemClient { }*)arg1;
+- (void)setDelegateQueue:(id)arg1;
 - (void)setMButtonEventQueue:(id)arg1;
+- (void)setTestAutomation:(id)arg1;
 - (bool)startEventManagerWithPriority:(long long)arg1;
 - (void)stopEventManager;
+- (id)testAutomation;
 - (int)triggerEventWithHandlers:(id)arg1 event:(unsigned long long)arg2;
 
 @end

@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INTermsAndConditions : NSObject <NSCopying, NSSecureCoding> {
+@interface INTermsAndConditions : NSObject <INTermsAndConditionsExport, NSCopying, NSSecureCoding> {
     NSString * _localizedTermsAndConditionsText;
     NSURL * _privacyPolicyURL;
     NSURL * _termsAndConditionsURL;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *localizedTermsAndConditionsText;
 @property (nonatomic, readonly) NSURL *privacyPolicyURL;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *termsAndConditionsURL;
 
 + (bool)supportsSecureCoding;

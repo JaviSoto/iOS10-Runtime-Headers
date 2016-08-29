@@ -64,7 +64,8 @@
 - (void)backgroundSessionDidFinishAppWake:(id)arg1 reply:(id /* block */)arg2;
 - (void)backgroundSessionDidStartAppWake:(id)arg1 reply:(id /* block */)arg2;
 - (void)backgroundTask:(unsigned long long)arg1 _willSendRequestForEstablishedConnection:(id)arg2 reply:(id /* block */)arg3;
-- (void)backgroundTask:(unsigned long long)arg1 didCompleteWithError:(id)arg2 timingData:(id)arg3 reply:(id /* block */)arg4;
+- (void)backgroundTask:(unsigned long long)arg1 didCompleteWithError:(id)arg2 info:(id)arg3 reply:(id /* block */)arg4;
+- (void)backgroundTask:(unsigned long long)arg1 didFinishCollectingMetrics:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned long long)arg1 didReceiveChallenge:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3;
 - (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3 reply:(id /* block */)arg4;

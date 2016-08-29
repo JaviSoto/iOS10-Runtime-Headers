@@ -4,10 +4,12 @@
 
 @interface HUQuickControlSliderValueOverlayView : UIView {
     bool  _off;
+    bool  _showsSecondGrabber;
 }
 
 @property (nonatomic, readonly) CAShapeLayer *layer;
 @property (getter=isOff, nonatomic) bool off;
+@property (nonatomic) bool showsSecondGrabber;
 
 + (Class)layerClass;
 
@@ -18,5 +20,7 @@
 - (bool)isOff;
 - (void)layoutSubviews;
 - (void)setOff:(bool)arg1;
+- (void)setShowsSecondGrabber:(bool)arg1;
+- (bool)showsSecondGrabber;
 
 @end

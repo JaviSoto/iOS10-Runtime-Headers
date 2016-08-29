@@ -6,8 +6,8 @@
     NSMutableDictionary * _presenterMessengersByID;
     NSMutableDictionary * _presentersByID;
     NSMutableArray * _providerListeners;
-    NSMutableDictionary * _providerMessengersByID;
-    NSMutableDictionary * _providersByID;
+    NSMapTable * _providerMessengersByID;
+    NSMutableSet * _providers;
     NSObject<OS_dispatch_queue> * _queue;
     NSXPCConnection * _server;
 }

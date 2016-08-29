@@ -57,7 +57,7 @@
 - (void)_queue_generateFirstRunDataForDemoPerson:(id)arg1;
 - (void)_queue_initDemoDataSampleGenerators;
 - (bool)_queue_loadDemoDataSampleGeneratorState;
-- (void)_queue_runDemoDataGeneratorForDemoPerson:(id)arg1 initialGenerationTime:(double)arg2 currentDate:(id)arg3;
+- (void)_queue_runDemoDataGeneratorForDemoPerson:(id)arg1 currentDate:(id)arg2;
 - (void)_queue_setupDemoDataSampleGenerators;
 - (bool)_queue_unarchiveFromDirectoryPath:(id)arg1;
 - (void)_runAchievementDoctorWithCompletion:(id /* block */)arg1;

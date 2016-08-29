@@ -13,6 +13,7 @@
     bool  _editableMessage;
     NSString * _eventICSRepresentation;
     NSString * _eventUniqueID;
+    bool  _hasLoadedBestAlternativePart;
     bool  _hasLoadedCompleteMessage;
     bool  _hasLoadedSomeContent;
     MFObservable<MFObserver> * _inputObservable;
@@ -32,6 +33,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isDraftMessage, nonatomic, readonly) bool draftMessage;
 @property (getter=isEditableMessage, nonatomic, readonly) bool editableMessage;
+@property (nonatomic) bool hasLoadedBestAlternativePart;
 @property (nonatomic) bool hasLoadedCompleteMessage;
 @property (nonatomic) bool hasLoadedSomeContent;
 @property (readonly) unsigned long long hash;
@@ -61,9 +63,11 @@
 - (unsigned long long)contentOffset;
 - (void)dealloc;
 - (id)description;
+- (bool)hasLoadedBestAlternativePart;
 - (bool)hasLoadedCompleteMessage;
 - (bool)hasLoadedSomeContent;
 - (id)initWithMessage:(id)arg1 attachmentManager:(id)arg2;
+- (id)initWithMessage:(id)arg1 attachmentManager:(id)arg2 analyzeMessage:(bool)arg3;
 - (bool)isDraftMessage;
 - (bool)isEditableMessage;
 - (bool)isOutgoingMessage;
@@ -75,6 +79,7 @@
 - (id)onScheduler:(id)arg1 addLoadObserver:(id /* block */)arg2;
 - (void)processMeetingInvitations:(id)arg1;
 - (void)setContentOffset:(unsigned long long)arg1;
+- (void)setHasLoadedBestAlternativePart:(bool)arg1;
 - (void)setHasLoadedCompleteMessage:(bool)arg1;
 - (void)setHasLoadedSomeContent:(bool)arg1;
 - (void)setLoadedPart:(id)arg1;

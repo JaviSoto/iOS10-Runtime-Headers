@@ -14,6 +14,7 @@
     PXLabelSpec * _spec;
     NSString * _text;
     long long  _verticalAlignment;
+    UIVisualEffectView * _visualEffectView;
 }
 
 @property (nonatomic, retain) PXLabelSpec *spec;

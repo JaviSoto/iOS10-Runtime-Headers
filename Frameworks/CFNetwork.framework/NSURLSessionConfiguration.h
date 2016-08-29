@@ -43,6 +43,9 @@
 @property bool _forcesNewConnections;
 @property bool _infersDiscretionaryFromOriginatingClient;
 @property (copy) NSString *_ledBellyServiceIdentifier;
+@property double _longLivedConnectionCacheCellPurgeTimeout;
+@property double _longLivedConnectionCachePurgeTimeout;
+@property bool _onBehalfOfPairedDevice;
 @property (copy) NSDictionary *_overriddenDelegateOptions;
 @property bool _overridesBackgroundSessionAutoRedirect;
 @property bool _performsEVCertCheck;

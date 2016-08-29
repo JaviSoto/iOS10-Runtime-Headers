@@ -91,6 +91,7 @@
 - (id)_init;
 - (bool)_isCompatibleWithDimension:(id)arg1;
 - (bool)_isCompatibleWithUnit:(id)arg1;
+- (bool)_isMetricDistance;
 - (void)_reduceIfNecessaryWithCycleSet:(id)arg1;
 - (double)_reducedProportionalSize;
 - (double)_valueByConvertingValue:(double)arg1 toUnit:(id)arg2;

@@ -16,10 +16,12 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (oneway void)addBlockingEntriesWithPhoneNumbers:(id)arg1;
-- (oneway void)addIdentificationEntriesWithPhoneNumbers:(id)arg1 labels:(id)arg2;
+- (oneway void)addBlockingEntriesWithData:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)addIdentificationEntriesWithData:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)completeRequestWithReply:(id /* block */)arg1;
 - (id)delegate;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (void)requestFailedWithError:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

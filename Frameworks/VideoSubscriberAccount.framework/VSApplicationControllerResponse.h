@@ -16,6 +16,7 @@
 - (id)SAMLResponse;
 - (id)SAMLResponseString;
 - (id)accountAuthentication;
+- (id)description;
 - (void)setAccountAuthentication:(id)arg1;
 - (void)setSAMLResponse:(id)arg1;
 - (void)setSAMLResponseString:(id)arg1;

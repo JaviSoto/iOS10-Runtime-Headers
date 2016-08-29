@@ -44,6 +44,7 @@
 - (id)candidatesForOperation:(id)arg1;
 - (void)clearCache;
 - (void)clearLearningDictionary;
+- (void)clearLeftDocumentContext;
 - (void)clearObservers;
 - (void)commitPunctuationSurface:(id)arg1;
 - (void)commitSurface:(id)arg1;
@@ -71,6 +72,7 @@
 - (void)performOperationAsync:(id)arg1;
 - (void)performOperationAsync:(id)arg1 withBackgroundActivityAssertion:(bool)arg2;
 - (void)releaseBackgroundActivityAssertion;
+- (void)resetMecabraEnvironment;
 - (void)resetPreviousWord;
 - (void)saveLearningDictionary;
 - (void)setAutoCorrects:(bool)arg1;

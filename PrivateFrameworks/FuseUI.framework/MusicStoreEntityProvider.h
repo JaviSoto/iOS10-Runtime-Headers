@@ -55,7 +55,6 @@
 - (id)indexPathForStoreItemMetadataContext:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)newDownloadInformationController;
 - (unsigned long long)numberOfEntitiesInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfIndexBarEntries;
 - (unsigned long long)numberOfSections;

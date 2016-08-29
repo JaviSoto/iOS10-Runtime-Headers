@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *format;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNumber *hf_effectiveStepValue;
+@property (nonatomic, readonly) bool hf_isNumeric;
 @property (nonatomic, copy) NSString *manufacturerDescription;
 @property (nonatomic, retain) NSNumber *maxLength;
 @property (nonatomic, retain) NSNumber *maximumValue;
@@ -62,9 +63,13 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
+- (id)hf_characteristicValueForPercentage:(double)arg1;
 - (id)hf_effectiveStepValue;
 - (bool)hf_isEqualToMetadata:(id)arg1;
+- (bool)hf_isNumeric;
+- (bool)hf_isValidValue:(id)arg1;
 - (id)hf_normalizedValueForValue:(id)arg1;
+- (id)hf_percentageForCharacteristicValue:(id)arg1;
 - (id)hf_prettyDescription;
 
 @end

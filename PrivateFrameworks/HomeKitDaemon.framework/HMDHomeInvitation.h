@@ -40,6 +40,7 @@
 - (void)accept;
 - (id)clientQueue;
 - (void)decline;
+- (id)describeWithFormat;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id /* block */)expirationHandler;

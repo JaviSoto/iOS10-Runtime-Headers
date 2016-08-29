@@ -41,8 +41,8 @@
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-- (bool)synchronizedAddIfAbsent:(id)arg1;
-- (void)synchronizedRemoveObject:(id)arg1;
+- (bool)CKSynchronizedAddIfAbsent:(id)arg1;
+- (void)CKSynchronizedRemoveObject:(id)arg1;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -74,6 +74,10 @@
 - (void)_DAS_addOrReplaceObject:(id)arg1;
 - (void)_DAS_addOrReplaceObjectsFromArray:(id)arg1;
 - (void)_DAS_unionSetOverridingExisting:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
+- (void)fm_safeAddObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 

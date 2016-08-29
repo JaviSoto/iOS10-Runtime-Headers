@@ -4,6 +4,7 @@
 
 @interface NSSQLiteAdapter : NSObject {
     struct __CFDictionary { } * _cachedDeleteTriggersByEntity;
+    int  _lock;
     NSSQLModel * _model;
     NSSQLCore * _sqlCore;
 }
@@ -12,6 +13,8 @@
 + (id)generateStatementForCheckingUniqueAttributesOnObjects:(id)arg1 usingModel:(id)arg2;
 + (id)generateSubselectForColumn:(id)arg1 givenObjects:(id)arg2;
 
+- (void)_cacheTriggers:(id)arg1 forEntity:(id)arg2;
+- (id)_cachedTriggersForEntity:(id)arg1;
 - (void)_generateFragmentsForEntity:(id)arg1 inArray:(id)arg2;
 - (id)_statementForFetchRequestContext:(id)arg1 ignoreInheritance:(bool)arg2 countOnly:(bool)arg3 nestingLevel:(unsigned int)arg4;
 - (void)_useModel:(id)arg1;

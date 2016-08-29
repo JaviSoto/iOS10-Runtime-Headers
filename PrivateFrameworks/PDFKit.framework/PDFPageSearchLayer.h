@@ -16,5 +16,6 @@
 - (void)setDisplayBox:(long long)arg1;
 - (void)setPage:(id)arg1;
 - (void)setSelection:(id)arg1;
+- (void)updateRotation;
 
 @end

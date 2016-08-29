@@ -10,6 +10,7 @@
     bool  _monitoringLocaleAndTimeChanges;
     UNSNotificationRepository * _notificationRepository;
     UNSPendingNotificationRepository * _pendingNotificationRepository;
+    NSMutableArray * _pendingNotificationsAwaitingDelivery;
     NSObject<OS_dispatch_queue> * _queue;
     bool  _requiresLocalNotifications;
     bool  _userNotificationsEnabled;
@@ -52,5 +53,6 @@
 - (void)removePendingNotificationRecordsWithIdentifiers:(id)arg1;
 - (void)setPendingNotificationRecords:(id)arg1;
 - (void)setUserNotificationsEnabled:(bool)arg1;
+- (id)undeliveredNotificationRecords;
 
 @end

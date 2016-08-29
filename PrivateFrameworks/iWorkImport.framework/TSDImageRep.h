@@ -58,6 +58,7 @@
     NSObject<OS_dispatch_queue> * mSizedImageAccessQueue;
     bool  mSizedImageHasAdjustmentsBakedIn;
     bool  mSizedImageHasMaskBakedIn;
+    bool  mSizedImageIsWide;
     struct CGPath { } * mSizedImageMaskPath;
     long long  mSizedImageOrientation;
     struct CGSize { 

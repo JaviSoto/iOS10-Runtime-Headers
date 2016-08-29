@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartStyleState : TSCHPropertyValueStorageContainer <NSCopying> {
-    TSCHChartStyleState * themeChartStyleState;
+    TSCHChartStyleState * _themeChartStyleState;
 }
 
 @property (nonatomic, copy) NSMutableArray *categoryAxisStyles;
@@ -27,6 +27,7 @@
 - (id)chartStyle;
 - (void)checkParagraphStyleIndicies;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (void)enumerateSemanticTagsAndUsagesWithPropertySetType:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)fallbackSemanticTagForSemanticTag:(id)arg1;
@@ -39,7 +40,6 @@
 - (id)p_formatSemanticTag:(id)arg1;
 - (id)p_locationOfStyleInNetwork:(id)arg1;
 - (id)p_propertySetWithPropertySetType:(long long)arg1 forStyle:(id)arg2;
-- (void)p_replaceReferencedStylesInMap:(id)arg1 withMapper:(id)arg2;
 - (bool)paragraphStyleIndexesAreValid;
 - (id)paragraphStyles;
 - (id)referenceLineStyles;

@@ -3,11 +3,13 @@
  */
 
 @interface PHObjectChangeDetails : NSObject {
+    bool  _assetCollectionTitlePropertiesChanged;
     bool  _assetContentChanged;
     PHObject * _objectAfterChanges;
     PHObject * _objectBeforeChanges;
 }
 
+@property (nonatomic, readonly) bool assetCollectionTitlePropertiesChanged;
 @property (readonly) bool assetContentChanged;
 @property (readonly) PHObject *objectAfterChanges;
 @property (readonly) PHObject *objectBeforeChanges;
@@ -15,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)_calculateDiffs;
+- (bool)assetCollectionTitlePropertiesChanged;
 - (bool)assetContentChanged;
 - (id)description;
 - (id)initWithPHObject:(id)arg1;

@@ -3,8 +3,10 @@
  */
 
 @interface KCellularLtePdcchStateStats : PBCodable <NSCopying> {
+    unsigned int  _durationMs;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int durationMs : 1; 
     }  _has;
     struct { 
         unsigned int *list; 
@@ -24,6 +26,8 @@
     unsigned long long  _timestamp;
 }
 
+@property (nonatomic) unsigned int durationMs;
+@property (nonatomic) bool hasDurationMs;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic, readonly) unsigned int*pccPdcchStates;
 @property (nonatomic, readonly) unsigned long long pccPdcchStatesCount;
@@ -44,6 +48,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)durationMs;
+- (bool)hasDurationMs;
 - (bool)hasTimestamp;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
@@ -58,6 +64,8 @@
 - (unsigned int)scc1PdcchStateAtIndex:(unsigned long long)arg1;
 - (unsigned int*)scc1PdcchStates;
 - (unsigned long long)scc1PdcchStatesCount;
+- (void)setDurationMs:(unsigned int)arg1;
+- (void)setHasDurationMs:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setPccPdcchStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setScc0PdcchStates:(unsigned int*)arg1 count:(unsigned long long)arg2;

@@ -7,6 +7,7 @@
     NSString * _branchName;
     NSString * _experimentId;
     NSString * _experimentName;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *branchLabel;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) bool hasBranchName;
 @property (nonatomic, readonly) bool hasExperimentId;
 @property (nonatomic, readonly) bool hasExperimentName;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (id)branchLabel;
 - (id)branchName;
@@ -39,6 +41,7 @@
 - (void)setBranchName:(id)arg1;
 - (void)setExperimentId:(id)arg1;
 - (void)setExperimentName:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

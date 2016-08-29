@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (id)db;
 - (id)init;
-- (id)initWithDatabaseDirectoryPath:(id)arg1 enablePeriodicTasks:(bool)arg2;
+- (id)initWithDatabaseDirectoryPath:(id)arg1 reportsDirectoryPath:(id)arg2 enablePeriodicTasks:(bool)arg3 enterSandbox:(bool)arg4;
 - (id)listener;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)recordNumbers:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;

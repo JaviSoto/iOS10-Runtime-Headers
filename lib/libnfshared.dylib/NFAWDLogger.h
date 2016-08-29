@@ -7,6 +7,7 @@
     AWDServerConnection * _awdServer;
     NSObject<OS_dispatch_queue> * _awdSubmissionQueue;
     NSData * _deviceExceptionUuid;
+    unsigned long long  _middlewareExceptionCount;
     unsigned long long  _previousTransactionState;
     unsigned long long  _previousVASTransactionState;
     NSData * _tsmUuid;
@@ -26,6 +27,7 @@
 - (void)enableQueryMetricsListener;
 - (id)generateUUID;
 - (unsigned long long)getTimestamp;
+- (bool)incrementMiddlewareExceptionCountWithReset:(bool)arg1;
 - (id)init;
 - (void)postAWDAPNReceived;
 - (void)postAWDCRSActivationTimerExpiredWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
@@ -37,6 +39,7 @@
 - (void)postAWDFieldEventWithFieldOn:(bool)arg1 withTechnology:(unsigned int)arg2;
 - (void)postAWDHCIEndOfTransactionEventWithParameters:(id)arg1;
 - (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
+- (void)postAWDMiddlewareException:(unsigned int)arg1 errorType:(unsigned int)arg2 errorCode:(unsigned int)arg3 checkMaxExceptionCounter:(bool)arg4;
 - (void)postAWDPLLUnlockEvent;
 - (void)postAWDRestrictedModeFromContactlessMode:(bool)arg1;
 - (void)postAWDSESelectEventWithAID:(id)arg1;

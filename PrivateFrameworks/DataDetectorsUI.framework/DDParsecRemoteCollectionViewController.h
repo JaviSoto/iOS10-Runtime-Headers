@@ -14,10 +14,12 @@
 
 - (void).cxx_destruct;
 - (bool)canBecomeFirstResponder;
+- (void)getStatusBarHidden:(id /* block */)arg1;
 - (id)hostSideDelegate;
 - (void)interactionEnded;
 - (void)interactionEndedWithPunchout:(bool)arg1;
 - (void)openParsecURL:(id)arg1;
+- (void)openTrailerPunchout:(id)arg1;
 - (void)setHostSideDelegate:(id)arg1;
 - (void)showingErrorView:(bool)arg1;
 - (void)showingFTE:(bool)arg1;

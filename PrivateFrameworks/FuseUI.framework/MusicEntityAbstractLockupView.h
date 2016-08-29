@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityAbstractLockupView : UIView <MPUTextDrawingCacheInvalidationObserver, MusicArtworkViewDelegate, MusicEntityViewPlaybackStatusObserving> {
+@interface MusicEntityAbstractLockupView : UIView <MPUTextDrawingCacheInvalidationObserver, MusicArtworkViewDelegate> {
     bool  _artworkConfigurationBlockEnabled;
     UIImage * _artworkOverrideImage;
     MusicArtworkView * _artworkView;
@@ -16,8 +16,6 @@
     double  _lastUsedArtworkViewAspectRatio;
     MusicPlayButton * _playButton;
     double  _playbackCurrentTimeOriginatingTime;
-    MusicEntityPlaybackProgressApplier * _playbackProgressApplier;
-    MusicEntityPlaybackStatus * _playbackStatus;
     NSMutableArray * _recycledTextButtons;
     NSMutableArray * _recycledTextDrawingViews;
     NSMapTable * _textDescriptorsToRecycledTextButtons;
@@ -38,7 +36,6 @@
 @property (readonly) unsigned long long hash;
 @property (getter=isHighlighted, nonatomic, readonly) bool highlighted;
 @property (getter=_playButton, nonatomic, readonly) MusicPlayButton *playButton;
-@property (nonatomic, copy) MusicEntityPlaybackStatus *playbackStatus;
 @property (readonly) Class superclass;
 @property (getter=isUsingPlaceholderArt, nonatomic, readonly) bool usingPlaceholderArt;
 
@@ -46,7 +43,6 @@
 
 - (void).cxx_destruct;
 - (id)_addButton;
-- (void)_applyPlaybackStatus:(id)arg1;
 - (id)_artworkView;
 - (void)_artworkViewImageDidChange;
 - (void)_configureArtworkCatalog:(id)arg1;
@@ -62,12 +58,9 @@
 - (void)_handleArtworkImageUpdate:(id)arg1 idealArtworkSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_handleArtworkViewTapped;
 - (void)_handleContentDescriptorDidInvalidate:(id)arg1;
-- (void)_handlePlayButtonTappedWithAction:(unsigned long long)arg1;
 - (void)_layoutArtworkViewWithAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layoutDirection:(long long)arg2 usingBlock:(id /* block */)arg3;
-- (void)_layoutPlayButtonUsingBlock:(id /* block */)arg1;
 - (id)_newArtworkView;
 - (id)_playButton;
-- (void)_playButtonTapped:(id)arg1;
 - (void)_playbackStatusDidChange:(id)arg1;
 - (void)_recycleTextViewsForTextDescriptors:(id)arg1;
 - (void)_setContentDescriptor:(id)arg1;
@@ -77,18 +70,15 @@
 - (id)_viewForTextDescriptor:(id)arg1;
 - (id)artworkOverrideImage;
 - (void)dealloc;
-- (void)didMoveToWindow;
 - (id)entityValueProvider;
 - (bool)isEntityDisabled;
 - (bool)isHighlighted;
 - (bool)isUsingPlaceholderArt;
 - (void)musicArtworkViewDidTouchUpInside:(id)arg1;
-- (id)playbackStatus;
 - (void)setArtworkOverrideImage:(id)arg1;
 - (void)setEntityDisabled:(bool)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
-- (void)setPlaybackStatus:(id)arg1;
 - (void)textDrawingCacheWasInvalidated:(id)arg1;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;

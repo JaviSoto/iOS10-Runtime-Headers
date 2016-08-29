@@ -25,8 +25,10 @@
     bool  _disableTapGesture;
     bool  _forceFlexibleWidth;
     bool  _hasEverBuilt;
+    bool  _hasValidPresentationProperties;
     NSMutableArray * _highlightGestureRecognizers;
     UIView * _highlightView;
+    LPiTunesPlaybackInformation * _iTunesPlaybackInformation;
     LPImage * _image;
     bool  _isPreliminary;
     bool  _mayReceiveAdditionalMetadata;
@@ -38,14 +40,12 @@
     UIView * _mediaViewBackground;
     LPLinkMetadata * _metadata;
     bool  _needsRebuild;
+    UIColor * _overrideBackgroundColor;
     LPMetadataProvider * _pendingMetadataProvider;
     LPTextView * _quoteView;
     NSString * _quotedText;
     bool  _shouldAnimateDuringNextBuild;
-    NSString * _storeIdentifier;
-    NSString * _storefrontIdentifier;
     long long  _style;
-    bool  _supportsiTunesPlayback;
     NSMutableArray * _tapGestureRecognizers;
     LPTheme * _theme;
     bool  _usesComputedPresentationProperties;
@@ -78,8 +78,7 @@
 - (bool)_allowsTapToLoad;
 - (long long)_animationOrigin;
 - (bool)_applyCornerRadius;
-- (double)_aspectRatioSnappedToSquareIfNeeded:(double)arg1;
-- (void)_computePresentationPropertiesFromMetadata;
+- (void)_computePresentationPropertiesFromMetadataIfNeeded;
 - (id)_createCaptionBar;
 - (id)_createMediaBottomCaptionBarView;
 - (id)_createMediaTopCaptionBarView;
@@ -95,6 +94,7 @@
 - (void)_highlightLongPressRecognized:(id)arg1;
 - (void)_installTapGestureRecognizers;
 - (void)_invalidateLayout;
+- (void)_invalidatePresentationProperties;
 - (void)_layoutLinkView;
 - (struct CGSize { double x1; double x2; })_layoutLinkViewForSize:(struct CGSize { double x1; double x2; })arg1 applyingLayout:(bool)arg2;
 - (void)_performDeferredLayout;
@@ -140,6 +140,6 @@
 - (void)setSuppressMask:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tapToLoadViewWasTapped:(id)arg1;
-- (void)themeDidChange;
+- (void)themeParametersDidChange;
 
 @end

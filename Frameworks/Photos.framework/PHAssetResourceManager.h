@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (void)_streamWriteDataForAssetResource:(id)arg1 toFile:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_synchronized:(id /* block */)arg1;
+- (id)assetUUIDsWithNonLocalResourcesForAssetUUIDs:(id)arg1 cplResourceTypes:(id)arg2;
 - (void)cancelDataRequest:(int)arg1;
 - (void)dealloc;
 - (id)init;

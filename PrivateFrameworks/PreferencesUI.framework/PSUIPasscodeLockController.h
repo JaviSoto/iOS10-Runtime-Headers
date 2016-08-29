@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIPasscodeLockController : PSListController <DevicePINControllerDelegate> {
+@interface PSUIPasscodeLockController : PSListController <DevicePINControllerDelegate, HMHomeManagerDelegate> {
     bool  _canUnlockWatch;
+    HMHomeManager * _homeManager;
     int  _policyDictatedMaxFailedAttempts;
     PSSpecifier * _voiceDialGroupSpecifier;
     PSSpecifier * _voiceDialSpecifier;
@@ -13,6 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HMHomeManager *homeManager;
 @property (readonly) Class superclass;
 
 + (long long)passcodeGracePeriod;
@@ -37,6 +39,10 @@
 - (id)enabledInLockScreen:(id)arg1;
 - (long long)fingerprintCount;
 - (id)graceValue:(id)arg1;
+- (id)homeControlAccessAllowedWhenLocked:(id)arg1;
+- (id)homeManager;
+- (void)homeManager:(id)arg1 didUpdateAccessAllowedWhenLocked:(bool)arg2;
+- (void)homeManagerDidUpdateHomes:(id)arg1;
 - (id)init;
 - (bool)isAssistantRestricted;
 - (bool)isPasscodeSet;
@@ -47,6 +53,8 @@
 - (void)setCanUnlockWatch:(bool)arg1;
 - (void)setEnabledInLockScreen:(id)arg1 specifier:(id)arg2;
 - (void)setGraceValue:(id)arg1 specifier:(id)arg2;
+- (void)setHomeControlAccessAllowedWhenLocked:(id)arg1 specifier:(id)arg2;
+- (void)setHomeManager:(id)arg1;
 - (void)setVoiceDial:(id)arg1 specifier:(id)arg2;
 - (void)setWallet:(id)arg1 specifier:(id)arg2;
 - (void)setWipeEnabled:(id)arg1 specifier:(id)arg2;

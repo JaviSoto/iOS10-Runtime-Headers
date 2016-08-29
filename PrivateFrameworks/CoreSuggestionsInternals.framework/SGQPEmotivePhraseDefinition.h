@@ -21,7 +21,7 @@
 + (void)seedRng:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (bool)existsInString:(id)arg1;
+- (bool)existsInString:(id)arg1 wordBoundaries:(id)arg2;
 - (id)init;
 - (id)initWithPattern:(id)arg1 predictions:(id)arg2 type:(long long)arg3 matchSent:(bool)arg4 matchReceived:(bool)arg5 phraseId:(unsigned long long)arg6 weight:(double)arg7 anchoredAtWordBoundaries:(bool)arg8;
 - (bool)matchReceived;

@@ -42,6 +42,7 @@
 - (void)_handleFileModifiedError:(id)arg1 forItem:(id)arg2;
 - (unsigned long long)_minBatchSize;
 - (void)_rescheduleThrottlesOutOfQuotaForDefaultOwnerWithAvailableSize:(long long)arg1;
+- (void)_resumeGlobalProgressForZones:(id)arg1 queue:(id)arg2;
 - (void)_scheduleQuotaFetchForDefaultOwner;
 - (void)_scheduleRetries;
 - (void)_setQuotaAvailableForDefaultOwner:(unsigned long long)arg1;

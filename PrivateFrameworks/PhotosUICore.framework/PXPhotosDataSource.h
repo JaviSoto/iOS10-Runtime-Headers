@@ -18,6 +18,7 @@
     unsigned long long  _fetchLimit;
     NSArray * _filterPersons;
     NSPredicate * _filterPredicate;
+    bool  _hideHiddenAssets;
     NSDictionary * _hintIndexPathByAssetReferenceCache;
     bool  _inaccurateAssetCollectionsNeedsUpdate;
     NSMutableDictionary * _infoForAssetCollection;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly) bool containsMultipleAssets;
 @property (nonatomic) bool curate;
 @property (nonatomic, readonly) bool curatedFutilely;
+@property (nonatomic, readonly) bool curatedIsEmpty;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long estimatedAllCount;
@@ -126,6 +128,7 @@
 - (bool)curate;
 - (id)curatedAssetsInSection:(long long)arg1;
 - (bool)curatedFutilely;
+- (bool)curatedIsEmpty;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateStartingAtIndexPath:(id)arg1 reverseDirection:(bool)arg2 usingBlock:(id /* block */)arg3;

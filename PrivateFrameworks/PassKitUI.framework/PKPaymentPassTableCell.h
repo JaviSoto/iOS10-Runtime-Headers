@@ -11,8 +11,8 @@
     PKPaymentApplication * _paymentApplication;
     long long  _settingsContext;
     bool  _showAddButton;
-    bool  _showFPAN;
     bool  _showState;
+    bool  _showSubTitle;
     UIActivityIndicatorView * _spinner;
     UILabel * _subTextLabel;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) UILabel *mainLabel;
 @property (nonatomic, retain) PKPaymentPass *pass;
 @property (nonatomic) bool showAddButton;
-@property (nonatomic) bool showFPAN;
+@property (nonatomic) bool showSubTitle;
 @property (nonatomic, readonly) UILabel *subTextLabel;
 
 - (void).cxx_destruct;
@@ -42,10 +42,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPass:(id)arg1;
 - (void)setShowAddButton:(bool)arg1;
-- (void)setShowFPAN:(bool)arg1;
+- (void)setShowSubTitle:(bool)arg1;
 - (void)showActivitySpinner:(bool)arg1;
 - (bool)showAddButton;
-- (bool)showFPAN;
+- (bool)showSubTitle;
 - (id)subTextLabel;
 - (void)tintColorDidChange;
 

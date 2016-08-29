@@ -9,10 +9,8 @@
 
 @property (readonly) unsigned long long average;
 @property (readonly) bool isLastValid;
-@property (readonly) unsigned long long movingAverage;
 @property (retain) NSMutableArray *samples;
 @property unsigned long long size;
-@property (readonly) bool valid;
 
 + (bool)supportsSecureCoding;
 
@@ -26,12 +24,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSampleSize:(unsigned long long)arg1;
 - (bool)isLastValid;
-- (unsigned long long)movingAverage;
 - (id)samples;
 - (void)setSamples:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
 - (id)shortDescription;
 - (unsigned long long)size;
-- (bool)valid;
 
 @end

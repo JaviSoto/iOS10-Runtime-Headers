@@ -5,5 +5,6 @@
 @interface SPUILockScreenFooterView : UIView
 
 - (id)init;
+- (void)unlockButtonPressed:(id)arg1;
 
 @end

@@ -112,6 +112,7 @@
 - (bool)enoughMemoryFor2160P;
 - (bool)enoughMemoryForRendering12MPPhoto;
 - (bool)enoughPowerFor2160P;
+- (bool)enoughPowerForLargerPhotoThumbnails;
 - (long long)freeMemory;
 - (bool)hasMoreThan1GBOfMemory;
 - (bool)hasPlentyOfMemory;
@@ -147,13 +148,14 @@
 - (id)_currentProduct;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (long long)_graphicsQualityIncludingMediumN41:(bool)arg1;
-- (id)_highQualityDevicesForHomeScreenAppAnimations;
+- (id)_highQualityDevicesForHomeFolders;
 - (id)_highQualityDevicesForSearchTransitions;
+- (id)_lowQualityDevicesForDashBoardPresentation;
 - (id)_lowQualityDevicesForHomescreenFolders;
 - (id)_mediumQualityProductsIncludingN41:(bool)arg1;
 - (long long)sbf_bannerGraphicsQuality;
 - (long long)sbf_controlCenterGraphicsQuality;
-- (long long)sbf_homeScreenAppAnimationsGraphicsQuality;
+- (long long)sbf_dashBoardPresentationGraphicsQuality;
 - (long long)sbf_homeScreenFolderGraphicsQuality;
 - (long long)sbf_searchTransitionGraphicsQuality;
 

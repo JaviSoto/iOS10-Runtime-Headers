@@ -142,6 +142,10 @@
     NSPointerArray * mLeftColumnStrokes;
     NSLock * mLock;
     unsigned int  mMaxConcurrentTasks;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  mMaximumPartitionSize;
     TSTMergeRangeSortedSet * mMergeRanges;
     unsigned int  mNumCellsPerTask;
     TSTRWRetainedPointerKeyDictionary * mParaStyleToHeightCache;
@@ -222,6 +226,7 @@
 @property (getter=isInDynamicLayoutMode, nonatomic, readonly) bool inDynamicLayoutMode;
 @property (nonatomic, readonly) bool isGrouped;
 @property (nonatomic) unsigned int maxConcurrentTasks;
+@property (nonatomic) struct CGSize { double x1; double x2; } maximumPartitionSize;
 @property (nonatomic, retain) TSTMergeRangeSortedSet *mergeRanges;
 @property (nonatomic) unsigned int numCellsPerTask;
 @property (nonatomic, readonly) unsigned short numberOfColumns;
@@ -262,6 +267,9 @@
 - (void)captureDynamicResizeInfo;
 - (bool)cell:(id*)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)cellIDToWPColumnCache;
+- (id)cellIterator;
+- (id)cellIteratorWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)cellIteratorWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 flags:(unsigned long long)arg2;
 - (id)changeDescriptors;
 - (id)changeNotifier;
 - (void)clearDynamicStrokesForCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
@@ -356,11 +364,16 @@
 - (bool)isInDynamicLayoutMode;
 - (bool)isRowHidden:(unsigned short)arg1;
 - (bool)isRowUserHidden:(unsigned short)arg1;
+- (void)iterateCellsAndTerminateWithIterator:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)iterateCellsInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)iterateCellsInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withFlags:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
+- (void)iterateCellsUsingBlock:(id /* block */)arg1;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })layoutCellIDForModelCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)layoutCellRegionForModelCellRegion:(id)arg1;
 - (unsigned char)layoutColumnForModelColumn:(unsigned char)arg1;
 - (unsigned short)layoutRowForModelRow:(unsigned short)arg1;
 - (unsigned int)maxConcurrentTasks;
+- (struct CGSize { double x1; double x2; })maximumPartitionSize;
 - (void)measureTextForLayoutState:(id)arg1;
 - (id)mergeRanges;
 - (id)mergeRangesProppingRowHeightsInRegion:(id)arg1;
@@ -414,6 +427,7 @@
 - (void)setDynamicSavedLayoutGeometry:(id)arg1;
 - (void)setDynamicWidthResize:(double)arg1;
 - (void)setMaxConcurrentTasks:(unsigned int)arg1;
+- (void)setMaximumPartitionSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMergeRanges:(id)arg1;
 - (void)setNumCellsPerTask:(unsigned int)arg1;
 - (void)setProcessHiddenRowsForExport:(bool)arg1;

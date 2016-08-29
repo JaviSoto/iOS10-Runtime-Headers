@@ -2,22 +2,14 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKFitnessFriendsRelationshipEvent : NSObject <HDFitnessFriendsCloudKitCodable, NSCopying, NSSecureCoding> {
+@interface _HKFitnessFriendsRelationshipEvent : NSObject <NSCopying, NSSecureCoding> {
     unsigned long long  _anchor;
-    NSData * _archivedCloudKitSystemFields;
-    NSDate * _deviceTimestamp;
     NSDate * _timestamp;
     long long  _type;
     long long  _version;
 }
 
 @property (nonatomic) unsigned long long anchor;
-@property (nonatomic, retain) NSData *archivedCloudKitSystemFields;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSDate *deviceTimestamp;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) NSDate *timestamp;
 @property (nonatomic) long long type;
 @property (nonatomic) long long version;
@@ -28,15 +20,11 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)anchor;
-- (id)archivedCloudKitSystemFields;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)deviceTimestamp;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setAnchor:(unsigned long long)arg1;
-- (void)setArchivedCloudKitSystemFields:(id)arg1;
-- (void)setDeviceTimestamp:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setType:(long long)arg1;
 - (void)setVersion:(long long)arg1;
@@ -46,8 +34,9 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
++ (id)_fitnessFriendRelationshipEventWithCodable:(id)arg1;
 + (id)fitnessFriendRelationshipEventWithRecord:(id)arg1;
 
-- (id)recordWithZoneID:(id)arg1;
+- (id)_codableRelationshipEvent;
 
 @end

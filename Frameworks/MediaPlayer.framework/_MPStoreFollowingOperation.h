@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface _MPStoreFollowingOperation : MSVOperation {
+@interface _MPStoreFollowingOperation : MPAsyncOperation {
     MPStoreFollowingRequest * _request;
     id /* block */  _responseHandler;
 }

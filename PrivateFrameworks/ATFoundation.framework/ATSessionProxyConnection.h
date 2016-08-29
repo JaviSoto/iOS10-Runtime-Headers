@@ -4,7 +4,6 @@
 
 @interface ATSessionProxyConnection : NSObject <ATSessionObserver, ATSessionProxy> {
     NSXPCConnection * _connection;
-    NSObject<OS_dispatch_queue> * _queue;
     ATSession * _session;
 }
 

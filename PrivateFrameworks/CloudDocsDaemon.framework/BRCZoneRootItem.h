@@ -6,6 +6,7 @@
 
 - (id)fileID;
 - (id)initWithZoneRootItemID:(id)arg1 session:(id)arg2;
+- (bool)isZoneRoot;
 - (id)parentItemInZone;
 - (id)parentItemOnFS;
 - (bool)saveToDB;

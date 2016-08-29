@@ -38,12 +38,14 @@
 - (int)orientation;
 - (NSString *)originalFileName;
 - (long long)originalImageOrientation;
+- (NSString *)pathForAdjustedSRGBLargeThumbnailFile;
 - (NSString *)pathForAdjustmentDataFile;
 - (NSString *)pathForAdjustmentFile;
 - (NSString *)pathForFullsizeRenderImageFile;
 - (NSString *)pathForLargeThumbnailFile;
 - (NSString *)pathForMediumThumbnailFile;
 - (NSString *)pathForNonAdjustedFullsizeImageFile;
+- (NSString *)pathForNonAdjustedSRGBLargeThumbnailFile;
 - (NSString *)pathForOriginalFile;
 - (NSString *)pathForPenultimateFullsizeRenderImageFile;
 - (NSString *)pathForPenultimateFullsizeRenderVideoFile;

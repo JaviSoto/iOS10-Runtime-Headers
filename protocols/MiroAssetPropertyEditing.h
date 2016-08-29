@@ -6,6 +6,6 @@
 @required
 
 - (unsigned long long)audioLevelForClip:(id <MiroClip>)arg1;
-- (bool)userModifiedAudioLevelForClip:(id <MiroClip>)arg1;
+- (void)setAudioLevel:(unsigned long long)arg1 forClip:(id <MiroClip>)arg2;
 
 @end

@@ -78,18 +78,19 @@
 - (id)accessController;
 - (long long)addObserverForICloudTeardownSuspendingCollaboration:(bool)arg1 block:(id /* block */)arg2;
 - (long long)addObserverForICloudTeardownWithBlock:(id /* block */)arg1;
-- (void)addOrUpdateAnnotationAuthorList:(id)arg1;
 - (id)additionalDocumentPropertiesForWrite;
 - (id)additionalDocumentSupportPropertiesForWrite;
 - (id)annotationAuthorStorage;
 - (unsigned long long)applicationType;
 - (id)authorForFiltering;
+- (id)calculationEngine;
 - (void)changeDocumentCacheFileProtection:(id)arg1;
 - (id)changeNotifier;
 - (id)collaborationCommandHistory;
 - (id)collaborationSessionState;
 - (id)collaborationSessionStateIfAvailable;
 - (id)collaborationState;
+- (void)collaborationStateDidUpdate:(id)arg1;
 - (id)commandForRemovingCommentsFromDrawables:(id)arg1 context:(id)arg2;
 - (id)commandHistory;
 - (id)customFormatList;
@@ -172,6 +173,7 @@
 - (id)undoActionString;
 - (unsigned long long)undoCount;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;
+- (void)updateAnnotationAuthorList:(id)arg1;
 - (void)updateDocumentLocaleToCurrent;
 - (void)updateDocumentLocaleToUseLanguage:(id)arg1;
 - (void)updateForNonCommandChangesWithWriteLock:(id)arg1;

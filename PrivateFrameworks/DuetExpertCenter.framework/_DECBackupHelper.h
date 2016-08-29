@@ -3,7 +3,6 @@
  */
 
 @interface _DECBackupHelper : NSObject {
-    _DKDataProtectionStateMonitor * _dataProtection;
     NSFileManager * _fm;
 }
 

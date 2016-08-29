@@ -36,6 +36,7 @@
 - (void)invalidatePipeReceiversWatchingAppLibraryIDs:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)invalidatePipesWatchingAppLibraryIDs:(id)arg1;
 - (bool)isCancelled;
+- (void)pipeDelegateInvalidated:(id)arg1;
 - (id)pipeWithReceiver:(id)arg1;
 - (void)queueProgressUpdates:(id)arg1;
 - (void)queueUpdate:(id)arg1;

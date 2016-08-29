@@ -4,7 +4,8 @@
 
 @interface FCResourceRecordSource : FCRecordSource
 
-+ (unsigned long long)dataSizeLimit;
++ (unsigned long long)highThresholdDataSizeLimit;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)recordType;
 + (id)storeFilename;
 + (unsigned long long)storeVersion;

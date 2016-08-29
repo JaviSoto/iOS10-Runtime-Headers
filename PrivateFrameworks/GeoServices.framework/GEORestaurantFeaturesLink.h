@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *featureProviders;
-@property (nonatomic, readonly) unsigned long long featureType;
+@property (nonatomic, readonly) NSArray *featureTypes;
 @property (nonatomic, readonly) bool hasFeatures;
 @property (nonatomic, retain) GEOPDRestaurantReservationLink *restaurantReservationLink;
 
@@ -17,7 +17,7 @@
 - (id)displayNameForVendorID:(id)arg1;
 - (unsigned long long)extensionModeForVendorID:(id)arg1;
 - (id)featureProviders;
-- (unsigned long long)featureType;
+- (id)featureTypes;
 - (bool)hasFeatures;
 - (id)initWithRestaurantReservationLink:(id)arg1 attributionMap:(id)arg2;
 - (id)restaurantReservationLink;

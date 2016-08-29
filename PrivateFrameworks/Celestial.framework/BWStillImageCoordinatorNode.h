@@ -46,12 +46,12 @@
 @property (nonatomic, readonly) BWNodeOutput *sisOutput;
 @property (nonatomic) <BWStillImageCaptureStatusDelegate> *stillImageCaptureStatusDelegate;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int worstCaseInitialMaxBracketedCaptureBufferCount;
 
 + (void)initialize;
 
 - (void)_beginCapture;
-- (int)_captureTypeForSettings:(id)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2;
+- (void)_captureDevicePreparedToCaptureStillImageNow;
+- (int)_captureTypeForSettings:(id)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2;
 - (void)_completeCaptureWithStatus:(int)arg1;
 - (void)_configureCurrentCaptureRequestStateForFigCaptureStillImageSettings;
 - (void)_didCaptureStillImageWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -66,10 +66,10 @@
 - (void)_willBeginCapture;
 - (void)_willCaptureStillImage;
 - (bool)alwaysRequestsPreBracketedEV0;
-- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 stillImageSettings:(id)arg3;
+- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 stillImageSettings:(id)arg3;
 - (int)captureStillImageNowWithSettings:(id)arg1;
 - (void)captureStream:(id)arg1 didCapturePreBracketedEV0ImageWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (void)captureStream:(id)arg1 didCompleteStillImageCaptureWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)captureStream:(id)arg1 didCompleteStillImageCaptureWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 referenceFrameBracketedCaptureSequenceNumber:(id)arg3;
 - (void)captureStream:(id)arg1 stillImageCaptureError:(int)arg2;
 - (void)captureStreamWillBeginStillImageCapture:(id)arg1;
 - (void)clientReceivedPayloadForSettings:(id)arg1 status:(int)arg2 clientIsMidStillImageGraph:(bool)arg3;
@@ -96,6 +96,6 @@
 - (bool)stillImageGraphSupportsMultipleInflightCaptures;
 - (void)willStopGraph:(bool)arg1;
 - (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;
-- (int)worstCaseInitialMaxBracketedCaptureBufferCount;
+- (int)worstCaseMaxBracketedCaptureBufferCountForPreparedSettings:(id)arg1;
 
 @end

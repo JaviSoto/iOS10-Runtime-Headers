@@ -3,7 +3,7 @@
  */
 
 @interface UIWebPlaybackTargetPicker : UIView <UIPopoverControllerDelegate> {
-    MPAudioVideoRoutingActionSheet * _actionSheet;
+    MPAVRoutingSheet * _actionSheet;
     UIWebDocumentView * _delegate;
     MPAudioVideoRoutingPopoverController * _popoverController;
     MPAVRoutingController * _routingController;

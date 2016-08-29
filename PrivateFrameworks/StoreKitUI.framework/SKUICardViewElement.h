@@ -7,10 +7,8 @@
 }
 
 @property (getter=isAdCard, nonatomic, readonly) bool adCard;
-@property (nonatomic, readonly) SKUIAdFeedbackElement *adFeedbackElement;
 @property (nonatomic, readonly) long long cardType;
 
-- (id)adFeedbackElement;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (long long)cardType;
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;

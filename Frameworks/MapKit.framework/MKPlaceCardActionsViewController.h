@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceCardActionsViewController : MKPlaceSectionViewController <MKPlaceCardActionSectionViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+@interface MKPlaceCardActionsViewController : MKPlaceSectionViewController <MKPlaceCardActionSectionViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, _MKStackViewDelegate> {
     NSArray * _actionItemArray;
     bool  _allowRowSelection;
     <MKPlaceCardActionControllerDelegate> * _delegate;
@@ -49,6 +49,7 @@
 - (bool)showTopSeparator;
 - (bool)useSmallFonts;
 - (id)viewArray;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -11,16 +11,6 @@
     PXPlacesSnapshotFactory * __factory;
     PXPlacesMapFetchResultViewController * __mapViewController;
     NSMutableArray * __nearbyCountCompletionBlocks;
-    struct { 
-        struct { 
-            double x; 
-            double y; 
-        } origin; 
-        struct { 
-            double width; 
-            double height; 
-        } size; 
-    }  __nearbyRect;
     struct CGSize { 
         double width; 
         double height; 
@@ -37,6 +27,7 @@
     }  _minimumInitialSize;
     bool  _showAddressLink;
     PXWidgetSpec * _spec;
+    PXPlacesMapViewPort * _viewPort;
     <PXWidgetDelegate> * _widgetDelegate;
 }
 
@@ -48,7 +39,6 @@
 @property (nonatomic, retain) PXPlacesSnapshotFactory *_factory;
 @property (nonatomic, readonly) PXPlacesMapFetchResultViewController *_mapViewController;
 @property (nonatomic, retain) NSMutableArray *_nearbyCountCompletionBlocks;
-@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } _nearbyRect;
 @property (nonatomic, readonly) bool allowUserInteractionWithSubtitle;
 @property (nonatomic, readonly) long long contentLayoutStyle;
 @property (nonatomic, readonly) PXTilingController *contentTilingController;
@@ -72,6 +62,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
@@ -82,14 +73,10 @@
 - (id)_contentView;
 - (id)_factory;
 - (long long)_fetchCountOfAssetsWithLocation;
-- (void)_fetchNearbyCountForViewPort:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)_fetchNearbyCountUsingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 withCompletion:(id /* block */)arg2;
 - (void)_fetchPlacesSnapshotUsingMapType:(unsigned long long)arg1 shouldFetchNearbyAssetCount:(bool)arg2;
 - (id)_fetchResultsForSections;
 - (id)_firstAsset;
-- (void)_handleBoundingRectAssetCount:(long long)arg1;
-- (void)_handleFetchingBoundingRectCountFromNearbyRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_handleSnapshotResponse:(id)arg1 viePort:(id)arg2 snapshotMapType:(unsigned long long)arg3 shouldFetchNearbyAssetCount:(bool)arg4 fetchedImageKey:(id)arg5 error:(id)arg6;
+- (void)_handleSnapshotResponse:(id)arg1 viewPort:(id)arg2 snapshotMapType:(unsigned long long)arg3 shouldFetchNearbyAssetCount:(bool)arg4 fetchedImageKey:(id)arg5 error:(id)arg6;
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (bool)_hasCachedSnapshotImageForKey:(id)arg1;
 - (id)_imageView;
@@ -99,7 +86,6 @@
 - (id)_mapViewController;
 - (id)_mapViewControllerWithContentMode:(unsigned long long)arg1;
 - (id)_nearbyCountCompletionBlocks;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_nearbyRect;
 - (void)_refreshLabelsUsingFirstAsset;
 - (void)_setImage:(id)arg1 animated:(bool)arg2;
 - (void)_showPlaceholder;
@@ -128,7 +114,6 @@
 - (void)set_cachedLocalizedTitle:(id)arg1;
 - (void)set_factory:(id)arg1;
 - (void)set_nearbyCountCompletionBlocks:(id)arg1;
-- (void)set_nearbyRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)showAddressLink;
 - (id)spec;
 - (id)standaloneMapViewController;

@@ -13,6 +13,7 @@
 @property (getter=isFingerDetectEnabled, nonatomic, readonly) bool fingerDetectEnabled;
 @property (getter=isFingerOn, nonatomic, readonly) bool fingerOn;
 @property (nonatomic, readonly) bool hasBiometricAuthenticationCapabilityEnabled;
+@property (nonatomic, readonly) bool hasEnrolledFingers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long matchMode;
 @property (getter=isMatchingAllowed, nonatomic, readonly) bool matchingAllowed;
@@ -25,6 +26,7 @@
 - (void)addObserver:(id)arg1;
 - (unsigned long long)biometricLockoutState;
 - (bool)hasBiometricAuthenticationCapabilityEnabled;
+- (bool)hasEnrolledFingers;
 - (id)initWithBiometricResource:(id)arg1 overrideMatchingAssertionFactory:(id)arg2;
 - (bool)isFingerDetectEnabled;
 - (bool)isFingerOn;

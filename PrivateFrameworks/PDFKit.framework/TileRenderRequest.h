@@ -3,7 +3,6 @@
  */
 
 @interface TileRenderRequest : NSObject {
-    struct CGDisplayList { } * displayList;
     struct CGAffineTransform { 
         double a; 
         double b; 
@@ -12,7 +11,9 @@
         double tx; 
         double ty; 
     }  matrix;
-    struct CGPDFPage { } * pageRef;
+    PDFPage * page;
+    PDFView * pdfView;
+    bool  shouldAntiAlias;
     <IOTiledPoolDelegate> * target;
     struct CGRect { 
         struct CGPoint { 

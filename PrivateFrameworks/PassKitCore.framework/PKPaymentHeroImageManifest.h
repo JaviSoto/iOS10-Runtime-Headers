@@ -25,6 +25,7 @@
 - (id)initWithWebService:(id)arg1;
 - (id)initWithWebService:(id)arg1 preferredLanguage:(id)arg2;
 - (id)parseData:(id)arg1;
+- (id)primaryFeaturedNetwork;
 - (void)setManifestWithData:(id)arg1;
 - (id)sha1ForNetwork:(id)arg1;
 - (id)urlForNetwork:(id)arg1;

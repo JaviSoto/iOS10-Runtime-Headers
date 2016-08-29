@@ -7,9 +7,9 @@
 
 - (void)negotiateStream;
 - (void)reconfigureStream:(NSDictionary *)arg1;
-- (void)remoteSetup;
-- (void)setAudioSetting:(unsigned long long)arg1;
+- (void)remoteSetup:(NSString *)arg1;
 - (void)startStream:(NSDictionary *)arg1;
 - (void)stopStream;
+- (void)updateAudioSetting:(unsigned long long)arg1;
 
 @end

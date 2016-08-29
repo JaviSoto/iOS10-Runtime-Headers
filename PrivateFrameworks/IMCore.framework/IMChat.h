@@ -134,7 +134,7 @@
 - (void)_delayedInvalidateDowngradeState;
 - (void)_endTiming;
 - (id)_guids;
-- (void)_handleAttributionChanged:(id)arg1;
+- (void)_handleAttributionChanged;
 - (void)_handleDeliveredCommand:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
 - (void)_handleIncomingCommand:(id)arg1;
@@ -212,6 +212,7 @@
 - (bool)authorizedToSendCurrentLocationMessage;
 - (void)autoReportSpam;
 - (void)beginHoldingUpdatesForKey:(id)arg1;
+- (void)beginListeningToAttributionChanges;
 - (bool)canAddParticipant:(id)arg1;
 - (bool)canAddParticipants:(id)arg1;
 - (bool)canEditChatItem:(id)arg1;
@@ -238,6 +239,7 @@
 - (id)displayName;
 - (void)endHoldingUpdatesForAllKeys;
 - (void)endHoldingUpdatesForKey:(id)arg1;
+- (void)endListeningToAttributionChanges;
 - (id)fmfHandles;
 - (bool)forceMMS;
 - (id)frequentReplies;
@@ -333,7 +335,6 @@
 - (void)setValue:(id)arg1 forChatProperty:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofParticipant:(id)arg3;
 - (void)shareLocationUntilDate:(id)arg1;
-- (void)shareLocationUntilDate:(id)arg1 groupID:(id)arg2 oneToOneID:(id)arg3;
 - (void)startTrackingParticipantLocations;
 - (unsigned long long)stateForParticipant:(id)arg1;
 - (void)stopSharingLocation;

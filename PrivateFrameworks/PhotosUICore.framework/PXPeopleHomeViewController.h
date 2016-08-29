@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPeopleHomeViewController : UICollectionViewController <PXPeopleDragAndDropCollectionViewDelegate, PXPeopleHomeDataSourceDelegate, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate> {
+@interface PXPeopleHomeViewController : UICollectionViewController <PXPeopleDragAndDropCollectionViewDelegate, PXPeopleHomeDataSourceDelegate, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate> {
     PXPeopleHomeDataSource * _dataSource;
     UIBarButtonItem * _debugMenuItem;
     struct { 
@@ -123,12 +123,14 @@
 - (void)disclosureButtonTapped:(id)arg1;
 - (id)dragRecognizer;
 - (id)favoriteToolbarItem;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleDragToDeadSpace;
-- (void)handleMoveFromIndex:(id)arg1 toIndex:(id)arg2;
+- (void)handleMoveFromIndex:(id)arg1 toIndex:(id)arg2 updateDataSource:(bool)arg3;
 - (void)handleReorderingGesture:(id)arg1;
 - (id)hideToolbarItem;
 - (bool)ignoreChangeUpdates;
 - (id)init;
+- (id)initWithProgressManager:(id)arg1;
 - (struct CGPoint { double x1; double x2; })lastDragPoint;
 - (id)mergeToolbarItem;
 - (unsigned long long)mode;

@@ -13,6 +13,7 @@
     NWPathEvaluator * _policyEvaluator;
     NETunnelProviderProtocol * _protocolConfiguration;
     NSDictionary * _serviceProperties;
+    NSObject<OS_dispatch_source> * _telemetryTimer;
     NPTunnelTuscany * _tunnel;
 }
 
@@ -25,11 +26,12 @@
 @property bool initialUpdate;
 @property bool isIdle;
 @property bool isObserving;
-@property (retain) NWPathEvaluator *pathEvaluator;
+@property (readonly) NWPathEvaluator *pathEvaluator;
 @property (readonly) NWPathEvaluator *policyEvaluator;
 @property (retain) NETunnelProviderProtocol *protocolConfiguration;
 @property (readonly) NSDictionary *serviceProperties;
 @property (readonly) Class superclass;
+@property (retain) NSObject<OS_dispatch_source> *telemetryTimer;
 @property (retain) NPTunnelTuscany *tunnel;
 
 + (id)sharedManager;
@@ -66,17 +68,20 @@
 - (void)setInitialUpdate:(bool)arg1;
 - (void)setIsIdle:(bool)arg1;
 - (void)setIsObserving:(bool)arg1;
-- (void)setPathEvaluator:(id)arg1;
 - (void)setProtocolConfiguration:(id)arg1;
+- (void)setTelemetryTimer:(id)arg1;
 - (void)setTunnel:(id)arg1;
 - (void)setupServiceProperties;
 - (bool)shouldTunnelFlowWithParameters:(id)arg1;
 - (void)start;
 - (void)startWithConfiguration:(id)arg1 appRules:(id)arg2;
 - (void)stopWithCompletionHandler:(id /* block */)arg1;
+- (id)telemetryTimer;
 - (id)tunnel;
 - (id)tunnel:(id)arg1 openConnectionToEndpoint:(id)arg2 enableTFO:(bool)arg3 initialData:(id)arg4 enableMultipath:(bool)arg5 enableTLS:(bool)arg6 TLSParameters:(id)arg7 TLSDelegate:(id)arg8 URL:(id)arg9;
 - (id)tunnel:(id)arg1 openSessionToEndpoint:(id)arg2 fromEndpoint:(id)arg3;
+- (void)tunnelDidConnect;
+- (void)tunnelDidDisconnect;
 - (long long)tunnelGetCurrentMTU:(id)arg1;
 - (bool)tunnelGetIsNetworkCaptive;
 - (bool)tunnelGetNetworkHasProxy;

@@ -26,7 +26,6 @@
 
 - (void).cxx_destruct;
 - (void)_applyDataMode;
-- (void)_applyFrozen;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (long long)_backgroundedTimeViewEditModes;
 - (void)_bringForegroundViewsToFront;

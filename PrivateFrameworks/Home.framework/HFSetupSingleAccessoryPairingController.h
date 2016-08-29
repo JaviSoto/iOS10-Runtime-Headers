@@ -6,6 +6,7 @@
     HFDiscoveredAccessory * _discoveredAccessoryToPair;
     HMHome * _home;
     HFDiscoveredAccessory * _pairedDiscoveredAccessory;
+    NAFuture * _pairingFuture;
     NSHashTable * _pairingObservers;
     unsigned long long  _phase;
     NSString * _setupCode;
@@ -21,6 +22,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMHome *home;
 @property (nonatomic, retain) HFDiscoveredAccessory *pairedDiscoveredAccessory;
+@property (nonatomic, retain) NAFuture *pairingFuture;
 @property (nonatomic, retain) NSHashTable *pairingObservers;
 @property (nonatomic) unsigned long long phase;
 @property (nonatomic, retain) NSString *setupCode;
@@ -37,18 +39,20 @@
 - (void)_updateStatusTextAndNotifyDelegate:(bool)arg1;
 - (id)accessoryBrowser;
 - (void)addPairingObserver:(id)arg1;
-- (void)cancel;
+- (id)cancel;
 - (id)discoveredAccessoryToPair;
 - (bool)hasFailedAccessories;
 - (id)home;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
 - (id)initWithDiscoveredAccessory:(id)arg1 setupRemoteService:(id)arg2;
 - (id)pairedDiscoveredAccessory;
+- (id)pairingFuture;
 - (id)pairingObservers;
 - (unsigned long long)phase;
 - (void)removePairingObserver:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setPairedDiscoveredAccessory:(id)arg1;
+- (void)setPairingFuture:(id)arg1;
 - (void)setPairingObservers:(id)arg1;
 - (void)setPhase:(unsigned long long)arg1;
 - (void)setSetupCode:(id)arg1;

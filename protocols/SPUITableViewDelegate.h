@@ -13,8 +13,4 @@
 - (void)numberOfRowsDidChange:(SPUITableViewController *)arg1;
 - (void)tableViewDidFinishReload:(SPUITableViewController *)arg1;
 
-@optional
-
-- (void)didLongPressResult:(SFSearchResult *)arg1;
-
 @end

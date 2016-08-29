@@ -6,8 +6,8 @@
     NSString * _bundleID;
     NSString * _bundlePath;
     bool  _extension;
+    <FBSystemServiceFacilityClient> * _facilityClient;
     NSString * _facilityID;
-    <FBSystemServiceFacilityClient> * _facilityclient;
     bool  _suspended;
     bool  _uiApp;
 }

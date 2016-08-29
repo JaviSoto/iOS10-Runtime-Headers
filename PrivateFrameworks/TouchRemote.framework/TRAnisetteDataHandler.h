@@ -4,7 +4,6 @@
 
 @interface TRAnisetteDataHandler : NSObject
 
-- (void)_registerForAnisetteDataRequestsFromCommunicationSession:(id)arg1;
-- (id)initWithCommunicationSession:(id)arg1;
+- (void)registerForAnisetteDataRequestsFromSession:(id)arg1;
 
 @end

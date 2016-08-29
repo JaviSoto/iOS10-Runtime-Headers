@@ -104,7 +104,9 @@
 - (void)selectionChanged;
 - (bool)selectionCommandsShowing;
 - (void)selectionDidScroll:(id)arg1;
+- (void)selectionDidTranslateForReachability:(id)arg1;
 - (void)selectionWillScroll:(id)arg1;
+- (void)selectionWillTranslateForReachability:(id)arg1;
 - (void)setCaretBlinks:(bool)arg1;
 - (void)setForceRangeView:(bool)arg1;
 - (void)setReplacements:(id)arg1;

@@ -467,12 +467,14 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
++ (id)hu_keyColor;
 + (id)hu_vibrantGreenTextColor;
 + (id)hu_vibrantRedTextColor;
 
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 - (id)_lp_CSSText;
+- (id)_lp_CSSTextHexFormat;
 
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
@@ -672,6 +674,7 @@
 + (id)tsu_keynoteNavigatorBackgroundColor;
 + (id)tsu_keynoteNavigatorDividerColor;
 + (id)tsu_keynoteToolbarTintColor;
++ (id)tsu_navigatorSelectionFocusedHighlightColor;
 + (id)tsu_navigatorSelectionHighlightColor;
 + (id)tsu_progressViewTintColor;
 + (id)tsu_progressViewTrackTintColor;
@@ -679,6 +682,7 @@
 + (id)tsu_sidebarActiveTintColor;
 + (id)tsu_sidebarBackgroundColor;
 + (id)tsu_sidebarCellBackgroundColor;
++ (id)tsu_sidebarInactiveCellTintColor;
 + (id)tsu_sidebarInactiveTintColor;
 + (id)tsu_sidebarNavigationBarBackgroundColor;
 + (id)tsu_sidebarNavigationBarTintColor;
@@ -689,6 +693,7 @@
 + (id)tsu_sidebarSecondaryContentColor;
 + (id)tsu_sidebarSegmentedCellTintColor;
 + (id)tsu_sidebarSegmentedControlTintColor;
++ (id)tsu_sidebarTableViewCellTintColor;
 + (id)tsu_sidebarTopTabTextColor;
 + (id)tsu_sliderMaximumTrackTintColor;
 + (id)tsu_sliderMinimumTrackTintColor;

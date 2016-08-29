@@ -15,7 +15,6 @@
 - (void)_limitedUIDidChange;
 - (void)_updateQuery;
 - (bool)alwaysShowRecents;
-- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (void)reloadData;
 - (void)setAlwaysShowRecents:(bool)arg1;
 - (void)shouldShowHeadersAndFooters:(bool)arg1;

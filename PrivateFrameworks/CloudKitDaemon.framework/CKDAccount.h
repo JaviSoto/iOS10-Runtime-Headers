@@ -5,6 +5,7 @@
 @interface CKDAccount : NSObject <CKDAccountInfoProvider> {
     ACAccountType * _acAccountType;
     bool  _accountWantsPushRegistration;
+    NSObject<OS_dispatch_queue> * _authTokenCallbackQueue;
     CKDBackingAccount * _backingAccount;
     CKDClientContext * _context;
     bool  _haveWarnedAboutServerPreferredPushEnvironment;
@@ -17,6 +18,8 @@
 @property (nonatomic, readonly) NSString *accountIdentifier;
 @property (nonatomic, readonly) ACAccountStore *accountStore;
 @property (nonatomic) bool accountWantsPushRegistration;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *authTokenCallbackQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *authTokenQueue;
 @property (nonatomic, readonly) CKDBackingAccount *backingAccount;
 @property (nonatomic, readonly) bool canAccessAccount;
 @property (nonatomic, readonly) bool cloudKitIsEnabled;
@@ -35,8 +38,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *username;
 
++ (id)globalAuthTokenQueue;
+
 - (void).cxx_destruct;
 - (id)_initWithContext:(id)arg1;
+- (id)_lockedCloudKitAuthTokenWithError:(id*)arg1;
+- (void)_lockedRenewAuthTokenWithReason:(id)arg1 failedToken:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)_lockediCloudAuthTokenWithError:(id*)arg1;
 - (id)_urlBySettingCustomBaseURL:(id)arg1 onURL:(id)arg2;
 - (id)acAccountType;
 - (id)accountID;
@@ -44,11 +52,13 @@
 - (id)accountStore;
 - (bool)accountWantsPushRegistration;
 - (id)applicationBundle;
+- (id)authTokenCallbackQueue;
+- (id)authTokenQueue;
 - (id)backingAccount;
 - (id)baseURLForServerType:(long long)arg1 partitionType:(long long)arg2;
 - (id)bundleID;
 - (bool)canAccessAccount;
-- (id)cloudKitAuthToken;
+- (void)cloudKitAuthTokenWithCompletionHandler:(id /* block */)arg1;
 - (bool)cloudKitIsEnabled;
 - (bool)cloudPhotosIsEnabled;
 - (id)config;
@@ -68,7 +78,7 @@
 - (id)fullName;
 - (id)hardwareID;
 - (bool)haveWarnedAboutServerPreferredPushEnvironment;
-- (id)iCloudAuthToken;
+- (void)iCloudAuthTokenWithCompletionHandler:(id /* block */)arg1;
 - (bool)iCloudDriveAllowsCellularAccess;
 - (id)initAnonymousAccountWithContext:(id)arg1;
 - (id)initFakeAccountWithEmail:(id)arg1 password:(id)arg2 context:(id)arg3;
@@ -86,12 +96,13 @@
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (id)primaryEmail;
 - (id)regionCode;
-- (void)renewAuthTokenWithReason:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)renewAuthTokenWithReason:(id)arg1 failedToken:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)renewMescalSessionForRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)resetMescalSession;
 - (id)serverPreferredPushEnvironment;
 - (void)setAcAccountType:(id)arg1;
 - (void)setAccountWantsPushRegistration:(bool)arg1;
+- (void)setAuthTokenCallbackQueue:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHaveWarnedAboutServerPreferredPushEnvironment:(bool)arg1;
 - (void)setIsAnonymousAccount:(bool)arg1;

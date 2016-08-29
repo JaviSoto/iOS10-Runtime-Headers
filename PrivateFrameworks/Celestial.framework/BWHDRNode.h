@@ -7,10 +7,16 @@
     int  _bracketCount;
     int  _clientPID;
     int (* _createSampleBufferProcessorFunction;
-    FigCaptureStillImageSettings * _currentCaptureSettings;
+    FigCaptureStillImageSettings * _currentRequestedStillImageCaptureSettings;
+    BWStillImageCaptureSettings * _currentResolvedStillImageCaptureSettings;
+    unsigned int  _emittedFrameOrErrorCount;
     NSArray * _exposureValues;
     struct opaqueCMSampleBuffer {} * _pendingBracketBuffers;
+    FigCapturePixelConverter * _pixelConverter;
+    bool  _postHDRNoiseReductionActive;
+    bool  _preBracketedFrameExpected;
     bool  _preBracketedFrameReceived;
+    NSMutableArray * _receivedNodeErrors;
     struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
     NSDictionary * _sensorIDDictionary;
 }
@@ -23,23 +29,28 @@
 + (void)initialize;
 
 - (void)_clearCaptureRequestState;
+- (void)_configureCaptureRequestStateWithRequestedStillImageCaptureSettings:(id)arg1 resolvedStillImageCaptureSettings:(id)arg2;
+- (void)_emitNodeErrorToReportFailedOutputFrame;
+- (void)_emitNodeErrorsIfNecessary;
 - (void)_hdrProcessorOutputReady:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (id)_initWithClientPID:(int)arg1 sensorIDDictionary:(id)arg2 sbpCreationFunction:(int (*)arg3;
-- (bool)_receivedExpectedNumberOfInputFrames;
+- (bool)_receivedExpectedNumberOfInputFramesOrErrors;
 - (int)_setupSampleBufferProcessor;
 - (bool)alwaysRequestsPreBracketedEV0;
 - (bool)attachesInputBracketToOutputSampleBuffer;
-- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 stillImageSettings:(id)arg3;
+- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 stillImageSettings:(id)arg3;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
 - (id)initWithClientPID:(int)arg1 sensorIDDictionary:(id)arg2;
 - (id)nodeSubType;
 - (id)nodeType;
+- (bool)postHDRNoiseReductionActive;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setAlwaysRequestsPreBracketedEV0:(bool)arg1;
 - (void)setAttachesInputBracketToOutputSampleBuffer:(bool)arg1;
+- (void)setPostHDRNoiseReductionActive:(bool)arg1;
 - (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;
 
 @end

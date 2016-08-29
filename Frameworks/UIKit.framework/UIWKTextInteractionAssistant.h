@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIWKTextInteractionAssistant : UITextInteractionAssistant {
+@interface UIWKTextInteractionAssistant : UITextInteractionAssistant <UIResponderStandardEditActions> {
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -25,8 +25,12 @@
     NSString * _wordBeforeTap;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *loupeGesture;
 @property (nonatomic, readonly) UITapGestureRecognizer *singleTapGesture;
+@property (readonly) Class superclass;
 
 - (id)_asText;
 - (bool)containerAllowsSelection;

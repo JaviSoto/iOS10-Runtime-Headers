@@ -14,6 +14,7 @@
 - (bool)nowPlayingViewControllerCanShowAddToLibrary:(MCDNowPlayingViewController *)arg1;
 - (bool)nowPlayingViewControllerCanShowMore:(MCDNowPlayingViewController *)arg1;
 - (bool)nowPlayingViewControllerCanShuffle:(MCDNowPlayingViewController *)arg1;
+- (bool)nowPlayingViewControllerIsFuseSubscriber:(MCDNowPlayingViewController *)arg1;
 - (void)nowPlayingViewControllerMore:(MCDNowPlayingViewController *)arg1;
 - (void)nowPlayingViewControllerToggleRepeat:(MCDNowPlayingViewController *)arg1;
 - (void)nowPlayingViewControllerToggleShuffle:(MCDNowPlayingViewController *)arg1;

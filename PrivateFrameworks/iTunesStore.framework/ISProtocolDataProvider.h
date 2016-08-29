@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISProtocolDataProvider : ISDataProvider <ISBiometricTouchIDDelegate, NSCopying> {
-    NSMutableSet * _authDialogInterrupts;
+@interface ISProtocolDataProvider : ISDataProvider <NSCopying> {
+    ISBiometricAuthenticationContext * _biometricAuthenticationContext;
     bool  _shouldPostFooterSectionChanged;
     bool  _shouldProcessAccount;
     bool  _shouldProcessAuthenticationDialogs;
     bool  _shouldProcessDialogs;
     bool  _shouldProcessProtocol;
+    bool  _shouldProcessTouchIDDialogs;
     bool  _shouldTriggerDownloads;
 }
 
@@ -17,6 +18,7 @@
 @property bool shouldProcessAuthenticationDialogs;
 @property bool shouldProcessDialogs;
 @property bool shouldProcessProtocol;
+@property (readonly) bool shouldProcessTouchIDDialogs;
 @property bool shouldTriggerDownloads;
 
 - (void).cxx_destruct;
@@ -28,10 +30,8 @@
 - (void)_refreshSubscriptionStatus;
 - (void)_selectFooterSection:(id)arg1;
 - (bool)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
-- (bool)_shouldInterruptAuthenticationDialogProcessingForResponse:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)operationShouldInterruptAuthorizationDialogs:(id)arg1 forFailureType:(long long)arg2;
 - (bool)parseData:(id)arg1 returningError:(id*)arg2;
 - (bool)processDialogFromDictionary:(id)arg1 error:(id*)arg2;
 - (bool)processDictionary:(id)arg1 error:(id*)arg2;
@@ -46,6 +46,7 @@
 - (bool)shouldProcessAuthenticationDialogs;
 - (bool)shouldProcessDialogs;
 - (bool)shouldProcessProtocol;
+- (bool)shouldProcessTouchIDDialogs;
 - (bool)shouldTriggerDownloads;
 
 @end

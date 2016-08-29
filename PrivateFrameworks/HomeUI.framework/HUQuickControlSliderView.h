@@ -7,6 +7,7 @@
     NSLayoutConstraint * _overlayTopConstraint;
     HUQuickControlSliderViewProfile * _profile;
     double  _rawSliderValue;
+    double  _secondarySliderValue;
     bool  _showOffState;
     double  _sliderValue;
     HUQuickControlSliderValueOverlayView * _valueOverlayView;
@@ -17,8 +18,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSLayoutConstraint *overlayTopConstraint;
-@property (nonatomic, readonly) HUQuickControlSliderViewProfile *profile;
+@property (nonatomic, copy) HUQuickControlSliderViewProfile *profile;
 @property (nonatomic) double rawSliderValue;
+@property (nonatomic) double secondarySliderValue;
+@property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) bool showOffState;
 @property (nonatomic) long long sizeSubclass;
 @property (nonatomic) double sliderValue;
@@ -27,15 +30,21 @@
 @property (nonatomic, retain) HUQuickControlSliderValueOverlayView *valueOverlayView;
 
 - (void).cxx_destruct;
+- (double)_minDisplayedValue;
 - (id)backgroundView;
 - (id)initWithProfile:(id)arg1;
 - (void)layoutSubviews;
 - (id)overlayTopConstraint;
 - (id)profile;
 - (double)rawSliderValue;
+- (double)secondarySliderValue;
+- (id)secondaryValue;
 - (void)setBackgroundView:(id)arg1;
 - (void)setOverlayTopConstraint:(id)arg1;
+- (void)setProfile:(id)arg1;
 - (void)setRawSliderValue:(double)arg1;
+- (void)setSecondarySliderValue:(double)arg1;
+- (void)setSecondaryValue:(id)arg1;
 - (void)setShowOffState:(bool)arg1;
 - (void)setSliderValue:(double)arg1;
 - (void)setValue:(id)arg1;

@@ -5,8 +5,7 @@
 
 @required
 
-- (void)contactSuggestionCell:(SGUIContactSuggestionTableViewCell *)arg1 didTapAddForContactSuggestion:(SGRealtimeContact *)arg2;
+- (void)contactSuggestionCell:(SGUIContactSuggestionTableViewCell *)arg1 didTapConfirmForContactSuggestion:(SGRealtimeContact *)arg2;
 - (void)contactSuggestionCell:(SGUIContactSuggestionTableViewCell *)arg1 didTapIgnoreForContactSuggestion:(SGRealtimeContact *)arg2;
-- (void)contactSuggestionCell:(SGUIContactSuggestionTableViewCell *)arg1 didTapUpdateForContactSuggestion:(SGRealtimeContact *)arg2;
 
 @end

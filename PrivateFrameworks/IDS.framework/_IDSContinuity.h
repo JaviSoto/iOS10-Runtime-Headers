@@ -36,9 +36,9 @@
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 delegateContext:(id)arg3;
 - (void)startAdvertisingOfType:(long long)arg1 withData:(id)arg2 withOptions:(id)arg3;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3;
-- (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 boostedScan:(bool)arg4;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 boostedScan:(bool)arg4 duplicates:(bool)arg5;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4;
-- (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4 boostedScan:(bool)arg5;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4 boostedScan:(bool)arg5 duplicates:(bool)arg6;
 - (void)startTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (long long)state;
 - (void)stopAdvertisingOfType:(long long)arg1;

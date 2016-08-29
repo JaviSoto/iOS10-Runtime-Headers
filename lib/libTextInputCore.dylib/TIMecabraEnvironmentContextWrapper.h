@@ -10,7 +10,6 @@
     NSMutableArray * _environmentCandidates;
     struct __MecabraContext { } * _mecabraContext;
     struct __Mecabra { } * _mecabraEngine;
-    unsigned long long  _positionWithinCandidate;
     NSMutableArray * _temporaryCandidates;
     int  _textContentType;
 }
@@ -26,7 +25,6 @@
 @property (nonatomic, retain) NSMutableArray *environmentCandidates;
 @property (nonatomic) struct __MecabraContext { }*mecabraContext;
 @property (nonatomic) struct __Mecabra { }*mecabraEngine;
-@property (nonatomic) unsigned long long positionWithinCandidate;
 @property (nonatomic, retain) NSMutableArray *temporaryCandidates;
 @property (nonatomic) int textContentType;
 
@@ -54,7 +52,6 @@
 - (struct __MecabraContext { }*)mecabraContext;
 - (struct __Mecabra { }*)mecabraEngine;
 - (void)partiallyCommitInlineCandidate:(void*)arg1;
-- (unsigned long long)positionWithinCandidate;
 - (bool)predictionCandidatesWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
 - (void)removeCandidatesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)revertInlineCandidate;
@@ -66,7 +63,6 @@
 - (void)setGeometryModel:(void*)arg1 modelData:(struct __CFArray { }*)arg2;
 - (void)setMecabraContext:(struct __MecabraContext { }*)arg1;
 - (void)setMecabraEngine:(struct __Mecabra { }*)arg1;
-- (void)setPositionWithinCandidate:(unsigned long long)arg1;
 - (void)setTemporaryCandidates:(id)arg1;
 - (void)setTextContentType:(int)arg1;
 - (void)syncEnvironmentAndContextCandidates;

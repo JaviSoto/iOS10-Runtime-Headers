@@ -96,6 +96,7 @@
 - (bool)allowsActions;
 - (bool)allowsEditing;
 - (id)alternateName;
+- (void)configureNavigationItem:(id)arg1;
 - (id)contact;
 - (id)contactFormatter;
 - (id)contactHeaderView;
@@ -108,6 +109,7 @@
 - (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)didDeleteContact:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (long long)displayMode;
 - (id)displayedPropertyKeys;
 - (void)editCancel:(id)arg1;

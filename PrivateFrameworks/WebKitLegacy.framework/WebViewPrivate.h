@@ -139,7 +139,6 @@
     WebPreferences * preferences;
     int  programmaticFocusCount;
     struct WebResourceDelegateImplementationCache { 
-        int (*didCancelAuthenticationChallengeFunc)(); 
         int (*didReceiveAuthenticationChallengeFunc)(); 
         int (*canAuthenticateAgainstProtectionSpaceFunc)(); 
         int (*connectionPropertiesFunc)(); 

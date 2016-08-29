@@ -56,7 +56,7 @@
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (void)insertAsset:(id)arg1 inAssetsAtIndex:(unsigned long long)arg2;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (bool)isClientEntitled;

@@ -52,7 +52,7 @@
 - (bool)differenceRequiresRebuilding:(id)arg1;
 - (unsigned long long)hash;
 - (id)i_initWithOpacity:(double)arg1 color:(id)arg2 enabled:(bool)arg3;
-- (struct CGImage { }*)i_newEmptyImageWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGImage { }*)i_newEmptyImage;
 - (id)initWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; float x7; int x8; float x9; bool x10; int x11; struct DropShadowArchive {} *x12; struct ContactShadowArchive {} *x13; struct CurvedShadowArchive {} *x14; }*)arg1 unarchiver:(id)arg2;
 - (bool)isContactShadow;
 - (bool)isCurvedShadow;

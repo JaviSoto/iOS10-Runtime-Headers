@@ -6,12 +6,15 @@
     NSObject<OS_dispatch_queue> * _calloutQueue;
     int  _firstUnlockNotification;
     NSObject<OS_dispatch_queue> * _queue;
+    bool  _queue_hasPasscodeSet;
     NSMutableArray * _queue_observerStateChangedCallbackBlocks;
     NSHashTable * _queue_observers;
     int  _stateChangedNotifyToken;
 }
 
 @property (nonatomic, readonly, copy) SBFMobileKeyBagState *extendedState;
+@property (nonatomic, readonly) bool hasBeenUnlockedSinceBoot;
+@property (nonatomic, readonly) bool hasPasscodeSet;
 @property (nonatomic, readonly, copy) SBFMobileKeyBagState *state;
 
 + (id)sharedInstance;
@@ -21,6 +24,7 @@
 - (void)_queue_firstUnlockOccurred;
 - (void)_queue_handleKeybagStatusChanged;
 - (id)_queue_lockStateExtended:(bool)arg1;
+- (void)_queue_setHasPasscodeIfNecessary:(id)arg1;
 - (bool)_queue_verifyExpectedStashState:(long long)arg1;
 - (void)addObserver:(id)arg1;
 - (bool)beginRecovery:(id)arg1 error:(id*)arg2;
@@ -29,6 +33,7 @@
 - (void)dealloc;
 - (id)extendedState;
 - (bool)hasBeenUnlockedSinceBoot;
+- (bool)hasPasscodeSet;
 - (id)init;
 - (void)lock;
 - (void)removeObserver:(id)arg1;

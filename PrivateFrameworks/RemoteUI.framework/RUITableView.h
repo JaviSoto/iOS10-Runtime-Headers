@@ -119,7 +119,6 @@
 - (id)subElementsWithName:(id)arg1;
 - (id)subHeader;
 - (Class)tableCellClassForTableViewRow:(id)arg1;
-- (id)tableHeaderView;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;

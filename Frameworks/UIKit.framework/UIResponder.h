@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIResponder : NSObject <UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation, _UITouchable> {
+@interface UIResponder : NSObject <UIResponderStandardEditActions, UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation, _UITouchable> {
     bool  _hasInputAssistantItem;
     bool  _hasOverrideClient;
     bool  _hasOverrideHost;

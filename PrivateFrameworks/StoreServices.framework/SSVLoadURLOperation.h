@@ -35,6 +35,8 @@
 @property (retain) SSVFairPlaySAPSession *SAPSession;
 @property (copy) SSVSAPSignaturePolicy *SAPSignaturePolicy;
 @property (readonly) NSURL *URL;
+@property (nonatomic, readonly) NSURLCache *URLCache;
+@property (nonatomic, readonly) NSString *URLCacheID;
 @property (readonly) NSURLRequest *URLRequest;
 @property (readonly) NSHTTPURLResponse *URLResponse;
 @property (readonly) NSCachedURLResponse *cachedURLResponse;

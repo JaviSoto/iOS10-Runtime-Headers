@@ -46,7 +46,6 @@
 - (void)endEditingAndDiscardChanges:(bool)arg1;
 - (id)heightCell;
 - (id)heightPickerController;
-- (id)initWithActivitySettingsController:(id)arg1;
 - (id)initWithActivitySettingsController:(id)arg1 showWheelchair:(bool)arg2;
 - (void)setBirthDatePickerController:(id)arg1;
 - (void)setHeightPickerController:(id)arg1;

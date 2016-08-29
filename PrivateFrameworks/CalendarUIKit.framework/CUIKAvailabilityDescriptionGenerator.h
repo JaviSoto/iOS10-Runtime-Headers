@@ -5,6 +5,7 @@
 @interface CUIKAvailabilityDescriptionGenerator : NSObject
 
 + (id)allInviteesCanAttendString;
++ (id)attendeeProposedANewTime:(id)arg1 attendeeName:(id)arg2;
 + (id)proposeANewTimePlaceholderString;
 + (id)showMoreString;
 + (id)someInviteesCanAttendString;

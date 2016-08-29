@@ -7,10 +7,9 @@
 @property (nonatomic) NSDictionary *bootTransitionContext;
 @property (nonatomic) bool comingFromUserPowerDown;
 @property (nonatomic, readonly) bool dontLockAfterCrash;
-@property (nonatomic) bool hasAttemptedToSynchronizeCloudCriticalData;
+@property (nonatomic) bool hasCompletedSynchronizingCloudCriticalData;
 @property (nonatomic, retain) NSString *lastRestoreIdentifier;
 @property (nonatomic, retain) NSString *lastSystemBuildVersion;
-@property (nonatomic, retain) NSArray *previousBootLanguages;
 @property (nonatomic, readonly) bool recordBootTimeTillDidFinishLaunching;
 
 - (void)_bindAndRegisterDefaults;

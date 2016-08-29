@@ -8,6 +8,7 @@
     LPiTunesMediaAsset * _artwork;
     NSString * _lyrics;
     NSString * _name;
+    NSArray * _offers;
     NSString * _storeFrontIdentifier;
     NSString * _storeIdentifier;
 }
@@ -20,6 +21,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *lyrics;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSArray *offers;
 @property (nonatomic, copy) NSString *storeFrontIdentifier;
 @property (nonatomic, copy) NSString *storeIdentifier;
 @property (readonly) Class superclass;
@@ -31,12 +33,14 @@
 - (id)assetsToResolve;
 - (id)lyrics;
 - (id)name;
+- (id)offers;
 - (id)resolve;
 - (void)setAlbum:(id)arg1;
 - (void)setArtist:(id)arg1;
 - (void)setArtwork:(id)arg1;
 - (void)setLyrics:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setOffers:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;

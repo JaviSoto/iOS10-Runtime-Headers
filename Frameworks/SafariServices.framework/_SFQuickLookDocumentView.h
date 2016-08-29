@@ -2,28 +2,29 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFQuickLookDocumentView : UIView {
+@interface _SFQuickLookDocumentView : UIScrollView {
     NSArray * _actionButtons;
     UIStackView * _actionButtonsView;
-    UIView * _backgroundView;
     UIView * _contentView;
-    <_SFQuickLookDocumentViewDelegate> * _delegate;
     _SFQuickLookDocumentInfoView * _documentInfoView;
+    NSLayoutConstraint * _documentInfoViewBottomAnchorConstraint;
+    <_SFQuickLookDocumentViewDelegate> * _quickLookDocumentViewDelegate;
     NSLayoutConstraint * _topContentInsetConstraint;
-    UILayoutGuide * _topLayoutGuide;
-    NSLayoutConstraint * _topLayoutGuideHeightConstraint;
+    UIView * _wrapperView;
 }
 
-@property (nonatomic) <_SFQuickLookDocumentViewDelegate> *delegate;
+@property (nonatomic) <_SFQuickLookDocumentViewDelegate> *quickLookDocumentViewDelegate;
 
 - (void).cxx_destruct;
 - (void)_actionButtonTapped:(id)arg1;
+- (void)_configureOrientationBasedConstraints:(long long)arg1;
 - (void)_setUpLayoutConstraints;
 - (void)_updatePropertiesDefinedByContentSizeCategory;
-- (id)delegate;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForButtonAtIndex:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setDelegate:(id)arg1;
+- (id)quickLookDocumentViewDelegate;
+- (void)setQuickLookDocumentViewDelegate:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateActionTitles:(id)arg1;
 - (void)updateDocumentFileName:(id)arg1;
 - (void)updateDocumentFileSize:(id)arg1;

@@ -7,7 +7,7 @@
     unsigned long long  _currentGroupedManeuverCount;
     unsigned char  _currentIncidentType;
     unsigned char  _currentManeuverComplexity;
-    unsigned char  _currentManueverType;
+    int  _currentManeuverType;
     unsigned char  _currentStepLength;
     struct ManeveuverDistancesRange { 
         double _immediate; 
@@ -19,6 +19,7 @@
         double _veryFar; 
     }  _distanceRanges;
     unsigned char  _distanceToCurrentManeuver;
+    double  _distanceToDestination;
     unsigned int  _lineType;
     unsigned char  _navState;
     int  _nextManeuverRampType;
@@ -32,6 +33,7 @@
     }  _pointsOfInterest;
     int  _rampType;
     unsigned char  _roadSpeed;
+    unsigned long long  _roadSpeedZeroes;
     struct shared_ptr<gss::StylesheetManager<gss::ScenePropertyID> > { 
         struct StylesheetManager<gss::ScenePropertyID> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -43,6 +45,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)analyticsLogContextWithNavigationState;
 - (id)init;
 - (unsigned char)navigationState;
 - (void)setCurrentGroupedManeuverCount:(unsigned long long)arg1;
@@ -52,6 +55,7 @@
 - (void)setCurrentStepLength:(double)arg1;
 - (void)setCurrentTransportationType:(int)arg1;
 - (void)setDistanceToCurrentManeuver:(double)arg1;
+- (void)setDistanceToDestination:(double)arg1;
 - (void)setLineType:(unsigned int)arg1;
 - (void)setNavCameraMode:(unsigned long long)arg1;
 - (void)setNavigationState:(int)arg1;

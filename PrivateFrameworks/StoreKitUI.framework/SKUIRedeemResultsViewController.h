@@ -2,59 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
-    UIButton * _anotherButton;
-    bool  _extendedMessageIsExpanded;
-    SKUITextLayout * _extendedMessageTextLayout;
-    SKUITextBoxView * _extendedMessageView;
-    UIImageView * _headerImageView;
-    UIImage * _itemImage;
-    SKUIItemStateCenter * _itemStateCenter;
-    SKUIGiftItemView * _itemView;
-    SKUIRedeemResultMessageView * _messageView;
-    NSOperationQueue * _operationQueue;
-    SKUIRedeemITunesPassLockup * _passbookLockup;
+@interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController {
     SKUIRedeem * _redeem;
     long long  _redeemCategory;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SKUIRedeem *redeem;
+@property (nonatomic, retain) SKUIRedeem *redeem;
 @property (nonatomic) long long redeemCategory;
-@property (readonly) Class superclass;
+
++ (bool)canShowResultsForRedeem:(id)arg1;
++ (id)redeemResultsControllerForRedeem:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_anotherButtonSection;
 - (void)_doneAction:(id)arg1;
-- (id)_emptySection;
-- (void)_extendedMessageAction:(id)arg1;
-- (id)_extendedMessageViewSection;
-- (id)_headerImageViewSection;
-- (id)_item;
-- (id)_itemView;
-- (id)_itemViewSection;
-- (id)_linksSection;
-- (id)_messageViewSection;
-- (void)_openAction:(id)arg1;
-- (id)_passbookLearnMoreSection;
-- (void)_passbookLockupAction:(id)arg1;
-- (void)_redeemAnotherAction:(id)arg1;
-- (void)_reloadResultViewMessage;
-- (void)_reloadSections;
-- (id)_resultImageViewSection;
-- (void)_setHeaderImage:(id)arg1;
-- (void)_setItemImage:(id)arg1;
-- (double)_tableWidth;
-- (void)dealloc;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRedeem:(id)arg1;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
-- (void)loadView;
 - (id)redeem;
 - (long long)redeemCategory;
-- (void)redeemResultsView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)setRedeem:(id)arg1;
 - (void)setRedeemCategory:(long long)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewDidLoad;
 
 @end

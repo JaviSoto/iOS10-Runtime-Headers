@@ -14,6 +14,7 @@
     NSNumber * inputHighlights;
     CIImage * inputImage;
     NSNumber * inputLocalLight;
+    NSNumber * inputRawHighlights;
     NSNumber * inputShadows;
     NSNumber * inputUseCube;
     id  inputUseCubeColorSpace;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) CIImage *inputImage;
 @property (nonatomic, retain) NSData *inputLightMap;
 @property (nonatomic, retain) NSNumber *inputLocalLight;
+@property (nonatomic, retain) NSNumber *inputRawHighlights;
 @property (nonatomic, retain) NSNumber *inputShadows;
 @property (nonatomic, retain) NSNumber *inputUseCube;
 @property (nonatomic, retain) id inputUseCubeColorSpace;
@@ -38,6 +40,7 @@
 - (id)_kernelBpos;
 - (id)_kernelC;
 - (id)_kernelH;
+- (id)_kernelRH;
 - (void)dealloc;
 - (id)inputBlack;
 - (id)inputBrightness;
@@ -47,6 +50,7 @@
 - (id)inputImage;
 - (id)inputLightMap;
 - (id)inputLocalLight;
+- (id)inputRawHighlights;
 - (id)inputShadows;
 - (id)inputUseCube;
 - (id)inputUseCubeColorSpace;
@@ -59,6 +63,7 @@
 - (void)setInputImage:(id)arg1;
 - (void)setInputLightMap:(id)arg1;
 - (void)setInputLocalLight:(id)arg1;
+- (void)setInputRawHighlights:(id)arg1;
 - (void)setInputShadows:(id)arg1;
 - (void)setInputUseCube:(id)arg1;
 - (void)setInputUseCubeColorSpace:(id)arg1;

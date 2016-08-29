@@ -13,7 +13,7 @@
 - (id)copyPropertyList;
 - (id)copyPropertyListWithoutDrainingPendingChanges;
 - (struct __CFString { }*)debugDump;
-- (void)enqueueNewKey:(id)arg1 value:(id)arg2 size:(unsigned long long)arg3 encoding:(int)arg4;
+- (bool)enqueueNewKey:(id)arg1 value:(id)arg2 size:(unsigned long long)arg3 encoding:(int)arg4;
 - (id)initWithDomain:(struct __CFString { }*)arg1 userName:(struct __CFString { }*)arg2 storeName:(id)arg3 configurationPath:(struct __CFString { }*)arg4 containerPath:(struct __CFString { }*)arg5 shmemIndex:(short)arg6 daemon:(id)arg7;
 - (void)registerForChangeNotifications;
 - (void)synchronizeWithCloud:(id)arg1 replyHandler:(id /* block */)arg2;

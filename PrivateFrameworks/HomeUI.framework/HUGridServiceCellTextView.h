@@ -49,6 +49,7 @@
 - (void)setServiceNameComponents:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTextColorFollowsTintColor:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)textColor;
 - (bool)textColorFollowsTintColor;
 - (void)tintColorDidChange;

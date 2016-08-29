@@ -6,6 +6,7 @@
     <GEOTransitArtworkDataSource> * _artworkValue;
     <GEOServerFormatTokenPriceValue> * _priceValue;
     NSString * _stringValue;
+    NSArray * _timeStampValues;
     NSString * _token;
     long long  _type;
     unsigned int  _value1;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) <GEOServerFormatTokenPriceValue> *priceValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *timeStampValues;
 @property (nonatomic, retain) NSString *token;
 @property (nonatomic) long long type;
 @property (nonatomic) unsigned int value1;
@@ -32,11 +34,13 @@
 - (void)setArtworkValue:(id)arg1;
 - (void)setPriceValue:(id)arg1;
 - (void)setStringValue:(id)arg1;
+- (void)setTimeStampValues:(id)arg1;
 - (void)setToken:(id)arg1;
 - (void)setType:(long long)arg1;
 - (void)setValue1:(unsigned int)arg1;
 - (void)setValue2:(unsigned int)arg1;
 - (id)stringValue;
+- (id)timeStampValues;
 - (id)token;
 - (long long)type;
 - (unsigned int)value1;

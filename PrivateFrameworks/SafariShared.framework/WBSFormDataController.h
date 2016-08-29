@@ -36,7 +36,6 @@
 + (id)valueOfControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_addControlIDToAutoFillValuesToAutoFillItems:(id)arg1 formMetadata:(id)arg2 startingAtIndex:(unsigned long long)arg3;
 - (unsigned long long)_addMatchesForControl:(id)arg1 startingAtIndex:(unsigned long long)arg2 formMetadata:(id)arg3 fromExistingMatches:(id)arg4 fromAllMatchesIfNecessary:(id)arg5 addToFoundMatches:(id)arg6 addToAutoFillValues:(id)arg7 multiRoundAutoFillManager:(id)arg8 propertyToIdentifierMapForFoundMatches:(id)arg9 shouldUseEachExistingMatchOnce:(bool)arg10;
 - (void)_fillPhoneNumber:(id)arg1 intoValues:(id)arg2 controls:(id)arg3 formTextSample:(id)arg4 multiRoundAutoFillManager:(id)arg5;
 - (id)_lastUsedUsernameForDomain:(id)arg1 protectionSpace:(id*)arg2;

@@ -6,7 +6,6 @@
     NSString * _callDestinationID;
     long long  _callDestinationIDType;
     NSString * _callServiceSpeakableName;
-    NSString * _callerIDLanguage;
     long long  _callerIDType;
     NSArray * _contacts;
     NSString * _displayedCallerID;

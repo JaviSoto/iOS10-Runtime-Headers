@@ -32,6 +32,7 @@
 - (long long)_interfaceOrientationRotationDirectionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (id)_newSceneForWindow:(id)arg1 oldDisplay:(id)arg2 newDisplay:(id)arg3;
 - (void)_noteApplicationDidFinishLaunching;
+- (bool)_openURL:(id)arg1;
 - (bool)_saveSnapshotWithName:(id)arg1;
 - (void)_setDarkBoot:(bool)arg1;
 - (void)_updateSceneSettingsForScene:(id)arg1 layer:(id)arg2;
@@ -55,7 +56,6 @@
 - (unsigned long long)lastExitReason;
 - (void)noteActiveInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithSettings:(id)arg2 fromOrientation:(long long)arg3;
 - (void)noteActiveInterfaceOrientationWillChangeToOrientation:(long long)arg1;
-- (bool)openURL:(id)arg1;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
 - (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;

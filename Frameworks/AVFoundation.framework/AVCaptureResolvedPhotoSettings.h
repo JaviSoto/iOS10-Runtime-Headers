@@ -20,6 +20,7 @@
 + (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 originalPhotoDeliveryEnabled:(bool)arg10 stillImageStabilizationEnabled:(bool)arg11 squareCropEnabled:(bool)arg12;
 
 - (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 originalPhotoDeliveryEnabled:(bool)arg10 stillImageStabilizationEnabled:(bool)arg11 squareCropEnabled:(bool)arg12;
+- (void)dealloc;
 - (id)description;
 - (bool)isFlashEnabled;
 - (bool)isHDREnabled;

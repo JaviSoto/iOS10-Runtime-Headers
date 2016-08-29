@@ -5,14 +5,10 @@
 @interface EKEventAlarmDetailItem : EKEventDetailItem {
     NSArray * _alarms;
     EKAlarmsViewModel * _alarmsViewModel;
-    bool  _canHaveLeaveNowAlarm;
     unsigned long long  _disclosedSubitem;
-    bool  _hasLeaveNowAlarm;
 }
 
 @property (nonatomic, retain) EKAlarmsViewModel *alarmsViewModel;
-
-+ (id)_textLabelForIndex:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (bool)_alarmsAreCreatable;
@@ -23,6 +19,7 @@
 - (bool)configureWithCalendar:(id)arg1 preview:(bool)arg2;
 - (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemIsExternallyOrganized;
 - (bool)editItemViewControllerSave:(id)arg1;
 - (bool)editItemViewControllerShouldShowDetachAlert;
 - (unsigned long long)numberOfSubitems;

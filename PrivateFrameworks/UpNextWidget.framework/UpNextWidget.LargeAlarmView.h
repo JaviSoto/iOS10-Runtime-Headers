@@ -2,23 +2,26 @@
    Image: /System/Library/PrivateFrameworks/UpNextWidget.framework/UpNextWidget
  */
 
-@interface UpNextWidget.LargeAlarmView : UpNextWidget.GutterizedView {
+@interface UpNextWidget.LargeAlarmView : UIView {
     void bellImageView;
+    void bellWidthAndHeight;
     void label;
     void tapURL;
     void viewTapped;
 }
 
-@property (nonatomic, readonly) UIView *forLastBaselineLayout;
 @property (nonatomic, copy) id /* block */ viewTapped;
 
 - (id /* block */).cxx_destruct;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
+- (void)layoutSubviews;
 - (void)refreshWithAlarmsWithAlarms:(id)arg1;
 - (void)setViewTapped:(id /* block */)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tappedWithGestureRecognizer:(id)arg1;
-- (id)viewForLastBaselineLayout;
 - (id /* block */)viewTapped;
 
 @end

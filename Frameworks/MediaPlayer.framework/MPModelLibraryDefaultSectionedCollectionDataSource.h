@@ -35,6 +35,7 @@
 - (struct shared_ptr<mlcore::EntityQueryResult> { struct EntityQueryResult {} *x1; struct __shared_weak_count {} *x2; })itemQueryResults;
 - (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })optionalSectionIndexTitlesRange;
 - (id)request;
 - (id)sectionAtIndex:(unsigned long long)arg1;
 - (id)sectionIndexTitles;

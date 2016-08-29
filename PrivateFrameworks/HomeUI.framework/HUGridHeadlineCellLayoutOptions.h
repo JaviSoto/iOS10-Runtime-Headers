@@ -3,29 +3,48 @@
  */
 
 @interface HUGridHeadlineCellLayoutOptions : HUGridCellLayoutOptions {
+    double  _containerLeadingMargin;
+    double  _containerTrailingMargin;
+    bool  _editing;
+    double  _editingBackgroundHeight;
     double  _minimumFontSize;
     double  _topOfScreenToHeadlineBaselinePercentage;
     struct CGSize { 
         double width; 
         double height; 
     }  _viewSize;
+    long long  _viewSizeSubclass;
 }
 
+@property (nonatomic, readonly) double containerLeadingMargin;
+@property (nonatomic, readonly) double containerTrailingMargin;
+@property (getter=isEditing, nonatomic) bool editing;
+@property (nonatomic) double editingBackgroundHeight;
+@property (nonatomic, readonly) double editingBackgroundMinimumWidth;
 @property (nonatomic) double minimumFontSize;
 @property (nonatomic, readonly) double topOfScreenToHeadlineBaselineDistance;
 @property (nonatomic) double topOfScreenToHeadlineBaselinePercentage;
-@property (nonatomic) struct CGSize { double x1; double x2; } viewSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewSize;
+@property (nonatomic, readonly) long long viewSizeSubclass;
 
 + (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
-+ (id)defaultOptionsForCellSizeSubclass:(long long)arg1 viewSizeSubclass:(long long)arg2;
++ (id)defaultOptionsForCellSizeSubclass:(long long)arg1 viewSizeSubclass:(long long)arg2 viewSize:(struct CGSize { double x1; double x2; })arg3 containerLeadingMargin:(double)arg4 containerTrailingMargin:(double)arg5;
 
+- (double)cellInnerMargin;
+- (double)containerLeadingMargin;
+- (double)containerTrailingMargin;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)editingBackgroundHeight;
+- (double)editingBackgroundMinimumWidth;
+- (bool)isEditing;
 - (double)minimumFontSize;
+- (void)setEditing:(bool)arg1;
+- (void)setEditingBackgroundHeight:(double)arg1;
 - (void)setMinimumFontSize:(double)arg1;
 - (void)setTopOfScreenToHeadlineBaselinePercentage:(double)arg1;
-- (void)setViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)topOfScreenToHeadlineBaselineDistance;
 - (double)topOfScreenToHeadlineBaselinePercentage;
 - (struct CGSize { double x1; double x2; })viewSize;
+- (long long)viewSizeSubclass;
 
 @end

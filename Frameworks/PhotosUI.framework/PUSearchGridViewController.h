@@ -15,20 +15,19 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_reloadVisibleSectionHeadersAnimated:(bool)arg1;
+- (bool)_containsScene;
+- (id)_subtitle;
+- (long long)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
+- (void)_updateNavigationTitleView;
 - (bool)allowSlideshowButton;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
 - (id)emptyPlaceholderText;
-- (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)newEmptyPlaceholderView;
 - (id)newGridLayout;
 - (id)searchGridDataSource;
 - (void)searchGridDataSourceHasPendingChanges:(id)arg1;
-- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setEmptyPlaceholderText:(id)arg1;
 - (void)setSearchGridDataSource:(id)arg1;
-- (void)setSelected:(bool)arg1 itemsAtIndexes:(id)arg2 inSection:(long long)arg3 animated:(bool)arg4;
-- (bool)showSectionHeaders;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -31,6 +31,7 @@
 - (id)applications;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)dealloc;
+- (id)ignoredForegroundAppBundleIdentifiers;
 - (id)init;
 - (id)initWithMessageDispatcher:(id)arg1;
 - (id)messageDispatcher;

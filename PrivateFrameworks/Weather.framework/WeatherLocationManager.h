@@ -49,6 +49,7 @@
 @property (nonatomic) unsigned long long updateInterval;
 
 + (void)clearSharedLocationManager;
++ (int)locationManagerAuthorizationWithEffectiveBundleId:(id)arg1;
 + (id)sharedWeatherLocationManager;
 
 - (void).cxx_destruct;

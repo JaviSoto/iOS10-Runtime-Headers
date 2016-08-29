@@ -100,7 +100,9 @@
 - (id)loggedOutError;
 - (id)logsDirPath;
 - (void)networkReachabilityChanged:(bool)arg1;
+- (void)networkReachabilityFlagsChanged:(unsigned int)arg1;
 - (id)registerShareAcceptOperation:(id)arg1 forURL:(id)arg2;
+- (void)restart;
 - (void)resumeFileProviderForSyncedFolderType:(unsigned long long)arg1;
 - (void)resumeIPCAcceptation;
 - (bool)retrySyncBubbleLaterIfNeededWithError:(id)arg1;

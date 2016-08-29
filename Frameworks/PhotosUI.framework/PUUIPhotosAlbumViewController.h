@@ -22,6 +22,7 @@
 - (id)_imagePickerMediaTypes;
 - (void)_setAlbumFilter:(int)arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
+- (bool)allowsPeeking;
 - (bool)canBeginStackCollapseTransition;
 - (bool)canNavigateToPhotoInteractively:(bool)arg1;
 - (id)filterPredicateForAlbum:(struct NSObject { Class x1; }*)arg1;

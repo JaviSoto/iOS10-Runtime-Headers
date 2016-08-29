@@ -20,8 +20,8 @@
 @property (nonatomic, readonly, copy) HMFNetAddress *netAddress;
 @property (nonatomic, readonly) struct __SCNetworkReachability { }*networkReachabilityRef;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (nonatomic, readonly) unsigned long long reachabilityPath;
-@property (getter=isReachable, nonatomic, readonly) bool reachable;
+@property (readonly) unsigned long long reachabilityPath;
+@property (getter=isReachable, readonly) bool reachable;
 
 + (id)shortDescription;
 

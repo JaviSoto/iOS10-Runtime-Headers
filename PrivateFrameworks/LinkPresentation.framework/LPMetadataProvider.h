@@ -29,10 +29,10 @@
 @property (nonatomic) bool useSpecializedProviders;
 
 + (id)_callbackQueue;
++ (id)_copyDefaultWebViewConfiguration;
 + (id)_defaultUserAgent;
 + (id)_incompleteMetadataRequests;
 + (id)_metadataExtractorScript;
-+ (id)_sharedWebViewConfiguration;
 + (id)requestMetadataForURL:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)requestMetadataForWebView:(id)arg1 completionHandler:(id /* block */)arg2;
 

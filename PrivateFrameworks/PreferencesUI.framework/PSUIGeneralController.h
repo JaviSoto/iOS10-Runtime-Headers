@@ -23,7 +23,6 @@
 - (void)dealloc;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)didCancelEnteringPIN;
-- (void)dismissPresentedViewController;
 - (void)enableEdge:(id)arg1;
 - (void)handleCarPlayAllowedDidChange;
 - (void)handleTVOutChange;

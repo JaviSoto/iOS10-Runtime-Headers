@@ -36,6 +36,7 @@
 - (long long)_addProvenanceColumnToCorrelationsWithError:(id*)arg1;
 - (long long)_addPushCountColumnToFitnessFriendsTableWithError:(id*)arg1;
 - (long long)_addPushCountColumnsToActivityCacheWithError:(id*)arg1;
+- (long long)_addSampleAnchorIndexWithError:(id*)arg1;
 - (long long)_addSampleIndicesWithError:(id*)arg1;
 - (long long)_addSourceBundleIdentifierColumnToNanoPairingTableWithError:(id*)arg1;
 - (long long)_addTimeZoneOffsetColumnToFitnessFriendsTableWithError:(id*)arg1;
@@ -73,6 +74,7 @@
 - (id)_lastReceivedNatalieDatum:(id*)arg1;
 - (id)_lastReceivedPedometerDatum:(id*)arg1;
 - (long long)_migrateAchievementDataStoreSessionCountsWithError:(id*)arg1;
+- (long long)_migrateAchievementExtraDataToWorkoutActivityTypeWithError:(id*)arg1;
 - (long long)_migrateAchievementKeyValueCategoryToLocalWithError:(id*)arg1;
 - (long long)_migrateAchievementTypeToDefinitionIdentifierWithError:(id*)arg1;
 - (long long)_migrateAddBasalCalorieKeyValueWithError:(id*)arg1;
@@ -97,6 +99,7 @@
 - (long long)_recreateDataProvenanceTableIncludingTimeZoneNamesWithError:(id*)arg1;
 - (long long)_recreateDataSeriesTableWithError:(id*)arg1;
 - (long long)_removeAchievementsAndActivityCachesFromUnprotectedDatabaseWithError:(id*)arg1;
+- (long long)_removeActivitySharingDataWithError:(id*)arg1;
 - (long long)_removeOrphanedDeletedObjectsWithError:(id*)arg1;
 - (long long)_removeStandHourWriteAuthorizationWithError:(id*)arg1;
 - (long long)_renameCDATableWithError:(id*)arg1;

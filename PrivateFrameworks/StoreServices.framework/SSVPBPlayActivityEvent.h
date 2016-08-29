@@ -52,6 +52,7 @@
     bool  _offline;
     long long  _persistentID;
     NSString * _personalizedContainerID;
+    NSString * _playlistVersionHash;
     long long  _purchasedAdamID;
     long long  _radioAdamID;
     int  _reasonHintType;
@@ -107,6 +108,7 @@
 @property (nonatomic) bool hasOffline;
 @property (nonatomic) bool hasPersistentID;
 @property (nonatomic, readonly) bool hasPersonalizedContainerID;
+@property (nonatomic, readonly) bool hasPlaylistVersionHash;
 @property (nonatomic) bool hasPurchasedAdamID;
 @property (nonatomic) bool hasRadioAdamID;
 @property (nonatomic) bool hasReasonHintType;
@@ -132,6 +134,7 @@
 @property (nonatomic) bool offline;
 @property (nonatomic) long long persistentID;
 @property (nonatomic, retain) NSString *personalizedContainerID;
+@property (nonatomic, retain) NSString *playlistVersionHash;
 @property (nonatomic) long long purchasedAdamID;
 @property (nonatomic) long long radioAdamID;
 @property (nonatomic) int reasonHintType;
@@ -191,6 +194,7 @@
 - (bool)hasOffline;
 - (bool)hasPersistentID;
 - (bool)hasPersonalizedContainerID;
+- (bool)hasPlaylistVersionHash;
 - (bool)hasPurchasedAdamID;
 - (bool)hasRadioAdamID;
 - (bool)hasReasonHintType;
@@ -219,6 +223,7 @@
 - (bool)offline;
 - (long long)persistentID;
 - (id)personalizedContainerID;
+- (id)playlistVersionHash;
 - (long long)purchasedAdamID;
 - (long long)radioAdamID;
 - (bool)readFrom:(id)arg1;
@@ -272,6 +277,7 @@
 - (void)setOffline:(bool)arg1;
 - (void)setPersistentID:(long long)arg1;
 - (void)setPersonalizedContainerID:(id)arg1;
+- (void)setPlaylistVersionHash:(id)arg1;
 - (void)setPurchasedAdamID:(long long)arg1;
 - (void)setRadioAdamID:(long long)arg1;
 - (void)setReasonHintType:(int)arg1;

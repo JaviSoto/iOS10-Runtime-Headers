@@ -45,6 +45,7 @@
 - (id)delegate;
 - (id)diagnosticItemProvider;
 - (id)exportSessionWithPresetName:(id)arg1;
+- (id)init;
 - (id)initWithAssetCollection:(id)arg1;
 - (id)initWithAssetCollection:(id)arg1 keyAsset:(id)arg2;
 - (bool)isCompelling;

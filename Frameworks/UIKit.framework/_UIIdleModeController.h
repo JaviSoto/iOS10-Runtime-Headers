@@ -25,11 +25,10 @@
 - (void)_applyLayoutAttributes:(id)arg1 toView:(id)arg2;
 - (void)_applyPresentationLayoutAttributesToViews;
 - (void)_completeDismissal;
-- (double)_dimmingOverlayWhiteValue;
+- (double)_dimmingOverlayWhiteValueForUserInterfaceStyle:(long long)arg1;
 - (double)_dismissalAnimationDuration;
 - (void)_enterIdleMode;
 - (void)_exitIdleMode;
-- (id)_filterForUserInterfaceStyle:(long long)arg1;
 - (id)_imageForTraitCollection:(id)arg1;
 - (id)_originalAttributesForView:(id)arg1 comparedToIdleModeAttributes:(id)arg2;
 - (void)_prepareForPresentationWithKeyWindow:(id)arg1 focusedView:(id)arg2;

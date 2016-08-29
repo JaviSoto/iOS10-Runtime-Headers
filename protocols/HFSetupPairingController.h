@@ -7,7 +7,7 @@
 
 - (HFAccessoryBrowsingManager *)accessoryBrowser;
 - (void)addPairingObserver:(id <HFSetupPairingObserver>)arg1;
-- (void)cancel;
+- (NAFuture *)cancel;
 - (bool)hasFailedAccessories;
 - (HMHome *)home;
 - (HFDiscoveredAccessory *)pairedDiscoveredAccessory;

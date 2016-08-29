@@ -4,7 +4,7 @@
 
 @interface BPSWatchView : UIView {
     NSString * _screenImageName;
-    NSBundle * _screenImageSearchBundleIdentifier;
+    NSString * _screenImageSearchBundleIdentifier;
     unsigned long long  _sizeOverride;
     unsigned long long  _style;
     NSString * _styleVersionSuffix;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, copy) NSString *screenImageName;
-@property (nonatomic, retain) NSBundle *screenImageSearchBundleIdentifier;
+@property (nonatomic, retain) NSString *screenImageSearchBundleIdentifier;
 @property (nonatomic) unsigned long long sizeOverride;
 @property (nonatomic) unsigned long long style;
 @property (nonatomic, copy) NSString *styleVersionSuffix;
@@ -44,7 +44,6 @@
 - (unsigned long long)style;
 - (id)styleVersionSuffix;
 - (id)watchAssetBundle;
-- (id)watchImageNamed:(id)arg1;
 - (id)watchImageView;
 - (id)watchScreenImageView;
 

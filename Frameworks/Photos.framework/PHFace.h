@@ -80,8 +80,10 @@
 + (id)_composePropertiesToFetchWithHint:(unsigned long long)arg1;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)corePropertiesToFetch;
++ (id)croppingPropertiesToFetch;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchFacesForPerson:(id)arg1 options:(id)arg2;
++ (id)fetchFacesGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchFacesInAsset:(id)arg1 options:(id)arg2;
 + (id)fetchFacesInFaceCollection:(id)arg1 options:(id)arg2;
 + (id)fetchFacesInFaceGroup:(id)arg1 options:(id)arg2;
@@ -98,6 +100,7 @@
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
++ (bool)managedObjectSupportsFaceVisibility;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 + (unsigned long long)propertyFetchHintsForPropertySets:(id)arg1;
 + (id)propertySetAccessorsByPropertySet;
@@ -161,5 +164,6 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_cropRectWithCropFactor:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_cropRectWithCropFactor:(double)arg1 bounded:(bool)arg2;
 
 @end

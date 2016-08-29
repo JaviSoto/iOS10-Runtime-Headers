@@ -100,6 +100,7 @@
 + (id)ringsViewConfiguredForThreeRingsOnWatch;
 
 - (void).cxx_destruct;
+- (void)_context_checkAndRepairFramebuffer;
 - (void)_context_createBuffers;
 - (void)_context_loadFlatColorProgramIfNeeded;
 - (void)_context_loadRingDataForGroupAtIndex:(long long)arg1;

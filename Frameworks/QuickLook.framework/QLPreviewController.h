@@ -16,6 +16,7 @@
     long long  _currentPreviewItemIndex;
     <QLPreviewControllerDataSource> * _dataSource;
     bool  _deferReloadData;
+    long long  _deferredSetIndex;
     <QLPreviewControllerDelegate> * _delegate;
     bool  _didTransitionFromInternalView;
     QLBarButtonItem * _doneButton;
@@ -160,6 +161,7 @@
 - (void)_updateNavigationTitle;
 - (void)_updateToolbarSuperview;
 - (void)_updateViewHierarchyPresentation;
+- (bool)accessibilityPerformEscape;
 - (id)activityItemForDocumentInteractionController:(id)arg1;
 - (id)additionalActivitiesForDocumentInteractionController:(id)arg1;
 - (id)additionalLeftBarButtonItems;
@@ -247,7 +249,6 @@
 - (void)setFullScreen:(bool)arg1;
 - (void)setInternalNavigationController:(id)arg1;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
-- (void)setNavbarHidden:(bool)arg1;
 - (void)setOriginalLeftBarButtonItems:(id)arg1;
 - (void)setOriginalRightBarButtonItems:(id)arg1;
 - (void)setOverlayHidden:(bool)arg1;

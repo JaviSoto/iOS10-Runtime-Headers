@@ -36,8 +36,6 @@
 @property (nonatomic, readonly) bool userHasDoneActivitySetup;
 
 + (id)_activityTemplateWithFamily:(long long)arg1 entryModel:(id)arg2;
-+ (id)completedEntryModelFromModel:(id)arg1;
-+ (id)completedIdealizedEntryModel;
 + (id)idealizedEntryModel;
 + (id)largeModular:(id)arg1;
 + (id)largeUtility:(id)arg1;

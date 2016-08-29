@@ -7,8 +7,9 @@
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
     HDFitnessFriendsFriendListManager * _friendListManager;
     bool  _hasRegisteredForUpdates;
+    long long  _intervalExecutionCount;
     bool  _isWatch;
-    NSObject<OS_dispatch_queue> * _operationQueue;
+    HDFitnessFriendsRelationshipManager * _relationshipManager;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
@@ -19,7 +20,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_performUpdateWithCompletion:(id /* block */)arg1;
+- (void)_queue_performUpdateWithCompletion:(id /* block */)arg1;
 - (void)beginPeriodicUpdates;
 - (void)endPeriodicUpdates;
 - (void)fitnessFriendsManagerReady:(id)arg1;

@@ -4,7 +4,6 @@
 
 @interface MFAttachmentManager : NSObject {
     NSObject<OS_dispatch_queue> * _arrayAccessQueue;
-    MFInvocationQueue * _attachmentInvocationQueue;
     NSMutableDictionary * _attachments;
     NSObject<OS_dispatch_queue> * _imageScalingQueue;
     NSLock * _metaDataLock;
@@ -18,12 +17,10 @@
 + (id)defaultManager;
 + (id)supportedDocumentUTIs;
 
-- (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(unsigned long long)arg2 expectedSize:(unsigned long long)arg3;
 - (id)_contentIDForAttachment:(id)arg1;
 - (id)_dataProviderForAttachmentURL:(id)arg1 error:(id*)arg2;
 - (void)_fetchCompletedForAttachment:(id)arg1 error:(id)arg2;
-- (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2;
-- (void)_fetchInvocationCallUsingBlock:(id /* block */)arg1;
+- (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 syncLock:(id*)arg3;
 - (id)_filePathForAttachment:(id)arg1;
 - (bool)_setupAttachment:(id)arg1 withMimeBody:(id)arg2 error:(id*)arg3;
 - (void)addProvider:(id)arg1 forBaseURL:(id)arg2;

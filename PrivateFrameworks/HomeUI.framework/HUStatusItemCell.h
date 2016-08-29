@@ -7,6 +7,7 @@
     HUGridLayoutOptions * _gridLayoutOptions;
     HFItem * _item;
     UILabel * _titleLabel;
+    UIView * _titleLabelSnapshot;
 }
 
 @property (nonatomic, retain) NSLayoutConstraint *bottomConstraint;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) HFItem *item;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UIView *titleLabelSnapshot;
 
 - (void).cxx_destruct;
 - (void)_updateTitleLabel;
@@ -30,7 +32,9 @@
 - (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setItem:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (void)setTitleLabelSnapshot:(id)arg1;
 - (id)titleLabel;
+- (id)titleLabelSnapshot;
 - (void)updateUIWithAnimation:(bool)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface TSUIndexedStringStore : NSObject {
+    NSObject<OS_dispatch_queue> * _accessQueue;
     NSMutableDictionary * _indexByString;
-    int  _lock;
     NSMutableArray * _stringByIndex;
 }
 

@@ -2,21 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGOperationForWithDbLock : NSOperation {
-    bool  _completed;
-    NSObject<OS_dispatch_group> * _group;
-    bool  _started;
+@interface SGOperationForWithDbLock : NSBlockOperation {
+    NSObject<OS_dispatch_semaphore> * _semaphoreFinish;
+    NSObject<OS_dispatch_semaphore> * _semaphoreStart;
 }
 
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
-
 - (void).cxx_destruct;
+- (void)block;
 - (void)complete;
 - (id)init;
-- (bool)isAsynchronous;
-- (bool)isExecuting;
-- (bool)isFinished;
-- (void)start;
 - (void)waitForStart;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface _HDSleepReportBuilder : NSObject {
+    NSCalendar * _calendar;
     NSMutableDictionary * _inBedSamplesBySource;
     NSDateInterval * _resultInterval;
 }
@@ -11,6 +12,6 @@
 - (id)_categorySampleBufferForSource:(id)arg1;
 - (void)addSleepSamples:(id)arg1;
 - (id)calculateResult;
-- (id)initWithResultInterval:(id)arg1;
+- (id)initWithResultInterval:(id)arg1 calendar:(id)arg2;
 
 @end

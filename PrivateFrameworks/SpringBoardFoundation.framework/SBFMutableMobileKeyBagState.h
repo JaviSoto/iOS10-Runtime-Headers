@@ -9,6 +9,7 @@
 @property (nonatomic) unsigned long long failedAttemptCount;
 @property (nonatomic) long long lockState;
 @property (nonatomic) bool permanentlyBlocked;
+@property (nonatomic) bool recoveryEnabled;
 @property (nonatomic) bool recoveryPossible;
 @property (nonatomic) bool recoveryRequired;
 @property (nonatomic) bool shouldWipe;
@@ -22,6 +23,7 @@
 - (void)setFailedAttemptCount:(unsigned long long)arg1;
 - (void)setLockState:(long long)arg1;
 - (void)setPermanentlyBlocked:(bool)arg1;
+- (void)setRecoveryEnabled:(bool)arg1;
 - (void)setRecoveryPossible:(bool)arg1;
 - (void)setRecoveryRequired:(bool)arg1;
 - (void)setShouldWipe:(bool)arg1;

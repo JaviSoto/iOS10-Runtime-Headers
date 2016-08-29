@@ -41,7 +41,7 @@
 - (bool)isEmojiConversionEnabled;
 - (void)keyboardDidShow:(id)arg1;
 - (void)layoutSubviews;
-- (id)personalizedEmojiTokenArrayForArray:(id)arg1;
+- (id)personalizedEmojiTokenListForList:(id)arg1;
 - (void)replaceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withEmojiToken:(id)arg2 language:(id)arg3;
 - (void)setDelayFrames:(unsigned long long)arg1;
 - (void)setEmojiConversionEnabled:(bool)arg1;

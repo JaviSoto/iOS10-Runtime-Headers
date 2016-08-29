@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INQueryHomeIntent : INIntent <INQueryHomeIntent>
+@interface INQueryHomeIntent : INIntent <INQueryHomeIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

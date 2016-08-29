@@ -50,6 +50,7 @@
 - (void)touchUpInsideCloseButton;
 - (void)updateHintTransition:(double)arg1;
 - (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

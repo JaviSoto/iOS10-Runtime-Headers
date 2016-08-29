@@ -39,6 +39,7 @@
 + (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (bool)supportsSecureCoding;
 
+- (void)__forwardEnumerateRanges:(id /* block */)arg1;
 - (unsigned long long)__getContainmentVector:(out bool*)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (unsigned long long)_indexAtIndex:(unsigned long long)arg1;
 - (unsigned long long)_indexClosestToIndex:(unsigned long long)arg1 equalAllowed:(bool)arg2 following:(bool)arg3;

@@ -6,13 +6,16 @@
     NSArray * _genericKeys;
 }
 
++ (id)canaryRecordName;
 + (id)changeTagFromCKRecord:(id)arg1;
-+ (unsigned long long)dataSizeLimit;
++ (unsigned long long)highThresholdDataSizeLimit;
 + (id)identifierFromCKRecord:(id)arg1;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)modificationDateFromCKRecord:(id)arg1;
 + (id)recordType;
 + (id)storeFilename;
 + (unsigned long long)storeVersion;
++ (bool)supportsDeletions;
 + (bool)useTaggedImages;
 
 - (void).cxx_destruct;

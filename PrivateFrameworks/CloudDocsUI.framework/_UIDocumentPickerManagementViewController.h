@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsUI.framework/CloudDocsUI
  */
 
-@interface _UIDocumentPickerManagementViewController : UITableViewController {
+@interface _UIDocumentPickerManagementViewController : _UIContainerHuggingTableViewController {
     NSArray * _allPickers;
     NSArray * _fileTypes;
     unsigned long long  _mode;

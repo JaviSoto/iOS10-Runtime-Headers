@@ -3,6 +3,7 @@
  */
 
 @interface MPStoreAVItem : MPAVItem {
+    NSDictionary * _alternativeConfigurationOptions;
     unsigned long long  _assetQuality;
     bool  _didDeferLeaseStart;
     bool  _hasEverPrioritizedPlayerItem;
@@ -18,6 +19,7 @@
     MPStreamingDownloadSession * _streamingDownloadSession;
 }
 
+@property (nonatomic, readonly, copy) NSDictionary *alternativeConfigurationOptions;
 @property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) MPMediaPlaybackItemMetadata *playbackItemMetadata;
 @property (nonatomic, readonly) unsigned long long streamType;
@@ -54,6 +56,7 @@
 - (bool)allowsAirPlayFromCloud;
 - (bool)allowsEQ;
 - (bool)allowsExternalPlayback;
+- (id)alternativeConfigurationOptions;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(bool)arg1;
 - (id)artist;
 - (long long)artistStoreID;

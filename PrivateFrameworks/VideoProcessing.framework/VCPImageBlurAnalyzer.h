@@ -4,10 +4,13 @@
 
 @interface VCPImageBlurAnalyzer : VCPImageAnalyzer {
     NSArray * _faces;
+    VCPCNNData * _input;
     float  _irisSharpness;
+    VCPCNNModel * _model;
     NSArray * _objects;
     float  _sharpness;
     float  _sharpnessBlocks;
+    bool  _useGPU;
 }
 
 @property (readonly) float irisSharpness;
@@ -15,10 +18,15 @@
 
 - (void).cxx_destruct;
 - (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 flags:(unsigned long long*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
+- (float)calculateScoreFromNetworkOutput:(id)arg1 textureness:(char *)arg2 imageHeight:(int)arg3 imgWidth:(int)arg4;
+- (void)calculateTextureness:(float*)arg1 height:(int)arg2 width:(int)arg3 result:(char *)arg4;
+- (int)computeCNNBasedSharpness:(struct __CVBuffer { }*)arg1 cancel:(id /* block */)arg2;
 - (float)computeFaceSharpness:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (void)computeLocalSharpness:(struct __CVBuffer { }*)arg1;
 - (float)computeObjectSharpness:(struct __CVBuffer { }*)arg1;
 - (float)computeRegionSharpness:(char *)arg1 width:(int)arg2 height:(int)arg3 stride:(long long)arg4;
+- (int)initInputFromCVPixelBuffer:(struct __CVBuffer { }*)arg1 height:(int)arg2 width:(int)arg3;
+- (int)initModel;
 - (id)initWithFaceResults:(id)arg1 objectRect:(id)arg2;
 - (float)irisSharpness;
 - (float)sharpness;

@@ -18,6 +18,7 @@
     GEOPDHoursFilter * _hoursFilter;
     GEOPDPhotoFilter * _photoFilter;
     GEOPDPlaceInfoFilter * _placeInfoFilter;
+    GEOPDPlacecardURLFilter * _placecardUrlFilter;
     GEOPDRatingFilter * _ratingFilter;
     GEOPDRawAttributeFilter * _rawAttributeFilter;
     GEOPDRestaurantReservationLinkFilter * _restaurantReservationLinkFilter;
@@ -62,6 +63,7 @@
 @property (nonatomic, readonly) bool hasHoursFilter;
 @property (nonatomic, readonly) bool hasPhotoFilter;
 @property (nonatomic, readonly) bool hasPlaceInfoFilter;
+@property (nonatomic, readonly) bool hasPlacecardUrlFilter;
 @property (nonatomic, readonly) bool hasRatingFilter;
 @property (nonatomic, readonly) bool hasRawAttributeFilter;
 @property (nonatomic, readonly) bool hasRestaurantReservationLinkFilter;
@@ -80,6 +82,7 @@
 @property (nonatomic, retain) GEOPDHoursFilter *hoursFilter;
 @property (nonatomic, retain) GEOPDPhotoFilter *photoFilter;
 @property (nonatomic, retain) GEOPDPlaceInfoFilter *placeInfoFilter;
+@property (nonatomic, retain) GEOPDPlacecardURLFilter *placecardUrlFilter;
 @property (nonatomic, retain) GEOPDRatingFilter *ratingFilter;
 @property (nonatomic, retain) GEOPDRawAttributeFilter *rawAttributeFilter;
 @property (nonatomic, retain) GEOPDRestaurantReservationLinkFilter *restaurantReservationLinkFilter;
@@ -128,6 +131,7 @@
 - (bool)hasHoursFilter;
 - (bool)hasPhotoFilter;
 - (bool)hasPlaceInfoFilter;
+- (bool)hasPlacecardUrlFilter;
 - (bool)hasRatingFilter;
 - (bool)hasRawAttributeFilter;
 - (bool)hasRestaurantReservationLinkFilter;
@@ -159,6 +163,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)photoFilter;
 - (id)placeInfoFilter;
+- (id)placecardUrlFilter;
 - (id)ratingFilter;
 - (id)rawAttributeFilter;
 - (bool)readFrom:(id)arg1;
@@ -180,6 +185,7 @@
 - (void)setHoursFilter:(id)arg1;
 - (void)setPhotoFilter:(id)arg1;
 - (void)setPlaceInfoFilter:(id)arg1;
+- (void)setPlacecardUrlFilter:(id)arg1;
 - (void)setRatingFilter:(id)arg1;
 - (void)setRawAttributeFilter:(id)arg1;
 - (void)setRestaurantReservationLinkFilter:(id)arg1;

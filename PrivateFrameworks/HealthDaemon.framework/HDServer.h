@@ -120,6 +120,8 @@
 - (bool)queryServer:(id)arg1 isAuthorizationStatusDeterminedForTypes:(id)arg2 error:(id*)arg3;
 - (bool)queryServer:(id)arg1 isAuthorizedToReadType:(id)arg2 withRestrictedSourceIdentifier:(id*)arg3 authorizationAnchor:(id*)arg4;
 - (void)queryServer:(id)arg1 requestsAuthorizationForSamples:(id)arg2 completion:(id /* block */)arg3;
+- (bool)queryServerClientHasActiveWorkout:(id)arg1;
+- (bool)queryServerClientIsInBackground:(id)arg1;
 - (void)queryServerDidFinish:(id)arg1;
 - (bool)queryServerShouldObserveInBackground:(id)arg1;
 - (id)queue;
@@ -146,8 +148,8 @@
 - (void)remote_fetchDevicesMatchingProperty:(id)arg1 values:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_fetchUnitPreferencesForTypes:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)remote_finishLocationSeries:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;
-- (void)remote_getDatabaseSizeInBytesWithCompletion:(id /* block */)arg1;
 - (void)remote_getDefaultForKey:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)remote_getHealthDirectorySizeInBytesWithCompletion:(id /* block */)arg1;
 - (void)remote_getHealthLiteValueForKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_handleAuthorizationForExtensionWithCompletion:(id /* block */)arg1;
 - (void)remote_hasSourceWithBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;

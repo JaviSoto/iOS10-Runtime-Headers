@@ -30,5 +30,6 @@
 - (void)networkStateChanged;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (bool)sendMessage:(id)arg1;
+- (bool)sendMessageAtTopOfTheQueue:(id)arg1;
 
 @end

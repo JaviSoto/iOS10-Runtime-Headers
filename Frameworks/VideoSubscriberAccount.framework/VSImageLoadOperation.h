@@ -3,30 +3,26 @@
  */
 
 @interface VSImageLoadOperation : VSAsyncOperation {
-    NSError * _error;
-    UIImage * _image;
     NSItemProvider * _itemProvider;
     struct CGSize { 
         double width; 
         double height; 
     }  _preferredImageSize;
+    VSFailable * _result;
 }
 
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) NSItemProvider *itemProvider;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredImageSize;
+@property (nonatomic, retain) VSFailable *result;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)error;
 - (void)executionDidBegin;
-- (id)image;
 - (id)init;
 - (id)initWithItemProvider:(id)arg1 preferredImageSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)itemProvider;
 - (struct CGSize { double x1; double x2; })preferredImageSize;
-- (void)setError:(id)arg1;
-- (void)setImage:(id)arg1;
+- (id)result;
+- (void)setResult:(id)arg1;
 
 @end

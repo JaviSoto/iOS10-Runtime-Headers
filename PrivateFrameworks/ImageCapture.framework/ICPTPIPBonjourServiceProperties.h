@@ -3,9 +3,13 @@
  */
 
 @interface ICPTPIPBonjourServiceProperties : NSObject {
-    int  _clientSpinLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _clientUnfairLock;
     NSMutableArray * _clients;
-    int  _clientsSpinLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _clientsUnfairLock;
     id  _delegate;
     NSString * _hostGUID;
     unsigned int  _hostMaxConnections;
@@ -19,7 +23,7 @@
 }
 
 @property (retain) NSMutableArray *clients;
-@property int clientsSpinLock;
+@property struct os_unfair_lock_s { unsigned int x1; } clientsUnfairLock;
 @property id delegate;
 @property (retain) NSString *hostGUID;
 @property unsigned int hostMaxConnections;
@@ -32,7 +36,7 @@
 @property (retain) NSDictionary *txtRecordsDict;
 
 - (id)clients;
-- (int)clientsSpinLock;
+- (struct os_unfair_lock_s { unsigned int x1; })clientsUnfairLock;
 - (void)dealloc;
 - (id)delegate;
 - (void)finalize;
@@ -48,7 +52,7 @@
 - (void)releaseSocket;
 - (id)serviceType;
 - (void)setClients:(id)arg1;
-- (void)setClientsSpinLock:(int)arg1;
+- (void)setClientsUnfairLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostGUID:(id)arg1;
 - (void)setHostMaxConnections:(unsigned int)arg1;

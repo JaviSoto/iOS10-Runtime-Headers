@@ -12,7 +12,6 @@
 
 - (id)customDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCallUUID:(id)arg1;
 - (id)initWithCallUUID:(id)arg1 sendingVideo:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (bool)isSendingVideo;

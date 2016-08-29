@@ -45,6 +45,7 @@
 @property (copy) NSString *managedObjectClassName;
 @property (readonly) NSManagedObjectModel *managedObjectModel;
 @property (copy) NSString *name;
+@property (readonly) NSEntityDescription *ph_baseEntity;
 @property (retain) NSArray *properties;
 @property (readonly, copy) NSDictionary *propertiesByName;
 @property (readonly, copy) NSDictionary *relationshipsByName;
@@ -56,6 +57,8 @@
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property (readonly, copy) NSData *versionHash;
 @property (copy) NSString *versionHashModifier;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (id)_MOClassName;
 + (id)entityForName:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -181,5 +184,10 @@
 - (id)userInfo;
 - (id)versionHash;
 - (id)versionHashModifier;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)ph_baseEntity;
+- (id)ph_relationshipDescriptionsForKeyPath:(id)arg1;
 
 @end

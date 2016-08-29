@@ -10,6 +10,7 @@
     NSMutableDictionary * _paymenQueueByProductID;
     NSMutableDictionary * _purchaseLookUpEntriesByTagID;
     NSArray * _purchasesDiscoveredTagIDs;
+    NSDictionary * _readOnlyPurchaseLookUpEntriesByTagID;
     NSObject<OS_dispatch_queue> * _readWriteQueue;
     NSURLSession * _session;
     NSMutableDictionary * _webAccessEntriesByTagID;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSMutableDictionary *paymenQueueByProductID;
 @property (nonatomic, retain) NSMutableDictionary *purchaseLookUpEntriesByTagID;
 @property (nonatomic, retain) NSArray *purchasesDiscoveredTagIDs;
+@property (copy) NSDictionary *readOnlyPurchaseLookUpEntriesByTagID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *readWriteQueue;
 @property (nonatomic, retain) NSURLSession *session;
 @property (readonly) Class superclass;
@@ -38,6 +40,7 @@
 - (void)_initializeAppStorePurchaseDiscoveredList;
 - (id)_ongoingPurchaseEntryIDForProductIdentifier:(id)arg1;
 - (id)_purchaseLookUpEntryIDForTagID:(id)arg1;
+- (void)_removeFromPurchasedChannelsListWithTagIDs:(id)arg1;
 - (id)_webAccessEntryIDForTagID:(id)arg1;
 - (void)addAppStoreDiscoveredChannelsToFavorites:(id)arg1;
 - (void)addAppStorePurchaseWithTagID:(id)arg1 purchaseID:(id)arg2;
@@ -45,6 +48,7 @@
 - (void)addToPurchasedChannelsListWithEntry:(id)arg1;
 - (void)addToWebAccessEntryListWithEntry:(id)arg1;
 - (id)allAppStorePurchasedTagIDs;
+- (id)allAppStorePurchasedTagIDsByPurchaseID;
 - (id)allPurchasedTagIDs;
 - (bool)atleastOneValidAppStorePurchase;
 - (void)checkIntegrityOfPurchaseWithID:(id)arg1 callbackQueue:(id)arg2 completion:(id /* block */)arg3;
@@ -86,6 +90,7 @@
 - (id)purchaseLookUpEntriesByTagID;
 - (id)purchaseLookUpEntryForTagID:(id)arg1;
 - (id)purchasesDiscoveredTagIDs;
+- (id)readOnlyPurchaseLookUpEntriesByTagID;
 - (id)readWriteQueue;
 - (void)removeFromAppStorePurchasesDiscoveredList:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeFromPurchasedChannelsListWithTagIDs:(id)arg1;
@@ -100,15 +105,19 @@
 - (void)setPaymenQueueByProductID:(id)arg1;
 - (void)setPurchaseLookUpEntriesByTagID:(id)arg1;
 - (void)setPurchasesDiscoveredTagIDs:(id)arg1;
+- (void)setReadOnlyPurchaseLookUpEntriesByTagID:(id)arg1;
 - (void)setReadWriteQueue:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setWebAccessEntriesByTagID:(id)arg1;
 - (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithCompletion:(id /* block */)arg1;
 - (void)shouldShowiTunesSignedOutAlertWithCompletion:(id /* block */)arg1;
+- (void)silentRemoveFromPurchasedChannelsListWithTagIDs:(id)arg1;
 - (void)simulatePurchaseWithTagID:(id)arg1 productIdentifier:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 webAccessOptIn:(bool)arg6;
 - (void)startPurchaseWithTagID:(id)arg1 productIdentifier:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 price:(id)arg6 webAccessOptIn:(bool)arg7 payment:(id)arg8 completion:(id /* block */)arg9;
 - (void)submitWebAccessWithTagID:(id)arg1 purchaseID:(id)arg2 emailAddress:(id)arg3 purchaseReceipt:(id)arg4 serialCompletion:(id /* block */)arg5 completion:(id /* block */)arg6;
+- (id)subscriptionNotSupportedChannelIDs;
 - (void)updatePurchaseEntryToExpired:(id)arg1;
+- (void)updatePurchaseEntryToSubcsriptionNotSupported:(id)arg1;
 - (void)userInfo:(id)arg1 didAddAccessTokenForTagID:(id)arg2;
 - (void)userInfo:(id)arg1 didChangeAccessTokenForTagID:(id)arg2;
 - (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 serialCompletion:(id /* block */)arg3 callbackQueue:(id)arg4 completion:(id /* block */)arg5;

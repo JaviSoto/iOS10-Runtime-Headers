@@ -13,6 +13,7 @@
 - (void)mediaPlayingPaused;
 - (void)mediaPlayingStarted;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)requestDismiss;
 - (void)setHostService:(id)arg1;
 
 @end

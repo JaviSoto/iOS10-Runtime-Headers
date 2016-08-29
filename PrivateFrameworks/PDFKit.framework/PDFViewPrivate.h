@@ -20,6 +20,7 @@
     bool  displaysSoloPagesCentered;
     PDFDocument * document;
     unsigned long long  firstVisiblePage;
+    bool  forceUseMainThread;
     PDFPage * fromPage;
     double  greekingThreshold;
     double  gutterWide;

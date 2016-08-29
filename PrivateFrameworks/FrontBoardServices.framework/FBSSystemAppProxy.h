@@ -36,7 +36,7 @@
 - (void)shutdownAndReboot:(bool)arg1;
 - (void)suspendCurrentApplication;
 - (void)systemApplicationBundleIdentifierWithResult:(id /* block */)arg1;
-- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 withResult:(id /* block */)arg5;
-- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 withResult:(id /* block */)arg5;
+- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
+- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
 
 @end

@@ -11,9 +11,9 @@
         struct Matrix<double, 4, 4> { 
             double _e[16]; 
         } orientation; 
-        float aspectRatio; 
-        float verticalFieldOfView; 
-        float horizontalOffset; 
+        double aspectRatio; 
+        double verticalFieldOfView; 
+        double horizontalOffset; 
     }  _cameraState;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 

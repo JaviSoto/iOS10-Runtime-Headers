@@ -13,6 +13,7 @@
     float  _preferredFrameRate;
     NSObject<OS_dispatch_queue> * _queue;
     int  _queuedFrameCount;
+    bool  _supportTargetTimestamp;
 }
 
 @property (getter=isPaused, nonatomic) bool paused;

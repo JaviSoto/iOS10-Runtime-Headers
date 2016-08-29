@@ -49,6 +49,7 @@
 - (id)init;
 - (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3;
 - (void)refreshTagsBasedOnAgeForTagIDs:(id)arg1;
+- (void)saveTagsToCache:(id)arg1;
 - (void)setAssetManager:(id)arg1;
 - (void)setChannelSearchOperation:(id)arg1;
 - (void)setContentDatabase:(id)arg1;

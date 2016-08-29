@@ -15,6 +15,7 @@
 + (int)nanoSyncObjectType;
 + (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (bool)supportsSpeculativeNanoSyncChanges;
++ (id)syncEntityDependenciesForNanoSyncProtocolVersion:(int)arg1;
 + (long long)syncEntityType;
 
 @end

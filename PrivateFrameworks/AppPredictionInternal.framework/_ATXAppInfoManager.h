@@ -46,6 +46,7 @@
 - (void)registerForRestoreStartedNotificationsFrom:(id)arg1;
 - (void)removeAppInfoForBundleId:(id)arg1;
 - (void)removeAppInfoForBundleIds:(id)arg1;
+- (void)removeAppLaunchesForBundleId:(id)arg1;
 - (void)setupInMemoryCache;
 - (void)setupInMemoryCacheWithAppInfoMapLocked:(id)arg1;
 - (void)startInstallDeltaRecording;

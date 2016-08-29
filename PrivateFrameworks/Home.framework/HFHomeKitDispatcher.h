@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFHomeKitDispatcher : NSObject <HMAccessoryDelegate, HMAccessoryDelegatePrivate, HMHomeDelegate, HMHomeDelegatePrivate, HMHomeManagerDelegate, HMHomeManagerDelegatePrivate, HMResidentDeviceDelegate> {
+@interface HFHomeKitDispatcher : NSObject <HMAccessoryDelegatePrivate, HMHomeDelegatePrivate, HMHomeManagerDelegate, HMHomeManagerDelegatePrivate, HMResidentDeviceDelegate> {
     NSHashTable * _accessoryObservers;
     NSMutableArray * _allHomesPromises;
     bool  _hasLoadedHomes;
     HMHome * _home;
+    int  _homeKitPreferencesChangedNotifyToken;
     HMHomeManager * _homeManager;
     NSHashTable * _homeManagerObservers;
     NSHashTable * _homeObservers;
@@ -26,6 +27,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMHome *home;
 @property (nonatomic, readonly) NAFuture *homeFuture;
+@property (nonatomic) int homeKitPreferencesChangedNotifyToken;
 @property (nonatomic, retain) HMHomeManager *homeManager;
 @property (nonatomic, retain) NSHashTable *homeManagerObservers;
 @property (nonatomic, retain) NSHashTable *homeObservers;
@@ -36,18 +38,23 @@
 @property (nonatomic, retain) HMHome *selectedHome;
 @property (readonly) Class superclass;
 
++ (unsigned long long)_homeManagerCreationPolicy;
 + (id)sharedDispatcher;
 
 - (void).cxx_destruct;
+- (void)_createHomeManagerIfNecessary;
 - (void)_finishAllHomesPromises:(id)arg1;
 - (void)_finishHomePromises:(id)arg1;
 - (id)_primaryHome;
+- (void)_setDelegate:(id)arg1 forObjectsInHome:(id)arg2;
 - (void)_setSelectedHome:(id)arg1 notifyAndSaveIfNecessary:(bool)arg2;
 - (void)_updateRemoteAccessStateForHome:(id)arg1 notifyingObservers:(bool)arg2;
 - (void)accessory:(id)arg1 didUpdateApplicationDataForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateHasAuthorizationDataForCharacteristic:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
 - (void)accessory:(id)arg1 service:(id)arg2 didUpdateValueForCharacteristic:(id)arg3;
+- (void)accessoryDidUpdateAdditionalSetupRequired:(id)arg1;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
 - (void)accessoryDidUpdateName:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
@@ -59,6 +66,7 @@
 - (void)addResidentDeviceObserver:(id)arg1;
 - (id)allHomesFuture;
 - (id)allHomesPromises;
+- (void)dealloc;
 - (void)dispatchAccessoryObserverMessage:(id /* block */)arg1 sender:(id)arg2;
 - (void)dispatchHomeManagerObserverMessage:(id /* block */)arg1 sender:(id)arg2;
 - (void)dispatchHomeObserverMessage:(id /* block */)arg1 sender:(id)arg2;
@@ -104,12 +112,16 @@
 - (void)homeDidUpdateApplicationData:(id)arg1;
 - (void)homeDidUpdateName:(id)arg1;
 - (id)homeFuture;
+- (int)homeKitPreferencesChangedNotifyToken;
 - (id)homeManager;
 - (void)homeManager:(id)arg1 didAddHome:(id)arg2;
 - (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
+- (void)homeManager:(id)arg1 didUpdateResidentEnabledForThisDevice:(bool)arg2;
 - (void)homeManager:(id)arg1 didUpdateStateForIncomingInvitations:(id)arg2;
+- (void)homeManager:(id)arg1 residentProvisioningStatusChanged:(unsigned long long)arg2;
 - (void)homeManagerDidUpdateApplicationData:(id)arg1;
-- (void)homeManagerDidUpdateDataSyncInProgress:(id)arg1;
+- (void)homeManagerDidUpdateCurrentHome:(id)arg1;
+- (void)homeManagerDidUpdateDataSyncState:(id)arg1;
 - (void)homeManagerDidUpdateHomes:(id)arg1;
 - (void)homeManagerDidUpdatePrimaryHome:(id)arg1;
 - (id)homeManagerObservers;
@@ -129,9 +141,9 @@
 - (id)selectedHome;
 - (void)setAccessoryObservers:(id)arg1;
 - (void)setAllHomesPromises:(id)arg1;
-- (void)setCurrentHome:(id)arg1;
 - (void)setHasLoadedHomes:(bool)arg1;
 - (void)setHome:(id)arg1;
+- (void)setHomeKitPreferencesChangedNotifyToken:(int)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setHomeManagerObservers:(id)arg1;
 - (void)setHomeObservers:(id)arg1;

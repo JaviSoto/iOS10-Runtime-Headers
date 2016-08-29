@@ -82,8 +82,6 @@
 - (void)cleanupExAvailablePeers;
 - (void)connectToPeer:(id)arg1 withTimeout:(double)arg2;
 - (id)connection;
-- (id)createNSErrorFromGKSessionError:(int)arg1 description:(id)arg2 reason:(id)arg3;
-- (id)createNSErrorFromHRESULT:(int)arg1 description:(id)arg2 reason:(id)arg3;
 - (id)dataReceiveHandler;
 - (void)dealloc;
 - (id)delegate;
@@ -111,6 +109,8 @@
 - (bool)isShuttingDown;
 - (void)lock;
 - (unsigned long long)maxPeers;
+- (id)newNSErrorFromGKSessionError:(int)arg1 description:(id)arg2 reason:(id)arg3;
+- (id)newNSErrorFromHRESULT:(int)arg1 description:(id)arg2 reason:(id)arg3;
 - (bool)parseServiceName:(const char *)arg1 intoDisplayName:(id*)arg2 pid:(unsigned int*)arg3 state:(id*)arg4;
 - (bool)passesSendDataSanityCheck:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
 - (id)peerID;

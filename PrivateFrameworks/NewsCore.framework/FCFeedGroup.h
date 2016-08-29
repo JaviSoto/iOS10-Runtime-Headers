@@ -57,11 +57,13 @@
 - (long long)feedElementType;
 - (long long)groupType;
 - (bool)hasStrictHeadlineOrder;
+- (unsigned long long)hash;
 - (id)headlines;
 - (id)identifier;
 - (id)initWithGroupType:(long long)arg1 sourceIdentifier:(id)arg2 name:(id)arg3 theme:(id)arg4 L2FeedDescriptor:(id)arg5 elements:(id)arg6 options:(unsigned long long)arg7;
 - (id)initWithIdentifier:(id)arg1 groupType:(long long)arg2 sourceIdentifier:(id)arg3 creationDate:(id)arg4 name:(id)arg5 theme:(id)arg6 L2FeedDescriptor:(id)arg7 edition:(id)arg8 isFirstFromEdition:(bool)arg9 elements:(id)arg10 options:(unsigned long long)arg11 mergeID:(unsigned long long)arg12;
 - (id)initWithIdentifier:(id)arg1 groupType:(long long)arg2 sourceIdentifier:(id)arg3 name:(id)arg4 theme:(id)arg5 L2FeedDescriptor:(id)arg6 elements:(id)arg7 options:(unsigned long long)arg8;
+- (bool)isEqual:(id)arg1;
 - (bool)isFirstFromEdition;
 - (bool)isGap;
 - (unsigned long long)mergeID;

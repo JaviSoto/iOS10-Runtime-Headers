@@ -10,12 +10,14 @@
 
 - (bool)_deleteFromDB:(id)arg1 keepAliases:(bool)arg2;
 - (bool)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (bool)_markChildrenLostForDeadParent;
 - (void)_markLostDirectoryAsAlmostDead;
 - (void)_retryPostponedIfNeededForDiffs:(unsigned long long)arg1;
 - (bool)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (id)asDirectory;
 - (bool)changedAtRelativePath:(id)arg1 scanPackage:(bool)arg2;
 - (bool)evictInTask:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)fixupItemAfterCrossZoneMovedCreationWithLookup:(id)arg1;
 - (bool)hasDeadChildren;
 - (bool)hasLiveChildren;
 - (bool)hasLostChildren;

@@ -15,12 +15,14 @@
     bool  _disableUDPRace;
     NSMutableDictionary * _fallbackCounts;
     unsigned long long  _idleTimeout;
+    bool  _isCancelled;
     unsigned long long  _nextFlowID;
     NSPNetworkAgent * _pendingAgent;
     id /* block */  _pendingCancelCompletionHandler;
     id /* block */  _pendingPingCompletionHandler;
     NSObject<OS_dispatch_source> * _pingTimer;
     bool  _shouldReportUsage;
+    NSObject<OS_dispatch_source> * _usageReportTimer;
 }
 
 @property (retain) NSData *UDPDatagram;
@@ -36,6 +38,7 @@
 @property bool disableUDPRace;
 @property (readonly) NSMutableDictionary *fallbackCounts;
 @property (readonly) unsigned long long idleTimeout;
+@property bool isCancelled;
 @property (readonly) long long lastWaldoDayPassResult;
 @property (readonly) unsigned long long maxFrameSize;
 @property unsigned long long nextFlowID;
@@ -44,6 +47,7 @@
 @property (copy) id /* block */ pendingPingCompletionHandler;
 @property (retain) NSObject<OS_dispatch_source> *pingTimer;
 @property bool shouldReportUsage;
+@property (retain) NSObject<OS_dispatch_source> *usageReportTimer;
 
 - (void).cxx_destruct;
 - (id)UDPDatagram;
@@ -80,17 +84,17 @@
 - (id)handleFlowClosed:(unsigned long long)arg1 withError:(id)arg2;
 - (void)handleFlowUsedTunnel;
 - (void)handleNetworkChange;
-- (void)handlePingResponseRTT:(unsigned long long)arg1;
+- (void)handlePingResponseRTT:(unsigned long long)arg1 geohash:(id)arg2;
 - (bool)handleReadData:(id)arg1;
 - (void)handleUDPSessionStateChanged;
 - (unsigned long long)idleTimeout;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2;
 - (unsigned long long)initialWindowSize;
+- (bool)isCancelled;
 - (bool)isConnectionAlive;
 - (long long)lastWaldoDayPassResult;
 - (unsigned long long)maxDataSendSizeForFlow:(id)arg1;
 - (unsigned long long)maxFrameSize;
-- (void)moveToNextOnRamp;
 - (unsigned long long)nextFlowID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pendingAgent;
@@ -101,7 +105,7 @@
 - (void)readMinimumBytes:(unsigned long long)arg1 maximumBytes:(unsigned long long)arg2;
 - (long long)sendData:(id)arg1 forFlow:(id)arg2 packetsSent:(long long*)arg3;
 - (void)sendDataOnUDPSession:(id)arg1;
-- (void)sendUsageReportWithSuccess:(bool)arg1 rtt:(unsigned long long)arg2;
+- (void)sendUsageReportWithSuccess:(bool)arg1 rtt:(unsigned long long)arg2 geohash:(id)arg3 fallbackReason:(long long)arg4;
 - (unsigned long long)serviceIDForFlow:(id)arg1;
 - (void)setClientRef:(void*)arg1;
 - (void)setConnection:(id)arg1;
@@ -110,6 +114,7 @@
 - (void)setDisableFastOpen:(bool)arg1;
 - (void)setDisableMultipath:(bool)arg1;
 - (void)setDisableUDPRace:(bool)arg1;
+- (void)setIsCancelled:(bool)arg1;
 - (void)setNextFlowID:(unsigned long long)arg1;
 - (void)setPendingAgent:(id)arg1;
 - (void)setPendingCancelCompletionHandler:(id /* block */)arg1;
@@ -118,11 +123,14 @@
 - (void)setShouldReportUsage:(bool)arg1;
 - (void)setUDPDatagram:(id)arg1;
 - (void)setUDPSession:(id)arg1;
+- (void)setUsageReportTimer:(id)arg1;
 - (bool)setupWithConfiguration:(id)arg1;
 - (bool)shouldReportUsage;
 - (bool)shouldTunnelFlow:(id)arg1;
 - (void)start;
 - (void)startConnectionTimer;
+- (double)timeIntervalSinceLastUsage;
+- (id)usageReportTimer;
 - (void)writeDataToConnection:(id)arg1;
 
 @end

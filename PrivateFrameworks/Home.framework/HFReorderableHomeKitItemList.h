@@ -15,9 +15,12 @@
 @property (nonatomic, readonly) id /* block */ sortedHomeKitObjectComparator;
 @property (nonatomic, copy) NSArray *sortedHomeKitObjectIdentifiers;
 
++ (id)_dataForHomeKitItem:(id)arg1;
+
 - (void).cxx_destruct;
 - (id /* block */)_actionSetTypeComparator;
 - (id)_applicationDataKey;
+- (id /* block */)_homeKitItemDataComparator;
 - (id /* block */)_reorderableObjectDateAddedComparator;
 - (id /* block */)_reorderableObjectTitleComparator;
 - (id /* block */)_sortedHomeKitIdentifierComparator;

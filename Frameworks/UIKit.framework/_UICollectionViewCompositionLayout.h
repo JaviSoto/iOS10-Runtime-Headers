@@ -20,7 +20,7 @@
 - (void)addSublayout:(id)arg1 forSections:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 relativeToEdges:(unsigned long long)arg4 fromSiblingLayout:(id)arg5;
 - (struct CGSize { double x1; double x2; })collectionViewContentSize;
 - (id)init;
-- (void)invalidateLayoutWithContext:(struct _UICollectionViewCompositionLayoutInvalidationContext { Class x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; unsigned char x9; out void x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; struct x22; void*x23; void*x24; void*x25; double x26; void*x27; out void*x28; void*x29; void*x30; unsigned int x31/* : ? */; void*x32; long x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; double x47; void*x48; out void*x49; void*x50; void*x51; unsigned int x52/* : ? */; void*x53; long x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; }*)arg1;
+- (void)invalidateLayoutWithContext:(/* Warning: unhandled struct encoding: '{_UICollectionViewCompositionLayoutInvalidationContext=#@}' */ struct _UICollectionViewCompositionLayoutInvalidationContext { Class x1; id x2; }*)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

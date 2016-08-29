@@ -14,9 +14,10 @@
 - (bool)_isThisDeviceInCircle;
 - (void)_preflightCircleStatusWithCompletion:(id /* block */)arg1;
 - (void)_processAuthFailure:(id)arg1 completion:(id /* block */)arg2;
-- (void)_setKeychainSyncState:(bool)arg1 completion:(id /* block */)arg2;
+- (bool)_setKeychainSyncState:(bool)arg1;
 - (bool)isUserVisibleKeychainSyncEnabled;
 - (void)removeNonViewAwarePeersFromCircleWithCompletion:(id /* block */)arg1;
 - (void)setUserVisibleKeychainSyncEnabled:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (bool)synchronizeKeychainViewSetWithOtherPeers:(id*)arg1;
 
 @end

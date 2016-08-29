@@ -4,6 +4,7 @@
 
 @interface HKOrganDonationRegisterViewController : UITableViewController <HKOrganDonationConnectionManagerDelegate, HKOrganDonationRegistrantDelegate> {
     UIFont * _bodyFont;
+    NSString * _completionButtonTitle;
     HKOrganDonationConnectionManager * _connectionManager;
     UIButton * _continueButton;
     NSArray * _dataEntryItems;
@@ -21,6 +22,7 @@
     UIBarButtonItem * _updateBarButtonItem;
 }
 
+@property (nonatomic, retain) NSString *completionButtonTitle;
 @property (nonatomic, retain) NSArray *dataEntryItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -46,6 +48,7 @@
 - (void)_toggleLoadingStatusIsLoading:(bool)arg1;
 - (void)_toggleNextButtonEnabledState;
 - (void)cancelButtonTapped:(id)arg1;
+- (id)completionButtonTitle;
 - (id)dataEntryItems;
 - (void)dealloc;
 - (id)init;
@@ -58,6 +61,7 @@
 - (void)organDonationRegistrantDidUpdateValue:(id)arg1;
 - (id)registrant;
 - (id /* block */)registrationCompletionHandler;
+- (void)setCompletionButtonTitle:(id)arg1;
 - (void)setDataEntryItems:(id)arg1;
 - (void)setMedicalIDData:(id)arg1;
 - (void)setNextButton:(id)arg1;

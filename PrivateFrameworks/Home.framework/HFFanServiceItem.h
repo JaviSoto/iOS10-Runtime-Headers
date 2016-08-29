@@ -5,7 +5,6 @@
 @interface HFFanServiceItem : HFServiceItem
 
 - (id)_subclass_updateWithOptions:(id)arg1;
-- (id)controlPanelItems;
 - (id)createControlItemsWithValueSource:(id)arg1;
 
 @end

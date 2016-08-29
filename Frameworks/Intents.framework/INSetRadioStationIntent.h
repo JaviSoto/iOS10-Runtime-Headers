@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetRadioStationIntent : INIntent <INSetRadioStationIntent>
+@interface INSetRadioStationIntent : INIntent <INSetRadioStationIntentExport>
 
 @property (nonatomic, readonly, copy) NSString *channel;
 @property (readonly, copy) NSString *debugDescription;

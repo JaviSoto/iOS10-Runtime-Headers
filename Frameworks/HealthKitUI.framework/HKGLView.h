@@ -3,7 +3,6 @@
  */
 
 @interface HKGLView : GLKView {
-    bool  _alwaysRequiresDisplayLink;
     CADisplayLink * _displayLink;
     bool  _displayLinkPaused;
     double  _lastUpdateTime;
@@ -16,7 +15,6 @@
     bool  _viewWillMoveToWindow;
 }
 
-@property (nonatomic) bool alwaysRequiresDisplayLink;
 @property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic) float preferredFramesPerSecond;
 @property (nonatomic) bool synchronizesWithCA;
@@ -32,13 +30,11 @@
 - (bool)_isLastUpdateTimeValid;
 - (void)_loadVertexShader:(id)arg1 fragmentShader:(id)arg2 inBundle:(id)arg3 forProgram:(unsigned int*)arg4 cache:(bool)arg5;
 - (void)_loadVertexShaderSource:(id)arg1 fragmentShaderSource:(id)arg2 forProgram:(unsigned int*)arg3;
-- (bool)_needsDisplayLink;
 - (void)_pauseByNotification;
 - (void)_resumeByNotification;
 - (void)_update;
 - (void)_updateGLLayerIsAsynchronous;
 - (void)_updateScreenIfChanged;
-- (bool)alwaysRequiresDisplayLink;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (unsigned int)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -48,7 +44,6 @@
 - (bool)isPaused;
 - (void)layoutSubviews;
 - (float)preferredFramesPerSecond;
-- (void)setAlwaysRequiresDisplayLink:(bool)arg1;
 - (void)setNeedsRender;
 - (void)setPaused:(bool)arg1;
 - (void)setPreferredFramesPerSecond:(float)arg1;

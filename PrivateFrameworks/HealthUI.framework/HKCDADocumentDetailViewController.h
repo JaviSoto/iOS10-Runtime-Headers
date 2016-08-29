@@ -7,6 +7,7 @@
     HKLargePlainTextViewController * _plainTextReportController;
     _HKReportSegmentControl * _reportSegmentControl;
     UIBarButtonItem * _searchButton;
+    HKBarButtonItemControl * _searchInSegmentControl;
     UIStackView * _stackView;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) HKLargePlainTextViewController *plainTextReportController;
 @property (nonatomic, readonly) _HKReportSegmentControl *reportSegmentControl;
 @property (nonatomic, readonly) UIBarButtonItem *searchButton;
+@property (nonatomic, readonly) HKBarButtonItemControl *searchInSegmentControl;
 @property (nonatomic, readonly) UIStackView *stackView;
 
 - (void).cxx_destruct;
@@ -26,7 +28,9 @@
 - (id)reportSegmentControl;
 - (id)searchButton;
 - (void)searchButtonAction:(id)arg1;
+- (id)searchInSegmentControl;
 - (id)stackView;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(bool)arg1;
 

@@ -7,11 +7,13 @@
     NCNotificationRequest * _notificationRequest;
 }
 
+@property (nonatomic, readonly) NSString *contentExtensionIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NCNotificationRequest *notificationRequest;
+@property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

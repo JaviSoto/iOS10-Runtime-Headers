@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSpeakableString : NSObject <INSpeakable> {
+@interface INSpeakableString : NSObject <INSpeakable, INSpeakableStringExport> {
     NSString * _identifier;
     NSString * _pronunciationHint;
     NSString * _spokenPhrase;

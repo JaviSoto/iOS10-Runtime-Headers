@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (readonly) NSArray *inProgressInstallations;
+@property (nonatomic, readonly) NSArray *inProgressInstallations;
 @property (nonatomic, retain) NSMutableArray *installations;
 @property (nonatomic, retain) NSMutableArray *observers;
 @property (nonatomic) bool observingApplicationWorkspace;
@@ -33,6 +33,8 @@
 - (void)applicationInstallsDidChange:(id)arg1;
 - (void)applicationInstallsDidStart:(id)arg1;
 - (void)applicationInstallsDidUpdateIcon:(id)arg1;
+- (void)applicationStateDidChange:(id)arg1;
+- (void)applicationsDidFailToInstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsWillInstall:(id)arg1;
 - (void)dealloc;

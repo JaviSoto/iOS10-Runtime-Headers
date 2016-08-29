@@ -23,8 +23,10 @@
 - (unsigned long long)count;
 - (id)dispatchQueue;
 - (id)filteredArrayUsingPredicate:(id)arg1;
+- (id)firstItemWithValue:(id)arg1 forKey:(id)arg2;
 - (id)initWithArray:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)itemsWithValue:(id)arg1 forKey:(id)arg2;
 - (id)mutableArray;
 - (void)removeObject:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;

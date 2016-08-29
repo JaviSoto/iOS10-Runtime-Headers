@@ -8,11 +8,13 @@
         double secondsFromUnixEpoch; 
     }  _creationTimestamp;
     bool  _isSent;
+    SGQPWordBoundaries * _wordBoundaries;
 }
 
 @property (nonatomic, readonly) NSString *content;
 @property (nonatomic, readonly) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
 @property (nonatomic, readonly) bool isSent;
+@property (nonatomic, readonly) SGQPWordBoundaries *wordBoundaries;
 
 + (id)messageWithContent:(id)arg1 isSent:(bool)arg2;
 + (id)messageWithContent:(id)arg1 isSent:(bool)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3;
@@ -27,5 +29,6 @@
 - (bool)isMostRecentReceivedMessageInMessages:(id)arg1;
 - (bool)isMostRecentSentMessageInMessages:(id)arg1;
 - (bool)isSent;
+- (id)wordBoundaries;
 
 @end

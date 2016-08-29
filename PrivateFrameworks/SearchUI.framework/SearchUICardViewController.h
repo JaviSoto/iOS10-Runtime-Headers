@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (id)cardSectionViews;
 - (void)createCardSectionViewsForSections:(id)arg1;
+- (bool)didHandlePunchout:(id)arg1 fromSection:(id)arg2;
 - (id)feedbackDelegate;
 - (id)forceTouchIndexPath;
 - (id)initWithResult:(id)arg1 style:(unsigned long long)arg2;

@@ -23,7 +23,9 @@
 - (unsigned long long)_fetchSettingSyncMaxCountOverride;
 - (unsigned long long)_fetchSyncState;
 - (void)_initSettingSyncSendQueueMaxConcurrentSendCount;
+- (void)_logNotificationSettings;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
+- (void)_sendRemoveSectionWithSectionID:(id)arg1;
 - (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(bool)arg3 spoolToFile:(bool)arg4 andCompletion:(id /* block */)arg5;
 - (void)_sendSpooledSyncWithCompletion:(id /* block */)arg1 withProgress:(id /* block */)arg2;
 - (void)_setupSectionInfoListWithCompletion:(id /* block */)arg1;
@@ -42,6 +44,7 @@
 - (void)performInitialSyncWithProgress:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)performSyncIfNeededForSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)sectionConfiguration:(id)arg1 addedSectionIDs:(id)arg2 removedSectionIDs:(id)arg3;
+- (void)sectionInfoList:(id)arg1 receivedRemoveSectionWithSectionID:(id)arg2;
 - (void)sectionInfoList:(id)arg1 receivedUpdatedSectionInfoForSectionID:(id)arg2;
 - (void)sendAllSectionInfoWithSpool:(bool)arg1 completion:(id /* block */)arg2;
 - (void)sendSectionInfoWithSectionID:(id)arg1 completion:(id /* block */)arg2 spoolToFile:(bool)arg3;

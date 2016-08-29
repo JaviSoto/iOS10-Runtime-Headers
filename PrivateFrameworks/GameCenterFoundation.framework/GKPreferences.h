@@ -36,6 +36,8 @@
 @property (nonatomic) unsigned long long maxPlayersHosted;
 @property (nonatomic) unsigned long long maxPlayersP2P;
 @property (nonatomic) unsigned long long maxPlayersTurnBased;
+@property (nonatomic) unsigned long long maxRecentPlayersCount;
+@property (nonatomic) double maxRecentPlayersTime;
 @property (nonatomic) unsigned long long mescalSetupRetries;
 @property (nonatomic) double minimumCacheTTL;
 @property (getter=isMultiplayerGamingRestricted, nonatomic, readonly) bool multiplayerGamingRestricted;
@@ -116,6 +118,8 @@
 - (unsigned long long)maxPlayersHosted;
 - (unsigned long long)maxPlayersP2P;
 - (unsigned long long)maxPlayersTurnBased;
+- (unsigned long long)maxRecentPlayersCount;
+- (double)maxRecentPlayersTime;
 - (unsigned long long)mescalSetupRetries;
 - (double)minimumCacheTTL;
 - (bool)notificationAlertsEnabled;
@@ -151,6 +155,8 @@
 - (void)setMaxPlayersHosted:(unsigned long long)arg1;
 - (void)setMaxPlayersP2P:(unsigned long long)arg1;
 - (void)setMaxPlayersTurnBased:(unsigned long long)arg1;
+- (void)setMaxRecentPlayersCount:(unsigned long long)arg1;
+- (void)setMaxRecentPlayersTime:(double)arg1;
 - (void)setMescalSetupRetries:(unsigned long long)arg1;
 - (void)setMinimumCacheTTL:(double)arg1;
 - (void)setNotificationAlertsEnabled:(bool)arg1;

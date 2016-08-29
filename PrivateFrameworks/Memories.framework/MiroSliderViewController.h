@@ -5,6 +5,7 @@
 @interface MiroSliderViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView * _collectionView;
     NSObject<MiroSliderViewControllerDataSource> * _dataSource;
+    bool  _ignoreScrolling;
     bool  _needsMiddlePositionUpdate;
     long long  _selectedItem;
 }
@@ -14,6 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoreScrolling;
 @property (nonatomic) bool needsMiddlePositionUpdate;
 @property (nonatomic) long long selectedItem;
 @property (readonly) Class superclass;
@@ -33,6 +35,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
+- (bool)ignoreScrolling;
 - (id)indexPathToMiddleItemInCollectionView:(id)arg1;
 - (id)init;
 - (void)invalidateSelectedItemPostion;
@@ -50,12 +53,12 @@
 - (long long)selectedItem;
 - (void)setCollectionView:(id)arg1;
 - (void)setDataSource:(id)arg1;
+- (void)setIgnoreScrolling:(bool)arg1;
 - (void)setNeedsMiddlePositionUpdate:(bool)arg1;
 - (void)setSelectedItem:(long long)arg1;
 - (void)updateFonts;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

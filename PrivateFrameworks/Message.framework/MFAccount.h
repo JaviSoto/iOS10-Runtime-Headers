@@ -97,6 +97,7 @@
 - (bool)enableAccount;
 - (id)enabledDataclasses;
 - (bool)fetchTokensIfNecessary:(id*)arg1;
+- (unsigned long long)hash;
 - (id)hostname;
 - (id)identifier;
 - (id)inaccessiblePasswordErrorWithTitle:(id)arg1;
@@ -106,7 +107,9 @@
 - (id)insecureConnectionSettings;
 - (bool)isActive;
 - (bool)isEnabledForDataclass:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isManaged;
+- (bool)isSyncingNotes;
 - (id)loginDisabledErrorWithTitle:(id)arg1;
 - (id)managedTag;
 - (id)missingPasswordErrorWithTitle:(id)arg1;

@@ -4,13 +4,13 @@
 
 @interface IMBalloonPluginManager : NSObject {
     id  _extensionMatchingContext;
-    NSMutableDictionary * _pluginIDtoSaltCache;
+    NSMutableDictionary * _pluginIDToMetadataCache;
     NSString * _pluginMetaDataFolder;
     NSMutableDictionary * _pluginsMap;
 }
 
 @property (nonatomic, retain) id extensionMatchingContext;
-@property (nonatomic, retain) NSMutableDictionary *pluginIDtoSaltCache;
+@property (nonatomic, retain) NSMutableDictionary *pluginIDToMetadataCache;
 @property (nonatomic, retain) NSString *pluginMetaDataFolder;
 @property (nonatomic, retain) NSMutableDictionary *pluginsMap;
 
@@ -52,12 +52,12 @@
 - (void)insertDataSource:(id)arg1 forGUID:(id)arg2;
 - (id)localParticipantIdentifierForAppID:(id)arg1;
 - (void)pluginChatItem:(id)arg1 didRelinquishController:(id)arg2;
-- (id)pluginIDtoSaltCache;
+- (id)pluginIDToMetadataCache;
 - (id)pluginMetaDataFolder;
 - (id)pluginsMap;
 - (id)recipientIDForRecipient:(id)arg1 appID:(id)arg2;
 - (void)setExtensionMatchingContext:(id)arg1;
-- (void)setPluginIDtoSaltCache:(id)arg1;
+- (void)setPluginIDToMetadataCache:(id)arg1;
 - (void)setPluginMetaDataFolder:(id)arg1;
 - (void)setPluginsMap:(id)arg1;
 

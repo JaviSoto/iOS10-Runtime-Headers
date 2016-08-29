@@ -5,6 +5,7 @@
 @interface TSDAnnotationController : NSObject {
     <TSDAnnotationDelegate> * _delegate;
     TSKSelectionPath * _displayedAnnotationSelectionPath;
+    bool  _isNavigatingAnnotations;
 }
 
 @property (nonatomic, readonly) unsigned long long annotationCount;
@@ -13,6 +14,7 @@
 @property (nonatomic, retain) TSKSelectionPath *displayedAnnotationSelectionPath;
 @property (nonatomic, readonly) unsigned long long filteredAnnotationCount;
 @property (nonatomic, readonly) bool hasAnnotations;
+@property (nonatomic) bool isNavigatingAnnotations;
 @property (nonatomic) bool textSelectionChangeShouldDismissAnnotations;
 
 + (double)commentFontSize;
@@ -25,7 +27,6 @@
 - (id)annotationToolTipTextGoToNext;
 - (id)annotationToolTipTextGoToPrevious;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
-- (id)connectionLineUnscaledEndPointForAnnotation:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)didShowAnnotation:(id)arg1;
@@ -34,12 +35,13 @@
 - (bool)hasAnnotations;
 - (id)init;
 - (void)invalidateAnnotationAuthors;
+- (bool)isNavigatingAnnotations;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;
 - (void)setAuthorFilter:(id)arg1;
-- (void)setConnectionLineUnscaledEndPoint:(struct CGPoint { double x1; double x2; })arg1 forAnnotation:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayedAnnotationSelectionPath:(id)arg1;
+- (void)setIsNavigatingAnnotations:(bool)arg1;
 - (void)setTextSelectionChangeShouldDismissAnnotations:(bool)arg1;
 - (bool)textSelectionChangeShouldDismissAnnotations;
 - (void)updateCurrentAnnotation:(id)arg1;

@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSString *uuidSaveToken;
 
 + (id)changeRequestForObject:(id)arg1;
-+ (id)changeRequestWithXPCDict:(id)arg1 clientEntitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
++ (id)changeRequestWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 
 - (void).cxx_destruct;
 - (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;

@@ -29,12 +29,12 @@
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)altDsid;
 - (id)ckAccount;
-- (id)cloudKitAuthToken;
+- (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (bool)cloudKitIsEnabled;
 - (bool)cloudPhotosIsEnabled;
 - (id)dsid;
 - (id)fakeAccountInfoQueue;
-- (id)iCloudAuthToken;
+- (id)iCloudAuthTokenWithError:(id*)arg1;
 - (bool)iCloudDriveAllowsCellularAccess;
 - (id)identifier;
 - (bool)isDataclassEnabled:(id)arg1;

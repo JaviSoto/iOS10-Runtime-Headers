@@ -16,6 +16,7 @@
     _BRCLogSection * _logSections;
     id /* block */  _mainBlock;
     NSDate * _nextTryDate;
+    BRCThrottle * _operationFailureThrottle;
     BRCThrottle * _operationThrottle;
     unsigned char  _operationUUID;
     NSObject<OS_dispatch_source> * _retryTimer;
@@ -31,6 +32,7 @@
 @property (getter=isFinished, nonatomic) bool finished;
 @property (nonatomic, readonly) _BRCLogSection *logSections;
 @property (nonatomic, copy) id /* block */ mainBlock;
+@property (nonatomic) BRCThrottle *operationFailureThrottle;
 @property (nonatomic, readonly) NSUUID *operationID;
 @property (nonatomic) BRCThrottle *operationThrottle;
 @property (nonatomic, readonly) NSDate *startDate;
@@ -39,10 +41,10 @@
 
 - (void).cxx_destruct;
 - (void)_completedWithResult:(id)arg1 error:(id)arg2;
-- (void)_executeAndBumpThrottle:(id)arg1;
+- (void)_executeWithPreviousError:(id)arg1;
 - (bool)_finishIfCancelled;
 - (void)_main;
-- (void)_scheduleExecutionWithPreviousError:(id)arg1 throttle:(id)arg2;
+- (void)_scheduleExecutionWithPreviousError:(id)arg1;
 - (void)addSubOperation:(id)arg1;
 - (void)addSubOperation:(id)arg1 overrideContext:(id)arg2 allowsCellularAccess:(id)arg3;
 - (id)callbackQueue;
@@ -65,6 +67,7 @@
 - (id)logSections;
 - (void)main;
 - (id /* block */)mainBlock;
+- (id)operationFailureThrottle;
 - (id)operationID;
 - (id)operationThrottle;
 - (void)schedule;
@@ -72,6 +75,7 @@
 - (void)setFinishBlock:(id /* block */)arg1;
 - (void)setFinished:(bool)arg1;
 - (void)setMainBlock:(id /* block */)arg1;
+- (void)setOperationFailureThrottle:(id)arg1;
 - (void)setOperationThrottle:(id)arg1;
 - (bool)shouldRetryForError:(id)arg1;
 - (void)start;

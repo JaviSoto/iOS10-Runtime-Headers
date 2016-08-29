@@ -12,8 +12,9 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)frontmostRequester;
+- (id)highestPriorityRequester;
 - (id)init;
+- (id)lowestPriorityRequester;
 - (void)prioritizeRequester:(id)arg1;
 - (void)removeRequester:(id)arg1;
 - (id)requesters;

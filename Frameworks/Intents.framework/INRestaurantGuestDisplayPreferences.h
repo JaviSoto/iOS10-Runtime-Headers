@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRestaurantGuestDisplayPreferences : NSObject <NSCopying, NSSecureCoding> {
+@interface INRestaurantGuestDisplayPreferences : NSObject <INRestaurantGuestDisplayPreferencesExport, NSCopying, NSSecureCoding> {
     bool  _emailAddressEditable;
     bool  _emailAddressFieldShouldBeDisplayed;
     bool  _nameEditable;
@@ -13,14 +13,18 @@
     bool  _phoneNumberFieldShouldBeDisplayed;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool emailAddressEditable;
 @property (nonatomic) bool emailAddressFieldShouldBeDisplayed;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool nameEditable;
 @property (nonatomic) bool nameFieldFirstNameOptional;
 @property (nonatomic) bool nameFieldLastNameOptional;
 @property (nonatomic) bool nameFieldShouldBeDisplayed;
 @property (nonatomic) bool phoneNumberEditable;
 @property (nonatomic) bool phoneNumberFieldShouldBeDisplayed;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

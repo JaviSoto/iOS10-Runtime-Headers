@@ -25,11 +25,14 @@
 
 + (long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;
 + (bool)countNonLocalOriginalResourcesInLibrary:(id)arg1 outCount:(unsigned long long*)arg2 photoCount:(unsigned long long*)arg3 videoCount:(unsigned long long*)arg4;
++ (bool)countOfLocalCloudResourcesOfType:(unsigned long long)arg1 inManagedObjectContext:(id)arg2 localCount:(unsigned long long*)arg3 unavailableCount:(unsigned long long*)arg4 error:(id*)arg5;
 + (id)duplicateCloudResource:(id)arg1 forAsset:(id)arg2 withFilePath:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 forAsset:(id)arg2 withCPLResource:(id)arg3 adjusted:(bool)arg4 withCreationDate:(id)arg5;
++ (id)nonLocalResourcesInManagedObjectContext:(id)arg1 forAssetUUIDs:(id)arg2 cplResourceTypes:(id)arg3;
 + (void)resetCloudResourcesStateForCloudInManagedObjectContext:(id)arg1 hardReset:(bool)arg2;
++ (void)resetPrefetchStateForResourcesWithResourceType:(long long)arg1 itemIdentifiers:(id)arg2 inLibrary:(id)arg3;
 + (id)resourceWithFingerprint:(id)arg1 inPhotoLibrary:(id)arg2;
 
 - (void)_duplicatePropertiesFromCloudResource:(id)arg1 withFilePath:(id)arg2 forAssetUuid:(id)arg3;

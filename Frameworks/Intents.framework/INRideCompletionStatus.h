@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideCompletionStatus : NSObject <NSCopying, NSSecureCoding> {
+@interface INRideCompletionStatus : NSObject <INRideCompletionStatusExport, NSCopying, NSSecureCoding> {
     bool  _canceledByService;
     bool  _completed;
     NSUserActivity * _completionUserActivity;
@@ -15,9 +15,13 @@
 @property (getter=isCanceledByService, nonatomic, readonly) bool canceledByService;
 @property (getter=isCompleted, nonatomic, readonly) bool completed;
 @property (nonatomic, retain) NSUserActivity *completionUserActivity;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (getter=isMissedPickup, nonatomic, readonly) bool missedPickup;
 @property (getter=isOutstanding, nonatomic, readonly) bool outstanding;
 @property (nonatomic, readonly) INCurrencyAmount *paymentAmount;
+@property (readonly) Class superclass;
 
 + (id)canceledByService;
 + (id)canceledByUser;

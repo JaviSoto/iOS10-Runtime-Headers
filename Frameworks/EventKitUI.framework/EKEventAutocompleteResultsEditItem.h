@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) bool hasSuggestedLocationResult;
 @property (nonatomic, retain) NSArray *results;
 
-+ (void)initialize;
++ (id)_backgroundColor;
 
 - (void).cxx_destruct;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;

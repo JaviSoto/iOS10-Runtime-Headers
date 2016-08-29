@@ -123,8 +123,8 @@
 - (void)dealloc;
 - (void)denyCallID:(unsigned int)arg1;
 - (void)forceNoICE:(bool)arg1;
-- (void)getNSError:(id*)arg1 code:(long long)arg2 description:(id)arg3 hResult:(int)arg4;
-- (void)getNSError:(id*)arg1 code:(long long)arg2 description:(id)arg3 reason:(id)arg4;
+- (bool)getNSError:(id*)arg1 code:(long long)arg2 description:(id)arg3 hResult:(int)arg4;
+- (bool)getNSError:(id*)arg1 code:(long long)arg2 description:(id)arg3 reason:(id)arg4;
 - (void)informClientOfInviteFromParticipant:(id)arg1;
 - (void)informClientVoiceChatDidNotStart:(id)arg1;
 - (void)informClientVoiceChatDidNotStartMainSelector:(id)arg1;

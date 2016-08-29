@@ -10,6 +10,7 @@
     GEOMapRegion * _mapRegion;
     int  _mapType;
     unsigned int  _timeSinceMapViewportChanged;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) bool hasMapRegion;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
 @property (nonatomic) int mapType;
 @property (nonatomic) unsigned int timeSinceMapViewportChanged;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)viewportInfoForTraits:(id)arg1;
 
@@ -44,6 +46,7 @@
 - (void)setMapType:(int)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;
 - (unsigned int)timeSinceMapViewportChanged;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

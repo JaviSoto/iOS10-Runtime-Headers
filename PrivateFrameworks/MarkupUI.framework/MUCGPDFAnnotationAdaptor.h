@@ -9,5 +9,6 @@
 + (id)newAKAnnotationWithCGPDFAnnotation:(struct CGPDFAnnotation { }*)arg1 ofPage:(struct CGPDFPage { }*)arg2;
 + (id)newPlaceholderAKAnnotationWithCGPDFAnnotation:(struct CGPDFAnnotation { }*)arg1 ofPage:(struct CGPDFPage { }*)arg2;
 + (id)pdfDictionaryRepresentationOfAKAnnotation:(id)arg1;
++ (id)supportedAnnotationTypes;
 
 @end

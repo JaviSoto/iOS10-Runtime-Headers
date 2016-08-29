@@ -64,6 +64,7 @@
 - (id)_initWithBuiltinTraitStorage:(struct { long long x1; double x2; long long x3; long long x4; unsigned long long x5; unsigned long long x6; long long x7; long long x8; long long x9; long long x10; long long x11; long long x12; }*)arg1 clientDefinedTraits:(id)arg2;
 - (bool)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_namedImageDescription;
+- (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;
 - (id)_valueForTraitNamed:(id)arg1;
 - (long long)barMetrics;
 - (long long)barPosition;
@@ -110,11 +111,6 @@
 - (bool)MPU_hasRegularWidth;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
-
-- (bool)tsu_isCompactHeight;
-- (bool)tsu_isCompactWidth;
-
-// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (bool)tsu_isCompactHeight;
 - (bool)tsu_isCompactWidth;

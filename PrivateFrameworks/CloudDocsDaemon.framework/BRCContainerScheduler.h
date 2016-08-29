@@ -51,8 +51,6 @@
 - (void)_syncScheduleForZoneHealth;
 - (void)_unscheduleClientZone:(id)arg1;
 - (void)_updatePushTopicsRegistration;
-- (void)clientZoneDidBecomeBackground:(id)arg1;
-- (void)clientZoneDidBecomeForeground:(id)arg1;
 - (void)close;
 - (void)closeContainers;
 - (void)completedZoneHealthSyncDownWithServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2 moreComing:(bool)arg3 error:(id)arg4;
@@ -74,6 +72,8 @@
 - (void)scheduleSyncDownForZoneHealth;
 - (id)session;
 - (void)setup;
+- (void)syncContextDidBecomeBackground:(id)arg1;
+- (void)syncContextDidBecomeForeground:(id)arg1;
 - (id)syncGroup;
 - (id)syncScheduler;
 - (id)syncUpBudget;

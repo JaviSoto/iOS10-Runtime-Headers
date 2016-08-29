@@ -9,6 +9,6 @@
 + (id)defaultBackgroundColor;
 + (id)defaultFavoritesIcon;
 
-- (id)_operationWithRequest:(id)arg1 processPool:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)_operationWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

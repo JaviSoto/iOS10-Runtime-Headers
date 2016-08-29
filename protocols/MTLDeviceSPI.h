@@ -9,6 +9,7 @@
 
 - (unsigned int)acceleratorPort;
 - (void)compilerPropagatesThreadPriority:(bool)arg1;
+- (unsigned long long)dedicatedMemorySize;
 - (unsigned long long)deviceLinearReadOnlyTextureAlignmentBytes;
 - (unsigned long long)deviceLinearTextureAlignmentBytes;
 - (bool)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;
@@ -63,6 +64,7 @@
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned long long)arg3;
 - (struct { unsigned int x1; unsigned int x2; })pipelineCacheStats;
 - (void)setMetalAssertionsEnabled:(bool)arg1;
+- (unsigned long long)sharedMemorySize;
 - (unsigned long long)singleFPConfig;
 - (bool)supportsSampleCount:(unsigned long long)arg1;
 - (void)unloadShaderCaches;

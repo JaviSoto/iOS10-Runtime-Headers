@@ -7,6 +7,7 @@
     bool  _automaticallyEnablesLowLightBoostWhenAvailable;
     int  _colorSpace;
     NSDictionary * _faceDetectionConfiguration;
+    bool  _hasSetVideoZoomFactorOnCaptureSource;
     int  _imageControlMode;
     FigCaptureSourceFormat * _requiredFormat;
     float  _requiredMaxFrameRate;
@@ -26,6 +27,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *faceDetectionConfiguration;
+@property (nonatomic) bool hasSetVideoZoomFactorOnCaptureSource;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) int imageControlMode;
 @property (nonatomic, retain) FigCaptureSourceFormat *requiredFormat;
@@ -56,6 +58,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)faceDetectionConfiguration;
+- (bool)hasSetVideoZoomFactorOnCaptureSource;
 - (int)imageControlMode;
 - (id)initWithSource:(struct OpaqueFigCaptureSource { }*)arg1;
 - (id)initWithSourceType:(int)arg1;
@@ -69,6 +72,7 @@
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setColorSpace:(int)arg1;
 - (void)setFaceDetectionConfiguration:(id)arg1;
+- (void)setHasSetVideoZoomFactorOnCaptureSource:(bool)arg1;
 - (void)setImageControlMode:(int)arg1;
 - (void)setRequiredFormat:(id)arg1;
 - (void)setRequiredMaxFrameRate:(float)arg1;

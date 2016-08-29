@@ -5,6 +5,7 @@
 @interface AKCodeEntryView : UIView <UIKeyInput> {
     NSArray * _activeConstraints;
     NSArray * _generatorFields;
+    bool  _passcodeFieldDisabled;
     NSMutableString * _stringValue;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
@@ -48,6 +49,7 @@
 - (void)passcodeFieldTapped:(id)arg1;
 - (void)setActiveConstraints:(id)arg1;
 - (void)setGeneratorFields:(id)arg1;
+- (void)setPasscodeFieldDisabled:(bool)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (void)updateConstraints;

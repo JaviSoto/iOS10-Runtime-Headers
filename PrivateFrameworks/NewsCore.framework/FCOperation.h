@@ -49,6 +49,7 @@
 - (bool)childOperationsCancelled;
 - (bool)childOperationsFinished;
 - (id)childOperationsLock;
+- (void)dealloc;
 - (void)finishFromEarlyCancelation;
 - (id)finishedGroup;
 - (void)finishedPerformingOperationWithError:(id)arg1;

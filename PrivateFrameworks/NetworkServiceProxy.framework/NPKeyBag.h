@@ -7,6 +7,7 @@
     unsigned int  _generation;
     unsigned int  _index;
     NSArray * _keys;
+    double  _lastUsedTimestamp;
     unsigned int  _timestamp;
 }
 
@@ -14,6 +15,7 @@
 @property unsigned int generation;
 @property unsigned int index;
 @property (retain) NSArray *keys;
+@property double lastUsedTimestamp;
 @property unsigned int timestamp;
 
 - (void).cxx_destruct;
@@ -23,10 +25,12 @@
 - (unsigned int)index;
 - (id)initWithData:(id)arg1;
 - (id)keys;
+- (double)lastUsedTimestamp;
 - (void)setError:(unsigned int)arg1;
 - (void)setGeneration:(unsigned int)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setKeys:(id)arg1;
+- (void)setLastUsedTimestamp:(double)arg1;
 - (void)setTimestamp:(unsigned int)arg1;
 - (unsigned int)timestamp;
 

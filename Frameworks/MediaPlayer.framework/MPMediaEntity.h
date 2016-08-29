@@ -33,6 +33,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)genericModelObjectWithRequestedProperties:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;

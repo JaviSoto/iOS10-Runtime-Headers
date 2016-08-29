@@ -5,15 +5,15 @@
 @interface HFCharacteristicValueBatchReadResponse : NSObject <NSCopying> {
     NSMutableSet * _allCharacteristicTypes;
     NSMutableSet * _allCharacteristics;
+    <HFCharacteristicOperationContextProviding> * _contextProvider;
     NSMutableDictionary * _errorsByCharacteristicType;
-    unsigned long long  _remoteAccessState;
     NSMutableDictionary * _valuesByCharacteristicType;
 }
 
 @property (nonatomic, readonly) NSSet *allCharacteristicTypes;
 @property (nonatomic, readonly) NSSet *allCharacteristics;
+@property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (nonatomic, readonly) NSMutableDictionary *errorsByCharacteristicType;
-@property (nonatomic) unsigned long long remoteAccessState;
 @property (nonatomic, readonly) NSMutableDictionary *valuesByCharacteristicType;
 
 - (void).cxx_destruct;
@@ -22,6 +22,7 @@
 - (void)addValue:(id)arg1 forCharacteristic:(id)arg2;
 - (id)allCharacteristicTypes;
 - (id)allCharacteristics;
+- (id)contextProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)didReadValueForCharacteristicType:(id)arg1;
 - (id)errorForCharacteristicType:(id)arg1;
@@ -29,8 +30,7 @@
 - (bool)hasAnyErrors;
 - (bool)hasErrorForEveryCharacteristic;
 - (id)init;
-- (unsigned long long)remoteAccessState;
-- (void)setRemoteAccessState:(unsigned long long)arg1;
+- (void)setContextProvider:(id)arg1;
 - (id)valueForCharacteristicType:(id)arg1;
 - (id)valueForCharacteristicType:(id)arg1 outCharacteristic:(out id*)arg2;
 - (id)valuesByCharacteristicType;

@@ -12,6 +12,8 @@
 
 - (void).cxx_destruct;
 - (void)addICEDeviceConfig;
+- (void)addICEDeviceConfigDebug;
+- (void)addICEDeviceConfigWith:(id)arg1;
 - (id)delegate;
 - (id)getBasebandTimeAndLatency;
 - (id)getLTESleepManagerStats;
@@ -27,5 +29,6 @@
 - (void)sendWakeInfoToLoggerUsing:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startListening;
+- (void)triggerPeriodicMetrics;
 
 @end

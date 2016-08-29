@@ -19,7 +19,6 @@
     CKDPNotificationMarkReadRequest * _notificationMarkReadRequest;
     CKDPNotificationSyncRequest * _notificationSyncRequest;
     CKDPPostCommentRequest * _postCommentRequest;
-    CKDPPromoteContainerSchemaRequest * _promoteContainerSchemaRequest;
     CKDPPulseRequest * _pulseRequest;
     CKDPQueryRetrieveRequest * _queryRetrieveRequest;
     CKDPRecordDeleteRequest * _recordDeleteRequest;
@@ -30,7 +29,6 @@
     CKDPRecordRetrieveVersionsRequest * _recordRetrieveVersionsRequest;
     CKDPRecordSaveRequest * _recordSaveRequest;
     CKDPOperation * _request;
-    CKDPResetContainerRequest * _resetContainerRequest;
     CKDPSetBadgeCountRequest * _setBadgeCountRequest;
     CKDPShareAcceptRequest * _shareAcceptRequest;
     CKDPShareDeleteRequest * _shareDeleteRequest;
@@ -84,7 +82,6 @@
 @property (nonatomic, readonly) bool hasNotificationMarkReadRequest;
 @property (nonatomic, readonly) bool hasNotificationSyncRequest;
 @property (nonatomic, readonly) bool hasPostCommentRequest;
-@property (nonatomic, readonly) bool hasPromoteContainerSchemaRequest;
 @property (nonatomic, readonly) bool hasPulseRequest;
 @property (nonatomic, readonly) bool hasQueryRetrieveRequest;
 @property (nonatomic, readonly) bool hasRecordDeleteRequest;
@@ -95,7 +92,6 @@
 @property (nonatomic, readonly) bool hasRecordRetrieveVersionsRequest;
 @property (nonatomic, readonly) bool hasRecordSaveRequest;
 @property (nonatomic, readonly) bool hasRequest;
-@property (nonatomic, readonly) bool hasResetContainerRequest;
 @property (nonatomic, readonly) bool hasSetBadgeCountRequest;
 @property (nonatomic, readonly) bool hasShareAcceptRequest;
 @property (nonatomic, readonly) bool hasShareDeleteRequest;
@@ -131,7 +127,6 @@
 @property (nonatomic, retain) CKDPNotificationMarkReadRequest *notificationMarkReadRequest;
 @property (nonatomic, retain) CKDPNotificationSyncRequest *notificationSyncRequest;
 @property (nonatomic, retain) CKDPPostCommentRequest *postCommentRequest;
-@property (nonatomic, retain) CKDPPromoteContainerSchemaRequest *promoteContainerSchemaRequest;
 @property (nonatomic, retain) CKDPPulseRequest *pulseRequest;
 @property (nonatomic, retain) CKDPQueryRetrieveRequest *queryRetrieveRequest;
 @property (nonatomic, retain) CKDPRecordDeleteRequest *recordDeleteRequest;
@@ -142,7 +137,6 @@
 @property (nonatomic, retain) CKDPRecordRetrieveVersionsRequest *recordRetrieveVersionsRequest;
 @property (nonatomic, retain) CKDPRecordSaveRequest *recordSaveRequest;
 @property (nonatomic, retain) CKDPOperation *request;
-@property (nonatomic, retain) CKDPResetContainerRequest *resetContainerRequest;
 @property (nonatomic, retain) CKDPSetBadgeCountRequest *setBadgeCountRequest;
 @property (nonatomic, retain) CKDPShareAcceptRequest *shareAcceptRequest;
 @property (nonatomic, retain) CKDPShareDeleteRequest *shareDeleteRequest;
@@ -200,7 +194,6 @@
 - (bool)hasNotificationMarkReadRequest;
 - (bool)hasNotificationSyncRequest;
 - (bool)hasPostCommentRequest;
-- (bool)hasPromoteContainerSchemaRequest;
 - (bool)hasPulseRequest;
 - (bool)hasQueryRetrieveRequest;
 - (bool)hasRecordDeleteRequest;
@@ -211,7 +204,6 @@
 - (bool)hasRecordRetrieveVersionsRequest;
 - (bool)hasRecordSaveRequest;
 - (bool)hasRequest;
-- (bool)hasResetContainerRequest;
 - (bool)hasSetBadgeCountRequest;
 - (bool)hasShareAcceptRequest;
 - (bool)hasShareDeleteRequest;
@@ -250,7 +242,6 @@
 - (id)notificationMarkReadRequest;
 - (id)notificationSyncRequest;
 - (id)postCommentRequest;
-- (id)promoteContainerSchemaRequest;
 - (id)pulseRequest;
 - (id)queryRetrieveRequest;
 - (bool)readFrom:(id)arg1;
@@ -262,7 +253,6 @@
 - (id)recordRetrieveVersionsRequest;
 - (id)recordSaveRequest;
 - (id)request;
-- (id)resetContainerRequest;
 - (void)setAssetUploadTokenRetrieveRequest:(id)arg1;
 - (id)setBadgeCountRequest;
 - (void)setBundlesForContainerRequest:(id)arg1;
@@ -280,7 +270,6 @@
 - (void)setNotificationMarkReadRequest:(id)arg1;
 - (void)setNotificationSyncRequest:(id)arg1;
 - (void)setPostCommentRequest:(id)arg1;
-- (void)setPromoteContainerSchemaRequest:(id)arg1;
 - (void)setPulseRequest:(id)arg1;
 - (void)setQueryRetrieveRequest:(id)arg1;
 - (void)setRecordDeleteRequest:(id)arg1;
@@ -291,7 +280,6 @@
 - (void)setRecordRetrieveVersionsRequest:(id)arg1;
 - (void)setRecordSaveRequest:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setResetContainerRequest:(id)arg1;
 - (void)setSetBadgeCountRequest:(id)arg1;
 - (void)setShareAcceptRequest:(id)arg1;
 - (void)setShareDeleteRequest:(id)arg1;

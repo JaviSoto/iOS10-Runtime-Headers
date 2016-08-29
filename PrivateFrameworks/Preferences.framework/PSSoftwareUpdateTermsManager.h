@@ -3,8 +3,8 @@
  */
 
 @interface PSSoftwareUpdateTermsManager : NSObject <RemoteUIControllerDelegate> {
-    bool  _forceTermsModal;
     UIViewController * _hostController;
+    bool  _overrideNextRUIAction;
     UIViewController * _presentedViewController;
     RUIStyle * _serverFlowStyle;
     UINavigationController * _showProgressViewController;
@@ -24,7 +24,7 @@
 - (void)_acceptedTermsVersion:(id)arg1;
 - (void)_finishTermsWithAcceptance:(bool)arg1 error:(id)arg2;
 - (void)_handleAgreeFromObjectModel:(id)arg1;
-- (void)_loadRemoteUITermsWithCloudAtURL:(id)arg1 forceModalRemoteUI:(bool)arg2;
+- (void)_loadRemoteUITermsWithCloudAtURL:(id)arg1;
 - (void)_loadTermsFromUpdateAsset;
 - (void)_loadTermsRemoteUIFailureWithError:(id)arg1;
 - (void)_presentModalController:(id)arg1;

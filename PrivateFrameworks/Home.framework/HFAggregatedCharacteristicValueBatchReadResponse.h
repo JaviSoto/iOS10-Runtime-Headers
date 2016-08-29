@@ -6,16 +6,16 @@
     id /* block */  _aggregationPolicyBlock;
     NSMutableSet * _allCharacteristicTypes;
     NSMutableSet * _allCharacteristics;
+    <HFCharacteristicOperationContextProviding> * _contextProvider;
     NSMutableDictionary * _errorsByCharacteristicType;
-    unsigned long long  _remoteAccessState;
     NSMutableDictionary * _valuesByCharacteristicType;
 }
 
 @property (nonatomic, copy) id /* block */ aggregationPolicyBlock;
 @property (nonatomic, readonly) NSSet *allCharacteristicTypes;
 @property (nonatomic, readonly) NSSet *allCharacteristics;
+@property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (nonatomic, readonly) NSMutableDictionary *errorsByCharacteristicType;
-@property (nonatomic) unsigned long long remoteAccessState;
 @property (nonatomic, readonly) NSMutableDictionary *valuesByCharacteristicType;
 
 + (id)aggregatedResponseFromResponse:(id)arg1;
@@ -32,15 +32,15 @@
 - (id)allCharacteristicTypes;
 - (id)allCharacteristics;
 - (id)allValuesForCharacteristicType:(id)arg1;
+- (id)contextProvider;
 - (id)errorForCharacteristicType:(id)arg1;
 - (id)errorsByCharacteristicType;
 - (bool)hasAnyErrors;
 - (bool)hasErrorForEveryCharacteristic;
 - (id)init;
 - (bool)isValueAggregatedForCharacteristicType:(id)arg1;
-- (unsigned long long)remoteAccessState;
 - (void)setAggregationPolicyBlock:(id /* block */)arg1;
-- (void)setRemoteAccessState:(unsigned long long)arg1;
+- (void)setContextProvider:(id)arg1;
 - (id)valueForCharacteristicType:(id)arg1;
 - (id)valuesByCharacteristicType;
 

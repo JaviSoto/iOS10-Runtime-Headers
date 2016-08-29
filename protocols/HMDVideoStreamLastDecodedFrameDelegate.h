@@ -6,6 +6,5 @@
 @required
 
 - (void)videoStream:(HMDVideoStreamInterface *)arg1 didGetLastDecodedFrame:(HMDCameraSnapshotData *)arg2;
-- (void)videoStream:(HMDVideoStreamInterface *)arg1 didStop:(NSError *)arg2;
 
 @end

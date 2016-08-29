@@ -12,6 +12,7 @@
     CAMBottomBar * _bottomBar;
     CAMBurstIndicatorView * _burstIndicatorView;
     long long  _desiredAspectRatio;
+    CAMDisabledModeOverlayView * _disabledModeOverlayView;
     CAMElapsedTimeView * _elapsedTimeView;
     CAMFlashBadge * _flashBadge;
     CAMFlipButton * _flipButton;
@@ -41,6 +42,7 @@
 @property (nonatomic, retain) CAMBottomBar *bottomBar;
 @property (nonatomic, retain) CAMBurstIndicatorView *burstIndicatorView;
 @property (nonatomic) long long desiredAspectRatio;
+@property (nonatomic, retain) CAMDisabledModeOverlayView *disabledModeOverlayView;
 @property (nonatomic, retain) CAMElapsedTimeView *elapsedTimeView;
 @property (nonatomic, retain) CAMFlashBadge *flashBadge;
 @property (nonatomic, retain) CAMFlipButton *flipButton;
@@ -94,6 +96,7 @@
 - (id)_previewContainerMaskingView;
 - (id)_previewContainerView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_previewFrameForAspectRatio:(long long)arg1 topBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 bottomBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)_previewLayoutForAspectRatio:(long long)arg1 outBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outCenter:(struct CGPoint { double x1; double x2; }*)arg3;
 - (struct CGSize { double x1; double x2; })_previewSizeForAspectRatio:(long long)arg1;
 - (void)_setFlipTransition:(id)arg1;
 - (void)_setOpenAndCloseTransition:(id)arg1;
@@ -105,6 +108,7 @@
 - (id)burstIndicatorView;
 - (void)closeForReason:(long long)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (long long)desiredAspectRatio;
+- (id)disabledModeOverlayView;
 - (id)elapsedTimeView;
 - (id)flashBadge;
 - (id)flipButton;
@@ -123,10 +127,12 @@
 - (void)prepareForAutorotation;
 - (id)previewView;
 - (long long)previewViewOrientation;
+- (void)removeInflightBlurAnimations;
 - (void)setAutomaticallyAdjustsTopBarOrientation:(bool)arg1;
 - (void)setBottomBar:(id)arg1;
 - (void)setBurstIndicatorView:(id)arg1;
 - (void)setDesiredAspectRatio:(long long)arg1;
+- (void)setDisabledModeOverlayView:(id)arg1;
 - (void)setElapsedTimeView:(id)arg1;
 - (void)setFlashBadge:(id)arg1;
 - (void)setFlipButton:(id)arg1;

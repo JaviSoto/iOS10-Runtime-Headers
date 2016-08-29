@@ -31,6 +31,7 @@
 - (id)initWithText:(id)arg1 reasons:(id)arg2 reasonCodes:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)queryText;
 - (id)reasonCodes;
 - (id)reasons;

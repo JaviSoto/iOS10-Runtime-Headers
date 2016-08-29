@@ -4,6 +4,7 @@
 
 @interface HMDResidentDevice : NSObject <HMDMerging, HMFDumpState, HMFLogging, NSSecureCoding> {
     long long  _batteryState;
+    unsigned long long  _capabilities;
     bool  _confirmed;
     HMDDevice * _device;
     bool  _enabled;
@@ -14,25 +15,28 @@
 }
 
 @property (nonatomic) long long batteryState;
+@property (nonatomic, readonly) unsigned long long capabilities;
 @property (getter=isConfirmed, nonatomic) bool confirmed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) HMDDevice *device;
+@property (nonatomic, retain) HMDDevice *device;
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
-@property (nonatomic, readonly, copy) NSUUID *identifier;
+@property (nonatomic, copy) NSUUID *identifier;
 @property (getter=isLowBattery, nonatomic) bool lowBattery;
 @property (getter=isReachable, nonatomic) bool reachable;
 @property (nonatomic, readonly) unsigned long long status;
 @property (readonly) Class superclass;
 
++ (id)batteryStateAsString:(long long)arg1;
 + (id)logCategory;
 + (id)shortDescription;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (long long)batteryState;
+- (unsigned long long)capabilities;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
@@ -44,7 +48,7 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDevice:(id)arg1;
+- (id)initWithDevice:(id)arg1 home:(id)arg2;
 - (bool)isConfirmed;
 - (bool)isEnabled;
 - (bool)isEqual:(id)arg1;
@@ -53,8 +57,10 @@
 - (bool)mergeObject:(id)arg1;
 - (void)setBatteryState:(long long)arg1;
 - (void)setConfirmed:(bool)arg1;
+- (void)setDevice:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setHome:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setLowBattery:(bool)arg1;
 - (void)setReachable:(bool)arg1;
 - (id)shortDescription;

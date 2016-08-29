@@ -21,6 +21,8 @@
 - (void).cxx_destruct;
 - (void)_deviceFailedToPair:(id)arg1;
 - (id)_webServiceContext;
+- (void)archiveWebServiceBackgroundContext:(id)arg1;
+- (void)archiveWebServiceContext:(id)arg1;
 - (id)companionAgentConnection;
 - (void)dealloc;
 - (void)handlePreconditionNotMetWithUniqueIDs:(id)arg1 shouldUnregister:(bool)arg2;
@@ -29,13 +31,12 @@
 - (void)handleUpdatePaymentPassWithTypeIdentifier:(id)arg1;
 - (id)init;
 - (void)loadWebService;
+- (void)sendWebServiceContextToWatch;
 - (void)setCompanionAgentConnection:(id)arg1;
+- (void)setNewAuthRandom:(id /* block */)arg1;
 - (void)setTargetDevice:(id)arg1;
 - (void)setWebService:(id)arg1;
-- (void)shouldArchiveWebServiceBackgroundContext:(id)arg1;
-- (void)shouldArchiveWebServiceContext:(id)arg1;
-- (void)shouldSendWebServiceContextToWatch;
-- (void)shouldSetNewAuthRandom:(id /* block */)arg1;
+- (void)showPaymentSetupForAppDisplayNamea:(id)arg1;
 - (id)targetDevice;
 - (id)webService;
 

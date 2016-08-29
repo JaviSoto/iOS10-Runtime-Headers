@@ -83,6 +83,7 @@
 - (bool)nowPlayingViewControllerCanShowAddToLibrary:(id)arg1;
 - (bool)nowPlayingViewControllerCanShowMore:(id)arg1;
 - (bool)nowPlayingViewControllerCanShuffle:(id)arg1;
+- (bool)nowPlayingViewControllerIsFuseSubscriber:(id)arg1;
 - (bool)nowPlayingViewControllerIsPlaying:(id)arg1;
 - (bool)nowPlayingViewControllerIsShowingExplicitTrack:(id)arg1;
 - (void)nowPlayingViewControllerMore:(id)arg1;
@@ -98,7 +99,6 @@
 - (void)setRightTitle:(id)arg1;
 - (void)setTransportControlImages:(id)arg1;
 - (void)setViewMode:(int)arg1;
-- (id)shuffleStringForNowPlayingViewController:(id)arg1;
 - (long long)shuffleTypeForNowPlayingViewController:(id)arg1;
 - (id)titleForNowPlayingController:(id)arg1;
 - (id)transportControlImages;

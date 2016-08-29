@@ -8,6 +8,7 @@
     CNAvatarView * _contactView;
     NUIContainerStackView * _container;
     SearchUIForceTouchGestureRecognizer * _forceTouchRecognizer;
+    SFSearchResult * _result;
     SearchUITextAreaView * _textAreaView;
     SearchUIThumbnailView * _thumbnailView;
 }
@@ -20,6 +21,7 @@
 @property (readonly, copy) NSString *description;
 @property (retain) SearchUIForceTouchGestureRecognizer *forceTouchRecognizer;
 @property (readonly) unsigned long long hash;
+@property (retain) SFSearchResult *result;
 @property (readonly) Class superclass;
 @property (retain) SearchUITextAreaView *textAreaView;
 @property (retain) SearchUIThumbnailView *thumbnailView;
@@ -40,11 +42,13 @@
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
+- (id)result;
 - (void)setAccessoryViewControllerForResult:(id)arg1;
 - (void)setAccessoryViewControllers:(id)arg1;
 - (void)setContactView:(id)arg1;
 - (void)setContainer:(id)arg1;
 - (void)setForceTouchRecognizer:(id)arg1;
+- (void)setResult:(id)arg1;
 - (void)setTextAreaView:(id)arg1;
 - (void)setThumbnailView:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

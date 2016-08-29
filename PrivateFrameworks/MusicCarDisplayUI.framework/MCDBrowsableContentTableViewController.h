@@ -18,7 +18,7 @@
     bool  _limited;
     MCDLoadingContentView * _loadingContentView;
     MPWeakTimer * _loadingTimer;
-    UIView * _nowPlayingButton;
+    MCDNowPlayingButton * _nowPlayingButton;
     NSIndexPath * _reselectIndexPath;
     NSIndexPath * _selectedIndexPath;
     NSIndexPath * _selectedNextIndexPath;

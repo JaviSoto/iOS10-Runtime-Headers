@@ -31,6 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)launchURL;
 - (id)name;
 - (id)originatingBundleIdentifier;

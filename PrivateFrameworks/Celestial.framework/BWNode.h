@@ -46,6 +46,7 @@
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleIrisReferenceMovieRequest:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
+- (void)handleStillImageReferenceFrameBracketedCaptureSequenceNumber:(int)arg1 forInput:(id)arg2;
 - (bool)hasNonLiveConfigurationChanges;
 - (id)init;
 - (id)input;

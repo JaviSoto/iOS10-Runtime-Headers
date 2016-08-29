@@ -75,6 +75,7 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)loadView;
 - (id)mediaProvider;
+- (void)removeAllAnimations;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setCanPlayVideo:(bool)arg1;
 - (void)setEdgeAntialiasingEnabled:(bool)arg1;

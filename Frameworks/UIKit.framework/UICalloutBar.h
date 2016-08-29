@@ -112,7 +112,7 @@
 + (id)activeCalloutBar;
 + (void)fadeSharedCalloutBar;
 + (void)hideSharedCalloutBar;
-+ (void)performWithoutAffectingCalloutBar:(id /* block */)arg1;
++ (void)performWithoutAffectingSharedCalloutBar:(id /* block */)arg1;
 + (id)sharedCalloutBar;
 + (bool)sharedCalloutBarIsVisible;
 

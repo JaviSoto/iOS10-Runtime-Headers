@@ -27,6 +27,7 @@
 - (id)_dataSourceForSection:(unsigned long long)arg1;
 - (void)_loadObjectsAndUpdateMembersWithCompletion:(id /* block */)arg1;
 - (id)changeDetailsForLibraryChange:(id)arg1 inSection:(unsigned long long)arg2;
+- (void)changeMembersAtIndexes:(id)arg1 toPersonType:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)favoriteDataSource;
@@ -39,6 +40,8 @@
 - (id)localizedDisclosedTitleForSection:(unsigned long long)arg1;
 - (id)localizedTitleForSection:(unsigned long long)arg1;
 - (id)memberAtIndexPath:(id)arg1;
+- (id)membersInSection:(unsigned long long)arg1;
+- (void)moveMemberAtIndex:(id)arg1 toIndex:(id)arg2;
 - (unsigned long long)numberOfMembersInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
 - (id)othersDataSource;

@@ -13,10 +13,11 @@
 - (void).cxx_destruct;
 - (id)_defaultAttributes;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 button:(id)arg2;
-- (void)_invalidateDefaultAttributes;
+- (void)_invalidateCachedDefaultAttributes;
 - (void)_setMinimumFontSize:(double)arg1;
 - (void)_setWantsAutolayout;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)_updateTextColorWithFallbackColorIfNeeded;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
 - (void)setAdjustsFontSizeToFitWidth:(bool)arg1;

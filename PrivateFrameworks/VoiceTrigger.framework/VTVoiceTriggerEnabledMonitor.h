@@ -3,22 +3,19 @@
  */
 
 @interface VTVoiceTriggerEnabledMonitor : VTEventMonitor {
+    bool  _isVoiceTriggerEnabled;
     int  _notifyToken;
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
+- (bool)_checkVoiceTriggerEnabled;
 - (void)_didReceiveVoiceTriggerSettingChanged:(bool)arg1;
 - (void)_didReceiveVoiceTriggerSettingChangedInQueue:(bool)arg1;
-- (void)_startMonitoring;
+- (void)_notifyObserver:(id)arg1 withEnabled:(bool)arg2;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (bool)isEnabled;
-- (void)removeObserver:(id)arg1;
 
 @end

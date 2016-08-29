@@ -31,6 +31,7 @@
         unsigned int resultType : 1; 
         unsigned int shareLocation : 1; 
         unsigned int shareMethod : 1; 
+        unsigned int isCoverArticle : 1; 
         unsigned int isDigitalReplicaAd : 1; 
         unsigned int isFreeArticle : 1; 
         unsigned int isGroupedArticle : 1; 
@@ -39,6 +40,7 @@
         unsigned int isUserSubscribedToFeed : 1; 
     }  _has;
     NSString * _iosActivityType;
+    bool  _isCoverArticle;
     bool  _isDigitalReplicaAd;
     bool  _isFreeArticle;
     bool  _isGroupedArticle;
@@ -94,6 +96,7 @@
 @property (nonatomic, readonly) bool hasGroupFeedId;
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIosActivityType;
+@property (nonatomic) bool hasIsCoverArticle;
 @property (nonatomic) bool hasIsDigitalReplicaAd;
 @property (nonatomic) bool hasIsFreeArticle;
 @property (nonatomic) bool hasIsGroupedArticle;
@@ -114,6 +117,7 @@
 @property (nonatomic, readonly) bool hasSurfacedBySectionId;
 @property (nonatomic, readonly) bool hasSurfacedByTopicId;
 @property (nonatomic, retain) NSString *iosActivityType;
+@property (nonatomic) bool isCoverArticle;
 @property (nonatomic) bool isDigitalReplicaAd;
 @property (nonatomic) bool isFreeArticle;
 @property (nonatomic) bool isGroupedArticle;
@@ -184,6 +188,7 @@
 - (bool)hasGroupFeedId;
 - (bool)hasGroupType;
 - (bool)hasIosActivityType;
+- (bool)hasIsCoverArticle;
 - (bool)hasIsDigitalReplicaAd;
 - (bool)hasIsFreeArticle;
 - (bool)hasIsGroupedArticle;
@@ -205,6 +210,7 @@
 - (bool)hasSurfacedByTopicId;
 - (unsigned long long)hash;
 - (id)iosActivityType;
+- (bool)isCoverArticle;
 - (bool)isDigitalReplicaAd;
 - (bool)isEqual:(id)arg1;
 - (bool)isFreeArticle;
@@ -246,6 +252,7 @@
 - (void)setHasContentType:(bool)arg1;
 - (void)setHasFeedType:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
+- (void)setHasIsCoverArticle:(bool)arg1;
 - (void)setHasIsDigitalReplicaAd:(bool)arg1;
 - (void)setHasIsFreeArticle:(bool)arg1;
 - (void)setHasIsGroupedArticle:(bool)arg1;
@@ -258,6 +265,7 @@
 - (void)setHasShareLocation:(bool)arg1;
 - (void)setHasShareMethod:(bool)arg1;
 - (void)setIosActivityType:(id)arg1;
+- (void)setIsCoverArticle:(bool)arg1;
 - (void)setIsDigitalReplicaAd:(bool)arg1;
 - (void)setIsFreeArticle:(bool)arg1;
 - (void)setIsGroupedArticle:(bool)arg1;

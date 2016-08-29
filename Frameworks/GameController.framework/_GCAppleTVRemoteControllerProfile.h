@@ -40,6 +40,7 @@
 - (id)initWithController:(id)arg1;
 - (id)initWithController:(id)arg1 dpadFlippedY:(bool)arg2;
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
+- (id)menuButton;
 - (id)motion;
 - (id)name;
 - (unsigned long long)owner;

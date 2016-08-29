@@ -10,7 +10,7 @@
     <HKOrganDonationConnectionManagerDelegate> * _delegate;
     long long  _managerState;
     NSString * _refreshToken;
-    NSMutableDictionary * _taskQueue;
+    NSMapTable * _taskQueue;
     long long  _tokenRefreshRetryCount;
 }
 
@@ -28,14 +28,17 @@
 + (id)_host;
 + (long long)_hostConfiguration;
 + (id)_keychainQueryDictionaryForIdentifier:(id)arg1;
++ (bool)_organDonationDisabled;
 + (id)_port;
 + (id)_scheme;
 + (id)_tokenWithIdentifier:(id)arg1 shouldReturnData:(bool)arg2;
 + (bool)hasStoredRegistrant;
 + (bool)isOrganDonationRegistrationAvailable;
 + (void)openDonateLifeMicroSiteInSafari;
-+ (id)organDonationTokenModifiedDate;
++ (void)organDonationSignificantDate:(id /* block */)arg1;
++ (void)refreshOrganDonationFeatureAvailability;
 + (long long)registrationSubmissionHostConfiguration;
++ (bool)shouldShowStoreDemoOrganDonation;
 + (id)storeDemoModeModifiedDate;
 
 - (void).cxx_destruct;
@@ -44,7 +47,7 @@
 - (void)_flushTokenDependentRequestsWithStatus:(long long)arg1;
 - (id)_genericJSONDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_getRequestWithURL:(id)arg1 bearerToken:(id)arg2;
-- (void)_handleServerErrorWithResponse:(id)arg1 payload:(id)arg2 completion:(id /* block */)arg3;
+- (void)_handleServerErrorWithResponse:(id)arg1 originRequest:(id)arg2 payload:(id)arg3 completion:(id /* block */)arg4;
 - (void)_handleURLTaskError:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_invalidateAccessToken:(id)arg1;
 - (id)_jsonBodyPostRequestWithURL:(id)arg1 method:(id)arg2 postData:(id)arg3 bearerToken:(id)arg4;

@@ -26,6 +26,7 @@
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } concaveInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIKBGradient *gradient;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
 @property (nonatomic, readonly) bool isValid;
@@ -43,6 +44,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)gradient;
 - (id)initWithColor:(id)arg1 offset:(struct CGSize { double x1; double x2; })arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 weight:(double)arg4;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
 - (bool)isEqual:(id)arg1;

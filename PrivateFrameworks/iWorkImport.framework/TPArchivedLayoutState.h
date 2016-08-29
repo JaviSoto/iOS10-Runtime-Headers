@@ -15,6 +15,7 @@
 - (void)captureLayoutStateWithProvider:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1;
 - (void)p_reset;
 - (void)readLayoutStateWithConsumer:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

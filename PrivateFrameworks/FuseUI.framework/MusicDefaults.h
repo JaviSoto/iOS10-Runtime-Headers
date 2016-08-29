@@ -15,7 +15,6 @@
 @property (nonatomic, readonly) bool hasSetVersionOfNotNowOption;
 @property (nonatomic) bool hasUserRequestedSubscriptionHidden;
 @property (getter=isInternalInstall, nonatomic) bool internalInstall;
-@property (nonatomic) bool lastEffectiveRadioExplicitTracksEnabled;
 @property (nonatomic) bool lastKnownHasActiveSubscription;
 @property (nonatomic, retain) NSNumber *lastKnownStoreAccountUniqueIdentifier;
 @property (nonatomic) bool lastKnownSupportsConnect;
@@ -61,7 +60,6 @@
 - (bool)isShowCloudMediaEnabled;
 - (bool)isSortByArtistEnabled;
 - (bool)isSoundCheckEnabled;
-- (bool)lastEffectiveRadioExplicitTracksEnabled;
 - (bool)lastKnownHasActiveSubscription;
 - (id)lastKnownStoreAccountUniqueIdentifier;
 - (bool)lastKnownSupportsConnect;
@@ -80,7 +78,6 @@
 - (void)setGeniusUserEnabled:(bool)arg1;
 - (void)setHasUserRequestedSubscriptionHidden:(bool)arg1;
 - (void)setInternalInstall:(bool)arg1;
-- (void)setLastEffectiveRadioExplicitTracksEnabled:(bool)arg1;
 - (void)setLastKnownHasActiveSubscription:(bool)arg1;
 - (void)setLastKnownStoreAccountUniqueIdentifier:(id)arg1;
 - (void)setLastKnownSupportsConnect:(bool)arg1;

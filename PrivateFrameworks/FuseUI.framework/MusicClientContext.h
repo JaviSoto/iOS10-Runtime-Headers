@@ -10,7 +10,6 @@
     MusicJSUserInterfaceStatusController * _jsUserInterfaceStatusController;
     SKUILocalizedStringDictionary * _localizedStrings;
     RadioRecentStationsController * _recentStationsController;
-    MusicTransferAggregator * _transferAggregator;
     NSDictionary * _updatableLocalizedStrings;
 }
 
@@ -20,7 +19,6 @@
 @property (nonatomic, readonly) MusicJSRecentStationsManager *jsRecentStationsManager;
 @property (nonatomic, readonly) MusicJSUserInterfaceStatusController *jsUserInterfaceStatusController;
 @property (nonatomic, retain) RadioRecentStationsController *recentStationsController;
-@property (nonatomic, retain) MusicTransferAggregator *transferAggregator;
 
 + (id)_fallbackConfigurationDictionary;
 
@@ -44,9 +42,7 @@
 - (id)recentStationsController;
 - (void)sendOnSubscriptionRequiredWithOptions:(id)arg1;
 - (void)setRecentStationsController:(id)arg1;
-- (void)setTransferAggregator:(id)arg1;
 - (void)setUpdatableAssetController:(id)arg1;
-- (id)transferAggregator;
 - (id)updatableLocalizedStringForKey:(id)arg1;
 
 @end

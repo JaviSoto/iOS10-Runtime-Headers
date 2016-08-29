@@ -7,6 +7,7 @@
 }
 
 + (id)_singletonAlloc;
++ (id)allSeriesTypes;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)area3DSeries;
 + (id)areaSeries;

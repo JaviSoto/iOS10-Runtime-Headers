@@ -4,6 +4,7 @@
 
 @interface CNContactNavigationController : UINavigationController <CNAccountsAndGroupsViewControllerDelegate, CNContactContentViewControllerDelegate, CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerAddContactPresenter, CNContactViewControllerDelegate> {
     CNAccountsAndGroupsDataSource * _accountsAndGroupsDataSource;
+    UIKeyCommand * _addKeyCommand;
     bool  _allowsCanceling;
     bool  _allowsCardDeletion;
     bool  _allowsCardEditing;
@@ -21,6 +22,7 @@
 }
 
 @property (nonatomic, retain) CNAccountsAndGroupsDataSource *accountsAndGroupsDataSource;
+@property (nonatomic, retain) UIKeyCommand *addKeyCommand;
 @property (nonatomic) bool allowsCanceling;
 @property (nonatomic) bool allowsCardDeletion;
 @property (nonatomic) bool allowsCardEditing;
@@ -45,11 +47,13 @@
 + (id)newContactFormatter;
 
 - (void).cxx_destruct;
+- (void)_cnui_presentViewController:(id)arg1 animated:(bool)arg2;
 - (id)accountsAndGroupsDataSource;
 - (void)accountsAndGroupsViewControllerDidFinish:(id)arg1;
 - (void)addContact:(id)arg1;
 - (void)addContact:(id)arg1 animated:(bool)arg2;
 - (id)addContactPresenter;
+- (id)addKeyCommand;
 - (bool)allowsCanceling;
 - (bool)allowsCardDeletion;
 - (bool)allowsCardEditing;
@@ -57,6 +61,7 @@
 - (bool)allowsDone;
 - (void)applicationDidResume;
 - (void)beginSearch:(id)arg1;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)cancel:(id)arg1;
 - (void)cancelSearch:(id)arg1;
 - (id)contactListViewController;
@@ -82,7 +87,6 @@
 - (id)nonServerDataSource;
 - (void)popToContactListAndSaveChanges:(bool)arg1;
 - (void)presentAddContactViewController:(id)arg1 animated:(bool)arg2;
-- (void)presentContactViewController:(id)arg1 animated:(bool)arg2;
 - (void)presentGroupsViewController:(id)arg1;
 - (id)presentedContactViewController;
 - (id)reusableContactViewController;
@@ -92,6 +96,7 @@
 - (void)selectNextContact:(id)arg1;
 - (void)selectPreviousContact:(id)arg1;
 - (void)setAccountsAndGroupsDataSource:(id)arg1;
+- (void)setAddKeyCommand:(id)arg1;
 - (void)setAllowsCanceling:(bool)arg1;
 - (void)setAllowsCardDeletion:(bool)arg1;
 - (void)setAllowsCardEditing:(bool)arg1;

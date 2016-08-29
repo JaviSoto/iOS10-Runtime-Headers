@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;
 - (void)_lockedAddOutstandingFetch:(id)arg1 forItemIDString:(id)arg2 databaseScope:(long long)arg3;
+- (void)_lockedCreatePCSCacheFetchOfItem:(id)arg1 pcsData:(id)arg2 forOperation:(id)arg3 options:(unsigned long long)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
 - (void)_lockedFetchPCSForItem:(id)arg1 memoryCache:(id)arg2 forOperation:(id)arg3 options:(unsigned long long)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
 - (id)_lockedGetOutstandingFetchForOperation:(id)arg1 options:(unsigned long long)arg2 itemIDString:(id)arg3;
 - (void)_lockedHandleMemoryFetchOfItem:(id)arg1 pcsData:(id)arg2 forOperation:(id)arg3 options:(unsigned long long)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;

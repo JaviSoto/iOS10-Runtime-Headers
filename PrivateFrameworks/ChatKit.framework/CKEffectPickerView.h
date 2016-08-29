@@ -3,6 +3,7 @@
  */
 
 @interface CKEffectPickerView : UIView <CKImpactEffectManagerAnimationDelegateProtocol, UICollectionViewDataSource, UICollectionViewDelegate> {
+    _UIBackdropView * _accessibilityBackdropView;
     NSMutableDictionary * _animatedCells;
     NSMutableDictionary * _animationTimers;
     CABackdropLayer * _backdrop;
@@ -47,6 +48,7 @@
     bool  _usesDarkVibrancyForLayers;
 }
 
+@property (nonatomic, retain) _UIBackdropView *accessibilityBackdropView;
 @property (nonatomic, retain) NSMutableDictionary *animatedCells;
 @property (nonatomic, retain) NSMutableDictionary *animationTimers;
 @property (nonatomic, retain) CABackdropLayer *backdrop;
@@ -95,6 +97,7 @@
 + (bool)shouldUseLargeScreenDimension;
 
 - (void).cxx_destruct;
+- (void)_accessibilityReduceTransparencyStatusDidChange;
 - (void)_adjustMainLabelAndTypeSegmentedControlIfNecessary;
 - (void)_animateIn;
 - (void)_animateInSendButton:(id)arg1;
@@ -120,6 +123,7 @@
 - (void)_updateBalloonViewPositionAnimated:(bool)arg1;
 - (void)_updateMomentsBackgroundColor;
 - (void)_updateRoundedContainerView;
+- (id)accessibilityBackdropView;
 - (void)addAnimationTimerForCell:(id)arg1;
 - (void)addEffect:(id)arg1 withDescriptiveText:(id)arg2 withIdentifier:(id)arg3;
 - (void)animateMessages:(id)arg1;
@@ -179,6 +183,7 @@
 - (unsigned long long)selectedIndex;
 - (long long)selectedMomentIndex;
 - (id)sendMomentButton;
+- (void)setAccessibilityBackdropView:(id)arg1;
 - (void)setAnimatedCells:(id)arg1;
 - (void)setAnimationTimers:(id)arg1;
 - (void)setBackdrop:(id)arg1;

@@ -20,7 +20,6 @@
 - (bool)_fetchParentPCS;
 - (void)_handlePCSDataFetched:(id)arg1 withError:(id)arg2;
 - (bool)_savePCSDataToCache;
-- (void)dataWasFetched:(id)arg1 withError:(id)arg2 forRecordID:(id)arg3;
 - (bool)hasAllPCSData;
 - (id)initWithRecordID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned long long)arg4;
 - (id)itemTypeName;

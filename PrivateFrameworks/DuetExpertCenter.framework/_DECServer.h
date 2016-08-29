@@ -27,6 +27,7 @@
 - (id)_restorationPath;
 - (unsigned long long)categories;
 - (id)connection;
+- (void)decDeviceIdWithReply:(id /* block */)arg1;
 - (struct NSString { Class x1; }*)identifier;
 - (id)initWithConnection:(id)arg1 responder:(id)arg2;
 - (void)invalidate;

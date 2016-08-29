@@ -5,6 +5,7 @@
 @interface PKStackedTextItemGroupCell : PKTableViewCell {
     bool  _animated;
     PKStackedTextItemGroupView * _groupView;
+    long long  _style;
 }
 
 @property (nonatomic, retain) PKStackedTextItemGroup *content;

@@ -45,6 +45,7 @@
 - (int)durationOfOverlapWithRange:(id)arg1;
 - (int)durationOfOverlapWithStart:(int)arg1 duration:(int)arg2;
 - (unsigned long long)flags;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;

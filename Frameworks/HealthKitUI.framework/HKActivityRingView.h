@@ -4,27 +4,23 @@
 
 @interface HKActivityRingView : UIView {
     HKActivitySummary * _activitySummary;
-    bool  _alwaysRequireDisplayLink;
     _HKShapeView * _maskView;
     double  _ringInsetPercentage;
     HKRingsView * _ringsView;
 }
 
 @property (nonatomic, retain) HKActivitySummary *activitySummary;
-@property (getter=_alwaysRequireDisplayLink, setter=_setAlwaysRequireDisplayLink:, nonatomic) bool alwaysRequireDisplayLink;
 @property (getter=_ringInsetPercentage, setter=_setRingInsetPercentage:, nonatomic) double ringInsetPercentage;
 
 + (id)_iconSpriteImage;
 
 - (void).cxx_destruct;
-- (bool)_alwaysRequireDisplayLink;
 - (void)_displayIcons;
 - (double)_ringDiameter;
 - (double)_ringInsetPercentage;
 - (void)_setActivityRingViewBackgroundColor:(id)arg1;
 - (void)_setActivityRingViewBackgroundTransparent:(bool)arg1;
 - (void)_setActivitySummary:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
-- (void)_setAlwaysRequireDisplayLink:(bool)arg1;
 - (void)_setRingDiameter:(double)arg1 ringInterspacing:(double)arg2 ringThickness:(double)arg3;
 - (void)_setRingInsetPercentage:(double)arg1;
 - (void)_setUpAfterInit;

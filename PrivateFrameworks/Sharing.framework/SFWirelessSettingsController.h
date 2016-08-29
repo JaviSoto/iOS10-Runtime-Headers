@@ -32,7 +32,6 @@
 - (bool)isWifiEnabled;
 - (bool)isWirelessAccessPointEnabled;
 - (bool)isWirelessCarPlayEnabled;
-- (void)repairAppleID;
 - (void)setBluetoothEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setWifiEnabled:(bool)arg1;

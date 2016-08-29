@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INStartPhotoPlaybackIntent : INIntent <INStartPhotoPlaybackIntent>
+@interface INStartPhotoPlaybackIntent : INIntent <INStartPhotoPlaybackIntentExport>
 
 @property (nonatomic, readonly, copy) NSString *albumName;
 @property (nonatomic, readonly, copy) INDateComponentsRange *dateCreated;

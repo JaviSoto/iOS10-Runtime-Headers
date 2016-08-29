@@ -76,6 +76,7 @@
 - (id)keyplane;
 - (void)performDelayedDeactivation:(id)arg1;
 - (void)prepareForDisplay;
+- (void)purgeFactory;
 - (void)purgeKeyViews;
 - (void)purgeLayerContents;
 - (void)purgeSubviews;

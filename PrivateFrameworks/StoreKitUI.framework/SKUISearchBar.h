@@ -8,7 +8,6 @@
 
 @property (nonatomic) double intrinsicWidth;
 
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)init;
 - (double)intrinsicWidth;
 - (void)setIntrinsicWidth:(double)arg1;

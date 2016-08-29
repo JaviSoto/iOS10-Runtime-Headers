@@ -10,6 +10,7 @@
     UIView * _containerFromView;
     UIView * _containerToView;
     _UIParallaxDimmingView * _contentDimmingView;
+    NSUUID * _currentRunningAnimationsUUID;
     bool  _interactionAborted;
     _UINavigationInteractiveTransitionBase * _interactionController;
     long long  _operation;
@@ -40,6 +41,7 @@
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_setShouldReverseLayoutDirection:(bool)arg1;
 - (bool)_shouldReverseLayoutDirection;
+- (void)_stopTransitionImmediately;
 - (id)_timingFunctionForAnimation;
 - (void)animateKeyboard:(id)arg1;
 - (void)animateTransition:(id)arg1;

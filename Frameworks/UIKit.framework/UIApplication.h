@@ -3,6 +3,8 @@
  */
 
 @interface UIApplication : UIResponder <FBSDisplayLayoutObserver, FBSSceneDelegate, FBSUIApplicationSystemServiceDelegate, FBSUIApplicationWorkspaceDelegate, UIActivityContinuationManagerApplicationContext, UIAlertViewDelegate, UIApplicationSnapshotPreparing, UNRemoteNotificationRegistrarDelegate> {
+    id /* block */  _HIDGameControllerEventObserver;
+    NSObject<OS_dispatch_queue> * _HIDGameControllerEventQueue;
     id /* block */  ___queuedOrientationChange;
     long long  __expectedViewOrientation;
     UIGestureEnvironment * __gestureEnvironment;
@@ -102,6 +104,7 @@
         unsigned int shouldRestoreKeyboardInputState : 1; 
         unsigned int subclassOverridesInterfaceOrientation : 1; 
         unsigned int isResigningActive : 1; 
+        unsigned int receivedUnhandledMenuButton : 1; 
     }  _applicationFlags;
     UIWindow * _backgroundHitTestWindow;
     BKSAnimationFenceHandle * _cachedSystemAnimationFence;
@@ -122,7 +125,6 @@
     unsigned long long  _externalDeactivationReasons;
     BKSProcessAssertion * _fenceTaskAssertion;
     UIForceStageObservable * _forceStageObservable;
-    <UIApplicationGameControllerMenuButtonDelegate> * _gameControllerMenuButtonDelegate;
     NSTimer * _hideNetworkActivityIndicatorTimer;
     _UIIdleModeController * _idleModeController;
     NSMutableSet * _idleTimerDisabledReasons;
@@ -189,7 +191,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIApplicationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=_gameControllerMenuButtonDelegate, setter=_setGameControllerMenuButtonDelegate:, nonatomic) <UIApplicationGameControllerMenuButtonDelegate> *gameControllerMenuButtonDelegate;
 @property (readonly) unsigned long long hash;
 @property (getter=isIdleTimerDisabled, nonatomic) bool idleTimerDisabled;
 @property (getter=isIgnoringInteractionEvents, nonatomic, readonly) bool ignoringInteractionEvents;
@@ -256,7 +257,6 @@
 - (void)__setQueuedOrientationChange:(id /* block */)arg1;
 - (bool)_accessibilityApplicationIsSystemWideServer;
 - (Class)_accessibilityBundlePrincipalClass;
-- (void)_accessibilityBundleRetrievePrincipalClass:(id /* block */)arg1;
 - (bool)_accessibilityCaptureSimulatorEvent:(struct __GSEvent { }*)arg1;
 - (void)_accessibilityInit;
 - (void)_accessibilitySetUpQuickSpeak;
@@ -347,7 +347,6 @@
 - (long long)_frontMostAppOrientation;
 - (unsigned int)_frontmostApplicationPort;
 - (id)_gameControllerEvent;
-- (id)_gameControllerMenuButtonDelegate;
 - (id)_gestureEnvironment;
 - (void)_getEnabledRemoteNotificationTypesWithCompletionHandler:(id /* block */)arg1;
 - (unsigned char)_getIOHIDKeyboardTypeForGSKeyboardType:(unsigned char)arg1;
@@ -458,6 +457,7 @@
 - (void)_performChanges:(id /* block */)arg1 withTransitionContext:(id)arg2;
 - (void)_performMemoryWarning;
 - (void)_performSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(id /* block */)arg3;
+- (void)_performWithUICACommitStateSnapshotting:(id /* block */)arg1;
 - (long long)_physicalButtonTypeForKeyCode:(long long)arg1 isTextual:(bool*)arg2;
 - (id)_physicalKeyboardEvent;
 - (void)_pipStateDidChange;
@@ -521,6 +521,7 @@
 - (void)_sendButtonEventWithPressInfo:(id)arg1;
 - (void)_sendButtonEventWithType:(long long)arg1 phase:(long long)arg2 timestamp:(double)arg3;
 - (void)_sendDictionaryToPPT:(id)arg1;
+- (void)_sendEventToGameControllerObserver:(struct __IOHIDEvent { }*)arg1;
 - (void)_sendHeadsetOriginatedMediaRemoteCommand:(unsigned int)arg1;
 - (void)_sendMotionBegan:(long long)arg1;
 - (void)_sendMotionCancelled:(long long)arg1;
@@ -539,7 +540,6 @@
 - (void)_setDefaultTopNavBarTintColor:(id)arg1;
 - (void)_setExpectedViewOrientation:(long long)arg1;
 - (void)_setForcedUserInterfaceLayoutDirection:(long long)arg1;
-- (void)_setGameControllerMenuButtonDelegate:(id)arg1;
 - (void)_setHIDGameControllerEventObserver:(id /* block */)arg1 onQueue:(id)arg2;
 - (void)_setHandlingURL:(bool)arg1 url:(id)arg2;
 - (void)_setIdleModeVisualEffectsEnabled:(bool)arg1;
@@ -573,6 +573,7 @@
 - (void)_setTopNavBarTintColor:(id)arg1 withDuration:(double)arg2;
 - (void)_setUserDefaultsSyncEnabled:(bool)arg1;
 - (void)_setVirtualWindowSizeInSceneReferenceSpace:(struct CGSize { double x1; double x2; })arg1 virtualHorizontalSizeClass:(long long)arg2 virtualVerticalSizeClass:(long long)arg3;
+- (void)_setWatchSystemAppHIDEventFilter:(id /* block */)arg1;
 - (bool)_shakeToUndoEnabled;
 - (void)_sheetWithRemoteIdentifierDidDismiss:(id)arg1;
 - (bool)_shouldAllowKeyboardArbiter;

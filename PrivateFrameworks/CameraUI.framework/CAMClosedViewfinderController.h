@@ -12,6 +12,8 @@
 @property (getter=isViewfinderClosed, nonatomic, readonly) bool viewfinderClosed;
 
 - (void).cxx_destruct;
+- (id)_descriptionForReasons:(id)arg1;
+- (id)_descriptionStringForReason:(long long)arg1;
 - (id)_reasonsForClosingViewfinder;
 - (void)addClosedViewfinderReason:(long long)arg1;
 - (id)delegate;

@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSString *applicationIdentifier;
 @property (nonatomic, retain) NSNumber *baseVersion;
 @property (nonatomic, readonly, copy) NSDictionary *bodyDictionary;
+@property (nonatomic, retain) NSString *canaryIdentifier;
 @property (nonatomic, retain) NSNumber *clientVersion;
 @property (nonatomic, retain) NSString *connection;
 @property (nonatomic, retain) NSString *eventType;
@@ -26,10 +27,12 @@
 - (id)applicationIdentifier;
 - (id)baseVersion;
 - (id)bodyDictionary;
+- (id)canaryIdentifier;
 - (id)clientVersion;
 - (id)connection;
 - (void)dealloc;
 - (id)debugDescription;
+- (id)decorateReportingURL:(id)arg1;
 - (id)eventType;
 - (id)eventVersion;
 - (id)hostApplicationIdentifier;
@@ -42,6 +45,7 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setBaseVersion:(id)arg1;
+- (void)setCanaryIdentifier:(id)arg1;
 - (void)setClientVersion:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setEventType:(id)arg1;

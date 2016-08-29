@@ -46,12 +46,13 @@
 
 + (id)_subtitleFontForTable:(bool)arg1;
 + (id)_titleFontForTable:(bool)arg1;
-+ (struct CGSize { double x1; double x2; })defaultSizeForTraits:(id)arg1;
++ (struct CGSize { double x1; double x2; })defaultSizeForCellStyle:(long long)arg1 traitCollection:(id)arg2;
 + (struct CGSize { double x1; double x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_activityAction:(id)arg1;
 - (void)_deleteAction:(id)arg1;
+- (void)_dynamicTypeSizeChanged:(id)arg1;
 - (void)_infoAction:(id)arg1;
 - (void)_moreAction:(id)arg1;
 - (void)_moveAction:(id)arg1;

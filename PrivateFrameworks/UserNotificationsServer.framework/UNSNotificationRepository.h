@@ -17,7 +17,7 @@
 - (id)_notificationsForObjects:(id)arg1;
 - (id)_pathExtension;
 - (id)_queue_notificationRecordsForBundleIdentifier:(id)arg1;
-- (void)_queue_notifyObserversNotificationsDidAddNotifications:(id)arg1 replaceNotifications:(id)arg2 removedNotifications:(id)arg3 forBundleIdentifier:(id)arg4;
+- (void)_queue_notifyObserversNotificationsDidAddNotifications:(id)arg1 replaceNotifications:(id)arg2 replacementNotifications:(id)arg3 removedNotifications:(id)arg4 forBundleIdentifier:(id)arg5;
 - (void)_queue_performMigration;
 - (void)_queue_performMigrationForBundleIdentifier:(id)arg1;
 - (void)_queue_removeNotificationRecordsPassingTest:(id /* block */)arg1 forBundleIdentifier:(id)arg2;

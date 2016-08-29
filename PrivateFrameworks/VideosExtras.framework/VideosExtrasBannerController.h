@@ -3,8 +3,6 @@
  */
 
 @interface VideosExtrasBannerController : NSObject {
-    UIView * _anchorView;
-    NSLayoutConstraint * _anchorViewConstraint;
     IKDocumentBannerElement * _bannerElement;
     UIImageView * _bannerImageView;
     NSLayoutConstraint * _bannerImageViewHeightConstraint;
@@ -16,8 +14,6 @@
     unsigned long long  _vignetteType;
 }
 
-@property (nonatomic, readonly) NSLayoutConstraint *anchorConstraint;
-@property (nonatomic, retain) UIView *anchorView;
 @property (nonatomic, readonly) IKDocumentBannerElement *bannerElement;
 @property (nonatomic, retain) UIImageView *bannerImageView;
 @property (nonatomic, retain) NSLayoutConstraint *bannerImageViewHeightConstraint;
@@ -32,8 +28,6 @@
 - (void)_configureBanner;
 - (void)_doAllSetup;
 - (void)_updateVignetteImage;
-- (id)anchorConstraint;
-- (id)anchorView;
 - (id)bannerElement;
 - (id)bannerImageView;
 - (id)bannerImageViewHeightConstraint;
@@ -42,7 +36,6 @@
 - (id)installedConstraints;
 - (id)installedView;
 - (id)maskView;
-- (void)setAnchorView:(id)arg1;
 - (void)setBannerImageView:(id)arg1;
 - (void)setBannerImageViewHeightConstraint:(id)arg1;
 - (void)setInstalledConstraints:(id)arg1;

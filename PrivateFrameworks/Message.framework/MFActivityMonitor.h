@@ -17,6 +17,7 @@
     unsigned long long  _expectedLength;
     unsigned long long  _gotNewMessagesState;
     unsigned int  _isActive;
+    bool  _isRemoteSearch;
     unsigned int  _key;
     double  _lastTime;
     MFMailboxUid * _mailbox;
@@ -37,6 +38,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool isRemoteSearch;
 @property (retain) MFMailboxUid *mailbox;
 @property (nonatomic) bool shouldCancel;
 @property (readonly) Class superclass;
@@ -71,6 +73,7 @@
 - (bool)hasReason:(id)arg1;
 - (id)init;
 - (bool)isActive;
+- (bool)isRemoteSearch;
 - (id)mailbox;
 - (void)notifyConnectionEstablished;
 - (double)percentDone;
@@ -96,6 +99,7 @@
 - (void)setExpectedLength:(unsigned long long)arg1;
 - (void)setGotNewMessagesState:(unsigned long long)arg1;
 - (void)setInvocationQueue:(id)arg1;
+- (void)setIsRemoteSearch:(bool)arg1;
 - (void)setMailbox:(id)arg1;
 - (void)setMaxCount:(unsigned long long)arg1;
 - (void)setPercentDone:(double)arg1;

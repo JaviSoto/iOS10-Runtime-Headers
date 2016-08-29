@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)entryView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 conversation:(id)arg2 plugin:(id)arg3 barStyle:(long long)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 footerView:(id)arg2 entryView:(id)arg3;
 - (void)layoutSubviews;
 - (void)prepareForTransitionFromEntryViewToFooterView;
 - (void)prepareForTransitionFromEntryViewToTransparent;

@@ -6,11 +6,10 @@
 @required
 
 - (void)__openTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(NSUUID *)arg2;
-- (void)__performOutstandingAnimationsForRequestWithIdentifier:(NSUUID *)arg1;
 - (void)__performOutstandingCompletionForRequestWithIdentifier:(NSUUID *)arg1;
 - (void)__performUpdateWithReplyHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, bool, void*
+- (void)__prepareForAnimationsForRequestWithIdentifier:(void *)arg1 withReplyHandler:(void *)arg2; // needs 2 arg types, found 6: NSUUID *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)__requestEncodedLayerTreeToURL:(void *)arg1 withReplyHandler:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)__setWidgetIdentifier:(NSString *)arg1;
 - (void)__viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 requestIdentifier:(NSUUID *)arg2;
 
 @optional

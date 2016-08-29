@@ -25,6 +25,7 @@
 - (id)defaultHeaderViewTitle;
 - (void)downloadPassWithCompletion:(id /* block */)arg1;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 paymentCredential:(id)arg4 setupProduct:(id)arg5;
+- (bool)isComplete;
 - (void)loadView;
 - (id)newPaymentEligibilityRequest;
 - (id)newPaymentProvisioningRequest;

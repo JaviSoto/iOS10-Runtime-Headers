@@ -2,13 +2,9 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, MusicEntityViewDownloadInformationObserving> {
+@interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring> {
     UIImageView * _availableOfflineBadgeImageView;
     <MusicEntityVerticalLockupViewDelegate> * _delegate;
-    struct MusicEntityDownloadInformation { 
-        long long downloadStatus; 
-        double downloadProgress; 
-    }  _downloadInformation;
     bool  _isAvailableOffline;
     double  _textLateralEdgePadding;
 }
@@ -17,7 +13,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityVerticalLockupViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct MusicEntityDownloadInformation { long long x1; double x2; } downloadInformation;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
@@ -26,16 +21,13 @@
 
 - (void).cxx_destruct;
 - (void)_contentDescriptorDidChange:(id)arg1;
-- (void)_handlePlayButtonTappedWithAction:(unsigned long long)arg1;
 - (bool)_shouldArtworkViewRespectHighlightProperty;
 - (bool)_shouldEnableArtworkViewUserInteraction;
 - (id)contentDescriptor;
 - (id)delegate;
-- (struct MusicEntityDownloadInformation { long long x1; double x2; })downloadInformation;
 - (void)layoutSubviews;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
 - (void)setTextLateralEdgePadding:(double)arg1;
 
 @end

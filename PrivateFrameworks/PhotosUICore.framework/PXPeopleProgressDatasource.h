@@ -3,15 +3,20 @@
  */
 
 @interface PXPeopleProgressDatasource : NSObject <PXPeopleProgressDatasource, PXPhotoLibraryUIChangeObserver> {
+    unsigned long long  _cachedUnlockValue;
+    bool  _countCacheValid;
     PHFetchResult * _favResult;
     PHFetchResult * _homeResult;
     unsigned long long  _pendingCount;
     PHFetchResult * _plusResult;
     unsigned long long  _processedCount;
+    NSLock * _queryLock;
     unsigned long long  _totalCount;
     PHFetchResult * _verifyResult;
 }
 
+@property unsigned long long cachedUnlockValue;
+@property (getter=isCountCacheValid) bool countCacheValid;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PHFetchResult *favResult;
@@ -21,18 +26,23 @@
 @property (nonatomic) unsigned long long pendingCount;
 @property (nonatomic, retain) PHFetchResult *plusResult;
 @property (nonatomic) unsigned long long processedCount;
+@property (readonly) NSLock *queryLock;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long totalCount;
 @property (nonatomic, retain) PHFetchResult *verifyResult;
 
 - (void).cxx_destruct;
+- (void)_appWillEnterForeground;
 - (double)_progressFromWorkerDictionary:(id)arg1;
 - (void)asyncPeopleScanningProgress:(id /* block */)arg1;
+- (unsigned long long)cachedUnlockValue;
 - (void)dealloc;
 - (id)favResult;
 - (bool)featureUnlockUserDefault;
 - (unsigned long long)homeMembersCount;
 - (id)homeResult;
+- (id)init;
+- (bool)isCountCacheValid;
 - (void)loadQueryData;
 - (unsigned long long)pendingAssetCount;
 - (unsigned long long)pendingCount;
@@ -41,6 +51,9 @@
 - (id)plusResult;
 - (unsigned long long)processedAssetCount;
 - (unsigned long long)processedCount;
+- (id)queryLock;
+- (void)setCachedUnlockValue:(unsigned long long)arg1;
+- (void)setCountCacheValid:(bool)arg1;
 - (void)setFavResult:(id)arg1;
 - (void)setFeatureUnlockUserDefault:(bool)arg1;
 - (void)setHomeResult:(id)arg1;
@@ -52,6 +65,7 @@
 - (double)syncPeopleScanningProgress;
 - (unsigned long long)totalAssetCount;
 - (unsigned long long)totalCount;
+- (void)updateProgressIfNeeded;
 - (unsigned long long)verifiedCount;
 - (id)verifyResult;
 

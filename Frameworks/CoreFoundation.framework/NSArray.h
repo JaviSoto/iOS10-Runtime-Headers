@@ -382,6 +382,7 @@
 - (id)__ck_commaJoinedValueForKey:(id)arg1;
 - (unsigned long long)__ck_indexOfChatItemWithGUID:(id)arg1;
 - (unsigned long long)__ck_indexOfMediaObject:(id)arg1;
+- (unsigned long long)__ck_indexOfParentChatItemWithMesssageGUID:(id)arg1 associatedMessageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (unsigned long long)__ck_indexOfTransfer:(id)arg1;
 - (id)__ck_indexSetForIndexPathItemsInSection:(long long)arg1;
 - (id)__ck_indexSetForIndexPathRowsInSection:(long long)arg1;
@@ -390,6 +391,7 @@
 - (id)__ck_indexesOfPartsOfNonAttachmentMessages:(id)arg1;
 - (id)__ck_indexesOfUnplayedAudioMessages;
 - (id)__ck_messageForChatItemAtIndex:(unsigned long long)arg1;
+- (id)__ck_parentChatItemWithMesssageGUID:(id)arg1 associatedMessageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)__ck_proxyWithBundleIdentifier:(id)arg1;
 - (id)__ck_shuffledArray;
 - (void)__ck_unloadSizesAtIndexes:(id)arg1;
@@ -435,6 +437,7 @@
 - (id)_cn_indexBy:(id /* block */)arg1;
 - (unsigned long long)_cn_indexOfFirstObjectPassingTest:(id /* block */)arg1;
 - (id)_cn_indicesForObjects:(id)arg1;
+- (bool)_cn_isIdenticalToArray:(id)arg1;
 - (bool)_cn_isNonEmpty;
 - (id)_cn_join:(id)arg1;
 - (id)_cn_joinWithBlock:(id /* block */)arg1;
@@ -487,6 +490,21 @@
 // Image: /System/Library/PrivateFrameworks/DictionaryUI.framework/DictionaryUI
 
 - (id)_filteredArrayOfObjectsPassingTest:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
++ (id)fm_arrayByRepeatingWithCount:(unsigned long long)arg1 generatorBlock:(id /* block */)arg2;
++ (id)fm_arrayWithSafeObject:(id)arg1;
+
+- (bool)fm_all:(id /* block */)arg1;
+- (bool)fm_any:(id /* block */)arg1;
+- (id)fm_arrayByFlattening;
+- (id)fm_arrayWithResultsOfBlock:(id /* block */)arg1;
+- (id)fm_dictionaryWithKeyGenerator:(id /* block */)arg1;
+- (void)fm_each:(id /* block */)arg1;
+- (id)fm_filter:(id /* block */)arg1;
+- (id)fm_firstObjectPassingTest:(id /* block */)arg1;
+- (id)fm_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
@@ -657,6 +675,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
+- (void)mf_enumerateByStoreUsingBlock:(id /* block */)arg1;
 - (unsigned long long)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
@@ -701,6 +720,7 @@
 - (id)fc_arrayByRemovingObjectsAtIndexes:(id)arg1;
 - (id)fc_arrayByRemovingObjectsInArray:(id)arg1;
 - (id)fc_arrayByRemovingObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)fc_arrayByRemovingObjectsPassingTest:(id /* block */)arg1;
 - (id)fc_arrayByReplacingObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (id)fc_arrayByReplacingObjectIdenticalTo:(id)arg1 withObject:(id)arg2;
 - (id)fc_arrayByReplacingObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObject:(id)arg2;
@@ -742,6 +762,7 @@
 - (id)fc_safeSubarrayWithCountFromBack:(unsigned long long)arg1;
 - (id)fc_safeSubarrayWithCountFromFront:(unsigned long long)arg1;
 - (id)fc_setByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_sortedArrayStartingWithElementsSatisfying:(id /* block */)arg1 sortedBy:(id /* block */)arg2;
 - (void)fc_splitArrayWithTest:(id /* block */)arg1 result:(id /* block */)arg2;
 - (id)fc_subarrayFromCount:(unsigned long long)arg1;
 - (id)fc_subarrayFromIndex:(unsigned long long)arg1 inclusive:(bool)arg2;
@@ -918,6 +939,10 @@
 - (id)objectPassingTest:(id /* block */)arg1;
 - (id)objectsPassingTest:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
+
+- (id)sp_copyForFeedback;
+
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
 - (id)_swiftInitWithArray_NSArray:(id)arg1;
@@ -973,15 +998,13 @@
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-- (id)vcp_avAsset;
-- (id)vcp_exif;
-- (bool)vcp_hasLocalMovie;
-- (bool)vcp_hasLocalPhoto;
+- (id)vcp_avAsset:(bool)arg1;
+- (id)vcp_exif:(bool)arg1;
+- (bool)vcp_hasLocalMovie:(bool)arg1;
+- (bool)vcp_hasLocalPhoto:(bool)arg1;
 - (bool)vcp_isOriginalLocal;
-- (bool)vcp_isThumbnailLocal;
-- (id)vcp_largestLocalMovieResource;
-- (id)vcp_localMovieResourcesSorted;
-- (id)vcp_localPhotoResourcesSorted;
+- (id)vcp_localMovieResourcesSorted:(bool)arg1;
+- (id)vcp_localPhotoResourcesSorted:(bool)arg1;
 - (id)vcp_originalResource;
 - (id)vcp_resourceWithType:(unsigned long long)arg1;
 - (id)vcp_thumbnailResource;

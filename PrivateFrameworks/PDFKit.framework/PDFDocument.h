@@ -72,6 +72,7 @@
 - (bool)isLocked;
 - (int)majorVersion;
 - (int)minorVersion;
+- (struct __CFData { }*)newXMPFromData:(id)arg1 preserveExistingXMPMetadata:(bool)arg2;
 - (void)normalizeFindOptions:(unsigned long long)arg1;
 - (id)outlineItemForSelection:(id)arg1;
 - (id)outlineRoot;

@@ -22,6 +22,7 @@
 - (id)init;
 - (void)logActivation;
 - (void)logFalseWakeUp:(bool)arg1;
+- (void)logRecognizerTimedOut:(id)arg1;
 - (void)logSecondPassResult:(bool)arg1;
 - (void)logTimeVoiceTriggerTransitionsToState:(unsigned long long)arg1;
 - (void)logZeroRunAudio:(int)arg1;

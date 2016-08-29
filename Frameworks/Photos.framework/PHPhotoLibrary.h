@@ -145,7 +145,6 @@
 - (id)relatedDebugInformationBetweenMomentForLocalIdentifier:(id)arg1 andRelatedMomentForLocalIdentifier:(id)arg2 precision:(unsigned long long)arg3 relatedType:(unsigned long long)arg4 error:(id*)arg5;
 - (void)removeAnalysisRecordsForDeletedAssetUUIDs:(id)arg1 forWorkerType:(short)arg2;
 - (id)removeUuidForSaveToken:(id)arg1;
-- (void)requestAnalysisJobConstraints:(id /* block */)arg1;
 - (void)requestAnalysisProgressCountsWithCompletion:(id /* block */)arg1;
 - (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(id /* block */)arg1;
 - (void)requestGraphReadyNotificationWithCoalescingIdentifier:(id)arg1 completion:(id /* block */)arg2;

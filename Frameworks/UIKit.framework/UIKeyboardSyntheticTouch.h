@@ -31,6 +31,7 @@
 - (unsigned char)_pathIndex;
 - (float)_pathMajorRadius;
 - (void)_setLocationInWindow:(struct CGPoint { double x1; double x2; })arg1 resetPrevious:(bool)arg2;
+- (void)dealloc;
 - (struct CGPoint { double x1; double x2; })getLocationInWindow;
 - (id)initWithPoint:(struct CGPoint { double x1; double x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 - (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;

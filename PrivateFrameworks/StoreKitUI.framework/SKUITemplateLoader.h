@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUITemplateLoader : NSObject <ISURLOperationDelegate> {
+@interface SKUITemplateLoader : NSObject {
     NSArray * _URLs;
     id /* block */  _completionBlock;
     NSMutableArray * _errors;
@@ -15,27 +15,22 @@
 
 @property (nonatomic, readonly, copy) NSArray *URLs;
 @property (nonatomic, readonly, copy) id /* block */ completionBlock;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableArray *errors;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSOperationQueue *operationQueue;
 @property (nonatomic) long long pendingOperationCount;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSRegularExpression *templateParsingRegularExpression;
 @property (nonatomic, readonly) NSMutableDictionary *templateStrings;
 
 - (void).cxx_destruct;
 - (id)URLs;
+- (void)_operation:(id)arg1 didCompleteWithOutput:(id)arg2;
+- (void)_operation:(id)arg1 didFailWithError:(id)arg2;
 - (void)_operationDidFinish:(id)arg1;
 - (id)_operationWithURL:(id)arg1;
 - (id /* block */)completionBlock;
-- (void)dealloc;
 - (id)errors;
 - (id)initWithURLs:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)load;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)operationQueue;
 - (long long)pendingOperationCount;
 - (void)setPendingOperationCount:(long long)arg1;

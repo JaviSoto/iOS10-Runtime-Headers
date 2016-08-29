@@ -56,7 +56,6 @@
 - (void)remoteVideoClientDidReceiveLastFrame:(id)arg1;
 - (void)remoteVideoServerDidDie:(id)arg1;
 - (id)sessionID;
-- (void)setAudioSetting:(unsigned long long)arg1;
 - (void)setAudioStreamInterface:(id)arg1;
 - (void)setAvcRemoteVideo:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -68,6 +67,7 @@
 - (id)slotIdentifier;
 - (void)startStreamWithVideoConfig:(id)arg1 audioConfig:(id)arg2;
 - (id)streamSnapshotHandler;
+- (void)updateAudioSetting:(unsigned long long)arg1;
 - (void)updateReconfigurationMode:(bool)arg1;
 - (void)updateStreamConfiguration:(id)arg1;
 - (void)videoStream:(id)arg1 didStart:(id)arg2;

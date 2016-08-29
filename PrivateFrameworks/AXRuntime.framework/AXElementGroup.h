@@ -11,6 +11,7 @@
     NSString * _label;
     AXElementGroup * _parentGroup;
     bool  _rootGroup;
+    int  _userDefinedScanningBehaviorTraits;
 }
 
 @property (nonatomic, readonly) bool allowsChangingExistingGroupingOfContents;
@@ -31,6 +32,7 @@
 @property (getter=isRootGroup, nonatomic) bool rootGroup;
 @property (nonatomic, readonly) bool shouldBeUngrouped;
 @property (readonly) Class superclass;
+@property (nonatomic) int userDefinedScanningBehaviorTraits;
 
 + (id)groupWithElements:(id)arg1;
 + (id)groupWithElements:(id)arg1 label:(id)arg2;
@@ -38,9 +40,11 @@
 
 - (void)_commonInitWithElements:(id)arg1 label:(id)arg2 generator:(id)arg3;
 - (id)_debugBriefDescription;
+- (id)_debugDescriptionForScanningBehaviorTraits;
 - (id)_debugDescriptionForTraits;
 - (id)_debugFullDescriptionWithIndent:(id)arg1;
 - (void)_generateGroupsIfNeeded;
+- (id)_leafAXElementWithPosition:(long long)arg1;
 - (void)_notifyGroupObserversDidTransferStateToGroup:(id)arg1;
 - (void)_notifyGroupObserversWillTransferStateToGroup:(id)arg1;
 - (id)_siblingOfChild:(id)arg1 inDirection:(bool)arg2 didWrap:(bool*)arg3;
@@ -48,14 +52,17 @@
 - (bool)allowsChangingExistingGroupingOfContents;
 - (bool)allowsVisualGroupingOfChildren;
 - (id)ancestorPassingTest:(id /* block */)arg1;
+- (id)bottomMostLeafAXElement;
 - (bool)canBeGroupedWithOtherGroupables;
 - (bool)canBeReplacedByChildren;
 - (id)childrenPassingTest:(id /* block */)arg1;
+- (bool)containsNativeFocusElement;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)debugFullDescription;
+- (id)descendantWithNativeFocus;
 - (id)descendantsPassingTest:(id /* block */)arg1;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
@@ -87,6 +94,7 @@
 - (id)keyboardRow;
 - (id)label;
 - (id)lastChild;
+- (id)leftMostLeafAXElement;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)nextSiblingOfChild:(id)arg1 didWrap:(bool*)arg2;
 - (unsigned long long)numberOfElements;
@@ -94,14 +102,18 @@
 - (id)parentGroup;
 - (id)previousSiblingOfChild:(id)arg1 didWrap:(bool*)arg2;
 - (void)registerGroupObserver:(id)arg1;
+- (id)rightMostLeafAXElement;
 - (void)setElementCommunity:(id)arg1;
 - (void)setGenerator:(id)arg1;
 - (void)setGroupObservers:(id)arg1;
 - (void)setGroupTraits:(int)arg1;
 - (void)setParentGroup:(id)arg1;
 - (void)setRootGroup:(bool)arg1;
+- (void)setUserDefinedScanningBehaviorTraits:(int)arg1;
 - (bool)shouldBeUngrouped;
+- (id)topMostLeafAXElement;
 - (void)unregisterAllGroupObservers;
 - (void)unregisterGroupObserver:(id)arg1;
+- (int)userDefinedScanningBehaviorTraits;
 
 @end

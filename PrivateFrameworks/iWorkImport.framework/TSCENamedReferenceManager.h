@@ -11,6 +11,11 @@
     struct __CFSet { } * mTablesBeingTracked;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
 - (void)beginTrackingNameInCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 ofResolver:(id)arg2 addingTrackedReferencesTo:(id)arg3;
 - (void)beginTrackingNamesInRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 ofResolver:(id)arg2 addingTrackedReferencesTo:(id)arg3;
 - (id)beginTrackingNamesInTable:(struct __CFUUID { }*)arg1 limitedToRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2;
@@ -27,6 +32,7 @@
 - (id)referenceForTrackedReference:(id)arg1 sticky:(bool)arg2;
 - (bool)referenceNameIsUnique:(id)arg1 forReference:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg2 contextTable:(struct __CFUUID { }*)arg3;
 - (id)referenceTracker;
+- (void)referenceTrackerDidUpdateReferences:(id)arg1;
 - (void)referencedCellWasModified:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCalculationEngine:(id)arg1;

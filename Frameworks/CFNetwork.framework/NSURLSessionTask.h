@@ -4,8 +4,6 @@
 
 @interface NSURLSessionTask : NSObject <FCOperationPrioritizing, NSCopying> {
     double  __loadingPriority;
-    NSURL * _currentRequest_URL;
-    NSURL * _currentRequest_mainDocumentURL;
     float  _priority;
 }
 
@@ -112,8 +110,6 @@
 - (void)cancel;
 - (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)currentRequest_URL;
-- (id)currentRequest_mainDocumentURL;
 - (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned long long)arg3 session:(id)arg4;
 - (id)initWithTask:(id)arg1;
 - (void)initializeHTTPAuthenticatorWithSessionConfiguration:(id)arg1;

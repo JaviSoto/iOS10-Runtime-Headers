@@ -11,6 +11,7 @@
     UIButton * __subtitleButton;
     UILabel * __subtitleLabel;
     UILabel * __titleLabel;
+    UIVisualEffectView * __visualEffectView;
     bool  _allowUserInteractionWithCaption;
     bool  _allowUserInteractionWithSubtitle;
     NSString * _caption;
@@ -53,6 +54,7 @@
 @property (nonatomic, readonly) UIButton *_subtitleButton;
 @property (nonatomic, readonly) UILabel *_subtitleLabel;
 @property (nonatomic, readonly) UILabel *_titleLabel;
+@property (nonatomic, readonly) UIVisualEffectView *_visualEffectView;
 @property (nonatomic) bool allowUserInteractionWithCaption;
 @property (nonatomic) bool allowUserInteractionWithSubtitle;
 @property (nonatomic, copy) NSString *caption;
@@ -100,6 +102,8 @@
 - (void)_updateIfNeeded;
 - (void)_updateSubtitleIfNeeded;
 - (void)_updateTitleIfNeeded;
+- (id)_visualEffectView;
+- (id)_visualEffectViewCreateIfNeeded:(bool)arg1;
 - (bool)allowUserInteractionWithCaption;
 - (bool)allowUserInteractionWithSubtitle;
 - (id)caption;

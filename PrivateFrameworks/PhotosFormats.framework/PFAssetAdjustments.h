@@ -13,6 +13,8 @@
 @property (nonatomic, readonly, copy) NSString *editorBundleID;
 @property (nonatomic, retain) NSDictionary *propertyListDictionary;
 
+// Image: /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
+
 - (void).cxx_destruct;
 - (long long)adjustmentBaseVersion;
 - (id)adjustmentData;
@@ -28,5 +30,9 @@
 - (id)propertyListDictionary;
 - (void)setPropertyListDictionary:(id)arg1;
 - (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)phAdjustmentData;
 
 @end

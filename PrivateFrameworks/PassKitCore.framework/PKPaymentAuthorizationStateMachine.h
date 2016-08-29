@@ -11,7 +11,7 @@
     PKContinuityPaymentService * _continuityPaymentService;
     <PKPaymentAuthorizationStateMachineDelegate> * _delegate;
     bool  _hasReceivedRemoteDeviceUpdate;
-    bool  _hostApplicationResignedActive;
+    unsigned long long  _hostApplicationState;
     NSString * _instanceIdentifier;
     PKPaymentAuthorizationDataModel * _model;
     PKPaymentService * _paymentService;
@@ -32,7 +32,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasReceivedRemoteDeviceUpdate;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool hostApplicationResignedActive;
+@property (nonatomic) unsigned long long hostApplicationState;
 @property (nonatomic, retain) NSString *instanceIdentifier;
 @property (nonatomic, retain) PKPaymentAuthorizationDataModel *model;
 @property (nonatomic, retain) PKPaymentService *paymentService;
@@ -116,7 +116,7 @@
 - (void)didSelectShippingMethod:(id)arg1;
 - (bool)hasPendingCallbacks;
 - (bool)hasReceivedRemoteDeviceUpdate;
-- (bool)hostApplicationResignedActive;
+- (unsigned long long)hostApplicationState;
 - (id)init;
 - (id)instanceIdentifier;
 - (id)model;
@@ -132,7 +132,7 @@
 - (void)setContinuityPaymentService:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasReceivedRemoteDeviceUpdate:(bool)arg1;
-- (void)setHostApplicationResignedActive:(bool)arg1;
+- (void)setHostApplicationState:(unsigned long long)arg1;
 - (void)setInstanceIdentifier:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setPaymentService:(id)arg1;

@@ -12,7 +12,7 @@
 
 @property (nonatomic, readonly) unsigned long long _sourceType;
 @property (nonatomic, readonly) PUUUIDSelectionManager *disableLivePhotosSelectionManager;
-@property (nonatomic, retain) <PUReviewAssetProvider> *reviewAssetProvider;
+@property (nonatomic) <PUReviewAssetProvider> *reviewAssetProvider;
 @property (nonatomic) <PUAssetExplorerReviewScreenActionManagerDelegate> *reviewScreenActionManagerDelegate;
 @property (nonatomic, readonly) PUUUIDSelectionManager *selectionManager;
 

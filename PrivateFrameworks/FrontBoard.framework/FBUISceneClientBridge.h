@@ -26,6 +26,7 @@
 - (void)client:(id)arg1 didReceiveActions:(id)arg2;
 - (void)client:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
 - (void)client:(id)arg1 updateLayer:(id)arg2;
+- (void)clientWillInvalidate:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

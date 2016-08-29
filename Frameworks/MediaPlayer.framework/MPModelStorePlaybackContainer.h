@@ -22,7 +22,7 @@
 + (id)__album__KEY;
 + (id)__containerType__KEY;
 + (id)__playlist__KEY;
-+ (id)playEventRequestedProperties;
++ (id)playEventRequestedPropertiesWithAdditionalProperties:(id)arg1;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (bool)supportsKeepLocalStatusObservation;

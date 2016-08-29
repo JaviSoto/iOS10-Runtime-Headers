@@ -12,7 +12,9 @@
     unsigned long long  _contentCatalogPercentCompleted;
     bool  _contentReceived;
     NSMutableArray * _contents;
-    int  _contentsLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _contentsLock;
     NSObject<OS_dispatch_semaphore> * _deviceQSemaphore;
     double  _downloadCancelTimestamp;
     NSObject<OS_dispatch_queue> * _downloadQ;
@@ -21,7 +23,9 @@
     NSObject<OS_dispatch_queue> * _generalQ;
     bool  _locked;
     NSMutableArray * _mediaFiles;
-    int  _mediaFilesLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _mediaFilesLock;
     NSObject<OS_dispatch_queue> * _metadataFetchQ;
     NSMutableArray * _notifyArray;
     unsigned long long  _numberOfDownloadableItems;
@@ -41,7 +45,7 @@
 @property unsigned long long contentCatalogPercentCompleted;
 @property bool contentReceived;
 @property (retain) NSMutableArray *contents;
-@property int contentsLock;
+@property struct os_unfair_lock_s { unsigned int x1; } contentsLock;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *deviceQSemaphore;
 @property double downloadCancelTimestamp;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *downloadQ;
@@ -50,7 +54,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *generalQ;
 @property bool locked;
 @property (retain) NSMutableArray *mediaFiles;
-@property int mediaFilesLock;
+@property struct os_unfair_lock_s { unsigned int x1; } mediaFilesLock;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *metadataFetchQ;
 @property (retain) NSMutableArray *notifyArray;
 @property unsigned long long numberOfDownloadableItems;
@@ -71,7 +75,7 @@
 - (unsigned long long)contentCatalogPercentCompleted;
 - (bool)contentReceived;
 - (id)contents;
-- (int)contentsLock;
+- (struct os_unfair_lock_s { unsigned int x1; })contentsLock;
 - (void)dealloc;
 - (id)deviceQSemaphore;
 - (double)downloadCancelTimestamp;
@@ -86,7 +90,7 @@
 - (void)lockMediaFiles;
 - (bool)locked;
 - (id)mediaFiles;
-- (int)mediaFilesLock;
+- (struct os_unfair_lock_s { unsigned int x1; })mediaFilesLock;
 - (id)metadataFetchQ;
 - (id)notifyArray;
 - (unsigned long long)numberOfDownloadableItems;
@@ -100,7 +104,7 @@
 - (void)setContentCatalogPercentCompleted:(unsigned long long)arg1;
 - (void)setContentReceived:(bool)arg1;
 - (void)setContents:(id)arg1;
-- (void)setContentsLock:(int)arg1;
+- (void)setContentsLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)setDeviceQSemaphore:(id)arg1;
 - (void)setDownloadCancelTimestamp:(double)arg1;
 - (void)setDownloadQ:(id)arg1;
@@ -109,7 +113,7 @@
 - (void)setGeneralQ:(id)arg1;
 - (void)setLocked:(bool)arg1;
 - (void)setMediaFiles:(id)arg1;
-- (void)setMediaFilesLock:(int)arg1;
+- (void)setMediaFilesLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)setMetadataFetchQ:(id)arg1;
 - (void)setNotifyArray:(id)arg1;
 - (void)setNumberOfDownloadableItems:(unsigned long long)arg1;

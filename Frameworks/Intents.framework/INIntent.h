@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntent : NSObject <NSCopying, NSSecureCoding> {
+@interface INIntent : NSObject <INIntentExport, NSCopying, NSSecureCoding> {
     PBCodable * _backingStore;
     NSString * _identifier;
 }
@@ -10,9 +10,13 @@
 @property (readonly) long long _cdInteractionMechanism;
 @property (readonly) NSArray *_cdRecipients;
 @property (nonatomic, copy) PBCodable *backingStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSString *intentId;
 @property (nonatomic, readonly) NSString *launchId;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *typeName;
 @property (nonatomic, readonly) NSString *utteranceString;
 

@@ -24,7 +24,6 @@
 
 @property (nonatomic, copy) NSString *contactIdentifier;
 @property (nonatomic, copy) NSDate *dateStarted;
-@property (nonatomic, copy) NSString *destination;
 @property (getter=isEmergency, nonatomic) bool emergency;
 @property (nonatomic, copy) CXHandle *handle;
 @property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
@@ -42,12 +41,10 @@
 - (id)contactIdentifier;
 - (id)customDescription;
 - (id)dateStarted;
-- (id)destination;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fulfill;
 - (void)fulfillWithDateStarted:(id)arg1;
 - (id)handle;
-- (id)initWithCallUUID:(id)arg1;
 - (id)initWithCallUUID:(id)arg1 handle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEmergency;
@@ -59,7 +56,6 @@
 - (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setDateStarted:(id)arg1;
-- (void)setDestination:(id)arg1;
 - (void)setEmergency:(bool)arg1;
 - (void)setHandle:(id)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;

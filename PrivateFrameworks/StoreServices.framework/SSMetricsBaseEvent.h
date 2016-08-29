@@ -16,7 +16,6 @@
 @property (nonatomic, retain) NSString *windowOrientation;
 @property (nonatomic, retain) NSNumber *windowWidth;
 
-- (id)decorateReportingURL:(id)arg1;
 - (id)description;
 - (id)init;
 - (bool)isBlacklistedByConfiguration:(id)arg1;

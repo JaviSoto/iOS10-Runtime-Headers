@@ -30,6 +30,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (long long)reason;
 - (void)setReason:(long long)arg1;
 - (long long)sources;

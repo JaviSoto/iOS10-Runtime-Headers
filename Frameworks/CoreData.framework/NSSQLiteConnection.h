@@ -21,6 +21,7 @@
     NSMutableSet * _mObjectIDsUpdatedByTriggers;
     NSArray * _metadataColumns;
     NSMutableDictionary * _pragmaSettings;
+    NSObject<OS_dispatch_queue> * _queue;
     NSSQLiteStatement * _rollbackStatement;
     int  _rowsProcessedCount;
     NSSQLCore * _sqlCore;
@@ -50,6 +51,7 @@
 }
 
 @property (nonatomic) bool isWriter;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
 + (const char *)_databaseOpenURLStringForURL:(id)arg1;
@@ -85,6 +87,7 @@
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureNoStatementPrepared;
 - (void)_ensureNoTransactionOpen;
+- (void)_ensureWalFileExists;
 - (void)_executeSQLString:(id)arg1;
 - (long long)_fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (void)_finalizeStatement;
@@ -94,12 +97,14 @@
 - (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
 - (void)_performPostSaveTasks;
 - (void)_registerExtraFunctions;
+- (void)_restoreBusyTimeOutSettings;
 - (int)_rowsChangedByLastExecute;
 - (void)_setupVacuumIfNecessary;
 - (struct sqlite3_stmt { }*)_vmstatement;
 - (id)adapter;
 - (void)addPeerRange:(id)arg1;
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
+- (void)addVMCachedStatement:(id)arg1;
 - (void)adoptQueryGenerationIdentifier:(id)arg1;
 - (id)allPeerRanges;
 - (void)beginReadTransaction;
@@ -117,6 +122,7 @@
 - (void)commitTransaction;
 - (void)configureUbiquityMetadataTable;
 - (void)connect;
+- (id)connectionManager;
 - (void)createCachedModelTable;
 - (void)createIndexesForEntity:(id)arg1;
 - (void)createManyToManyTablesForEntity:(id)arg1;
@@ -130,7 +136,7 @@
 - (void)createTableForEntity:(id)arg1;
 - (void)createTablesForEntities:(id)arg1;
 - (void)createTriggersForEntities:(id)arg1;
-- (id)currentQueryGenerationIdentifier;
+- (id)currentQueryGenerationIdentifier:(id*)arg1;
 - (bool)databaseIsEmpty;
 - (void)dealloc;
 - (bool)deleteRow:(id)arg1 forRequestContext:(id)arg2;
@@ -149,7 +155,6 @@
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
 - (id)fetchUbiquityKnowledgeVector;
-- (void)finalize;
 - (void)forceTransactionClosed;
 - (void)freeQueryGenerationIdentifier:(id)arg1;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
@@ -167,11 +172,15 @@
 - (id)metadataColumns;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)newFetchedArray;
+- (void)performAndWait:(id /* block */)arg1;
 - (bool)performIntegrityCheck;
 - (void)prepareAndExecuteSQLStatement:(id)arg1;
 - (void)prepareSQLStatement:(id)arg1;
+- (id)queue;
 - (struct __CFArray { }*)rawIntegerRowsForSQL:(id)arg1;
 - (void)recreateIndices;
+- (void)registerCurrentQueryGenerationWithStore:(id)arg1;
+- (void)registerCurrentQueryGenerationWithStore:(id)arg1 retries:(unsigned long long)arg2;
 - (void)releaseSQLStatement;
 - (void)replaceUbiquityKnowledgeVector:(id)arg1;
 - (void)resetSQLStatement;
@@ -193,6 +202,7 @@
 - (void)triggerUpdatedRowInTable:(id)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(id)arg4 newValue:(long long)arg5;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
+- (void)uncacheVMStatement:(id)arg1;
 - (void)updateConstrainedValuesForRow:(id)arg1;
 - (void)updateRow:(id)arg1 forRequestContext:(id)arg2;
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;

@@ -7,8 +7,10 @@
     PKFieldDetector * _fieldDetector;
     bool  _invalidated;
     NSObject<OS_dispatch_queue> * _ourCallbackQueue;
+    bool  _ourConfirmed;
     PKPass * _ourCurrentPass;
     NSObject<OS_dispatch_queue> * _ourInternalQueue;
+    NSDictionary * _ourVasPasses;
     NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
@@ -19,17 +21,20 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool invalidated;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *ourCallbackQueue;
+@property (nonatomic) bool ourConfirmed;
 @property (nonatomic, retain) PKPass *ourCurrentPass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *ourInternalQueue;
+@property (nonatomic, retain) NSDictionary *ourVasPasses;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *timeoutTimer;
 
 - (void).cxx_destruct;
 - (void)_handleTimeoutTimer;
+- (void)_handleTransactionCompleteDarwinNotification;
 - (void)_scheduleDidActivateEventForPass:(id)arg1;
 - (void)_setTimeoutTimer;
 - (unsigned long long)changeCardToken;
-- (void)confirmSession;
+- (void)confirmOrRenewSession;
 - (id)currentPass;
 - (void)deactivateSessionWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
@@ -39,8 +44,10 @@
 - (id)initWithQueue:(id)arg1;
 - (bool)invalidated;
 - (id)ourCallbackQueue;
+- (bool)ourConfirmed;
 - (id)ourCurrentPass;
 - (id)ourInternalQueue;
+- (id)ourVasPasses;
 - (void)renewSession;
 - (void)setChangeCardToken:(unsigned long long)arg1;
 - (void)setCurrentPass:(id)arg1;
@@ -48,10 +55,14 @@
 - (void)setFieldDetector:(id)arg1;
 - (void)setInvalidated:(bool)arg1;
 - (void)setOurCallbackQueue:(id)arg1;
+- (void)setOurConfirmed:(bool)arg1;
 - (void)setOurCurrentPass:(id)arg1;
 - (void)setOurInternalQueue:(id)arg1;
+- (void)setOurVasPasses:(id)arg1;
 - (void)setTimeoutTimer:(id)arg1;
+- (void)setVasPasses:(id)arg1;
 - (bool)startSession;
 - (id)timeoutTimer;
+- (id)vasPasses;
 
 @end

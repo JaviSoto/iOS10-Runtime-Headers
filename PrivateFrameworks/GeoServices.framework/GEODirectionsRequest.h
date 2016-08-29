@@ -9,7 +9,6 @@
     GEOMapRegion * _currentMapRegion;
     GEOLocation * _currentUserLocation;
     int  _departureTime;
-    int  _destinationType;
     GEODirectionsRequestFeedback * _feedback;
     bool  _getRouteForZilchPoints;
     struct { 
@@ -19,7 +18,6 @@
         unsigned int requestTime : 1; 
         unsigned int sharedLibraryVersion : 1; 
         unsigned int departureTime : 1; 
-        unsigned int destinationType : 1; 
         unsigned int mainTransportTypeMaxRouteCount : 1; 
         unsigned int originalRoutePurpose : 1; 
         unsigned int sequenceNumber : 1; 
@@ -30,6 +28,7 @@
         unsigned int useLiveTrafficAsFallback : 1; 
     }  _has;
     bool  _isFromAPI;
+    GEOLocation * _lastKnownRoadLocation;
     NSString * _loggedAbExperiment;
     unsigned int  _mainTransportTypeMaxRouteCount;
     unsigned long long  _maxDecoderVersion;
@@ -62,7 +61,6 @@
 @property (nonatomic, retain) GEOMapRegion *currentMapRegion;
 @property (nonatomic, retain) GEOLocation *currentUserLocation;
 @property (nonatomic) int departureTime;
-@property (nonatomic) int destinationType;
 @property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
 @property (nonatomic) bool getRouteForZilchPoints;
 @property (nonatomic, readonly) bool hasAdditionalEnabledMarkets;
@@ -71,10 +69,10 @@
 @property (nonatomic, readonly) bool hasCurrentMapRegion;
 @property (nonatomic, readonly) bool hasCurrentUserLocation;
 @property (nonatomic) bool hasDepartureTime;
-@property (nonatomic) bool hasDestinationType;
 @property (nonatomic, readonly) bool hasFeedback;
 @property (nonatomic) bool hasGetRouteForZilchPoints;
 @property (nonatomic) bool hasIsFromAPI;
+@property (nonatomic, readonly) bool hasLastKnownRoadLocation;
 @property (nonatomic, readonly) bool hasLoggedAbExperiment;
 @property (nonatomic) bool hasMainTransportTypeMaxRouteCount;
 @property (nonatomic) bool hasMaxDecoderVersion;
@@ -95,6 +93,7 @@
 @property (nonatomic, readonly) bool hasTrafficSnapshot;
 @property (nonatomic) bool hasUseLiveTrafficAsFallback;
 @property (nonatomic) bool isFromAPI;
+@property (nonatomic, retain) GEOLocation *lastKnownRoadLocation;
 @property (nonatomic, retain) NSString *loggedAbExperiment;
 @property (nonatomic) unsigned int mainTransportTypeMaxRouteCount;
 @property (nonatomic) unsigned long long maxDecoderVersion;
@@ -122,7 +121,6 @@
 + (Class)serviceTagType;
 + (Class)waypointTypedType;
 
-- (int)StringAsDestinationType:(id)arg1;
 - (int)StringAsOriginalRoutePurpose:(id)arg1;
 - (void)addServiceTag:(id)arg1;
 - (void)addWaypointTyped:(id)arg1;
@@ -138,8 +136,6 @@
 - (void)dealloc;
 - (int)departureTime;
 - (id)description;
-- (int)destinationType;
-- (id)destinationTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (id)feedback;
 - (bool)getRouteForZilchPoints;
@@ -149,10 +145,10 @@
 - (bool)hasCurrentMapRegion;
 - (bool)hasCurrentUserLocation;
 - (bool)hasDepartureTime;
-- (bool)hasDestinationType;
 - (bool)hasFeedback;
 - (bool)hasGetRouteForZilchPoints;
 - (bool)hasIsFromAPI;
+- (bool)hasLastKnownRoadLocation;
 - (bool)hasLoggedAbExperiment;
 - (bool)hasMainTransportTypeMaxRouteCount;
 - (bool)hasMaxDecoderVersion;
@@ -178,6 +174,7 @@
 - (id)initWithQuickETARequest:(id)arg1 withFeedback:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isFromAPI;
+- (id)lastKnownRoadLocation;
 - (id)loggedAbExperiment;
 - (unsigned int)mainTransportTypeMaxRouteCount;
 - (unsigned long long)maxDecoderVersion;
@@ -207,11 +204,9 @@
 - (void)setCurrentMapRegion:(id)arg1;
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setDepartureTime:(int)arg1;
-- (void)setDestinationType:(int)arg1;
 - (void)setFeedback:(id)arg1;
 - (void)setGetRouteForZilchPoints:(bool)arg1;
 - (void)setHasDepartureTime:(bool)arg1;
-- (void)setHasDestinationType:(bool)arg1;
 - (void)setHasGetRouteForZilchPoints:(bool)arg1;
 - (void)setHasIsFromAPI:(bool)arg1;
 - (void)setHasMainTransportTypeMaxRouteCount:(bool)arg1;
@@ -226,6 +221,7 @@
 - (void)setHasTimeSinceLastRerouteRequest:(bool)arg1;
 - (void)setHasUseLiveTrafficAsFallback:(bool)arg1;
 - (void)setIsFromAPI:(bool)arg1;
+- (void)setLastKnownRoadLocation:(id)arg1;
 - (void)setLoggedAbExperiment:(id)arg1;
 - (void)setMainTransportTypeMaxRouteCount:(unsigned int)arg1;
 - (void)setMaxDecoderVersion:(unsigned long long)arg1;

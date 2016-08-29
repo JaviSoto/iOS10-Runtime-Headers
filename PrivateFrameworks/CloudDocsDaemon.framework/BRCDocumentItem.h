@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) bool isAutomaticallyEvictable;
 @property (nonatomic, readonly) bool isDownloadRequested;
 @property (nonatomic, readonly) bool isEvictable;
+@property (nonatomic, readonly) bool isSharedDocument;
 @property (nonatomic, readonly) bool isVisibleIniCloudDrive;
 @property (nonatomic, retain) NSSet *liveConflictLoserEtags;
 @property (nonatomic, retain) NSData *liveThumbnailSignature;
@@ -39,6 +40,7 @@
 + (id)anyReverseAliasWithUnsaltedBookmarkData:(id)arg1 inAppLibrary:(id)arg2;
 + (id)bookmarkDataWithRelativePath:(id)arg1;
 + (bool)isDocumentAutomaticallyEvictableWithExtension:(id)arg1;
++ (bool)isDocumentAutomaticallyEvictableWithName:(id)arg1;
 + (id)itemResolutionStringWithRelativePath:(id)arg1;
 + (bool)parseBookmarkData:(id)arg1 inAccountSession:(id)arg2 docID:(id*)arg3 itemID:(id*)arg4 mangledID:(id*)arg5 unsaltedBookmarkData:(id*)arg6 error:(id*)arg7;
 + (struct PQLResultSet { Class x1; }*)reverseAliasEnumeratorWithRelativePath:(id)arg1;
@@ -50,7 +52,7 @@
 
 - (void).cxx_destruct;
 - (bool)_deleteFromDB:(id)arg1 keepAliases:(bool)arg2;
-- (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id*)arg3;
+- (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id*)arg4;
 - (id)_initWithLocalItem:(id)arg1;
 - (id)_initWithRelativePath:(id)arg1 parentID:(id)arg2;
 - (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2;
@@ -98,6 +100,7 @@
 - (bool)isOwnedByMe;
 - (bool)isPackage;
 - (bool)isSharedByMe;
+- (bool)isSharedDocument;
 - (bool)isVisibleIniCloudDrive;
 - (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 markLost:(bool)arg4;
 - (void)learnThumbnailSignatureFromLiveVersion:(id)arg1;

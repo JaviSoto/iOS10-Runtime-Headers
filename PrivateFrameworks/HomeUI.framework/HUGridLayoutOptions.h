@@ -7,6 +7,7 @@
     double  _columnSpacing;
     unsigned long long  _contentColorStyle;
     UIFont * _detailStatusFont;
+    bool  _editing;
     double  _headlineBaselineToSceneHeaderBaselineDistance;
     double  _headlineBaselineToStatusBaselineDistance;
     HUGridHeadlineCellLayoutOptions * _headlineCellOptions;
@@ -50,6 +51,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIFont *detailStatusFont;
+@property (getter=isEditing, nonatomic) bool editing;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double headlineBaselineToSceneHeaderBaselineDistance;
 @property (nonatomic) double headlineBaselineToStatusBaselineDistance;
@@ -104,6 +106,7 @@
 - (double)headlineCellHeight;
 - (id)headlineCellOptions;
 - (id)initWithViewSize:(struct CGSize { double x1; double x2; })arg1 overrideSizeSubclass:(id)arg2;
+- (bool)isEditing;
 - (double)minimumMarginBelowHeadline;
 - (double)minimumMarginBelowStatus;
 - (id)navigationBarOptions;
@@ -130,6 +133,7 @@
 - (void)setColumnSpacing:(double)arg1;
 - (void)setContentColorStyle:(unsigned long long)arg1;
 - (void)setDetailStatusFont:(id)arg1;
+- (void)setEditing:(bool)arg1;
 - (void)setHeadlineBaselineToSceneHeaderBaselineDistance:(double)arg1;
 - (void)setHeadlineBaselineToStatusBaselineDistance:(double)arg1;
 - (void)setHeadlineCellOptions:(id)arg1;

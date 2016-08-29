@@ -6,6 +6,7 @@
 @required
 
 - (void)_dismiss;
+- (void)_openURL:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)_remoteViewDidBecomeReadyForDisplay;
 - (void)_requestPresentationStyleExpanded:(bool)arg1;
 - (void)_stageAppItem:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: MSMessage *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*

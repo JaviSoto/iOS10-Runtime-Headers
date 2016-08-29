@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (void)addFilter:(id)arg1;
 - (void)attachInvisibleInkEffectView;
-- (id)backdropMask;
 - (void)clearFilters;
 - (void)configureForTranscriptPlugin:(id)arg1;
 - (void)detachInvisibleInkEffectView;

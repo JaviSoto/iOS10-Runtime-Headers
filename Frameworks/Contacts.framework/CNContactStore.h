@@ -28,6 +28,7 @@
 - (id)_crossPlatformUnifiedMeContactWithKeysToFetch:(id)arg1 error:(id*)arg2;
 - (id)_executeFetchRequestsWithInfos:(id)arg1 unifyResults:(bool)arg2 keysToFetch:(id)arg3 error:(id*)arg4;
 - (id)_fetchRequestInfosForEmailOrPhoneForContact:(id)arg1;
+- (id)_ios_meContactIdentifierWithError:(id*)arg1;
 - (id)_ios_meContactWithKeysToFetch:(id)arg1 error:(id*)arg2;
 - (id)accountsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (id)addressBook;

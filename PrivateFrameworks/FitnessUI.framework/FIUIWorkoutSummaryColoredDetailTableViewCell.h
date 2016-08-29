@@ -10,6 +10,7 @@
     UIView * _lineView;
     UILabel * _noDataLabel;
     UIView * _optionalButtonView;
+    bool  _shouldForceLTRForDetailString;
     UIFont * _suffixFont;
     NSString * _suffixString;
     UIColor * _textColor;
@@ -31,7 +32,7 @@
 - (id)optionalButtonView;
 - (void)prepareForReuse;
 - (void)setCustomAccessoryView:(id)arg1;
-- (void)setDetailString:(id)arg1 suffixString:(id)arg2 textColor:(id)arg3;
+- (void)setDetailString:(id)arg1 suffixString:(id)arg2 textColor:(id)arg3 shouldForceLTRForDetailString:(bool)arg4;
 - (void)setLineHidden:(bool)arg1;
 - (void)setNoDataString:(id)arg1 textColor:(id)arg2;
 - (void)setTitleString:(id)arg1;

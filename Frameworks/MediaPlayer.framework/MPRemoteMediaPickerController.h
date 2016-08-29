@@ -10,6 +10,7 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
++ (bool)shouldPropagateAppearanceCustomizations;
 
 - (void).cxx_destruct;
 - (id)mediaPickerController;

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLMemoryAssetList : PBCodable <NSCopying, NSSecureCoding> {
+@interface CPLMemoryAssetList : PBCodable <NSCopying> {
     NSMutableArray * _assets;
 }
 
 @property (nonatomic, retain) NSMutableArray *assets;
-
-+ (id)cplAdditionalSecureClassesForProperty:(id)arg1;
-+ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addAsset:(id)arg1;
@@ -21,9 +18,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

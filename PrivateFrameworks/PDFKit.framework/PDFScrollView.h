@@ -14,6 +14,8 @@
 - (void).cxx_destruct;
 - (void)_centerAlign;
 - (void)dealloc;
+- (void)disableUpdates;
+- (void)enableUpdates;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)pdfDocumentView;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -24,6 +26,7 @@
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDocument:(id)arg1;
+- (void)setForcesTopAlignment:(bool)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
 

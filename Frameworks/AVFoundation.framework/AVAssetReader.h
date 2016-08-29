@@ -10,6 +10,7 @@
 @property (readonly) NSError *error;
 @property (getter=_figAssetReader, nonatomic, readonly) struct OpaqueFigAssetReader { }*figAssetReader;
 @property (nonatomic, readonly) NSArray *outputs;
+@property (getter=_readSingleSample, setter=_setReadSingleSample:, nonatomic) bool readSingleSample;
 @property (readonly) long long status;
 @property (nonatomic) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 
@@ -22,6 +23,8 @@
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_handleServerDiedNotification;
 - (void)_outputDidFinish:(id)arg1;
+- (bool)_readSingleSample;
+- (void)_setReadSingleSample:(bool)arg1;
 - (void)_tearDownFigAssetReader;
 - (void)_transitionToStatus:(long long)arg1 failureError:(id)arg2;
 - (void)addOutput:(id)arg1;

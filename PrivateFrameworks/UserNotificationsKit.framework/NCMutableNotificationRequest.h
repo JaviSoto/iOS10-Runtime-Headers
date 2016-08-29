@@ -5,11 +5,12 @@
 @interface NCMutableNotificationRequest : NCNotificationRequest
 
 @property (nonatomic, copy) NSString *categoryIdentifier;
+@property (nonatomic, retain) NCNotificationAction *clearAction;
+@property (nonatomic, retain) NCNotificationAction *closeAction;
 @property (nonatomic) unsigned long long collapsedNotificationsCount;
 @property (nonatomic, retain) NCNotificationContent *content;
 @property (nonatomic, copy) NSDictionary *context;
 @property (nonatomic, retain) NCNotificationAction *defaultAction;
-@property (nonatomic, retain) NCNotificationAction *dismissAction;
 @property (nonatomic) bool isCollapsedNotification;
 @property (nonatomic, copy) NSString *notificationIdentifier;
 @property (nonatomic, retain) NCNotificationOptions *options;
@@ -20,6 +21,7 @@
 @property (nonatomic, copy) NSSet *settingsSections;
 @property (nonatomic, retain) NCNotificationAction *silenceAction;
 @property (nonatomic, retain) NCNotificationSound *sound;
+@property (nonatomic, copy) NSDictionary *sourceInfo;
 @property (nonatomic, copy) NSSet *subSectionIdentifiers;
 @property (nonatomic, copy) NSDictionary *supplementaryActions;
 @property (nonatomic, copy) NSString *threadIdentifier;
@@ -28,11 +30,12 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCategoryIdentifier:(id)arg1;
+- (void)setClearAction:(id)arg1;
+- (void)setCloseAction:(id)arg1;
 - (void)setCollapsedNotificationsCount:(unsigned long long)arg1;
 - (void)setContent:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDefaultAction:(id)arg1;
-- (void)setDismissAction:(id)arg1;
 - (void)setIsCollapsedNotification:(bool)arg1;
 - (void)setNotificationIdentifier:(id)arg1;
 - (void)setOptions:(id)arg1;
@@ -43,6 +46,7 @@
 - (void)setSettingsSections:(id)arg1;
 - (void)setSilenceAction:(id)arg1;
 - (void)setSound:(id)arg1;
+- (void)setSourceInfo:(id)arg1;
 - (void)setSubSectionIdentifiers:(id)arg1;
 - (void)setSupplementaryActions:(id)arg1;
 - (void)setThreadIdentifier:(id)arg1;

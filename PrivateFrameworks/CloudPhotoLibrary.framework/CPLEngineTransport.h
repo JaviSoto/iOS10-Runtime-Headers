@@ -28,6 +28,7 @@
 - (id)getLibraryInfoAndUpdateState:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)getStatusDictionaryWithCompletionHandler:(id /* block */)arg1;
 - (void)getStatusWithCompletionHandler:(id /* block */)arg1;
+- (bool)hasOngoingDownloadOperations;
 - (id)inMemoryDownloadTaskForResource:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)noteClientIsBeginningSignificantWork;

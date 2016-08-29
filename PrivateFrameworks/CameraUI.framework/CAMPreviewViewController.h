@@ -212,6 +212,7 @@
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)handleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)initWithCaptureController:(id)arg1 motionController:(id)arg2 timelapseController:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

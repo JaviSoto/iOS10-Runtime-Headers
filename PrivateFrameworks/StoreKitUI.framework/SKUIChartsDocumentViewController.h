@@ -28,6 +28,7 @@
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
 - (void)resourceLoader:(id)arg1 didLoadAllForReason:(long long)arg2;
+- (void)resourceLoaderDidBeginLoading:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)skui_viewWillAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;

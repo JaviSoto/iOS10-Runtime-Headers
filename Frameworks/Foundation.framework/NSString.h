@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) long long px_platformAgnosticHash;
 @property (nonatomic, readonly) NSString *px_stringByIndentingNewLines;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property (nonatomic, readonly, copy) NSString *safari_stringByRemovingExcessWhitespace;
 @property (nonatomic, readonly) NSString *sf_URLScheme;
 @property (nonatomic, readonly) bool sf_isFeedScheme;
 @property (readonly) NSString *stringByEscapingXMLEntities;
@@ -349,6 +350,7 @@
 - (long long)hk_compareBuildVersionWithString:(id)arg1;
 - (id)hk_copyNonEmptyString;
 - (bool)hk_isBase64;
+- (id)hk_stripLeadingTrailingWhitespace;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
@@ -419,6 +421,7 @@
 
 - (id)sf_URLScheme;
 - (bool)sf_isFeedScheme;
+- (id)sf_lastPathComponentWithoutZipExtension;
 - (id)sf_stringByReplacingLastOccurrenceOfWhitespaceWithANonBreakingSpace;
 - (id)sf_stringByReplacingMarkupCharactersWithHTMLEntities;
 
@@ -517,6 +520,10 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })ax_lineFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })ax_sentenceFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })ax_wordFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/AccessibilitySharedSupport
+
+- (id)axss_stringByTrimmingToLength:(unsigned long long)arg1 encoding:(unsigned long long)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
@@ -700,40 +707,40 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
-+ (id)brc_emptyFilenameAlternativeName;
-+ (id)brc_pathForDirectory:(unsigned long long)arg1;
-+ (id)brc_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
-+ (id)brc_pathWithFileSystemRepresentation:(const char *)arg1;
-+ (id)brc_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(bool)arg4;
++ (id)br_emptyFilenameAlternativeName;
++ (id)br_pathForDirectory:(unsigned long long)arg1;
++ (id)br_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
++ (id)br_pathWithFileSystemRepresentation:(const char *)arg1;
++ (id)br_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(bool)arg4;
 
-- (long long)brc_compareToStringForHFS:(id)arg1 isCaseSensitive:(bool)arg2;
-- (id)brc_displayFilenameWithExtensionHidden:(bool)arg1;
-- (const char *)brc_fileSystemRepresentation;
-- (bool)brc_isAbsolutePath;
-- (bool)brc_isDocumentTooLargeForUpload:(bool)arg1 maxUploadDocumentSize:(long long)arg2;
-- (bool)brc_isEqualToStringForHFS:(id)arg1 isCaseSensitive:(bool)arg2;
-- (bool)brc_isExcludedButPreservedAtLogOut;
-- (bool)brc_isExcludedWithMaximumDepth:(unsigned int)arg1;
-- (bool)brc_isInPackage;
-- (bool)brc_isPackageRoot;
-- (bool)brc_isSideFaultName;
+- (long long)br_compareToStringForHFS:(id)arg1 isCaseSensitive:(bool)arg2;
+- (id)br_displayFilenameWithExtensionHidden:(bool)arg1;
+- (const char *)br_fileSystemRepresentation;
+- (bool)br_isAbsolutePath;
+- (bool)br_isDocumentTooLargeForUpload:(bool)arg1 maxUploadDocumentSize:(long long)arg2;
+- (bool)br_isEqualToStringForHFS:(id)arg1 isCaseSensitive:(bool)arg2;
+- (bool)br_isExcludedButPreservedAtLogOutWithFilenames:(id)arg1 extensions:(id)arg2;
+- (bool)br_isExcludedWithMaximumDepth:(unsigned int)arg1;
+- (bool)br_isInPackage;
+- (bool)br_isPackageRoot;
+- (bool)br_isSideFaultName;
+- (bool)br_nameIsRepresentableOnHFS;
+- (id)br_pathExtension;
+- (id)br_pathOfPackageRoot;
+- (id)br_pathRelativeToDirectory:(unsigned long long)arg1;
+- (id)br_pathRelativeToPackageRoot;
+- (id)br_pathRelativeToPath:(id)arg1;
+- (id)br_realpath;
+- (id)br_realpathKeepingLastSymlink;
+- (id)br_representableDirectoryExtension;
+- (id)br_representableHFSFileNameWithNumber:(id)arg1 addedExtension:(id)arg2 makeDotFile:(bool)arg3;
+- (id)br_sideFaultName;
+- (id)br_sideFaultPath;
+- (id)br_stringByDeletingPathBounceNo:(unsigned long long*)arg1;
+- (id)br_stringByDeletingPathBounceNo:(unsigned long long*)arg1 andPathExtension:(id*)arg2;
 - (id)brc_libnotifyPerUserNotificationName;
-- (bool)brc_nameIsRepresentableOnHFS;
-- (id)brc_pathExtension;
-- (id)brc_pathOfPackageRoot;
-- (id)brc_pathRelativeToDirectory:(unsigned long long)arg1;
-- (id)brc_pathRelativeToPackageRoot;
-- (id)brc_pathRelativeToPath:(id)arg1;
-- (id)brc_realpath;
-- (id)brc_realpathKeepingLastSymlink;
-- (id)brc_representableDirectoryExtension;
-- (id)brc_representableHFSFileNameWithNumber:(id)arg1 addedExtension:(id)arg2 makeDotFile:(bool)arg3;
 - (id)brc_representableHFSFileNameWithSuffix:(id)arg1 addedExtension:(id)arg2 makeDotFile:(bool)arg3;
-- (id)brc_sideFaultName;
-- (id)brc_sideFaultPath;
 - (id)brc_stringByBackslashEscapingCharactersInString:(id)arg1;
-- (id)brc_stringByDeletingPathBounceNo:(unsigned long long*)arg1;
-- (id)brc_stringByDeletingPathBounceNo:(unsigned long long*)arg1 andPathExtension:(id*)arg2;
 - (id)brc_stringByDeletingPathExtension;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
@@ -747,6 +754,7 @@
 - (id)brc_SHA256;
 - (bool)brc_isBlacklistedPackageExtension;
 - (bool)brc_isForcedPackageExtension;
+- (id)brc_mangledNameFromURLFragment:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
@@ -832,6 +840,7 @@
 + (id)parsec_stringByBase64EncodingData:(id)arg1;
 
 - (id)parsec_base64DecodedData;
+- (bool)parsec_caseInsensitiveContainsString:(id)arg1;
 - (bool)parsec_hasCaseInsensitivePrefix:(id)arg1;
 - (bool)parsec_hasCaseInsensitiveSuffix:(id)arg1;
 - (bool)parsec_hasLocalizedCaseInsensitivePrefix:(id)arg1;
@@ -933,7 +942,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
-- (id)FU_uppercaseString;
+- (id)FU_uppercaseStringUsingCurrentLocale:(bool)arg1;
 - (id)localizedTerminalOrGateID;
 
 // Image: /System/Library/PrivateFrameworks/FriendKit.framework/FriendKit
@@ -1131,14 +1140,18 @@
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 + (id)mf_formattedAddressWithName:(id)arg1 email:(id)arg2 useQuotes:(bool)arg3;
++ (id)mf_nameExtensions;
++ (id)mf_partialSurnames;
 + (id)mf_stringWithData:(id)arg1 encoding:(unsigned long long)arg2;
 
+- (void)__mf_firstName:(id*)arg1 middleName:(id*)arg2 lastName:(id*)arg3 extension:(id*)arg4;
 - (id)_mf_bestMimeCharset:(id)arg1;
 - (id)mf_MD5Digest;
 - (id)mf_SHA1Digest;
 - (id)mf_addressComment;
 - (id)mf_addressCommentPersonNameComponents;
 - (id)mf_addressDomain;
+- (bool)mf_appearsToBeAnInitial;
 - (id)mf_bestMimeCharset;
 - (id)mf_bestMimeCharsetForMessageDeliveryUsingSubtype:(id)arg1;
 - (id)mf_bestMimeCharsetUsingHint:(unsigned int)arg1;
@@ -1166,6 +1179,7 @@
 - (id)mf_personNameComponents;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })mf_rangeOfAddressDomain;
 - (id)mf_stringByRemovingParentheticals;
+- (id)mf_trimCommasSpacesQuotes;
 - (id)mf_uncommentedAddress;
 - (id)mf_uncommentedAddressRespectingGroups;
 
@@ -1254,13 +1268,13 @@
 - (id)stringByDeletingPathExtensionInExtensions:(id)arg1;
 - (id)stringByIncrementingTrailingCountWithDelimiter:(id)arg1;
 - (id)stringByPrefixingPathComponent:(id)arg1;
+- (id)stringByRemovingNewlines;
 - (id)stringByRemovingPathPrefix:(id)arg1;
 - (id)stringByRemovingPrefix:(id)arg1;
 - (id)stringByRemovingRedundantWhiteSpace;
 - (id)stringByRemovingSingleCharacterWords;
 - (id)stringByRemovingSuffix:(id)arg1;
 - (id)stringByRemovingTrailingOccurrencesOfCharactersInSet:(id)arg1;
-- (id)stringByReplacingNewlinesWithSpace;
 - (id)stringByReplacingOccurancesOfString:(id)arg1 withString:(id)arg2;
 - (id)stringByReplacingRedundantWhiteSpaceWithSingleSpace;
 - (id)stringByReplacingWord:(id)arg1 withString:(id)arg2;
@@ -1330,6 +1344,12 @@
 
 - (bool)containsDotDotPathComponents;
 
+// Image: /System/Library/PrivateFrameworks/MobileStorage.framework/MobileStorage
+
++ (id)hexStringWithData:(id)arg1;
+
+- (id)initHexStringWithData:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (id)MLSortString;
@@ -1393,6 +1413,7 @@
 + (id)_navigation_stringWithSpeed:(double)arg1;
 + (id)_navigation_stringWithSpeedUnits;
 + (id)_navigation_stringWithTime:(id)arg1;
++ (id)_navigation_stringWithTimeStampValues:(id)arg1 defaultTimeZone:(id)arg2;
 
 - (bool)_navigation_containsVariables;
 - (bool)_navigation_isCJK;
@@ -1413,6 +1434,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
++ (bool)fc_string:(id)arg1 isEqualToString:(id)arg2;
 + (int)keyValuePairType;
 + (id)readValueFromKeyValuePair:(id)arg1;
 + (id)stringWithValue:(id)arg1;
@@ -1694,6 +1716,10 @@
 - (id)ICCIDString;
 - (id)IMEIString;
 
+// Image: /System/Library/PrivateFrameworks/ProactiveEventTracker.framework/ProactiveEventTracker
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfCharactersFromSet:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
 
 - (id)_pb_fixCase:(bool)arg1;
@@ -1735,7 +1761,6 @@
 - (id)safari_base64DecodedData;
 - (id)safari_bestLanguageTag;
 - (id)safari_bestURLForUserTypedString;
-- (id)safari_bestURLForUserTypedStringWithOriginalScheme:(id)arg1;
 - (id)safari_bestURLStringForUserTypedString;
 - (id)safari_canonicalURLStringForFrequentlyVisitedSites;
 - (id)safari_containedURLs;
@@ -1759,6 +1784,7 @@
 - (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(bool)arg2 simplifiedStringOffset:(unsigned long long*)arg3;
 - (id)safari_stringByFoldingWideCharactersAndNormalizing;
 - (id)safari_stringByRemovingCharactersInSet:(id)arg1;
+- (id)safari_stringByRemovingExcessWhitespace;
 - (id)safari_stringByRemovingTopLevelDomainFromHost;
 - (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
 - (id)safari_stringByRemovingWwwDotPrefix;
@@ -1987,6 +2013,7 @@
 + (struct USet { }*)_ideographSet;
 + (struct USet { }*)_japaneseLetterSet;
 + (struct USet { }*)_nonFullwidthLettersAndNumbersSet;
++ (struct USet { }*)_nonFullwidthLettersAndSymbolsSet;
 + (struct USet { }*)_nonHiraganaKatakanaOrBopomofoSet;
 + (struct USet { }*)_nonHiraganaOrKatakanaSet;
 + (struct USet { }*)_nonIdeographicCharacterSet;
@@ -2006,6 +2033,7 @@
 - (bool)_containsEmoji;
 - (bool)_containsFullwidthLettersAndNumbers;
 - (bool)_containsFullwidthLettersAndNumbersOnly;
+- (bool)_containsFullwidthLettersAndSymbols;
 - (bool)_containsHiraganaKatakanaOrBopomofo;
 - (bool)_containsHiraganaOnly;
 - (bool)_containsHiraganaOrKatakana;
@@ -2279,8 +2307,8 @@
 + (id)tsce_stringWithCellReference:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1 stickyBits:(unsigned char)arg2;
 + (id)tsce_stringWithSignedCellID:(struct { unsigned short x1; unsigned char x2; unsigned int x3 : 1; unsigned int x4 : 1; })arg1 stickyBits:(unsigned char)arg2;
 + (id)tsk_localizedDisplayNameWithFirstName:(id)arg1 lastName:(id)arg2;
++ (id)tsk_normalizedDisplayName:(id)arg1;
 + (id)tsk_regexStringForSearchString:(id)arg1 options:(unsigned long long)arg2;
-+ (id)tsk_sharingTokenFromShortSharingToken:(id)arg1 routingKey:(id)arg2;
 + (id)tsp_stringWithProtobufString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
 + (id)tsu_customNumberFormatDecimalFormatStringWithDigits:(unsigned long long)arg1 digitString:(id)arg2 includeDecimalSeparator:(bool)arg3;
 + (id)tsu_customNumberFormatDecimalTokenDisplayStringWithDigits:(unsigned long long)arg1 digitString:(id)arg2;
@@ -2321,7 +2349,6 @@
 - (id)ptsce_referenceComponentsSeparatedByCharacterInSet:(id)arg1;
 - (unsigned short)scaleCharacterInCustomNumberFormatScaleToken;
 - (void)sfu_appendJsonStringToString:(id)arg1;
-- (bool)sfu_containsPercentEscapes;
 - (id)sfu_createRangesOfEscapedCharactersInNumberFormatPattern;
 - (id)sfu_createStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
 - (int)sfu_indexOfFirstNonPrefixCharacterInNumberFormatSubpattern;
@@ -2332,7 +2359,6 @@
 - (id)sfu_numberPortionOfNumberFormatSubpattern;
 - (id)sfu_positiveSubpatternOfNumberFormatPattern;
 - (id)sfu_prefixOfNumberFormatSubpattern;
-- (id)sfu_stringByPercentEscaping;
 - (id)sfu_stringByRemovingEscapedCharactersFromNumberFormatPattern;
 - (id)sfu_suffixOfNumberFormatSubpattern;
 - (unsigned short)spaceCharacterInCustomNumberFormatSpaceToken;
@@ -2363,7 +2389,6 @@
 - (id)tsce_stringByUnescapingSingleQuotes;
 - (id)tsce_stringByUnescapingSingleQuotesAndGettingTrailingWhitespaceCount:(unsigned long long*)arg1;
 - (void)tsch_saveToProtobufString:(struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
-- (bool)tsk_isShortToken;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsk_rangeOfString:(id)arg1 searchOptions:(unsigned long long)arg2 updatingSearchRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
 - (id)tsk_stringByCapitalizingToMatchString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 searchOptions:(unsigned long long)arg3;
 - (id)tsk_stringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2 searchOptions:(unsigned long long)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 replacementCount:(unsigned long long*)arg5;
@@ -2371,6 +2396,7 @@
 - (id)tsp_pathExceptPrivate;
 - (const char *)tsp_protobufString;
 - (void)tsp_saveToProtobufString:(struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
+- (id)tsp_stringByAppendingObjectPathComponent:(id)arg1;
 - (id)tst_cleanForFormulaEditor;
 - (bool)tst_hasFormulaEqualsPrefix;
 - (bool)tst_hasLeadingCharacterInSet:(id)arg1;
@@ -2398,6 +2424,10 @@
 - (unsigned long long)tsu_indexOfFirstNonPrefixCharacterInNumberFormatSubpattern;
 - (unsigned long long)tsu_indexOfLastNonSuffixCharacterInNumberFormatSubpattern;
 - (unsigned long long)tsu_indexOfNumberFormatSubpatternSeparator;
+- (id)tsu_initRedactedWithFormat:(id)arg1;
+- (id)tsu_initRedactedWithFormat:(id)arg1 arguments:(char *)arg2;
+- (id)tsu_initUnRedactedWithFormat:(id)arg1;
+- (id)tsu_initUnRedactedWithFormat:(id)arg1 arguments:(char *)arg2;
 - (id)tsu_initWithSqlStatement:(struct sqlite3_stmt { }*)arg1 columnIndex:(int)arg2;
 - (bool)tsu_isCJKString;
 - (bool)tsu_isChildOfPath:(id)arg1;

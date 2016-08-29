@@ -7,7 +7,6 @@
     CAShapeLayer * _bottomSeparatorLayer;
     UIImageView * _disclosureIndicatorImageView;
     UIImageView * _iconImageView;
-    MPULayoutInterpolator * _marginLayoutInterpolator;
     UIVisualEffect * _primaryVisualEffect;
     MPAVRoute * _route;
     UIVisualEffect * _secondaryVisualEffect;

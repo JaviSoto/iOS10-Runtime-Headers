@@ -13,12 +13,14 @@
 
 @property (nonatomic, readonly) NCNotificationAction *action;
 @property (nonatomic, retain) UIButton *button;
+@property (nonatomic, readonly) NSString *contentExtensionIdentifier;
 @property (nonatomic, retain) UIStackView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NCNotificationRequest *notificationRequest;
+@property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITextField *textField;
 

@@ -26,12 +26,14 @@
 
 + (id)localizedStringForKey:(id)arg1;
 + (id)localizedStringForService:(id)arg1;
++ (id)socialProfileWithDictionaryRepresentation:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (id)bundleIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)displayname;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

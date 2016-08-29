@@ -66,6 +66,7 @@
 - (id)error;
 - (void)hideTimeLabel;
 - (void)hideTimeLabelAfterDelay;
+- (void)hideTimeLabelAnimated:(bool)arg1;
 - (struct CGSize { double x1; double x2; })imageSize;
 - (id)labelTextWithFormat:(long long)arg1 elapsedInterval:(double)arg2 remainingInterval:(double)arg3;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;

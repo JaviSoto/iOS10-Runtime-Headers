@@ -6,22 +6,26 @@
     PXBasicTileAnimationOptions * __basicAnimationOptions;
     NSArray * __changeDetails;
     PXSectionedChangeDetailsRepository * __changeHistory;
+    PXAssetsTilingLayout * __fromLayout;
     NSIndexSet * __kindsCenteredOnContentTiles;
     NSIndexSet * __kindsCoveringContentTiles;
     NSIndexSet * __kindsWithDisabledAnimation;
     bool  __shouldCrossfade;
     PXTilingChange * __tilingChange;
+    PXAssetsTilingLayout * __toLayout;
     bool  _treatRemovalsAsDeletes;
 }
 
 @property (nonatomic, readonly) PXBasicTileAnimationOptions *_basicAnimationOptions;
 @property (nonatomic, readonly) NSArray *_changeDetails;
 @property (nonatomic, readonly) PXSectionedChangeDetailsRepository *_changeHistory;
+@property (nonatomic, readonly) PXAssetsTilingLayout *_fromLayout;
 @property (nonatomic, readonly) NSIndexSet *_kindsCenteredOnContentTiles;
 @property (nonatomic, readonly) NSIndexSet *_kindsCoveringContentTiles;
 @property (nonatomic, readonly) NSIndexSet *_kindsWithDisabledAnimation;
 @property (nonatomic, readonly) bool _shouldCrossfade;
 @property (nonatomic, readonly) PXTilingChange *_tilingChange;
+@property (nonatomic, readonly) PXAssetsTilingLayout *_toLayout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;

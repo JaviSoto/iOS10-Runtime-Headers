@@ -4,22 +4,17 @@
 
 @interface VTSiriAssertionMonitor : VTEventMonitor {
     unsigned char  _assertionState;
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
-- (void)_notifyDelegate;
-- (void)_startMonitoring;
+- (void)_notifyObserver:(bool)arg1;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (void)disableAssertionReceived;
 - (void)enableAssertionReceived;
 - (id)init;
 - (bool)isEnabled;
-- (void)removeObserver:(id)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface KNSoundtrack : TSPObject <NSCopying> {
-    NSArray * mMedia;
-    int  mMode;
-    float  mVolume;
+    NSArray * _media;
+    long long  _mode;
+    float  _volume;
 }
 
 @property (nonatomic, copy) NSArray *media;
-@property (nonatomic) int mode;
+@property (nonatomic) long long mode;
 @property (nonatomic) float volume;
 
 + (bool)needsObjectUUID;
@@ -20,10 +20,10 @@
 - (id)initWithContext:(id)arg1;
 - (id)initWithSoundtrackMedia:(id)arg1 context:(id)arg2;
 - (id)media;
-- (int)mode;
+- (long long)mode;
 - (void)saveToArchiver:(id)arg1;
 - (void)setMedia:(id)arg1;
-- (void)setMode:(int)arg1;
+- (void)setMode:(long long)arg1;
 - (void)setVolume:(float)arg1;
 - (float)volume;
 

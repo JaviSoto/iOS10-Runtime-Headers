@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)description;
+- (void)evictAllFilesInGroup:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
 - (void)main;

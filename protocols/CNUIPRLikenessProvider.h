@@ -7,6 +7,7 @@
 
 - (PRLikeness *)_cnui_likeness;
 - (PRLikeness *)_cnui_likenessForSize:(struct CGSize { double x1; double x2; })arg1;
+- (PRLikeness *)_cnui_likenessForSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
 - (unsigned long long)_cnui_likenessType;
 
 @end

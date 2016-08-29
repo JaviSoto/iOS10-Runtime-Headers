@@ -24,6 +24,7 @@
 - (bool)isEmpty;
 - (id)messageDigestForUnsentMessage:(id)arg1 messageKey:(id)arg2;
 - (void)recordMessageDigestAsPreviouslySent:(id)arg1 messageKey:(id)arg2;
+- (void)removeDigestForKey:(id)arg1;
 - (void)setDirty:(bool)arg1;
 
 @end

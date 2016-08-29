@@ -28,5 +28,6 @@
 - (void)prepareForAction:(id)arg1;
 - (void)setAction:(id)arg1;
 - (void)setCancelButtonVisible:(bool)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

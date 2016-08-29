@@ -72,6 +72,7 @@
 - (void)fseventOnRoot:(id)arg1 flags:(unsigned int)arg2;
 - (void)fseventOnSharedRoot:(id)arg1 flags:(unsigned int)arg2;
 - (void)fseventOnSymlink:(id)arg1 flags:(unsigned int)arg2 lookup:(id)arg3;
+- (void)fseventOnURL:(id)arg1 dbFlags:(unsigned int)arg2;
 - (id)initWithAccountSession:(id)arg1;
 - (id)itemForCreatedDocumentsDirectory:(id)arg1 appLibrary:(id)arg2 path:(id)arg3;
 - (id)lookupAndReadItemUnderCoordinationAtURL:(id)arg1;

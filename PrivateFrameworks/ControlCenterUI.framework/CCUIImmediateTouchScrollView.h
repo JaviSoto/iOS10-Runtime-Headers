@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIImmediateTouchScrollView : UIScrollView
+@interface CCUIImmediateTouchScrollView : UIScrollView {
+    bool  _hitTestToContentArea;
+}
+
+@property (nonatomic) bool hitTestToContentArea;
 
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hitTestToContentArea;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setHitTestToContentArea:(bool)arg1;
 
 @end

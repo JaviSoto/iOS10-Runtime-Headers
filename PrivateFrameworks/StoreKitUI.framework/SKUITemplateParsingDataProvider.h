@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUITemplateParsingDataProvider : ISDataProvider {
+@interface SKUITemplateParsingDataProvider : SSVURLDataConsumer {
     NSRegularExpression * _regularExpression;
 }
 
-@property (retain) NSDictionary *output;
 @property (nonatomic, readonly) NSRegularExpression *regularExpression;
 
 + (id)templateParsingRegularExpression;
 
 - (void).cxx_destruct;
 - (id)initWithRegularExpression:(id)arg1;
-- (bool)parseData:(id)arg1 returningError:(id*)arg2;
+- (id)objectForData:(id)arg1 response:(id)arg2 error:(id*)arg3;
 - (id)regularExpression;
 
 @end

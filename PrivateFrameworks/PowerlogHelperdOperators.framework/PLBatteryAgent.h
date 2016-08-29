@@ -21,6 +21,8 @@
     PLIOKitOperatorComposition * _ioAccessoryManager;
     PLIOKitOperatorComposition * _iokit;
     bool  _isEABatteryConnected;
+    bool  _isFirstTimeCheckingPingPong;
+    bool  _isPingPongCharging;
     NSNumber * _lastkIOPSAppleBatteryCaseCumulativeCurrentKey;
     int  _priIOAccessoryPowerMode;
     double  _rawBatteryVoltageVolt;
@@ -47,6 +49,8 @@
 @property (readonly) PLIOKitOperatorComposition *ioAccessoryManager;
 @property (readonly) PLIOKitOperatorComposition *iokit;
 @property bool isEABatteryConnected;
+@property bool isFirstTimeCheckingPingPong;
+@property bool isPingPongCharging;
 @property (retain) NSNumber *lastkIOPSAppleBatteryCaseCumulativeCurrentKey;
 @property int priIOAccessoryPowerMode;
 @property double rawBatteryVoltageVolt;
@@ -106,6 +110,8 @@
 - (bool)isEABatteryConnected;
 - (bool)isEABatteryConnectedNow;
 - (bool)isEAPencilConnectedNow;
+- (bool)isFirstTimeCheckingPingPong;
+- (bool)isPingPongCharging;
 - (id)lastkIOPSAppleBatteryCaseCumulativeCurrentKey;
 - (void)log;
 - (void)logEABatteryStatistics;
@@ -127,6 +133,8 @@
 - (void)setGasGaugeConsecutiveEmptyEntriesCount:(int)arg1;
 - (void)setGasGaugeTimer:(id)arg1;
 - (void)setIsEABatteryConnected:(bool)arg1;
+- (void)setIsFirstTimeCheckingPingPong:(bool)arg1;
+- (void)setIsPingPongCharging:(bool)arg1;
 - (void)setLastkIOPSAppleBatteryCaseCumulativeCurrentKey:(id)arg1;
 - (void)setPriIOAccessoryPowerMode:(int)arg1;
 - (void)setRawBatteryVoltageVolt:(double)arg1;

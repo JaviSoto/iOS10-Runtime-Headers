@@ -5,9 +5,11 @@
 @interface GEORouteMatch : NSObject {
     NSArray * _candidateSteps;
     unsigned long long  _consecutiveProgressionsOffRoute;
+    GEONavigationMatchInfo * _detailedMatchInfo;
     double  _distanceFromRoute;
     double  _distanceTraveledOffRoute;
     bool  _isGoodMatch;
+    bool  _isTunnelProjection;
     struct { 
         double latitude; 
         double longitude; 
@@ -30,9 +32,11 @@
 
 @property (nonatomic, retain) NSArray *candidateSteps;
 @property (nonatomic) unsigned long long consecutiveProgressionsOffRoute;
+@property (nonatomic, retain) GEONavigationMatchInfo *detailedMatchInfo;
 @property (nonatomic) double distanceFromRoute;
 @property (nonatomic) double distanceTraveledOffRoute;
 @property (nonatomic) bool isGoodMatch;
+@property (nonatomic) bool isTunnelProjection;
 @property (nonatomic) struct { double x1; double x2; } locationCoordinate;
 @property (nonatomic, readonly) double matchedCourse;
 @property (nonatomic) double modifiedCourseAccuracy;
@@ -55,6 +59,7 @@
 - (unsigned long long)consecutiveProgressionsOffRoute;
 - (void)dealloc;
 - (id)description;
+- (id)detailedMatchInfo;
 - (double)distanceFromRoute;
 - (double)distanceTraveledOffRoute;
 - (double)fractionOfCurrentStepTraveled;
@@ -64,6 +69,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualIgnoringScore:(id)arg1;
 - (bool)isGoodMatch;
+- (bool)isTunnelProjection;
 - (struct { double x1; double x2; })locationCoordinate;
 - (double)matchedCourse;
 - (double)modifiedCourseAccuracy;
@@ -77,9 +83,11 @@
 - (bool)routeMatchedToEnd;
 - (void)setCandidateSteps:(id)arg1;
 - (void)setConsecutiveProgressionsOffRoute:(unsigned long long)arg1;
+- (void)setDetailedMatchInfo:(id)arg1;
 - (void)setDistanceFromRoute:(double)arg1;
 - (void)setDistanceTraveledOffRoute:(double)arg1;
 - (void)setIsGoodMatch:(bool)arg1;
+- (void)setIsTunnelProjection:(bool)arg1;
 - (void)setLocationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setModifiedCourseAccuracy:(double)arg1;
 - (void)setModifiedHorizontalAccuracy:(double)arg1;

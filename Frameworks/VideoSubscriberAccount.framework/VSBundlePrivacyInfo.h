@@ -9,10 +9,12 @@
 
 @property (getter=isAccessGranted, nonatomic) bool accessGranted;
 @property (nonatomic, readonly) struct __CFBundle { }*bundle;
+@property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, readonly) VSPrivacyFacade *privacyFacade;
 
 - (void).cxx_destruct;
 - (struct __CFBundle { }*)bundle;
+- (id)bundleIdentifier;
 - (void)dealloc;
 - (id)initWithBundle:(struct __CFBundle { }*)arg1 privacyFacade:(id)arg2;
 - (bool)isAccessGranted;

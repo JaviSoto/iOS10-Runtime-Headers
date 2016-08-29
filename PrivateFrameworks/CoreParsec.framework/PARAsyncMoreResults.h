@@ -3,27 +3,34 @@
  */
 
 @interface PARAsyncMoreResults : SFMoreResults {
+    unsigned long long  _clientQueryId;
     PARSessionConfiguration * _configuration;
     NSXPCListenerEndpoint * _endpoint;
     NSURL * _moreResultsURL;
+    long long  _queryId;
     double  _scale;
 }
 
+@property (nonatomic, readonly) unsigned long long clientQueryId;
 @property (nonatomic, retain) PARSessionConfiguration *configuration;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
 @property (nonatomic, readonly, copy) NSURL *moreResultsURL;
+@property (nonatomic, readonly) long long queryId;
 @property (nonatomic) double scale;
 
-+ (id)moreResults:(id)arg1 label:(id)arg2 session:(id)arg3 scale:(double)arg4;
++ (id)moreResults:(id)arg1 label:(id)arg2 session:(id)arg3 scale:(double)arg4 queryId:(long long)arg5;
++ (id)moreResults:(id)arg1 label:(id)arg2 session:(id)arg3 scale:(double)arg4 queryId:(long long)arg5 clientQueryId:(unsigned long long)arg6;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned long long)clientQueryId;
 - (id)configuration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endpoint;
 - (id)initWithCoder:(id)arg1;
 - (void)loadSearchResultsWithCompletionAndErrorHandler:(id /* block */)arg1;
 - (id)moreResultsURL;
+- (long long)queryId;
 - (double)scale;
 - (void)setConfiguration:(id)arg1;
 - (void)setEndpoint:(id)arg1;

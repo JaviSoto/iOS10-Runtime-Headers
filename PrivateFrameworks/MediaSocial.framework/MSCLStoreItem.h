@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaSocial.framework/MediaSocial
  */
 
-@interface MSCLStoreItem : NSObject <NSCopying> {
+@interface MSCLStoreItem : NSObject <NSCopying, NSSecureCoding> {
     NSString * _artistName;
     MPArtworkCatalog * _artworkCatalog;
     SKUIArtworkList * _artworkList;
@@ -22,6 +22,8 @@
 @property (nonatomic, copy) NSString *itemIdentifier;
 @property (nonatomic, copy) NSString *kind;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)artistName;
 - (id)artworkCatalog;
@@ -31,7 +33,10 @@
 - (id)copyMediaSocialPostItem;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithItemDictionary:(id)arg1;
+- (id)initWithMPModelObject:(id)arg1;
 - (id)itemIdentifier;
 - (id)kind;
 - (void)setArtistName:(id)arg1;

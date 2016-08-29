@@ -13,10 +13,6 @@
     UIPageControl * _pageControl;
     NSMutableDictionary * _placeholderImages;
     NSOperationQueue * _placeholderQueue;
-    bool  _respondsToCount;
-    bool  _respondsToImage;
-    bool  _respondsToURL;
-    SKUIScreenshotDataConsumer * _screenshotConsumer;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -35,7 +31,6 @@
 - (void)_reloadPageControl;
 - (void)_reloadSize;
 - (void)_setImage:(id)arg1 atIndex:(long long)arg2;
-- (void)_setLowResImage:(id)arg1 atIndex:(long long)arg2;
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

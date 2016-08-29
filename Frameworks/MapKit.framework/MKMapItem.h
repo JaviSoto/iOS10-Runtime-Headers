@@ -50,6 +50,7 @@
 @property (getter=_hasAcceptsApplePayAmenity, nonatomic, readonly) bool hasAcceptsApplePayAmenity;
 @property (getter=_hasAnyAmenities, nonatomic, readonly) bool hasAnyAmenities;
 @property (getter=_hasBusinessClaim, nonatomic, readonly) bool hasBusinessClaim;
+@property (getter=_hasCorrectedHomeWorkCoordinate, nonatomic, readonly) bool hasCorrectedHomeWorkCoordinate;
 @property (getter=_hasDelivery, nonatomic, readonly) bool hasDelivery;
 @property (getter=_hasDeliveryAmenity, nonatomic, readonly) bool hasDeliveryAmenity;
 @property (getter=_hasDisplayableAmenities, readonly) bool hasDisplayableAmenities;
@@ -179,6 +180,7 @@
 - (bool)_hasAcceptsApplePayAmenity;
 - (bool)_hasAnyAmenities;
 - (bool)_hasBusinessClaim;
+- (bool)_hasCorrectedHomeWorkCoordinate;
 - (bool)_hasDelivery;
 - (bool)_hasDeliveryAmenity;
 - (bool)_hasDisplayableAmenities;
@@ -218,7 +220,7 @@
 - (id)_placeDataAsData;
 - (id)_poiPinpointURLString;
 - (id)_poiSurveyURLString;
-- (id)_postalAddressFromCorrectedLocationAttributes:(id)arg1;
+- (id)_postalAddressFromMeCardUsingAddressIdentifier:(id)arg1;
 - (id)_priceRangeString;
 - (id)_providerURL;
 - (int)_recommendedTransportType;
@@ -228,6 +230,7 @@
 - (id)_restaurantLink_firstProviderIdentifier;
 - (id)_restaurantLink_firstProviderPlaceIdentifier;
 - (id)_restaurantLink_firstVendorID;
+- (bool)_restaurantLink_hasFeatureType:(unsigned long long)arg1;
 - (id)_restaurantLink_overridenBundleIDsForVendorIDs;
 - (int)_resultProviderID;
 - (id)_reviewForIdentifier:(id)arg1;

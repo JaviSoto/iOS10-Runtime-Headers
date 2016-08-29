@@ -33,6 +33,8 @@
 + (id)assetRepresentationWithAssetsLibraryPersistentURL:(id)arg1;
 + (id)assetRepresentationWithIdentifierURL:(id)arg1;
 + (id)assetRepresentationWithPhotosIdentifierURL:(id)arg1;
++ (void)clearStaticCache;
++ (void)createStaticCache;
 + (void)initialize;
 
 - (void).cxx_destruct;
@@ -59,6 +61,7 @@
 - (id)initWithAsset:(id)arg1 localIdentifier:(id)arg2 adjustedVersion:(bool)arg3 modificationDate:(id)arg4 mediaType:(long long)arg5;
 - (id)initWithLocalIdentifier:(id)arg1 adjustedVersion:(bool)arg2 modificationDate:(id)arg3 mediaType:(long long)arg4;
 - (bool)isAdjustedVersion;
+- (bool)isDerivativeFilePathPointingToRAWFile;
 - (bool)isDownloading;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)lastKnownPersistenceState;

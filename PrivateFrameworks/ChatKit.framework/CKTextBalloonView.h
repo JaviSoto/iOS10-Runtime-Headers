@@ -36,6 +36,7 @@
 - (void)layoutSubviews;
 - (bool)modifiesSingleLineBalloonLayout;
 - (void)prepareForDisplay;
+- (void)prepareForReuse;
 - (void)setAttributedText:(id)arg1;
 - (void)setCenterTextWhenSkinny:(bool)arg1;
 - (void)setTextView:(id)arg1;

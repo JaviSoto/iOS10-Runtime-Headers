@@ -69,13 +69,11 @@
         double width; 
         double height; 
     }  mReusableScaledImageSize;
-    bool  mReusableShouldUseSRGBColorSpace;
     struct CGSize { 
         double width; 
         double height; 
     }  mScaledImageSize;
     bool  mShouldReuseBitmapContext;
-    bool  mShouldUseSRGBColorSpace;
     struct CGRect { 
         struct CGPoint { 
             double x; 

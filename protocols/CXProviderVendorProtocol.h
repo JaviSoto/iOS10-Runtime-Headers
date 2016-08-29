@@ -7,6 +7,5 @@
 
 - (oneway void)commitTransaction:(CXTransaction *)arg1;
 - (oneway void)handleActionTimeout:(CXAction *)arg1;
-- (oneway void)handleAuthorizationChangedTo:(bool)arg1;
 
 @end

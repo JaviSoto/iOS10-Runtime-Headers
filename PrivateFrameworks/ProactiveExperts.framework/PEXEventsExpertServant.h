@@ -5,9 +5,12 @@
 @interface PEXEventsExpertServant : PEXServant {
     NSObject<OS_dispatch_semaphore> * _accessComplete;
     bool  _accessGranted;
+    EKCalendarVisibilityManager * _calendarVisibilityManager;
     NSArray * _calendars;
     PEXContactScorer * _contactScorer;
+    id  _ekObserverRegistrationToken;
     PEXEventCache * _eventCache;
+    NSObject<OS_dispatch_queue> * _eventLoadingQueue;
     NSObject<OS_dispatch_semaphore> * _initializationComplete;
     NSString * _source;
     EKEventStore * _store;
@@ -29,7 +32,6 @@
 - (id)_lastBusyEventsFromEvents:(id)arg1 people:(id)arg2;
 - (id)_lastFreeEventsFromEvents:(id)arg1;
 - (id)_loadCalendars;
-- (id)_namesOfAttendees:(id)arg1;
 - (id)_nextBusyEventsFromEvents:(id)arg1 people:(id)arg2;
 - (id)_nextFreeEventsFromEvents:(id)arg1;
 - (id)_predicateForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
@@ -41,8 +43,16 @@
 - (bool)_userIsInvitedToEvent:(id)arg1;
 - (long long)_userStatusForEvent:(id)arg1;
 - (id)_valuesForPrediction:(id)arg1 fields:(id)arg2 formatter:(id)arg3;
+- (void)askForEKAccess;
 - (void)clearCaches;
+- (void)dealloc;
+- (void)discoveredEvents:(id)arg1;
+- (id)getWeakStore;
 - (id)init;
 - (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2;
+- (void)setAccessGranted:(bool)arg1;
+- (void)setContactScorer:(id)arg1;
+- (void)setStore:(id)arg1;
+- (void)setupCalendarVisibilityManager;
 
 @end

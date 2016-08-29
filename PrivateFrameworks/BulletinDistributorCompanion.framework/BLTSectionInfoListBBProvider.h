@@ -22,6 +22,7 @@
 - (id)delegate;
 - (id)init;
 - (void)reloadWithCompletion:(id /* block */)arg1;
+- (void)sectionInfoObserver:(id)arg1 removedSectionWithSectionID:(id)arg2;
 - (void)sectionInfoObserver:(id)arg1 updatedSectionInfo:(id)arg2 withUniversalSectionID:(id)arg3 displayName:(id)arg4;
 - (void)setDelegate:(id)arg1;
 

@@ -151,7 +151,7 @@
 
 + (id)_rpFrameworkBundle;
 + (id)_rpLocalizedAppNameFromBundleID:(id)arg1;
-+ (id)_rpLocalizedStringFromFrameworkBundleWithKey:(id)arg1;
++ (id)_rpLocalizedStringFromFrameworkBundleWithKey:(id)arg1 bundleID:(id)arg2;
 
 - (id)_rpLocalizedAppName;
 
@@ -286,9 +286,9 @@
 
 + (id)px_PhotosUICoreFrameworkBundle;
 
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+// Image: /System/Library/PrivateFrameworks/PlacesKit.framework/PlacesKit
 
-+ (id)radioUIBundle;
++ (id)pk_PlacesKitFrameworkBundle;
 
 // Image: /System/Library/PrivateFrameworks/SAML.framework/SAML
 

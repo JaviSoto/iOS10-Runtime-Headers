@@ -4,22 +4,23 @@
 
 @interface HDClient : NSObject {
     NSUUID * _UUID;
-    NSString * _applicationIdentifier;
     NSXPCConnection * _connection;
+    NSString * _containerAppBundleIdentifier;
     NSMutableSet * _droppedEntitlements;
     _HKEntitlements * _entitlements;
-    NSString * _extensionIdentifier;
+    NSString * _entitlementsApplicationIdentifier;
     bool  _isExtension;
     NSString * _name;
+    NSString * _processBundleIdentifier;
     NSString * _sourceBundleIdentifier;
 }
 
 @property (readonly) NSUUID *UUID;
 @property (readonly) NSString *applicationIdentifier;
 @property (readonly) NSXPCConnection *connection;
+@property (readonly) NSString *containerAppBundleIdentifier;
 @property (nonatomic, retain) NSMutableSet *droppedEntitlements;
 @property (readonly) _HKEntitlements *entitlements;
-@property (readonly) NSString *extensionIdentifier;
 @property (readonly) bool isExtension;
 @property (readonly) NSString *name;
 @property (readonly) NSString *processBundleIdentifier;
@@ -34,11 +35,11 @@
 - (id)applicationIdentifier;
 - (id)baseDataEntityEncodingOptions;
 - (id)connection;
+- (id)containerAppBundleIdentifier;
 - (id)description;
 - (void)dropEntitlement:(id)arg1;
 - (id)droppedEntitlements;
 - (id)entitlements;
-- (id)extensionIdentifier;
 - (id)filterWithQueryFilter:(id)arg1 profile:(id)arg2;
 - (bool)hasEntitlement:(id)arg1;
 - (bool)hasRequiredEntitlement:(id)arg1 error:(id*)arg2;

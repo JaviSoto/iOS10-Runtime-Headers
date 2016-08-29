@@ -3,13 +3,13 @@
  */
 
 @interface HUGridServiceCell : HUGridCell <HUAccessoryViewCellProtocol> {
-    HUGridServiceCellAccessoryViewContainer * _accessoryViewContainer;
+    UIView * _accessoryView;
     UIActivityIndicatorView * _activityIndicator;
     UILabel * _coloredDescriptionLabel;
     HUVisualEffectContainerView * _exclamationView;
+    bool  _hasUpdatedUISinceLastReuse;
     HUIconView * _iconView;
     UIView * _overrideAccessoryView;
-    NSArray * _serviceCellConstraints;
     HFItem * _serviceItem;
     HUGridServiceCellTextView * _serviceTextView;
     bool  _shouldColorDescription;
@@ -21,18 +21,17 @@
 }
 
 @property (nonatomic, retain) UIView *accessoryView;
-@property (nonatomic, retain) HUGridServiceCellAccessoryViewContainer *accessoryViewContainer;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) UILabel *coloredDescriptionLabel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool disableContinuousIconAnimation;
 @property (nonatomic, retain) HUVisualEffectContainerView *exclamationView;
+@property (nonatomic) bool hasUpdatedUISinceLastReuse;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HUIconView *iconView;
 @property (nonatomic, retain) HUGridServiceCellLayoutOptions *layoutOptions;
 @property (nonatomic, retain) UIView *overrideAccessoryView;
-@property (nonatomic, retain) NSArray *serviceCellConstraints;
 @property (nonatomic, retain) HFItem *serviceItem;
 @property (nonatomic, retain) HUGridServiceCellTextView *serviceTextView;
 @property (nonatomic) bool shouldColorDescription;
@@ -47,46 +46,43 @@
 
 + (id)_iconTintColor;
 + (Class)layoutOptionsClass;
-+ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_createExclamationViewIfNecessary;
 - (void)_getDescription:(id*)arg1 nameTextColor:(id*)arg2 descriptionTextColor:(id*)arg3 forPrimaryState:(long long)arg4;
-- (void)_invalidateConstraints;
 - (void)_setServiceItem:(id)arg1 updateUI:(bool)arg2;
 - (void)_setupServiceCell;
 - (void)_updateAccessoryView;
 - (void)_updateIconWithPrimaryState:(long long)arg1 animated:(bool)arg2;
+- (void)_updateSecondaryContentDisplayStyle;
 - (void)_updateTextWithPrimaryState:(long long)arg1;
 - (void)_updateUIWithAnimation:(bool)arg1 overridePrimaryState:(long long)arg2;
 - (id)accessoryView;
-- (id)accessoryViewContainer;
 - (id)activityIndicator;
-- (void)animateFlash;
 - (id)coloredDescriptionLabel;
 - (void)contentEffectDidChange;
 - (bool)disableContinuousIconAnimation;
 - (id)exclamationView;
+- (bool)hasUpdatedUISinceLastReuse;
 - (id)iconView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)item;
 - (void)layoutOptionsDidChange;
+- (void)layoutSubviews;
 - (id)overrideAccessoryView;
 - (void)prepareForReuse;
-- (id)serviceCellConstraints;
 - (id)serviceItem;
 - (id)serviceTextView;
 - (void)setAccessoryView:(id)arg1;
-- (void)setAccessoryViewContainer:(id)arg1;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setColoredDescriptionLabel:(id)arg1;
 - (void)setDisableContinuousIconAnimation:(bool)arg1;
 - (void)setExclamationView:(id)arg1;
+- (void)setHasUpdatedUISinceLastReuse:(bool)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setOverrideAccessoryView:(id)arg1;
-- (void)setServiceCellConstraints:(id)arg1;
 - (void)setServiceItem:(id)arg1;
 - (void)setServiceTextView:(id)arg1;
 - (void)setShouldColorDescription:(bool)arg1;
@@ -105,7 +101,6 @@
 - (id)showUpdatingStateAfterDelayToken;
 - (bool)showingProgressIndicator;
 - (bool)showingUpdatingState;
-- (void)updateConstraints;
 - (void)updateUIWithAnimation:(bool)arg1;
 
 @end

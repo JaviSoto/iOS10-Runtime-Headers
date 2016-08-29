@@ -15,7 +15,6 @@
 - (void).cxx_destruct;
 - (void)_readLength:(unsigned long long)arg1;
 - (void)close;
-- (void)dealloc;
 - (id)initWithLockdownInfo:(void*)arg1;
 - (bool)isOpen;
 - (bool)isWifi;

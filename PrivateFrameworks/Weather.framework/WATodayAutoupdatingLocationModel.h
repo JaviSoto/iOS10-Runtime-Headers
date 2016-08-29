@@ -33,7 +33,6 @@
 
 - (void).cxx_destruct;
 - (id /* block */)WeatherLocationManagerGenerator;
-- (void)_clearLocalWeatherUpdateState:(bool)arg1;
 - (void)_dispatchLocationUpdatedEventToHandlers:(id)arg1 error:(id)arg2;
 - (void)_executeForecastRetrievalForLocation:(id)arg1 completion:(id /* block */)arg2;
 - (void)_executeLocationUpdateForFirstWeatherCityWithCompletion:(id /* block */)arg1;

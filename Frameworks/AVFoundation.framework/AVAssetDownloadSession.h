@@ -26,6 +26,7 @@
 - (void)_addFigAssetListeners;
 - (void)_addFigPlaybackItemListeners;
 - (id)_common_init;
+- (struct OpaqueFigAsset { }*)_createDuplicateFigAssetFromAVAsset:(id)arg1;
 - (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_figAssetDownloaderNotificationNames;
@@ -41,7 +42,7 @@
 - (void)_removeFigAssetListeners;
 - (void)_removeFigPlaybackItemListeners;
 - (void)_selectMediaOptionsFromMediaSelection:(id)arg1;
-- (bool)_setFileFigAsset:(struct OpaqueFigAsset { }*)arg1;
+- (int)_setFileFigAsset:(struct OpaqueFigAsset { }*)arg1;
 - (void)_transitionToTerminalStatus:(long long)arg1 error:(id)arg2;
 - (id)_verifyDownloadConfigurationForAssetType;
 - (id)_weakReference;
@@ -61,6 +62,7 @@
 - (long long)priority;
 - (id)resolvedMediaSelection;
 - (void)start;
+- (void)startLoadingMetadata;
 - (long long)status;
 - (void)stop;
 

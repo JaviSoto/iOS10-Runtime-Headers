@@ -5,6 +5,7 @@
 
 @required
 
+- (void)setPause:(bool)arg1;
 - (bool)setStreamConfig:(NSDictionary *)arg1 withError:(id*)arg2;
 - (void)start;
 - (void)stop;
@@ -12,7 +13,6 @@
 @optional
 
 - (NSDictionary *)setLocalParticipantInfo:(NSDictionary *)arg1 networkSockets:(NSObject<OS_xpc_object> *)arg2 withError:(id*)arg3;
-- (void)setPause:(bool)arg1;
 - (void)setRtcpEnabled:(bool)arg1;
 - (void)setRtcpSendInterval:(double)arg1;
 - (void)setRtcpTimeOutEnabled:(bool)arg1;

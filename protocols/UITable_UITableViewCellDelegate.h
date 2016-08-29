@@ -9,7 +9,7 @@
 - (void)_actionButton:(_UITableViewCellActionButton *)arg1 pushedInCell:(UITableViewCell *)arg2;
 - (void)_animateDeletionOfRowWithCell:(UITableViewCell *)arg1;
 - (void)_animateSwipeCancelation;
-- (void)_beginReorderingForCell:(UITableViewCell *)arg1;
+- (void)_beginReorderingForCell:(UITableViewCell *)arg1 touch:(UITouch *)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calloutTargetRectForCell:(UITableViewCell *)arg1;
 - (bool)_canFocusCell:(UITableViewCell *)arg1;
 - (bool)_canPerformAction:(SEL)arg1 forCell:(UITableViewCell *)arg2 sender:(id)arg3;
@@ -21,7 +21,7 @@
 - (double)_deleteConfirmationHorizontalOffset;
 - (double)_deleteConfirmationHorizontalVelocity;
 - (void)_didInsertRowForTableCell:(UITableViewCell *)arg1;
-- (void)_draggingReorderingCell:(UITableViewCell *)arg1 yDelta:(double)arg2;
+- (void)_draggingReorderingCell:(UITableViewCell *)arg1 yDelta:(double)arg2 touch:(UITouch *)arg3;
 - (void)_endReorderingForCell:(UITableViewCell *)arg1 wasCancelled:(bool)arg2 animated:(bool)arg3;
 - (void)_endSwipeToDeleteGesture:(bool)arg1;
 - (void)_endSwipeToDeleteRowDidDelete:(bool)arg1;

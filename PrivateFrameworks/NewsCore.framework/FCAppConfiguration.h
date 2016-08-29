@@ -17,6 +17,7 @@
     long long  _endOfArticleMaxInaccessiblePaidArticleCount;
     double  _endOfArticleMinPaidHeadlineRatio;
     NSDictionary * _endpointConfigsByEnvironment;
+    FCForYouGroupsConfiguration * _forYouGroupsConfiguration;
     bool  _forceAppConfigUpdate;
     bool  _forceTrendingSearchesUpdate;
     NSArray * _hiddenFeedIDs;
@@ -29,6 +30,7 @@
     long long  _newFavoriteNotificationAlertsFrequency;
     long long  _notificationArticleCacheTimeout;
     long long  _notificationArticleWithRapidUpdatesCacheTimeout;
+    long long  _notificationEnabledChannelsRefreshFrequency;
     FCNotificationsConfiguration * _notificationsConfig;
     long long  _numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
     NSMutableArray * _observationBlocks;
@@ -72,6 +74,7 @@
 @property (nonatomic) long long endOfArticleMaxInaccessiblePaidArticleCount;
 @property (nonatomic) double endOfArticleMinPaidHeadlineRatio;
 @property (nonatomic, retain) NSDictionary *endpointConfigsByEnvironment;
+@property (nonatomic, retain) FCForYouGroupsConfiguration *forYouGroupsConfiguration;
 @property (nonatomic) bool forceAppConfigUpdate;
 @property (nonatomic) bool forceTrendingSearchesUpdate;
 @property (nonatomic, retain) NSArray *hiddenFeedIDs;
@@ -84,11 +87,14 @@
 @property (nonatomic) long long newFavoriteNotificationAlertsFrequency;
 @property (nonatomic) long long notificationArticleCacheTimeout;
 @property (nonatomic) long long notificationArticleWithRapidUpdatesCacheTimeout;
+@property (nonatomic) long long notificationEnabledChannelsRefreshFrequency;
 @property (nonatomic, retain) FCNotificationsConfiguration *notificationsConfig;
 @property (nonatomic) long long numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
 @property (nonatomic, retain) NSMutableArray *observationBlocks;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, retain) NSArray *onboardingFeedIDs;
+@property (nonatomic, readonly) double parsecPopulationCeiling;
+@property (nonatomic, readonly) double parsecPopulationFloor;
 @property (nonatomic, retain) NTPBPersonalizationConfig *personalizationConfig;
 @property (nonatomic, retain) NSDictionary *personalizationTreatments;
 @property (nonatomic, retain) NSSet *preferredLanguages;
@@ -159,6 +165,7 @@
 - (void)fetchAppConfigurationIfNeededWithCompletion:(id /* block */)arg1;
 - (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchTrendingSearchesIfNeededWithCompletion:(id /* block */)arg1;
+- (id)forYouGroupsConfiguration;
 - (bool)forceAppConfigUpdate;
 - (bool)forceTrendingSearchesUpdate;
 - (void)forceUpdateOnNextLaunch;
@@ -174,11 +181,14 @@
 - (long long)newFavoriteNotificationAlertsFrequency;
 - (long long)notificationArticleCacheTimeout;
 - (long long)notificationArticleWithRapidUpdatesCacheTimeout;
+- (long long)notificationEnabledChannelsRefreshFrequency;
 - (id)notificationsConfig;
 - (long long)numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
 - (id)observationBlocks;
 - (id)observers;
 - (id)onboardingFeedIDs;
+- (double)parsecPopulationCeiling;
+- (double)parsecPopulationFloor;
 - (id)personalizationConfig;
 - (id)personalizationTreatmentForFeldsparID:(id)arg1;
 - (long long)personalizationTreatmentIDForFeldsparID:(id)arg1;
@@ -203,6 +213,7 @@
 - (void)setEndOfArticleMaxInaccessiblePaidArticleCount:(long long)arg1;
 - (void)setEndOfArticleMinPaidHeadlineRatio:(double)arg1;
 - (void)setEndpointConfigsByEnvironment:(id)arg1;
+- (void)setForYouGroupsConfiguration:(id)arg1;
 - (void)setForceAppConfigUpdate:(bool)arg1;
 - (void)setForceTrendingSearchesUpdate:(bool)arg1;
 - (void)setHiddenFeedIDs:(id)arg1;
@@ -215,6 +226,7 @@
 - (void)setNewFavoriteNotificationAlertsFrequency:(long long)arg1;
 - (void)setNotificationArticleCacheTimeout:(long long)arg1;
 - (void)setNotificationArticleWithRapidUpdatesCacheTimeout:(long long)arg1;
+- (void)setNotificationEnabledChannelsRefreshFrequency:(long long)arg1;
 - (void)setNotificationsConfig:(id)arg1;
 - (void)setNumberOfScreenfulsScrolledToBypassWidgetTimeLimit:(long long)arg1;
 - (void)setObservationBlocks:(id)arg1;

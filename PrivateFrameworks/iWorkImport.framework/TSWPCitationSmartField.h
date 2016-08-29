@@ -30,6 +30,7 @@
 - (void)setEditingDelegate:(id)arg1;
 - (void)setIsLocalizable:(bool)arg1;
 - (int)smartFieldKind;
+- (bool)supportsDeepCopyForUndo;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

@@ -7,6 +7,7 @@
 @property bool autoplay;
 @property (readonly) DOMTimeRanges *buffered;
 @property bool controls;
+@property (copy) NSString *crossOrigin;
 @property (readonly, copy) NSString *currentSrc;
 @property double currentTime;
 @property bool defaultMuted;
@@ -35,6 +36,7 @@
 - (id)buffered;
 - (id)canPlayType:(id)arg1;
 - (bool)controls;
+- (id)crossOrigin;
 - (id)currentSrc;
 - (double)currentTime;
 - (bool)defaultMuted;
@@ -60,6 +62,7 @@
 - (bool)seeking;
 - (void)setAutoplay:(bool)arg1;
 - (void)setControls:(bool)arg1;
+- (void)setCrossOrigin:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDefaultMuted:(bool)arg1;
 - (void)setDefaultPlaybackRate:(double)arg1;

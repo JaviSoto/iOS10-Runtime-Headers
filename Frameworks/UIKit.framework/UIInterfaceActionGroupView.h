@@ -14,6 +14,7 @@
     NSLayoutConstraint * _actionSequenceViewWidthAnchoredToContentGuideConstraint;
     UIInterfaceActionVisualStyle * _activeTestingVisualStyle;
     NSArray * _allowedActionLayoutAxisByPriority;
+    UIInterfaceActionVisualStyle * _appliedVisualStyle;
     NSMutableArray * _arrangedScrollableHeaderViews;
     UIView * _backgroundView;
     _UIContentConstraintsLayoutGuide * _contentGuide;
@@ -22,6 +23,7 @@
     bool  _needsInitialViewLoading;
     bool  _needsUpdateActionSequenceViewArrangement;
     bool  _needsUpdateTopLevelViewsArrangement;
+    UIInterfaceActionRepresentationView * _preferredActionRepresentation;
     long long  _presentationStyle;
     double  _requiredActionRepresentationWidth;
     bool  _showsSeparatorAboveActions;
@@ -44,6 +46,7 @@
 @property (nonatomic, readonly) NSLayoutConstraint *actionSequenceViewWidthAnchoredToConstantConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *actionSequenceViewWidthAnchoredToContentGuideConstraint;
 @property (nonatomic, retain) NSArray *allowedActionLayoutAxisByPriority;
+@property (nonatomic, retain) UIInterfaceActionVisualStyle *appliedVisualStyle;
 @property (nonatomic, readonly) NSArray *arrangedHeaderViews;
 @property (nonatomic, readonly) NSMutableArray *arrangedScrollableHeaderViews;
 @property (nonatomic, readonly) UIView *backgroundView;
@@ -52,6 +55,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_drawsBackground, setter=_setDrawsBackground:, nonatomic) bool drawsBackground;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIInterfaceActionRepresentationView *preferredActionRepresentation;
 @property (nonatomic) long long presentationStyle;
 @property (nonatomic) double requiredActionRepresentationWidth;
 @property (nonatomic) bool showsSeparatorAboveActions;
@@ -136,6 +140,7 @@
 - (id)actionSequenceViewWidthAnchoredToConstantConstraint;
 - (id)actionSequenceViewWidthAnchoredToContentGuideConstraint;
 - (id)allowedActionLayoutAxisByPriority;
+- (id)appliedVisualStyle;
 - (id)arrangedHeaderViews;
 - (id)arrangedScrollableHeaderViews;
 - (id)backgroundView;
@@ -151,6 +156,7 @@
 - (void)interfaceActionGroup:(id)arg1 reloadDisplayedContentActionGroupProperties:(id)arg2;
 - (void)interfaceActionGroup:(id)arg1 reloadDisplayedContentVisualStyle:(id)arg2;
 - (void)layoutSubviews;
+- (id)preferredActionRepresentation;
 - (id)preferredFocusedView;
 - (long long)presentationStyle;
 - (void)reloadVisualStyle;
@@ -163,6 +169,8 @@
 - (void)setActionSelectionGestureRecognizer:(id)arg1;
 - (void)setActiveTestingVisualStyle:(id)arg1;
 - (void)setAllowedActionLayoutAxisByPriority:(id)arg1;
+- (void)setAppliedVisualStyle:(id)arg1;
+- (void)setPreferredActionRepresentation:(id)arg1;
 - (void)setPresentationStyle:(long long)arg1;
 - (void)setRequiredActionRepresentationWidth:(double)arg1;
 - (void)setShowsSeparatorAboveActions:(bool)arg1;

@@ -4,7 +4,9 @@
 
 @interface WKScrollView : UIWebScrollView {
     WKScrollViewDelegateForwarder * _delegateForwarder;
-    <UIScrollViewDelegate> * _externalDelegate;
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<UIScrollViewDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<UIScrollViewDelegate> > { 
+        id m_weakReference; 
+    }  _externalDelegate;
     WKWebView<UIScrollViewDelegate> * _internalDelegate;
     double  _preferredScrollDecelerationFactor;
 }
@@ -14,6 +16,8 @@
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })_currentTopLeftRubberbandAmount;
 - (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { double x1; double x2; })arg1;
 - (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(bool*)arg5;

@@ -7,7 +7,7 @@
     bool  _limitedUI;
     bool  _limiting;
     MPMediaPredicate * _localPredicate;
-    UIView * _nowPlayingButton;
+    MCDNowPlayingButton * _nowPlayingButton;
     bool  _shouldHideIndexTitles;
     bool  _showMore;
     UIView * _snapshotView;

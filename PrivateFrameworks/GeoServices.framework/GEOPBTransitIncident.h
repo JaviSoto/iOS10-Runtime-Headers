@@ -12,11 +12,13 @@
         unsigned int creationDatetime : 1; 
         unsigned int endDatetime : 1; 
         unsigned int iconEnum : 1; 
+        unsigned int incidentIndex : 1; 
         unsigned int startDatetime : 1; 
         unsigned int updatedDatetime : 1; 
         unsigned int blocking : 1; 
     }  _has;
     int  _iconEnum;
+    unsigned int  _incidentIndex;
     unsigned long long  _incidentMuid;
     NSString * _longDescriptionString;
     NSString * _messageForAllBlocking;
@@ -36,6 +38,7 @@
 @property (nonatomic) bool hasCreationDatetime;
 @property (nonatomic) bool hasEndDatetime;
 @property (nonatomic) bool hasIconEnum;
+@property (nonatomic) bool hasIncidentIndex;
 @property (nonatomic) bool hasIncidentMuid;
 @property (nonatomic, readonly) bool hasLongDescriptionString;
 @property (nonatomic, readonly) bool hasMessageForAllBlocking;
@@ -46,6 +49,7 @@
 @property (nonatomic, readonly) bool hasTitleString;
 @property (nonatomic) bool hasUpdatedDatetime;
 @property (nonatomic) int iconEnum;
+@property (nonatomic) unsigned int incidentIndex;
 @property (nonatomic) unsigned long long incidentMuid;
 @property (nonatomic, retain) NSString *longDescriptionString;
 @property (nonatomic, retain) NSString *messageForAllBlocking;
@@ -76,6 +80,7 @@
 - (bool)hasCreationDatetime;
 - (bool)hasEndDatetime;
 - (bool)hasIconEnum;
+- (bool)hasIncidentIndex;
 - (bool)hasIncidentMuid;
 - (bool)hasLongDescriptionString;
 - (bool)hasMessageForAllBlocking;
@@ -88,6 +93,7 @@
 - (unsigned long long)hash;
 - (int)iconEnum;
 - (id)iconEnumAsString:(int)arg1;
+- (unsigned int)incidentIndex;
 - (unsigned long long)incidentMuid;
 - (bool)isEqual:(id)arg1;
 - (id)longDescriptionString;
@@ -104,10 +110,12 @@
 - (void)setHasCreationDatetime:(bool)arg1;
 - (void)setHasEndDatetime:(bool)arg1;
 - (void)setHasIconEnum:(bool)arg1;
+- (void)setHasIncidentIndex:(bool)arg1;
 - (void)setHasIncidentMuid:(bool)arg1;
 - (void)setHasStartDatetime:(bool)arg1;
 - (void)setHasUpdatedDatetime:(bool)arg1;
 - (void)setIconEnum:(int)arg1;
+- (void)setIncidentIndex:(unsigned int)arg1;
 - (void)setIncidentMuid:(unsigned long long)arg1;
 - (void)setLongDescriptionString:(id)arg1;
 - (void)setMessageForAllBlocking:(id)arg1;

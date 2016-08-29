@@ -28,11 +28,12 @@
 - (void)_addRetryCountColumnToTable;
 - (void)_beginLogMessageCacheTransaction;
 - (void)_cleanupLogMessageCacheDatabase;
+- (void)_cleanupPartiallyCreatedLogMessageCacheDBFile;
 - (void)_commitLogMessageCacheTransaction;
 - (void)_createTables;
 - (void)_deleteAllExpiredLogMessages:(double)arg1;
 - (void)_deleteExpiredLogMessageCacheDBFile:(double)arg1;
-- (void)_executeSQL:(id)arg1;
+- (bool)_executeSQL:(id)arg1;
 - (long long)_getNumberOfLogMessagesInCache;
 - (id)_groupIDOfNextPendingLogMessage;
 - (bool)_logMessageCacheFileExists;

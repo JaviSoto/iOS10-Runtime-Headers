@@ -153,7 +153,9 @@
 - (void)setSiriConnectionUsesPeerManagedSync:(bool)arg1;
 - (void)setUsesProxyConnection:(bool)arg1;
 - (bool)siriConnectionUsesPeerManagedSync;
+- (void)startHeartBeat;
 - (void)startWithConnectionInfo:(id)arg1;
+- (void)stopHeartBeat;
 - (void)streamProvider:(id)arg1 receivedError:(id)arg2;
 - (bool)usesProxyConnection;
 

@@ -67,6 +67,7 @@
 - (int)_queue_visibility;
 - (void)_terminateWithRequest:(id)arg1 forWatchdog:(id)arg2;
 - (bool)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id*)arg2;
+- (id)_watchdog:(id)arg1 terminationRequestForViolatedProvision:(id)arg2 error:(id)arg3;
 - (void)_watchdogStarted:(id)arg1;
 - (void)_watchdogStopped:(id)arg1;
 - (id)_workspace;

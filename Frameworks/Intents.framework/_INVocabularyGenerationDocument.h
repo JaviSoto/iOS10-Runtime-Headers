@@ -53,6 +53,6 @@
 - (id)thisGeneration;
 - (id)validity;
 - (id)vocabularyItems;
-- (id)writeToFile:(id)arg1;
+- (id)writeToFile:(id)arg1 createIntermediateDirectories:(bool)arg2;
 
 @end

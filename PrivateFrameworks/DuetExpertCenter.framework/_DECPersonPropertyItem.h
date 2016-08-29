@@ -35,6 +35,7 @@
 - (id)initWithContactIdentifier:(id)arg1 firstName:(id)arg2 lastName:(id)arg3 localizedFullName:(id)arg4 label:(id)arg5 value:(id)arg6 source:(id)arg7 imageData:(id)arg8;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)label;
 - (id)lastName;
 - (id)localizedFullName;

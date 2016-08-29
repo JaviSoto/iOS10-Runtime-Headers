@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)_changeDetailsToDictionary:(id)arg1;
+- (id)_getChangeDetailsIfNecessary:(id)arg1;
 - (id)_makeReaderWithFetchResult:(id)arg1;
 - (void)_registerPhotoLibraryChangeObserverIfNeeded;
 - (void)_unregisterPhotoLibraryChangeObserverIfNeeded;

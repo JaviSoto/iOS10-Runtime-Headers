@@ -10,6 +10,7 @@
     PKDiscoveryLSWatcher * _lsWatcher;
     id  _mcNotificationToken;
     NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_os_activity> * _relatedActivity;
     id /* block */  _report;
     NSObject<OS_dispatch_queue> * _sync;
 }
@@ -24,6 +25,7 @@
 @property (retain) PKDiscoveryLSWatcher *lsWatcher;
 @property (retain) id mcNotificationToken;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (retain) NSObject<OS_os_activity> *relatedActivity;
 @property (copy) id /* block */ report;
 @property (readonly) Class superclass;
 @property (retain) NSObject<OS_dispatch_queue> *sync;
@@ -41,6 +43,7 @@
 - (id)mcNotificationToken;
 - (void)performWithPreviousResults:(id)arg1 forceNotify:(bool)arg2;
 - (id)queue;
+- (id)relatedActivity;
 - (void)removeWatchers;
 - (id /* block */)report;
 - (void)setAnnotationNotifyToken:(int)arg1;
@@ -50,6 +53,7 @@
 - (void)setLsWatcher:(id)arg1;
 - (void)setMcNotificationToken:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setRelatedActivity:(id)arg1;
 - (void)setReport:(id /* block */)arg1;
 - (void)setSync:(id)arg1;
 - (id)sync;

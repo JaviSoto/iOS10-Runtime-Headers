@@ -20,7 +20,6 @@
 
 - (void).cxx_destruct;
 - (void)_disambiguateIfNeeded;
-- (void)_disambiguateIfNeededWithShiftedLocation:(id)arg1;
 - (void)_setEventDate:(id)arg1;
 - (void)confirmLocationTapped:(id)arg1;
 - (id)delegate;

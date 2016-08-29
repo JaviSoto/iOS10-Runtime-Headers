@@ -6,6 +6,7 @@
     NSString * _contentItemID;
     long long  _deviceLibraryPersistentID;
     NSString * _globalPlaylistID;
+    long long  _homeSharingLibraryID;
     NSString * _lyricsID;
     NSString * _radioStationHash;
     long long  _radioStationID;
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSString *contentItemID;
 @property (nonatomic) long long deviceLibraryPersistentID;
 @property (nonatomic, copy) NSString *globalPlaylistID;
+@property (nonatomic) long long homeSharingLibraryID;
 @property (nonatomic, copy) NSString *lyricsID;
 @property (nonatomic, copy) NSString *radioStationHash;
 @property (nonatomic) long long radioStationID;
@@ -45,6 +47,7 @@
 - (id)globalPlaylistID;
 - (bool)hasCommonIdentifierWithIdentifierSet:(id)arg1;
 - (unsigned long long)hash;
+- (long long)homeSharingLibraryID;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
@@ -55,6 +58,7 @@
 - (void)setContentItemID:(id)arg1;
 - (void)setDeviceLibraryPersistentID:(long long)arg1;
 - (void)setGlobalPlaylistID:(id)arg1;
+- (void)setHomeSharingLibraryID:(long long)arg1;
 - (void)setLyricsID:(id)arg1;
 - (void)setRadioStationHash:(id)arg1;
 - (void)setRadioStationID:(long long)arg1;

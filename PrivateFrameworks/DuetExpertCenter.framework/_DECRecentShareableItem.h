@@ -30,6 +30,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)subtitle;
 - (id)thumbnailPath;
 - (id)title;

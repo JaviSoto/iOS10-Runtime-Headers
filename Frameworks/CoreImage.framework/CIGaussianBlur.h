@@ -12,18 +12,10 @@
 
 + (id)customAttributes;
 
-- (id)_CIGaussianBlur11;
-- (id)_CIGaussianBlur15;
-- (id)_CIGaussianBlur19;
-- (id)_CIGaussianBlur3;
-- (id)_CIGaussianBlur7;
-- (id)_CIGaussianReduce2;
-- (id)_CIGaussianReduce4;
 - (bool)_isIdentity;
 - (id)inputImage;
 - (id)inputRadius;
 - (id)outputImage;
-- (id)outputImageV1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputRadius:(id)arg1;
 

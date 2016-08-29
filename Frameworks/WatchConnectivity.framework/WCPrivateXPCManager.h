@@ -26,8 +26,6 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)addActiveGlanceIdentifier:(id)arg1;
-- (void)addActiveNotificationIdentifier:(id)arg1;
 - (id)connection;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)dealloc;
@@ -40,8 +38,6 @@
 - (void)isExtensionPrivileged:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)listenerResumedToken;
 - (int)privateServiceShouldConnectToken;
-- (void)removeActiveGlanceIdentifier:(id)arg1;
-- (void)removeActiveNotificationIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setListenerResumedToken:(int)arg1;
 - (void)setPrivateServiceShouldConnectToken:(int)arg1;

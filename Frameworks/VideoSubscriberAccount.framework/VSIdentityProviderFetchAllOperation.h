@@ -3,22 +3,18 @@
  */
 
 @interface VSIdentityProviderFetchAllOperation : VSAsyncOperation {
-    NSError * _error;
-    NSArray * _identityProviders;
+    VSFailable * _result;
     NSOperationQueue * _subqueue;
 }
 
-@property (nonatomic, copy) NSError *error;
-@property (nonatomic, copy) NSArray *identityProviders;
+@property (nonatomic, retain) VSFailable *result;
 @property (nonatomic, retain) NSOperationQueue *subqueue;
 
 - (void).cxx_destruct;
-- (id)error;
 - (void)executionDidBegin;
-- (id)identityProviders;
 - (id)init;
-- (void)setError:(id)arg1;
-- (void)setIdentityProviders:(id)arg1;
+- (id)result;
+- (void)setResult:(id)arg1;
 - (void)setSubqueue:(id)arg1;
 - (id)subqueue;
 

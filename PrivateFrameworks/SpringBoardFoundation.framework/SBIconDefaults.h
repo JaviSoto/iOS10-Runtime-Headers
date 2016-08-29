@@ -9,7 +9,6 @@
 @property (nonatomic, readonly) NSDictionary *legacyIconState2;
 @property (nonatomic, readonly) long long maxIconListCount;
 @property (nonatomic, readonly) bool shouldDisableLiveIcons;
-@property (nonatomic) bool shouldTransformIconModelOnLanguageChange;
 
 - (void)_bindAndRegisterDefaults;
 - (void)clearLegacyDefaults;

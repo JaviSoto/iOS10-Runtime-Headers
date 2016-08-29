@@ -37,7 +37,6 @@
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (void)removeCall:(id)arg1;
-- (void)setAuthorized:(bool)arg1 forConnectionWithIdentifier:(id)arg2;
 - (void)setCallUUIDToCallMap:(id)arg1;
 - (void)setConnections:(id)arg1;
 - (void)setDelegate:(id)arg1;

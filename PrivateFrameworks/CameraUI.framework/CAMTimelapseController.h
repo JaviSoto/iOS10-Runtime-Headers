@@ -71,7 +71,6 @@
 - (id)_locationController;
 - (id)_motionController;
 - (id)_nebulaDaemonProxyManager;
-- (void)_notifyAGGDForDidStartCapturingWithState:(id)arg1;
 - (void)_notifyAGGDForDidStopCapturingWithState:(id)arg1;
 - (void)_notifyInsufficientDiskSpaceForContinuingCapture;
 - (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(long long)arg1 availableBytes:(long long)arg2;

@@ -5,7 +5,18 @@
 @interface _MSMessageAppExtensionContext : NSExtensionContext <_MSMessageComposeExtensionProtocol> {
     MSConversation * _activeConversation;
     NSMapTable * _conversationsByIdentifier;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _initialFrameOfHostView;
     unsigned long long  _presentationStyle;
+    struct __CFRunLoopObserver { } * _principalObjectCreationObserver;
 }
 
 @property (nonatomic, retain) MSConversation *activeConversation;
@@ -13,7 +24,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialFrameOfHostView;
 @property (nonatomic) unsigned long long presentationStyle;
+@property (nonatomic, readonly) struct __CFRunLoopObserver { }*principalObjectCreationObserver;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -26,20 +39,27 @@
 - (void)_didCancelSendingMessage:(id)arg1 conversationState:(id)arg2;
 - (void)_didReceiveMessage:(id)arg1 conversationState:(id)arg2;
 - (void)_didStartSendingMessage:(id)arg1 conversationState:(id)arg2;
+- (void)_handlePrincipalObjectCreated;
 - (void)_hostDidBeginDeferredTeardown;
+- (void)_installPrincipalObjectObserver;
 - (void)_presentationDidChangeToPresentationState:(id)arg1;
 - (void)_presentationWillChangeToPresentationState:(id)arg1;
 - (void)_remoteViewDidBecomeReadyForDisplay;
 - (void)_requestSnapshotWithCompletion:(id /* block */)arg1;
 - (void)_resignActive;
+- (void)_uninstallPrincipalObjectObserverIfNeeded;
 - (id)activeConversation;
+- (void)beginDisablingUserInteraction;
 - (id)conversationsByIdentifier;
 - (void)dealloc;
 - (void)dismiss;
 - (void)dismissToKeyboard:(bool)arg1;
+- (void)endDisablingUserInteraction;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameOfHostView;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned long long)presentationStyle;
+- (struct __CFRunLoopObserver { }*)principalObjectCreationObserver;
 - (id)remoteProxy;
 - (void)requestPresentationStyle:(unsigned long long)arg1;
 - (void)requestPresentationStyleExpanded:(bool)arg1;

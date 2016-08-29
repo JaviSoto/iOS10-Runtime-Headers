@@ -19,6 +19,7 @@
 - (id)displayImagesForView:(id)arg1 fromLayout:(id)arg2 imageFlags:(id)arg3;
 - (void)displayView:(id)arg1 fromLayout:(id)arg2;
 - (void)displayView:(id)arg1 imageWidth:(double)arg2 fromLayout:(id)arg3;
+- (void)drawCachedImage:(id)arg1 alpha:(double)arg2 inContext:(struct CGContext { }*)arg3;
 - (id)init;
 - (id)uniqueLayoutsFromInputModes:(id)arg1;
 - (void)updateCacheForInputModes:(id)arg1;

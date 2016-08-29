@@ -10,7 +10,9 @@
 
 - (unsigned long long)calculateTargetFaceCount;
 - (unsigned long long)calculateTargetFaceCountFromDataSource:(id)arg1 withMaxUnverifiedClusters:(unsigned long long)arg2;
+- (unsigned long long)calculateTargetFaceCountFromDataSource:(id)arg1 withMaxUnverifiedClusters:(unsigned long long)arg2 verifiedPeopleCount:(unsigned long long)arg3;
 - (id)fetchUnverifiedBySortedByFaceCount;
+- (unsigned long long)fetchVerifiedPeopleCount;
 - (unsigned long long)persistentTargetFaceCount;
 - (void)setPersistentTargetFaceCount:(unsigned long long)arg1;
 - (void)updatePersistentTargetFaceCount;

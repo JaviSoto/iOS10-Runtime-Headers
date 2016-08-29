@@ -3,6 +3,7 @@
  */
 
 @interface PXTitleSubtitleCALayerPromise : PXCALayerPromise <PXMutableTitleSubtitleCALayerPromise> {
+    double  __textScaleFactor;
     bool  _diagnosticsEnabled;
     NSArray * _diagnosticsRenderedLines;
     struct CGRect { 
@@ -22,6 +23,7 @@
     long long  _typesettingMode;
 }
 
+@property (nonatomic, readonly) double _textScaleFactor;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic) double contentsScale;
 @property (readonly, copy) NSString *debugDescription;
@@ -40,6 +42,9 @@
 
 - (void).cxx_destruct;
 - (id)_attributedStringForLabelWithText:(id)arg1 spec:(id)arg2;
+- (id)_linesToRenderWithContext:(struct CGContext { }*)arg1;
+- (double)_textScaleFactor;
+- (id)createCustomLayer;
 - (bool)diagnosticsEnabled;
 - (id)diagnosticsRenderedLines;
 - (void)drawLayerContentInContext:(struct CGContext { }*)arg1;

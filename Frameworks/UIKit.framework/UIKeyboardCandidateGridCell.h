@@ -19,6 +19,7 @@
     unsigned long long  _edges;
     bool  _emphasizedAppearance;
     double  _minimumWidth;
+    bool  _needsUpdateLabels;
     double  _rightPadding;
     double  _rowHeight;
     bool  _secondaryCandidateAppearance;
@@ -64,6 +65,7 @@
 @property (nonatomic) unsigned long long edges;
 @property (nonatomic) bool emphasizedAppearance;
 @property (nonatomic) double minimumWidth;
+@property (nonatomic) bool needsUpdateLabels;
 @property (nonatomic) double rightPadding;
 @property (nonatomic) double rowHeight;
 @property (nonatomic) bool secondaryCandidateAppearance;
@@ -103,7 +105,9 @@
 - (unsigned long long)edges;
 - (bool)emphasizedAppearance;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (double)minimumWidth;
+- (bool)needsUpdateLabels;
 - (void)prepareForReuse;
 - (double)rightPadding;
 - (double)rowHeight;
@@ -123,6 +127,7 @@
 - (void)setEmphasizedAppearance:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setMinimumWidth:(double)arg1;
+- (void)setNeedsUpdateLabels:(bool)arg1;
 - (void)setRightPadding:(double)arg1;
 - (void)setRowHeight:(double)arg1;
 - (void)setSecondaryCandidateAppearance:(bool)arg1;

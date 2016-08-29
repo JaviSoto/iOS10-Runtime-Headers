@@ -50,6 +50,7 @@
 - (void)setToken:(int)arg1;
 - (void)setVoLTECallingEnabled:(bool)arg1;
 - (void)setWiFiCallingEnabled:(bool)arg1;
+- (void)setWiFiCallingRoamingEnabled:(bool)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)state;
 - (id)stateSemaphore;

@@ -26,6 +26,7 @@
 @property (readonly) unsigned int countTerminated;
 @property (readonly) unsigned long long firstTimestampIndex;
 @property (readonly) bool isThirdParty;
+@property (readonly) bool isTranslocated;
 @property (readonly) bool isUnresponsive;
 @property (readonly) unsigned long long lastTimestampIndex;
 @property (readonly) unsigned long long mainBinaryOffset;
@@ -72,6 +73,7 @@
 - (id)initWithAggregator:(id)arg1 andSampleTask:(id)arg2 atTimestampIndex:(unsigned long long)arg3;
 - (bool)isEqual:(id)arg1;
 - (bool)isThirdParty;
+- (bool)isTranslocated;
 - (bool)isUnresponsive;
 - (unsigned long long)lastTimestampIndex;
 - (unsigned long long)mainBinaryOffset;

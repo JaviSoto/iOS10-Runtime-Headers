@@ -3,6 +3,7 @@
  */
 
 @interface TPArchivedViewState : TSPObject {
+    TSKAnnotationAuthor * _authorFilter;
     NSString * _authorFilterName;
     TSWPSelection * _bodySelection;
     bool  _changeTrackingPaused;

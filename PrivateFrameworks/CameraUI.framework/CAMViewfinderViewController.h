@@ -24,6 +24,7 @@
     long long  __desiredHDRMode;
     long long  __desiredLivePhotoMode;
     long long  __desiredTorchMode;
+    CAMDisabledModeOverlayView * __disabledModeOverlayView;
     UIAlertController * __diskSpaceAlertController;
     CAMElapsedTimeView * __elapsedTimeView;
     CAMFilterButton * __filterButton;
@@ -31,7 +32,7 @@
     long long  __flashAndHDRConflictingControl;
     CAMFlashBadge * __flashBadge;
     CAMFlashButton * __flashButton;
-    UIAlertView * __flashOrTorchUnavailableAlertView;
+    UIAlertController * __flashOrTorchUnavailableAlertController;
     bool  __flashingLivePhotoBadge;
     bool  __flashingLivePhotoBadgeAfterFilterTransition;
     CAMFlipButton * __flipButton;
@@ -49,6 +50,7 @@
     CAMLivePhotoBadge * __livePhotoBadge;
     CAMLocationController * __locationController;
     CAMModeDial * __modeDial;
+    bool  __modeDisabledForMultitasking;
     CAMMotionController * __motionController;
     UISwipeGestureRecognizer * __nextModeGestureRecognizer;
     unsigned long long  __numFilterSelectionsBeforeCapture;
@@ -60,9 +62,9 @@
     long long  __photoModeEffectFilterType;
     CAMPhysicalCaptureRecognizer * __physicalCaptureRecognizer;
     CAMPowerController * __powerController;
+    bool  __preventingAdditionalCaptures;
     CAMPreviewViewController * __previewViewController;
     <UIViewControllerPreviewing> * __previewingItem;
-    long long  __previousLayoutStyle;
     UISwipeGestureRecognizer * __previousModeGestureRecognizer;
     unsigned long long  __remainingCaptureTimerTicks;
     CAMRemoteShutterController * __remoteShutterController;
@@ -73,6 +75,7 @@
     long long  __resolvedTimerDuration;
     long long  __resolvedTorchMode;
     UIButton * __reviewButton;
+    bool  __shouldIgnoreZoomFactorKVOForRamping;
     CUShutterButton * __shutterButton;
     CAMShutterIndicatorView * __shutterIndicatorView;
     long long  __squareModeEffectFilterType;
@@ -101,6 +104,7 @@
         double tx; 
         double ty; 
     }  _customPreviewViewTransform;
+    bool  _disablingAdditionalCaptures;
     bool  _disablingMultipleCaptureFeatures;
     long long  _emulationMode;
     long long  _imagePickerVideoConfiguration;
@@ -137,6 +141,7 @@
 @property (setter=_setDesiredHDRMode:, nonatomic) long long _desiredHDRMode;
 @property (setter=_setDesiredLivePhotoMode:, nonatomic) long long _desiredLivePhotoMode;
 @property (setter=_setDesiredTorchMode:, nonatomic) long long _desiredTorchMode;
+@property (setter=_setDisabledModeOverlayView:, nonatomic, retain) CAMDisabledModeOverlayView *_disabledModeOverlayView;
 @property (setter=_setDiskSpaceAlertController:, nonatomic, retain) UIAlertController *_diskSpaceAlertController;
 @property (nonatomic, readonly) CAMElapsedTimeView *_elapsedTimeView;
 @property (nonatomic, readonly) CAMFilterButton *_filterButton;
@@ -144,7 +149,7 @@
 @property (setter=_setFlashAndHDRConflictingControl:, nonatomic) long long _flashAndHDRConflictingControl;
 @property (nonatomic, readonly) CAMFlashBadge *_flashBadge;
 @property (nonatomic, readonly) CAMFlashButton *_flashButton;
-@property (nonatomic, readonly) UIAlertView *_flashOrTorchUnavailableAlertView;
+@property (setter=_setFlashOrTorchUnavailableAlertController:, nonatomic, retain) UIAlertController *_flashOrTorchUnavailableAlertController;
 @property (getter=_isFlashingLivePhotoBadge, setter=_setFlashingLivePhotoBadge:, nonatomic) bool _flashingLivePhotoBadge;
 @property (getter=_isFlashingLivePhotoBadgeAfterFilterTransition, setter=_setFlashingLivePhotoBadgeAfterFilterTransition:, nonatomic) bool _flashingLivePhotoBadgeAfterFilterTransition;
 @property (nonatomic, readonly) CAMFlipButton *_flipButton;
@@ -162,6 +167,7 @@
 @property (nonatomic, readonly) CAMLivePhotoBadge *_livePhotoBadge;
 @property (nonatomic, readonly) CAMLocationController *_locationController;
 @property (nonatomic, readonly) CAMModeDial *_modeDial;
+@property (getter=_isModeDisabledForMultitasking, setter=_setModeDisabledForMultitasking:, nonatomic) bool _modeDisabledForMultitasking;
 @property (nonatomic, readonly) CAMMotionController *_motionController;
 @property (nonatomic, readonly) UISwipeGestureRecognizer *_nextModeGestureRecognizer;
 @property (setter=_setNumFilterSelectionsBeforeCapture:, nonatomic) unsigned long long _numFilterSelectionsBeforeCapture;
@@ -173,9 +179,9 @@
 @property (setter=_setPhotoModeEffectFilterType:, nonatomic) long long _photoModeEffectFilterType;
 @property (nonatomic, retain) CAMPhysicalCaptureRecognizer *_physicalCaptureRecognizer;
 @property (nonatomic, readonly) CAMPowerController *_powerController;
+@property (getter=_isPreventingAdditionalCaptures, setter=_setPreventingAdditionalCaptures:, nonatomic) bool _preventingAdditionalCaptures;
 @property (nonatomic, readonly) CAMPreviewViewController *_previewViewController;
 @property (setter=_setPreviewingItem:, nonatomic, retain) <UIViewControllerPreviewing> *_previewingItem;
-@property (setter=_setPreviousLayoutStyle:, nonatomic) long long _previousLayoutStyle;
 @property (nonatomic, readonly) UISwipeGestureRecognizer *_previousModeGestureRecognizer;
 @property (setter=_setRemainingCaptureTimerTicks:, nonatomic) unsigned long long _remainingCaptureTimerTicks;
 @property (nonatomic, readonly) CAMRemoteShutterController *_remoteShutterController;
@@ -187,6 +193,7 @@
 @property (setter=_setResolvedTorchMode:, nonatomic) long long _resolvedTorchMode;
 @property (nonatomic, retain) UIButton *_reviewButton;
 @property (nonatomic, readonly) bool _shouldCaptureWithTimer;
+@property (setter=_setShouldIgnoreZoomFactorKVOForRamping:, nonatomic) bool _shouldIgnoreZoomFactorKVOForRamping;
 @property (nonatomic, readonly) CUShutterButton *_shutterButton;
 @property (nonatomic, readonly) CAMShutterIndicatorView *_shutterIndicatorView;
 @property (setter=_setSquareModeEffectFilterType:, nonatomic) long long _squareModeEffectFilterType;
@@ -214,6 +221,7 @@
 @property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } customPreviewViewTransform;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isDisablingAdditionalCaptures, nonatomic) bool disablingAdditionalCaptures;
 @property (getter=isDisablingMultipleCaptureFeatures, nonatomic) bool disablingMultipleCaptureFeatures;
 @property (nonatomic, readonly) long long emulationMode;
 @property (nonatomic) long long flashMode;
@@ -247,8 +255,6 @@
 - (void).cxx_destruct;
 - (id)_HDRBadge;
 - (id)_HDRButton;
-- (id)_aggregateDictionaryIdentifierForOrigin:(long long)arg1;
-- (id)_aggregateDictionaryKeyForCameraMode:(long long)arg1 device:(long long)arg2 origin:(long long)arg3;
 - (struct __CFString { }*)_aggregateDictionaryKeyForPhysicalButtonType:(long long)arg1;
 - (bool)_allowsPhysicalCaptureInteraction;
 - (void)_applyAutorotationCorrectingTransformForOrientation:(long long)arg1;
@@ -275,7 +281,7 @@
 - (bool)_captureStillImageWithRequest:(id)arg1 error:(id*)arg2;
 - (bool)_capturingFromPhysicalButton;
 - (void)_changeToGraphConfiguration:(id)arg1 fromGraphConfiguration:(id)arg2;
-- (void)_changeToZoomFactor:(double)arg1 shouldAnimate:(bool)arg2;
+- (void)_changeToZoomFactor:(double)arg1 rampDuration:(double)arg2 shouldAnimate:(bool)arg3;
 - (void)_closeViewfinderForChangeFromMode:(long long)arg1 toMode:(long long)arg2 fromDevice:(long long)arg3 toDevice:(long long)arg4;
 - (id)_closedViewfinderController;
 - (void)_collapseExpandedButtonsAnimated:(bool)arg1;
@@ -318,6 +324,7 @@
 - (void)_createZoomPinchGestureRecognizerIfNecessary;
 - (void)_createZoomSliderIfNecessary;
 - (id)_currentBurstTimer;
+- (long long)_currentCaptureRequestOrigin;
 - (long long)_currentDevice;
 - (id)_currentGraphConfiguration;
 - (double)_currentMaximumZoomFactor;
@@ -331,7 +338,7 @@
 - (void)_destroyGridViewIfNecessary;
 - (long long)_deviceForModeChange;
 - (void)_didChangeToGraphConfiguration:(id)arg1 forDesiredConfiguration:(id)arg2 requestID:(int)arg3;
-- (void)_didDismissFlashOrTorchUnavailableAlertViewWithButtonIndex:(long long)arg1;
+- (id)_disabledModeOverlayView;
 - (id)_diskSpaceAlertController;
 - (void)_dismissDiskSpaceAlertViewAnimated:(bool)arg1;
 - (void)_dismissFlashOrTorchUnavailableAlertViewAnimated:(bool)arg1;
@@ -370,7 +377,7 @@
 - (id)_flashButton;
 - (void)_flashButtonDidChangeFlashMode:(id)arg1;
 - (void)_flashButtonDidChangeTorchAvailability:(id)arg1;
-- (id)_flashOrTorchUnavailableAlertView;
+- (id)_flashOrTorchUnavailableAlertController;
 - (id)_flipButton;
 - (id)_focusAndExposureLockBadge;
 - (long long)_framerateIndicatorStyleForGraphConfiguration:(id)arg1;
@@ -411,6 +418,7 @@
 - (void)_indicateCaptureTimerProgressUsingTorch;
 - (long long)_internalAutorotationStyle;
 - (id)_irisButton;
+- (bool)_isApplicationFullscreen;
 - (bool)_isBurstEndSoundPlaying;
 - (bool)_isCapturingFromTimer;
 - (bool)_isCapturingTimelapse;
@@ -419,10 +427,13 @@
 - (bool)_isFlashingLivePhotoBadgeAfterFilterTransition;
 - (bool)_isHDRSupportedForGraphConfiguration:(id)arg1;
 - (bool)_isLivePhotoSupportedForGraphConfiguration:(id)arg1;
+- (bool)_isModeDisabledForMultitasking;
 - (bool)_isOpeningViewfinder;
 - (bool)_isOutOfDiskSpace;
 - (bool)_isPerformingFilterTransition;
 - (bool)_isPerformingTopBarOrientationChange;
+- (bool)_isPinchingForZoom;
+- (bool)_isPreventingAdditionalCaptures;
 - (bool)_isShowingBurstIndicatorView;
 - (bool)_isShowingCameraRoll;
 - (bool)_isShowingFilterGrid;
@@ -460,7 +471,6 @@
 - (void)_previewDidStartRunning:(id)arg1;
 - (id)_previewViewController;
 - (id)_previewingItem;
-- (long long)_previousLayoutStyle;
 - (id)_previousModeGestureRecognizer;
 - (unsigned long long)_previousModeSwipeDirectionForLayoutStyle:(long long)arg1;
 - (void)_readUserPreferencesAndHandleChanges;
@@ -492,22 +502,26 @@
 - (void)_setDesiredHDRMode:(long long)arg1;
 - (void)_setDesiredLivePhotoMode:(long long)arg1;
 - (void)_setDesiredTorchMode:(long long)arg1;
+- (void)_setDisabledModeOverlayView:(id)arg1;
 - (void)_setDiskSpaceAlertController:(id)arg1;
 - (void)_setFlashAndHDRConflictingControl:(long long)arg1;
+- (void)_setFlashOrTorchUnavailableAlertController:(id)arg1;
 - (void)_setFlashingLivePhotoBadge:(bool)arg1;
 - (void)_setFlashingLivePhotoBadgeAfterFilterTransition:(bool)arg1;
 - (void)_setInternalAutorotationStyle:(long long)arg1;
 - (void)_setLastConfigurationRequestID:(int)arg1;
 - (void)_setLastTimerIndicatorFaceUpdateDate:(id)arg1;
 - (void)_setLayoutStyle:(long long)arg1;
+- (void)_setModeDisabledForMultitasking:(bool)arg1;
+- (void)_setModeDisabledForMultitasking:(bool)arg1 animateUIChanges:(bool)arg2;
 - (void)_setNumFilterSelectionsBeforeCapture:(unsigned long long)arg1;
 - (void)_setOpeningViewfinder:(bool)arg1;
 - (void)_setOutOfDiskSpace:(bool)arg1;
 - (void)_setPerformingFilterTransition:(bool)arg1;
 - (void)_setPerformingTopBarOrientationChange:(bool)arg1;
 - (void)_setPhotoModeEffectFilterType:(long long)arg1;
+- (void)_setPreventingAdditionalCaptures:(bool)arg1;
 - (void)_setPreviewingItem:(id)arg1;
-- (void)_setPreviousLayoutStyle:(long long)arg1;
 - (void)_setRemainingCaptureTimerTicks:(unsigned long long)arg1;
 - (void)_setResetTimerDurationAfterDelayedCapture:(bool)arg1;
 - (void)_setResolvedFlashMode:(long long)arg1;
@@ -515,6 +529,7 @@
 - (void)_setResolvedLivePhotoMode:(long long)arg1;
 - (void)_setResolvedTimerDuration:(long long)arg1;
 - (void)_setResolvedTorchMode:(long long)arg1;
+- (void)_setShouldIgnoreZoomFactorKVOForRamping:(bool)arg1;
 - (void)_setSquareModeEffectFilterType:(long long)arg1;
 - (void)_setSwipeToModeSwitchEnabled:(bool)arg1;
 - (void)_setSynchronizedCaptureTimerDelegate:(id)arg1;
@@ -524,6 +539,7 @@
 - (bool)_shouldApplyTopBarRotationForGraphConfiguration:(id)arg1;
 - (bool)_shouldCaptureWithTimer;
 - (bool)_shouldCreateGridViewForMode:(long long)arg1;
+- (bool)_shouldDisableModeForMultitaskingAndGraphConfiguration:(id)arg1;
 - (bool)_shouldEnableFilterButton;
 - (bool)_shouldEnableFlashButton;
 - (bool)_shouldEnableFlipButton;
@@ -559,9 +575,11 @@
 - (bool)_shouldHideTimerIndicatorViewForGraphConfiguration:(id)arg1;
 - (bool)_shouldHideTopBarForGraphConfiguration:(id)arg1;
 - (bool)_shouldHideZoomSliderForGraphConfiguration:(id)arg1;
+- (bool)_shouldIgnoreZoomFactorKVOForRamping;
 - (bool)_shouldPauseCapturingStillImagePairedVideoForMode:(long long)arg1 isShowingCameraRoll:(bool)arg2;
 - (bool)_shouldResetZoomForChangeFromMode:(long long)arg1 toMode:(long long)arg2;
 - (bool)_shouldRotateTopBarForGraphConfiguration:(id)arg1;
+- (bool)_shouldShowShutterButtonDisabled;
 - (bool)_shouldSuspendCameraRollAudioHandlingForCapture;
 - (bool)_shouldUseBurstForCaptureTimer;
 - (void)_showBurstIndicatorView;
@@ -617,6 +635,7 @@
 - (void)_updateCaptureAggregateDictionariesForRequest:(id)arg1 response:(id)arg2;
 - (void)_updateCaptureTimerIndicatorWithFaceResult:(id)arg1;
 - (void)_updateDesiredPhysicalButtonsForDominantButton:(long long)arg1;
+- (void)_updateDisabledModeUIAnimated:(bool)arg1;
 - (void)_updateDiskSpaceAlertViewVisibilityAnimated:(bool)arg1;
 - (void)_updateEffectsRendererForMode:(long long)arg1 device:(long long)arg2 forceStateChange:(bool)arg3;
 - (void)_updateEnabledControlsWithReason:(id)arg1;
@@ -641,7 +660,7 @@
 - (void)_updatePairedVideoCaptureOnControllerForMode:(long long)arg1 isShowingCameraRoll:(bool)arg2;
 - (void)_updatePanoramaViewVisibilityForViewfinderTransition;
 - (void)_updatePausingOfCameraRollAudioHandlingForCapture;
-- (void)_updatePhysicalButtonCapturedEnabledResigningActive:(bool)arg1;
+- (void)_updatePhysicalButtonCapturedEnabledResigningActiveOrDisappearing:(bool)arg1;
 - (void)_updatePropertiesForCaptureConfiguration:(id)arg1 conflictingControlConfiguration:(id)arg2;
 - (void)_updateSphereAggregateDictionariesForResponse:(id)arg1;
 - (void)_updateStillImageCaptureTypeAggregateDictionariesForRequest:(id)arg1 response:(id)arg2;
@@ -665,7 +684,6 @@
 - (id)_zoomSlider;
 - (void)_zoomSliderValueDidChange:(id)arg1 forEvent:(id)arg2;
 - (double)_zoomSliderValueForZoomFactor:(double)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)applyCaptureConfiguration:(id)arg1 conflictingControlConfiguration:(id)arg2;
 - (bool)automaticallyAdjustsApplicationIdleTimer;
 - (bool)automaticallyAdjustsAutorotationStyle;
@@ -695,6 +713,7 @@
 - (void)cameraRollControllerRevealWillBegin:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cameraRollControllerSourceAssetRect:(id)arg1;
 - (void)cameraRollControllerWillPresentPreviewController:(id)arg1;
+- (void)captureController:(id)arg1 didChangeRampingVideoZoom:(bool)arg2;
 - (void)captureController:(id)arg1 didChangeToGraphConfiguration:(id)arg2 forDesiredConfiguration:(id)arg3 requestID:(int)arg4;
 - (void)captureController:(id)arg1 didOutputCaptureAvailability:(bool)arg2;
 - (void)captureController:(id)arg1 didOutputConfigurationAvailability:(bool)arg2;
@@ -740,6 +759,7 @@
 - (id)initWithCaptureController:(id)arg1 captureConfiguration:(id)arg2 conflictingControlConfiguration:(id)arg3 locationController:(id)arg4 motionController:(id)arg5 timelapseController:(id)arg6 keepAliveController:(id)arg7 remoteShutterController:(id)arg8 powerController:(id)arg9 cameraRollController:(id)arg10 usingEmulationMode:(long long)arg11 initialLayoutStyle:(long long)arg12;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isDisablingAdditionalCaptures;
 - (bool)isDisablingMultipleCaptureFeatures;
 - (bool)isEmulatingImagePicker;
 - (bool)isPerformingReviewUsingOverlay;
@@ -786,6 +806,7 @@
 - (void)setAvailableCaptureModes:(id)arg1;
 - (void)setCustomOverlayView:(id)arg1;
 - (void)setCustomPreviewViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setDisablingAdditionalCaptures:(bool)arg1;
 - (void)setDisablingMultipleCaptureFeatures:(bool)arg1;
 - (void)setFlashMode:(long long)arg1;
 - (void)setHDRMode:(long long)arg1;
@@ -815,6 +836,7 @@
 - (bool)shouldHideTopBar;
 - (bool)startRecording;
 - (void)startShowingLivePhotoIndicator;
+- (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)stillImageRequestDidCompleteStillImageCapture:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 - (void)stillImageRequestDidCompleteStillImageLocalPersistence:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 - (void)stillImageRequestDidCompleteStillImageRemotePersistence:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
@@ -828,7 +850,7 @@
 - (double)timeIntervalForDuration:(long long)arg1;
 - (void)timelapseController:(id)arg1 generatedPlaceholderResult:(id)arg2 withThumbnailImage:(id)arg3 forAssetUUID:(id)arg4 inCaptureSession:(unsigned short)arg5;
 - (void)timelapseController:(id)arg1 persistedPlaceholderResult:(id)arg2 error:(id)arg3;
-- (void)timelapseControllerStarted:(id)arg1;
+- (void)timelapseController:(id)arg1 startedWithCaptureOrientation:(long long)arg2;
 - (void)timelapseControllerStopped:(id)arg1;
 - (long long)timerDuration;
 - (long long)torchMode;

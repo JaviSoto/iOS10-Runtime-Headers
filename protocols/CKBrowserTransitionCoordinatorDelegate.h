@@ -7,12 +7,17 @@
 
 - (void)browserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1 browserWillBecomeInactive:(UIViewController<CKBrowserViewControllerProtocol> *)arg2;
 - (void)browserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1 currentConsumerDidChange:(long long)arg2;
+- (void)browserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1 didTransitionFromOrientation:(long long)arg2 toOrientation:(long long)arg3;
 - (void)browserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1 expandedStateDidChange:(bool)arg2 withReason:(long long)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1 preferredBoundsForBrowser:(UIViewController<CKBrowserViewControllerProtocol> *)arg2;
+- (void)browserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1 wantsToSwitchToPlugin:(IMBalloonPlugin *)arg2;
 - (void)browserTransitionCoordinatorDidCollapseOrDismiss:(CKBrowserTransitionCoordinator *)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorDidTransitionOrPresentToFullscreen:(CKBrowserTransitionCoordinator *)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorWantsPresentationOfAppStore:(CKBrowserTransitionCoordinator *)arg1;
 - (void)browserTransitionCoordinatorWillCollapseOrDismiss:(CKBrowserTransitionCoordinator *)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorWillTransitionOrPresentToFullscreen:(CKBrowserTransitionCoordinator *)arg1 withReason:(long long)arg2;
-- (UIView *)entryViewSnapshotForBrowserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1;
+- (void)reinsertSwitcherFooterViewForBrowserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1;
+- (CKBrowserSwitcherFooterView *)switcherFooterViewForBrowserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1;
+- (CKMessageEntryView *)transcriptEntryViewForBrowserTransitionCoordinator:(CKBrowserTransitionCoordinator *)arg1;
 
 @end

@@ -13,6 +13,7 @@
     bool  _mute;
     ETMessage * _parentMessage;
     bool  _renderingOffscreen;
+    bool  _renderingOffscreenOpaque;
     double  _sendTime;
     double  _startDelay;
     bool  _supportsPlaybackTimeOffset;
@@ -32,6 +33,7 @@
 @property (nonatomic) bool mute;
 @property (nonatomic) ETMessage *parentMessage;
 @property (getter=isRenderingOffscreen, nonatomic) bool renderingOffscreen;
+@property (getter=isRenderingOffscreenOpaque, nonatomic) bool renderingOffscreenOpaque;
 @property (nonatomic) double sendTime;
 @property (nonatomic, readonly) bool shouldLoopDuringPlayback;
 @property (nonatomic) double startDelay;
@@ -62,6 +64,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isAnimated;
 - (bool)isRenderingOffscreen;
+- (bool)isRenderingOffscreenOpaque;
 - (double)messageDuration;
 - (unsigned short)messageType;
 - (id)messageTypeAsString;
@@ -82,6 +85,7 @@
 - (void)setMute:(bool)arg1;
 - (void)setParentMessage:(id)arg1;
 - (void)setRenderingOffscreen:(bool)arg1;
+- (void)setRenderingOffscreenOpaque:(bool)arg1;
 - (void)setSendTime:(double)arg1;
 - (void)setStartDelay:(double)arg1;
 - (void)setSupportsPlaybackTimeOffset:(bool)arg1;

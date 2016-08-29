@@ -5,6 +5,7 @@
 @interface GEOPDRecentRouteInfo : PBCodable <NSCopying> {
     NSData * _routeId;
     NSData * _sessionState;
+    PBUnknownFields * _unknownFields;
     NSData * _zilchPoints;
 }
 
@@ -13,6 +14,7 @@
 @property (nonatomic, readonly) bool hasZilchPoints;
 @property (nonatomic, retain) NSData *routeId;
 @property (nonatomic, retain) NSData *sessionState;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSData *zilchPoints;
 
 - (void)copyTo:(id)arg1;
@@ -32,6 +34,7 @@
 - (void)setRouteId:(id)arg1;
 - (void)setSessionState:(id)arg1;
 - (void)setZilchPoints:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 - (id)zilchPoints;
 

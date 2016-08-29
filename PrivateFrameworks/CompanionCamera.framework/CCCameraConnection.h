@@ -28,13 +28,17 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_burstSupport;
 - (void)_checkin;
 - (int)_currentOrientation;
 - (int)_flashMode;
+- (int)_flashSupport;
 - (void)_handleInterruption;
 - (void)_handleInvalidation;
 - (int)_hdrMode;
+- (int)_hdrSupport;
 - (int)_irisMode;
+- (int)_irisSupport;
 - (void)_performPreviewStateTransitionsIfNeeded;
 - (bool)_shouldReportEvent;
 - (double)_zoomAmount;

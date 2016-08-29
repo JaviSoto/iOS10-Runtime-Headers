@@ -13,6 +13,8 @@
     UILabel * _manualSignInTitleLabel;
     UILabel * _messageLabel;
     UILabel * _messageTitleLabel;
+    UILabel * _noticeLabel;
+    UIScrollView * _scrollView;
     UIBarButtonItem * _signInButtonItem;
     VSAutoAuthenticationViewModel * _viewModel;
 }
@@ -30,7 +32,9 @@
 @property (nonatomic, retain) UILabel *manualSignInTitleLabel;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageTitleLabel;
+@property (nonatomic, retain) UILabel *noticeLabel;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredLogoSize;
+@property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIBarButtonItem *signInButtonItem;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VSAutoAuthenticationViewModel *viewModel;
@@ -60,8 +64,10 @@
 - (id)manualSignInTitleLabel;
 - (id)messageLabel;
 - (id)messageTitleLabel;
+- (id)noticeLabel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (struct CGSize { double x1; double x2; })preferredLogoSize;
+- (id)scrollView;
 - (void)setAccountNameLabel:(id)arg1;
 - (void)setCancelButtonItem:(id)arg1;
 - (void)setCancellationAllowed:(bool)arg1;
@@ -72,11 +78,14 @@
 - (void)setManualSignInTitleLabel:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
 - (void)setMessageTitleLabel:(id)arg1;
+- (void)setNoticeLabel:(id)arg1;
+- (void)setScrollView:(id)arg1;
 - (void)setSignInButtonItem:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)signInButtonItem;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)viewModel;
 - (void)viewWillAppear:(bool)arg1;

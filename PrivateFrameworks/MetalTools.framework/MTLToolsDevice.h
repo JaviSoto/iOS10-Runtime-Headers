@@ -86,6 +86,7 @@
 @property (readonly) unsigned long long minConstantBufferAlignmentBytes;
 @property (readonly) NSString *name;
 @property (nonatomic, readonly) MTLToolsPointerArray *pipelineStates;
+@property (readonly) unsigned long long recommendedMaxWorkingSetSize;
 @property (nonatomic, readonly) MTLToolsPointerArray *samplers;
 @property bool shaderDebugInfoCaching;
 @property (readonly) unsigned long long sharedMemorySize;
@@ -188,6 +189,7 @@
 - (id)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newComputePipelineStateWithImageFilterFunctionsSPI:(id)arg1 imageFilterFunctionInfo:(const struct { bool x1; unsigned long long x2; struct { /* ? */ } *x3; }*)arg2 error:(id*)arg3;
 - (id)newDefaultLibrary;
+- (id)newDefaultLibraryWithBundle:(id)arg1 error:(id*)arg2;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
 - (id)newFence;
 - (id)newFunctionWithGLIR:(void*)arg1 functionType:(unsigned long long)arg2;
@@ -209,6 +211,7 @@
 - (struct { unsigned int x1; unsigned int x2; })pipelineCacheStats;
 - (id)pipelineStates;
 - (id)productName;
+- (unsigned long long)recommendedMaxWorkingSetSize;
 - (id)samplers;
 - (void)setMetalAssertionsEnabled:(bool)arg1;
 - (void)setShaderDebugInfoCaching:(bool)arg1;

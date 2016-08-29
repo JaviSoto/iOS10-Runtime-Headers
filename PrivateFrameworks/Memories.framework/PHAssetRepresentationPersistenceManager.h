@@ -61,6 +61,7 @@
 - (void)cancelAllDownloads;
 - (void)cancelDownloadOfAssetRepresentation:(id)arg1;
 - (unsigned long long)cellularAuthorization;
+- (void)clearStaticCaches;
 - (void)dealloc;
 - (id)deletedLocalIdentifiers;
 - (void)downloadOperation:(id)arg1 didProgess:(double)arg2;

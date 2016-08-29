@@ -25,8 +25,10 @@
 - (void).cxx_destruct;
 - (void)_createHighlightFilterIfNecessary;
 - (double)_labelHeightForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_sharedInit;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithPaymentButtonType:(long long)arg1 paymentButtonStyle:(long long)arg2;

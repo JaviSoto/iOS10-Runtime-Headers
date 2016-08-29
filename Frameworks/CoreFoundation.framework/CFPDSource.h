@@ -8,10 +8,12 @@
     CFPrefsDaemon * _cfprefsd;
     bool  _checkedForNonPrefsPlist;
     bool  _dirty;
+    bool  _disableBackup;
     struct __CFString { } * _domain;
     short  _generationShmemIndex;
     bool  _handlingRequest;
     bool  _hasDrainedPendingChangesSinceLastReplyToOwner;
+    bool  _hasPreviouslyBeenUnableToDetermineSandboxAccess;
     NSObject<OS_dispatch_group> * _inProgressWriteGroup;
     unsigned int  _lastEgid;
     unsigned int  _lastEuid;
@@ -55,7 +57,7 @@
 - (struct __CFString { }*)domain;
 - (void)drainPendingChanges;
 - (void)endHandlingRequest;
-- (void)enqueueNewKey:(id)arg1 value:(id)arg2 size:(unsigned long long)arg3 encoding:(int)arg4;
+- (bool)enqueueNewKey:(id)arg1 value:(id)arg2 size:(unsigned long long)arg3 encoding:(int)arg4;
 - (bool)getUncanonicalizedPath:(char *)arg1;
 - (void)handleAvoidCache;
 - (void)handleDeviceUnlock;
@@ -91,7 +93,7 @@
 - (bool)validateAccessToken:(int)arg1 accessType:(int)arg2;
 - (int)validateMessage:(id)arg1 withNewKey:(id)arg2 newValue:(id)arg3 currentPlistData:(id)arg4 containerPath:(const char *)arg5 diagnosticMessage:(const char **)arg6;
 - (int)validatePOSIXPermissionsForMessage:(id)arg1 accessType:(int)arg2 fullyValidated:(bool*)arg3;
-- (bool)validateSandboxForRead:(id)arg1 containerPath:(const char *)arg2;
+- (int)validateSandboxForRead:(id)arg1 containerPath:(const char *)arg2;
 - (bool)validateSandboxForWrite:(id)arg1 containerPath:(const char *)arg2;
 - (int)validateSandboxPermissionsForMessage:(id)arg1 containerPath:(const char *)arg2 accessType:(int)arg3;
 

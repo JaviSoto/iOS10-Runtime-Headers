@@ -14,6 +14,7 @@
 - (void)assertIsValidCallingThread;
 - (id)creationThread;
 - (bool)currentIsCreationThread;
+- (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;
 - (void)performBlock:(id /* block */)arg1;

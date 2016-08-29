@@ -269,6 +269,7 @@
 - (bool)_cellCanBecomeFocused:(id)arg1;
 - (void)_cellDidBecomeFocused:(id)arg1;
 - (void)_cellDidBecomeUnfocused:(id)arg1;
+- (id)_cellForItemAtIndexPath:(id)arg1 includePrefetchedCells:(bool)arg2;
 - (void)_cellMenuDismissed;
 - (long long)_cellPrefetchMode;
 - (void)_checkForPreferredAttributesInView:(id)arg1 originalAttributes:(id)arg2;
@@ -333,12 +334,13 @@
 - (void)_invalidateLayoutIfNecessaryForReload;
 - (void)_invalidateLayoutWithContext:(id)arg1;
 - (void)_invalidateWithBlock:(id /* block */)arg1;
-- (bool)_isCellInReuseQueue:(id)arg1;
 - (bool)_isEditing;
+- (bool)_isViewInReuseQueue:(id)arg1;
 - (bool)_itemIndexPathIsReordered:(id)arg1;
 - (bool)_keepsFirstResponderVisibleOnBoundsChange;
 - (id)_keysForObject:(id)arg1 inDictionary:(id)arg2;
 - (id)_managedSubviewForView:(id)arg1;
+- (id)_managedViews;
 - (id /* block */)_navigationCompletion;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
 - (void)_offsetPinnedReorderedItemsWithCurrentContentOffset:(struct CGPoint { double x1; double x2; })arg1;

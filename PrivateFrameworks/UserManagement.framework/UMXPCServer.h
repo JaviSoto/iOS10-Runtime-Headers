@@ -6,6 +6,7 @@
     id /* block */  _bubblePopHandler;
     NSData * _contextData;
     bool  _currentlyBroadcastingWillSwitchToUser;
+    bool  _didBroadcastUploadContent;
     bool  _didBroadcastWillSwitchToUser;
     bool  _didRegisterStakeholder;
     bool  _didSendTasks;
@@ -34,6 +35,7 @@
 @property (nonatomic) bool currentlyBroadcastingWillSwitchToUser;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didBroadcastUploadContent;
 @property (nonatomic) bool didBroadcastWillSwitchToUser;
 @property (nonatomic) bool didRegisterStakeholder;
 @property (nonatomic) bool didSendTasks;
@@ -79,6 +81,7 @@
 - (id /* block */)bubblePopHandler;
 - (id)contextData;
 - (bool)currentlyBroadcastingWillSwitchToUser;
+- (bool)didBroadcastUploadContent;
 - (bool)didBroadcastWillSwitchToUser;
 - (bool)didRegisterStakeholder;
 - (bool)didSendTasks;
@@ -100,6 +103,7 @@
 - (void)setBubblePopHandler:(id /* block */)arg1;
 - (void)setContextData:(id)arg1;
 - (void)setCurrentlyBroadcastingWillSwitchToUser:(bool)arg1;
+- (void)setDidBroadcastUploadContent:(bool)arg1;
 - (void)setDidBroadcastWillSwitchToUser:(bool)arg1;
 - (void)setDidRegisterStakeholder:(bool)arg1;
 - (void)setDidSendTasks:(bool)arg1;

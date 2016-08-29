@@ -20,8 +20,7 @@
 - (void)captureForcePurgeMetricWithState:(int)arg1 fromLogFrameworkAdaptor:(bool)arg2;
 - (void)captureListInteractionSessionEventWithListType:(int)arg1 listResultItems:(id)arg2 searchString:(id)arg3 traits:(id)arg4;
 - (void)captureLogFrameworkEventForMetricType:(int)arg1 metricState:(int)arg2 messageCount:(int)arg3 messageSize:(long long)arg4 retryCount:(int)arg5 traits:(id)arg6;
-- (void)captureMapLaunchEventWithLaunchUrl:(id)arg1 sourceAppId:(id)arg2 traits:(id)arg3;
-- (void)captureMapsLaunchURLScheme:(id)arg1 sourceApplication:(id)arg2;
+- (void)captureMapLaunchEventWithLaunchUrl:(id)arg1 sourceAppId:(id)arg2 ttlEventTime:(id)arg3 traits:(id)arg4;
 - (void)captureMapsResultsDisplayedFeedbackForQueryString:(id)arg1 resultsArray:(id)arg2;
 - (void)captureMapsWidgetsInteractionForType:(int)arg1 endState:(int)arg2 widgetSpecificObject:(id)arg3 wasLocked:(bool)arg4 startDate:(id)arg5 forDuration:(double)arg6;
 - (void)captureNetworkEventForLoadingTiles:(id)arg1 requestDataSize:(int)arg2 responseDataSize:(int)arg3 responseTime:(int)arg4 traits:(id)arg5;
@@ -44,6 +43,7 @@
 - (void)capturePurgeMetricWithState:(int)arg1 messageCount:(int)arg2 fromLogFrameworkAdaptor:(bool)arg3;
 - (void)captureRefineSearchSessionEventWithSearchType:(int)arg1 refineSearchType:(int)arg2 suggestionItems:(id)arg3 searchString:(id)arg4 traits:(id)arg5;
 - (void)captureRequestsForPlaceDataCache:(id)arg1 appIdentifier:(id)arg2;
+- (void)captureStaleResourcesEventForResources:(id)arg1;
 - (void)captureStateTransition:(id)arg1 force:(bool)arg2;
 - (void)captureStateTransitionEventWithStates:(id)arg1 generateOnlyIfStateChanged:(bool)arg2 traits:(id)arg3;
 - (void)captureTileSetStateEventForType:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4 traits:(id)arg5;
@@ -66,9 +66,12 @@
 - (void)clearStateTimingData;
 - (void)dealloc;
 - (id)init;
-- (id)logContextByAddingNavigationStateWithLineType:(int)arg1 navState:(int)arg2 distanceToDestination:(double)arg3 upcomingManeuverType:(int)arg4 distanceToManeuver:(int)arg5 isGroupedManeuver:(bool)arg6 speedBucket:(int)arg7 traits:(id)arg8 toLogContext:(id)arg9;
-- (id)logContextByAddingPlaceCardStateWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 traits:(id)arg4 toLogContext:(id)arg5;
-- (id)logContextByAddingSuggestionsStateWithSearchFieldType:(int)arg1 searchString:(id)arg2 displayedResults:(id)arg3 selectedIndex:(int)arg4 acSequenceNumber:(int)arg5 traits:(id)arg6 toLogContext:(id)arg7;
+- (id)logContextByAddingMapRestoreStateWithUITargets:(id)arg1 toLogContext:(id)arg2;
+- (id)logContextByAddingMapViewLocationStateWithLocationBucket:(int)arg1 currentLocationInViewport:(bool)arg2 toLogContext:(id)arg3;
+- (id)logContextByAddingNavigationStateWithLineType:(int)arg1 navState:(int)arg2 distanceToDestination:(double)arg3 upcomingManeuverType:(int)arg4 distanceToManeuver:(int)arg5 isGroupedManeuver:(bool)arg6 speedBucket:(int)arg7 toLogContext:(id)arg8;
+- (id)logContextByAddingPlaceCardStateWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 toLogContext:(id)arg4;
+- (id)logContextByAddingPlaceCardStateWithPlaceActionDetails:(id)arg1 placeCardType:(int)arg2 mapItemCategory:(id)arg3 availableActions:(id)arg4 unactionableUIElements:(id)arg5 toLogContext:(id)arg6;
+- (id)logContextByAddingSuggestionsStateWithSearchFieldType:(int)arg1 searchString:(id)arg2 displayedResults:(id)arg3 selectedIndex:(int)arg4 acSequenceNumber:(int)arg5 toLogContext:(id)arg6;
 - (id)sharedLogManagerInstance;
 - (id)sharedLogMsgEventFactoryInstance;
 - (id)sharedLogMsgStateFactoryInstance;

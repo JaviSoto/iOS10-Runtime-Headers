@@ -9,6 +9,8 @@
     PLNSNotificationOperatorComposition * _bbICEModelLTEMetricsNotification;
     PLTimer * _cacheCommitTimer;
     PLEntryNotificationOperatorComposition * _canSleepNotification;
+    PLCFNotificationOperatorComposition * _cfNotifyBBReport;
+    PLCFNotificationOperatorComposition * _cfNotifyBBReport30s;
     bool  _changed;
     PLTimer * _channelReconnectTimer;
     PLTelephonyConnection * _connection;
@@ -51,6 +53,8 @@
 @property (retain) PLNSNotificationOperatorComposition *bbICEModelLTEMetricsNotification;
 @property (retain) PLTimer *cacheCommitTimer;
 @property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
+@property (retain) PLCFNotificationOperatorComposition *cfNotifyBBReport;
+@property (retain) PLCFNotificationOperatorComposition *cfNotifyBBReport30s;
 @property bool changed;
 @property (retain) PLTimer *channelReconnectTimer;
 @property (nonatomic, readonly) PLTelephonyConnection *connection;
@@ -91,11 +95,11 @@
 + (id)entryEventBackwardLTESleepStatsQuery;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventIntervalDefinitions;
-+ (id)entryEventNoneBBMavReport;
++ (id)entryEventNoneBBReport;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
 + (id)getBBAgent;
-+ (id)getNameBBMavReport;
++ (id)getNameBBReport;
 + (id)humanReadableStateFromKey:(id)arg1;
 + (id)indexToRat:(unsigned long long)arg1;
 + (void)load;
@@ -112,6 +116,8 @@
 - (void)cacheCommitTimerFired;
 - (id)canSleepNotification;
 - (void)cancelCacheCommitTimer;
+- (id)cfNotifyBBReport;
+- (id)cfNotifyBBReport30s;
 - (bool)changed;
 - (void)channel:(id)arg1 hasDataAvailable:(id)arg2;
 - (void)channelDidBecomeInvalid:(id)arg1;
@@ -136,6 +142,7 @@
 - (void)initCacheCommitTimer;
 - (void)initOperatorDependancies;
 - (bool)isChangedAndSetAirplaneMode;
+- (bool)isEarfcnHighBand:(int)arg1;
 - (bool)isTimeToRequestReport;
 - (id)lastBBActivityTimestamp;
 - (double)lastBBProtoPower;
@@ -151,7 +158,7 @@
 - (void)logEntries:(id)arg1 withGroupID:(id)arg2;
 - (void)logEntry:(id)arg1;
 - (void)logEventBackwardLTESleepStatsQuery;
-- (void)logEventNoneBBMavReportBy:(long long)arg1 withAction:(long long)arg2;
+- (void)logEventNoneBBReportBy:(long long)arg1 withAction:(long long)arg2;
 - (void)logMessage:(id)arg1 andState:(id)arg2;
 - (void)logOperatorName;
 - (void)logTelephonyActivity;
@@ -180,7 +187,7 @@
 - (void)postCDRXCapability:(bool)arg1;
 - (void)processTimeUpdateInfoDict:(id)arg1;
 - (void)reconnectTimerFired;
-- (void)refreshBBMavReport;
+- (void)refreshBBReport;
 - (void)refreshRequestHandler;
 - (void)registerForAirplaneModeChange;
 - (void)registerForICEModelMetricsNotifications:(id)arg1;
@@ -193,6 +200,8 @@
 - (void)setBbICEModelLTEMetricsNotification:(id)arg1;
 - (void)setCacheCommitTimer:(id)arg1;
 - (void)setCanSleepNotification:(id)arg1;
+- (void)setCfNotifyBBReport30s:(id)arg1;
+- (void)setCfNotifyBBReport:(id)arg1;
 - (void)setChanged:(bool)arg1;
 - (void)setChannelReconnectTimer:(id)arg1;
 - (void)setCurrentCallList:(id)arg1;
@@ -225,6 +234,7 @@
 - (void)setupICEChannels;
 - (id)setupIOKitNotifications;
 - (void)setupKICEChannels;
+- (void)setupKICEChannelsForDebug;
 - (void)setupMavABMChannel;
 - (void)setupTelephonyActivityChannels;
 - (void)setupTelephonyRegistrationChannels;
@@ -239,6 +249,7 @@
 - (double)totalOosGWScanEnergy;
 - (double)totalOosHDRScanEnergy;
 - (double)translateChannelRBsToChannelBW:(double)arg1;
+- (float)translateTransBW:(int)arg1;
 - (void)triggerLTESLEEPMGRPower:(id)arg1;
 - (void)triggerMessage:(id)arg1;
 - (id)wakeEntryNotifications;

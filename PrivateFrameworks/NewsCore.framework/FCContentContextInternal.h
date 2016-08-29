@@ -38,7 +38,7 @@
 - (id)channelMembershipController;
 - (id)contentContainer;
 - (id)contentDatabase;
-- (void)enableFlushing;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)feedDatabase;
 - (id)forYouConfigRecordSource;
 - (id)init;

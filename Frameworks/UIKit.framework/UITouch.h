@@ -24,6 +24,7 @@
         double y; 
     }  _locationInWindow;
     double  _majorRadiusTolerance;
+    double  _maxObservedPressure;
     double  _maximumPossiblePressure;
     double  _movementMagnitudeSquared;
     bool  _needsForceUpdate;
@@ -57,6 +58,7 @@
         unsigned int _deliversUpdatesInTouchesMovedIsValid : 1; 
         unsigned int _deliversUpdatesInTouchesMoved : 1; 
         unsigned int _isPredictedTouch : 1; 
+        unsigned int _didDispatchAsEnded : 1; 
     }  _touchFlags;
     long long  _type;
     UIView * _view;
@@ -198,6 +200,7 @@
 - (void)_updateMovementMagnitudeFromLocation:(struct CGPoint { double x1; double x2; })arg1 toLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_updateWithChildEvent:(struct __IOHIDEvent { }*)arg1;
 - (bool)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
+- (void)_willBeDispatchedAsEnded;
 - (id)_windowServerHitTestWindow;
 - (float)_zGradient;
 - (double)altitudeAngle;

@@ -5,6 +5,7 @@
 
 @required
 
+- (bool)areTelephonyCallsSupported;
 - (bool)isFaceTimeAudioSupported;
 - (bool)isFaceTimeVideoSupported;
 - (bool)isiMessageSupported;

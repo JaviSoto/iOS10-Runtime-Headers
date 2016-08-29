@@ -8,6 +8,7 @@
     NSArray * _itemProviders;
     id /* block */  _itemProvidersCreator;
     bool  _shouldGroupByRoom;
+    bool  _shouldShowSectionHeaders;
 }
 
 @property (nonatomic, readonly) long long actionSetSectionIndex;
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) NSArray *itemProviders;
 @property (nonatomic, copy) id /* block */ itemProvidersCreator;
 @property (nonatomic) bool shouldGroupByRoom;
+@property (nonatomic) bool shouldShowSectionHeaders;
 
 - (void).cxx_destruct;
 - (void)_createItemProvidersWithHome:(id)arg1;
@@ -36,6 +38,7 @@
 - (id)cachedSortedRooms;
 - (id)currentSectionIdentifiers;
 - (id)initWithDelegate:(id)arg1 shouldGroupByRoom:(bool)arg2 itemProvidersCreator:(id /* block */)arg3;
+- (id)initWithDelegate:(id)arg1 shouldGroupByRoom:(bool)arg2 shouldShowSectionHeaders:(bool)arg3 itemProvidersCreator:(id /* block */)arg4;
 - (id)itemProviders;
 - (id /* block */)itemProvidersCreator;
 - (void)setCachedSortedRoomIdentifiers:(id)arg1;
@@ -43,6 +46,8 @@
 - (void)setItemProviders:(id)arg1;
 - (void)setItemProvidersCreator:(id /* block */)arg1;
 - (void)setShouldGroupByRoom:(bool)arg1;
+- (void)setShouldShowSectionHeaders:(bool)arg1;
 - (bool)shouldGroupByRoom;
+- (bool)shouldShowSectionHeaders;
 
 @end

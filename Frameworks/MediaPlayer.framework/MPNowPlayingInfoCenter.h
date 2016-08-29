@@ -23,7 +23,7 @@
 - (id)init;
 - (void)invalidatePlaybackQueue;
 - (id)nowPlayingInfo;
-- (id)nowPlayingPlaybackQueueDataSource;
+- (id)playbackQueueDataSource;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueueDataSource:(id)arg1;
 

@@ -11,6 +11,7 @@
     unsigned long long  _byPathDiffs;
     BRCLocalItem * _byPathLocalItem;
     BRCServerItem * _byPathServerItem;
+    BRCPQLConnection * _db;
     unsigned long long  _faultedDiffs;
     BRCDocumentItem * _faultedLocalItem;
     BRCRelativePath * _faultedRelpath;
@@ -46,6 +47,7 @@
 @property (nonatomic, readonly) BRCRelativePath *byPathRelpath;
 @property (nonatomic, readonly) BRCServerItem *byPathServerItem;
 @property (nonatomic, readonly) BRCDocumentItem *bySharedEnclosureDocItem;
+@property (nonatomic, readonly) BRCPQLConnection *db;
 @property (nonatomic, readonly) unsigned long long faultedDiffs;
 @property (nonatomic, readonly) BRCDocumentItem *faultedLocalItem;
 @property (nonatomic, readonly) struct { id x1; id x2; unsigned long long x3; } faultedMatch;
@@ -91,6 +93,7 @@
 - (void)clearFaultedItem;
 - (void)clearReservedItem;
 - (void)closePaths;
+- (id)db;
 - (id)description;
 - (void)didApplyChangesAtPath:(id)arg1 filename:(id)arg2 li:(id)arg3 si:(id)arg4;
 - (void)encodeWithCoder:(id)arg1;
@@ -103,6 +106,7 @@
 - (void)handleReservedPathMatchesIfNeeded;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 allowAppLibraryRoot:(bool)arg2 session:(id)arg3;
+- (id)initWithURL:(id)arg1 allowAppLibraryRoot:(bool)arg2 session:(id)arg3 db:(id)arg4;
 - (id)initWithURL:(id)arg1 session:(id)arg2;
 - (void)markPathMatchLostIfLocationDoesntMatch:(struct { id x1; id x2; unsigned long long x3; }*)arg1;
 - (void)matchLookupItemsWithDisk;

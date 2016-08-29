@@ -3,6 +3,9 @@
  */
 
 @interface UpNextWidget.MobileTimerAlarmDataSource : SwiftObject {
+    void active;
+    void alarmTable;
+    void callbackQueue;
     void elementsChangedBlock;
     void manager;
 }

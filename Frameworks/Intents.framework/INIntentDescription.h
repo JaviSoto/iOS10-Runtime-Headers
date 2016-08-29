@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntentDescription : NSObject <NSCopying> {
+@interface INIntentDescription : NSObject <INIntentDescriptionExport, NSCopying> {
     SEL  _confirmSelector;
     Class  _dataClass;
     Class  _facadeClass;
@@ -16,12 +16,16 @@
 
 @property (nonatomic, readonly) SEL confirmSelector;
 @property (nonatomic, readonly) Class dataClass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) Class facadeClass;
 @property (nonatomic, readonly) SEL handleSelector;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isPrivate;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *responseName;
 @property (nonatomic, readonly, copy) NSDictionary *slotsByName;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *type;
 
 - (void).cxx_destruct;

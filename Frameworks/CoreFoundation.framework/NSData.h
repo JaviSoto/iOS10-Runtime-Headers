@@ -246,6 +246,7 @@
 - (id)_cn_decodeBase64;
 - (id)_cn_decodeBase64IgnoringWhitespace;
 - (id)_cn_hexString;
+- (id)_cn_md5Hash;
 - (id)_cn_writeToURL:(id)arg1 options:(unsigned long long)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ControlCenterUIKit.framework/ControlCenterUIKit
@@ -647,7 +648,6 @@
 + (id)tsu_decodeFromBase64CString:(const char *)arg1 srcLength:(unsigned long long)arg2;
 + (id)tsu_decodeFromBase64String:(id)arg1;
 + (id)tsu_decodeFromBase64StringWithWhitespace:(id)arg1;
-+ (id)tsu_decodeFromHexidecimalString:(id)arg1;
 
 - (id)tsp_dispatchData;
 - (id)tsp_dispatchDataWithApplier:(id /* block */)arg1;
@@ -655,7 +655,6 @@
 - (bool)tsp_writeToURL:(id)arg1 encryptionKey:(id)arg2;
 - (id)tsu_encodeToBase64String;
 - (id)tsu_encodeToBase64URLSafeString;
-- (id)tsu_encodeToHexidecimalString;
 
 // Image: /System/Library/PrivateFrameworks/vCard.framework/vCard
 

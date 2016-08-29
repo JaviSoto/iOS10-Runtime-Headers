@@ -73,7 +73,7 @@
 - (id)i_buildId;
 - (void)i_clearChunkIdentifier;
 - (void)i_didLoadBuild:(id)arg1;
-- (void)i_invalidateChunkIndexInBuildCache;
+- (void)i_invalidateCaches;
 - (void)i_setBuildId:(id)arg1;
 - (void)i_setBuildPointer:(id)arg1 forUnarchive:(bool)arg2;
 - (void)i_setChunkIdentifier:(id)arg1;

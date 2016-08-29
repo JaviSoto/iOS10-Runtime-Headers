@@ -31,6 +31,7 @@
     long long  _logicalHandle;
     NSString * _logicalName;
     NSNumber * _mtime;
+    unsigned long long  _parentFileID;
     NSString * _parentPath;
     long long  _physicalHandle;
     NSString * _physicalName;
@@ -126,6 +127,7 @@
 - (void)mergeProgressUpdate:(id)arg1;
 - (id)modificationDate;
 - (id)mtime;
+- (id)parentFileID;
 - (id)parentPath;
 - (id)path;
 - (id)physicalName;

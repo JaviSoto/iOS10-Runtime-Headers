@@ -3,13 +3,11 @@
  */
 
 @interface CXCallSource : NSObject <CXProviderHostProtocol, CXProviderVendorProtocol> {
-    bool  _authorized;
     bool  _connected;
     <CXCallSourceDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (getter=isAuthorized, nonatomic) bool authorized;
 @property (nonatomic, readonly, copy) NSBundle *bundle;
 @property (getter=isConnected, nonatomic) bool connected;
 @property (readonly, copy) NSString *debugDescription;
@@ -35,16 +33,15 @@
 - (id)displayName;
 - (oneway void)handleActionTimeout:(id)arg1;
 - (oneway void)handleAudioSessionActivationStateChangedTo:(bool)arg1;
-- (oneway void)handleAuthorizationChangedTo:(bool)arg1;
 - (id)identifier;
 - (id)init;
-- (bool)isAuthorized;
 - (bool)isConnected;
 - (bool)isPermittedToUsePrivateAPI;
 - (bool)isPermittedToUsePublicAPI;
 - (int)processIdentifier;
 - (id)queue;
 - (oneway void)registerWithConfiguration:(id)arg1;
+- (oneway void)reportAudioFinishedForCallWithUUID:(id)arg1;
 - (oneway void)reportCallWithUUID:(id)arg1 changedFrequencyData:(id)arg2 forDirection:(long long)arg3;
 - (oneway void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(long long)arg3;
 - (oneway void)reportCallWithUUID:(id)arg1 endedAtDate:(id)arg2 privateReason:(long long)arg3 failureContext:(id)arg4;
@@ -53,11 +50,9 @@
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 connectedAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 sentInvitationAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 startedConnectingAtDate:(id)arg2;
-- (void)setAuthorized:(bool)arg1;
 - (void)setConnected:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (oneway void)updateAuthorization;
 - (id)vendorProtocolDelegate;
 
 @end

@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKCharacterFace : NTKFace {
-    unsigned long long  _character;
-}
+@interface NTKCharacterFace : NTKFace
 
 + (id)_complicationSlotDescriptors;
 + (long long)_customEditModeForUniqueConfiguration;
@@ -22,6 +20,6 @@
 - (id)_optionAtIndex:(unsigned long long)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;
 - (id)_orderedComplicationSlots;
-- (void)selectOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (unsigned long long)_selectedCharacter;
 
 @end

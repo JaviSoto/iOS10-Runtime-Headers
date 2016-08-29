@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupBrowseProductsViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivtySpinnerViewControllerProcotol, UITableViewDelegate, UITextFieldDelegate> {
+@interface PKPaymentSetupBrowseProductsViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerViewControllerProtocol, UITableViewDelegate, UITextFieldDelegate> {
     <PKPaymentSetupBrowseProductsViewControllerDelegate> * _delegate;
     PKSearchableTableHeaderView * _headerView;
     PKPaymentSetupBrowseProductsModel * _model;

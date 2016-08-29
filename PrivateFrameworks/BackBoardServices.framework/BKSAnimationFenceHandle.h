@@ -8,11 +8,9 @@
     bool  _notObservable;
     BSMachPortSendRight * _preFence;
     BSMachPortSendRight * _preFenceTrigger;
-    bool  _reportable;
 }
 
 @property (nonatomic, readonly, retain) BSMachPortSendRight *_caFence;
-@property (getter=_isReportable, nonatomic, readonly) bool _reportable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -27,8 +25,7 @@
 
 - (unsigned int)CAPort;
 - (id)_caFence;
-- (id)_initWithCAFence:(id)arg1 preFence:(id)arg2 preFenceTrigger:(id)arg3 reportable:(bool)arg4 notObservable:(bool)arg5;
-- (bool)_isReportable;
+- (id)_initWithCAFence:(id)arg1 preFence:(id)arg2 preFenceTrigger:(id)arg3 notObservable:(bool)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

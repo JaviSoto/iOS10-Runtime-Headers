@@ -32,7 +32,7 @@
 + (id)serializeMetadata:(id)arg1;
 + (id)unarchiveBlacklistedBundles;
 + (id)unarchiveBulletinBoard;
-+ (id)unarchiveHomeData:(id*)arg1;
++ (id)unarchiveHomeData:(id*)arg1 decryptionFailed:(bool*)arg2;
 + (id)unarchiveIDSDataSyncJournal;
 + (id)unarchiveMetadata:(id*)arg1;
 + (id)unarchiveServerTokenData:(bool*)arg1;

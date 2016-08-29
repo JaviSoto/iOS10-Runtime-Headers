@@ -66,7 +66,6 @@
 - (void)contentsDidChangeWithReplacementPlaybackContext:(id)arg1;
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (id)delegate;
-- (void)didEndEnumerationWithPlaylistManager:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)errorResolverForItem:(id)arg1;
 - (bool)hasItemForIndex:(unsigned long long)arg1;
@@ -103,6 +102,7 @@
 - (void)reloadWithPlaybackContext:(id)arg1 requireFinalTracklist:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (long long)repeatType;
 - (bool)requiresQueueChangeVerification;
+- (void)restoreState:(id /* block */)arg1;
 - (void)setActiveShuffleType:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNextStartTime:(double)arg1 forIndentifier:(id)arg2;
@@ -119,7 +119,6 @@
 - (unsigned long long)state;
 - (bool)trackChangesCanEndPlayback;
 - (bool)userCanChangeShuffleAndRepeatType;
-- (void)willBeginEnumerationWithPlaylistManager:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

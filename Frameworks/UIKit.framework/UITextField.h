@@ -62,6 +62,7 @@
         double width; 
         double height; 
     }  _rightViewOffset;
+    double  _roundedRectBackgroundCornerRadius;
     int  _scrollXOffset;
     int  _scrollYOffset;
     UITapGestureRecognizer * _selectGestureRecognizer;
@@ -216,6 +217,7 @@
 + (id)_tvDefaultTextColorDarkKeyboard;
 + (id)_tvDefaultTextColorLightKeyboard;
 + (id)_tvPlaceholderTextColorDarkKeyboard;
++ (id)_tvPlaceholderTextColorFocused;
 + (id)_tvPlaceholderTextColorLightKeyboard;
 
 - (void).cxx_destruct;
@@ -224,6 +226,7 @@
 - (void)_addShortcut:(id)arg1;
 - (void)_adjustPreferredFontForCurrentContentSizeCategory;
 - (void)_applicationResuming:(id)arg1;
+- (void)_applyRoundedRectBackgroundCornerRadiusToBackgroundViewWithWarning:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_atomBackgroundViewFrame;
 - (id)_attributedText;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_availableTextRectExcludingButtonsForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -317,6 +320,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
 - (bool)_restoreFirstResponder;
 - (struct CGSize { double x1; double x2; })_rightViewOffset;
+- (double)_roundedRectBackgroundCornerRadius;
 - (void)_sanitizeText:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_scrollOffset;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 animated:(bool)arg2;
@@ -350,6 +354,7 @@
 - (void)_setPlaceholder:(id)arg1;
 - (void)_setPrefix:(id)arg1;
 - (void)_setRightViewOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setRoundedRectBackgroundCornerRadius:(double)arg1;
 - (void)_setSuffix:(id)arg1 withColor:(id)arg2;
 - (void)_setSystemBackgroundViewActive:(bool)arg1;
 - (void)_setUpBaselineLayoutConstraintsForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -392,7 +397,9 @@
 - (void)_tvUpdateContentBackdropView;
 - (void)_tvUpdateTextColor;
 - (bool)_tvUseVibrancy;
+- (id)_uiktest_placeholderLabelColor;
 - (bool)_uiktest_shouldDisableTextColorUpdateOnTraitCollectionChange;
+- (id)_uiktest_tvCustomTextColor;
 - (bool)_uiktest_tvUseVibrancy;
 - (void)_uninstallSelectGestureRecognizer;
 - (void)_updateAtomBackground;
@@ -540,6 +547,7 @@
 - (id)metadataDictionariesForDictationResults;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (double)minimumFontSize;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (long long)offsetFromPosition:(id)arg1 toPosition:(id)arg2;
 - (unsigned long long)offsetInMarkedTextForSelection:(id)arg1;
 - (float)paddingBottom;

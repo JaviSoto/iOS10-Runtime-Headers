@@ -11,6 +11,7 @@
 
 @property (nonatomic) <MNLocationTrackerDelegate> *delegate;
 @property (nonatomic) bool guidancePromptsEnabled;
+@property (nonatomic, readonly) bool hasArrived;
 @property (nonatomic, readonly) MNLocation *lastMatchedLocation;
 @property (nonatomic, readonly) MNNavigationSession *navigationSession;
 @property (setter=_setState:, nonatomic) int state;
@@ -24,6 +25,7 @@
 - (void)_updateMatchedLocation:(id)arg1;
 - (id)delegate;
 - (bool)guidancePromptsEnabled;
+- (bool)hasArrived;
 - (id)initWithNavigationSession:(id)arg1;
 - (id)lastMatchedLocation;
 - (id)matchedLocationForLocation:(id)arg1;
@@ -32,7 +34,7 @@
 - (bool)paused;
 - (bool)repeatCurrentGuidance;
 - (bool)repeatCurrentTrafficAlert;
-- (void)reroute:(id)arg1;
+- (void)reroute:(id)arg1 reason:(unsigned long long)arg2;
 - (void)resetForTracePlayerAtLocation:(id)arg1;
 - (void)resume;
 - (id)routeRepresentation;
@@ -48,6 +50,7 @@
 - (void)traceForcedRerouteWithResponse:(id)arg1 request:(id)arg2;
 - (int)transportType;
 - (void)updateDestination:(id)arg1 finishedHandler:(id /* block */)arg2;
+- (void)updateForTracePaused;
 - (void)updateLocation:(id)arg1;
 - (void)updateVehicleHeading:(double)arg1 timestamp:(id)arg2;
 - (void)updateVehicleSpeed:(double)arg1 timestamp:(id)arg2;

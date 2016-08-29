@@ -13,8 +13,10 @@
     NSNumber * _lifetime;
     NSString * _locality;
     NSNumber * _longitude;
+    NSURL * _mapItemURL;
     NSString * _name;
     NSString * _originatingBundleID;
+    NSURL * _originatingWebsiteURL;
     NSString * _postalCode;
     NSString * _shortValue;
     bool  _shouldAggregate;
@@ -35,8 +37,10 @@
 @property (nonatomic, copy) NSNumber *lifetime;
 @property (nonatomic, copy) NSString *locality;
 @property (nonatomic, copy) NSNumber *longitude;
+@property (nonatomic, copy) NSURL *mapItemURL;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *originatingBundleID;
+@property (nonatomic, copy) NSURL *originatingWebsiteURL;
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *shortValue;
 @property (nonatomic) bool shouldAggregate;
@@ -61,8 +65,10 @@
 - (id)lifetime;
 - (id)locality;
 - (id)longitude;
+- (id)mapItemURL;
 - (id)name;
 - (id)originatingBundleID;
+- (id)originatingWebsiteURL;
 - (id)postalCode;
 - (void)setAddressComponents:(id)arg1;
 - (void)setAdministrativeArea:(id)arg1;
@@ -74,8 +80,10 @@
 - (void)setLifetime:(id)arg1;
 - (void)setLocality:(id)arg1;
 - (void)setLongitude:(id)arg1;
+- (void)setMapItemURL:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOriginatingBundleID:(id)arg1;
+- (void)setOriginatingWebsiteURL:(id)arg1;
 - (void)setPostalCode:(id)arg1;
 - (void)setShortValue:(id)arg1;
 - (void)setShouldAggregate:(bool)arg1;

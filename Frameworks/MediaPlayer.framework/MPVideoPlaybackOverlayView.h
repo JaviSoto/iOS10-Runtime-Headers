@@ -3,6 +3,7 @@
  */
 
 @interface MPVideoPlaybackOverlayView : UIView <MPDetailSliderDelegate, MPVideoOverlay, UIPopoverPresentationControllerDelegate> {
+    bool  _allowsAudioAndSubtitles;
     bool  _allowsExitFromFullscreen;
     bool  _allowsPictureInPicture;
     UIButton * _audioAndSubtitlesButton;
@@ -57,12 +58,14 @@
     unsigned long long  visibleParts;
 }
 
+@property (nonatomic) bool allowsAudioAndSubtitles;
 @property (nonatomic) bool allowsDetailScrubbing;
 @property (nonatomic) bool allowsExitFromFullscreen;
 @property (nonatomic) bool allowsPictureInPicture;
 @property (nonatomic) bool allowsScrubbing;
 @property (nonatomic) bool allowsWirelessPlayback;
 @property (nonatomic) bool automaticallyHandleTransportControls;
+@property (nonatomic, readonly) _UIBackdropView *bottomBarBackdropView;
 @property (nonatomic, readonly) double bottomBarHeight;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPVideoOverlayDelegate> *delegate;
@@ -76,6 +79,7 @@
 @property (nonatomic, retain) MPAVController *player;
 @property (nonatomic) long long style;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) _UIBackdropView *topBarBackdropView;
 @property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
 @property (nonatomic) unsigned long long visibleParts;
 
@@ -127,12 +131,14 @@
 - (void)_updateVolumeSlider;
 - (void)_videoViewDidMoveToWindow:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (bool)allowsAudioAndSubtitles;
 - (bool)allowsDetailScrubbing;
 - (bool)allowsExitFromFullscreen;
 - (bool)allowsPictureInPicture;
 - (bool)allowsScrubbing;
 - (bool)allowsWirelessPlayback;
 - (bool)automaticallyHandleTransportControls;
+- (id)bottomBarBackdropView;
 - (double)bottomBarHeight;
 - (void)dealloc;
 - (id)delegate;
@@ -157,6 +163,7 @@
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (void)removeFromSuperview;
+- (void)setAllowsAudioAndSubtitles:(bool)arg1;
 - (void)setAllowsDetailScrubbing:(bool)arg1;
 - (void)setAllowsExitFromFullscreen:(bool)arg1;
 - (void)setAllowsPictureInPicture:(bool)arg1;
@@ -184,6 +191,8 @@
 - (void)startTicking;
 - (void)stopTicking;
 - (long long)style;
+- (id)topBarBackdropView;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (bool)updateTimeBasedValues;
 - (id)videoViewController;

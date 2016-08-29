@@ -31,7 +31,8 @@
 - (bool)_hasTapActionForItem:(id)arg1;
 - (id)_itemForServiceControlPresentationAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_itemSetDidChange;
-- (void)_performTapActionForItem:(id)arg1;
+- (void)_logUserMetricsAfterTapOfItem:(id)arg1;
+- (id)_performTapActionForItem:(id)arg1;
 - (void)_reorderGestureDidBegin:(id)arg1;
 - (void)_reorderGestureDidChange:(id)arg1;
 - (void)_reorderGestureDidEnd:(id)arg1 finished:(bool)arg2;
@@ -56,12 +57,13 @@
 - (void)itemManager:(id)arg1 didRemoveItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemManager:(id)arg1 didRemoveSections:(id)arg2;
 - (id)parentViewControllerAtQuickControlsPresentationTime;
+- (id)prepareToPerformToggleActionForItem:(id)arg1 sourceItem:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 applyOverrideAttributes:(id)arg2 toItem:(id)arg3;
 - (void)presentationCoordinator:(id)arg1 clearOverrideAttributesForItem:(id)arg2;
 - (id)presentationCoordinator:(id)arg1 contextForPresentationAtPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)presentationCoordinator:(id)arg1 didEndPresentationWithContext:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 didRecognizeTapForItem:(id)arg2;
-- (bool)presentationCoordinator:(id)arg1 shouldBeginPresentationWithTouchLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)presentationCoordinator:(id)arg1 willBeginPresentationWithContext:(id)arg2;
 - (id)quickControlPresentationCoordinator;
 - (id)reorderGestureRecognizer;
@@ -83,6 +85,5 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -38,13 +38,13 @@
 @property (nonatomic, readonly) NSString *packageLocator;
 @property (nonatomic, retain) <TSPDataStorage> *storage;
 @property (nonatomic, readonly) bool tsd_allowedToConvertDataAlreadyInDocument;
+@property (setter=tsd_setShouldBeInterpretedAsGenericIfUntagged:, nonatomic) bool tsd_shouldBeInterpretedAsGenericIfUntagged;
 @property (nonatomic, readonly) NSString *type;
 @property (nonatomic, copy) TSPDataAttributes *unsafeAttributes;
 
 + (void)addCullingListener:(id)arg1;
 + (id)cullingListeners;
 + (id)cullingListenersQueue;
-+ (void)dataForAssetsLibraryURL:(id)arg1 context:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 + (id)dataFromDataRep:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromNSData:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 context:(id)arg3;
@@ -72,7 +72,7 @@
 - (id)NSData;
 - (id)UIImage;
 - (void)addDownloadObserver:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
-- (void)archiveInfoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 archiver:(id)arg2;
+- (bool)archiveInfoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 archiver:(id)arg2 packageWriter:(id)arg3;
 - (id)attributes;
 - (unsigned long long)base64StringLength;
 - (bool)bookmarkDataNeedsWriteWithContext:(id)arg1;
@@ -90,6 +90,7 @@
 - (bool)gilligan_isRemote;
 - (unsigned long long)hash;
 - (long long)identifier;
+- (id)init;
 - (id)initWithIdentifier:(long long)arg1 digest:(id)arg2 filename:(id)arg3 storage:(id)arg4 manager:(id)arg5;
 - (bool)isAcknowledgedByServer;
 - (bool)isApplicationData;
@@ -116,10 +117,13 @@
 - (void)setAcknowledgedByServer:(bool)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setFilename:(id)arg1 storage:(id)arg2;
+- (void)setFilename:(id)arg1 storage:(id)arg2 ifStorageIs:(id)arg3;
 - (void)setStorage:(id)arg1;
 - (void)setUnsafeAttributes:(id)arg1;
 - (id)storage;
 - (bool)tsd_allowedToConvertDataAlreadyInDocument;
+- (void)tsd_setShouldBeInterpretedAsGenericIfUntagged:(bool)arg1;
+- (bool)tsd_shouldBeInterpretedAsGenericIfUntagged;
 - (void)tsk_addDownloadObserver:(id)arg1 lockMode:(long long)arg2 options:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)tsp_splitDataWithMaxSize:(unsigned long long)arg1 subdataHandlerBlock:(id /* block */)arg2;
 - (id)type;

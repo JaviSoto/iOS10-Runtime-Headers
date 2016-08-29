@@ -56,6 +56,9 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
++ (id)feedConfigurationFromDict:(id)arg1;
 + (id)feedConfigurationFromJSON:(id)arg1;
+
+- (id)feedIDForBin:(long long)arg1 paid:(bool)arg2;
 
 @end

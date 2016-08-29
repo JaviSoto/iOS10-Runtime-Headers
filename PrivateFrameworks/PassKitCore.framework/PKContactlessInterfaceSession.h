@@ -7,6 +7,7 @@
     PKPaymentApplication * _activatedPaymentApplication;
     PKPaymentPass * _activatedPaymentPass;
     NSArray * _activatedValueAddedServicePasses;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
     unsigned char  _cardEmulationMode;
     <PKContactlessInterfaceSessionDelegate> * _delegate;
     bool  _fieldPresent;
@@ -39,6 +40,7 @@
 - (void)_beginFieldPropertiesLookupWithFieldTechnology:(unsigned long long)arg1 andValueAddedServiceMode:(unsigned long long)arg2;
 - (void)_endFieldPropertiesLookup;
 - (id)_filteredLoyaltyPassesFromVASTransactions:(id)arg1 activatedPasses:(id)arg2;
+- (void)_processEndEvent:(id)arg1 withPartialContext:(id)arg2;
 - (void)_processFieldPropertiesLookupWithMerchantIdentifiers:(id)arg1;
 - (bool)activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2;
 - (bool)activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2 markAsDefault:(bool)arg3;

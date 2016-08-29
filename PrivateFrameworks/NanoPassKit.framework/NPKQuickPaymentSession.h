@@ -3,6 +3,7 @@
  */
 
 @interface NPKQuickPaymentSession : NSObject <PKContactlessInterfaceSessionDelegate> {
+    unsigned long long  _authorizationValidity;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     bool  _confirmed;
     PKContactlessInterfaceSession * _contactlessSession;
@@ -18,9 +19,10 @@
     PKFieldDetector * _fieldDetector;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSObject<OS_dispatch_queue> * _paymentSessionQueue;
-    unsigned long long  _vasValidity;
+    NSDictionary * _vasPasses;
 }
 
+@property (nonatomic) unsigned long long authorizationValidity;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (getter=isConfirmed, nonatomic) bool confirmed;
 @property (nonatomic, retain) PKContactlessInterfaceSession *contactlessSession;
@@ -40,26 +42,30 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *paymentSessionQueue;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned long long vasValidity;
+@property (nonatomic, retain) NSDictionary *vasPasses;
 
 + (void)_handleNewContactlessSession:(id)arg1;
 + (id)_outstandingSessionHashTable;
 + (bool)hasOutstandingSessions;
 
 - (void).cxx_destruct;
+- (void)_checkContactlessValidity:(unsigned long long)arg1 authorizationValidity:(unsigned long long)arg2 performWork:(id /* block */)arg3;
 - (void)_checkContactlessValidity:(unsigned long long)arg1 performWork:(id /* block */)arg2;
 - (void)_handleConventionalTransactionWithContext:(id)arg1;
 - (void)_internalQueue_deactivateSessionWithCompletion:(id /* block */)arg1;
-- (void)_internalQueue_getContactlessValidityAndPerformWork:(id /* block */)arg1;
+- (void)_internalQueue_getContactlessAndAuthorizationValidityAndPerformWork:(id /* block */)arg1;
 - (void)_internalQueue_invokeDeactivationCompletionBlocks;
 - (void)_internalQueue_updateContactlessSessionForPass:(id)arg1 whitelistedVASPasses:(id)arg2 greylistedVASPasses:(id)arg3;
 - (void)_internalQueue_updateContactlessValidityAndPerformWork:(id /* block */)arg1;
+- (void)_internalQueue_updateSessionWithCurrentPassAndLoyaltyState;
 - (void)_loyaltyEngineConfigurationChanged:(id)arg1;
 - (void)_sessionQueue_invokeAppropriateCallbackForActivationWithSuccess:(bool)arg1 invokeOnSuccess:(bool)arg2 contactlessValidity:(unsigned long long)arg3 forPass:(id)arg4;
 - (bool)_sessionQueue_startContactlessSessionWithSuccessfulCompletionOnInternalQueue:(id /* block */)arg1;
 - (bool)_sessionQueue_updateContactlessSessionForPass:(id)arg1 paymentApplication:(id)arg2 whitelistedVASPasses:(id)arg3 greylistedVASPasses:(id)arg4 sessionConfirmed:(bool)arg5 deferAuthorization:(bool)arg6;
+- (void)_updateAuthorizationValidity;
+- (unsigned long long)authorizationValidity;
 - (id)callbackQueue;
-- (void)confirmSession;
+- (void)confirmOrRenewSession;
 - (void)contactlessInterfaceSession:(id)arg1 didFinishTransactionWithContext:(id)arg2;
 - (void)contactlessInterfaceSessionDidEnterField:(id)arg1 withProperties:(id)arg2;
 - (void)contactlessInterfaceSessionDidExitField:(id)arg1;
@@ -80,14 +86,14 @@
 - (bool)deferAuthorization;
 - (id)delegate;
 - (id)fieldDetector;
-- (void)getAllVASPasses:(id /* block */)arg1 queue:(id)arg2;
+- (void)getAllVASPasses:(id /* block */)arg1;
 - (id)initWithQueue:(id)arg1;
 - (id)internalQueue;
 - (bool)isConfirmed;
 - (bool)isDeactivated;
 - (bool)isDeactivating;
 - (id)paymentSessionQueue;
-- (void)renewSession;
+- (void)setAuthorizationValidity:(unsigned long long)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setConfirmed:(bool)arg1;
 - (void)setContactlessSession:(id)arg1;
@@ -103,8 +109,8 @@
 - (void)setFieldDetector:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (void)setPaymentSessionQueue:(id)arg1;
-- (void)setVasValidity:(unsigned long long)arg1;
+- (void)setVasPasses:(id)arg1;
 - (bool)startSession;
-- (unsigned long long)vasValidity;
+- (id)vasPasses;
 
 @end

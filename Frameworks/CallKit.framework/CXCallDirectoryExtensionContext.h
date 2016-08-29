@@ -2,33 +2,36 @@
    Image: /System/Library/Frameworks/CallKit.framework/CallKit
  */
 
-@interface CXCallDirectoryExtensionContext : NSExtensionContext {
-    NSMutableArray * _pendingBlockingPhoneNumbers;
-    NSMutableArray * _pendingIdentificationLabels;
-    NSMutableArray * _pendingIdentificationPhoneNumbers;
+@interface CXCallDirectoryExtensionContext : NSExtensionContext <CXCallDirectoryProviderVendorProtocol> {
+    <CXCallDirectoryExtensionContextDelegate> * _delegate;
+    CXCallDirectoryBlockingEntryData * _pendingBlockingEntryData;
+    CXCallDirectoryIdentificationEntryData * _pendingIdentificationEntryData;
 }
 
-@property (nonatomic, retain) NSMutableArray *pendingBlockingPhoneNumbers;
-@property (nonatomic, retain) NSMutableArray *pendingIdentificationLabels;
-@property (nonatomic, retain) NSMutableArray *pendingIdentificationPhoneNumbers;
-@property (nonatomic, readonly, retain) <CXCallDirectoryProviderHostProtocol> *remoteObjectProxy;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CXCallDirectoryExtensionContextDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CXCallDirectoryBlockingEntryData *pendingBlockingEntryData;
+@property (nonatomic, retain) CXCallDirectoryIdentificationEntryData *pendingIdentificationEntryData;
+@property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)_flushPendingBlockingPhoneNumbers;
+- (void)_flushPendingBlockingEntryData;
 - (void)_flushPendingIdentificationPhoneNumbersAndLabels;
-- (void)addBlockingEntryWithNextSequentialPhoneNumber:(id)arg1;
-- (void)addIdentificationEntryWithNextSequentialPhoneNumber:(id)arg1 label:(id)arg2;
+- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 synchronous:(bool)arg2;
+- (void)addBlockingEntryWithNextSequentialPhoneNumber:(long long)arg1;
+- (void)addIdentificationEntryWithNextSequentialPhoneNumber:(long long)arg1 label:(id)arg2;
 - (void)completeRequestWithCompletionHandler:(id /* block */)arg1;
-- (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (id)pendingBlockingPhoneNumbers;
-- (id)pendingIdentificationLabels;
-- (id)pendingIdentificationPhoneNumbers;
-- (id)remoteObjectProxy;
-- (void)setPendingBlockingPhoneNumbers:(id)arg1;
-- (void)setPendingIdentificationLabels:(id)arg1;
-- (void)setPendingIdentificationPhoneNumbers:(id)arg1;
+- (id)delegate;
+- (id)pendingBlockingEntryData;
+- (id)pendingIdentificationEntryData;
+- (oneway void)requestFailedWithError:(id)arg1 reply:(id /* block */)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setPendingBlockingEntryData:(id)arg1;
+- (void)setPendingIdentificationEntryData:(id)arg1;
 
 @end

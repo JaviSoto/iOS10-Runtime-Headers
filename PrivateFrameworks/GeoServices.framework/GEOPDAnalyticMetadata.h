@@ -28,6 +28,7 @@
         unsigned long long _high; 
         unsigned long long _low; 
     }  _sessionId;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;
@@ -57,6 +58,7 @@
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)serviceTagType;
 
@@ -123,6 +125,7 @@
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

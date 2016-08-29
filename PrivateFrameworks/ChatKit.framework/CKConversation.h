@@ -12,6 +12,7 @@
     NSString * _name;
     bool  _needsReload;
     NSArray * _pendingHandles;
+    NSString * _previewText;
     NSArray * _recipients;
 }
 
@@ -44,7 +45,7 @@
 @property (getter=isPending, nonatomic, readonly) bool pending;
 @property (nonatomic, readonly, copy) NSArray *pendingEntities;
 @property (nonatomic, copy) NSArray *pendingHandles;
-@property (nonatomic, readonly) NSString *previewText;
+@property (nonatomic, copy) NSString *previewText;
 @property (nonatomic, readonly) CKEntity *recipient;
 @property (nonatomic, readonly) unsigned long long recipientCount;
 @property (nonatomic, readonly, copy) NSArray *recipientStrings;
@@ -78,6 +79,7 @@
 + (id)newPendingConversation;
 
 - (void).cxx_destruct;
+- (void)_chatItemsDidChange:(id)arg1;
 - (bool)_chatSupportsTypingIndicators;
 - (void)_clearTypingIndicatorsIfNecessary;
 - (void)_deleteAllMessagesAndRemoveGroup:(bool)arg1;
@@ -110,6 +112,7 @@
 - (void)deleteAllMessagesAndRemoveGroup;
 - (id)description;
 - (id)deviceIndependentID;
+- (void)didBecomeActive;
 - (unsigned long long)disclosureAtomStyle;
 - (id)displayName;
 - (id)displayNameForMediaObjects:(id)arg1 subject:(id)arg2;
@@ -175,6 +178,7 @@
 - (void)setIgnoringTypingUpdates:(bool)arg1;
 - (void)setLimitToLoad:(unsigned int)arg1;
 - (void)setLoadedMessageCount:(unsigned long long)arg1;
+- (void)setLoadedMessageCount:(unsigned long long)arg1 loadImmediately:(bool)arg2;
 - (void)setLocalUserIsComposing:(id)arg1;
 - (void)setLocalUserIsComposing:(id)arg1 typingIndicatorIcon:(id)arg2;
 - (void)setLocalUserIsRecording:(bool)arg1;
@@ -183,6 +187,7 @@
 - (void)setNeedsReload;
 - (void)setPendingComposeRecipients:(id)arg1;
 - (void)setPendingHandles:(id)arg1;
+- (void)setPreviewText:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSendReadReceipts:(bool)arg1;
 - (void)setUnsentComposition:(id)arg1;
@@ -195,5 +200,6 @@
 - (unsigned long long)unreadCount;
 - (id)unsentComposition;
 - (void)updateUserActivity;
+- (void)willBecomeInactive;
 
 @end

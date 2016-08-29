@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NRDevice *device;
 @property (nonatomic, readonly) unsigned long long edition;
 @property (nonatomic, readonly) unsigned long long hardwareBehavior;
+@property (nonatomic, readonly) bool hasTwoYearWarranty;
 @property (nonatomic, readonly) unsigned long long internalSize;
 @property (nonatomic, readonly) unsigned long long material;
 @property (nonatomic, readonly) unsigned long long size;
@@ -37,6 +38,7 @@
 - (unsigned long long)edition;
 - (id)getGestaltDmin;
 - (unsigned long long)hardwareBehavior;
+- (bool)hasTwoYearWarranty;
 - (id)init;
 - (unsigned long long)internalSize;
 - (unsigned long long)material;

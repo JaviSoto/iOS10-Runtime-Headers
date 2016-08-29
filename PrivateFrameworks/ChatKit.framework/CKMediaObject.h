@@ -16,6 +16,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly, copy) NSString *mimeType;
+@property (nonatomic, readonly) bool needsAnimation;
 @property (nonatomic, readonly, copy) NSString *previewFilenameExtension;
 @property (nonatomic, readonly) NSString *previewItemTitle;
 @property (nonatomic, readonly) NSURL *previewItemURL;
@@ -69,6 +70,7 @@
 - (id)location;
 - (int)mediaType;
 - (id)mimeType;
+- (bool)needsAnimation;
 - (id)pasteboardItem;
 - (Class)previewBalloonViewClass;
 - (id)previewCacheKeyWithOrientation:(BOOL)arg1;

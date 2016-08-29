@@ -10,6 +10,7 @@
 }
 
 + (id)URLBagForContext:(id)arg1;
++ (id)bagQueue;
 
 - (void).cxx_destruct;
 - (void)_enqueueOperationWithContext:(id)arg1 completionBlock:(id /* block */)arg2;

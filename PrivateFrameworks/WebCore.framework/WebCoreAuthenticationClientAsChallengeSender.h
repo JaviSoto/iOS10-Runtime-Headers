@@ -16,6 +16,8 @@
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)detachClient;
 - (id)initWithAuthenticationClient:(struct AuthenticationClient { int (**x1)(); }*)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

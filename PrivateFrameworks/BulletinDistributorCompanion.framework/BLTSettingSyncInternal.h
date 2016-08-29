@@ -29,6 +29,7 @@
 - (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned long long)arg1 maximumSendDelay:(unsigned long long)arg2 minimumResponseDelay:(unsigned long long)arg3 maximumResponseDelay:(unsigned long long)arg4;
 - (id)initWithSectionConfiguration:(id)arg1;
 - (bool)isWristDetectDisabled;
+- (void)removeSectionWithSectionID:(id)arg1;
 - (id)sectionConfiguration;
 - (void)setConnection:(id)arg1;
 - (void)setDndSync:(id)arg1;

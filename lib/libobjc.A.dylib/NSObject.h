@@ -136,6 +136,7 @@
 - (bool)_accessibilityShouldShowPauseBubble;
 - (bool)_accessibilityShouldShowSpeakBubble;
 - (bool)_accessibilityShouldShowSpeakLanguageBubble;
+- (bool)_accessibilityShouldShowSpeakSpellOut;
 - (bool)_accessibilityShouldUpdateQuickSpeakContent;
 - (void)_accessibilitySpeak:(id)arg1;
 - (void)_accessibilitySpeakLanguageSelection:(id)arg1;
@@ -555,6 +556,12 @@
 - (bool)bs_performSynchronously:(id /* block */)arg1 timeout:(double)arg2;
 - (id)bs_secureEncoded;
 
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
++ (id)bb_objectCache;
+
+- (id)bb_objectCache;
+
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
 - (bool)isNull;
@@ -668,6 +675,14 @@
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
 + (id)FMLoggerFacility;
+
+- (void)_fm_addNotificationObserverProxy:(id)arg1;
+- (void)_fm_removeNotificationObserverProxy:(id)arg1;
+- (id)fm_addNotificationBlockObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;
+- (id)fm_addNotificationBlockObserverForObject:(id)arg1 keyPath:(id)arg2 options:(unsigned long long)arg3 usingBlock:(id /* block */)arg4;
+- (id)fm_associatedObjectForDescriptor:(const struct { char *x1; unsigned long long x2; }*)arg1;
+- (void)fm_removeNotificationBlockObserver:(id)arg1;
+- (void)fm_setAssociatedObject:(id)arg1 assocatedObjectDescriptor:(const struct { char *x1; unsigned long long x2; }*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -914,6 +929,7 @@
 - (double)_accessibilityAllowedGeometryOverlap;
 - (double)_accessibilityAllowedGeometryOverlapX;
 - (bool)_accessibilityAllowsAlternativeCharacterActivation;
+- (bool)_accessibilityAlternateActionForURL:(id)arg1;
 - (bool)_accessibilityAlwaysOrderedFirst;
 - (bool)_accessibilityAlwaysSpeakTableHeaders;
 - (id)_accessibilityAncestorFocusParcel;
@@ -927,6 +943,7 @@
 - (bool)_accessibilityAppendOrderedChildLeafDescendantsToArray:(id)arg1 count:(unsigned long long)arg2 shouldStopAtRemoteElement:(bool)arg3 options:(id)arg4 treeLogger:(id)arg5;
 - (id)_accessibilityApplication;
 - (bool)_accessibilityApplicationIsRTL;
+- (int)_accessibilityApplicationOrientation;
 - (id)_accessibilityApplicationSemanticContext;
 - (id)_accessibilityAttributedValueForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1;
 - (id)_accessibilityAuditIssuesWithOptions:(id)arg1;
@@ -936,6 +953,7 @@
 - (void)_accessibilityAutoscrollScrollToTop;
 - (id)_accessibilityAutoscrollTarget;
 - (int)_accessibilityAvailableAutoscrollDirections;
+- (id)_accessibilityAwayAlertElements;
 - (bool)_accessibilityBackingElementIsValid;
 - (bool)_accessibilityBannerIsSticky;
 - (id)_accessibilityBaseHitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
@@ -951,6 +969,7 @@
 - (bool)_accessibilityCanBecomeNativeFocused;
 - (bool)_accessibilityCanDeleteTableViewCell;
 - (bool)_accessibilityCanDismissPopoverController:(id)arg1;
+- (bool)_accessibilityCanDisplayMultipleControllers;
 - (bool)_accessibilityCanPerformAction:(int)arg1;
 - (bool)_accessibilityCanPerformEscapeAction;
 - (bool)_accessibilityCanScrollInAtLeastOneDirection;
@@ -1042,6 +1061,7 @@
 - (id)_accessibilityFocusAbsoluteLastOpaqueElementForTechnology:(id)arg1;
 - (unsigned long long)_accessibilityFocusParcelChildrenCount:(unsigned long long)arg1;
 - (id)_accessibilityFocusStatePerTechnology;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityFocusableFrameForZoom;
 - (id)_accessibilityFrameDelegate;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityFrameForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityFrameForSorting;
@@ -1049,6 +1069,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityGesturePracticeRegion;
 - (void)_accessibilityHandleATFocused:(bool)arg1 assistiveTech:(id)arg2;
 - (bool)_accessibilityHandleMagicTap;
+- (bool)_accessibilityHandleMagicTapForPronunciation;
 - (bool)_accessibilityHandlePublicScroll:(long long)arg1;
 - (bool)_accessibilityHandwritingActivateKeyboardDeleteKey;
 - (bool)_accessibilityHandwritingActivateKeyboardReturnKey;
@@ -1093,6 +1114,7 @@
 - (unsigned long long)_accessibilityInheritedTraits;
 - (id)_accessibilityInputIdentifierForKeyboard;
 - (void)_accessibilityInsertText:(id)arg1 atPosition:(long long)arg2;
+- (long long)_accessibilityInterfaceOrientationForScreenCoordinates;
 - (bool)_accessibilityInternalHandleStartStopToggle;
 - (id)_accessibilityInternalTextLinkCustomRotors;
 - (id)_accessibilityInternalTextLinks;
@@ -1271,6 +1293,7 @@
 - (id)_accessibilityScannerElementsGrouped:(bool)arg1 shouldIncludeNonScannerElements:(bool)arg2;
 - (id)_accessibilityScannerGroupElements;
 - (int)_accessibilityScannerGroupTraits;
+- (int)_accessibilityScanningBehaviorTraits;
 - (struct CGPoint { double x1; double x2; })_accessibilityScreenPointForSceneReferencePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityScreenRectForSceneReferenceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)_accessibilityScrollAcrossPageBoundaries;
@@ -1311,6 +1334,7 @@
 - (void)_accessibilitySetActionBlock:(id /* block */)arg1 withValue:(id)arg2 forKey:(unsigned int)arg3;
 - (void)_accessibilitySetAllowedGeometryOverlap:(double)arg1;
 - (void)_accessibilitySetAnimationsInProgress:(bool)arg1;
+- (void)_accessibilitySetApplicationOrientation:(int)arg1;
 - (void)_accessibilitySetAuditIssueForType:(unsigned long long)arg1;
 - (void)_accessibilitySetAutoscrollTarget:(id)arg1;
 - (void)_accessibilitySetCameraIrisOpen:(bool)arg1;
@@ -1420,6 +1444,7 @@
 - (id)_accessibilityTextRectsForSpeakThisStringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityTouchContainer;
+- (bool)_accessibilityTouchContainerShouldOutputBraille;
 - (id)_accessibilityTraitsAsHumanReadableStrings:(unsigned long long)arg1;
 - (id)_accessibilityTraitsInspectorHumanReadable;
 - (void)_accessibilityTraverseTreeWithLogger:(id)arg1 options:(id)arg2;
@@ -1449,6 +1474,7 @@
 - (bool)_accessibilityUserTestingIsContinuityButton;
 - (bool)_accessibilityUserTestingIsDefaultButton;
 - (bool)_accessibilityUserTestingIsDestructiveButton;
+- (bool)_accessibilityUserTestingIsElementClassAcceptable;
 - (bool)_accessibilityUserTestingIsPreferredButton;
 - (bool)_accessibilityUserTestingIsRightNavButton;
 - (id)_accessibilityUserTestingParent;

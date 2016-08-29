@@ -2,15 +2,19 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPriceRange : NSObject <NSCopying, NSSecureCoding> {
+@interface INPriceRange : NSObject <INPriceRangeExport, NSCopying, NSSecureCoding> {
     NSString * _currencyCode;
     NSDecimalNumber * _maximumPrice;
     NSDecimalNumber * _minimumPrice;
 }
 
 @property (nonatomic, readonly) NSString *currencyCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDecimalNumber *maximumPrice;
 @property (nonatomic, readonly) NSDecimalNumber *minimumPrice;
+@property (readonly) Class superclass;
 
 + (id)_priceWithPriceRangeValue:(id)arg1;
 + (bool)supportsSecureCoding;

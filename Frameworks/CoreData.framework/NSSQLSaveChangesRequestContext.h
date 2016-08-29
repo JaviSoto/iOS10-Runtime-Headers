@@ -5,7 +5,6 @@
 @interface NSSQLSaveChangesRequestContext : NSSQLStoreRequestContext {
     NSFaultHandler * _faultHandler;
     NSDictionary * _metadataToWrite;
-    NSMutableSet * _objectIDsToPruneLoop;
     NSSet * _objectIDsToPruneTrigger;
     NSMutableDictionary * _originalCachedRows;
     NSSQLSavePlan * _savePlan;
@@ -14,7 +13,6 @@
 @property (nonatomic, readonly) NSFaultHandler *faultHandler;
 @property (nonatomic, readonly) NSDictionary *metadataToWrite;
 @property (nonatomic, readonly) NSSQLModel *model;
-@property (nonatomic, readonly) NSMutableSet *objectIDsToPruneLoop;
 @property (nonatomic, readonly) NSMutableDictionary *originalCachedRows;
 @property (nonatomic, readonly) NSSaveChangesRequest *request;
 @property (nonatomic, readonly) NSSQLSavePlan *savePlan;
@@ -29,10 +27,8 @@
 - (bool)isWritingRequest;
 - (id)metadataToWrite;
 - (id)model;
-- (id)objectIDsToPruneLoop;
 - (id)originalCachedRows;
 - (id)originalRowForObjectID:(id)arg1;
-- (void)pruneObjectsAfterSave:(id)arg1;
 - (id)request;
 - (id)rowCache;
 - (id)savePlan;

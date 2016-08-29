@@ -16,6 +16,7 @@
 + (id)mappedStyleWithMapper:(id)arg1 forStyle:(id)arg2 bakeComputable:(bool)arg3;
 + (id)mappedStylesWithMapper:(id)arg1 forStyles:(id)arg2 bakeComputable:(bool)arg3;
 + (id)mapperWithMapper:(id)arg1;
++ (void)replaceReferencedStylesInMap:(id)arg1 withMapper:(id)arg2;
 
 - (bool)clientsMustRemap;
 - (void)dealloc;
@@ -25,6 +26,7 @@
 - (id)mappedStyleForStyle:(id)arg1 bakeComputable:(bool)arg2;
 - (void)popMappingContext:(id)arg1;
 - (void)pushMappingContext:(id)arg1;
+- (void)replaceReferencedStylesInMap:(id)arg1;
 - (id)targetStylesheet;
 - (id)underlyingMapper;
 

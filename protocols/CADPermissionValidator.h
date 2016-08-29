@@ -10,6 +10,7 @@
 - (bool)canModifySuggestedEventCalendar;
 - (bool)canSetAutomaticLocationGeocodingAllowedValue;
 - (bool)hasContactsUIEntitlement;
+- (bool)internalAccessLevelGranted;
 - (bool)testingAccessLevelGranted;
 
 @end

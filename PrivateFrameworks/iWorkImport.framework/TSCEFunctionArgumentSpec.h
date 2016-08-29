@@ -69,6 +69,7 @@
 - (id)localizedFunctionNameForLocale:(id)arg1;
 - (id)localizedModeMenuItemStringForModeIndex:(short)arg1 locale:(id)arg2;
 - (id)localizedModeNameForModeIndex:(short)arg1 locale:(id)arg2;
+- (id)localizedModeNamesForLocale:(id)arg1;
 - (id)localizedModeToolTipStringForModeIndex:(short)arg1 locale:(id)arg2;
 - (id)localizedToolTipStringForLocale:(id)arg1;
 - (bool)maxInclusive;

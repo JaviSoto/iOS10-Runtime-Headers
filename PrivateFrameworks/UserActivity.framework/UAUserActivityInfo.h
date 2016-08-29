@@ -29,6 +29,7 @@
     NSString * _title;
     unsigned long long  _type;
     NSUUID * _uuid;
+    _LSUserActivityWasContinuedInfo * _wasContinuedInfo;
     NSURL * _webpageURL;
     NSDate * _when;
 }
@@ -59,6 +60,7 @@
 @property (copy) NSString *title;
 @property unsigned long long type;
 @property (copy) NSUUID *uuid;
+@property (retain) _LSUserActivityWasContinuedInfo *wasContinuedInfo;
 @property (copy) NSURL *webpageURL;
 @property (copy) NSDate *when;
 
@@ -130,6 +132,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setType:(unsigned long long)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setWasContinuedInfo:(id)arg1;
 - (void)setWebpageURL:(id)arg1;
 - (void)setWhen:(id)arg1;
 - (id)statusString;
@@ -138,6 +141,7 @@
 - (unsigned long long)type;
 - (id)userActivityString;
 - (id)uuid;
+- (id)wasContinuedInfo;
 - (bool)wasResumedOnAnotherDeviceWithCompletionHandler:(id /* block */)arg1;
 - (id)webpageURL;
 - (id)when;

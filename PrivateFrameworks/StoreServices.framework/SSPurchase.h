@@ -48,6 +48,7 @@
 @property long long expectedDownloadFileSize;
 @property (copy) NSArray *filteredAssetTypes;
 @property (copy) NSArray *gratisIdentifiers;
+@property (getter=isGratisSoftwareClaim, readonly) bool gratisSoftwareClaim;
 @property (readonly) unsigned long long hash;
 @property bool ignoresForcedPasswordRestriction;
 @property (copy) SSNetworkConstraints *networkConstraints;
@@ -71,6 +72,7 @@
 - (id)affiliateIdentifier;
 - (long long)batchIdentifier;
 - (id)buyParameters;
+- (id)buyParametersValueForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (bool)createsDownloads;
@@ -96,6 +98,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (bool)isBackgroundPurchase;
 - (bool)isEqual:(id)arg1;
+- (bool)isGratisSoftwareClaim;
 - (bool)isPlaybackRequest;
 - (bool)isPreauthenticated;
 - (id)item;

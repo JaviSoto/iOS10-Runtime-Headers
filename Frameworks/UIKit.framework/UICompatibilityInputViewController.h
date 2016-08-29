@@ -45,6 +45,7 @@
 - (void)generateCompatibleSizeConstraintsIfNecessary;
 - (id)inputController;
 - (void)keyboardWillChangeFromDelegate:(id)arg1 toDelegate:(id)arg2;
+- (void)killIncomingExtension;
 - (void)loadView;
 - (id)preferredFocusedItem;
 - (void)rebuildChildConstraints;

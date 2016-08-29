@@ -38,7 +38,6 @@
 @property (nonatomic, readonly) TSDImageLayout *imageLayout;
 @property (nonatomic) double pathScale;
 
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })affineTransformForTightPathBounds;
 - (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;
 - (id)computeLayoutGeometry;
 - (void)dealloc;

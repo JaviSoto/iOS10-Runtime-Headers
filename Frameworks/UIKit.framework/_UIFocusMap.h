@@ -42,6 +42,7 @@
 - (void)_beginTrackingFocusMovementSearchInfoIfNecessary;
 - (void)_beginTrackingSearches;
 - (id)_defaultFocusItemInEnvironment:(id)arg1;
+- (id)_defaultFocusItemInEnvironment:(id)arg1 limitScopeUsingFocusPreferences:(bool)arg2;
 - (id)_defaultItemSearchContext;
 - (id)_defaultMapSnapshotOptions;
 - (id)_delegate;

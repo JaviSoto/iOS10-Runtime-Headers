@@ -21,6 +21,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property bool isLoaded;
+@property bool isLoading;
 @property bool loadingFailed;
 @property (retain) QLItem *previewItem;
 @property (nonatomic, readonly) NSArray *registeredKeyCommands;
@@ -43,6 +44,7 @@
 - (id)delegate;
 - (id)init;
 - (bool)isLoaded;
+- (bool)isLoading;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadPreviewItemIfNeededWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)loadingFailed;
@@ -63,6 +65,7 @@
 - (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setIsLoaded:(bool)arg1;
+- (void)setIsLoading:(bool)arg1;
 - (void)setLoadingFailed:(bool)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (void)setToolbarButtons:(id)arg1;
@@ -73,5 +76,7 @@
 - (void)transitionDidStart:(bool)arg1;
 - (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;
 - (id)transitioningView;
+- (void)updateScrollViewContentOffset;
+- (void)updateScrollViewContentOffset:(bool)arg1 withPreviousAppearance:(id)arg2;
 
 @end

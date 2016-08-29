@@ -112,6 +112,7 @@
 + (bool)takesPressesBegan:(id)arg1 forTextView:(id)arg2;
 + (bool)takesPressesChanged:(id)arg1 forTextView:(id)arg2;
 + (bool)takesPressesEnded:(id)arg1 forTextView:(id)arg2;
++ (void)textFieldTextDidEndEditing;
 + (void)updateLandingView;
 + (bool)usingServerManualEndpointingThreshold;
 + (bool)usingTypeAndTalk;

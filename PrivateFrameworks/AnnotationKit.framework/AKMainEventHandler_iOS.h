@@ -7,7 +7,7 @@
     double  _lastRotationAngleInRotationGesture;
     AKPanGestureRecognizer * _panRecognizer;
     UILongPressGestureRecognizer * _pressRecognizer;
-    UIRotationGestureRecognizer * _rotationRecognizer;
+    AKRotationGestureRecognizer * _rotationRecognizer;
     UITapGestureRecognizer * _tapRecognizer;
 }
 
@@ -18,7 +18,7 @@
 @property double lastRotationAngleInRotationGesture;
 @property (retain) AKPanGestureRecognizer *panRecognizer;
 @property (retain) UILongPressGestureRecognizer *pressRecognizer;
-@property (retain) UIRotationGestureRecognizer *rotationRecognizer;
+@property (retain) AKRotationGestureRecognizer *rotationRecognizer;
 @property (readonly) Class superclass;
 @property (retain) UITapGestureRecognizer *tapRecognizer;
 

@@ -213,6 +213,7 @@
 - (bool)_shouldProvideDimmingView;
 - (bool)_shouldReverseActions;
 - (bool)_shouldSizeToFillSuperview;
+- (bool)_shouldSupportReturnKeyPresses;
 - (bool)_shouldTreatEmptyStringsAsNil;
 - (id)_styleProvider;
 - (id)_systemProvidedGestureRecognizer;
@@ -287,7 +288,6 @@
 + (id)notifyMeConfirmationControllerWithHandler:(id /* block */)arg1;
 
 - (void)mf_addCancelActionWithHandler:(id /* block */)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mf_defaultSourceRectForView:(id)arg1;
 - (void)mf_presentFromViewController:(id)arg1 withSourceView:(id)arg2;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI

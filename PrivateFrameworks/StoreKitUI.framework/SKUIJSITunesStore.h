@@ -26,11 +26,14 @@
 - (void)_rentalInformationUpdated:(id)arg1;
 - (long long)applicationIconBadgeNumber;
 - (void)approveInPerson:(id)arg1 :(id)arg2;
+- (bool)areVideosCloudPurchasesEnabled;
 - (void)attemptLocalAskToBuyApproval:(id)arg1;
 - (void)buy:(id)arg1;
 - (void)clearToggleStateItems;
 - (void)dealloc;
+- (id)documentSizeForNavigationDocument:(id)arg1;
 - (void)download:(id)arg1;
+- (void)downloadExistsFor:(id)arg1 :(id)arg2;
 - (void)exit:(id)arg1;
 - (void)fetchTemplates:(id)arg1 :(id)arg2;
 - (void)findApps:(id)arg1 :(id)arg2 :(id)arg3;
@@ -62,6 +65,7 @@
 - (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { double x1; double x2; })arg1;
 - (void)sendOnNavigationStackWillPop:(bool)arg1;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
+- (bool)sendOnShowPageEventType:(id)arg1 data:(id)arg2;
 - (bool)sendOnXEventWithDictionary:(id)arg1;
 - (void)setApplicationIconBadgeNumber:(long long)arg1;
 - (void)setPreviewOverlay:(id)arg1 :(id)arg2;

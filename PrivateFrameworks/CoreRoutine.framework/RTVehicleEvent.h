@@ -10,6 +10,7 @@
     RTLocation * _location;
     bool  _locationFinalized;
     unsigned long long  _locationQuality;
+    RTLocationOfInterest * _nearbyLocationOfInterest;
     NSString * _notes;
     NSData * _photo;
     bool  _userSetLocation;
@@ -24,6 +25,7 @@
 @property (nonatomic, copy) RTLocation *location;
 @property (nonatomic) bool locationFinalized;
 @property (nonatomic) unsigned long long locationQuality;
+@property (nonatomic, copy) RTLocationOfInterest *nearbyLocationOfInterest;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, retain) NSData *photo;
 @property (nonatomic) bool userSetLocation;
@@ -47,6 +49,7 @@
 - (id)location;
 - (bool)locationFinalized;
 - (unsigned long long)locationQuality;
+- (id)nearbyLocationOfInterest;
 - (id)notes;
 - (id)photo;
 - (void)setConfirmed:(bool)arg1;
@@ -56,6 +59,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setLocationFinalized:(bool)arg1;
 - (void)setLocationQuality:(unsigned long long)arg1;
+- (void)setNearbyLocationOfInterest:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setUserSetLocation:(bool)arg1;

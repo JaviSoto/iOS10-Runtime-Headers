@@ -13,6 +13,7 @@
     IKDOMDocument * _jsDocument;
     IKViewElement * _navigationBarElement;
     IKJSObject * _owner;
+    NSHashTable * _styleChangeObservers;
     IKViewElementStyleFactory * _styleFactory;
     bool  _subtreeUpdated;
     IKViewElement * _templateElement;
@@ -34,6 +35,7 @@
 @property (retain) IKViewElement *navigationBarElement;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) IKJSObject *owner;
+@property (nonatomic, retain) NSHashTable *styleChangeObservers;
 @property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
 @property (getter=isSubtreeUpdated) bool subtreeUpdated;
 @property (readonly) Class superclass;
@@ -42,7 +44,9 @@
 @property (getter=isUpdated, nonatomic) bool updated;
 
 - (void).cxx_destruct;
+- (void)_addStyleChangeObserver:(id)arg1;
 - (bool)_clearUpdatesForElement:(id)arg1;
+- (void)_removeStyleChangeObserver:(id)arg1;
 - (void)_setViewElementStylesDirty;
 - (void)_updateWithXML:(id)arg1;
 - (id)appContext;
@@ -85,6 +89,7 @@
 - (void)setImpressions:(id)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (void)setNeedsUpdateForDocument:(id)arg1;
+- (void)setStyleChangeObservers:(id)arg1;
 - (void)setStyleFactory:(id)arg1;
 - (void)setSubtreeUpdated:(bool)arg1;
 - (void)setTemplateElement:(id)arg1;
@@ -92,6 +97,7 @@
 - (void)setUpdated:(bool)arg1;
 - (void)setViewElementStylesDirty;
 - (id)snapshotImpressions;
+- (id)styleChangeObservers;
 - (id)styleFactory;
 - (id)templateElement;
 - (id)toolbarElement;

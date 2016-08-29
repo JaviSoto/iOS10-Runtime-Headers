@@ -19,11 +19,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_bulletinsPerSectionIdForNotificationRequests:(id)arg1;
 - (id)_sectionInfoForBulletin:(id)arg1;
 - (id)bulletinFeeds;
 - (void)dealloc;
 - (id)dispatcher;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
 - (id)init;
 - (id)initWithDispatcher:(id)arg1;
 - (id)initWithDispatcher:(id)arg1 observer:(id)arg2;

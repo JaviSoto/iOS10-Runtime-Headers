@@ -43,6 +43,7 @@
 - (void)disable;
 - (void)getItems;
 - (id)init;
+- (bool)isNearMeLocationStatusEnabled;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (id)items;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

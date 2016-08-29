@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAudioPlayer : NSObject <AVAudioPlayerDelegate> {
-    AVAudioPlayer * _audioPlayer;
+@interface CKAudioPlayer : NSObject <CKInternalAudioPlayerDelegate> {
+    CKInternalAudioPlayer * _audioPlayer;
     id /* block */  _block;
     <CKAudioPlayerDelegate> * _delegate;
     CADisplayLink * _displayLink;
@@ -11,7 +11,7 @@
     double  _prevCurrentTime;
 }
 
-@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
+@property (nonatomic, retain) CKInternalAudioPlayer *audioPlayer;
 @property (nonatomic, copy) id /* block */ block;
 @property (nonatomic, readonly) double currentTime;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,11 +24,11 @@
 @property (getter=isPlaying, nonatomic, readonly) bool playing;
 @property (nonatomic) double prevCurrentTime;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool usesAVPlayer;
 @property (nonatomic) float volume;
 
 - (void).cxx_destruct;
 - (id)audioPlayer;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
 - (id /* block */)block;
 - (double)currentTime;
 - (void)dealloc;
@@ -38,6 +38,9 @@
 - (double)duration;
 - (id)initWithFileURL:(id)arg1;
 - (id)initWithMediaObject:(id)arg1;
+- (id)initWithMediaObject:(id)arg1 shouldUseAVPlayer:(bool)arg2;
+- (void)internalAudioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
+- (void)internalAudioPlayerDidPrepareAudioForPlaying:(id)arg1 successfully:(bool)arg2;
 - (bool)isPlaying;
 - (id)mediaObject;
 - (void)pause;
@@ -52,6 +55,7 @@
 - (void)setPrevCurrentTime:(double)arg1;
 - (void)setVolume:(float)arg1;
 - (void)stop;
+- (bool)usesAVPlayer;
 - (float)volume;
 
 @end

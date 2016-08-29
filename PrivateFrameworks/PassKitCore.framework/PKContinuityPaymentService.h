@@ -22,8 +22,6 @@
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)cancelRemotePaymentRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
-- (void)didFindPaymentDeviceNearby:(id)arg1;
-- (void)didLosePaymentDeviceNearby:(id)arg1;
 - (void)didReceiveCancellationForRemotePaymentRequest:(id)arg1;
 - (void)didReceivePayment:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)didReceivePaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2;

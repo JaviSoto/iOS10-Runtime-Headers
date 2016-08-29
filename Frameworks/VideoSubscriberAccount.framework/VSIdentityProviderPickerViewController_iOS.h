@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSIdentityProviderPickerViewController_iOS : UIViewController <UITableViewDataSource, UITableViewDelegate, VSIdentityProviderPickerViewController, VSTableContainerViewDelegate> {
+@interface VSIdentityProviderPickerViewController_iOS : UITableViewController <VSIdentityProviderPickerViewController, VSTableHeaderFooterViewDelegate> {
     unsigned long long  _additionalProvidersMode;
     bool  _cancellationAllowed;
     <VSIdentityProviderPickerViewControllerDelegate> * _delegate;
     NSArray * _identityProviders;
-    double  _lastKnownTableWidth;
     NSString * _requestingAppDisplayName;
     NSString * _resourceTitle;
-    bool  _sectionContentInsetInitialized;
-    UITableView * _tableView;
 }
 
 @property (nonatomic) unsigned long long additionalProvidersMode;
@@ -21,12 +18,9 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *identityProviders;
-@property (nonatomic) double lastKnownTableWidth;
 @property (nonatomic, copy) NSString *requestingAppDisplayName;
 @property (nonatomic, copy) NSString *resourceTitle;
-@property (nonatomic) bool sectionContentInsetInitialized;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) UITableView *tableView;
 
 - (void).cxx_destruct;
 - (long long)_accessoryTypeForRowAtIndexPath:(id)arg1;
@@ -36,41 +30,35 @@
 - (long long)_cellStyleForRowAtIndexPath:(id)arg1;
 - (void)_didPickAdditionalIdentityProviders;
 - (void)_didPickIdentityProvider:(id)arg1;
+- (void)_dismissAboutPrivacy:(id)arg1;
 - (id)_identityProviderAtIndex:(unsigned long long)arg1;
 - (unsigned long long)_sectionForIndexPath:(id)arg1;
+- (void)_showAboutPrivacy:(id)arg1;
 - (long long)_textAlignmentForRowAtIndexPath:(id)arg1;
 - (id)_titleForRowAtIndexPath:(id)arg1;
-- (void)_updateSectionContentInsetWithAnimation:(bool)arg1;
 - (unsigned long long)additionalProvidersMode;
 - (id)delegate;
+- (void)didInvalidateIntrinsicContentSizeForTableHeaderFooterView:(id)arg1;
 - (id)identityProviders;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithStyle:(long long)arg1;
 - (bool)isCancellationAllowed;
-- (double)lastKnownTableWidth;
-- (void)layoutMarginsDidChangeForTableContainerView:(id)arg1;
-- (void)loadView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)requestingAppDisplayName;
 - (id)resourceTitle;
-- (bool)sectionContentInsetInitialized;
 - (void)setAdditionalProvidersMode:(unsigned long long)arg1;
 - (void)setCancellationAllowed:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIdentityProviders:(id)arg1;
-- (void)setLastKnownTableWidth:(double)arg1;
 - (void)setRequestingAppDisplayName:(id)arg1;
 - (void)setResourceTitle:(id)arg1;
-- (void)setSectionContentInsetInitialized:(bool)arg1;
-- (void)setTableView:(id)arg1;
-- (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
+- (id)titleForTableFooterView;
+- (id)titleForTableHeaderView;
+- (void)viewDidLoad;
+- (void)willMoveToParentViewController:(id)arg1;
 
 @end

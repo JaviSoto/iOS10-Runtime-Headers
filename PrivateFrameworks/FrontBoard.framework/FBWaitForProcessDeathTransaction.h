@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWaitForProcessDeathTransaction : FBTransaction <FBProcessObserver> {
-    FBProcessManager * _manager;
+@interface FBWaitForProcessDeathTransaction : FBTransaction <FBProcessManagerObserver> {
     FBProcess * _process;
     double  _timeout;
     BSWatchdog * _watchdog;
@@ -24,7 +23,8 @@
 - (id)initWithProcess:(id)arg1;
 - (id)initWithProcess:(id)arg1 timeout:(double)arg2;
 - (id)process;
-- (void)processDidExit:(id)arg1;
+- (void)processManager:(id)arg1 didAddProcess:(id)arg2;
+- (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (double)timeout;
 
 @end

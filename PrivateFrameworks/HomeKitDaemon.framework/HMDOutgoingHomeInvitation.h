@@ -24,6 +24,7 @@
 - (id)accessoryInvitationsInformation;
 - (void)cancel;
 - (id)debugDescription;
+- (id)describeWithFormat;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

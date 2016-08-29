@@ -33,6 +33,7 @@
 - (id)_blockingImage;
 - (void)_contentSizeCategoryDidChange;
 - (id)_nonBlockingImage;
+- (void)_updateBottomConstraints;
 - (void)_updateConstraintValues;
 - (void)configureWithIncident:(id)arg1 referenceDate:(id)arg2 shouldShowImage:(bool)arg3 inSiri:(bool)arg4;
 - (void)dealloc;
@@ -46,6 +47,7 @@
 - (void)setLeadingSeparatorInset:(double)arg1;
 - (void)setPadBottom:(bool)arg1;
 - (void)setPosition:(long long)arg1;
+- (void)setSeparatorHidden:(bool)arg1;
 - (void)setShowMoreDetailsButton:(bool)arg1;
 - (void)setTrailingSeparatorInset:(double)arg1;
 

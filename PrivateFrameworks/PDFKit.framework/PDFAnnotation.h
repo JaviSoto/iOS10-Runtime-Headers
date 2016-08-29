@@ -49,7 +49,7 @@
 - (id)contents;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)derotateContext;
+- (void)derotateContext:(struct CGContext { }*)arg1;
 - (id)description;
 - (struct __CFDictionary { }*)dictionaryRef;
 - (void)drawAppearance:(struct CGPDFForm { }*)arg1 withBox:(long long)arg2 inContext:(struct CGContext { }*)arg3;

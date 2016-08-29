@@ -5,11 +5,13 @@
 @interface GEOPDLocationDirectedSearchResult : PBCodable <NSCopying> {
     NSMutableArray * _disambiguationLabels;
     GEOMapRegion * _displayMapRegion;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
 @property (nonatomic, readonly) bool hasDisplayMapRegion;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)disambiguationLabelType;
 
@@ -31,6 +33,7 @@
 - (bool)readFrom:(id)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

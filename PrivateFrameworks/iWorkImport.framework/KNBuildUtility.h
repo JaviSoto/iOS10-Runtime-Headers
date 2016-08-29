@@ -6,6 +6,7 @@
 
 + (id)UUIDToTSPObjectMapForTSPObjects:(id)arg1;
 + (bool)animationInfo:(id)arg1 onInfo:(id)arg2 canRunSimultaneouslyWithAnimationInfo:(id)arg3 onInfo:(id)arg4;
++ (id)buildUUIDToChunkIdentifiersMapForChunkIdentifiers:(id)arg1;
 + (id)buildsForChunks:(id)arg1;
 + (id)buildsToChunksMapForBuilds:(id)arg1 chunks:(id)arg2;
 + (id)buildsToChunksMapForChunks:(id)arg1;

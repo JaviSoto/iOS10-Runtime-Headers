@@ -13,5 +13,6 @@
 - (bool)hasArticleBeenSeen;
 - (NSString *)identifier;
 - (NSDate *)lastVisitedAt;
+- (unsigned long long)maxVersionRead;
 
 @end

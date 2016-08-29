@@ -44,12 +44,11 @@
 - (bool)_isDemoPersonCoolingDown:(id)arg1 atTime:(double)arg2;
 - (bool)_isDemoPersonSedentary:(id)arg1 atTime:(double)arg2;
 - (bool)_isDemoPersonWalking:(id)arg1 atTime:(double)arg2 samplePeriod:(double)arg3;
-- (bool)_isDemoPersonWithinIntervals:(id)arg1 atTime:(double)arg2 duration:(double)arg3 numDailyEvents:(long long)arg4 activityDurationMean:(double)arg5 activityDurationStdDev:(double)arg6;
 - (long long)_pickActivityForTime:(double)arg1;
 - (id)_sumQuantity:(id)arg1 withQuantity:(id)arg2;
-- (void)_updateWorkoutStateWithActiveEnergyBurned:(id)arg1 distanceWalking:(id)arg2 distanceCycling:(id)arg3 date:(id)arg4 objectCollection:(id)arg5;
+- (void)_updateWorkoutStateWithActiveEnergyBurned:(id)arg1 distanceWalking:(id)arg2 distanceCycling:(id)arg3 currentTime:(double)arg4 date:(id)arg5 objectCollection:(id)arg6;
 - (id)activeCaloriesForDemoPerson:(id)arg1 atTime:(double)arg2;
-- (long long)appleStandHourForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (id)appleStandHourForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fallsForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)flightsClimbedForDemoPerson:(id)arg1 atTime:(double)arg2;

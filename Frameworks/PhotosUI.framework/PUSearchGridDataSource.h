@@ -10,6 +10,7 @@
     bool  _finished;
     bool  _hasPendingChanges;
     NSObject<OS_dispatch_queue> * _queue;
+    unsigned long long  _searchCategories;
     unsigned long long  _taskId;
 }
 
@@ -20,6 +21,7 @@
 @property (getter=isFinished, nonatomic, readonly) bool finished;
 @property (nonatomic) bool hasPendingChanges;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) unsigned long long searchCategories;
 @property (nonatomic) unsigned long long taskId;
 
 - (void).cxx_destruct;
@@ -36,12 +38,14 @@
 - (bool)isFinished;
 - (void)mergePendingChanges;
 - (id)queue;
+- (unsigned long long)searchCategories;
 - (void)setAdditionalAssetUUIDs:(id)arg1;
 - (void)setAssetUUIDs:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFetchResult:(id)arg1;
 - (void)setHasPendingChanges:(bool)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setSearchCategories:(unsigned long long)arg1;
 - (void)setTaskId:(unsigned long long)arg1;
 - (unsigned long long)taskId;
 - (void)updateAssetUUIDs:(id)arg1 additionalAssetUUIDs:(id)arg2 completion:(id /* block */)arg3;

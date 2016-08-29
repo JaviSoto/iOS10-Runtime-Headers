@@ -19,6 +19,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_cacheIndentationLevelWithSortPathComponents:(id)arg1;
 - (void)_modelChanged;
 - (void)_removeCachedValues;
 - (void)cacheValues:(id)arg1;

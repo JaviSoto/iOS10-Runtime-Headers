@@ -29,6 +29,7 @@
 - (void)_setSceneState:(unsigned char)arg1;
 - (void)addAnnotations:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)allAnnotations;
 - (unsigned long long)annotationCount;
 - (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)clusterStyleAttributes;

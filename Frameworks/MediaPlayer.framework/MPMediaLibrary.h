@@ -81,6 +81,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (void)_endDiscoveringMediaLibrariesIfAllowed;
 + (id)_libraryDataProviders;
 + (id)_libraryForDataProvider:(id)arg1;
 + (id)_mediaLibraries;
@@ -125,6 +126,7 @@
 - (unsigned long long)_countOfCollectionsForQueryCriteria:(id)arg1;
 - (unsigned long long)_countOfItemsForQueryCriteria:(id)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+- (void)_disconnect;
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (id)_getCachedValueForQueryCritiera:(id)arg1 valueCriteriaCache:(id)arg2 entitiesForCriteriaCache:(id)arg3 didLoadBlocksByQueryCriteria:(id)arg4 valueLoadedFromEntitiesArrayBlock:(id /* block */)arg5 loadValueFromDataProviderBlock:(id /* block */)arg6;
 - (bool)_hasCollectionsForQueryCriteria:(id)arg1;
@@ -188,6 +190,7 @@
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)errorResolverForItem:(id)arg1;
+- (unsigned long long)filterAvailableContentGroups:(unsigned long long)arg1 withOptions:(unsigned long long)arg2;
 - (void)geniusItemsForSeedItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)getPlaylistWithUUID:(id)arg1 creationMetadata:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)hasAlbums;

@@ -17,6 +17,7 @@
     double  _currentDuration;
     NSDictionary * _frameGeneratorsForClips;
     UIImage * _placeholderImage;
+    long long  _placeholderOffset;
     NSMutableArray * _thumbnails;
     bool  _thumbnailsNeedUpdate;
 }
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSDictionary *frameGeneratorsForClips;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *placeholderImage;
+@property (nonatomic) long long placeholderOffset;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *thumbnails;
 @property (nonatomic) bool thumbnailsNeedUpdate;
@@ -53,11 +55,13 @@
 - (void)invalidateThumbnails;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)placeholderImage;
+- (long long)placeholderOffset;
 - (void)setBlackThumbnailImage:(id)arg1;
 - (void)setCurrentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCurrentDuration:(double)arg1;
 - (void)setFrameGeneratorsForClips:(id)arg1;
 - (void)setPlaceholderImage:(id)arg1;
+- (void)setPlaceholderOffset:(long long)arg1;
 - (void)setThumbnails:(id)arg1;
 - (void)setThumbnailsNeedUpdate:(bool)arg1;
 - (id)thumbnails;

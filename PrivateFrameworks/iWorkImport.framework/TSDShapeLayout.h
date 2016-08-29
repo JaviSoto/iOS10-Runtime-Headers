@@ -122,6 +122,7 @@
 - (void)dynamicStrokeWidthUpdateToValue:(double)arg1;
 - (id)editablePathSource;
 - (id)fill;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForCulling;
 - (double)headLineEndAngle;
 - (struct CGPoint { double x1; double x2; })headLineEndPoint;
 - (struct CGPoint { double x1; double x2; })headPoint;
@@ -174,6 +175,7 @@
 - (id)stroke;
 - (id)strokeHeadLineEnd;
 - (id)strokeTailLineEnd;
+- (bool)supportsCalloutAttributes;
 - (bool)supportsResize;
 - (bool)supportsRotation;
 - (double)tailLineEndAngle;

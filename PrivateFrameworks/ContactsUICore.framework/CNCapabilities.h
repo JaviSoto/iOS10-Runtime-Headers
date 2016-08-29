@@ -4,6 +4,7 @@
 
 @interface CNCapabilities : NSObject <CNCapabilities>
 
+@property (nonatomic, readonly) bool areTelephonyCallsSupported;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -12,6 +13,7 @@
 @property (nonatomic, readonly) bool isiMessageSupported;
 @property (readonly) Class superclass;
 
+- (bool)areTelephonyCallsSupported;
 - (bool)isFaceTimeAudioSupported;
 - (bool)isFaceTimeVideoSupported;
 - (bool)isiMessageSupported;

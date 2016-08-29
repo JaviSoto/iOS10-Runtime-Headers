@@ -12,6 +12,7 @@
 + (void)getRecommendedPosition:(struct CGPoint { double x1; double x2; }*)arg1 andTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; }*)arg2 toFitLayer:(id)arg3 inContainerWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 contentsScale:(double)arg5;
 + (void)hitPreviewButtonIfExists;
 + (void)initialize;
++ (bool)isAnimationTestingEnabled;
 + (bool)isCustomEffectTimingCurveEditingEnabled;
 + (bool)isDisplayLoggingEnabled;
 + (bool)isFPSGraphEnabled;
@@ -21,7 +22,6 @@
 + (bool)isMotionBlurBlacklistedWithCapabilities:(id)arg1;
 + (bool)isMotionBlurCapableWithAnimationContext:(id)arg1;
 + (bool)isRandomNumberSeedInspectionEnabled;
-+ (bool)isSOATSAnimationTestingEnabled;
 + (bool)isSOATSImageExportTestEnabled;
 + (unsigned long long)randomBasicDirection;
 + (unsigned long long)randomDirection;

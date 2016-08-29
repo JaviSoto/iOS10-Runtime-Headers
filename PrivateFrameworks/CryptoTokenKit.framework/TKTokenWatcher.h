@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)addRemovalHandler:(id /* block */)arg1 forTokenID:(id)arg2;
+- (void)dealloc;
 - (id)init;
 - (id)initWithInsertionHandler:(id /* block */)arg1;
 - (void)insertedToken:(id)arg1 reply:(id /* block */)arg2;

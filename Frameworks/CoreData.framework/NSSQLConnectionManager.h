@@ -17,6 +17,7 @@
 - (id)initWithSQLCore:(id)arg1 seedConnection:(id)arg2;
 - (id)initializationConnection;
 - (void)scheduleBarrierBlock:(id /* block */)arg1;
+- (void)scheduleConnectionsBarrier:(id /* block */)arg1;
 - (void)setExclusiveLockingMode:(bool)arg1;
 - (void)setFilter:(id /* block */)arg1;
 - (id)sqlCore;

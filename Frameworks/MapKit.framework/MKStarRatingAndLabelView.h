@@ -19,8 +19,10 @@
 @property (nonatomic, readonly) MKStarRatingView *starRatingView;
 
 + (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5;
++ (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5 theme:(id)arg6;
 + (id)reviewsString:(unsigned long long)arg1 providerName:(id)arg2;
-+ (id)starRatingAndProvderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(bool)arg4;
++ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(bool)arg4;
++ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(bool)arg4 theme:(id)arg5;
 
 - (void).cxx_destruct;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;

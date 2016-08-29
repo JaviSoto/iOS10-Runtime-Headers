@@ -3,12 +3,14 @@
  */
 
 @interface BWCrossoverNode : BWNode {
+    NSObject<OS_dispatch_queue> * _bufferServicingQueue;
     int  _numEODMessagesReceived;
 }
 
 + (void)initialize;
 
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;

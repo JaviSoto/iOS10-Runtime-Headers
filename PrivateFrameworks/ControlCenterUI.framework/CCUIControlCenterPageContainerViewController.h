@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIControlCenterPageContainerViewController : UIViewController <CCUIControlCenterObserver, CCUIControlCenterPageContentViewControllerDelegate> {
+@interface CCUIControlCenterPageContainerViewController : UIViewController <CCUIControlCenterObserver, CCUIControlCenterPageContentViewControllerDelegate, CCUIControlCenterPagePlatterViewDelegate> {
     UIViewController<CCUIControlCenterPageContentProviding> * _contentViewController;
     <CCUIControlCenterPageContainerViewControllerDelegate> * _delegate;
+    NSMutableSet * _punchOutMaskCachingSuppressionReasons;
     double  _revealPercentage;
 }
 
@@ -15,11 +16,13 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
 @property (nonatomic) double revealPercentage;
+@property (nonatomic, readonly) bool shouldSuppressPunchOutMaskCaching;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_pagePlatterView;
 - (id)_platterView;
+- (void)beginSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (id)contentViewController;
 - (void)contentViewControllerWantsDismissal:(id)arg1;
 - (void)controlCenterDidDismiss;
@@ -30,6 +33,7 @@
 - (void)controlCenterWillPresent;
 - (id)delegate;
 - (bool)dismissModalFullScreenIfNeeded;
+- (void)endSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (id)initWithContentViewController:(id)arg1 delegate:(id)arg2;
 - (long long)layoutStyle;
 - (void)loadView;
@@ -38,6 +42,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setRevealPercentage:(double)arg1;
+- (bool)shouldSuppressPunchOutMaskCaching;
 - (void)viewDidLoad;
 - (void)visibilityPreferenceChangedForContentViewController:(id)arg1;
 

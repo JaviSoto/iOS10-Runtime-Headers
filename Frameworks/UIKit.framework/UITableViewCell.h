@@ -129,8 +129,6 @@
         unsigned int hasEditingFocusGuides : 1; 
         unsigned int focusStyle : 3; 
         unsigned int accessoryViewsHidden : 1; 
-        unsigned int usingDefaultFocusedTextColor : 1; 
-        unsigned int usingDefaultFocusedDetailTextColor : 1; 
     }  _tableCellFlags;
     <UITable_UITableViewCellDelegate> * _tableView;
     id  _target;
@@ -250,8 +248,9 @@
 - (void)_forSpringBoardSetDefaultSelectedBackgroundView:(id)arg1;
 - (bool)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
 - (bool)_gestureRecognizerShouldBegin:(id)arg1;
-- (void)_grabberBeganReorder:(id)arg1;
+- (void)_grabberBeganReorder:(id)arg1 touch:(id)arg2;
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
+- (void)_grabberDragged:(id)arg1 yDelta:(float)arg2 touch:(id)arg3;
 - (void)_grabberReleased:(id)arg1;
 - (void)_handleSwipeDeleteCancelation:(id)arg1;
 - (bool)_hasAccessoryView;

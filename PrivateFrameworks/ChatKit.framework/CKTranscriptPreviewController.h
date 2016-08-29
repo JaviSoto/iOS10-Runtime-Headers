@@ -3,6 +3,7 @@
  */
 
 @interface CKTranscriptPreviewController : CKViewController <CKTranscriptCollectionViewControllerDelegate> {
+    CKTranscriptCollectionView * _collectionView;
     CKConversation * _conversation;
     NSObject<CKTranscriptPreviewControllerDelegate> * _delegate;
     struct UIEdgeInsets { 
@@ -14,6 +15,7 @@
     double  _transcriptWidth;
 }
 
+@property (nonatomic, retain) CKTranscriptCollectionView *collectionView;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<CKTranscriptPreviewControllerDelegate> *delegate;
@@ -24,6 +26,7 @@
 @property (nonatomic) double transcriptWidth;
 
 - (void).cxx_destruct;
+- (id)collectionView;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
@@ -31,6 +34,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 - (void)loadView;
 - (id)previewActions;
+- (void)setCollectionView:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
@@ -47,6 +51,7 @@
 - (bool)transcriptCollectionViewController:(id)arg1 shouldCleanupFullscreenEffectUI:(id)arg2;
 - (bool)transcriptCollectionViewController:(id)arg1 shouldSetupFullscreenEffectUI:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 willBeginImpactEffectAnimationWithSendAnimationContext:(id)arg2;
+- (id)transcriptCollectionViewControllerAdditionalFullscreenEffectViews:(id)arg1;
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInsertAssociatedChatItem:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;
@@ -58,5 +63,6 @@
 - (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (void)transcriptCollectionViewControllerWillScrollToBottom:(id)arg1;
 - (double)transcriptWidth;
+- (void)viewDidLayoutSubviews;
 
 @end

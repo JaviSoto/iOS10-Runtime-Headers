@@ -12,6 +12,8 @@
         double bottom; 
         double right; 
     }  _contentInsets;
+    long long  _fallbackCapitalization;
+    NSDictionary * _fallbackTextAttributes;
     struct UIFont { Class x1; } * _font;
     double  _minimumScaleFactor;
     double  _minimumTruncatedScaleFactor;
@@ -26,6 +28,8 @@
 @property (nonatomic) bool allowTruncation;
 @property (nonatomic) long long capitalization;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) long long fallbackCapitalization;
+@property (nonatomic, copy) NSDictionary *fallbackTextAttributes;
 @property (nonatomic, copy) UIFont *font;
 @property (nonatomic) double minimumScaleFactor;
 @property (nonatomic) double minimumTruncatedScaleFactor;
@@ -41,6 +45,8 @@
 - (long long)capitalization;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)fallbackCapitalization;
+- (id)fallbackTextAttributes;
 - (struct UIFont { Class x1; }*)font;
 - (unsigned long long)hash;
 - (id)init;
@@ -52,6 +58,8 @@
 - (void)setAllowTruncation:(bool)arg1;
 - (void)setCapitalization:(long long)arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setFallbackCapitalization:(long long)arg1;
+- (void)setFallbackTextAttributes:(id)arg1;
 - (void)setFont:(struct UIFont { Class x1; }*)arg1;
 - (void)setMinimumScaleFactor:(double)arg1;
 - (void)setMinimumTruncatedScaleFactor:(double)arg1;

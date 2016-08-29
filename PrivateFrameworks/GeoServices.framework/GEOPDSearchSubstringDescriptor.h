@@ -7,12 +7,14 @@
     int  _endIndex;
     NSMutableArray * _spanDatas;
     int  _stringType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int beginIndex;
 @property (nonatomic) int endIndex;
 @property (nonatomic, retain) NSMutableArray *spanDatas;
 @property (nonatomic) int stringType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)spanDataType;
 
@@ -39,6 +41,7 @@
 - (unsigned long long)spanDatasCount;
 - (int)stringType;
 - (id)stringTypeAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

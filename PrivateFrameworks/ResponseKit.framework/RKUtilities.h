@@ -10,6 +10,7 @@
 + (id)removeEmoji:(id)arg1;
 + (id)stripDiacritics:(id)arg1;
 + (id)stripEmojiSkinTones:(id)arg1;
++ (id)stripPunctuations:(id)arg1;
 + (bool)suffixInArray:(id)arg1 withArray:(id)arg2;
 + (bool)tokenInArray:(id)arg1 withArray:(id)arg2;
 

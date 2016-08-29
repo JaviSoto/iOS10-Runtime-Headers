@@ -11,6 +11,8 @@
 + (id)sortDescriptorWithKeyPath:(id)arg1 ascending:(bool)arg2;
 
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)keyPath;
 - (void)setKeyPath:(id)arg1;
 

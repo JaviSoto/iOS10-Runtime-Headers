@@ -49,6 +49,8 @@
 - (id)_activationTransactionString;
 - (void)_batchSamplesWithLimit:(unsigned long long)arg1 anchor:(id)arg2 includeDeletedObjects:(bool)arg3 batchHandler:(id /* block */)arg4;
 - (void)_batchSamplesWithLimit:(unsigned long long)arg1 sortDescriptors:(id)arg2 anchor:(id)arg3 batchHandler:(id /* block */)arg4;
+- (id)_collectionObserverState;
+- (void)_currentWorkoutDidChange:(id)arg1;
 - (bool)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2;
 - (bool)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2 authorizationAnchor:(id*)arg3;
 - (void)_pauseServerValidate:(bool)arg1 withCompletion:(id /* block */)arg2;
@@ -93,10 +95,12 @@
 - (void)_unitTestWaitForResumeActivationTimeoutSeconds:(unsigned long long)arg1;
 - (void)activateServerWithCompletion:(id /* block */)arg1;
 - (id)clientProxy;
+- (void)clientStateChanged;
 - (double)collectionInterval;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 - (void)deactivateServer;
 - (void)deactivateServerWithCompletion:(id /* block */)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;
 - (id)filter;

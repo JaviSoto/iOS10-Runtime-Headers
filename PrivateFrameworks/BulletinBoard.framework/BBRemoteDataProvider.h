@@ -35,7 +35,7 @@
 - (id)debugDescription;
 - (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
-- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
+- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)getAspectRatioForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(bool)arg3 withHandler:(id /* block */)arg4;
 - (void)getClearedInfoWithCompletion:(id /* block */)arg1;
 - (void)getDataForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(bool)arg3 withHandler:(id /* block */)arg4;

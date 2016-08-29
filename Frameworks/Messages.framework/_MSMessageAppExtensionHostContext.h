@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)_dismiss;
+- (void)_openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_remoteViewDidBecomeReadyForDisplay;
 - (void)_requestPresentationStyleExpanded:(bool)arg1;
 - (void)_stageAppItem:(id)arg1 completionHandler:(id /* block */)arg2;

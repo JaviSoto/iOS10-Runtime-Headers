@@ -3,6 +3,7 @@
  */
 
 @interface AVPlayerLooperInternal : NSObject {
+    NSError * error;
     struct { 
         long long value; 
         int timescale; 
@@ -11,6 +12,7 @@
     }  forwardPlaybackStartTime;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
     AVPlayerItem * lastEnqueuedLoopingItem;
+    bool  listeningForItemFailedToPlayToEndTime;
     long long  loopCount;
     struct { 
         struct { 
@@ -26,12 +28,15 @@
             long long epoch; 
         } duration; 
     }  loopRange;
-    bool  loopingEnabled;
     AVPlayerItem * loopingItem;
     NSMutableArray * loopingItemCopies;
+    NSMutableArray * loopingItemStatusKVOInvokers;
     AVQueuePlayer * loopingPlayer;
+    <AVCallbackCancellation> * playerCurrentItemKVOInvoker;
     long long  playerOriginalActionAtItemEnd;
+    long long  status;
     bool  waitingForLastLoopingCopyToFinish;
+    AVWeakReference * weakReference;
 }
 
 @end

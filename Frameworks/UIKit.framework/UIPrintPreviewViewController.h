@@ -33,6 +33,7 @@
         double y; 
     }  _pinchGestureLastPoint;
     double  _pinchGestureLastScale;
+    bool  _presentingDocumentInteractionController;
     UIPrintPanelViewController * _printPanelViewController;
     NSURL * _quickLookPDFURL;
     bool  _scaleUpOnDestinationPaper;
@@ -52,6 +53,7 @@
 @property (readonly) long long numPages;
 @property (retain) NSString *pdfPassword;
 @property (retain) NSURL *pdfURL;
+@property bool presentingDocumentInteractionController;
 @property (retain) NSURL *quickLookPDFURL;
 @property bool scaleUpOnDestinationPaper;
 @property (readonly) Class superclass;
@@ -85,6 +87,7 @@
 - (id)destinationPaper;
 - (void)didReceiveMemoryWarning;
 - (void)documentInteractionController:(id)arg1 didEndSendingToApplication:(id)arg2;
+- (void)documentInteractionControllerDidEndPreview:(id)arg1;
 - (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
 - (id)excludedActivityTypesForDocumentInteractionController:(id)arg1;
 - (void)fetchPageInBackground:(unsigned long long)arg1 reloadWhenDone:(bool)arg2;
@@ -108,6 +111,7 @@
 - (id)pathOfCenterMostCell;
 - (id)pdfPassword;
 - (id)pdfURL;
+- (bool)presentingDocumentInteractionController;
 - (void)previewPDF;
 - (id)previewViewControllerForItemAtIndexPath:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
@@ -131,6 +135,7 @@
 - (void)setInitialPageIndexToCenter:(long long)arg1;
 - (void)setPdfPassword:(id)arg1;
 - (void)setPdfURL:(id)arg1;
+- (void)setPresentingDocumentInteractionController:(bool)arg1;
 - (void)setQuickLookPDFURL:(id)arg1;
 - (void)setScaleUpOnDestinationPaper:(bool)arg1;
 - (void)setStartPage:(id)arg1 forPageIndex:(long long)arg2;

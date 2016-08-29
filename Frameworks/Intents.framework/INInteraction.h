@@ -8,6 +8,7 @@
     NSString * _groupIdentifier;
     NSString * _identifier;
     INIntent * _intent;
+    long long  _intentHandlingStatus;
     INIntentResponse * _intentResponse;
 }
 

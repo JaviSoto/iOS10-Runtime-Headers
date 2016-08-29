@@ -20,6 +20,7 @@
 - (id)executionCriteria;
 - (id /* block */)handler;
 - (id)init;
+- (id)initWithName:(id)arg1 delay:(unsigned long long)arg2 handler:(id /* block */)arg3;
 - (id)initWithName:(id)arg1 isPeriodic:(bool)arg2 period:(unsigned long long)arg3 handler:(id /* block */)arg4;
 - (id)name;
 - (unsigned long long)periodSeconds;

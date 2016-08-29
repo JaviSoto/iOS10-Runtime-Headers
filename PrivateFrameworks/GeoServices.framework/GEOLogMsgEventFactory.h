@@ -11,6 +11,7 @@
 
 - (int)_bucketValueForTimeDelta:(double)arg1;
 - (int)_bucketValueForTravelTime:(double)arg1;
+- (id)bookedTableWithBookedUsingMaps:(bool)arg1 cancelled:(bool)arg2 viewedInProactiveTray:(bool)arg3 tappedProactiveTrayItem:(bool)arg4 viewedInPlacecard:(bool)arg5 viewedDetailsInPlacecard:(bool)arg6 isAsync:(bool)arg7 bookedAppId:(id)arg8 muid:(unsigned long long)arg9 called:(bool)arg10 routed:(bool)arg11 tappedChangeReservation:(bool)arg12 tappedCancelReservation:(bool)arg13;
 - (void)clearStateTimingData;
 - (void)dealloc;
 - (id)init;
@@ -18,12 +19,17 @@
 - (id)logMsgEventForDirectionsFeedbacks:(id)arg1 finalLocation:(id)arg2 arrivedAtDestination:(bool)arg3 navigationAudioFeedback:(struct GEONavigationAudioFeedback { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; bool x18; struct { unsigned int x_19_1_1 : 1; unsigned int x_19_1_2 : 1; unsigned int x_19_1_3 : 1; unsigned int x_19_1_4 : 1; unsigned int x_19_1_5 : 1; unsigned int x_19_1_6 : 1; unsigned int x_19_1_7 : 1; unsigned int x_19_1_8 : 1; unsigned int x_19_1_9 : 1; unsigned int x_19_1_10 : 1; unsigned int x_19_1_11 : 1; unsigned int x_19_1_12 : 1; unsigned int x_19_1_13 : 1; unsigned int x_19_1_14 : 1; unsigned int x_19_1_15 : 1; unsigned int x_19_1_16 : 1; unsigned int x_19_1_17 : 1; unsigned int x_19_1_18 : 1; } x19; })arg4 durationOfTrip:(double)arg5;
 - (id)logMsgEventForListInteractionSessionOfType:(int)arg1 listResultItems:(id)arg2 searchString:(id)arg3;
 - (id)logMsgEventForLogFrameworkMetricType:(int)arg1 metricState:(int)arg2 messageCount:(int)arg3 messageSize:(long long)arg4 retryCount:(int)arg5;
-- (id)logMsgEventForMapLaunch:(id)arg1 sourceAppId:(id)arg2;
+- (id)logMsgEventForMapLaunch:(id)arg1 sourceAppId:(id)arg2 ttlEventTime:(id)arg3;
 - (id)logMsgEventForNetworkService:(int)arg1 requestErrorDomain:(id)arg2 requestErrorCode:(long long)arg3 requestErrorDescription:(id)arg4 requestDataSize:(int)arg5 responseDataSize:(int)arg6 responseTime:(int)arg7;
 - (id)logMsgEventForPlaceDataCacheFromAppWithID:(id)arg1;
 - (id)logMsgEventForProactiveSuggestionInteractionForType:(int)arg1 items:(id)arg2 interactedWithItemIndex:(int)arg3 forDuration:(double)arg4;
 - (id)logMsgEventForRefineSearchSessionOfType:(int)arg1 refineSearchType:(int)arg2 suggestionItems:(id)arg3 searchString:(id)arg4;
+- (id)logMsgEventForRidebookedBookedUsingMaps:(bool)arg1 cancelled:(bool)arg2 contactedDriver:(bool)arg3 viewedInProactiveTray:(bool)arg4 tappedProactiveTrayItem:(bool)arg5 viewedDetails:(bool)arg6 rideAppId:(id)arg7 numberOfAppsInstalled:(unsigned long long)arg8 enabled:(unsigned long long)arg9;
+- (id)logMsgEventForRidebookingEndState:(int)arg1 endView:(int)arg2 rideAppId:(id)arg3 originBlurred:(id)arg4 destinationBlurred:(id)arg5 exploredOtherOptions:(bool)arg6 rideType:(id)arg7 distanceToPickupInMeters:(double)arg8 paymentIsApplePay:(bool)arg9 numberOfAvailableExtensions:(unsigned long long)arg10 switchedApp:(bool)arg11 showedSurgePricingAlert:(bool)arg12 durationOfSessionInSeconds:(double)arg13 installedApp:(bool)arg14 timestamp:(long long)arg15 unavailable:(bool)arg16 movedPickupLocation:(bool)arg17 errorMessages:(id)arg18 numberOfAppsInstalled:(unsigned long long)arg19 enabled:(unsigned long long)arg20;
+- (id)logMsgEventForStaleResources:(id)arg1;
 - (id)logMsgEventForStateTransition:(id)arg1 generateOnlyIfStateChanged:(bool)arg2;
+- (id)logMsgEventForTablebookedSessionWithSessionID:(id)arg1 bookedTables:(id)arg2;
+- (id)logMsgEventForTablebookingWithSessionID:(id)arg1 endState:(int)arg2 endView:(int)arg3 bookTableAppId:(id)arg4 muid:(unsigned long long)arg5 blurredReservationTimestamp:(long long)arg6 blurredBookingTimestamp:(long long)arg7 durationOfSessionInSeconds:(double)arg8 installNeeded:(bool)arg9 installNeededTappedAppId:(id)arg10 installCompleted:(bool)arg11 tableSize:(unsigned int)arg12 addedSpecialRequest:(bool)arg13 swipedAvailableTimes:(bool)arg14 tappedDatePicker:(bool)arg15 errorMessages:(id)arg16;
 - (id)logMsgEventForTileSetState:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;
 - (id)logMsgEventForTimeToLeaveHypothesisWithEarlyDepartureDelta:(double)arg1 lateDepartureDelta:(double)arg2 earlyArrivalDelta:(double)arg3 lateArrivalDelta:(double)arg4 rerouteCount:(unsigned long long)arg5 uiNotification:(int)arg6;
 - (id)logMsgEventForTimeToLeaveIntialTravelTime:(double)arg1;

@@ -52,7 +52,7 @@
 - (void)_didMoveFileFromURL:(id)arg1 toURL:(id)arg2;
 - (id)_duplicatedAssetResourcesFromAsset:(id)arg1 flattenLivePhotoIntoStillPhoto:(bool)arg2 error:(id*)arg3;
 - (id)_exifPropertiesFromSourceImageDataExifProperties:(id)arg1;
-- (id)_managedAssetFromData:(id)arg1 photoLibrary:(id)arg2 getImageSource:(struct CGImageSource {}**)arg3 imageData:(id*)arg4;
+- (id)_managedAssetFromData:(id)arg1 imageUTIType:(id)arg2 photoLibrary:(id)arg3 getImageSource:(struct CGImageSource {}**)arg4 imageData:(id*)arg5;
 - (long long)_mediaTypeForCreatedAsset;
 - (id)_movedFiles;
 - (id)_photoStreamPublishingRequest;
@@ -77,7 +77,7 @@
 - (id)initForNewObject;
 - (id)initForNewObjectWithUUID:(id)arg1;
 - (id)initWithHelper:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (bool)isNew;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedAsset;

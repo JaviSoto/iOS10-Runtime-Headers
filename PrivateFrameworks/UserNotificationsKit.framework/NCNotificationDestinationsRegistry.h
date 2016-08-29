@@ -25,6 +25,7 @@
 - (struct NSMutableDictionary { Class x1; }*)activeDestinations;
 - (unsigned long long)count;
 - (id)debugInfoPlist;
+- (id)destinationIdentifiersForRequestDestinations:(id)arg1;
 - (struct NSMutableDictionary { Class x1; }*)destinations;
 - (id)destinationsForRequestDestinations:(id)arg1;
 - (bool)hasActiveDestinationsForRequest:(id)arg1;
@@ -41,5 +42,6 @@
 - (void)setDestinationWithIdentifier:(id)arg1 enabled:(bool)arg2;
 - (void)setDestinations:(struct NSMutableDictionary { Class x1; }*)arg1;
 - (void)setReadyDestinations:(struct NSMutableDictionary { Class x1; }*)arg1;
+- (void)unregisterDestination:(id)arg1;
 
 @end

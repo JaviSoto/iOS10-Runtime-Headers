@@ -24,6 +24,7 @@
 - (id)ckFromCursor;
 - (unsigned long long)ckFromOrder;
 - (unsigned long long)ckToOrder;
+- (id)description;
 - (bool)exhaustedRange;
 - (id)feedItems;
 - (id)feedRange;

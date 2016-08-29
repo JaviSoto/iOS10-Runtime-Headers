@@ -26,12 +26,8 @@
     NSString * _subtitle;
     NSString * _templateName;
     bool  _thumbnail_align_right;
-    bool  _thumbnail_crop_circle;
     NSString * _urlString;
-    NSData * _userActivityData;
     bool  _userActivityEligibleForPublicIndexing;
-    NSString * _userActivitySecondaryString;
-    NSString * _userActivityType;
 }
 
 @property (nonatomic, retain) NSString *adam_id;
@@ -64,19 +60,17 @@
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *templateName;
 @property (nonatomic) bool thumbnail_align_right;
-@property bool thumbnail_crop_circle;
 @property int title_maxlines;
 @property (nonatomic, retain) NSString *urlString;
-@property (nonatomic, retain) NSData *userActivityData;
 @property bool userActivityEligibleForPublicIndexing;
-@property (nonatomic, retain) NSString *userActivitySecondaryString;
-@property (nonatomic, retain) NSString *userActivityType;
 
 - (void).cxx_destruct;
 - (id)adam_id;
 - (id)bundleID;
 - (id)card_sections;
 - (id)card_url;
+- (Class)classForCoder;
+- (Class)classForKeyedArchiver;
 - (id)compatibilityTitle;
 - (id)contactIdentifiers;
 - (id)contentURL;
@@ -128,27 +122,19 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTemplateName:(id)arg1;
 - (void)setThumbnail_align_right:(bool)arg1;
-- (void)setThumbnail_crop_circle:(bool)arg1;
 - (void)setTitle_maxlines:(int)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setUrlString:(id)arg1;
-- (void)setUserActivityData:(id)arg1;
 - (void)setUserActivityEligibleForPublicIndexing:(bool)arg1;
-- (void)setUserActivitySecondaryString:(id)arg1;
-- (void)setUserActivityType:(id)arg1;
 - (id)simpleTitle;
 - (id)sourceDomain;
 - (id)subtitle;
 - (id)templateName;
 - (bool)thumbnail_align_right;
-- (bool)thumbnail_crop_circle;
 - (int)title_maxlines;
 - (id)uniqueIdentifier;
 - (id)urlString;
-- (id)userActivityData;
 - (bool)userActivityEligibleForPublicIndexing;
-- (id)userActivitySecondaryString;
-- (id)userActivityType;
 - (void)writeTo:(id)arg1;
 
 @end

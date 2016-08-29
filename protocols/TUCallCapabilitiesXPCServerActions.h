@@ -17,5 +17,6 @@
 - (void)setThumperCallingEnabled:(bool)arg1;
 - (void)setVoLTECallingEnabled:(bool)arg1;
 - (void)setWiFiCallingEnabled:(bool)arg1;
+- (void)setWiFiCallingRoamingEnabled:(bool)arg1;
 
 @end

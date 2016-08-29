@@ -3,13 +3,14 @@
  */
 
 @interface TKTokenService_Subsystem : NSObject <PKModularService> {
-    id  _driverObject;
+    TKTokenDriver * _driver;
     NSDictionary * _extensionAttributes;
+    int  _usingCounter;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) id driverObject;
+@property (readonly) TKTokenDriver *driver;
 @property (readonly, copy) NSDictionary *extensionAttributes;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
@@ -19,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)beginUsing:(id)arg1 withBundle:(id)arg2;
-- (id)driverObject;
+- (id)driver;
 - (void)endUsing:(id)arg1;
 - (id)extensionAttributes;
 

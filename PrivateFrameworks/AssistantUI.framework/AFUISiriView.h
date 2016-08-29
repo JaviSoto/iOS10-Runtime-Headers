@@ -16,7 +16,6 @@
     bool  _disabled;
     bool  _flamesViewDeferred;
     UIView * _foregroundView;
-    long long  _frozenBackdropSnapshotOrientation;
     UIView * _frozenBackdropSnapshotView;
     SiriUIHelpButton * _helpButton;
     bool  _inHideUnlockViewanimation;
@@ -41,7 +40,6 @@
 @property (nonatomic) bool disabled;
 @property (nonatomic) bool flamesViewDeferred;
 @property (nonatomic, readonly) UIView *foregroundView;
-@property (nonatomic) long long frozenBackdropSnapshotOrientation;
 @property (nonatomic, retain) UIView *frozenBackdropSnapshotView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool keepStatusViewHidden;
@@ -85,7 +83,6 @@
 - (bool)disabled;
 - (bool)flamesViewDeferred;
 - (id)foregroundView;
-- (long long)frozenBackdropSnapshotOrientation;
 - (id)frozenBackdropSnapshotView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 configuration:(id)arg2;
@@ -107,7 +104,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDisabled:(bool)arg1;
 - (void)setFlamesViewDeferred:(bool)arg1;
-- (void)setFrozenBackdropSnapshotOrientation:(long long)arg1;
 - (void)setFrozenBackdropSnapshotView:(id)arg1;
 - (void)setHelpButtonEmphasized:(bool)arg1;
 - (void)setKeepStatusViewHidden:(bool)arg1;

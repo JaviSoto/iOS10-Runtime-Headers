@@ -70,7 +70,7 @@
 - (id)contentDirectory;
 - (id)contentStoreFrontID;
 - (bool)deviceIsiPad;
-- (void)enableFlushing;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)endpointCommandQueue;
 - (id)endpointConnection;
 - (id)feedManager;
@@ -82,7 +82,7 @@
 - (id)init;
 - (id)initForTesting;
 - (id)initWithContentContext:(id)arg1 privateDataContext:(id)arg2 networkBehaviorMonitor:(id)arg3;
-- (id)initWithContentHostDirectory:(id)arg1 privateDataHostDirectory:(id)arg2 privateDataActionProvider:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 deviceIsiPad:(bool)arg6;
+- (id)initWithContentHostDirectory:(id)arg1 privateDataHostDirectory:(id)arg2 privateDataActionProvider:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 lockStoreFrontIfNeeded:(bool)arg7 deviceIsiPad:(bool)arg8;
 - (id)insertTestArticle;
 - (id)insertTestArticlesWithCount:(unsigned long long)arg1;
 - (id)internalContentContext;

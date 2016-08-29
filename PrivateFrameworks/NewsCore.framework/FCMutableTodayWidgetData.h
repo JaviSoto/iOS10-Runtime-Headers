@@ -13,7 +13,7 @@
 @property (nonatomic, readonly, copy) NSSet *highestRankedSubscribedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *purchasedTagIDs;
-@property (nonatomic, readonly, copy) NSSet *recentlyReadArticleIDs;
+@property (nonatomic, readonly, copy) NSDictionary *recentlyReadArticles;
 @property (readonly) Class superclass;
 
 - (id)init;
@@ -23,6 +23,6 @@
 - (void)setHighestRankedSubscribedTagIDs:(id)arg1;
 - (void)setMutedTagIDs:(id)arg1;
 - (void)setPurchasedTagIDs:(id)arg1;
-- (void)setRecentlyReadArticleIDs:(id)arg1;
+- (void)setRecentlyReadArticles:(id)arg1;
 
 @end

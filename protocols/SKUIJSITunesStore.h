@@ -7,10 +7,13 @@
 
 - (long long)applicationIconBadgeNumber;
 - (void)approveInPerson:(NSNumber *)arg1 :(JSValue *)arg2;
+- (bool)areVideosCloudPurchasesEnabled;
 - (void)attemptLocalAskToBuyApproval:(NSNumber *)arg1;
 - (void)buy:(NSDictionary *)arg1;
 - (void)clearToggleStateItems;
+- (NSDictionary *)documentSizeForNavigationDocument:(id)arg1;
 - (void)download:(NSDictionary *)arg1;
+- (void)downloadExistsFor:(NSNumber *)arg1 :(JSValue *)arg2;
 - (void)exit:(NSDictionary *)arg1;
 - (void)fetchTemplates:(NSArray *)arg1 :(JSValue *)arg2;
 - (void)findApps:(NSArray *)arg1 :(JSValue *)arg2 :(NSDictionary *)arg3;

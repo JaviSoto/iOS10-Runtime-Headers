@@ -4,7 +4,6 @@
 
 @interface SSMetricsCustomEvent : SSMetricsMutableEvent
 
-- (id)decorateReportingURL:(id)arg1;
 - (bool)isFieldBlacklistEnabled;
 
 @end

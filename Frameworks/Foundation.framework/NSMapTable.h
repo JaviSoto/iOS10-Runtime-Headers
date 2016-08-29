@@ -113,5 +113,7 @@
 - (id)tsp_objectForIdentifier:(long long)arg1;
 - (void)tsp_removeObjectForIdentifier:(long long)arg1;
 - (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
+- (id)tsu_allKeys;
+- (id)tsu_noCopyDictionaryRepresentation;
 
 @end

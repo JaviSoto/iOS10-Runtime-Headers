@@ -23,6 +23,7 @@
 @property (setter=_setFileURL:, nonatomic, retain) NSURL *fileURL;
 @property (getter=isLibraryAssetResource, nonatomic, readonly) bool libraryAssetResource;
 @property (getter=isLocallyAvailable, setter=_setIsLocallyAvailable:, nonatomic) bool locallyAvailable;
+@property (nonatomic, readonly) bool miro_isReallyLocallyAvailable;
 @property (setter=_setOriginalFilename:, nonatomic, copy) NSString *originalFilename;
 @property (setter=_setPixelHeight:, nonatomic) unsigned long long pixelHeight;
 @property (setter=_setPixelWidth:, nonatomic) unsigned long long pixelWidth;
@@ -33,6 +34,7 @@
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
++ (id)_managedAssetWithRelationshipsPrefetchedForAsset:(id)arg1 inLibrary:(id)arg2 error:(id*)arg3;
 + (id)assetResourcesForAsset:(id)arg1;
 + (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(bool)arg2;
 + (id)assetResourcesForLivePhoto:(id)arg1;
@@ -64,6 +66,10 @@
 - (id)privateFileURL;
 - (long long)type;
 - (id)uniformTypeIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
+- (bool)miro_isReallyLocallyAvailable;
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 

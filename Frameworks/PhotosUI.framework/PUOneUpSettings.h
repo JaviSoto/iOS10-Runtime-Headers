@@ -38,6 +38,7 @@
     double  _maximumInitialZoomToFillScaleForRegularSizeClass;
     long long  _minNavigationDistanceForFastRegime;
     long long  _minNavigationDistanceForQuickPagingRegime;
+    double  _minimumVisibleCommentedContentHeight;
     double  _minimumVisibleContentHeight;
     double  _pagingFrictionAdjustment;
     double  _pagingSpringPullAdjustment;
@@ -45,7 +46,6 @@
     long long  _parallaxModel;
     bool  _persistChromeVisibility;
     bool  _playVideoInScrubber;
-    long long  _sampleAccessoryViewContentCount;
     PUScrubberSettings * _scrubberSettings;
     bool  _showBufferingIndicatorDuringPlay;
     bool  _showFacesAreaRect;
@@ -103,6 +103,7 @@
 @property (nonatomic) double maximumInitialZoomToFillScaleForRegularSizeClass;
 @property (nonatomic) long long minNavigationDistanceForFastRegime;
 @property (nonatomic) long long minNavigationDistanceForQuickPagingRegime;
+@property (nonatomic) double minimumVisibleCommentedContentHeight;
 @property (nonatomic) double minimumVisibleContentHeight;
 @property (nonatomic) double pagingFrictionAdjustment;
 @property (nonatomic) double pagingSpringPullAdjustment;
@@ -110,7 +111,6 @@
 @property (nonatomic) long long parallaxModel;
 @property (nonatomic) bool persistChromeVisibility;
 @property (nonatomic) bool playVideoInScrubber;
-@property (nonatomic) long long sampleAccessoryViewContentCount;
 @property (nonatomic, retain) PUScrubberSettings *scrubberSettings;
 @property (nonatomic) bool showBufferingIndicatorDuringPlay;
 @property (nonatomic) bool showFacesAreaRect;
@@ -171,6 +171,7 @@
 - (double)maximumInitialZoomToFillScaleForRegularSizeClass;
 - (long long)minNavigationDistanceForFastRegime;
 - (long long)minNavigationDistanceForQuickPagingRegime;
+- (double)minimumVisibleCommentedContentHeight;
 - (double)minimumVisibleContentHeight;
 - (double)pagingFrictionAdjustment;
 - (double)pagingSpringPullAdjustment;
@@ -178,7 +179,6 @@
 - (long long)parallaxModel;
 - (bool)persistChromeVisibility;
 - (bool)playVideoInScrubber;
-- (long long)sampleAccessoryViewContentCount;
 - (id)scrubberSettings;
 - (void)setAccessoryInitialTopPosition:(double)arg1;
 - (void)setAccessoryViewType:(long long)arg1;
@@ -216,6 +216,7 @@
 - (void)setMaximumInitialZoomToFillScaleForRegularSizeClass:(double)arg1;
 - (void)setMinNavigationDistanceForFastRegime:(long long)arg1;
 - (void)setMinNavigationDistanceForQuickPagingRegime:(long long)arg1;
+- (void)setMinimumVisibleCommentedContentHeight:(double)arg1;
 - (void)setMinimumVisibleContentHeight:(double)arg1;
 - (void)setPagingFrictionAdjustment:(double)arg1;
 - (void)setPagingSpringPullAdjustment:(double)arg1;
@@ -223,7 +224,6 @@
 - (void)setParallaxModel:(long long)arg1;
 - (void)setPersistChromeVisibility:(bool)arg1;
 - (void)setPlayVideoInScrubber:(bool)arg1;
-- (void)setSampleAccessoryViewContentCount:(long long)arg1;
 - (void)setScrubberSettings:(id)arg1;
 - (void)setShowBufferingIndicatorDuringPlay:(bool)arg1;
 - (void)setShowFacesAreaRect:(bool)arg1;

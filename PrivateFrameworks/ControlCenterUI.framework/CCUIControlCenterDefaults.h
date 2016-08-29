@@ -4,6 +4,7 @@
 
 @interface CCUIControlCenterDefaults : BSAbstractDefaultDomain
 
+@property (nonatomic) bool hasAcknowledgedFirstUseAlert;
 @property (nonatomic, readonly) bool shouldAlwaysBeEnabled;
 @property (nonatomic, readonly) bool shouldDisableArtraceButton;
 @property (nonatomic, readonly) bool shouldDisableInternalButtons;

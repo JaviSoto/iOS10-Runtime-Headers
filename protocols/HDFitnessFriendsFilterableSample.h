@@ -7,6 +7,5 @@
 
 - (NSDate *)filter_date;
 - (NSUUID *)filter_friendUUID;
-- (bool)filter_shouldUseDeviceTimestamp;
 
 @end

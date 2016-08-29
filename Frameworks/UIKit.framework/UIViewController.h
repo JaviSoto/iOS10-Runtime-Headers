@@ -50,6 +50,7 @@
         double width; 
         double height; 
     }  _formSheetSize;
+    UITraitCollection * _frozenTraitCollection;
     bool  _ignoreAppSupportedOrientations;
     bool  _ignoresParentMargins;
     NSArray * _interfaceBuilderKeyCommands;
@@ -88,7 +89,7 @@
         long long height; 
     }  _presentationSizeClassPair;
     UIViewController * _presentedStatusBarViewController;
-    UIView * _presentingFocusedView;
+    <UIFocusItem> * _presentingFocusedItem;
     NSMutableArray * _previewSourceViews;
     UIViewController * _previousRootViewController;
     UIScrollView * _recordedContentScrollView;
@@ -159,12 +160,14 @@
         unsigned int automaticallyAdjustInsets : 1; 
         unsigned int previousShouldUnderlapUnderStatusBar : 1; 
         unsigned int freezeShouldUnderlapUnderStatusBar : 1; 
+        unsigned int shouldNotFreezeUnderlapsStatusBar : 1; 
         unsigned int monitorsSystemLayoutFittingSize : 1; 
         unsigned int shouldLoadInputAccessoryViewsOnAppearance : 1; 
         unsigned int useViewBasedTopAndBottomGuides : 1; 
         unsigned int didConfirmLayoutGuideClass : 1; 
         unsigned int overridesTraitCollectionDidChange : 1; 
         unsigned int restoresFocusAfterTransition : 1; 
+        unsigned int freezeTraitsOnCounterRotationForPresentation : 1; 
     }  _viewControllerFlags;
     bool  _viewHostsLayoutEngine;
     bool  overrideUseCustomPresentation;
@@ -271,7 +274,6 @@
 @property (nonatomic, readonly) UIViewController *modalViewController;
 @property (getter=isMovingFromParentViewController, nonatomic, readonly) bool movingFromParentViewController;
 @property (getter=isMovingToParentViewController, nonatomic, readonly) bool movingToParentViewController;
-@property (nonatomic, readonly) UIBarButtonItem *music_accountEntryLeftBarButtonItem;
 @property (nonatomic, readonly) bool music_allowsMetricsEvents;
 @property (nonatomic, readonly, copy) NSString *music_effectiveReportingFeatureName;
 @property (nonatomic, readonly, copy) NSData *music_effectiveReportingRecommendationData;
@@ -279,7 +281,6 @@
 @property (setter=music_setReportingRecommendationData:, nonatomic, copy) NSData *music_reportingRecommendationData;
 @property (nonatomic, readonly) UIBarButtonItem *music_searchEntryRightBarButtonItem;
 @property (setter=music_setSearchOptions:, nonatomic) unsigned long long music_searchOptions;
-@property (setter=music_setWantsAccountEntryLeftBarButtonItem:, nonatomic) bool music_wantsAccountEntryLeftBarButtonItem;
 @property (setter=music_setWantsDefaultIndexBar:, nonatomic) bool music_wantsDefaultIndexBar;
 @property (setter=music_setWantsSearchEntryRightBarButtonItem:, nonatomic) bool music_wantsSearchEntryRightBarButtonItem;
 @property (setter=music_setWantsToOverrideRightBarButtonItem:, nonatomic) bool music_wantsToOverrideRightBarButtonItem;
@@ -310,7 +311,7 @@
 @property (nonatomic, readonly) bool prefersStatusBarHidden;
 @property (getter=_presentationSizeClassPair, setter=_setPresentationSizeClassPair:, nonatomic) struct { long long x1; long long x2; } presentationSizeClassPair;
 @property (nonatomic, readonly) UIViewController *presentedViewController;
-@property (getter=_presentingFocusedView, nonatomic, readonly) UIView *presentingFocusedView;
+@property (getter=_presentingFocusedItem, setter=_setPresentingFocusedItem:, nonatomic) <UIFocusItem> *presentingFocusedItem;
 @property (getter=isPresentingFullScreenAd, nonatomic, readonly) bool presentingFullScreenAd;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
 @property (nonatomic, readonly) NSArray *previewActionItems;
@@ -487,6 +488,7 @@
 - (void)_cleanupPresentation;
 - (void)_clearLastKnownInterfaceOrientation;
 - (void)_clearRecordedContentScrollView;
+- (void)_collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_commitPreviewTransitionAsDetailOfSplitViewController:(id)arg1 withDelegate:(id)arg2 completion:(id /* block */)arg3;
 - (id /* block */)_completionBlock;
 - (bool)_containsFirstResponder;
@@ -513,6 +515,7 @@
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_didCancelDismissTransition:(id)arg1;
 - (void)_didCancelPresentTransition:(id)arg1;
+- (void)_didEndCounterRotationForPresentation;
 - (void)_didFinishDismissTransition;
 - (void)_didFinishPresentTransition;
 - (void)_didReceiveMemoryWarning:(id)arg1;
@@ -559,6 +562,7 @@
 - (bool)_hackFor11408026_beginAppearanceTransition:(bool)arg1 animated:(bool)arg2;
 - (bool)_hackFor11408026_endAppearanceTransition;
 - (void)_handleTapToDismissModalCurl:(id)arg1;
+- (bool)_handlesCounterRotationForPresentation;
 - (bool)_hasAppeared;
 - (bool)_hasCurlUpTapGestureRecognizer;
 - (bool)_hasPreferredInterfaceOrientationForPresentation;
@@ -672,7 +676,7 @@
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (struct { long long x1; long long x2; })_presentationSizeClassPair;
 - (id)_presentedStatusBarViewController;
-- (id)_presentingFocusedView;
+- (id)_presentingFocusedItem;
 - (void)_presentingViewControllerDidChange:(id)arg1;
 - (void)_presentingViewControllerWillChange:(id)arg1;
 - (id)_previousFittingSizeInfo;
@@ -683,7 +687,7 @@
 - (id)_printHierarchy;
 - (bool)_reallyWantsFullScreenLayout;
 - (void)_recordContentScrollView;
-- (void)_rememberPresentingFocusedView:(id)arg1;
+- (void)_rememberPresentingFocusedItem:(id)arg1;
 - (id)_remoteViewControllerProxy;
 - (id)_remoteViewControllerProxyWithErrorHandler:(id /* block */)arg1;
 - (void)_removeChildViewController:(id)arg1;
@@ -745,6 +749,7 @@
 - (void)_setPresentationController:(id)arg1;
 - (void)_setPresentationSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (void)_setPresentedStatusBarViewController:(id)arg1;
+- (void)_setPresentingFocusedItem:(id)arg1;
 - (void)_setPreviousFittingSizeInfo:(id)arg1;
 - (void)_setPreviousRootViewController:(id)arg1;
 - (void)_setPreviousUnderlapsStatusBar:(bool)arg1;
@@ -753,6 +758,7 @@
 - (void)_setSearchDisplayControllerUnretained:(id)arg1;
 - (void)_setSegueResponsibleForModalPresentation:(id)arg1;
 - (void)_setSharedView:(id)arg1;
+- (void)_setShouldFreezeUnderlapsStatusBar:(bool)arg1;
 - (void)_setShouldLoadInputAccessoryViewOnAppearance:(bool)arg1;
 - (void)_setShouldSynthesizeSupportedOrientations:(bool)arg1;
 - (void)_setSourceViewControllerIfPresentedViaPopoverSegue:(id)arg1;
@@ -770,6 +776,7 @@
 - (bool)_shouldAutoPinInputViewsForModalFormSheet;
 - (bool)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;
 - (bool)_shouldForwardSystemLayoutFittingSizeChanges;
+- (bool)_shouldFreezeUnderlapsStatusBar;
 - (bool)_shouldIgnoreTouchesForModalFormSheet;
 - (bool)_shouldLoadInputAccessoryViewsOnAppearance;
 - (bool)_shouldLoadViewDuringRestoration:(id)arg1;
@@ -790,6 +797,7 @@
 - (void)_stateRestorationDidFinish:(bool)arg1;
 - (double)_statusBarHeightAdjustmentForCurrentOrientation;
 - (double)_statusBarHeightForCurrentInterfaceOrientation;
+- (void)_stopTransitionsImmediately;
 - (long long)_supportedInterfaceOrientationForInterfaceOrientation:(long long)arg1 givenMask:(unsigned long long*)arg2;
 - (void)_supportedInterfaceOrientationsDidChange;
 - (bool)_suppressesBottomBar;
@@ -852,6 +860,7 @@
 - (void)_willAppearInRemoteViewController;
 - (void)_willAppearInRemoteViewController:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (void)_willBeginCounterRotationForPresentation;
 - (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
 - (void)_willResignContentViewControllerOfPopover:(id)arg1;
 - (void)_willRotateToInterfaceOrientation;
@@ -1209,7 +1218,7 @@
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
-+ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2;
++ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(struct NSDictionary { Class x1; }*)arg3;
 
 - (bool)isPresentedInsidePopover;
 
@@ -1338,10 +1347,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-- (void)_music_handleAccountButtonTapped:(id)arg1;
 - (void)_music_handleSearchButtonTapped:(id)arg1;
-- (void)dismissDetailViewController:(id)arg1;
-- (id)music_accountEntryLeftBarButtonItem;
 - (bool)music_allowsMetricsEvents;
 - (void)music_configureWithJSReportingInformation:(id)arg1;
 - (void)music_dismissViewController:(id)arg1 animated:(bool)arg2;
@@ -1357,12 +1363,10 @@
 - (void)music_setReportingFeatureName:(id)arg1;
 - (void)music_setReportingRecommendationData:(id)arg1;
 - (void)music_setSearchOptions:(unsigned long long)arg1;
-- (void)music_setWantsAccountEntryLeftBarButtonItem:(bool)arg1;
 - (void)music_setWantsDefaultIndexBar:(bool)arg1;
 - (void)music_setWantsSearchEntryRightBarButtonItem:(bool)arg1;
 - (void)music_setWantsToOverrideRightBarButtonItem:(bool)arg1;
 - (void)music_viewInheritedLayoutInsetsDidChange;
-- (bool)music_wantsAccountEntryLeftBarButtonItem;
 - (bool)music_wantsDefaultIndexBar;
 - (bool)music_wantsSearchEntryRightBarButtonItem;
 - (bool)music_wantsToOverrideRightBarButtonItem;
@@ -1583,6 +1587,8 @@
 - (id)longLookPresentationController;
 - (long long)ncTransitionAnimationState;
 - (id)nc_bannerPresentationController;
+- (id)nc_presentationControllerIfPresented;
+- (id)nc_presentingBannerPresentationController;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

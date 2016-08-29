@@ -8,6 +8,7 @@
     GEOMapItemDetourInfo * _detourInfo;
     GEOPDMultiLocalizedString * _disambiguationLabel;
     _GEOEncyclopedicInfo * _encyclopedicInfo;
+    NSString * _name;
     GEOPlace * _place;
     GEOPDPlace * _placeData;
 }
@@ -216,6 +217,7 @@
 - (id)initWithPlaceData:(id)arg1 attributionMap:(id)arg2 disambiguationLabel:(id)arg3 detourInfo:(id)arg4;
 - (id)initWithPlaceData:(id)arg1 detourInfo:(id)arg2;
 - (bool)isDisputed;
+- (bool)isEqualToMapItem:(id)arg1;
 - (bool)isEventAllDay;
 - (bool)isValid;
 - (id)name;

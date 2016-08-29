@@ -11,8 +11,10 @@
 @property (copy) id /* block */ resultBlock;
 
 - (void).cxx_destruct;
-- (bool)_performDialogOperationWithError:(id*)arg1;
-- (bool)_updateTouchIDSettingsForAccount:(id)arg1 error:(id*)arg2;
+- (id)_newSourceByStartingTimeoutTimer;
+- (bool)_performOptInDialogOperationWithError:(id*)arg1;
+- (bool)_performPasscodeDialogOperationWithError:(id*)arg1;
+- (void)_updateTouchIDSettingsForAccount:(id)arg1;
 - (bool)promptUser;
 - (id /* block */)resultBlock;
 - (void)run;

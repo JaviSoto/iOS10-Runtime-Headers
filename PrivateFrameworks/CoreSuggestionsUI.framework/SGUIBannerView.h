@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsUI.framework/CoreSuggestionsUI
  */
 
-@interface SGUIBannerView : UIView <EKEventViewDelegate, EKEventViewDelegatePrivate> {
+@interface SGUIBannerView : UIView <EKEventViewDelegate, EKEventViewDelegatePrivate, SGUIEventsAndContactsTableViewControllerDelegate> {
     UIButton * _addButton;
     UIImageView * _bannerImageView;
     NSLayoutConstraint * _buttonBaselineConstraint;
@@ -11,6 +11,7 @@
     SGRealtimeEvent * _currentEventSuggestion;
     <SGUIBannerViewDelegate> * _delegate;
     UIImageView * _disclosureImageView;
+    NSMutableSet * _doneSuggestions;
     NSArray * _multipleBannerImageConstraints;
     NSArray * _orderedSuggestions;
     UIImageView * _secondaryBannerImageView;
@@ -72,6 +73,9 @@
 - (id)closeButton;
 - (void)confirmContactSuggestion;
 - (void)confirmEventSuggestion;
+- (void)controller:(id)arg1 doneWithSuggestion:(id)arg2;
+- (void)controller:(id)arg1 wantsToConfirmSuggestion:(id)arg2;
+- (void)controller:(id)arg1 wantsToIgnoreSuggestion:(id)arg2;
 - (id)currentSuggestionGroup;
 - (id)delegate;
 - (id)disclosureImage;
@@ -83,6 +87,7 @@
 - (id)initWithEventSuggestions:(id)arg1 contactSuggestions:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (unsigned long long)numberOfSuggestions;
 - (id)orderedSuggestions;
 - (id)popoverSourceView;
 - (id)secondaryBannerImage;

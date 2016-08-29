@@ -10,7 +10,7 @@
 @property (readonly, copy) NSUnitConverter *converter;
 @property (readonly) unsigned long long specifier;
 
-+ (id)_measurementWithNaturalScale:(id)arg1;
++ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
 + (id)baseUnit;
 + (bool)supportsSecureCoding;
 

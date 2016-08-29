@@ -4,6 +4,7 @@
 
 @interface PAImageInfo : NSObject <PASerializable> {
     NSUUID * _imageUUID;
+    bool  _isTextExecSegment;
     unsigned long long  _loadAddress;
     NSString * _path;
     unsigned long long  _size;
@@ -13,6 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) NSUUID *imageUUID;
+@property (readonly) bool isTextExecSegment;
 @property (readonly) unsigned long long loadAddress;
 @property (readonly) NSString *path;
 @property (readonly) unsigned long long size;
@@ -22,6 +24,7 @@
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
 
 - (void).cxx_destruct;
+- (void)addNewInformationFromImageInfo:(id)arg1;
 - (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (id)debugDescription;
@@ -31,6 +34,8 @@
 - (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2;
 - (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2 andPath:(id)arg3;
 - (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2 andSize:(unsigned long long)arg3 andPath:(id)arg4;
+- (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2 andSize:(unsigned long long)arg3 andPath:(id)arg4 isTextExecSegment:(bool)arg5;
+- (bool)isTextExecSegment;
 - (unsigned long long)loadAddress;
 - (id)path;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;

@@ -40,6 +40,7 @@
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 netService:(id)arg2;
 - (bool)isRunning;
+- (id)logIdentifier;
 - (id)netService;
 - (id)remoteDevice;
 - (void)sendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;

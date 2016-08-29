@@ -41,6 +41,7 @@
 @property (readonly) EKDaemonConnection *connection;
 @property (nonatomic, retain) EKDataProtectionObserver *dataProtectionObserver;
 @property (nonatomic, retain) EKDaemonConnection *database;
+@property (nonatomic, readonly, copy) NSString *databasePath;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dbChangedQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) EKAlarm *defaultAllDayAlarm;
@@ -86,6 +87,7 @@
 - (void)_accessStatusChanged;
 - (id)_addFetchedObjectWithID:(id)arg1;
 - (void)_addObjectToPendingCommits:(id)arg1;
+- (id)_allCalendars;
 - (id)_cachedValidatedEmails;
 - (bool)_calendar:(id)arg1 supportsEntityType:(unsigned long long)arg2;
 - (id)_calendarItemsMatchingPredicate:(id)arg1;
@@ -117,7 +119,6 @@
 - (void)addContactIdentifier:(id)arg1 forCalendarItem:(id)arg2;
 - (void)alarmOccurrencesBetweenStartDate:(id)arg1 endDate:(id)arg2 inCalendars:(id)arg3 completion:(id /* block */)arg4;
 - (id)alarmWithUUID:(id)arg1;
-- (id)allCalendars;
 - (bool)automaticLocationGeocodingAllowed;
 - (id)birthdayContactIdentifierForEvent:(id)arg1;
 - (void)cacheValidationStatusForEmail:(id)arg1 status:(unsigned long long)arg2;
@@ -143,6 +144,7 @@
 - (void)daemonRestarted;
 - (id)dataProtectionObserver;
 - (id)database;
+- (id)databasePath;
 - (id)dbChangedQueue;
 - (void)dealloc;
 - (id)defaultAllDayAlarm;
@@ -169,7 +171,7 @@
 - (id)eventWithUniqueId:(id)arg1 occurrenceDate:(id)arg2;
 - (id)eventsMatchingPredicate:(id)arg1;
 - (void)fetchChangedObjectIDsSinceToken:(long long)arg1 resultHandler:(id /* block */)arg2;
-- (id)fetchEventsMatchingPredicate:(id)arg1 completion:(id /* block */)arg2;
+- (id)fetchEventsMatchingPredicate:(id)arg1 resultHandler:(id /* block */)arg2;
 - (bool)fetchProperties:(id)arg1 forReminders:(id)arg2;
 - (id)fetchRemindersMatchingPredicate:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)flags;

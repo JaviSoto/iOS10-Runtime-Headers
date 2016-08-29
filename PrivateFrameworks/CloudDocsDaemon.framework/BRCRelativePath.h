@@ -104,6 +104,7 @@
 @property (nonatomic, readonly) BRCRelativePath *root;
 @property (nonatomic, readonly) BRCServerZone *serverZone;
 @property (nonatomic, readonly) BRCAccountSession *session;
+@property (nonatomic, readonly) NSString *sharedEnclosureUUID;
 @property (nonatomic, retain) BRCItemID *sharedItemID;
 @property (nonatomic, retain) NSString *sharedOwnerName;
 @property (nonatomic, readonly) long long size;
@@ -209,6 +210,7 @@
 - (void)setSharedItemID:(id)arg1;
 - (void)setSharedOwnerName:(id)arg1;
 - (void)setType:(unsigned short)arg1;
+- (id)sharedEnclosureUUID;
 - (id)sharedItemID;
 - (id)sharedOwnerName;
 - (long long)size;

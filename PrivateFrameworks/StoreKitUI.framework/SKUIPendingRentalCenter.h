@@ -4,12 +4,10 @@
 
 @interface SKUIPendingRentalCenter : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    bool  _fetching;
+    bool  _loadingRentals;
     NSMutableDictionary * _mutableRentals;
     bool  _userLoggedIn;
 }
-
-@property bool fetching;
 
 + (id)_sharedDateFormatter;
 
@@ -21,9 +19,7 @@
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_processFetchedDownloads:(id)arg1;
 - (void)dealloc;
-- (bool)fetching;
 - (id)init;
 - (id)rentalInformationForMediaItem:(id)arg1;
-- (void)setFetching:(bool)arg1;
 
 @end

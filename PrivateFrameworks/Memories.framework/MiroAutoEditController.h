@@ -12,6 +12,7 @@
     bool  _shouldBuildMovieController;
     bool  _shouldSkipPolish;
     MiroAutoEdit_TrimController * _trimController;
+    NSMapTable * _trimRangeForClipMap;
 }
 
 @property (nonatomic, retain) MiroMemory *activeMemory;
@@ -26,7 +27,9 @@
 @property (nonatomic) bool shouldBuildMovieController;
 @property (nonatomic) bool shouldSkipPolish;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool titleIsSupported;
 @property (nonatomic, retain) MiroAutoEdit_TrimController *trimController;
+@property (nonatomic, retain) NSMapTable *trimRangeForClipMap;
 
 + (id)localImageRequestOptions;
 + (struct CGSize { double x1; double x2; })titleCardAssetSize;
@@ -37,6 +40,7 @@
 - (bool)_applyBackgroundMusicWithClip:(id)arg1;
 - (void)_applySpeedRangesToClip:(id)arg1 asset:(id)arg2 previousClip:(id)arg3;
 - (id)_fetchMediaItemForMediaID:(unsigned long long)arg1;
+- (id)_fetchStoreItemForMediaID:(unsigned long long)arg1;
 - (void)_incrementCountForKey:(id)arg1 inDictionary:(id)arg2;
 - (id)_makePolisher;
 - (void)_removeSpeedRampFromBeginningOfClip:(id)arg1;
@@ -67,9 +71,13 @@
 - (void)setShouldBuildMovieController:(bool)arg1;
 - (void)setShouldSkipPolish:(bool)arg1;
 - (void)setTrimController:(id)arg1;
+- (void)setTrimRange:(id)arg1 forClip:(id)arg2;
+- (void)setTrimRangeForClipMap:(id)arg1;
 - (bool)shouldBuildMovieController;
 - (bool)shouldSkipPolish;
 - (bool)titleIsSupported;
 - (id)trimController;
+- (id)trimRangeForClip:(id)arg1;
+- (id)trimRangeForClipMap;
 
 @end

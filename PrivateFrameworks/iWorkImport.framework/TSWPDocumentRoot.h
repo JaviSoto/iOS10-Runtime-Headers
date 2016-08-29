@@ -4,12 +4,10 @@
 
 @interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
     bool  _didRemoveMissingAttachments;
-    TSSStylesheet * _stylesheet;
 }
 
 @property (getter=isChangeTrackingEnabled, nonatomic, readonly) bool changeTrackingEnabled;
 @property (nonatomic) bool didRemoveMissingAttachments;
-@property (nonatomic, retain) TSSStylesheet *stylesheet;
 @property (nonatomic, readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
 
 - (bool)cellCommentsAllowedOnInfo:(id)arg1;
@@ -22,9 +20,7 @@
 - (bool)isChangeTrackingEnabled;
 - (int)naturalAlignmentAtCharIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
 - (void)setDidRemoveMissingAttachments:(bool)arg1;
-- (void)setStylesheet:(id)arg1;
 - (bool)shouldHyphenate;
-- (id)stylesheet;
 - (bool)supportHeaderFooterParagraphAlignmentInInspectors;
 - (id)unavailableDocumentFonts;
 - (bool)useLigatures;

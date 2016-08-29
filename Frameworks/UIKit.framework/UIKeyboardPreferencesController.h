@@ -6,7 +6,6 @@
 
 @property long long handBias;
 
-+ (void)handleSpecificHardwareKeyboard;
 + (id)sharedPreferencesController;
 
 - (id)_domainForType:(int)arg1;
@@ -19,7 +18,6 @@
 - (int)intForKeyString:(id)arg1 domainType:(int)arg2 default:(int)arg3;
 - (bool)isKeyLockedDown:(int)arg1;
 - (void)preferencesControllerChanged:(id)arg1;
-- (void)releaseDontSynchronizePreferences;
 - (double)rivenSizeFactor:(double)arg1;
 - (void)saveInputModes:(id)arg1;
 - (void)setHandBias:(long long)arg1;

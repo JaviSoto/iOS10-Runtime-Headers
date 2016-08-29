@@ -52,6 +52,7 @@
 - (id)copyMessagesMatchingCriterion:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2;
+- (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;

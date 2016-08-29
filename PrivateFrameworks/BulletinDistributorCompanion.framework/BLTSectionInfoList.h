@@ -38,6 +38,7 @@
 - (id)overrideProvider;
 - (id)overrides;
 - (void)reloadWithCompletion:(id /* block */)arg1;
+- (void)removedSectionWithSectionID:(id)arg1;
 - (id)sectionIDs;
 - (id)sectionInfoProvider;
 - (void)setDelegate:(id)arg1;

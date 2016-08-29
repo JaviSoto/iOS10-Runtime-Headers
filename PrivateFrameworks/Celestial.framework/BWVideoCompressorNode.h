@@ -9,13 +9,9 @@
     NSDictionary * _compressionSettings;
     bool  _didPrepareToEncode;
     NSObject<OS_dispatch_queue> * _emitterQueue;
-    int  _encodedFramesStats;
     bool  _flushRequestReceived;
-    int  _frameDelayStats;
-    int  _maxFrameDelayStats;
     float  _maxVideoFrameRate;
     bool  _nextFrameEncodeAsKeyFrame;
-    int  _receivedFramesStats;
     bool  _shouldAttachDebugSEI;
     bool  _sourceIsHDResolution;
     unsigned int  _sourcePixelFormatType;

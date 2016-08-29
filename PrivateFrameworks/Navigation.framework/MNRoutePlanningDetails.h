@@ -59,6 +59,8 @@
 @property (nonatomic) int transportType;
 
 - (void).cxx_destruct;
+- (int)StringAsNavigationType:(id)arg1;
+- (int)StringAsTransportType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (bool)copyTracesToCrashReporterDirectory;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -86,6 +88,7 @@
 - (bool)isTraceRecording;
 - (void)mergeFrom:(id)arg1;
 - (int)navigationType;
+- (id)navigationTypeAsString:(int)arg1;
 - (id)origin;
 - (bool)readFrom:(id)arg1;
 - (id)request;
@@ -117,6 +120,7 @@
 - (bool)shouldPrepare;
 - (id)traceFileName;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

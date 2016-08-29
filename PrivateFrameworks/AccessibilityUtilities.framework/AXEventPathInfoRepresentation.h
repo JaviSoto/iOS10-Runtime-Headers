@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventPathInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
+@interface AXEventPathInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
     float  _altitude;
     float  _azimuth;
     float  _barrelPressure;
@@ -32,7 +32,10 @@
 @property (nonatomic) float altitude;
 @property (nonatomic) float azimuth;
 @property (nonatomic) float barrelPressure;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int didUpdateMask;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) float orbValue;
 @property (nonatomic) float pathDensity;
 @property (nonatomic) unsigned int pathEventMask;
@@ -48,13 +51,14 @@
 @property (nonatomic) float pathTwist;
 @property (nonatomic) void*pathWindow;
 @property (nonatomic) unsigned int pathWindowContextID;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int transducerType;
 @property (nonatomic) unsigned int willUpdateMask;
 
 + (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
 + (bool)supportsSecureCoding;
 
-- (id)_tabularDescription;
+- (id)accessibilityEventRepresentationTabularDescription;
 - (float)altitude;
 - (float)azimuth;
 - (float)barrelPressure;

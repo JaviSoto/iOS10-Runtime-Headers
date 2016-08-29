@@ -3,12 +3,14 @@
  */
 
 @interface MiroMoodAndPosterQueue : NSObject {
+    NSString * _lastCustomID;
     MiroMemory * _memory;
     NSMutableOrderedSet * _moodBlueprints;
     <MiroPosterDelegate> * _posterDelegate;
     NSObject<OS_dispatch_queue> * _serialTaskQueue;
 }
 
+@property (nonatomic, retain) NSString *lastCustomID;
 @property (nonatomic, retain) MiroMemory *memory;
 @property (nonatomic, retain) NSMutableOrderedSet *moodBlueprints;
 @property (nonatomic) <MiroPosterDelegate> *posterDelegate;
@@ -23,11 +25,13 @@
 - (void)generateMoodBlueprints;
 - (void)generateMoodPosters;
 - (id)initWithMemory:(id)arg1;
+- (id)lastCustomID;
 - (id)memory;
 - (id)moodBlueprints;
 - (id)posterDelegate;
 - (id)pullBlueprintWithMoodID:(id)arg1;
 - (void)refreshMoodPosterCache;
+- (void)setLastCustomID:(id)arg1;
 - (void)setMemory:(id)arg1;
 - (void)setMoodBlueprints:(id)arg1;
 - (void)setPosterDelegate:(id)arg1;

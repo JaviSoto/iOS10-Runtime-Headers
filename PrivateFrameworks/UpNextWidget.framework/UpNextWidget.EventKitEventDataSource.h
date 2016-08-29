@@ -3,6 +3,7 @@
  */
 
 @interface UpNextWidget.EventKitEventDataSource : SwiftObject {
+    void active;
     void callbackQueue;
     void databaseListener.storage;
     void elementsChangedBlock;

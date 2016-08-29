@@ -21,7 +21,6 @@
 
 - (id)_NSErrorForError:(int)arg1;
 - (struct CGImage { }*)_copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 usingAssetReader:(id)arg2 error:(id*)arg3;
-- (struct __CFDictionary { }*)_createPixelBufferAttributesWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_didGenerateCGImage:(id)arg1;
 - (bool)_ensureFigAssetImageGeneratorReturningError:(id*)arg1;
 - (void)_failedToGenerateCGImage:(id)arg1;
@@ -30,6 +29,7 @@
 - (id)_requestWithRequestID:(id)arg1;
 - (struct CGSize { double x1; double x2; })_scaledSizeForRenderSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_serverDied;
+- (id)_videoSettingWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)apertureMode;
 - (bool)appliesPreferredTrackTransform;
 - (id)asset;

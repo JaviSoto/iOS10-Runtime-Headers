@@ -28,7 +28,6 @@
 - (id)configuration;
 - (void)createArticleFinder;
 - (void)deactivateReaderNow:(unsigned long long)arg1;
-- (void)dealloc;
 - (void)decreaseReaderTextSize;
 - (id)delegate;
 - (void)didCollectReaderContentForMail:(id)arg1;
@@ -41,6 +40,7 @@
 - (id)fontManager;
 - (void)increaseReaderTextSize;
 - (id)initWithWebView:(id)arg1;
+- (void)invalidate;
 - (bool)isLoadingNextPage;
 - (bool)isReaderAvailable;
 - (void)loadNewArticle;

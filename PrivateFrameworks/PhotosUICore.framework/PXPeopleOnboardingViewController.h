@@ -4,7 +4,6 @@
 
 @interface PXPeopleOnboardingViewController : UIViewController <PXPeopleStatusViewDelegate> {
     unsigned long long  _onboardStatus;
-    bool  _originalNavBarHidesShadow;
     bool  _originalNavBarTranslucent;
     PXPeopleProgressManager * _progressManager;
     PXPeopleStatusViewController * _statusViewController;
@@ -14,7 +13,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long onboardStatus;
-@property bool originalNavBarHidesShadow;
 @property bool originalNavBarTranslucent;
 @property (nonatomic, retain) PXPeopleProgressManager *progressManager;
 @property (nonatomic, retain) PXPeopleStatusViewController *statusViewController;
@@ -27,13 +25,13 @@
 - (void)_updateWithStatus:(unsigned long long)arg1 progress:(double)arg2;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
+- (id)init;
+- (id)initWithProgressManager:(id)arg1;
 - (unsigned long long)onboardStatus;
-- (bool)originalNavBarHidesShadow;
 - (bool)originalNavBarTranslucent;
 - (id)progressManager;
 - (void)pushToPeopleHome:(id)arg1;
 - (void)setOnboardStatus:(unsigned long long)arg1;
-- (void)setOriginalNavBarHidesShadow:(bool)arg1;
 - (void)setOriginalNavBarTranslucent:(bool)arg1;
 - (void)setProgressManager:(id)arg1;
 - (void)setStatusViewController:(id)arg1;

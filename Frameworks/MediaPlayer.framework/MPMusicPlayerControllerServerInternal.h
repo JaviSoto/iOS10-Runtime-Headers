@@ -84,6 +84,7 @@
 - (void)setShuffleMode:(id)arg1;
 - (void)setUseApplicationSpecificQueue:(id)arg1;
 - (void)setUserQueueModificationsDisabled:(id)arg1;
+- (bool)shouldDelayInvocation:(id)arg1;
 - (void)shuffle;
 - (id)shuffleMode;
 - (id)skipInDirection:(id)arg1;

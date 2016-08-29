@@ -23,13 +23,16 @@
 + (void)didRankSections:(id)arg1;
 + (void)didSearchInAppForSection:(id)arg1;
 + (void)didShowMoreForSection:(id)arg1 showMore:(bool)arg2;
-+ (id)didStartSearch:(id)arg1 whyQuery:(unsigned long long)arg2;
++ (id)didStartSearch:(id)arg1 whyQuery:(unsigned long long)arg2 queryIdent:(unsigned long long)arg3;
 + (void)resultsDidBecomeVisible:(id)arg1 why:(unsigned long long)arg2;
++ (void)sectionHeaderDidBecomeVisible:(id)arg1 headerType:(unsigned long long)arg2;
 + (id)sharedManager;
 + (void)suggestionsDidBecomeVisible:(id)arg1;
 
 - (void)didEngageActionItem:(id)arg1 actionPerformed:(bool)arg2;
-- (void)didEngageCardSection:(id)arg1;
+- (bool)didHandleCardSectionEngagement:(id)arg1;
+- (void)didPeekResult:(id)arg1;
+- (void)didPopResult:(id)arg1;
 - (void)didSelectResult:(id)arg1;
 - (void)placeViewController:(id)arg1 shouldLogFeedbackOfType:(int)arg2;
 

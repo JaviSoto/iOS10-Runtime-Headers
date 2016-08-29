@@ -10,7 +10,7 @@
 
 - (bool)_shouldShowHeadersAndFooters;
 - (bool)canBecomeFirstResponder;
-- (id)preferredFocusedView;
+- (id)preferredFocusEnvironments;
 - (void)setShouldShowHeadersAndFooters:(bool)arg1;
 - (bool)shouldShowHeadersAndFooters;
 

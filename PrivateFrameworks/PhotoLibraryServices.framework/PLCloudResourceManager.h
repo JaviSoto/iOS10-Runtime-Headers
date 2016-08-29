@@ -3,6 +3,8 @@
  */
 
 @interface PLCloudResourceManager : NSObject {
+    bool  _enqueuedOperation;
+    NSDate * _lastOperationDate;
     PLCloudResourcePrefetchManager * _prefetchManager;
     PLCloudResourcePruneManager * _pruneManager;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -12,7 +14,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithCPLManager:(id)arg1;
-- (void)startAutomaticPrefetchOrPrune;
+- (void)startAutomaticPrefetchOrPruneWithTimeout:(bool)arg1;
 - (id)statusForDebug:(bool)arg1;
 - (void)stop;
 

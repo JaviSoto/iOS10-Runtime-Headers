@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) unsigned long long maximumNumberOfProcessingLoopRepeats;
 @property (nonatomic, readonly) double maximumRefreshIntervalLeeway;
 @property (nonatomic, readonly) double maximumTimeBetweenConsecutiveHypothesisUpdatesInSeconds;
+@property (nonatomic, readonly) double maximumUserRoutingPreferencesAge;
 @property (nonatomic, readonly) double minimumDistanceToCompareAgainstLocationAccuracy;
 @property (nonatomic, readonly) double minimumDistanceToGetLocationUpdatesInMeters;
 @property (nonatomic, readonly) double minimumExpirationOffset;
@@ -49,6 +50,8 @@
 @property (nonatomic, readonly) double slowWalkingSpeed;
 @property (nonatomic, readonly) double staleLocationUseTimerInterval;
 @property (nonatomic, readonly) bool transitTTLSupported;
+@property (nonatomic, readonly) double updateTimeout;
+@property (nonatomic, readonly) bool useConservativeDepartureForRefreshTimer;
 
 + (id)sharedInstance;
 
@@ -77,6 +80,7 @@
 - (unsigned long long)maximumNumberOfProcessingLoopRepeats;
 - (double)maximumRefreshIntervalLeeway;
 - (double)maximumTimeBetweenConsecutiveHypothesisUpdatesInSeconds;
+- (double)maximumUserRoutingPreferencesAge;
 - (double)minimumDistanceToCompareAgainstLocationAccuracy;
 - (double)minimumDistanceToGetLocationUpdatesInMeters;
 - (double)minimumExpirationOffset;
@@ -97,5 +101,7 @@
 - (double)slowWalkingSpeed;
 - (double)staleLocationUseTimerInterval;
 - (bool)transitTTLSupported;
+- (double)updateTimeout;
+- (bool)useConservativeDepartureForRefreshTimer;
 
 @end

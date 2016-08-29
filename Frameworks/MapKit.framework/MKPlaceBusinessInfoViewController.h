@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)_updateBusinessInfo;
-- (void)contentSizeDidChange;
 - (void)dealloc;
 - (id)infoCardChildUnactionableUIElements;
 - (void)infoCardThemeChanged:(id)arg1;

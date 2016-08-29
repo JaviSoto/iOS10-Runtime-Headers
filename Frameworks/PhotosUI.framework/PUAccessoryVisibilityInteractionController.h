@@ -5,7 +5,7 @@
 @interface PUAccessoryVisibilityInteractionController : NSObject <PXChangeObserver, UIGestureRecognizerDelegate> {
     PUAssetViewModel * __assetViewModel;
     PXNumberAnimator * __contentOffsetOverrideFactor;
-    NSMutableSet * __dependentScrollViews;
+    NSHashTable * __dependentScrollViews;
     struct CGPoint { 
         double x; 
         double y; 
@@ -32,7 +32,7 @@
 
 @property (setter=_setAssetViewModel:, nonatomic, retain) PUAssetViewModel *_assetViewModel;
 @property (setter=_setContentOffsetOverrideFactor:, nonatomic, retain) PXNumberAnimator *_contentOffsetOverrideFactor;
-@property (nonatomic, readonly) NSMutableSet *_dependentScrollViews;
+@property (nonatomic, readonly) NSHashTable *_dependentScrollViews;
 @property (setter=_setInitialContentOffset:, nonatomic) struct CGPoint { double x1; double x2; } _initialContentOffset;
 @property (setter=_setOverridingContentOffsetY:, nonatomic, retain) PXNumberAnimator *_overridingContentOffsetY;
 @property (setter=_setSwipeDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_swipeDirectionValueFilter;

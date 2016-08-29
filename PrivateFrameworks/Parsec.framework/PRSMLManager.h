@@ -40,8 +40,7 @@
 - (void)dumpPredictionStatsToFlatFiles;
 - (unsigned long long)getCountForCategory:(id)arg1;
 - (id)getLastSavedCategoryRankings;
-- (id)getRankedCategories;
-- (id)getRankedCategoriesAsDictionary;
+- (id)getRankedCategoriesAsDictionaryForDays:(long long)arg1;
 - (double)getTimeStampWhenLastLogged;
 - (id)getTopHitResultForQuery:(id)arg1 resultSet:(id)arg2;
 - (unsigned long long)getTotalResultsUsedCount;

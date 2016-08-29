@@ -3,6 +3,7 @@
  */
 
 @interface GEOExperimentConfiguration : NSObject <GEOExperimentServerProxyDelegate> {
+    NSDictionary * _debugClientConfig;
     NSMutableArray * _experimentObservers;
     NSLock * _experimentObserversLock;
     GEOABAssignmentResponse * _experimentsInfo;
@@ -19,12 +20,20 @@
 + (void)setServerProxyClass:(Class)arg1;
 + (id)sharedConfiguration;
 
+- (id)_debugClientConfig;
 - (id)_debug_configurationDate;
 - (id)_debug_customQuerySubstringForType:(long long)arg1 dispatcherRequestType:(int)arg2;
 - (id)_debug_defaultQuerySubstringForType:(long long)arg1 dispatcherRequestType:(int)arg2;
+- (void)_debug_fetchAllAvailableExperiments:(id /* block */)arg1;
 - (void)_debug_forEachExperimentType:(id /* block */)arg1;
 - (void)_debug_forceUpdate;
+- (void)_debug_setActiveExperimentBranch:(id)arg1;
 - (void)_debug_setCustomQuerySubstring:(id)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
+- (void)_fetchAllAvailableExperimentsResponse:(id /* block */)arg1;
+- (id)_parsecClientMetadata;
+- (id)_reportAProblemClientMetadata;
+- (void)_setActiveExperimentBranchDictionaryRepresentation:(id)arg1;
+- (id)_siriClientMetadata;
 - (void)addExperimentObserver:(id)arg1 queue:(id)arg2;
 - (id)clientConfig;
 - (id)clientConfigurationValueForKey:(id)arg1;

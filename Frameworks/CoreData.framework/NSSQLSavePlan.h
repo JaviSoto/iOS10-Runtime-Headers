@@ -46,7 +46,6 @@
 - (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 newIndexes:(unsigned long long**)arg4 reorderedIndexes:(char **)arg5;
 - (void)_populateRow:(id)arg1 fromObject:(id)arg2 timestamp:(double)arg3 inserted:(bool)arg4;
 - (void)_prepareForDeletionOfExternalDataReferencesForObject:(id)arg1;
-- (void)_pruneObjectsAffectedByTriggersOnAttribute:(id)arg1 withObject:(id)arg2;
 - (void)_recordToManyChangesForObject:(id)arg1 inRow:(id)arg2 usingTimestamp:(double)arg3 inserted:(bool)arg4;
 - (void)_registerChangedFOKs:(id)arg1 deletions:(id)arg2 forSourceObject:(id)arg3 andRelationship:(id)arg4;
 - (void)dealloc;

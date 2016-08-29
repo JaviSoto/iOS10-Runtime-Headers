@@ -8,6 +8,7 @@
 - (NSDate *)date;
 - (UIImage *)icon;
 - (NSArray *)interfaceActions;
+- (bool)isDateAllDay;
 - (NSString *)primarySubtitleText;
 - (NSString *)primaryText;
 - (NSString *)secondaryText;
@@ -17,7 +18,9 @@
 - (void)setPrimarySubtitleText:(NSString *)arg1;
 - (void)setPrimaryText:(NSString *)arg1;
 - (void)setSecondaryText:(NSString *)arg1;
+- (void)setTimeZone:(NSTimeZone *)arg1;
 - (void)setTitle:(NSString *)arg1;
+- (NSTimeZone *)timeZone;
 - (NSString *)title;
 
 @optional

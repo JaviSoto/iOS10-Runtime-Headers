@@ -34,6 +34,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)_clampFireDate:(id)arg1;
 + (id)_publisherBulletinIDForReminder:(id)arg1;
 + (id)_publisherBulletinIDForTask:(void*)arg1;
 + (id)_publisherBulletinIDForTaskUniqueIdentifier:(id)arg1;
@@ -54,6 +55,7 @@
 - (id)_eventStore;
 - (bool)_haveAlarmsChanged:(id)arg1;
 - (id)_insertSideAlarmObjectForVehicleTriggerAlarm:(id)arg1 forReminder:(id)arg2 withDelay:(double)arg3 eventStore:(id)arg4 context:(id)arg5;
+- (void)_installTimerWithFireDate:(id)arg1;
 - (bool)_isAlarmAcknowledgedWithAcknowledgedDate:(id)arg1 fireDate:(id)arg2;
 - (bool)_isDataProtected;
 - (void)_killSyncTimer;

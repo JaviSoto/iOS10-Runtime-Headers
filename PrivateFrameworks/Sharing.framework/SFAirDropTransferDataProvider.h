@@ -3,9 +3,11 @@
  */
 
 @interface SFAirDropTransferDataProvider : NSObject <SFAirDropTransferDataProviderClient, SFCompanionXPCManagerObserver> {
+    NSXPCConnection * _connection;
     <SFAirDropTransferDataProviderDelegate> * _delegate;
 }
 
+@property NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property <SFAirDropTransferDataProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -15,10 +17,13 @@
 + (id)sharedAlertDataProvider;
 
 - (void).cxx_destruct;
+- (id)connection;
 - (id)delegate;
+- (id)init;
 - (void)performAppStoreSearchForRecordID:(id)arg1;
 - (void)performSaveToiCloudForRecordID:(id)arg1;
 - (void)registerAsAirDropClient;
+- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)showAcceptAlertForRecordID:(id)arg1;
 - (void)showCancelledAlertForRecordID:(id)arg1;
@@ -30,5 +35,6 @@
 - (void)userDidSelectAppWithIndex:(id)arg1 forRecordID:(id)arg2;
 - (void)withdrawTransferDataWithRecordID:(id)arg1;
 - (void)xpcManagerConnectionInterrupted;
+- (void)xpcManagerDidResumeConnection:(id)arg1;
 
 @end

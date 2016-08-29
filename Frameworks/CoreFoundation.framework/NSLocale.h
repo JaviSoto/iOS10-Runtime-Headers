@@ -38,7 +38,7 @@
 - (void)_setNullLocale;
 - (id)alternateQuotationBeginDelimiter;
 - (id)alternateQuotationEndDelimiter;
-- (id)calendar;
+- (id)calendarIdentifier;
 - (id)collationIdentifier;
 - (id)collatorIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -60,7 +60,7 @@
 - (id)localeIdentifier;
 - (id)localizedStringForAlternateQuotationBeginDelimiter:(id)arg1;
 - (id)localizedStringForAlternateQuotationEndDelimiter:(id)arg1;
-- (id)localizedStringForCalendar:(id)arg1;
+- (id)localizedStringForCalendarIdentifier:(id)arg1;
 - (id)localizedStringForCollationIdentifier:(id)arg1;
 - (id)localizedStringForCollatorIdentifier:(id)arg1;
 - (id)localizedStringForCountryCode:(id)arg1;
@@ -83,6 +83,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (id)_preferredTemperatureUnit;
 + (void)_setPreferredTemperatureUnit:(id)arg1;
 + (id)autoupdatingCurrentLocale;
 + (id)mostPreferredLanguageOf:(id)arg1 forUsage:(unsigned long long)arg2 options:(unsigned long long)arg3;

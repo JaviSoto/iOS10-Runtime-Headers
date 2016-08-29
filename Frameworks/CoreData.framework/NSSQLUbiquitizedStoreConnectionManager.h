@@ -13,6 +13,7 @@
 - (id)initializationConnection;
 - (bool)routeStoreRequest:(id)arg1;
 - (void)scheduleBarrierBlock:(id /* block */)arg1;
+- (void)scheduleConnectionsBarrier:(id /* block */)arg1;
 - (void)setExclusiveLockingMode:(bool)arg1;
 
 @end

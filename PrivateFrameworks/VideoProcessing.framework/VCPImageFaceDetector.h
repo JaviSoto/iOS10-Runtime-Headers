@@ -5,7 +5,6 @@
 @interface VCPImageFaceDetector : VCPImageAnalyzer
 
 + (id)faceDetector;
-+ (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformTopLeft;
 
 - (int)aggregateTileResults:(id)arg1 tileRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 landscape:(bool)arg4 results:(id)arg5;
 - (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 flags:(unsigned long long*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;

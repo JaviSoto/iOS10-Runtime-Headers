@@ -10,6 +10,7 @@
 - (void)addObserver:(id <SBUIBiometricResourceObserver>)arg1;
 - (unsigned long long)biometricLockoutState;
 - (bool)hasBiometricAuthenticationCapabilityEnabled;
+- (bool)hasEnrolledFingers;
 - (bool)isFingerDetectEnabled;
 - (bool)isFingerOn;
 - (bool)isMatchingAllowed;

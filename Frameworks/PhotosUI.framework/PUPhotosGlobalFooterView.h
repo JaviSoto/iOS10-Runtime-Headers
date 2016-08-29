@@ -3,6 +3,7 @@
  */
 
 @interface PUPhotosGlobalFooterView : UICollectionReusableView <ICQBannerViewDelegate> {
+    bool  __shouldHideCloudStatus;
     bool  __shouldHighlightSubtitle;
     bool  __wantsCloudBannerWithCurrentOffer;
     NSLayoutConstraint * _centeringConstraint;
@@ -30,6 +31,7 @@
     unsigned long long  _videoCount;
 }
 
+@property (setter=_setShouldHideCloudStatus:, nonatomic) bool _shouldHideCloudStatus;
 @property (setter=_setShouldHighlightSubtitle:, nonatomic) bool _shouldHighlightSubtitle;
 @property (setter=_setWantsCloudBannerWithCurrentOffer:, nonatomic) bool _wantsCloudBannerWithCurrentOffer;
 @property (readonly, copy) NSString *debugDescription;
@@ -46,8 +48,10 @@
 - (void)_completeOfferUpdateWithOffer:(id)arg1 shouldShowBannerForOffer:(bool)arg2;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_handleCloudOfferChangedNotification:(id)arg1;
+- (void)_setShouldHideCloudStatus:(bool)arg1;
 - (void)_setShouldHighlightSubtitle:(bool)arg1;
 - (void)_setWantsCloudBannerWithCurrentOffer:(bool)arg1;
+- (bool)_shouldHideCloudStatus;
 - (bool)_shouldHighlightSubtitle;
 - (void)_showPurchaseFlow;
 - (void)_updateCloudOfferIfNeeded;

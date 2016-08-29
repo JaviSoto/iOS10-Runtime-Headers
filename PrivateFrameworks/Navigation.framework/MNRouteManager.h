@@ -53,7 +53,7 @@
 - (void)updateForETA:(id)arg1 forRoute:(id)arg2;
 - (void)updateForGuidanceLevel:(int)arg1;
 - (void)updateForLocation:(id)arg1;
-- (void)updateForReroute:(id)arg1 request:(id)arg2 response:(id)arg3;
-- (void)updateForRoutePlanningDetails:(id)arg1;
+- (void)updateForReroute:(id)arg1 rerouteReason:(unsigned long long)arg2 request:(id)arg3 response:(id)arg4;
+- (bool)updateForRoutePlanningDetails:(id)arg1 outError:(out id*)arg2;
 
 @end

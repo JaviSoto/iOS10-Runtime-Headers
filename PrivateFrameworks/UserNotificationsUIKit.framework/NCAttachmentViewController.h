@@ -9,12 +9,14 @@
 }
 
 @property (nonatomic, retain) UNNotificationAttachment *attachment;
+@property (nonatomic, readonly) NSString *contentExtensionIdentifier;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
+@property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
 
 + (id)attachmentViewControllerForAttachment:(id)arg1 notificationRequest:(id)arg2;

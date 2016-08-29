@@ -20,6 +20,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_notifyClientsOfImminentSuspension;
 - (void)_updateBackgroundTask;
 - (void)addClient:(struct ProcessAssertionClient { int (**x1)(); }*)arg1;
 - (void)dealloc;

@@ -28,6 +28,7 @@
 - (void)_initSubviews;
 - (void)_layoutSubviewsForBoundsChange:(bool)arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)createThumbView;
 - (void)dealloc;

@@ -27,6 +27,7 @@
 - (void)growRegistrationCollectionTo:(unsigned long long)arg1;
 - (void)incrementRefCountForObjectID:(id)arg1;
 - (id)init;
+- (id)initWithPersistentStore:(id)arg1;
 - (id)initWithValueCallbacks:(void*)arg1 preserveToManyRelationships:(bool)arg2;
 - (int)refCountForObjectID:(id)arg1;
 - (void)registerRow:(id)arg1 forObjectID:(id)arg2;

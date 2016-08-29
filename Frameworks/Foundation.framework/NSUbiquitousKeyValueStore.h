@@ -79,4 +79,8 @@
 
 - (void)_printDebugDescription;
 
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (void)tsa_coalescedSynchronizeForDefaultStore;
+
 @end

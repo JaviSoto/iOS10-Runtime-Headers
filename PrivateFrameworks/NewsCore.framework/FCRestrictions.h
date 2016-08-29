@@ -21,8 +21,7 @@
 - (bool)isContentBlockedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
 - (bool)isExplicitContentAllowed;
 - (long long)isExplicitContentAllowedOverride;
-- (bool)isNewsVersionAllowed:(id)arg1;
-- (bool)isNewsVersionNumberAllowed:(long long)arg1;
+- (bool)isNewsVersionAllowed:(long long)arg1;
 - (void)setBuildVersionNumber:(long long)arg1;
 - (void)setIsExplicitContentAllowedOverride:(long long)arg1;
 - (void)setTesting:(bool)arg1;

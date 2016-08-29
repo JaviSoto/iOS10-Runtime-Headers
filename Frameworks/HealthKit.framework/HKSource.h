@@ -33,6 +33,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)_hasFirstPartyBundleID;
 - (id)_init;
 - (bool)_isAppleWatch;
 - (bool)_isApplication;

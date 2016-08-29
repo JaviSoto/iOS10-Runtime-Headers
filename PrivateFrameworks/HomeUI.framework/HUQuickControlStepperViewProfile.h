@@ -15,6 +15,7 @@
 @property (nonatomic) unsigned long long stepperBehavior;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)numberOfSegments;
 - (double)percentageValueForViewValue:(id)arg1;
 - (id)segmentTitles;

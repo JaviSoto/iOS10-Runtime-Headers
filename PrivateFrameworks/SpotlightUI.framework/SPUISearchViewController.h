@@ -4,6 +4,7 @@
 
 @interface SPUISearchViewController : UIViewController <SPSearchAgentDelegate, SPUISearchHeaderDelegate, SPUISearchResultHandlerDelegate, SPUITableViewDelegate, SearchUIFirstTimeExperienceDelegate> {
     NSTimer * _clearResultsTimer;
+    bool  _clearSearchFieldAfterDismissal;
     <SPUISearchViewControllerDelegate> * _delegate;
     SPUISearchFirstTimeViewController * _firstTimeExperienceViewController;
     SPUILockScreenFooterView * _footerView;
@@ -24,6 +25,7 @@
 }
 
 @property (retain) NSTimer *clearResultsTimer;
+@property bool clearSearchFieldAfterDismissal;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SPUISearchViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -53,15 +55,15 @@
 - (bool)allowInternet;
 - (void)cancelButtonPressed;
 - (id)clearResultsTimer;
+- (bool)clearSearchFieldAfterDismissal;
 - (void)clearSearchResults;
+- (void)clearSearchResultsPrefsChanged;
 - (void)clearTimerExpired;
 - (id)contentScrollView;
 - (id)currentQuery;
 - (id)delegate;
-- (void)deselectRows;
 - (void)didBeginEditing;
 - (void)didBeginScrollingInTableView;
-- (void)didLongPressResult:(id)arg1;
 - (void)didPullDownTableView;
 - (void)didSelectResult:(id)arg1 withFeedback:(id)arg2 wasPop:(bool)arg3;
 - (void)didSwipeUpOnTableView;
@@ -100,6 +102,7 @@
 - (void)searchViewWillPresentFromSource:(unsigned long long)arg1;
 - (void)sendRatingFeedback;
 - (void)setClearResultsTimer:(id)arg1;
+- (void)setClearSearchFieldAfterDismissal:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFirstTimeExperienceViewController:(id)arg1;
 - (void)setFooterView:(id)arg1;
@@ -116,6 +119,7 @@
 - (void)setStatusBarDismissTime:(double)arg1;
 - (void)setWasVisibleWhenPresented:(bool)arg1;
 - (void)setZeroKeywordTableViewController:(id)arg1;
+- (void)settingsChanged;
 - (double)statusBarDismissTime;
 - (id)tableViewControllerWithSearchModel:(id)arg1;
 - (void)tableViewDidFinishReload:(id)arg1;

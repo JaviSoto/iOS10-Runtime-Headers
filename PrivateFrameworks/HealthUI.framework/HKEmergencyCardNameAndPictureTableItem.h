@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)_cell;
+- (double)_cellFittedHeightWithWidth:(double)arg1;
 - (void)_editPhotoTapped:(id)arg1;
 - (void)commitEditing;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
@@ -29,6 +30,7 @@
 - (void)setData:(id)arg1;
 - (void)setRowHeightChangeDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndex:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (id)title;
 

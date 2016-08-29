@@ -176,6 +176,7 @@
 - (void)setFakeEntitlement:(id)arg1 forKey:(id)arg2;
 - (void)setFakeEntitlements:(id)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
+- (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3;
 - (void)setFlowControlManager:(id)arg1;
 - (void)setHasCachedSetupInfo:(bool)arg1;
 - (void)setHasValidConnection:(bool)arg1;

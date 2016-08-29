@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
 @property (readonly, copy) NSString *filePath;
-@property (readonly) NSArray *functionConstants;
+@property (readonly) NSDictionary *functionConstantsDictionary;
 @property (readonly) unsigned long long functionType;
 @property (readonly) unsigned long long hash;
 @property (copy) NSString *label;
@@ -27,8 +27,7 @@
 - (void)dealloc;
 - (id)device;
 - (id)filePath;
-- (unsigned long long)functionConstantIndexByName:(id)arg1 type:(unsigned long long*)arg2;
-- (id)functionConstants;
+- (id)functionConstantsDictionary;
 - (unsigned long long)functionType;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;
 - (id)initWithBaseObject:(id)arg1 strongParent:(id)arg2 functions:(id)arg3;

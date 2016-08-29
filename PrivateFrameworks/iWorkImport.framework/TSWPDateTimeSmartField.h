@@ -46,6 +46,7 @@
 - (void)setTimeStyle:(long long)arg1;
 - (void)setUpdatePlan:(int)arg1;
 - (int)smartFieldKind;
+- (bool)supportsDeepCopyForUndo;
 - (long long)timeStyle;
 - (int)updatePlan;
 

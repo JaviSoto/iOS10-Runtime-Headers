@@ -13,18 +13,15 @@
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (nonatomic, readonly) NSString *defaultCategory;
 @property (getter=isDownloading, nonatomic, readonly) bool downloading;
-@property (nonatomic, retain) NSString *engineID;
 @property long long environment;
 @property (nonatomic, readonly) NSNumber *externalVersion;
 @property (nonatomic, readonly) NSDictionary *gameDescriptor;
 @property (nonatomic, readonly) struct GKGameInfo { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; } gameInfo;
 @property (getter=isInstalled, nonatomic, readonly) bool installedGame;
 @property (retain) GKGameInternal *internal;
-@property (nonatomic, readonly) bool isGameRecommendation;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic) unsigned char platform;
 @property (getter=isPrerendered, nonatomic) bool prerendered;
-@property (nonatomic, retain) NSString *reason;
 @property (nonatomic, retain) GKStoreItemInternal *storeItem;
 @property (nonatomic, readonly) bool supportsMultiplayer;
 @property (nonatomic, readonly) bool supportsTurnBasedMultiplayer;
@@ -39,8 +36,6 @@
 + (bool)isPreferences;
 + (void)loadGamesWithBundleIDs:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)loadTopGamesWithCompletionHandler:(id /* block */)arg1;
-+ (void)markGameRecommendationsDisplayed:(id)arg1 complete:(id /* block */)arg2;
-+ (void)markGameRecommendationsViewed:(id)arg1 complete:(id /* block */)arg2;
 + (void)setCurrentGameFromInternal:(id)arg1 serverEnvironment:(long long)arg2;
 + (bool)supportsSecureCoding;
 + (void)updateGames:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -65,7 +60,6 @@
 - (bool)isDownloading;
 - (bool)isEqual:(id)arg1;
 - (bool)isGameCenter;
-- (bool)isGameRecommendation;
 - (bool)isInstalled;
 - (bool)isStoreItemUnexpired;
 - (void)loadGameRatingWithCompletionHandler:(id /* block */)arg1;

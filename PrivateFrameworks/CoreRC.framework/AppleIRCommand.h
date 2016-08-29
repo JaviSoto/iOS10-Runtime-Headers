@@ -4,19 +4,34 @@
 
 @interface AppleIRCommand : IRCommand
 
+@property (nonatomic, readonly) unsigned long long command;
 @property (nonatomic, readonly) unsigned char commandID;
 @property (nonatomic, readonly) unsigned char commandPage;
 @property (nonatomic, readonly) unsigned char deviceUID;
+@property (nonatomic, readonly) bool isA39PlayPauseSelect;
+@property (nonatomic, readonly) bool isB39Command;
+@property (nonatomic, readonly) bool isB39PlayPauseOrSelect;
+@property (nonatomic, readonly) bool isPairingRequest;
+@property (nonatomic, readonly) bool isStackshotRequest;
+@property (nonatomic, readonly) bool isUnpairingRequest;
 @property (nonatomic, readonly) unsigned short token;
 @property (nonatomic, readonly) unsigned short vendorID;
 
 + (bool)matchNECVendorID:(unsigned short)arg1;
 
+- (unsigned long long)command;
 - (unsigned char)commandID;
 - (unsigned char)commandPage;
 - (id)description;
 - (unsigned char)deviceUID;
+- (bool)getVendorSpecificHIDUsagePage:(unsigned int*)arg1 usageID:(unsigned int*)arg2 ignoreRepeats:(bool*)arg3;
 - (id)initWithPayload:(unsigned long long)arg1 repeat:(bool)arg2;
+- (bool)isA39PlayPauseSelect;
+- (bool)isB39Command;
+- (bool)isB39PlayPauseOrSelect;
+- (bool)isPairingRequest;
+- (bool)isStackshotRequest;
+- (bool)isUnpairingRequest;
 - (unsigned short)token;
 - (unsigned short)vendorID;
 

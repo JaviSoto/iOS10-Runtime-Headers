@@ -3,6 +3,7 @@
  */
 
 @interface _QPSearchFeedbackListenerParameters : _QPParameters {
+    NSArray * _allowedDescriptionExpansionBundleIdentifiers;
     NSArray * _disallowedParsecDomains;
     NSString * _expansionRegularExpression;
     NSNumber * _minimumPrefixLengthToSuggest;
@@ -14,6 +15,7 @@
     NSNumber * _suggestPrefixWithoutEngagement;
 }
 
+@property (nonatomic, readonly) NSArray *allowedDescriptionExpansionBundleIdentifiers;
 @property (nonatomic, readonly) NSArray *disallowedParsecDomains;
 @property (nonatomic, readonly) NSString *expansionRegularExpression;
 @property (nonatomic, readonly) NSNumber *minimumPrefixLengthToSuggest;
@@ -25,6 +27,7 @@
 @property (nonatomic, readonly) NSNumber *suggestPrefixWithoutEngagement;
 
 - (void).cxx_destruct;
+- (id)allowedDescriptionExpansionBundleIdentifiers;
 - (id)defaultValues;
 - (id)disallowedParsecDomains;
 - (id)expansionRegularExpression;

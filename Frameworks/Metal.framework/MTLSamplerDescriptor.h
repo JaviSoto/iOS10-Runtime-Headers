@@ -3,7 +3,6 @@
  */
 
 @interface MTLSamplerDescriptor : NSObject <NSCopying> {
-    unsigned long long  _borderColor;
     bool  _lodAverage;
 }
 
@@ -25,10 +24,8 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (unsigned long long)borderColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)lodAverage;
-- (void)setBorderColor:(unsigned long long)arg1;
 - (void)setLodAverage:(bool)arg1;
 
 @end

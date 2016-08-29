@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSTouchIconCache : NSObject <WBSSiteMetadataImageCacheDelegate, WBSSiteMetadataProvider> {
+@interface WBSTouchIconCache : NSObject <WBSSiteMetadataImageCacheDelegate, WBSSiteMetadataProvider, WBSWebViewMetadataFetchOperationDelegate> {
     bool  _alwaysRequestTouchIcons;
     NSURL * _cacheDirectoryURL;
     WBSTouchIconCacheSettingsSQLiteStore * _cacheSettingsStore;
@@ -11,6 +11,7 @@
     NSMutableDictionary * _hostsToRequestSets;
     WBSSiteMetadataImageCache * _imageCache;
     NSObject<OS_dispatch_queue> * _internalQueue;
+    bool  _internalQueueBusy;
     NSMutableArray * _pendingSaveTouchIconToDiskBlocks;
     NSMutableSet * _pendingTouchIconRequestHosts;
     <WBSSiteMetadataProviderDelegate> * _providerDelegate;
@@ -26,6 +27,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSURL *imageDirectoryURL;
+@property (getter=isInternalQueueBusy) bool internalQueueBusy;
 @property (nonatomic) <WBSSiteMetadataProviderDelegate> *providerDelegate;
 @property (getter=isReadOnly, nonatomic, readonly) bool readOnly;
 @property (readonly) Class superclass;
@@ -46,11 +48,12 @@
 - (id)_imageCacheSettingsDatabaseURL;
 - (double)_maximumScreenScale;
 - (void)_notifyImageWasLoaded:(id)arg1 forHost:(id)arg2;
-- (id)_operationWithRequest:(id)arg1 processPool:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)_operationWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_registerRequest:(id)arg1;
 - (void)_removeTouchIconsDataForHost:(id)arg1;
 - (id)_resizedImage:(id)arg1 forHost:(id)arg2;
 - (id)_responseForRequest:(id)arg1 withTouchIcon:(id)arg2;
+- (id)_responseForTouchIconRequestWithNoHost:(id)arg1;
 - (void)_saveTouchIconToDisk:(id)arg1 forHost:(id)arg2 requestDidSucceed:(bool)arg3 isUserLoadedWebpageRequest:(bool)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(bool)arg5;
 - (void)_saveTouchIconToDiskWithResult:(id)arg1 forRequest:(id)arg2;
 - (void)_setUpAndReturnDelayedResponseForRequest:(id)arg1;
@@ -58,6 +61,7 @@
 - (void)_setUpImageCacheSettingsSQLiteStore;
 - (bool)_shouldGenerateTouchIconFromTouchIcon:(id)arg1 forRequest:(id)arg2;
 - (bool)_shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(bool)arg2 initiatedFromBookmarkInteraction:(bool)arg3;
+- (bool)_shouldRequestTouchIconWithTimeoutForURL:(id)arg1 inUserLoadedWebpage:(bool)arg2 initiatedFromBookmarkInteraction:(bool)arg3;
 - (id)_touchIconForURL:(id)arg1;
 - (void)_updateTouchIconsDataForHost:(id)arg1 image:(id)arg2 requestDidSucceed:(bool)arg3 isUserLoadedWebpageRequest:(bool)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(bool)arg5;
 - (void)_willSaveTouchIcon:(id)arg1 withCacheSettingsEntry:(id)arg2;
@@ -72,8 +76,9 @@
 - (id)init;
 - (id)initWithCacheDirectoryURL:(id)arg1;
 - (id)initWithCacheDirectoryURL:(id)arg1 isReadOnly:(bool)arg2;
+- (bool)isInternalQueueBusy;
 - (bool)isReadOnly;
-- (id)operationForRequest:(id)arg1 withProcessPool:(id)arg2;
+- (id)operationForRequest:(id)arg1;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(bool)arg2;
 - (id)providerDelegate;
 - (void)purgeUnneededImages;
@@ -86,6 +91,7 @@
 - (void)retainTouchIconsForHosts:(id)arg1;
 - (void)savePendingChangesBeforeTermination;
 - (void)setAlwaysRequestTouchIcons:(bool)arg1;
+- (void)setInternalQueueBusy:(bool)arg1;
 - (void)setProviderDelegate:(id)arg1;
 - (bool)shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(bool)arg2;
 - (bool)shouldRequestTouchIconForWebPageNavigationFromBookmarkInteractionForURL:(id)arg1;
@@ -94,5 +100,7 @@
 - (void)siteMetadataImageCacheDidEmptyCache:(id)arg1;
 - (void)siteMetadataImageCacheDidFinishLoadingSettings:(id)arg1;
 - (void)stopWatchingUpdatesForRequest:(id)arg1;
+- (void)webViewMetadataFetchOperation:(id)arg1 didFinishUsingWebView:(id)arg2;
+- (id)webViewMetadataFetchOperation:(id)arg1 webViewOfSize:(struct CGSize { double x1; double x2; })arg2 withConfiguration:(id)arg3;
 
 @end

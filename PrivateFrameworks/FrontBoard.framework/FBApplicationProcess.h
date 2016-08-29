@@ -22,6 +22,7 @@
     bool  _nowPlayingWithAudio;
     bool  _pendingExit;
     bool  _performedLaunch;
+    NSMutableArray * _queue_terminateRequestCompletionBlocks;
     NSMutableArray * _queuedSceneBlocksToExecuteAfterLaunch;
     bool  _recordingAudio;
     FBSProcessWatchdogPolicy * _sceneCreateWatchdogPolicy;
@@ -69,7 +70,7 @@
 - (id)_queue_cpuStatistics;
 - (id)_queue_crashReportThermalsInfo;
 - (int)_queue_defaultSuspendType;
-- (void)_queue_doGracefulKillWithCompletion:(id /* block */)arg1 withWatchdog:(bool)arg2;
+- (void)_queue_doGracefulKillWithDeliveryConfirmation:(id /* block */)arg1;
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
 - (int)_queue_effectiveVisibilityForSceneSettings:(id)arg1;
@@ -80,6 +81,7 @@
 - (void)_queue_executeBlockAfterLaunchCompletes:(id /* block */)arg1;
 - (void)_queue_executeKillForRequest:(id)arg1;
 - (void)_queue_executeLaunchCompletionBlocks;
+- (void)_queue_executeTerminateRequestCompletionBlocksIfNecessaryForSucccess:(bool)arg1;
 - (void)_queue_finishLaunch;
 - (id)_queue_internalDebugEnvironmentVariables;
 - (void)_queue_invalidateBKSProcess;
@@ -96,7 +98,7 @@
 - (void)_queue_processDidExit;
 - (void)_queue_processReallyDidExit;
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;
-- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withExitCompletion:(id /* block */)arg2;
+- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withDeliveryConfirmation:(id /* block */)arg2;
 - (void)_queue_setSupportsBackgroundTaskAssertions:(bool)arg1;
 - (void)_queue_setSupportsSuspendOnLock:(bool)arg1;
 - (void)_queue_setTaskState:(int)arg1;
@@ -113,6 +115,8 @@
 - (void)_queue_waitToExecOrExit;
 - (void)_terminateWithRequest:(id)arg1 forWatchdog:(id)arg2;
 - (bool)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id*)arg2;
+- (id)_watchdog:(id)arg1 terminationRequestForViolatedProvision:(id)arg2 error:(id)arg3;
+- (id)_watchdogProvider;
 - (long long)_watchdogReportType;
 - (void)_watchdogStarted:(id)arg1;
 - (void)_watchdogStopped:(id)arg1;

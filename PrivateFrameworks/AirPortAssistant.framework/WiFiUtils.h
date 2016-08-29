@@ -87,7 +87,7 @@
 - (int)joinNetworkWithScanInfoAsync:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
 - (int)joinNetworkWithScanInfoSync:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
 - (void)joinNetworkWithScanInfoThread:(id)arg1;
-- (void)mergeScanResults:(id)arg1;
+- (void)mergeScanResults:(id)arg1 ageOut:(bool)arg2;
 - (id)mergedScanInfoArray;
 - (int)openWiFi;
 - (double)periodicScanInterval;

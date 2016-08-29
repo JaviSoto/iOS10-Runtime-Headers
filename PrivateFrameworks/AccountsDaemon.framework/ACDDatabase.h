@@ -10,6 +10,7 @@
     NSPersistentStore * _store;
 }
 
+@property (nonatomic) long long keychainVersion;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic) long long version;
@@ -41,6 +42,7 @@
 - (id)initWithDefaultPath;
 - (id)initWithPath:(id)arg1;
 - (id)initWithTimeMachineHomeFolderPath:(id)arg1;
+- (long long)keychainVersion;
 - (id)managedObjectContext;
 - (id)managedObjectIDForURI:(id)arg1;
 - (id)objectForObjectURI:(id)arg1;
@@ -48,6 +50,7 @@
 - (bool)saveWithError:(id*)arg1;
 - (bool)saveWithError:(id*)arg1 rollbackOnFailure:(bool)arg2;
 - (void)setAccountPropertyWithKey:(id)arg1 value:(id)arg2 owner:(id)arg3;
+- (void)setKeychainVersion:(long long)arg1;
 - (void)setVersion:(long long)arg1;
 - (long long)version;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSApplicationCarPlayService : SBSApplicationService
+@interface SBSApplicationCarPlayService : SBSAbstractApplicationService
 
 - (void)fetchApplicationIconInformationForBundleIdentifier:(id)arg1 inVehicle:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)fetchIconStateForVehicleId:(id)arg1 withCompletion:(id /* block */)arg2;

@@ -5,6 +5,7 @@
 @interface NSSQLBindVariable : NSObject {
     NSAttributeDescription * _attributeDescription;
     int  _cd_rc;
+    unsigned int  _flags;
     unsigned int  _index;
     long long  _int64;
     unsigned int  _sqlType;
@@ -13,6 +14,7 @@
 
 - (bool)_isDeallocating;
 - (bool)_tryRetain;
+- (bool)allowsCoercion;
 - (id)attributeDescription;
 - (void)dealloc;
 - (bool)hasObjectValue;
@@ -20,6 +22,7 @@
 - (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
 - (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned int)arg2;
 - (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3 allowCoercion:(bool)arg4;
 - (long long)int64;
 - (oneway void)release;
 - (id)retain;

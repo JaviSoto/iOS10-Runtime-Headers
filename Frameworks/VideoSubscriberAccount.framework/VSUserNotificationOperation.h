@@ -5,6 +5,7 @@
 @interface VSUserNotificationOperation : NSOperation {
     NSString * _alternateButtonTitle;
     NSString * _defaultButtonTitle;
+    NSURL * _iconURL;
     NSString * _message;
     struct __CFUserNotification { } * _notification;
     unsigned long long  _response;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, copy) NSString *alternateButtonTitle;
 @property (nonatomic, copy) NSString *defaultButtonTitle;
+@property (nonatomic, copy) NSURL *iconURL;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic) unsigned long long response;
 @property (nonatomic, copy) NSString *title;
@@ -27,12 +29,14 @@
 - (id)alternateButtonTitle;
 - (void)cancel;
 - (id)defaultButtonTitle;
+- (id)iconURL;
 - (id)init;
 - (void)main;
 - (id)message;
 - (unsigned long long)response;
 - (void)setAlternateButtonTitle:(id)arg1;
 - (void)setDefaultButtonTitle:(id)arg1;
+- (void)setIconURL:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setResponse:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;

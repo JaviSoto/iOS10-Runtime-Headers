@@ -10,6 +10,7 @@
     bool  _isExecuting;
     bool  _isFinished;
     MiroMemory * _memory;
+    bool  _shouldSave;
 }
 
 @property (retain) MiroAutoEditController *autoEditController;
@@ -17,6 +18,7 @@
 @property (copy) id /* block */ cleanupHandler;
 @property (nonatomic, retain) MiroCloudDownloader *cloudDownloader;
 @property (retain) MiroMemory *memory;
+@property bool shouldSave;
 
 - (void).cxx_destruct;
 - (void)_downloadWithCompletionHandler:(id /* block */)arg1;
@@ -35,7 +37,9 @@
 - (void)setCleanupHandler:(id /* block */)arg1;
 - (void)setCloudDownloader:(id)arg1;
 - (void)setMemory:(id)arg1;
+- (void)setShouldSave:(bool)arg1;
 - (bool)shouldDownload;
+- (bool)shouldSave;
 - (void)start;
 
 @end

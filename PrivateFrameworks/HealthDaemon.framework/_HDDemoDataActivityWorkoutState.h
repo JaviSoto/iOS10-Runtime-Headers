@@ -11,6 +11,7 @@
     double  _totalDistanceWalkingInMeters;
     double  _totalEnergyBurnedInKilocalories;
     unsigned long long  _workoutActivityType;
+    NSMutableArray * _workoutEvents;
 }
 
 @property (nonatomic, retain) NSMutableData *associatedObjectUUIDs;
@@ -21,11 +22,13 @@
 @property (nonatomic) double totalDistanceWalkingInMeters;
 @property (nonatomic) double totalEnergyBurnedInKilocalories;
 @property (nonatomic) unsigned long long workoutActivityType;
+@property (nonatomic, retain) NSMutableArray *workoutEvents;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addAssociatedObjectUUID:(id)arg1;
+- (void)addWorkoutEvent:(id)arg1;
 - (id)associatedObjectUUIDs;
 - (void)encodeWithCoder:(id)arg1;
 - (id)generateWorkoutWithEndDate:(id)arg1;
@@ -41,10 +44,12 @@
 - (void)setTotalDistanceWalkingInMeters:(double)arg1;
 - (void)setTotalEnergyBurnedInKilocalories:(double)arg1;
 - (void)setWorkoutActivityType:(unsigned long long)arg1;
+- (void)setWorkoutEvents:(id)arg1;
 - (id)startDate;
 - (double)totalDistanceCyclingInMeters;
 - (double)totalDistanceWalkingInMeters;
 - (double)totalEnergyBurnedInKilocalories;
 - (unsigned long long)workoutActivityType;
+- (id)workoutEvents;
 
 @end

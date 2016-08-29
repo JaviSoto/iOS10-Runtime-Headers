@@ -32,6 +32,8 @@
 - (id)addMenuButtonWithTitleItem:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addOfferViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addReusableViewWithReuseIdentifier:(id)arg1;
+- (id)addStackItemViewWithElement:(id)arg1 width:(double)arg2 context:(id)arg3;
+- (id)addStackListViewWithElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addStarRatingControlViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addStarRatingViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addTabularLockupWithElement:(id)arg1 width:(double)arg2 context:(id)arg3;

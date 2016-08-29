@@ -11,6 +11,7 @@
 @property (nonatomic) bool activityContinuation;
 @property (nonatomic) bool allowCloudDelivery;
 @property (nonatomic, retain) NSString *alternateCallbackID;
+@property (nonatomic) bool alwaysSkipSelf;
 @property (nonatomic, retain) NSArray *bulkedPayload;
 @property (nonatomic) bool bypassDuet;
 @property (nonatomic) bool bypassSizeCheck;
@@ -55,6 +56,7 @@
 @property (nonatomic, retain) NSArray *requireLackOfRegistrationProperties;
 @property (nonatomic, retain) NSDictionary *resourceMetadata;
 @property (nonatomic, retain) NSString *resourcePath;
+@property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic, retain) NSString *subService;
 @property (nonatomic, retain) NSString *subServiceAccountUUID;
 @property (nonatomic) double timeout;
@@ -68,6 +70,7 @@
 - (bool)activityContinuation;
 - (bool)allowCloudDelivery;
 - (id)alternateCallbackID;
+- (bool)alwaysSkipSelf;
 - (id)bulkedPayload;
 - (bool)bypassDuet;
 - (bool)bypassSizeCheck;
@@ -119,11 +122,13 @@
 - (id)requireLackOfRegistrationProperties;
 - (id)resourceMetadata;
 - (id)resourcePath;
+- (id)sessionID;
 - (void)setAccessToken:(id)arg1;
 - (void)setAccountUUID:(id)arg1;
 - (void)setActivityContinuation:(bool)arg1;
 - (void)setAllowCloudDelivery:(bool)arg1;
 - (void)setAlternateCallbackID:(id)arg1;
+- (void)setAlwaysSkipSelf:(bool)arg1;
 - (void)setBulkedPayload:(id)arg1;
 - (void)setBypassDuet:(bool)arg1;
 - (void)setBypassSizeCheck:(bool)arg1;
@@ -167,6 +172,7 @@
 - (void)setRequireLackOfRegistrationProperties:(id)arg1;
 - (void)setResourceMetadata:(id)arg1;
 - (void)setResourcePath:(id)arg1;
+- (void)setSessionID:(id)arg1;
 - (void)setSubService:(id)arg1;
 - (void)setSubServiceAccountUUID:(id)arg1;
 - (void)setTimeout:(double)arg1;

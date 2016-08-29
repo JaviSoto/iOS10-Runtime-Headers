@@ -12,7 +12,6 @@
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minimumFrameDuration;
 @property (nonatomic, readonly) NSDictionary *pixelAspectRatioDictionary;
 @property (nonatomic, readonly) NSDictionary *pixelTransferProperties;
-@property (nonatomic, readonly) NSDictionary *videoCompositionProcessorProperties;
 @property (nonatomic, readonly) NSDictionary *videoScalingProperties;
 @property (nonatomic, readonly) NSDictionary *videoSettingsDictionary;
 @property (nonatomic, readonly) int width;
@@ -27,6 +26,7 @@
 
 - (bool)allowWideColor;
 - (id)cleanApertureDictionary;
+- (void)colorPropertiesConsideringFormatDescriptions:(id)arg1 colorPrimaries:(id*)arg2 transferFunction:(id*)arg3 ycbcrMatrix:(id*)arg4;
 - (id)compatibleMediaTypes;
 - (bool)dimensionsAreBoundingBox;
 - (id)frameRateConversionAlgorithm;
@@ -36,7 +36,6 @@
 - (id)pixelAspectRatioDictionary;
 - (id)pixelTransferProperties;
 - (bool)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
-- (id)videoCompositionProcessorProperties;
 - (id)videoScalingProperties;
 - (id)videoSettingsDictionary;
 - (int)width;

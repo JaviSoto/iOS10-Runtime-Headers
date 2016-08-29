@@ -5,7 +5,6 @@
 @interface AVPlayerItemVideoOutputInternal : NSObject {
     double  advanceWakeUpInterval;
     bool  advanceWakeUpIntervalIsValid;
-    bool  allowWideColor;
     double  currentRate;
     <AVPlayerItemOutputPullDelegate> * delegate;
     NSObject<OS_dispatch_queue> * delegateQueue;
@@ -17,6 +16,7 @@
     bool  suppressesPlayerRendering;
     struct OpaqueCMTimebase { } * timebase;
     struct OpaqueFigVisualContext { } * vc;
+    AVVideoOutputSettings * videoSettings;
     struct { 
         long long value; 
         int timescale; 

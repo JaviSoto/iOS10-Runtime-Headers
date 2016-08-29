@@ -35,7 +35,7 @@
 @property (nonatomic, copy) NSString *serviceName;
 @property (nonatomic) bool shouldSignalDiscovery;
 @property (nonatomic) int state;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *syncQueue;
 @property (nonatomic, retain) GKDiscoveryPeerConnection *trialConnection;
 
 - (id)attemptedInterfaces;

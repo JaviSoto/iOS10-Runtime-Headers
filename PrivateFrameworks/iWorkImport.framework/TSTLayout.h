@@ -160,6 +160,9 @@
 - (bool)canRotateChildLayout:(id)arg1;
 - (bool)canvasShouldScrollForSelectionPath:(id)arg1;
 - (struct CGPoint { double x1; double x2; })capturedInfoPositionForAttachment;
+- (id)cellIterator;
+- (id)cellIteratorWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)cellIteratorWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 flags:(unsigned long long)arg2;
 - (id)childSearchTargets;
 - (id)children;
 - (unsigned long long)columnCount;
@@ -188,6 +191,10 @@
 - (bool)isDraggable;
 - (bool)isStrokeEditing;
 - (bool)isZoomedEditing;
+- (void)iterateCellsAndTerminateWithIterator:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)iterateCellsInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)iterateCellsInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withFlags:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
+- (void)iterateCellsUsingBlock:(id /* block */)arg1;
 - (bool)layoutDirectionIsLeftToRight;
 - (id)layoutGeometryFromInfo;
 - (id)layoutHint;
@@ -254,6 +261,7 @@
 - (id)tableInfo;
 - (id)tableModel;
 - (bool)textIsVertical;
+- (id)textWrapper;
 - (void)updateChildrenFromInfo;
 - (void)validate;
 - (void)validateTableNameVisibility;

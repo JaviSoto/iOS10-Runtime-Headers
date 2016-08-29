@@ -42,7 +42,7 @@
 + (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2;
 + (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
 + (id)deriveUUIDFromBaseUUID:(id)arg1 withSalts:(id)arg2;
-+ (void)setIdentifierSalt:(id)arg1 assistantIdentifierSalt:(id)arg2;
++ (void)setIdentifierSalt:(id)arg1 assistantSalt:(bool)arg2;
 + (id)uuid:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
 
 - (id)convertToData;
@@ -74,7 +74,7 @@
 + (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2;
 + (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
 + (id)deriveUUIDFromBaseUUID:(id)arg1 withSalts:(id)arg2;
-+ (void)setIdentifierSalt:(id)arg1 assistantIdentifierSalt:(id)arg2;
++ (void)setIdentifierSalt:(id)arg1 assistantSalt:(bool)arg2;
 + (id)uuid:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
 
 - (id)convertToData;

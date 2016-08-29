@@ -31,6 +31,7 @@
 - (void)addObserver:(id)arg1;
 - (id)allAssetLinks;
 - (id)allAssets;
+- (bool)assetIsEnqueued:(id)arg1;
 - (void)assetLink:(id)arg1 didCloseWithOutstandingAssets:(id)arg2;
 - (void)assetLink:(id)arg1 didFinishAsset:(id)arg2 error:(id)arg3 retryable:(bool)arg4;
 - (void)assetLink:(id)arg1 didOpenWithPendingAssets:(id)arg2;
@@ -39,6 +40,7 @@
 - (void)assetLinkDidChange:(id)arg1;
 - (void)cancelAllAssetsMatchingPredicate:(id)arg1;
 - (void)cancelAssets:(id)arg1;
+- (void)dispatchBlockOnControllerQueue:(id /* block */)arg1;
 - (void)enqueueAssets:(id)arg1;
 - (void)enqueueAssets:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)init;

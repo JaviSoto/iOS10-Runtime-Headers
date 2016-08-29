@@ -3,15 +3,15 @@
  */
 
 @interface STUpdateAlarmAction : STAlarmAction {
-    STAlarmModification * _modification;
+    NSArray * _modifications;
 }
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithModification:(id)arg1;
+- (id)_initWithModifications:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)modification;
+- (id)modifications;
 
 @end

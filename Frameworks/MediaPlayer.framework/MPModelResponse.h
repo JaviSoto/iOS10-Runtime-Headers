@@ -12,7 +12,6 @@
 
 @property (nonatomic, retain) MPPropertySet *deferredItemProperties;
 @property (nonatomic, retain) MPPropertySet *deferredSectionProperties;
-@property (nonatomic, retain) MPStoreLibraryPersonalizationResponseInvalidationToken *personalizationResponseInvalidationToken;
 @property (nonatomic, readonly, copy) MPModelRequest *request;
 @property (nonatomic, copy) MPSectionedCollection *results;
 @property (getter=isValid, nonatomic, readonly) bool valid;
@@ -27,13 +26,10 @@
 - (id)init;
 - (id)initWithRequest:(id)arg1;
 - (bool)isValid;
-- (id)personalizationResponseInvalidationToken;
-- (id)personalization_newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(long long)arg1 responseHandler:(id /* block */)arg2;
 - (id)request;
 - (id)results;
 - (void)setDeferredItemProperties:(id)arg1;
 - (void)setDeferredSectionProperties:(id)arg1;
-- (void)setPersonalizationResponseInvalidationToken:(id)arg1;
 - (void)setResults:(id)arg1;
 
 @end

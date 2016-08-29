@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) NSString *composer;
 @property (nonatomic, readonly) unsigned long long composerPersistentID;
 @property (nonatomic, copy) NSDate *dateAccessed;
+@property (nonatomic, readonly) NSDate *dateAdded;
 @property (nonatomic, readonly) unsigned long long discCount;
 @property (nonatomic, readonly) unsigned long long discNumber;
 @property (nonatomic, readonly) NSString *effectiveAlbumArtist;
@@ -101,6 +102,7 @@
 - (unsigned long long)composerPersistentID;
 - (unsigned long long)countOfChaptersOfType:(long long)arg1;
 - (id)dateAccessed;
+- (id)dateAdded;
 - (void)didReceiveMemoryWarning;
 - (bool)didSkipWithPlayedToTime:(double)arg1;
 - (unsigned long long)discCount;

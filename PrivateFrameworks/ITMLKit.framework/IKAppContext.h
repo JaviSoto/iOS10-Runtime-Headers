@@ -6,6 +6,7 @@
     <IKApplication> * _app;
     <IKAppScriptFallbackHandler> * _appScriptFallbackHandler;
     double  _appScriptTimeoutInterval;
+    IKJSArrayBufferStore * _arrayBufferStore;
     bool  _canAccessPendingQueue;
     <IKAppContextDelegate> * _delegate;
     bool  _isValid;
@@ -29,6 +30,7 @@
 @property (nonatomic, readonly) <IKApplication> *app;
 @property (nonatomic, retain) <IKAppScriptFallbackHandler> *appScriptFallbackHandler;
 @property (nonatomic) double appScriptTimeoutInterval;
+@property (nonatomic, readonly) IKJSArrayBufferStore *arrayBufferStore;
 @property (nonatomic) bool canAccessPendingQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <IKAppContextDelegate> *delegate;
@@ -73,6 +75,7 @@
 - (id)app;
 - (id)appScriptFallbackHandler;
 - (double)appScriptTimeoutInterval;
+- (id)arrayBufferStore;
 - (bool)canAccessPendingQueue;
 - (id)delegate;
 - (void)evaluate:(id /* block */)arg1 completionBlock:(id /* block */)arg2;

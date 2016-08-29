@@ -6,6 +6,7 @@
     NWTCPConnection * _directConnection;
     NSDate * _directConnectionConnected;
     bool  _enableDirectTLS;
+    bool  _isDirectConnectionCancelled;
     NSObject<OS_dispatch_data> * _savedDirectData;
 }
 
@@ -15,6 +16,7 @@
 @property (retain) NSDate *directConnectionConnected;
 @property (readonly) bool enableDirectTLS;
 @property (readonly) unsigned long long hash;
+@property bool isDirectConnectionCancelled;
 @property (retain) NSObject<OS_dispatch_data> *savedDirectData;
 @property (readonly) Class superclass;
 
@@ -29,6 +31,7 @@
 - (void)handleAppData:(id)arg1 andError:(id)arg2;
 - (void)handleIncomingData:(id)arg1 andError:(id)arg2;
 - (bool)isConnectionAlive;
+- (bool)isDirectConnectionCancelled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)readDataFromClient;
 - (id)savedDirectData;
@@ -36,6 +39,7 @@
 - (void)sendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
 - (void)setDirectConnection:(id)arg1;
 - (void)setDirectConnectionConnected:(id)arg1;
+- (void)setIsDirectConnectionCancelled:(bool)arg1;
 - (void)setRemoteEndpoint:(id)arg1;
 - (void)setSavedDirectData:(id)arg1;
 - (bool)shouldEvaluateTrustForConnection:(id)arg1;

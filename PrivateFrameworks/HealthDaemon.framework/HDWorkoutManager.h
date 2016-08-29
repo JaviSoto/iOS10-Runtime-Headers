@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDWorkoutManager : NSObject <HDDiagnosticObject, HDWorkoutEventCollectorDelegate> {
-    NSMutableSet * _applicationsAllowedToStartSessionInBackground;
+@interface HDWorkoutManager : NSObject <HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDForegroundClientProcessObserver, HDHealthDaemonReadyObserver, HDWorkoutEventCollectorDelegate> {
     CMWorkoutManager * _cmWorkoutManager;
     NSMutableSet * _currentObservedTypes;
     _HDWorkoutData * _currentWorkout;
     NSMutableSet * _eventCollectors;
+    bool  _isFirstLaunchAndNotYetSmoothed;
+    CLLocationManager * _locationManager;
+    HDWorkoutLocationSmoother * _locationSmoother;
+    bool  _needToCheckForLocationSeriesOnUnlock;
     _HDWorkoutData * _nextWorkout;
     NSHashTable * _observerTable;
     HDPrimaryProfile * _primaryProfile;
@@ -26,13 +29,15 @@
 + (id)observedTypesForActivityType:(unsigned long long)arg1 isIndoor:(bool)arg2;
 
 - (void).cxx_destruct;
+- (void)_associationsSyncedForWorkout:(id)arg1;
 - (id)_coreMotionWorkoutManager;
-- (bool)_queue_clientCanStartWorkoutSession:(id)arg1;
-- (id)_queue_currentWorkoutClientIdentifier;
+- (id)_mainQueue_locationManager;
 - (void)_queue_didUpdateCurrentWorkoutSession;
 - (void)_queue_doSuppressActivityAlertsForWorkout:(id)arg1;
 - (id)_queue_eventCollectors;
 - (void)_queue_finishedLaunchingWorkoutApp:(id)arg1 error:(id)arg2 completion:(id /* block */)arg3;
+- (void)_queue_immediateUpdateWithCompletion:(id /* block */)arg1;
+- (id)_queue_locationSmoother;
 - (void)_queue_pauseCurrentSession;
 - (void)_queue_resetActivityTypeForWorkoutSession:(id)arg1;
 - (void)_queue_resumeCurrentSession;
@@ -42,6 +47,7 @@
 - (void)_queue_setCurrentSessionState:(long long)arg1;
 - (void)_queue_setSuppressActivityAlerts:(bool)arg1 forWorkout:(id)arg2;
 - (void)_queue_setViewOnWake:(bool)arg1 forWorkout:(id)arg2;
+- (void)_queue_smoothAllUnsmoothedLocationSeries;
 - (void)_queue_startBackgroundExecutionForWorkout:(id)arg1;
 - (void)_queue_startDataAndEventCollection;
 - (void)_queue_startWatchAppWithWorkoutConfiguration:(id)arg1 client:(id)arg2 completion:(id /* block */)arg3;
@@ -50,12 +56,17 @@
 - (void)_queue_stopCurrentSessionWaitingForStopEvent:(bool)arg1;
 - (void)_queue_stopDataAndEventCollection;
 - (void)_sendStartWorkoutAppResponse:(id /* block */)arg1 error:(id)arg2;
+- (void)_setupLocationObserversIfNeeded;
 - (id)_workoutSessionNotCurrentError:(id)arg1;
 - (void)addWorkoutEventObserver:(id)arg1;
 - (void)clientInvalidated:(id)arg1;
 - (unsigned long long)currentWorkoutActivityType;
-- (id)currentWorkoutClientIdentifier;
+- (id)currentWorkoutClient;
+- (void)daemonReady:(id)arg1;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
+- (void)dealloc;
 - (id)diagnosticDescription;
+- (void)foregroundClientProcessesDidChange:(id)arg1;
 - (void)generateMarkerEventWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (bool)hasAnyActiveWorkouts;
 - (id)initWithPrimaryProfile:(id)arg1;

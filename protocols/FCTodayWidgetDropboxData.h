@@ -10,6 +10,6 @@
 - (NSSet *)highestRankedSubscribedTagIDs;
 - (NSSet *)mutedTagIDs;
 - (NSSet *)purchasedTagIDs;
-- (NSSet *)recentlyReadArticleIDs;
+- (NSDictionary *)recentlyReadArticles;
 
 @end

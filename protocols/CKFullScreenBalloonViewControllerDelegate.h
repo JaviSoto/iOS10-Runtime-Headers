@@ -12,11 +12,11 @@
 
 - (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 deleteStickerWithTransferGUID:(NSString *)arg2;
 - (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 didAppearAnimated:(bool)arg2;
-- (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 didDisappearWithSendAnimation:(bool)arg2;
 - (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 stickerPackTappedWithAdamID:(NSNumber *)arg2;
 - (void)fullScreenBalloonViewController:(void *)arg1 verticallyScrollTranscriptByAmount:(void *)arg2 animated:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 8: CKFullScreenBalloonViewController *, double, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 willAppearAnimated:(bool)arg2;
 - (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 willDisappearWithSendAnimation:(bool)arg2;
+- (void)fullScreenBalloonViewControllerDidDisappear:(CKFullScreenBalloonViewController *)arg1;
 - (void)fullScreenBalloonViewControllerHandleDismissTap:(CKFullScreenBalloonViewController *)arg1;
 
 @end

@@ -32,6 +32,7 @@
 - (long long)_qualityOfService;
 - (long long)_queuePriorityForLoadReason:(long long)arg1;
 - (void)_reprioritizeOperations;
+- (void)_sendDidBeginLoadingIfNecessary;
 - (void)_sendDidIdleIfNecessary;
 - (void)_sendDidLoadAllForReason:(long long)arg1;
 - (void)_updateLoadReason:(long long)arg1 forOperation:(id)arg2;
@@ -64,5 +65,6 @@
 - (void)setName:(id)arg1;
 - (void)setReason:(long long)arg1 forRequestWithIdentifier:(unsigned long long)arg2;
 - (void)setResourceCacheLimit:(long long)arg1;
+- (bool)trySetReason:(long long)arg1 forRequestWithIdentifier:(unsigned long long)arg2;
 
 @end

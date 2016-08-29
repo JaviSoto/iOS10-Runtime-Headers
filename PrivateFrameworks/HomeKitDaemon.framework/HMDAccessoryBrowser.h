@@ -10,6 +10,7 @@
     HAPAccessoryServerBrowserBTLE * _btleAccessoryServerBrowser;
     NSMutableSet * _currentlyPairingAccessories;
     NSMapTable * _delegates;
+    HMDDAccessoryServerBrowserDemo * _demoAccessoryServerBrowser;
     NSMutableSet * _discoveredAccessoryServerIdentifiers;
     NSMutableSet * _discoveredBridgeableAccessories;
     NSHashTable * _discoveringBLEAccessoryServerIdentifiers;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSMutableSet *currentlyPairingAccessories;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMapTable *delegates;
+@property (nonatomic, retain) HMDDAccessoryServerBrowserDemo *demoAccessoryServerBrowser;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *discoveredAccessoryServerIdentifiers;
 @property (nonatomic, readonly) NSMutableSet *discoveredBridgeableAccessories;
@@ -135,10 +137,12 @@
 - (id)btleAccessoryServerBrowser;
 - (void)configureAccessory:(id)arg1 trackState:(bool)arg2 connectionPriority:(bool)arg3;
 - (void)configureBTLEQoSLimits:(unsigned long long)arg1;
+- (void)configureDemoBrowserWithDemoAccessories:(id)arg1 finalized:(bool)arg2;
 - (void)configureWithHomeManager:(id)arg1;
 - (id)currentlyPairingAccessories;
 - (void)dealloc;
 - (id)delegates;
+- (id)demoAccessoryServerBrowser;
 - (void)deregisterPairedAccessory:(id)arg1;
 - (void)discoverAccessories:(id)arg1;
 - (void)discoverAccessoryServer:(id)arg1 linkType:(long long)arg2 errorHandler:(id /* block */)arg3;
@@ -181,6 +185,7 @@
 - (void)setBtleAccessoryServerBrowser:(id)arg1;
 - (void)setCurrentlyPairingAccessories:(id)arg1;
 - (void)setDelegates:(id)arg1;
+- (void)setDemoAccessoryServerBrowser:(id)arg1;
 - (void)setDiscoveredAccessoryServerIdentifiers:(id)arg1;
 - (void)setGenerationCounter:(unsigned long long)arg1;
 - (void)setHomeManager:(id)arg1;

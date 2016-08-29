@@ -5,11 +5,11 @@
 
 @required
 
-- (NSArray *)acquireCallStackSymbols;
+- (NSArray *)acquireCallStack;
 - (NSObject *)context;
 - (NSString *)intent;
 - (void)pauseTimeout;
-- (NSArray *)relinquishCallStackSymbols;
+- (NSArray *)relinquishCallStack;
 - (void)resumeTimeout;
 - (double)timeout;
 

@@ -49,10 +49,10 @@
 - (id)insertNotificationRequest:(id)arg1;
 - (id)modifyNotificationRequest:(id)arg1;
 - (id)notificationRequestAtIndexPath:(id)arg1;
+- (id)notificationRequestsAtIndexPaths:(id)arg1;
 - (id)notificationRequestsForSectionIdentifier:(id)arg1;
-- (void)reloadRequestsForNotificationSectionIdentifier:(id)arg1;
 - (id)removeNotificationRequest:(id)arg1;
-- (id)requestsIndexPathsForNotificationSectionIdentifier:(id)arg1;
+- (id)requestsIndexPathsPassingTest:(id /* block */)arg1;
 - (unsigned long long)rowCountForSectionIndex:(unsigned long long)arg1;
 - (unsigned long long)sectionCount;
 - (long long)sectionIndexForListSectionIdentifier:(id)arg1;

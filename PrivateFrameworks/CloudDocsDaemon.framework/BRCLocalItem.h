@@ -5,6 +5,7 @@
 @interface BRCLocalItem : NSObject <BRCItem, BRCSyncThrottleItemProtocol> {
     BRCAppLibrary * _appLibrary;
     BRCClientZone * _clientZone;
+    BRCPQLConnection * _db;
     unsigned long long  _dbRowID;
     bool  _forceDelete;
     bool  _forceDeletedAlready;
@@ -74,6 +75,7 @@
 @property (nonatomic, readonly) bool isShareAcceptationFault;
 @property (nonatomic, readonly) bool isSharedByMe;
 @property (nonatomic, readonly) bool isSymLink;
+@property (nonatomic, readonly) bool isZoneRoot;
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) unsigned long long localDiffs;
 @property (nonatomic, readonly) NSString *logicalName;
@@ -105,10 +107,11 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_ascendItemHierarchyWithBlock:(id /* block */)arg1;
 - (bool)_checkZoneUpdateFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (bool)_contentXattrsHaveChangedAtRelativeAPath:(id)arg1;
 - (bool)_deleteFromDB:(id)arg1 keepAliases:(bool)arg2;
-- (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id*)arg3;
+- (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id*)arg4;
 - (id)_initWithLocalItem:(id)arg1;
 - (id)_initWithRelativePath:(id)arg1 parentID:(id)arg2;
 - (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2;
@@ -158,14 +161,14 @@
 - (float)fakeSync;
 - (id)fetchParentFileIDs;
 - (id)fileID;
-- (bool)fixupItemAfterCrossZoneMovedCreation;
+- (bool)fixupItemAfterCrossZoneMovedCreationWithLookup:(id)arg1;
 - (void)fixupStagedItemAtStartup;
 - (void)handleUnknownItemError;
 - (bool)hasShareIDAndIsOwnedByMe;
 - (id)inFlightDiffs;
 - (void)inheritOSUpgradeNeededFromItem:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
-- (id)initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id*)arg3;
+- (id)initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id*)arg4;
 - (id)initWithCoder:(id)arg1;
 - (bool)isAlmostDead;
 - (bool)isBRAlias;
@@ -194,6 +197,7 @@
 - (bool)isShareAcceptationFault;
 - (bool)isSharedByMe;
 - (bool)isSymLink;
+- (bool)isZoneRoot;
 - (id)itemID;
 - (id)itemResolutionString;
 - (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 markLost:(bool)arg4;

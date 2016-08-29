@@ -4,16 +4,26 @@
 
 @interface EMFEmojiPreferencesClient : EMFEmojiPreferences {
     NSXPCConnection * _connection;
+    bool  _isValid;
+    NSString * _machName;
 }
+
+@property (nonatomic) bool isValid;
+@property (nonatomic, retain) NSString *machName;
 
 + (id)serviceInterface;
 
 - (void).cxx_destruct;
+- (void)createConnectionIfNecessary;
 - (void)dealloc;
 - (void)didUseEmoji:(id)arg1;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2;
 - (void)didViewEmojiIndex:(long long)arg1 forCategory:(id)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithMachName:(id)arg1;
+- (bool)isValid;
+- (id)machName;
+- (void)setIsValid:(bool)arg1;
+- (void)setMachName:(id)arg1;
 
 @end

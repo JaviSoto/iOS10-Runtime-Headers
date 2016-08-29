@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicEntityEditableVerticalLockupViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
+@interface MusicMediaProductSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicEntityEditableVerticalLockupViewDelegate, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
     MusicClientContext * _clientContext;
     <MusicEntityProviding> * _containerEntityProvider;
     MusicEntityValueContext * _containerEntityValueContext;
@@ -10,7 +10,6 @@
     NSString * _lockupArtworkProperty;
     MusicMediaDetailTintInformation * _mediaDetailTintInformation;
     <MusicMediaProductSplitDetailViewControllerDelegate> * _mediaSplitViewControllerDelegate;
-    MusicEntityPlaybackStatusController * _playbackStatusController;
     MPAVController * _player;
     UIViewController * _relatedContentViewController;
     MusicEntityEditableVerticalLockupView * _verticalLockupView;
@@ -50,7 +49,6 @@
 - (id)mediaDetailTintInformation;
 - (id)mediaSplitViewControllerDelegate;
 - (void)music_viewInheritedLayoutInsetsDidChange;
-- (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (id)relatedContentViewController;
 - (void)setClientContext:(id)arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;

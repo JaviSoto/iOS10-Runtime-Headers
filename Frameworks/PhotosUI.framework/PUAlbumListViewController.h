@@ -34,7 +34,7 @@
     id /* block */  __pendingScrollingAnimationEndBlock;
     PXPeopleAlbumProvider * __peopleAlbumProvider;
     PUPhotoPinchGestureRecognizer * __photoPinchGestureRecognizer;
-    PXPlacesSnapshotFactory * __placesSnapshotFactory;
+    PXPlacesAlbumCoverProvider * __placesAlbumCoverProvider;
     NSMutableSet * __preheatedCollections;
     struct CGRect { 
         struct CGPoint { 
@@ -107,7 +107,7 @@
 @property (setter=_setPendingScrollingAnimationEndBlock:, nonatomic, copy) id /* block */ _pendingScrollingAnimationEndBlock;
 @property (setter=_setPeopleAlbumProvider:, nonatomic, retain) PXPeopleAlbumProvider *_peopleAlbumProvider;
 @property (setter=_setPhotoPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;
-@property (nonatomic, readonly) PXPlacesSnapshotFactory *_placesSnapshotFactory;
+@property (nonatomic, readonly) PXPlacesAlbumCoverProvider *_placesAlbumCoverProvider;
 @property (setter=_setPreheatedCollections:, nonatomic, retain) NSMutableSet *_preheatedCollections;
 @property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _previousPreheatRect;
 @property (nonatomic, readonly) NSArray *_syncProgressAlbums;
@@ -189,7 +189,7 @@
 - (id)_mainCollectionViewLayout;
 - (id)_mainTableView;
 - (void)_navigateToPeople;
-- (void)_navigateToPlaces;
+- (void)_navigateToPlacesFromCollection:(id)arg1;
 - (void)_navigateToScenes;
 - (bool)_needsUpdate;
 - (id)_nextCloudFeedNavigatingObject;
@@ -200,7 +200,7 @@
 - (void)_performBatchUpdates:(id /* block */)arg1 withDeletedSections:(id)arg2 insertedSections:(id)arg3 changedSections:(id)arg4 deletedItemsIndexPaths:(id)arg5 insertedItemsIndexPaths:(id)arg6 changedItemsIndexPaths:(id)arg7 movedItemsFromIndexPaths:(id)arg8 movedItemsToIndexPaths:(id)arg9 completionHandler:(id /* block */)arg10;
 - (id)_photoPinchGestureRecognizer;
 - (id)_pickerBannerView;
-- (id)_placesSnapshotFactory;
+- (id)_placesAlbumCoverProvider;
 - (long long)_preferredWhitePointAdaptivityStyle;
 - (id)_preheatedCollections;
 - (void)_prepareStackView:(id)arg1 forCollection:(id)arg2 withStackCount:(long long)arg3 withCustomEmptyPlaceHolderImage:(id)arg4;

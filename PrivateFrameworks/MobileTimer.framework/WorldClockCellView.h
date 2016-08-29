@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) bool started;
 
 + (id)dayAndTimeZoneOffsetStringFromDate:(id)arg1 withTimeZoneOffset:(long long)arg2 timeZoneAbbreviation:(id)arg3 spaceBeforeTimeDesignator:(bool)arg4;
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
 - (double)coarseUpdateInterval;

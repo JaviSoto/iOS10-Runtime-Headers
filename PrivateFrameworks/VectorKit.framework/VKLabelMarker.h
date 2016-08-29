@@ -51,7 +51,6 @@
 - (struct { double x1; double x2; })coordinate;
 - (unsigned long long)countFeatureIDs;
 - (id)dataIconImageKeys;
-- (void)dealloc;
 - (id)debugAnchorPointString;
 - (unsigned long long)elementCount;
 - (id)featureAnnotation;
@@ -65,6 +64,7 @@
 - (id)iconNameAsNSString;
 - (id)imageKeys;
 - (id)incident;
+- (id)initWithFeatureMarkerPtr:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (id)initWithLabelMarkerPtr:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (bool)isAlongSelectedTransitLine;
 - (bool)isCluster;

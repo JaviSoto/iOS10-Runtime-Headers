@@ -49,8 +49,8 @@
 - (void)didCancelPreviewGeneratorOperation;
 - (struct UIImage { Class x1; }*)fileIconWithPreferredSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)generateAsynchronousPreviews;
-- (void)generatePreviews;
 - (bool)generatePreviewsDuringCloudActivity;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id)generateSearchIndexStringsOperation;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;

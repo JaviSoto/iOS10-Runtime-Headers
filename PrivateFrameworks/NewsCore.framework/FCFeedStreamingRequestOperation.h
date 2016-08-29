@@ -7,6 +7,7 @@
     NSMutableDictionary * _aggregateFeedResponsesByFeedID;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     <FCContentContext> * _context;
+    unsigned long long  _cutoffAtCount;
     FCFeedDatabase * _feedDatabase;
     NSMutableArray * _feedRangeSteps;
     NSArray * _feedRequests;
@@ -15,12 +16,14 @@
     id /* block */  _requestCompletionHandler;
     id /* block */  _streamingResultsHandler;
     long long  _streamingType;
+    bool  _throttled;
 }
 
 @property (nonatomic, retain) NSMutableArray *aggregateFeedItems;
 @property (nonatomic, retain) NSMutableDictionary *aggregateFeedResponsesByFeedID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, retain) <FCContentContext> *context;
+@property (nonatomic) unsigned long long cutoffAtCount;
 @property (nonatomic, retain) FCFeedDatabase *feedDatabase;
 @property (nonatomic, retain) NSMutableArray *feedRangeSteps;
 @property (nonatomic, copy) NSArray *feedRequests;
@@ -29,6 +32,7 @@
 @property (nonatomic, copy) id /* block */ requestCompletionHandler;
 @property (nonatomic, copy) id /* block */ streamingResultsHandler;
 @property (nonatomic) long long streamingType;
+@property (nonatomic) bool throttled;
 
 - (void).cxx_destruct;
 - (void)_appendFeedResponses:(id)arg1 feedItems:(id)arg2;
@@ -39,6 +43,7 @@
 - (id)aggregateFeedResponsesByFeedID;
 - (id)callbackQueue;
 - (id)context;
+- (unsigned long long)cutoffAtCount;
 - (id)feedDatabase;
 - (id)feedRangeSteps;
 - (id)feedRequests;
@@ -51,6 +56,7 @@
 - (void)setAggregateFeedResponsesByFeedID:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setCutoffAtCount:(unsigned long long)arg1;
 - (void)setFeedDatabase:(id)arg1;
 - (void)setFeedRangeSteps:(id)arg1;
 - (void)setFeedRequests:(id)arg1;
@@ -59,7 +65,9 @@
 - (void)setRequestCompletionHandler:(id /* block */)arg1;
 - (void)setStreamingResultsHandler:(id /* block */)arg1;
 - (void)setStreamingType:(long long)arg1;
+- (void)setThrottled:(bool)arg1;
 - (id /* block */)streamingResultsHandler;
 - (long long)streamingType;
+- (bool)throttled;
 
 @end

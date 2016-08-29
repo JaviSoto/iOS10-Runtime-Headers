@@ -40,6 +40,7 @@
 - (id)_nameForMomentGenerationType:(short)arg1;
 - (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
 - (bool)_rebuildAllMomentsInManager:(id)arg1 shouldAnalyze:(bool)arg2 error:(id*)arg3;
+- (void)_refreshObjects:(id)arg1 withDataManager:(id)arg2;
 - (void)_runIncrementalGenerationPassWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateIncrementalMomentGeneration;
 - (bool)_writeDetails:(id)arg1 toFilepath:(id)arg2 withDefaultFilename:(id)arg3;

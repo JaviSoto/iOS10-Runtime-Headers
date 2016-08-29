@@ -2,20 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUCCHomeButton : UIButton {
-    UIImageView * _colorBurnView;
-    UIImageView * _darkenSourceOverView;
+@interface HUCCHomeButton : CCUIControlCenterButton {
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _imageSize;
 }
 
-@property (nonatomic, readonly) UIImageView *colorBurnView;
-@property (nonatomic, readonly) UIImageView *darkenSourceOverView;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 
-- (void).cxx_destruct;
-- (id)colorBurnView;
-- (id)darkenSourceOverView;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (void)layoutSubviews;
 - (void)setHighlighted:(bool)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

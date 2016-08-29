@@ -122,7 +122,10 @@
 - (id)primaryItemOffer;
 - (id)productPageURLString;
 - (id)requiredCapabilities;
+- (void)setItemIdentifier:(long long)arg1;
+- (void)setItemKind:(long long)arg1;
 - (void)setStoreIdentifier:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (id)storeIdentifier;
 - (id)title;
 - (float)userRating;

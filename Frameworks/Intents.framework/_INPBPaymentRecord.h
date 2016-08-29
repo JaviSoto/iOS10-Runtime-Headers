@@ -4,6 +4,7 @@
 
 @interface _INPBPaymentRecord : PBCodable <NSCopying> {
     _INPBCurrencyAmount * _currencyAmount;
+    _INPBCurrencyAmount * _feeAmount;
     struct { 
         unsigned int status : 1; 
     }  _has;
@@ -16,7 +17,9 @@
 }
 
 @property (nonatomic, retain) _INPBCurrencyAmount *currencyAmount;
+@property (nonatomic, retain) _INPBCurrencyAmount *feeAmount;
 @property (nonatomic, readonly) bool hasCurrencyAmount;
+@property (nonatomic, readonly) bool hasFeeAmount;
 @property (nonatomic, readonly) bool hasNote;
 @property (nonatomic, readonly) bool hasPayee;
 @property (nonatomic, readonly) bool hasPayer;
@@ -36,7 +39,9 @@
 - (id)currencyAmount;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)feeAmount;
 - (bool)hasCurrencyAmount;
+- (bool)hasFeeAmount;
 - (bool)hasNote;
 - (bool)hasPayee;
 - (bool)hasPayer;
@@ -51,6 +56,7 @@
 - (id)paymentMethod;
 - (bool)readFrom:(id)arg1;
 - (void)setCurrencyAmount:(id)arg1;
+- (void)setFeeAmount:(id)arg1;
 - (void)setHasStatus:(bool)arg1;
 - (void)setNote:(id)arg1;
 - (void)setPayee:(id)arg1;

@@ -5,6 +5,7 @@
 @interface FCSubscriptionController : NSObject <FCSubscriptionListObserving> {
     FCThreadSafeMutableSet * _newlyAddedSubscriptions;
     FCNotificationController * _notificationController;
+    long long  _notificationEnabledChannelsRefreshFrequency;
     NSHashTable * _observers;
     FCPurchaseController * _purchaseController;
     FCThreadSafeMutableDictionary * _subscribedTagsByTagID;
@@ -17,6 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCThreadSafeMutableSet *newlyAddedSubscriptions;
 @property (nonatomic, retain) FCNotificationController *notificationController;
+@property (nonatomic) long long notificationEnabledChannelsRefreshFrequency;
 @property (nonatomic, copy) NSHashTable *observers;
 @property (nonatomic, retain) FCPurchaseController *purchaseController;
 @property (nonatomic, retain) FCThreadSafeMutableDictionary *subscribedTagsByTagID;
@@ -27,12 +29,12 @@
 - (void).cxx_destruct;
 - (void)_fetchMissingTagsWithCompletion:(id /* block */)arg1;
 - (void)_fetchTagsForIDs:(id)arg1 maxCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(id /* block */)arg4;
-- (void)_handlePendingSubscriptionsAdded:(id)arg1 pendingSubscriptionsChanged:(id)arg2 pendingSubscriptionsRemoved:(id)arg3;
 - (void)_handleTagSubscriptionsAdded:(id)arg1 tagSubscriptionsChanged:(id)arg2 tagSubscriptionsRemoved:(id)arg3;
 - (void)_integrateTags:(id)arg1;
 - (void)_notifyOfTagsAdded:(id)arg1 tagsChanged:(id)arg2 tagsRemoved:(id)arg3;
 - (void)_notifyOfTagsWithNotificationSupport:(id)arg1;
 - (void)_purchaseListDidChange;
+- (void)_refreshChannelsWithNotificationsEnabled;
 - (void)addObserver:(id)arg1;
 - (void)addPendingSubscription:(id)arg1;
 - (bool)addSubscriptionToTag:(id)arg1 error:(id*)arg2;
@@ -42,12 +44,13 @@
 - (bool)hasNotificationsEnabledForTag:(id)arg1;
 - (bool)hasSubscriptionToTag:(id)arg1;
 - (bool)hasSubscriptionToTagID:(id)arg1;
-- (id)initWithSubscriptionList:(id)arg1 tagController:(id)arg2 notificationController:(id)arg3 purchaseController:(id)arg4;
+- (id)initWithSubscriptionList:(id)arg1 tagController:(id)arg2 notificationController:(id)arg3 purchaseController:(id)arg4 appConfiguration:(id)arg5;
 - (void)modifyPendingSubscription:(id)arg1;
 - (id)mutedSubscribedTagIDs;
 - (id)newlyAddedSubscriptions;
 - (id)newlySubscribedTagsInDateRange:(id)arg1;
 - (id)notificationController;
+- (long long)notificationEnabledChannelsRefreshFrequency;
 - (id)observers;
 - (id)pendingSubscriptionForPollingURL:(id)arg1;
 - (id)pendingSubscriptions;
@@ -58,6 +61,7 @@
 - (void)removeSubscriptionToTag:(id)arg1;
 - (void)setNewlyAddedSubscriptions:(id)arg1;
 - (void)setNotificationController:(id)arg1;
+- (void)setNotificationEnabledChannelsRefreshFrequency:(long long)arg1;
 - (bool)setNotificationsEnabled:(bool)arg1 forTag:(id)arg2 error:(id*)arg3;
 - (void)setObservers:(id)arg1;
 - (void)setPurchaseController:(id)arg1;

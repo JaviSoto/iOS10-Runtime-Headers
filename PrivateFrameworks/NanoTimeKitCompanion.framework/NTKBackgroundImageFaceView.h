@@ -19,6 +19,7 @@
             double height; 
         } size; 
     }  _maskZoomStartingBounds;
+    UIView * _selectedContentView;
     bool  _shouldAdjustLayoutForTimeTravel;
     NTKDigitalTimeLabel * _timeLabel;
     UIView * _timeTravelDimmingOverlayView;
@@ -101,6 +102,8 @@
 - (bool)_timeLabelUsesLegibility;
 - (double)_timeTravelStatusModuleCaptionConstraintPadding;
 - (double)_timeTravelYAdjustment;
+- (void)_unloadSnapshotContentViews;
+- (id)_updateFontInStyle:(id)arg1 monospace:(bool)arg2;
 - (bool)_usesCustomZoom;
 - (id)_viewForEditOption:(id)arg1;
 - (bool)_wantsTimeTravelStatusModule;

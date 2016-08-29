@@ -7,6 +7,8 @@
     ISCrossfadeUIView * __crossfadeView;
     UIImageView * __photoView;
     ISVideoPlayerUIView * __videoView;
+    AVAudioSession * _audioSession;
+    NSObject<OS_dispatch_queue> * _audioSessionQueue;
     UIView * _customPhotoView;
     ISBasePlayer * _player;
     struct CGPoint { 
@@ -19,6 +21,7 @@
 @property (nonatomic, readonly) ISCrossfadeUIView *_crossfadeView;
 @property (nonatomic, readonly) UIImageView *_photoView;
 @property (nonatomic, readonly) ISVideoPlayerUIView *_videoView;
+@property (setter=_setAudioSession:, nonatomic, retain) AVAudioSession *audioSession;
 @property (nonatomic, retain) UIView *customPhotoView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -34,8 +37,11 @@
 - (id)_crossfadeView;
 - (void)_performCommonInitialization;
 - (id)_photoView;
+- (void)_setAudioSession:(id)arg1;
 - (id)_videoView;
 - (void)applyOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
+- (id)audioSession;
+- (void)audioSessionDidChange;
 - (id)customPhotoView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

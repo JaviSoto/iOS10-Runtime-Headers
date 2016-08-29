@@ -5,28 +5,12 @@
 @interface UIStatusBarWindow : UIWindow {
     UIStatusBarCorners * _bottomCorners;
     bool  _cornersHidden;
-    UIView * _droppedFrameIndicatorView;
-    NSDate * _droppedFrameIndicatorViewExpiryDate;
-    UIView * _droppedFrameTransientIndicatorView;
-    NSDate * _droppedFrameTransientIndicatorViewExpiryDate;
-    NSArray * _lastDroppedFramePerformanceInfo;
-    NSMutableArray * _lastDroppedFrames;
-    NSString * _likelyDroppedFrameProcessBundleID;
     long long  _orientation;
     UIStatusBar * _statusBar;
     UIStatusBarCorners * _topCorners;
     double  _topCornersOffset;
 }
 
-@property (nonatomic, retain) UIView *_droppedFrameIndicatorView;
-@property (nonatomic, retain) NSDate *_droppedFrameIndicatorViewExpiryDate;
-@property (nonatomic, retain) UIView *_droppedFrameTransientIndicatorView;
-@property (nonatomic, retain) NSDate *_droppedFrameTransientIndicatorViewExpiryDate;
-@property (nonatomic, retain) NSArray *_lastDroppedFramePerformanceInfo;
-@property (nonatomic, retain) NSMutableArray *_lastDroppedFrames;
-@property (nonatomic, retain) NSString *_likelyDroppedFrameProcessBundleID;
-
-+ (void)_beginListeningToDroppedFrameNotifications;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromSceneReferenceSpaceToSceneSpaceWithOrientation:(long long)arg2;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultStatusBarSceneBounds;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultStatusBarSceneReferenceBounds;
@@ -36,25 +20,10 @@
 
 - (void).cxx_destruct;
 - (bool)_canActAsKeyWindowForScreen:(id)arg1;
-- (void)_checkForDroppedFrameTimerExpiry;
-- (void)_checkForTransientDroppedFrameTimerExpiry;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultStatusBarSceneBoundsForOrientation:(long long)arg1;
 - (bool)_disableGroupOpacity;
-- (void)_dismissDroppedFrameIndicator;
-- (void)_dismissTransientDroppedFrameIndicator;
-- (id)_droppedFrameIndicatorView;
-- (id)_droppedFrameIndicatorViewExpiryDate;
-- (id)_droppedFrameTransientIndicatorView;
-- (id)_droppedFrameTransientIndicatorViewExpiryDate;
-- (void)_fileDroppedFrameRadar:(id)arg1;
-- (void)_indicateDroppedFrame;
-- (void)_indicateDroppedFrameBar;
-- (void)_indicateTransientDroppedFrame;
 - (bool)_isConstrainedByScreenJail;
 - (bool)_isStatusBarWindow;
-- (id)_lastDroppedFramePerformanceInfo;
-- (id)_lastDroppedFrames;
-- (id)_likelyDroppedFrameProcessBundleID;
 - (void)_rotate;
 - (bool)_shouldAdjustSizeClassesAndResizeWindow;
 - (bool)_shouldZoom;
@@ -62,19 +31,11 @@
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
 - (long long)orientation;
 - (void)setCornersHidden:(bool)arg1 animationParameters:(id)arg2;
 - (void)setOrientation:(long long)arg1 animationParameters:(id)arg2;
 - (void)setStatusBar:(id)arg1;
 - (void)setTopCornerStyle:(int)arg1 topCornersOffset:(double)arg2 bottomCornerStyle:(int)arg3 animationParameters:(id)arg4;
-- (void)set_droppedFrameIndicatorView:(id)arg1;
-- (void)set_droppedFrameIndicatorViewExpiryDate:(id)arg1;
-- (void)set_droppedFrameTransientIndicatorView:(id)arg1;
-- (void)set_droppedFrameTransientIndicatorViewExpiryDate:(id)arg1;
-- (void)set_lastDroppedFramePerformanceInfo:(id)arg1;
-- (void)set_lastDroppedFrames:(id)arg1;
-- (void)set_likelyDroppedFrameProcessBundleID:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarWindowFrame;
 
 @end

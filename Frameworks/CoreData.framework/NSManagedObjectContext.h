@@ -88,6 +88,8 @@
 + (bool)_handleError:(id)arg1 withError:(id*)arg2;
 + (void)_mergeChangesFromRemoteContextSave:(id)arg1 intoContexts:(id)arg2;
 + (bool)accessInstanceVariablesDirectly;
++ (id)alloc;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoContexts:(id)arg2;
 + (id)new;
@@ -290,6 +292,7 @@
 - (id)parentContext;
 - (void)performBlock:(id /* block */)arg1;
 - (void)performBlockAndWait:(id /* block */)arg1;
+- (id)performBlockWithResult:(id /* block */)arg1;
 - (id)performFetch:(id)arg1 error:(id*)arg2;
 - (void)performWithOptions:(unsigned long long)arg1 andBlock:(id /* block */)arg2;
 - (id)persistentStoreCoordinator;

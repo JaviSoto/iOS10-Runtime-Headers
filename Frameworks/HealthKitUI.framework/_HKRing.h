@@ -7,8 +7,6 @@
     double  _bottomColorBlue;
     double  _bottomColorGreen;
     double  _bottomColorRed;
-    _HKIcon * _dotIcon;
-    float  _dotPercentage;
     _HKIcon * _icon;
     double  _opacity;
     float  _percentage;
@@ -29,8 +27,6 @@
 @property (nonatomic, readonly) double bottomColorBlue;
 @property (nonatomic, readonly) double bottomColorGreen;
 @property (nonatomic, readonly) double bottomColorRed;
-@property (nonatomic, retain) _HKIcon *dotIcon;
-@property (nonatomic) float dotPercentage;
 @property (nonatomic, retain) _HKIcon *icon;
 @property (nonatomic) double opacity;
 @property (nonatomic) float percentage;
@@ -50,8 +46,6 @@
 - (double)bottomColorBlue;
 - (double)bottomColorGreen;
 - (double)bottomColorRed;
-- (id)dotIcon;
-- (float)dotPercentage;
 - (id)icon;
 - (id)init;
 - (double)opacity;
@@ -59,8 +53,8 @@
 - (struct CGPoint { double x1; double x2; })position;
 - (void)removeAllAnimationsForRingPropertyType:(unsigned long long)arg1;
 - (void)setBottomColor:(id)arg1;
-- (void)setDotIcon:(id)arg1;
-- (void)setDotPercentage:(float)arg1;
+- (void)setCGPointValue:(struct CGPoint { double x1; double x2; })arg1 forRingPropertyType:(unsigned long long)arg2;
+- (void)setFloatValue:(double)arg1 forRingPropertyType:(unsigned long long)arg2;
 - (void)setIcon:(id)arg1;
 - (void)setOpacity:(double)arg1;
 - (void)setPercentage:(float)arg1;

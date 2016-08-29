@@ -6,33 +6,58 @@
     GEOAddress * _correctedAddress;
     NSString * _correctedAddressSecondaryStreetLine;
     GEOLatLng * _correctedCoordinate;
+    NSString * _customLabel;
+    struct { 
+        unsigned int lastUpdateDate : 1; 
+    }  _has;
+    double  _lastUpdateDate;
 }
 
 @property (nonatomic, retain) GEOAddress *correctedAddress;
 @property (nonatomic, retain) NSString *correctedAddressSecondaryStreetLine;
 @property (nonatomic, retain) GEOLatLng *correctedCoordinate;
+@property (nonatomic, retain) NSString *customLabel;
 @property (nonatomic, readonly) bool hasCorrectedAddress;
 @property (nonatomic, readonly) bool hasCorrectedAddressSecondaryStreetLine;
 @property (nonatomic, readonly) bool hasCorrectedCoordinate;
+@property (nonatomic, readonly) bool hasCustomLabel;
+@property (nonatomic) bool hasLastUpdateDate;
+@property (nonatomic) double lastUpdateDate;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)correctedAddress;
 - (id)correctedAddressSecondaryStreetLine;
 - (id)correctedCoordinate;
+- (id)customLabel;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCorrectedAddress;
 - (bool)hasCorrectedAddressSecondaryStreetLine;
 - (bool)hasCorrectedCoordinate;
+- (bool)hasCustomLabel;
+- (bool)hasLastUpdateDate;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (double)lastUpdateDate;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setCorrectedAddress:(id)arg1;
 - (void)setCorrectedAddressSecondaryStreetLine:(id)arg1;
 - (void)setCorrectedCoordinate:(id)arg1;
+- (void)setCustomLabel:(id)arg1;
+- (void)setHasLastUpdateDate:(bool)arg1;
+- (void)setLastUpdateDate:(double)arg1;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_addressFormattedAsName;
+- (id)_addressFormattedAsShortenedAddress;
+- (id)_addressFormattedAsSinglelineAddress;
+- (id)_formattedPostalAddress;
 
 @end

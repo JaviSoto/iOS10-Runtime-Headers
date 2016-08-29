@@ -4,11 +4,12 @@
 
 @interface NCNotificationRequest : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying> {
     NSString * _categoryIdentifier;
+    NCNotificationAction * _clearAction;
+    NCNotificationAction * _closeAction;
     unsigned long long  _collapsedNotificationsCount;
     NCNotificationContent * _content;
     NSDictionary * _context;
     NCNotificationAction * _defaultAction;
-    NCNotificationAction * _dismissAction;
     bool  _isCollapsedNotification;
     NSString * _notificationIdentifier;
     NCNotificationOptions * _options;
@@ -19,6 +20,7 @@
     NSSet * _settingsSections;
     NCNotificationAction * _silenceAction;
     NCNotificationSound * _sound;
+    NSDictionary * _sourceInfo;
     NSSet * _subSectionIdentifiers;
     NSDictionary * _supplementaryActions;
     NSString * _threadIdentifier;
@@ -28,6 +30,8 @@
 
 @property (nonatomic, readonly) BBBulletin *bulletin;
 @property (nonatomic, readonly, copy) NSString *categoryIdentifier;
+@property (nonatomic, readonly) NCNotificationAction *clearAction;
+@property (nonatomic, readonly) NCNotificationAction *closeAction;
 @property (nonatomic, readonly) unsigned long long collapsedNotificationsCount;
 @property (nonatomic, readonly) NCNotificationContent *content;
 @property (nonatomic, readonly, copy) NSDictionary *context;
@@ -35,7 +39,6 @@
 @property (nonatomic, readonly) NCNotificationAction *defaultAction;
 @property (nonatomic, readonly, copy) NSArray *defaultEnvironmentActions;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NCNotificationAction *dismissAction;
 @property (nonatomic, readonly) bool hasOnlySingleMinimalTextInputAction;
 @property (nonatomic, readonly) bool hasOnlySingleTextInputAction;
 @property (readonly) unsigned long long hash;
@@ -50,8 +53,8 @@
 @property (nonatomic, readonly, copy) NSString *sectionIdentifier;
 @property (nonatomic, readonly, copy) NSSet *settingsSections;
 @property (nonatomic, readonly) NCNotificationAction *silenceAction;
-@property (nonatomic, readonly, copy) NSDate *sortDate;
 @property (nonatomic, readonly) NCNotificationSound *sound;
+@property (nonatomic, readonly, copy) NSDictionary *sourceInfo;
 @property (nonatomic, readonly, copy) NSSet *subSectionIdentifiers;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSDictionary *supplementaryActions;
@@ -66,6 +69,7 @@
 + (id)notificationRequestWithNotificationId:(id)arg1;
 + (id)notificationRequestWithNotificationId:(id)arg1 lockScreenPriority:(unsigned long long)arg2;
 + (id)notificationRequestWithNotificationId:(id)arg1 lockScreenPriority:(unsigned long long)arg2 lockScreenPersistence:(unsigned long long)arg3;
++ (id)notificationRequestWithNotificationId:(id)arg1 requestDestinations:(id)arg2 isCritical:(bool)arg3;
 + (id)notificationRequestWithNotificationId:(id)arg1 threadId:(id)arg2;
 + (id)notificationRequestWithNotificationId:(id)arg1 threadId:(id)arg2 timestamp:(id)arg3;
 + (id)notificationRequestWithNotificationId:(id)arg1 timestamp:(id)arg2;
@@ -91,6 +95,8 @@
 - (id)_actionsDescriptionForEnvironment:(id)arg1;
 - (id)_actionsLoggingDescription;
 - (id)categoryIdentifier;
+- (id)clearAction;
+- (id)closeAction;
 - (unsigned long long)collapsedNotificationsCount;
 - (id)content;
 - (id)context;
@@ -100,13 +106,13 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)dismissAction;
 - (unsigned long long)hash;
 - (id)initWithNotificationRequest:(id)arg1;
 - (bool)isCollapsedNotification;
 - (bool)isCollapsibleWithNotificationRequest:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)loggingDescription;
+- (bool)matchesRequest:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)notificationIdentifier;
 - (id)options;
@@ -117,6 +123,7 @@
 - (id)settingsSections;
 - (id)silenceAction;
 - (id)sound;
+- (id)sourceInfo;
 - (id)subSectionIdentifiers;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
@@ -133,11 +140,9 @@
 - (id)defaultEnvironmentActions;
 - (bool)hasOnlySingleMinimalTextInputAction;
 - (bool)hasOnlySingleTextInputAction;
+- (bool)hasSameContactAsNotificationRequest:(id)arg1;
 - (bool)isAudioMessageNotificationRequest;
 - (id)minimalEnvironmentActions;
 - (id)observer;
-- (void)setBulletin:(id)arg1;
-- (void)setObserver:(id)arg1;
-- (id)sortDate;
 
 @end

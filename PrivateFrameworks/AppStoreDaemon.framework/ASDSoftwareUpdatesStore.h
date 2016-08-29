@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDSoftwareUpdatesStore : NSObject <NSXPCListenerDelegate> {
+@interface ASDSoftwareUpdatesStore : ASDBaseClient <NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSXPCConnection * _connection;
@@ -15,8 +15,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_call:(id)arg1 run:(id /* block */)arg2 error:(id /* block */)arg3;
 - (void)_setupConnection;
-- (void)_setupEntitlements;
 - (void)clearExpiredUpdateHistoryWithCompletionBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (void)getUpdateableFirstPartyAppMetadataWithCompletion:(id /* block */)arg1;

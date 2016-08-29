@@ -13,8 +13,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
 @property (nonatomic, retain) BSEventQueueEvent *executingEvent;
 @property (readonly) unsigned long long hash;
+@property (getter=isLocked, nonatomic, readonly) bool locked;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *pendingEvents;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -47,6 +49,7 @@
 - (bool)hasEventWithPrefix:(id)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1 onQueue:(id)arg2;
+- (bool)isEmpty;
 - (bool)isLocked;
 - (id)name;
 - (id)pendingEvents;

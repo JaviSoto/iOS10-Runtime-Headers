@@ -3,34 +3,29 @@
  */
 
 @interface HFWallpaper : NSObject <NSCopying> {
+    NSString * _assetIdentifier;
     HFCroppedWallpaperInfo * _cropInfo;
-    NSString * _identifier;
-    UIImage * _image;
     long long  _type;
-    long long  _variant;
 }
 
+@property (nonatomic, readonly, copy) NSString *assetIdentifier;
 @property (nonatomic, copy) HFCroppedWallpaperInfo *cropInfo;
-@property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) long long type;
-@property (nonatomic, readonly) long long variant;
 
 + (struct CGSize { double x1; double x2; })size;
 
 - (void).cxx_destruct;
+- (id)assetIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cropInfo;
-- (id)croppedImage;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)identifier;
-- (id)image;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithType:(long long)arg1 variant:(long long)arg2 image:(id)arg3 identifier:(id)arg4;
+- (id)initWithType:(long long)arg1 assetIdentifier:(id)arg2 cropInfo:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (void)setCropInfo:(id)arg1;
+- (id)sliceIdentifierForVariant:(long long)arg1;
 - (long long)type;
-- (long long)variant;
+- (id)wallpaperIdentifier;
 
 @end

@@ -20,16 +20,17 @@
 @property (nonatomic, copy) NSString *overrideContentStoreFrontID;
 @property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) bool privateDataSyncingEnabled;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *supportedContentStoreFrontID;
 @property (getter=isUserSignedInToiCloud, nonatomic, readonly) bool userSignedInToiCloud;
 @property (nonatomic, copy) NSString *userStoreFrontID;
 
-+ (id)backingUserDefaultKeys;
++ (void)enableStoreFrontLocking;
 + (id)sharedAccount;
 
 - (void).cxx_destruct;
 - (id)DSID;
 - (void)_refreshUbiquityIdentityToken;
-- (void)_setStoreFrontDependentProperties;
+- (void)_setStoreFrontDependentPropertiesWithStoreFrontLockingEnabled:(bool)arg1;
 - (id)contentStoreFrontID;
 - (id)currentStoreFrontID;
 - (id)endpointConnectionClientID;
@@ -46,6 +47,7 @@
 - (void)setICloudAccountChanged:(bool)arg1;
 - (void)setOverrideContentStoreFrontID:(id)arg1;
 - (void)setUserStoreFrontID:(id)arg1;
+- (id)supportedContentStoreFrontID;
 - (void)t_startOverridingContentStoreFrontID:(id)arg1;
 - (void)t_stopOverridingContentStoreFrontID;
 - (id)userStoreFrontID;

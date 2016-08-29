@@ -3,16 +3,18 @@
  */
 
 @interface UpNextWidget.Model : SwiftObject {
+    void active;
     void alarmDataSource;
+    void callbackQueue;
     void dataSources;
     void elementsChangedBlock;
     void eventDataSource;
     void firstAlarmQueryCompleted;
     void firstEventQueryCompleted;
     void firstReminderQueryCompleted;
-    void queue;
-    void realStorage;
+    void internalStorage;
     void reminderDataSource;
+    void workQueue;
 }
 
 @end

@@ -10,6 +10,7 @@
     unsigned int  _maxResults;
     double  _requestLocalTimestamp;
     NSMutableArray * _suggestionEntryMetadatas;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -19,6 +20,7 @@
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) NSMutableArray *suggestionEntryMetadatas;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 + (Class)suggestionEntryMetadataType;
@@ -48,6 +50,7 @@
 - (id)suggestionEntryMetadataAtIndex:(unsigned long long)arg1;
 - (id)suggestionEntryMetadatas;
 - (unsigned long long)suggestionEntryMetadatasCount;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUISystemControlsPageViewController : UIViewController <CCUIControlCenterPageContentProviding, CCUIControlCenterSectionViewControllerDelegate, CCUIControlCenterStatusViewDelegate> {
+@interface CCUISystemControlsPageViewController : UIViewController <CCUIControlCenterPageContentProviding, CCUIControlCenterSectionViewControllerDelegate, CCUIControlCenterStatusViewDelegate, CCUIFirstUsePanelViewControllerDelegate> {
     CCUIAirStuffSectionController * _airStuffSection;
     CCUIAirStuffSectionController * _auxillaryAirStuffSection;
     NSLayoutConstraint * _bottomMargin;
     CCUIBrightnessSectionController * _brightnessSection;
     NSMutableArray * _columnStackViews;
     <CCUIControlCenterPageContentViewControllerDelegate> * _delegate;
+    UIView * _firstUseView;
+    CCUIFirstUsePanelViewController * _firstUseViewController;
     UIStackView * _horizontalStackView;
     NSLayoutConstraint * _leadingMargin;
     CCUINightShiftSectionController * _nightShiftSection;
@@ -29,6 +31,7 @@
 @property (nonatomic, readonly) bool wantsVisible;
 
 - (void).cxx_destruct;
+- (void)_acknowledgeAndDismissFirstUsePanelAnimated:(bool)arg1;
 - (id)_createColumnStackView;
 - (long long)_currentLayoutStyle;
 - (void)_dismissAirDropWithCompletion:(id /* block */)arg1;
@@ -40,18 +43,23 @@
 - (void)_updateSectionViews;
 - (void)_updateSectionVisibility:(id)arg1 animated:(bool)arg2;
 - (void)_updateStackViewMarginsAndSpacing;
+- (void)beginSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterDidFinishTransition;
+- (void)controlCenterDidScrollToThisPage:(bool)arg1;
 - (id)controlCenterSystemAgent;
 - (void)controlCenterWillBeginTransition;
 - (void)controlCenterWillFinishTransitionOpen:(bool)arg1 withDuration:(double)arg2;
 - (void)controlCenterWillPresent;
 - (id)delegate;
 - (bool)dismissModalFullScreenIfNeeded;
+- (void)endSuppressingPunchOutMaskCachingForReason:(id)arg1;
+- (void)firstUsePanelWasAcknowledged:(id)arg1;
 - (long long)layoutStyle;
 - (void)loadView;
 - (void)noteSectionEnabledStateDidChange:(id)arg1;
+- (id)pageContainerViewController;
 - (void)section:(id)arg1 publishStatusUpdate:(id)arg2;
 - (void)sectionWantsControlCenterDismissal:(id)arg1;
 - (void)setDelegate:(id)arg1;

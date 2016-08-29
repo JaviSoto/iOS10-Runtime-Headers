@@ -62,6 +62,7 @@
 - (void)setMinimumScaleFactor:(double)arg1;
 - (void)setMinimumTruncatedScaleFactor:(double)arg1;
 - (void)setTypesettingMode:(long long)arg1;
+- (void)shiftLinesVerticallyToAvoidOverlap:(id)arg1 referenceFont:(struct UIFont { Class x1; }*)arg2;
 - (long long)typesettingMode;
 
 @end

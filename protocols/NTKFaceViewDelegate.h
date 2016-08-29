@@ -10,6 +10,7 @@
 - (void)faceViewDidLayoutSubviews;
 - (void)faceViewDidReloadSnapshotContentViews;
 - (void)faceViewDidScrubToDate:(NSDate *)arg1 forced:(bool)arg2;
+- (void)faceViewRequestedLaunchFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)faceViewUpdatedResourceDirectory:(NSString *)arg1 wantsToTransferOwnership:(bool)arg2;
 - (void)faceViewWantsComplicationKeylineFramesReloaded;
 - (void)faceViewWantsCustomKeylineFramesReloadedForEditMode:(long long)arg1;

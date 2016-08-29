@@ -2,11 +2,15 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetUserCurrentRestaurantReservationBookingsIntentResponse : INIntentResponse {
+@interface INGetUserCurrentRestaurantReservationBookingsIntentResponse : INIntentResponse <INGetUserCurrentRestaurantReservationBookingsIntentResponseExport> {
     NSArray * _userCurrentBookings;
 }
 
 @property (nonatomic, readonly) long long code;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *userCurrentBookings;
 
 + (bool)supportsSecureCoding;

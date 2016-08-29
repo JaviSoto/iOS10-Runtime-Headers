@@ -7,7 +7,7 @@
     NSString * _network;
     NSData * _paymentData;
     PKProtobufPaymentMethod * _paymentMethod;
-    NSString * _sessionIdentifier;
+    NSString * _redeemURL;
     NSString * _transactionIdentifier;
 }
 
@@ -15,13 +15,13 @@
 @property (nonatomic, readonly) bool hasNetwork;
 @property (nonatomic, readonly) bool hasPaymentData;
 @property (nonatomic, readonly) bool hasPaymentMethod;
-@property (nonatomic, readonly) bool hasSessionIdentifier;
+@property (nonatomic, readonly) bool hasRedeemURL;
 @property (nonatomic, readonly) bool hasTransactionIdentifier;
 @property (nonatomic, retain) NSString *instrumentName;
 @property (nonatomic, retain) NSString *network;
 @property (nonatomic, retain) NSData *paymentData;
 @property (nonatomic, retain) PKProtobufPaymentMethod *paymentMethod;
-@property (nonatomic, retain) NSString *sessionIdentifier;
+@property (nonatomic, retain) NSString *redeemURL;
 @property (nonatomic, retain) NSString *transactionIdentifier;
 
 - (void).cxx_destruct;
@@ -33,7 +33,7 @@
 - (bool)hasNetwork;
 - (bool)hasPaymentData;
 - (bool)hasPaymentMethod;
-- (bool)hasSessionIdentifier;
+- (bool)hasRedeemURL;
 - (bool)hasTransactionIdentifier;
 - (unsigned long long)hash;
 - (id)instrumentName;
@@ -43,12 +43,12 @@
 - (id)paymentData;
 - (id)paymentMethod;
 - (bool)readFrom:(id)arg1;
-- (id)sessionIdentifier;
+- (id)redeemURL;
 - (void)setInstrumentName:(id)arg1;
 - (void)setNetwork:(id)arg1;
 - (void)setPaymentData:(id)arg1;
 - (void)setPaymentMethod:(id)arg1;
-- (void)setSessionIdentifier:(id)arg1;
+- (void)setRedeemURL:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;
 - (void)writeTo:(id)arg1;

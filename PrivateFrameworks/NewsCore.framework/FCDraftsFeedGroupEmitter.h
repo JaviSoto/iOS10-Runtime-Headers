@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)articleList;
-- (bool)emitsSingletonGroups;
+- (bool)canMergeGroupsUnconditionally;
 - (id)groupEmitterIdentifier;
 - (id)initWithArticleList:(id)arg1;
 - (id)operationToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;

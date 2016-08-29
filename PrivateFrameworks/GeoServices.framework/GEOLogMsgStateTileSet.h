@@ -3,37 +3,28 @@
  */
 
 @interface GEOLogMsgStateTileSet : PBCodable <NSCopying> {
-    unsigned int  _count;
-    struct { 
-        unsigned int count : 1; 
-        unsigned int style : 1; 
-    }  _has;
-    int  _style;
+    NSMutableArray * _tileSetInfos;
 }
 
-@property (nonatomic) unsigned int count;
-@property (nonatomic) bool hasCount;
-@property (nonatomic) bool hasStyle;
-@property (nonatomic) int style;
+@property (nonatomic, retain) NSMutableArray *tileSetInfos;
 
-- (int)StringAsStyle:(id)arg1;
++ (Class)tileSetInfoType;
+
+- (void)addTileSetInfo:(id)arg1;
+- (void)clearTileSetInfos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCount;
-- (bool)hasStyle;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (void)setCount:(unsigned int)arg1;
-- (void)setHasCount:(bool)arg1;
-- (void)setHasStyle:(bool)arg1;
-- (void)setStyle:(int)arg1;
-- (int)style;
-- (id)styleAsString:(int)arg1;
+- (void)setTileSetInfos:(id)arg1;
+- (id)tileSetInfoAtIndex:(unsigned long long)arg1;
+- (id)tileSetInfos;
+- (unsigned long long)tileSetInfosCount;
 - (void)writeTo:(id)arg1;
 
 @end

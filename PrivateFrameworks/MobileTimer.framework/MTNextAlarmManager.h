@@ -2,27 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTNextAlarmManager : NSObject <ClockManagerNotificationObserver> {
-    Alarm * _nextAlarm;
-    NSHashTable * _observers;
+@interface MTNextAlarmManager : NSObject <UNSNotificationSchedulerDelegate> {
+    NSSet * _nextAlarms;
+    UNSNotificationScheduler * _scheduler;
+    id /* block */  _updateHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) Alarm *nextAlarm;
-@property (nonatomic, retain) NSHashTable *observers;
+@property (nonatomic, retain) NSSet *nextAlarms;
+@property (nonatomic, retain) UNSNotificationScheduler *scheduler;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void).cxx_destruct;
-- (void)addNextAlarmObserver:(id)arg1;
-- (void)dealloc;
+- (void)calculateNextAlarmsFromNotifications:(id)arg1;
 - (id)init;
-- (void)localNotificationsDidChangeForClockManager:(id)arg1;
-- (id)nextAlarm;
-- (id)observers;
-- (void)removeNextAlarmObserver:(id)arg1;
-- (void)setNextAlarm:(id)arg1;
-- (void)setObservers:(id)arg1;
+- (id)initWithNotificationScheduler:(id)arg1;
+- (id)nextAlarms;
+- (void)notificationScheduler:(id)arg1 didChangeScheduledLocalNotifications:(id)arg2;
+- (id)scheduler;
+- (void)setNextAlarms:(id)arg1;
+- (void)setScheduler:(id)arg1;
+- (void)setUpdateHandler:(id /* block */)arg1;
+- (id /* block */)updateHandler;
 
 @end

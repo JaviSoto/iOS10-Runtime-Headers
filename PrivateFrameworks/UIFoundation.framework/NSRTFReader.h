@@ -30,6 +30,7 @@
     NSMapTable * _cachedRTFFontTable;
     int  _cocoaSubVersion;
     int  _cocoaVersion;
+    int  _colorTblColorSpace;
     NSMutableAttributedString * _curAttributedString;
     NSMutableDictionary * _curAttributes;
     unsigned long long  _currentBorderEdge;

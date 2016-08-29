@@ -19,14 +19,12 @@
 - (void)observer:(BBObserver *)arg1 noteSectionParametersChanged:(BBSectionParameters *)arg2 forSectionID:(NSString *)arg3;
 - (void)observer:(BBObserver *)arg1 noteServerConnectionStateChanged:(bool)arg2;
 - (void)observer:(BBObserver *)arg1 noteServerReceivedResponseForBulletin:(BBBulletin *)arg2;
+- (void)observer:(void *)arg1 prepareAttachment:(void *)arg2 beforeDeliveringBulletin:(void *)arg3 withCompletionHandler:(void *)arg4; // needs 4 arg types, found 9: BBObserver *, BBAttachmentMetadata *, BBBulletin *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
 - (void)observer:(void *)arg1 processData:(void *)arg2 forAttachment:(void *)arg3 bulletin:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 10: BBObserver *, NSData *, BBAttachmentMetadata *, BBBulletin *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
 - (void)observer:(BBObserver *)arg1 purgeReferencesToBulletinID:(NSString *)arg2;
 - (void)observer:(BBObserver *)arg1 removeBulletin:(BBBulletin *)arg2;
 - (void)observer:(BBObserver *)arg1 removeBulletin:(BBBulletin *)arg2 forFeed:(unsigned long long)arg3;
 - (void)observer:(BBObserver *)arg1 removeSection:(NSString *)arg2;
-- (bool)observer:(BBObserver *)arg1 shouldFetchDataForAttachment:(BBAttachmentMetadata *)arg2 beforeDeliveringBulletin:(BBBulletin *)arg3;
-- (bool)observer:(BBObserver *)arg1 shouldFetchImageForAttachment:(BBAttachmentMetadata *)arg2 beforeDeliveringBulletin:(BBBulletin *)arg3;
-- (bool)observer:(BBObserver *)arg1 shouldFetchImageSizeForAttachment:(BBAttachmentMetadata *)arg2 beforeDeliveringBulletin:(BBBulletin *)arg3;
 - (BBThumbnailSizeConstraints *)observer:(BBObserver *)arg1 thumbnailSizeConstraintsForAttachment:(BBAttachmentMetadata *)arg2 bulletin:(BBBulletin *)arg3;
 - (BBThumbnailSizeConstraints *)observer:(BBObserver *)arg1 thumbnailSizeConstraintsForAttachmentType:(long long)arg2;
 - (void)observer:(BBObserver *)arg1 updateSectionInfo:(BBSectionInfo *)arg2;

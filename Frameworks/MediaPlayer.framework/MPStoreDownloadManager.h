@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreDownloadManager : NSObject <SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
+@interface MPStoreDownloadManager : NSObject <SSDownloadHandlerDelegate, SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSArray * _activeDownloads;
     NSMutableArray * _blockObservers;
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
-    UIAlertView * _cellularDownloadAlertView;
-    NSMutableArray * _cellularDownloadRequestCompletionHandlers;
+    NSMutableDictionary * _downloadHandlers;
     NSMapTable * _downloadIdentifiersToDownloads;
     SSDownloadManager * _downloadManager;
     NSMutableArray * _downloads;
@@ -32,12 +31,8 @@
 - (void).cxx_destruct;
 - (void)_addPurchaseFinishedHandler:(id /* block */)arg1 forDownloads:(id)arg2;
 - (void)_addStoreDownloadForRedownloadProductItem:(id)arg1;
-- (void)_dismissAndCleanupCellularDownloadAlertViewWithResult:(long long)arg1;
 - (id)_existingDownloadForSSDownload:(id)arg1;
 - (id)_init;
-- (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
-- (void)_musicCellularNetworkingAllowedDidChangeNotification:(id)arg1;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (id)_observersForAllDownloads;
 - (id)_observersForDownload:(id)arg1;
 - (void)_onQueue_addDownloadToMapTables:(id)arg1;
@@ -60,7 +55,6 @@
 - (id)addDownloads:(id)arg1;
 - (void)addFinishHandler:(id /* block */)arg1 forDownloads:(id)arg2;
 - (void)addObserver:(id)arg1 forDownloads:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)cancelDownloads:(id)arg1;
 - (void)dealloc;
 - (id)downloadForDownloadPersistentIdentifier:(long long)arg1;
@@ -68,6 +62,7 @@
 - (id)downloadForMediaItemPersistentID:(unsigned long long)arg1;
 - (id)downloadForMediaPlaybackItemMetadata:(id)arg1;
 - (id)downloadForStoreID:(long long)arg1;
+- (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;

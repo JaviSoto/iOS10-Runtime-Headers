@@ -21,6 +21,9 @@
     NSString * _genre;
     NSNumber * _genreID;
     bool  _hasMessagesExtension;
+    NSNumber * _iAdAttribution;
+    NSDate * _iAdConversionDate;
+    NSDate * _iAdImpressionDate;
     bool  _isAutomatic;
     bool  _isDeviceBasedVPP;
     bool  _isFromStore;
@@ -74,6 +77,9 @@
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSNumber *genreID;
 @property (nonatomic) bool hasMessagesExtension;
+@property (nonatomic, copy) NSNumber *iAdAttribution;
+@property (nonatomic, copy) NSDate *iAdConversionDate;
+@property (nonatomic, copy) NSDate *iAdImpressionDate;
 @property (nonatomic) bool isAutomatic;
 @property (nonatomic) bool isDeviceBasedVPP;
 @property (nonatomic) bool isFromStore;
@@ -131,6 +137,9 @@
 - (id)genre;
 - (id)genreID;
 - (bool)hasMessagesExtension;
+- (id)iAdAttribution;
+- (id)iAdConversionDate;
+- (id)iAdImpressionDate;
 - (id)initWithCoder:(id)arg1;
 - (bool)isAutomatic;
 - (bool)isDeviceBasedVPP;
@@ -171,6 +180,9 @@
 - (void)setGenre:(id)arg1;
 - (void)setGenreID:(id)arg1;
 - (void)setHasMessagesExtension:(bool)arg1;
+- (void)setIAdAttribution:(id)arg1;
+- (void)setIAdConversionDate:(id)arg1;
+- (void)setIAdImpressionDate:(id)arg1;
 - (void)setIsAutomatic:(bool)arg1;
 - (void)setIsDeviceBasedVPP:(bool)arg1;
 - (void)setIsFromStore:(bool)arg1;

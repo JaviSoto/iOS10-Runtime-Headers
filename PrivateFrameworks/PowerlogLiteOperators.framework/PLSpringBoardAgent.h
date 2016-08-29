@@ -62,6 +62,7 @@
 - (id)autolockEnergyPeriodicTimer;
 - (void)closeLastOpenEventsWithStopDate:(id)arg1;
 - (void)computeAutolockEnergyWithNow:(id)arg1;
+- (double)currentMediaTime;
 - (id)dailyWallpaperPoll;
 - (void)dealloc;
 - (id)displayOffNotification;

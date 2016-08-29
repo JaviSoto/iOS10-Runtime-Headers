@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *detectedFaces;
+@property (nonatomic, retain) NSString *displayName;
 @property (nonatomic) int faceCount;
 @property (nonatomic, retain) NSString *fullName;
 @property (readonly) unsigned long long hash;
@@ -45,7 +46,6 @@
 - (id)cplPersonChange;
 - (id)debugLogDescription;
 - (void)didSave;
-- (bool)isSyncableChange;
 - (bool)isValidForPersistence;
 - (id)mutableFaces;
 - (bool)needsPersistenceUpdate;
@@ -56,7 +56,6 @@
 - (void)removePersistedFileSystemData;
 - (void)setNeedsPersistenceUpdate:(bool)arg1;
 - (bool)shouldIndexForSearch;
-- (bool)supportsCloudUpload;
 - (void)willSave;
 
 @end

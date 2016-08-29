@@ -320,6 +320,7 @@
 - (void)animateBecomingActiveTool;
 - (void)animateResigningActiveTool;
 - (void)baseLivePhotoInvalidated;
+- (void)basePhotoInvalidated;
 - (bool)canResetToDefaultValue;
 - (void)cropAndStraightenViewDidEndTracking:(id)arg1;
 - (void)cropAndStraightenViewDidTrack:(id)arg1;

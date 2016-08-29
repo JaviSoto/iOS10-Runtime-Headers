@@ -11,18 +11,18 @@
 @property unsigned long long diskCapacity;
 @property unsigned long long memoryCapacity;
 
-+ (void)_resetVaryHeaderSupport;
 + (void)_setVaryHeaderSupport;
-+ (bool)_varyHeaderSupport;
 + (void)setSharedURLCache:(id)arg1;
 + (id)sharedURLCache;
 
 - (const struct _CFURLCache { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)_CFURLCache;
 - (id)_cacheDirectory;
 - (id)_diskCacheDefaultPath;
+- (id)_initVaryHeaderEnabledWithPath:(id)arg1;
 - (id)_initWithExistingCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 memoryCapacity:(long long)arg2 diskCapacity:(long long)arg3 private:(bool)arg4;
 - (id)_initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 relativePath:(id)arg3;
+- (bool)_isVaryHeaderSupportEnabled;
 - (struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFCachedURLResponse {} *x2; }*)_nscfBridgeURLCacheCopyResponseForRequest:(struct _CFURLRequest { }*)arg1;
 - (long long)_nscfBridgeURLCacheCurrentDiskUsage;
 - (long long)_nscfBridgeURLCacheCurrentMemoryUsage;

@@ -71,8 +71,10 @@
 @property (nonatomic, readonly) bool hasComplement;
 @property (nonatomic, readonly) bool hasInactiveChunks;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) int i_chunkIDSeed;
 @property (nonatomic, readonly) TSDDrawableInfo *i_drawable;
 @property (nonatomic, readonly) NSUUID *i_drawableId;
+@property (nonatomic, readonly) bool i_isFullyFormedBuild;
 @property (nonatomic, readonly) NSSet *inspectableAttributes;
 @property (nonatomic, readonly) bool isActionBuild;
 @property (nonatomic, readonly) bool isActionMotionBuild;
@@ -165,6 +167,7 @@
 - (bool)hasComplementInBuilds:(id)arg1;
 - (bool)hasInactiveChunks;
 - (id)i_buildChunkForChunkIdentifier:(id)arg1;
+- (int)i_chunkIDSeed;
 - (void)i_deregisterBuildChunkWithChunkIdentifier:(id)arg1;
 - (id)i_drawable;
 - (id)i_drawableForArchiving:(bool)arg1;
@@ -172,6 +175,7 @@
 - (id)i_drawableOnSlide:(id)arg1;
 - (void)i_generateAndApplyNewChunkIdentifierToChunk:(id)arg1;
 - (void)i_invalidateChunkCache;
+- (bool)i_isFullyFormedBuild;
 - (void)i_registerBuildChunkIdentifierForChunk:(id)arg1;
 - (void)i_resetChunkIDSeed;
 - (void)i_rollbackChunkIDSeedForChunk:(id)arg1;

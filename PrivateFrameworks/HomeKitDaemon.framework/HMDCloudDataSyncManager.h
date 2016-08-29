@@ -98,17 +98,20 @@
 - (void)_accountIsActive;
 - (id)_changeTokenFromData:(id)arg1;
 - (void)_createZoneAndFetchChanges:(id /* block */)arg1;
+- (void)_fetchCompleted;
 - (void)_fetchExistingRecord:(id /* block */)arg1;
+- (void)_fetchNewChangesForceFetch:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_fetchNewChangesWithCompletionHandler:(id /* block */)arg1;
+- (void)_fetchStarted;
 - (void)_handleAccountStatus:(long long)arg1 completionHandler:(id /* block */)arg2 error:(id)arg3;
 - (void)_handleChangedMetadataRecordWithEncodedData:(id)arg1 transaction:(id)arg2;
-- (void)_handleChangedRecordWithEncodedData:(id)arg1 encodeDataVersion2:(id)arg2 encodeDataVersion3:(id)arg3;
+- (void)_handleChangedRecordWithEncodedData:(id)arg1 encodeDataVersion2:(id)arg2 encodeDataVersion3:(id)arg3 migrationOptions:(unsigned long long)arg4;
 - (void)_handleControllerKeyAvailable;
 - (void)_handleFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 completionHandler:(id /* block */)arg3 moreRecordsComing:(bool)arg4 emptyRecord:(bool)arg5;
-- (void)_handleFetchedHomeDataRecord;
+- (bool)_handleFetchedHomeDataRecord:(unsigned long long)arg1;
 - (void)_handleKeychainSyncChanged:(id)arg1;
 - (void)_handleKeychainSyncStateChanged:(bool)arg1;
-- (void)_handleModifiedHomeData;
+- (void)_handleModifiedHomeData:(bool)arg1;
 - (bool)_isControllerKeyAvailable;
 - (void)_registerForMessages;
 - (void)_registerForPushNotifications;
@@ -127,7 +130,7 @@
 - (void)_stopFetchRetryTimer;
 - (void)_updateCloudDataSyncFilterState:(bool)arg1;
 - (void)_updateServerTokenStatusOnCloudFilter;
-- (void)_uploadHomeData:(id)arg1 metadata:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_uploadHomeData:(id)arg1 metadata:(id)arg2 forcePush:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (bool)_validFetchRetryCKErrorCode:(long long)arg1;
 - (bool)accountActive;
 - (id /* block */)accountActiveUpdateHandler;
@@ -153,6 +156,7 @@
 - (bool)decryptionFailed;
 - (id /* block */)fetchCompletionHandler;
 - (void)fetchCurrentAccountStateWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchExistingRecordsWithCompletionHandler:(id /* block */)arg1;
 - (void)forceFetchExistingRecords;
 - (id)homeDataBlobRecordID;
 - (id)homeDataBlobRecordIDVersion3;
@@ -228,7 +232,7 @@
 - (void)setWorkQueue:(id)arg1;
 - (void)updateAccountStatusChanged:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateServerTokenStatusOnCloudFilter;
-- (void)uploadHomeData:(id)arg1 metadata:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)uploadHomeData:(id)arg1 metadata:(id)arg2 forcePush:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)uuid;
 - (id)workQueue;
 

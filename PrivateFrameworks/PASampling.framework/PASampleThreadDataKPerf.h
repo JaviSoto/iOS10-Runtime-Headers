@@ -14,7 +14,7 @@
 @property bool filledThreadSnapshotInfo;
 @property bool hasEmptyKernelStack;
 @property bool isSentinel;
-@property (retain) PASampleThreadDataKPerf *previousSampleThread;
+@property PASampleThreadDataKPerf *previousSampleThread;
 
 - (void).cxx_destruct;
 - (bool)filledDispatchQueue;

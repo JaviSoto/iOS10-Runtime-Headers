@@ -13,9 +13,11 @@
     id /* block */  _testHandler;
 }
 
+@property (nonatomic, readonly) double activitySummaryQueryTimeout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HDProfile *profile;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ testHandler;
 
@@ -33,8 +35,10 @@
 - (long long)_deletedRowCountWithDatabase:(id)arg1 error:(id*)arg2;
 - (bool)_enumerateAppleStandHoursFromDate:(id)arg1 toDate:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
 - (id)_exerciseMinuteHoursFromDate:(id)arg1 toDate:(id)arg2 error:(id*)arg3;
+- (id)_hasWatchSourcesWithDatabase:(id)arg1 error:(id*)arg2;
 - (id)_hourlyStatisticsCollectionForStartDate:(id)arg1 endDate:(id)arg2 quantityType:(id)arg3 statisticsOptions:(unsigned long long)arg4 error:(id*)arg5;
 - (long long)_manuallyEnteredTypesCountWithDatabase:(id)arg1 error:(id*)arg2;
+- (id)_newActivitySummaryQueryHelperWithFilter:(id)arg1 initialResultsHandler:(id /* block */)arg2;
 - (long long)_nonAppleSourcesCountWithDatabase:(id)arg1 error:(id*)arg2;
 - (long long)_nonAppleSourcesWithDataSince:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (long long)_objectRowCountWithDatabase:(id)arg1 error:(id*)arg2;
@@ -42,17 +46,21 @@
 - (void)_queue_updateFitnessDailyCollectionEnabled;
 - (void)_registerForFitnessDailyCollection;
 - (id)_serverConnectionForComponentId:(unsigned int)arg1;
-- (id)_sleepConsistencyEventForMonthPriorToDate:(id)arg1;
-- (id)_sleepNightEventFromSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
-- (id)_sleepSamplesBeforeDate:(id)arg1 days:(long long)arg2 startDate:(id*)arg3 endDate:(id*)arg4;
+- (id)_sleepConsistencyEventForMonthPriorToDate:(id)arg1 calendar:(id)arg2;
+- (id)_sleepNightEventFromSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 calendar:(id)arg4;
+- (id)_sleepSamplesBeforeDate:(id)arg1 days:(long long)arg2 startDate:(id*)arg3 endDate:(id*)arg4 calendar:(id)arg5;
 - (id)_statisticsForTimeDeltas:(id)arg1;
 - (bool)_submitAchievementCountMetricWithConnection:(id)arg1 container:(id)arg2 earnedAchievements:(id)arg3 calorieGoal:(id)arg4 force:(bool)arg5;
 - (bool)_submitMetric:(id)arg1 container:(id)arg2 connection:(id)arg3 force:(bool)arg4;
+- (double)activitySummaryQueryTimeout;
 - (void)daemonReady:(id)arg1;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 - (void)dealloc;
 - (id)diagnosticDescription;
 - (id)initWithProfile:(id)arg1;
+- (bool)isFitnessDailyCollectionEnabled;
+- (id)motionToken;
+- (id)profile;
 - (void)resetTask:(id)arg1;
 - (bool)runTask:(id)arg1 error:(id*)arg2;
 - (void)setTestHandler:(id /* block */)arg1;

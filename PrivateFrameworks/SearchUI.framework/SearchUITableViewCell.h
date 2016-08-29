@@ -12,6 +12,7 @@
 @property (getter=isExpanded) bool expanded;
 @property unsigned long long style;
 
++ (bool)canCellExpandWithResults:(id)arg1;
 + (Class)classForResult:(id)arg1;
 + (id)convertResultIfNecessary:(id)arg1;
 + (double)distanceToTopOfAppIconsForMultiResultCell;

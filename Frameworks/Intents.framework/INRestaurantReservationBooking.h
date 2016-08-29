@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRestaurantReservationBooking : NSObject <NSCopying, NSSecureCoding> {
+@interface INRestaurantReservationBooking : NSObject <INRestaurantReservationBookingExport, NSCopying, NSSecureCoding> {
     bool  _bookingAvailable;
     NSDate * _bookingDate;
     NSString * _bookingDescription;
@@ -20,6 +20,9 @@
 @property (nonatomic, copy) NSDate *bookingDate;
 @property (nonatomic, copy) NSString *bookingDescription;
 @property (nonatomic, copy) NSString *bookingIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *offers;
 @property (nonatomic) unsigned long long partySize;
 @property (nonatomic) bool requiresEmailAddress;
@@ -27,6 +30,7 @@
 @property (nonatomic) bool requiresName;
 @property (nonatomic) bool requiresPhoneNumber;
 @property (nonatomic, copy) INRestaurant *restaurant;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

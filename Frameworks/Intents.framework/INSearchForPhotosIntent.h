@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSearchForPhotosIntent : INIntent <INSearchForPhotosIntent>
+@interface INSearchForPhotosIntent : INIntent <INSearchForPhotosIntentExport>
 
 @property (nonatomic, readonly, copy) NSString *albumName;
 @property (nonatomic, readonly, copy) INDateComponentsRange *dateCreated;

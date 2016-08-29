@@ -12,6 +12,8 @@
 @property (nonatomic, readonly) NAFuture *homeKitObjectFuture;
 @property (nonatomic, readonly) NSURL *url;
 
++ (id)aboutResidentDeviceURL;
+
 - (void).cxx_destruct;
 - (id)_homeKitIdentifier;
 - (unsigned long long)destination;

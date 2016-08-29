@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRFetchAnisetteDataRequest : TRNearbyServicesCommunicationAbstractMessage {
+@interface TRFetchAnisetteDataRequest : TRRequestMessage {
     bool  _shouldProvision;
 }
 

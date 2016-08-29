@@ -120,7 +120,7 @@
 + (id)encryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
 + (id)fullTokenFromBaseToken:(id)arg1 privateToken:(id)arg2;
 + (id)recordWithDuplicatedPackagesOfRecord:(id)arg1 error:(id*)arg2;
-+ (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 containerID:(id)arg3;
++ (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 shareType:(id)arg3 containerID:(id)arg4;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -282,12 +282,16 @@
 - (id)brc_containerMetadataIconPaths;
 - (id)brc_containerMetadataPropertiesData;
 - (bool)brc_currentUserOwnsLastEditorDevice;
+- (id)brc_documentName;
 - (bool)brc_isInterestingRecordForSyncDown;
 - (bool)brc_isfakeRecordWithErrorMarkerFor20716676;
 - (id)brc_lastEditorDeviceName;
 - (id)brc_oplockMergeEtag;
 - (bool)brc_safeToGetURL;
+- (id)brc_sharedDocumentDisplayName;
+- (id)brc_sharedDocumentExtension;
 - (id)brc_updateDroppedReason;
+- (void)brc_updateWithLogicalName:(id)arg1;
 - (bool)deserializeAliasInfo:(id*)arg1 serverZone:(id)arg2 error:(id*)arg3;
 - (bool)deserializeFilename:(id*)arg1 basename:(id*)arg2 bounceno:(id*)arg3 extension:(id*)arg4 userInfo:(id)arg5 error:(id*)arg6;
 - (bool)deserializeStatInfo:(id*)arg1 itemID:(id)arg2 session:(id)arg3 error:(id*)arg4;

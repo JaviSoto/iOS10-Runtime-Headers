@@ -54,5 +54,6 @@
 - (void)setCoreDataStore:(id)arg1;
 - (void)setDidRequestFirstPullForAccount:(bool)arg1;
 - (id)textReplacementEntries;
+- (id)userIdentity;
 
 @end

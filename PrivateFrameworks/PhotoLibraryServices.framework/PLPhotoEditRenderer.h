@@ -54,12 +54,13 @@
 @property (nonatomic, readonly) double smartToneBaseShadows;
 
 + (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(bool)arg2;
++ (bool)currentDeviceShouldAllowLocalLight;
 + (id)newImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(double)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(bool)arg4;
 
 - (id)_editedGeometryImageWithBaseImage:(id)arg1;
 - (id)_editedImage;
 - (void)_handleAssetDidLoadForVideoComposition:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (id)_imageByApplyingEdits:(id)arg1 toImage:(id)arg2 randomSeed:(unsigned long long)arg3;
+- (id)_imageByApplyingEdits:(id)arg1 toImage:(id)arg2 randomSeed:(unsigned long long)arg3 isVideoFrame:(bool)arg4;
 - (id)_imageByApplyingEditsToImage:(id)arg1;
 - (void)_invalidateCachedFilters;
 - (bool)_isOrientationMirrored;

@@ -125,19 +125,21 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
++ (id)hf_allRequiredCharacteristicTypesForStandardServices;
 + (id)hf_requiredCharacteristicTypesForDisplayMetadataWithServiceType:(id)arg1;
 + (id)hf_roomsForServices:(id)arg1;
 + (id)hf_sensorCharacteristicTypeForServiceType:(id)arg1;
++ (id)hf_standardServices;
 
-- (id)hf_characteristicsOfType:(id)arg1;
+- (id)hf_characteristicOfType:(id)arg1;
 - (id)hf_dateAdded;
 - (id)hf_displayName;
 - (id)hf_effectiveServiceType;
-- (id)hf_firstCharacteristicOfType:(id)arg1;
 - (bool)hf_hasSetFavorite;
 - (bool)hf_hasSetVisibleInHomeStatus;
 - (id)hf_iconDescriptor;
 - (bool)hf_isFavorite;
+- (bool)hf_isLegacyService;
 - (bool)hf_isShowNotificationsStatus;
 - (bool)hf_isVisibleInHomeStatus;
 - (id)hf_prettyDescription;

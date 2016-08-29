@@ -17,6 +17,7 @@
 - (void)layoutSubviews;
 - (double)lineWidth;
 - (void)setCornerRadius:(double)arg1;
+- (void)setKeyLineViewAlphaForProgress:(double)arg1;
 - (void)setLineWidth:(double)arg1;
 
 @end

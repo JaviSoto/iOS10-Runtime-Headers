@@ -4,13 +4,16 @@
 
 @interface UIVisualEffect : NSObject <NSCopying, NSSecureCoding> {
     bool  __isATVStyle;
+    bool  __isAutomaticStyle;
     _UIVisualEffectConfig * _effectConfig;
     _UIBackdropViewSettings * _effectSettings;
 }
 
 @property (nonatomic, readonly) bool _isATVStyle;
+@property (nonatomic, readonly) bool _isAutomaticStyle;
 @property (nonatomic, readonly) _UIVisualEffectConfig *effectConfig;
 @property (nonatomic, readonly) _UIBackdropViewSettings *effectSettings;
+@property (nonatomic, readonly) bool hu_isVibrancyEffect;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -18,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (bool)_isATVStyle;
+- (bool)_isAutomaticStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
 - (id)effectConfigForQuality:(long long)arg1;

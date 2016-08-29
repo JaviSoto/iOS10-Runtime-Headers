@@ -11,6 +11,14 @@
     int  mRetainCount;
 }
 
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } dpiAdjustedNaturalSize;
+@property (nonatomic) int i_loadState;
+@property (nonatomic, readonly, retain) TSPData *imageData;
+@property (nonatomic, readonly) unsigned long long imageGamut;
+@property (nonatomic, readonly) bool isError;
+@property (nonatomic, readonly) bool isValid;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)addInterest;
@@ -21,7 +29,9 @@
 - (void)flush;
 - (bool)hasFlushableContent;
 - (void)i_commonInit;
+- (int)i_loadState;
 - (id)imageData;
+- (unsigned long long)imageGamut;
 - (id)initWithImageData:(id)arg1;
 - (int)interest;
 - (bool)isError;
@@ -34,5 +44,6 @@
 - (id)retain;
 - (unsigned long long)retainCount;
 - (void)setFlushingManager:(id)arg1;
+- (void)setI_loadState:(int)arg1;
 
 @end

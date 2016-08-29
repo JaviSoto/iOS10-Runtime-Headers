@@ -64,6 +64,7 @@
 + (double)predictionViewHeightForState:(int)arg1 orientation:(long long)arg2;
 + (double)predictionViewHeightPaddingForOrientation:(long long)arg1;
 + (double)predictionViewWidthForOrientation:(long long)arg1;
++ (id)resultCountToSingleCellWidth;
 + (id)sharedInstance;
 
 - (void)_setPredictions:(id)arg1 autocorrection:(id)arg2 emojiList:(id)arg3;
@@ -99,7 +100,6 @@
 - (unsigned long long)predictionCount;
 - (void)releaseMessage;
 - (void)removeMessage;
-- (id)resultCountToSingleCellWidth;
 - (id)scheduledAutocorrection;
 - (id)scheduledEmojiList;
 - (id)scheduledPredictions;

@@ -2,20 +2,21 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFWebViewController : UIViewController <WBUFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFJavaScriptDialogControllerDelegate, _WKFormDelegate> {
+@interface SFWebViewController : UIViewController <WBUFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFDialogControllerDelegate, _WKFormDelegate> {
     WBUFormAutoFillController * _autoFillController;
     <SFWebViewControllerDelegate> * _delegate;
+    _SFDialogController * _dialogController;
     bool  _didFinishDocumentLoad;
     bool  _didFirstLayout;
     bool  _didFirstVisuallyNonEmptyLayout;
-    _SFJavaScriptDialogController * _javaScriptDialogController;
     bool  _loading;
-    bool  _shouldSuppressJavaScriptDialogs;
+    bool  _shouldSuppressDialogsThatBlockWebProcess;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFWebViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) _SFDialogController *dialogController;
 @property (nonatomic, readonly) bool didFirstVisuallyNonEmptyLayout;
 @property (readonly) unsigned long long hash;
 @property (getter=isLoading, nonatomic) bool loading;
@@ -40,8 +41,9 @@
 - (void)_webViewWebProcessDidCrash:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (bool)dialogControllerShouldSuppressDialogs:(id)arg1;
-- (void)dialogControllerWillPresentDialog:(id)arg1;
+- (id)dialogController;
+- (bool)dialogController:(id)arg1 shouldSuppressDialog:(id)arg2;
+- (void)dialogController:(id)arg1 willPresentDialog:(id)arg2;
 - (bool)didFirstVisuallyNonEmptyLayout;
 - (bool)formAutoFillControllerCanPrefillForm:(id)arg1;
 - (bool)formAutoFillControllerShouldDisableAutoFill:(id)arg1;

@@ -10,5 +10,6 @@
 - (void)dealloc;
 - (id)initWithBlock:(id /* block */)arg1;
 - (void)invoke;
+- (void)invokeWithSignal:(long long)arg1;
 
 @end

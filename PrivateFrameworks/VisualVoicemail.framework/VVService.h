@@ -6,12 +6,15 @@
     NSError * _activationError;
     long long  _capabilities;
     id  _carrierParameters;
+    struct __CFString { } * _lastConnectionTypeUsed;
     NSRecursiveLock * _lock;
     int  _mailboxUsage;
     Class  _notificationInterpreter;
+    unsigned long long  _numFailedAttemptsToSyncOverWifi;
     NSString * _password;
     NSError * _passwordError;
     NSString * _passwordMailboxName;
+    NSString * _retranscriptionTaskIdentifier;
     int  _retryIntervalIndex;
     NSArray * _retryIntervals;
     struct { 
@@ -31,6 +34,9 @@
     unsigned int  _unreadCount;
 }
 
+@property (nonatomic) struct __CFString { }*lastConnectionTypeUsed;
+@property (nonatomic) unsigned long long numFailedAttemptsToSyncOverWifi;
+@property (nonatomic, readonly, copy) NSString *retranscriptionTaskIdentifier;
 @property (nonatomic, retain) NSString *serviceIdentifier;
 @property (nonatomic, retain) VMVoicemailTranscriptionTask *transcriptionTask;
 
@@ -66,8 +72,8 @@
 - (void)_handleSMSCAvailable;
 - (void)_handleSMSReady:(bool)arg1;
 - (bool)_isOfflineDueToRoamingWithDataStatusDict:(struct __CFDictionary { }*)arg1;
-- (void)_processTranscriptForRecord:(void*)arg1;
-- (void)_processTranscriptForRecord:(void*)arg1 priority:(long long)arg2;
+- (void)_processTranscriptForRecord:(void*)arg1 completion:(id /* block */)arg2;
+- (void)_processTranscriptForRecord:(void*)arg1 priority:(long long)arg2 completion:(id /* block */)arg3;
 - (void)_reactToIndicator;
 - (void)_reportReachabilityChange:(id)arg1;
 - (void)_scheduleAutomatedTrashCompaction;
@@ -80,12 +86,14 @@
 - (void)cancelDelayedSynchronize;
 - (void)cancelNotificationFallback;
 - (void)cancelPasswordRequest;
+- (void)cancelRetranscriptionTaskActivity;
 - (long long)capabilities;
 - (id)carrierParameterValueForKey:(id)arg1;
 - (void)changePassword:(id)arg1 fromPassword:(id)arg2;
 - (void)clearActivationError;
 - (void)clearRemoteUIDsForDetachedMessages;
 - (struct __CFString { }*)connectionServiceType;
+- (struct __CFString { }*)dataConnectionServiceTypeOverride;
 - (bool)dataForRecordPending:(void*)arg1 progressiveLoadInProgress:(bool*)arg2;
 - (void)dealloc;
 - (void)displayPasswordRequestIfNecessary;
@@ -107,6 +115,8 @@
 - (bool)isSyncInProgress;
 - (bool)isVVMAvailableOverWiFi;
 - (void)kill;
+- (struct __CFString { }*)lastConnectionTypeUsed;
+- (bool)lastUsedConnectionTypeWasCellular;
 - (long long)mailboxGreetingType;
 - (id)mailboxName;
 - (bool)mailboxRequiresSetup;
@@ -118,6 +128,7 @@
 - (void)moveRecordFromTrash:(void*)arg1;
 - (void)moveRecordToTrash:(void*)arg1;
 - (Class)notificationInterpreterClass;
+- (unsigned long long)numFailedAttemptsToSyncOverWifi;
 - (id)password;
 - (bool)passwordChangeRequiresEnteringOldPassword;
 - (id)passwordIgnoringSubscription:(bool)arg1;
@@ -126,22 +137,30 @@
 - (void)removeAllNonDetachedRecords;
 - (void)removeAllRecords;
 - (void)reportError:(id)arg1;
+- (void)reportFailedToSyncOverWifi;
+- (void)reportSucessfulSync;
 - (void)reportTranscriptionProblemForRecord:(void*)arg1;
 - (void)reportTranscriptionRatedAccurate:(bool)arg1 forRecord:(void*)arg2;
 - (void)resetCounts;
 - (void)resetDelayedSynchronizationAttemptCount;
 - (bool)respectsMWINotifications;
 - (void)retranscribeAllVoicemails;
+- (id)retranscriptionTaskIdentifier;
 - (void)retrieveDataForRecord:(void*)arg1;
 - (void)retrieveGreeting;
 - (id)retryIntervals;
 - (void)scheduleAutomatedTrashCompaction;
 - (void)scheduleDelayedSynchronize;
+- (void)scheduleImmediateSynchronizeRetryOverCellular;
+- (void)scheduleRetranscriptionTaskActivity;
 - (id)serviceIdentifier;
 - (void)setGreetingType:(long long)arg1 withData:(id)arg2 duration:(unsigned long long)arg3;
+- (void)setLastConnectionTypeUsed:(struct __CFString { }*)arg1;
+- (void)setLastUsedConnectionType:(struct __CFString { }*)arg1;
 - (void)setMailboxRequiresSetup:(bool)arg1;
 - (void)setMailboxUsage:(int)arg1;
 - (void)setMessageWaiting:(bool)arg1;
+- (void)setNumFailedAttemptsToSyncOverWifi:(unsigned long long)arg1;
 - (void)setOnline:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setProvisionalPassword:(id)arg1;
@@ -151,9 +170,9 @@
 - (void)setTrashedCount:(unsigned int)arg1;
 - (void)setUnreadCount:(unsigned int)arg1;
 - (bool)sharedSubscriptionRequiresSetup;
+- (bool)shouldImmediatelyRetrySyncOverCellular;
 - (bool)shouldScheduleAutoTrashOnMailboxUsageChange;
 - (bool)shouldTrashCompactRecord:(void*)arg1;
-- (void)startRetranscriptionTask;
 - (bool)synchronizationPending;
 - (void)synchronize:(bool)arg1;
 - (bool)taskOfTypeExists:(long long)arg1;

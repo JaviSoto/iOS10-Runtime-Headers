@@ -4,24 +4,20 @@
 
 @interface VSDeveloperIdentityProviderFetchAllOperation : VSAsyncOperation {
     NSXPCConnection * _connection;
-    NSError * _error;
-    NSArray * _identityProviders;
+    VSFailable * _result;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
-@property (nonatomic, copy) NSError *error;
-@property (nonatomic, copy) NSArray *identityProviders;
+@property (nonatomic, retain) VSFailable *result;
 
 - (void).cxx_destruct;
 - (id)_serviceWithErrorHandler:(id /* block */)arg1;
 - (id)connection;
 - (void)dealloc;
-- (id)error;
 - (void)executionDidBegin;
-- (id)identityProviders;
 - (id)init;
+- (id)result;
 - (void)setConnection:(id)arg1;
-- (void)setError:(id)arg1;
-- (void)setIdentityProviders:(id)arg1;
+- (void)setResult:(id)arg1;
 
 @end

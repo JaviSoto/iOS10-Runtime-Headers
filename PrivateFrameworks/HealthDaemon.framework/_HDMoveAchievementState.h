@@ -2,67 +2,33 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface _HDMoveAchievementState : _HDAchievementState <NSCopying> {
+@interface _HDMoveAchievementState : _HDAchievementState {
+    double  _bestCaloriesBurned;
     long long  _bestConsecutiveGoalsMet;
-    double  _bestDailyCalorieBurn;
     double  _bestMetMoveGoalCalories;
-    bool  _calorieGoalJustMetToday;
-    double  _calorieGoalToday;
-    double  _caloriesBurnedToday;
-    double  _caloriesBurnedYesterday;
-    long long  _consecutiveGoalsMet;
-    long long  _currentFitnessWeekConsecutiveCompleteDays;
-    NSDate * _lastPerfectWeekDate;
-    long long  _lastResetSummaryIndexForStreaks;
     double  _latestGoalMetCalories;
     long long  _lifetimeGoalsMet;
-    _HDMoveAchievementState * _previous;
+    double  _previousCaloriesBurnedToday;
 }
 
+@property (nonatomic) double bestCaloriesBurned;
 @property (nonatomic) long long bestConsecutiveGoalsMet;
-@property (nonatomic) double bestDailyCalorieBurn;
 @property (nonatomic) double bestMetMoveGoalCalories;
-@property (nonatomic) bool calorieGoalJustMetToday;
-@property (nonatomic) double calorieGoalToday;
-@property (nonatomic) double caloriesBurnedToday;
-@property (nonatomic) double caloriesBurnedYesterday;
-@property (nonatomic) long long consecutiveGoalsMet;
-@property (nonatomic) long long currentFitnessWeekConsecutiveCompleteDays;
-@property (nonatomic, retain) NSDate *lastPerfectWeekDate;
-@property (nonatomic) long long lastResetSummaryIndexForStreaks;
 @property (nonatomic) double latestGoalMetCalories;
 @property (nonatomic) long long lifetimeGoalsMet;
-@property (nonatomic, retain) _HDMoveAchievementState *previous;
+@property (nonatomic) double previousCaloriesBurnedToday;
 
-- (void).cxx_destruct;
+- (double)bestCaloriesBurned;
 - (long long)bestConsecutiveGoalsMet;
-- (double)bestDailyCalorieBurn;
 - (double)bestMetMoveGoalCalories;
-- (bool)calorieGoalJustMetToday;
-- (double)calorieGoalToday;
-- (double)caloriesBurnedToday;
-- (double)caloriesBurnedYesterday;
-- (long long)consecutiveGoalsMet;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)currentFitnessWeekConsecutiveCompleteDays;
-- (id)lastPerfectWeekDate;
-- (long long)lastResetSummaryIndexForStreaks;
 - (double)latestGoalMetCalories;
 - (long long)lifetimeGoalsMet;
-- (id)previous;
+- (double)previousCaloriesBurnedToday;
+- (void)setBestCaloriesBurned:(double)arg1;
 - (void)setBestConsecutiveGoalsMet:(long long)arg1;
-- (void)setBestDailyCalorieBurn:(double)arg1;
 - (void)setBestMetMoveGoalCalories:(double)arg1;
-- (void)setCalorieGoalJustMetToday:(bool)arg1;
-- (void)setCalorieGoalToday:(double)arg1;
-- (void)setCaloriesBurnedToday:(double)arg1;
-- (void)setCaloriesBurnedYesterday:(double)arg1;
-- (void)setConsecutiveGoalsMet:(long long)arg1;
-- (void)setCurrentFitnessWeekConsecutiveCompleteDays:(long long)arg1;
-- (void)setLastPerfectWeekDate:(id)arg1;
-- (void)setLastResetSummaryIndexForStreaks:(long long)arg1;
 - (void)setLatestGoalMetCalories:(double)arg1;
 - (void)setLifetimeGoalsMet:(long long)arg1;
-- (void)setPrevious:(id)arg1;
+- (void)setPreviousCaloriesBurnedToday:(double)arg1;
 
 @end

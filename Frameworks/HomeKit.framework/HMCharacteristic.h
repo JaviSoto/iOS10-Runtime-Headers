@@ -10,6 +10,7 @@
     NSNumber * _instanceID;
     HMCharacteristicMetadata * _metadata;
     bool  _notificationEnabled;
+    bool  _notificationEnabledByThisClient;
     NSDate * _notificationEnabledTime;
     NSArray * _properties;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -31,6 +32,7 @@
 @property (nonatomic, readonly, copy) NSString *localizedDescription;
 @property (nonatomic, readonly) HMCharacteristicMetadata *metadata;
 @property (getter=isNotificationEnabled, nonatomic) bool notificationEnabled;
+@property (nonatomic) bool notificationEnabledByThisClient;
 @property (nonatomic, copy) NSDate *notificationEnabledTime;
 @property (nonatomic, copy) NSArray *properties;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -70,6 +72,7 @@
 - (id)localizedDescription;
 - (id)mapHAPProperties:(long long)arg1;
 - (id)metadata;
+- (bool)notificationEnabledByThisClient;
 - (id)notificationEnabledTime;
 - (id)properties;
 - (id)propertyQueue;
@@ -81,6 +84,7 @@
 - (void)setDelegateCaller:(id)arg1;
 - (void)setHasAuthorizationData:(bool)arg1;
 - (void)setNotificationEnabled:(bool)arg1;
+- (void)setNotificationEnabledByThisClient:(bool)arg1;
 - (void)setNotificationEnabledTime:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;
@@ -102,8 +106,10 @@
 + (id)hf_alarmCharacteristicTypes;
 + (id)hf_associatedCharacteristicTypeForCharacteristicType:(id)arg1;
 + (id /* block */)hf_characteristicSortComparator;
++ (id)hf_currentStateCharacteristicTypeForTargetStateCharacteristicType:(id)arg1;
 + (id)hf_descriptionForCharacteristicType:(id)arg1;
 + (long long)hf_sortPriorityForCharacteristicType:(id)arg1;
++ (id)hf_targetStateCharacteristicTypeForCurrentStateCharacteristicType:(id)arg1;
 
 - (id)hf_associatedCharacteristicType;
 - (id)hf_characteristicTypeDescription;

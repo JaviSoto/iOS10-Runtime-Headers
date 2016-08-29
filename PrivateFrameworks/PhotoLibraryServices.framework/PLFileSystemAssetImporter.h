@@ -24,7 +24,7 @@
 - (bool)_setupPhotoAsset:(id)arg1 withURL:(id)arg2;
 - (bool)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1;
 - (bool)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
-- (id)addAssetWithURLs:(id)arg1 forceInsert:(bool)arg2 forceUpdate:(bool)arg3;
+- (id)addAssetWithURLs:(id)arg1 forceInsert:(bool)arg2 forceUpdate:(bool)arg3 fixAddedDate:(bool)arg4;
 - (void)addAvailableThumbnailIndex:(unsigned long long)arg1;
 - (id)assetURLisInDatabase:(id)arg1;
 - (void)dealloc;

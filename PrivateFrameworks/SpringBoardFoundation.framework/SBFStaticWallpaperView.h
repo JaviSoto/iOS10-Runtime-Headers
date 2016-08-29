@@ -40,7 +40,7 @@
 - (void)_setImage:(id)arg1;
 - (void)_setSampleImage:(id)arg1;
 - (void)_setupContentView;
-- (void)_setupWallpaperImage:(id)arg1 treated:(bool)arg2 forceNoTreatment:(bool)arg3;
+- (void)_setupWallpaperImage:(id)arg1 options:(unsigned long long)arg2;
 - (bool)_shouldApplyLegibilityDarkeningForVariant:(long long)arg1;
 - (void)_toggleLegibilityDarkeningIfNecessary;
 - (id)_variantCacheIdentifier;

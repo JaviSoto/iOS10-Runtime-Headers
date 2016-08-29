@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INMessage : NSObject <INCacheableContainer, NSCopying, NSSecureCoding> {
+@interface INMessage : NSObject <INCacheableContainer, INMessageExport, NSCopying, NSSecureCoding> {
     NSString * _content;
     NSDate * _dateSent;
     NSString * _identifier;

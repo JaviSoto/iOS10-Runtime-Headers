@@ -10,5 +10,6 @@
 + (id)matchingKeywordResultsForRegex:(id)arg1 inString:(id)arg2 needsToLowercase:(bool)arg3;
 + (unsigned long long)numberOfMatchesForRegex:(id)arg1 inString:(id)arg2 needsToLowercase:(bool)arg3;
 + (id)regexPatternForLanguageID:(id)arg1 eventVocabularyArray:(id)arg2;
++ (id)regularExpressionWithKey:(id)arg1 generator:(id /* block */)arg2;
 
 @end

@@ -36,6 +36,7 @@
     NSIndexPath * _focusedCellIndexPath;
     int  _focusedViewType;
     NSMutableDictionary * _headerFooterClassDict;
+    NSMutableDictionary * _headerFooterNibExternalObjectsTables;
     NSMutableDictionary * _headerFooterNibMap;
     NSMutableArray * _hiddenSeparatorIndexPaths;
     NSMutableArray * _highlightedIndexPaths;
@@ -286,6 +287,7 @@
         unsigned int prefetchDataSourceWasNonNil : 1; 
         unsigned int prefetchDataSourcePrefetchRowsAtIndexPaths : 1; 
         unsigned int prefetchDataSourceCancelPrefetchingForRowsAtIndexPaths : 1; 
+        unsigned int enableModernResizableGroupTableViewCellBackgroundImages : 1; 
     }  _tableFlags;
     UIView * _tableFooterView;
     UIView * _tableHeaderBackgroundView;
@@ -376,6 +378,7 @@
 @property (getter=_isTableHeaderAutohiding, nonatomic, readonly) bool isTableHeaderAutohiding;
 @property (getter=_keepsFirstResponderVisibleOnBoundsChange, setter=_setKeepsFirstResponderVisibleOnBoundsChange:, nonatomic) bool keepsFirstResponderVisibleOnBoundsChange;
 @property (getter=_manuallyManagesSwipeUI, setter=_setManuallyManagesSwipeUI:, nonatomic) bool manuallyManagesSwipeUI;
+@property (getter=_marginWidth, nonatomic, readonly) double marginWidth;
 @property (nonatomic, readonly) UIColor *multiselectCheckmarkColor;
 @property (nonatomic, readonly) long long numberOfSections;
 @property (nonatomic, readonly) bool overlapsSectionHeaderViews;
@@ -462,7 +465,7 @@
 - (void)_beginAnimatingCells;
 - (void)_beginDisplayingCellContentStringCallout;
 - (void)_beginReorderAnimationForCell:(id)arg1;
-- (void)_beginReorderingForCell:(id)arg1;
+- (void)_beginReorderingForCell:(id)arg1 touch:(id)arg2;
 - (bool)_beginTrackingWithEvent:(id)arg1;
 - (double)_bottomPadding;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForIndexOverlay;
@@ -559,11 +562,12 @@
 - (bool)_displaysCellContentStringsOnTapAndHold;
 - (void)_downArrowLongPress:(id)arg1;
 - (void)_downArrowTap:(id)arg1;
-- (void)_draggingReorderingCell:(id)arg1 yDelta:(double)arg2;
+- (void)_draggingReorderingCell:(id)arg1 yDelta:(double)arg2 touch:(id)arg3;
 - (void)_drawExtraSeparator:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)_drawsSeparatorAtTopOfSections;
 - (bool)_drawsTopShadowInGroupedSections;
 - (long long)_editingStyleForRowAtIndexPath:(id)arg1;
+- (bool)_enableModernResizableGroupTableViewCellBackgroundImages;
 - (void)_endAnimatingCells;
 - (void)_endCellAnimationsWithContext:(id)arg1;
 - (void)_endCellReorderAnimation:(bool)arg1 wasCancelled:(bool)arg2;
@@ -650,6 +654,7 @@
 - (void)_moveWithEvent:(id)arg1;
 - (id)_nearestCellToPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_newSectionViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSection:(long long)arg2 isHeader:(bool)arg3;
+- (id)_nibExternalObjectsTablesForType:(int)arg1;
 - (id)_nibMapForType:(int)arg1;
 - (void)_nudgeScroll:(long long)arg1;
 - (void)_numberOfRowsDidChange;
@@ -690,6 +695,7 @@
 - (id)_reorderingSupport;
 - (void)_requestAppropriateFocusUpdate;
 - (void)_resetDragSwipeAndTouchSelectFlags;
+- (void)_resignFirstResponderInDeletedSectionOrRow:(bool)arg1;
 - (void)_resumeReloads;
 - (void)_reuseHeaderFooterView:(id)arg1 isHeader:(bool)arg2 forSection:(long long)arg3;
 - (void)_reusePreviouslyFocusedTableViewSubviewIfNeeded:(id)arg1 viewType:(int)arg2 indexPath:(id)arg3;
@@ -745,7 +751,9 @@
 - (void)_setDrawsSeparatorAtTopOfSections:(bool)arg1;
 - (void)_setDrawsTopShadowInGroupedSections:(bool)arg1;
 - (void)_setEditing:(bool)arg1 animated:(bool)arg2 forced:(bool)arg3;
+- (void)_setEnableModernResizableGroupTableViewCellBackgroundImages:(bool)arg1;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
+- (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfHeaderFooterWithReuseIdentifier:(id)arg2;
 - (void)_setFocusedCell:(id)arg1;
 - (void)_setFocusedCellIndexPath:(id)arg1;
 - (void)_setGestureRecognizerRequiresTableGestureRecognizersToFail:(id)arg1;

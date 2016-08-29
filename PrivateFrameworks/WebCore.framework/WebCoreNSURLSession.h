@@ -13,6 +13,13 @@
             unsigned int m_deletedCount; 
         } m_impl; 
     }  _dataTasks;
+    struct Lock { 
+        struct Atomic<unsigned char> { 
+            struct atomic<unsigned char> { 
+                unsigned char __a_; 
+            } value; 
+        } m_byte; 
+    }  _dataTasksLock;
     struct RetainPtr<id<NSURLSessionDelegate> > { 
         void *m_ptr; 
     }  _delegate;

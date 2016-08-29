@@ -378,10 +378,8 @@
 // Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
 
 + (id)sbs_launchImageInfoPlistKeyModifier:(long long)arg1;
-+ (id)sbs_screenTypes;
 + (id)sbs_snapshotImagePathComponent:(long long)arg1;
 
-- (bool)sbs_isCarScreen;
 - (bool)sbs_isMainScreen;
 - (id)sbs_launchImageInfoPlistKeyModifier;
 - (id)sbs_snapshotImagePathComponent;

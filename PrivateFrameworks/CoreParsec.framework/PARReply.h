@@ -3,6 +3,7 @@
  */
 
 @interface PARReply : NSObject <NSSecureCoding> {
+    NSString * _geoSessionEntityString;
     NSURLRequest * _httpRequest;
     NSURLResponse * _httpResponse;
     NSArray * _rawResponse;
@@ -10,6 +11,7 @@
     PARTask * _task;
 }
 
+@property (nonatomic, copy) NSString *geoSessionEntityString;
 @property (nonatomic, retain) NSURLRequest *httpRequest;
 @property (nonatomic, retain) NSURLResponse *httpResponse;
 @property (nonatomic, retain) NSArray *rawResponse;
@@ -20,11 +22,13 @@
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
+- (id)geoSessionEntityString;
 - (id)httpRequest;
 - (id)httpResponse;
 - (id)initWithCoder:(id)arg1;
 - (id)rawResponse;
 - (double)scale;
+- (void)setGeoSessionEntityString:(id)arg1;
 - (void)setHttpRequest:(id)arg1;
 - (void)setHttpResponse:(id)arg1;
 - (void)setRawResponse:(id)arg1;

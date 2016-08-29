@@ -14,6 +14,7 @@
 }
 
 + (id)_bbProviderDarwinNotifications;
++ (id)_stringForBackgroundTaskAgentJobStatus:(int)arg1;
 + (id)requestedDarwinNotifications;
 + (id)sharedProvider;
 

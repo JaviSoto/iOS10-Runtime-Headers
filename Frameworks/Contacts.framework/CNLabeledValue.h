@@ -91,6 +91,7 @@
 + (id)builtinLabelsForProperty:(id)arg1;
 + (id)defaultLabels;
 + (void)deleteCustomLabel:(id)arg1;
++ (id)localizedDisplayStringForLabel:(id)arg1 propertyName:(id)arg2;
 
 - (Class)contactViewControllerCellClassForPropertyType:(id)arg1;
 - (id)localizedLabel;

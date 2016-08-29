@@ -5,6 +5,8 @@
 @interface MFLibrarySearchableIndex : NSObject <CSSearchableIndexDelegate, MFDiagnosticsGenerator> {
     NSObject<OS_os_activity> * _batchIndexingActivity;
     MFCoalescer * _budgetCoalescer;
+    bool  _clientStateFetched;
+    bool  _coalesceTimerFired;
     NSObject<OS_dispatch_source> * _coalescingTimer;
     CSSearchableIndex * _csIndex;
     unsigned long long  _currentMaximumBatchSize;
@@ -12,7 +14,11 @@
     NSObject<OS_dispatch_queue> * _dataSourceQueue;
     NSString * _indexName;
     NSObject<OS_dispatch_queue> * _indexingQueue;
+    bool  _isActive;
+    bool  _isForeground;
     MFWeakSet * _middleware;
+    bool  _needsRefresh;
+    bool  _needsVerification;
     NSMutableSet * _pendingDomainRemovals;
     _MFLibrarySearchableIndexPendingRemovals * _pendingIdentifierRemovals;
     NSMutableArray * _pendingItems;
@@ -20,18 +26,10 @@
     double  _remainingIndexingBudget;
     long long  _remainingIndexingBudgetOverage;
     long long  _resumeCount;
+    bool  _scheduledProcessing;
+    bool  _scheduledRefresh;
+    bool  _scheduledVerification;
     MFLazyCache * _searchResultsCache;
-    struct { 
-        unsigned int isForeground : 1; 
-        unsigned int isActive : 1; 
-        unsigned int needsRefresh : 1; 
-        unsigned int needsVerification : 1; 
-        unsigned int clientStateFetched : 1; 
-        unsigned int coalesceTimerFired : 1; 
-        unsigned int scheduledProcessing : 1; 
-        unsigned int scheduledRefresh : 1; 
-        unsigned int scheduledVerification : 1; 
-    }  _state;
     unsigned long long  _throttledDataSourceBatchSize;
     unsigned long long  _throttledIndexingBatchSize;
     long long  _transaction;

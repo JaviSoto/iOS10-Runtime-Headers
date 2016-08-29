@@ -42,6 +42,7 @@
 - (id)originalAccessoryView;
 - (struct __SCNetworkReachability { }*)reachability;
 - (id)reachabilityAsObject;
+- (void)refreshOptInStatus;
 - (void)reloadLimitAdTrackingSpecifier;
 - (void)resetAdID;
 - (id)restrictionsChangedObserver;
@@ -58,7 +59,6 @@
 - (void)userDidTapAdPreferences:(id)arg1;
 - (void)userDidTapDoneButton:(id)arg1;
 - (void)userDidTapLearnMoreLink:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

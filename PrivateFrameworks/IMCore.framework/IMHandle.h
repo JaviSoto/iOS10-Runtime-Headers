@@ -160,10 +160,13 @@
 + (id)bestIMHandleInArray:(id)arg1;
 + (id)filterIMHandlesForAccountSiblings:(id)arg1 onAccount:(id)arg2;
 + (id)filterIMHandlesForBestAccountSiblings:(id)arg1;
++ (void)handlesForPersons:(id)arg1 useBestHandle:(bool)arg2 useExtendedAsyncLookup:(bool)arg3 completion:(id /* block */)arg4;
 + (id)imHandlesForIMPerson:(id)arg1;
 + (id)nameOfStatus:(unsigned long long)arg1;
 + (bool)notificationsEnabled;
 + (void)setNotificationsEnabled:(bool)arg1;
++ (void)validHandlesForPersons:(id)arg1 completion:(id /* block */)arg2;
++ (void)validHandlesForPersons:(id)arg1 useExtendedAsyncLookup:(bool)arg2 completion:(id /* block */)arg3;
 
 - (id)ID;
 - (long long)IDStatus;

@@ -27,12 +27,14 @@
         unsigned int likeDislikeLocation : 1; 
         unsigned int publisherArticleVersion : 1; 
         unsigned int userAction : 1; 
+        unsigned int isCoverArticle : 1; 
         unsigned int isDigitalReplicaAd : 1; 
         unsigned int isFreeArticle : 1; 
         unsigned int isGroupedArticle : 1; 
         unsigned int isPaidSubscriberToSourceChannel : 1; 
         unsigned int isUserSubscribedToFeed : 1; 
     }  _has;
+    bool  _isCoverArticle;
     bool  _isDigitalReplicaAd;
     bool  _isFreeArticle;
     bool  _isGroupedArticle;
@@ -80,6 +82,7 @@
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
 @property (nonatomic, readonly) bool hasGroupFeedId;
 @property (nonatomic) bool hasGroupType;
+@property (nonatomic) bool hasIsCoverArticle;
 @property (nonatomic) bool hasIsDigitalReplicaAd;
 @property (nonatomic) bool hasIsFreeArticle;
 @property (nonatomic) bool hasIsGroupedArticle;
@@ -96,6 +99,7 @@
 @property (nonatomic, readonly) bool hasSurfacedBySectionId;
 @property (nonatomic, readonly) bool hasSurfacedByTopicId;
 @property (nonatomic) bool hasUserAction;
+@property (nonatomic) bool isCoverArticle;
 @property (nonatomic) bool isDigitalReplicaAd;
 @property (nonatomic) bool isFreeArticle;
 @property (nonatomic) bool isGroupedArticle;
@@ -156,6 +160,7 @@
 - (bool)hasFeedViewExposureId;
 - (bool)hasGroupFeedId;
 - (bool)hasGroupType;
+- (bool)hasIsCoverArticle;
 - (bool)hasIsDigitalReplicaAd;
 - (bool)hasIsFreeArticle;
 - (bool)hasIsGroupedArticle;
@@ -173,6 +178,7 @@
 - (bool)hasSurfacedByTopicId;
 - (bool)hasUserAction;
 - (unsigned long long)hash;
+- (bool)isCoverArticle;
 - (bool)isDigitalReplicaAd;
 - (bool)isEqual:(id)arg1;
 - (bool)isFreeArticle;
@@ -209,6 +215,7 @@
 - (void)setHasCharacterCount:(bool)arg1;
 - (void)setHasFeedType:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
+- (void)setHasIsCoverArticle:(bool)arg1;
 - (void)setHasIsDigitalReplicaAd:(bool)arg1;
 - (void)setHasIsFreeArticle:(bool)arg1;
 - (void)setHasIsGroupedArticle:(bool)arg1;
@@ -218,6 +225,7 @@
 - (void)setHasPersonalizationTreatmentId:(bool)arg1;
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasUserAction:(bool)arg1;
+- (void)setIsCoverArticle:(bool)arg1;
 - (void)setIsDigitalReplicaAd:(bool)arg1;
 - (void)setIsFreeArticle:(bool)arg1;
 - (void)setIsGroupedArticle:(bool)arg1;

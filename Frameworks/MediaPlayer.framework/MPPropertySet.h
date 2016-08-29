@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) NSSet *properties;
 @property (nonatomic, readonly) NSDictionary *relationships;
 
++ (id)emptyPropertySet;
 + (id)propertySetWithProperties:(id)arg1;
 + (bool)supportsSecureCoding;
 

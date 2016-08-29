@@ -30,6 +30,6 @@
 - (void)setStartTime:(double)arg1;
 - (void)setSubmitted:(bool)arg1;
 - (double)startTime;
-- (void)submittedWithError:(id)arg1;
+- (void)submitAtTime:(double)arg1 error:(id)arg2;
 
 @end

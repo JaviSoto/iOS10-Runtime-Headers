@@ -15,7 +15,7 @@
 - (id)actionForKey:(id)arg1;
 - (void)dealloc;
 - (int)generationID;
-- (id)initWithDisplayList:(struct CGDisplayList { }*)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 matrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 contentsScale:(double)arg4 completionDelegate:(id)arg5 hashKey:(id)arg6 pageNumber:(int)arg7 tileX:(int)arg8 tileY:(int)arg9 pageRef:(struct CGPDFPage { }*)arg10 generationID:(int)arg11;
+- (id)initWithPage:(id)arg1 forPDFView:(id)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 matrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 contentsScale:(double)arg5 completionDelegate:(id)arg6 hashKey:(id)arg7 pageNumber:(int)arg8 tileX:(int)arg9 tileY:(int)arg10 pageRef:(struct CGPDFPage { }*)arg11 generationID:(int)arg12 shouldAntiAlias:(bool)arg13;
 - (bool)isVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atZoomFactor:(double)arg2;
 - (void)recievedIOTile:(id)arg1;
 - (void)setTileOutOfView:(bool)arg1;

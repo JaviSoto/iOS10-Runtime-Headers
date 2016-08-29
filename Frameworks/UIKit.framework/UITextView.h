@@ -5,12 +5,28 @@
 @interface UITextView : UIScrollView <ABText, MPUAutoupdatingTextContainer, UIContentSizeCategoryAdjusting, UIKeyboardInput, UIPreviewItemDelegate, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing, _UITextContainerViewDelegate> {
     bool  _adjustsFontForContentSizeCategory;
     UIAutoscroll * _autoscroll;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _beforeFreezingFrameSize;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _beforeFreezingTextContainerInset;
     _UICharacterStreamingManager * _characterStreamingManager;
     bool  _clearsOnInsertion;
     _UITextContainerView * _containerView;
     long long  _contentSizeUpdateSeqNo;
     CUICatalog * _cuiCatalog;
     unsigned long long  _dataDetectorTypes;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _duringFreezingTextContainerInset;
     double  _firstBaselineOffsetFromTop;
     UIView * _inputAccessoryView;
     UITextInputController * _inputController;
@@ -49,6 +65,7 @@
         unsigned int shouldAutoscrollAboveBottom : 1; 
         unsigned int disableUpdateTextColorOnTraitCollectionChange : 1; 
     }  _tvFlags;
+    bool  _unfreezingTextContainerSize;
 }
 
 @property (setter=MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:, nonatomic) bool MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
@@ -152,6 +169,7 @@
 - (void).cxx_destruct;
 - (void)_addShortcut:(id)arg1;
 - (void)_adjustPreferredFontForCurrentContentSizeCategory;
+- (bool)_allowAnimatedUpdateSelectionRectViews;
 - (void)_baselineOffsetDidChange;
 - (double)_baselineOffsetFromBottom;
 - (void)_cancelDataDetectors;
@@ -176,6 +194,7 @@
 - (double)_firstBaselineOffsetFromTop;
 - (struct CGPoint { double x1; double x2; })_firstGlyphBaselineLeftPointWithLayoutManager:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_firstGlyphBaselineRightPointWithLayoutManager:(id)arg1;
+- (bool)_freezeTextContainerSize;
 - (bool)_getCloseQuoteAnchor:(struct CGPoint { double x1; double x2; }*)arg1;
 - (bool)_getOpenQuoteAnchor:(struct CGPoint { double x1; double x2; }*)arg1;
 - (void)_highlightLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -235,6 +254,7 @@
 - (void)_setDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (void)_setDrawsDebugBaselines:(bool)arg1;
 - (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromOldRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 settingAction:(id /* block */)arg3;
+- (void)_setFreezeTextContainerSize:(bool)arg1;
 - (void)_setInteractiveTextSelectionDisabled:(bool)arg1;
 - (void)_setPreferredMaxLayoutWidth:(double)arg1;
 - (void)_setTextColor:(id)arg1;

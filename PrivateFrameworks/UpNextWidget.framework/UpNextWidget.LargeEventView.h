@@ -3,19 +3,19 @@
  */
 
 @interface UpNextWidget.LargeEventView : UIView {
-    void bottomTravelAdvisoryBaselineDistance;
     void calendarColor;
     void dateInterval;
     void gutterizedEventView;
     void gutterizedViewTapped;
     void location;
+    void mapBaselineDistance;
     void mapImage;
     void mapView;
-    void mapViewHeightConstraint;
     void mapViewTapped;
-    void persistentConstraints;
     void showExpandedMode;
+    void showTravelAdvisoryText;
     void title;
+    void travelAdvisoryBaselineDistance;
     void travelAdvisoryText;
     void travelAdvisoryView;
     void travelAdvisoryViewTapped;
@@ -23,24 +23,25 @@
 
 @property (nonatomic, retain) UIColor *calendarColor;
 @property (nonatomic, retain) NSDateInterval *dateInterval;
-@property (nonatomic, readonly) UIView *forFirstBaselineLayout;
 @property (nonatomic, copy) id /* block */ gutterizedViewTapped;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, retain) UIImage *mapImage;
 @property (nonatomic, copy) id /* block */ mapViewTapped;
 @property (nonatomic) bool showExpandedMode;
+@property (nonatomic) bool showTravelAdvisoryText;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) NSAttributedString *travelAdvisoryText;
 @property (nonatomic, copy) id /* block */ travelAdvisoryViewTapped;
 
-+ (bool)requiresConstraintBasedLayout;
-
 - (id /* block */).cxx_destruct;
 - (id)calendarColor;
 - (id)dateInterval;
+- (double)firstBaselineOffsetFromTop;
 - (id /* block */)gutterizedViewTapped;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
+- (void)layoutSubviews;
 - (id)location;
 - (id)mapImage;
 - (id /* block */)mapViewTapped;
@@ -54,15 +55,15 @@
 - (void)setMapImage:(id)arg1;
 - (void)setMapViewTapped:(id /* block */)arg1;
 - (void)setShowExpandedMode:(bool)arg1;
+- (void)setShowTravelAdvisoryText:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTravelAdvisoryText:(id)arg1;
 - (void)setTravelAdvisoryViewTapped:(id /* block */)arg1;
 - (bool)showExpandedMode;
+- (bool)showTravelAdvisoryText;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
-- (void)transitionTo:(struct CGSize { double x1; double x2; })arg1;
 - (id)travelAdvisoryText;
 - (id /* block */)travelAdvisoryViewTapped;
-- (void)updateConstraints;
-- (id)viewForFirstBaselineLayout;
 
 @end

@@ -19,6 +19,7 @@
     struct { 
         bool isPlaceholderEntryAtIndexPath; 
         bool fontNameForEntryAtIndexPath; 
+        bool contentsRectForItemAtIndexPathForAspectRatio; 
     }  _delegateRespondsTo;
     struct PXSimpleIndexPath { 
         unsigned long long dataSourceIdentifier; 

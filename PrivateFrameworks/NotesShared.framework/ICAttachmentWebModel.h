@@ -22,7 +22,7 @@
 - (void)downloadWebIcons:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchMetadataFromURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)generateAsynchronousPreviews;
-- (void)generatePreviews;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
 - (bool)hasPreviews;

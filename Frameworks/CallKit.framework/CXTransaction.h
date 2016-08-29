@@ -28,6 +28,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithAction:(id)arg1;
+- (id)initWithActions:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (bool)isComplete;
 - (id)mutableActions;

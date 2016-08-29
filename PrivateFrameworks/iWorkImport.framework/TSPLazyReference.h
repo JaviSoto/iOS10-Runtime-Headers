@@ -11,6 +11,7 @@
         unsigned int allowUnknownObject : 1; 
     }  _flags;
     long long  _identifier;
+    Class  _objectClass;
     TSPObject * _strongObject;
     TSPObject * _weakObject;
 }
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) long long identifier;
 @property (nonatomic) bool isExternal;
 @property (nonatomic, readonly) id object;
+@property (nonatomic) Class objectClass;
 @property (nonatomic, readonly) id objectIfLoaded;
 @property (nonatomic, readonly) NSUUID *objectUUID;
 @property (nonatomic, readonly) long long ownershipMode;
@@ -32,10 +34,11 @@
 
 - (void).cxx_destruct;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2;
+- (id)additionalDescription;
 - (id)component;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)debugDescription;
 - (id)delegate;
+- (id)description;
 - (bool)discardStrongObjectIfPossible;
 - (unsigned long long)hash;
 - (long long)identifier;
@@ -49,6 +52,7 @@
 - (bool)isEqualToLazyReference:(id)arg1;
 - (bool)isExternal;
 - (id)object;
+- (Class)objectClass;
 - (id)objectIfLoaded;
 - (id)objectUUID;
 - (long long)ownershipMode;
@@ -58,6 +62,7 @@
 - (void)setComponent:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsExternal:(bool)arg1;
+- (void)setObjectClass:(Class)arg1;
 - (void)setStrongObject:(id)arg1;
 - (id)strongObject;
 - (id)weakObject;

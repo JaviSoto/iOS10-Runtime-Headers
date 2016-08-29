@@ -12,8 +12,10 @@
     HMDResidentDevice * _primaryResidentDevice;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
+    bool  _residentAvailable;
     NSMutableSet * _residentDevices;
     HMFTimer * _residentMonitorTimer;
+    bool  _residentSupported;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -33,6 +35,7 @@
 @property (getter=isResidentAvailable, nonatomic, readonly) bool residentAvailable;
 @property (nonatomic, readonly, copy) NSArray *residentDevices;
 @property (retain) HMFTimer *residentMonitorTimer;
+@property (getter=isResidentSupported, nonatomic) bool residentSupported;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
@@ -44,17 +47,20 @@
 - (void)_electResidentDevice;
 - (void)_handleResidentDeviceUpdateEnabled:(id)arg1;
 - (void)_handleResidentElectionParameters:(id)arg1;
+- (bool)_isAtHome;
 - (void)_pingResident;
 - (void)_registerForMessages;
+- (void)_run;
 - (void)_setupSessionWithPrimaryResidentDevice;
-- (void)_start;
 - (void)_startMonitoringResident;
 - (void)_stopMonitoringResident;
 - (void)_teardownSessionWithPrimaryResidentDevice;
 - (void)_updateChargingTimer;
 - (void)_updateDischargingTimer:(long long)arg1;
+- (void)_updateReachability:(bool)arg1 forResidentDevice:(id)arg2;
 - (void)addResidentDevice:(id)arg1;
 - (void)atHomeLevelChanged:(long long)arg1;
+- (id)availableResidentDevices;
 - (id)clientQueue;
 - (long long)compareResidentDevice:(id)arg1 electionParameters:(id)arg2;
 - (void)configureWithHome:(id)arg1;
@@ -63,10 +69,13 @@
 - (id)delegate;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
+- (id)dumpState;
 - (void)electResidentDevice;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleBatteryLevelChange:(id)arg1;
 - (void)handleBatteryStateChange:(id)arg1;
+- (void)handleCurrentDeviceChanged:(id)arg1;
+- (void)handleCurrentDeviceUpdated:(id)arg1;
 - (void)handleResidentDeviceIsNotReachable:(id)arg1;
 - (void)handleResidentDeviceIsReachable:(id)arg1;
 - (id)home;
@@ -74,6 +83,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isConfirming;
 - (bool)isResidentAvailable;
+- (bool)isResidentSupported;
 - (long long)lastAtHomeLevel;
 - (id)logIdentifier;
 - (bool)mergeObject:(id)arg1;
@@ -97,9 +107,12 @@
 - (void)setHome:(id)arg1;
 - (void)setLastAtHomeLevel:(long long)arg1;
 - (void)setPrimaryResidentDevice:(id)arg1;
+- (void)setResidentAvailable:(bool)arg1;
 - (void)setResidentDevices:(id)arg1;
 - (void)setResidentMonitorTimer:(id)arg1;
+- (void)setResidentSupported:(bool)arg1;
 - (id)shortDescription;
 - (void)timerDidFire:(id)arg1;
+- (void)updateResidentAvailability;
 
 @end

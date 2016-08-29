@@ -24,7 +24,7 @@
 - (void)_reallyActivateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 isTrusted:(bool)arg5 sequenceNumber:(unsigned long long)arg6 cacheGUID:(id)arg7 ourSequenceNumber:(unsigned long long)arg8 ourCacheGUID:(id)arg9 withResult:(id /* block */)arg10;
 - (bool)_requireEntitlementToOpenURL:(id)arg1;
 - (bool)_shouldPendRequestForClientSequenceNumber:(unsigned long long)arg1 clientCacheGUID:(id)arg2 ourSequenceNumber:(unsigned long long)arg3 ourCacheGUID:(id)arg4;
-- (void)_terminateProcess:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4;
+- (void)_terminateProcess:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
 - (void)activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id /* block */)arg5;
 - (void)canActivateApplication:(id)arg1 source:(id)arg2 withResult:(id /* block */)arg3;
 - (void)dataReset:(id)arg1 completion:(id /* block */)arg2;
@@ -45,7 +45,8 @@
 - (void)shutdownAndReboot:(bool)arg1;
 - (void)shutdownWithOptions:(unsigned long long)arg1;
 - (id)systemApplicationBundleIdentifier;
-- (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5;
+- (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(id /* block */)arg6;
 - (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5;
+- (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(id /* block */)arg6;
 
 @end

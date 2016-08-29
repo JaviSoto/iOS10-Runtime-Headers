@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSendMessageIntent : INIntent <INSendMessageIntent>
+@interface INSendMessageIntent : INIntent <INSendMessageIntentExport>
 
 @property (nonatomic, readonly, copy) NSString *content;
 @property (readonly, copy) NSString *debugDescription;

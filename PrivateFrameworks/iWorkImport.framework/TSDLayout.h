@@ -74,6 +74,7 @@
 - (id)additionalGuides;
 - (id)additionalLayoutsForRepCreation;
 - (struct CGPoint { double x1; double x2; })alignmentFrameOriginForFixingInterimPosition;
+- (bool)allowIntersectionOfChildLayout:(id)arg1;
 - (bool)allowsConnections;
 - (void)beginDrag;
 - (void)beginDynamicOperation;
@@ -146,6 +147,7 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })originalTransformForProvidingGuides;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })originalTransformInRoot;
 - (void)p_invalidateConnectedLayouts;
+- (struct CGSize { double x1; double x2; })p_newMaxInlineFrameSize;
 - (void)p_recursiveInvalidate;
 - (void)p_registerWithLayoutController:(id)arg1;
 - (void)p_unregisterWithLayoutController:(id)arg1;
@@ -159,6 +161,7 @@
 - (id)pureGeometryInParent;
 - (id)pureGeometryInRoot;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pureTransformInRoot;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForCalculatingActivityLineEndpoint;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForZoomingToSelectionPath:(id)arg1;
@@ -171,6 +174,7 @@
 - (id)rootLayout;
 - (double)scaleForInlineClampingUnrotatedSize:(struct CGSize { double x1; double x2; })arg1 withGeometry:(id)arg2;
 - (id)searchTarget;
+- (bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (void)setAdjustedInterimPositionX:(double)arg1;
 - (void)setAdjustedInterimPositionY:(double)arg1;
 - (void)setDynamicGeometry:(id)arg1;

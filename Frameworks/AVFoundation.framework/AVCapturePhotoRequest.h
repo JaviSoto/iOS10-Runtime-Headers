@@ -12,7 +12,6 @@
     unsigned long long  _firedRawPhotoCallbacksCount;
     struct opaqueCMSampleBuffer { } * _previewSampleBuffer;
     struct __IOSurface { } * _previewSurface;
-    unsigned long long  _previewSurfaceSize;
     AVCaptureResolvedPhotoSettings * _resolvedSettings;
     AVCapturePhotoSettings * _unresolvedSettings;
     bool  _usesIOSurfaceDelegateCallbacks;
@@ -27,7 +26,6 @@
 @property (nonatomic) unsigned long long firedRawPhotoCallbacksCount;
 @property (nonatomic, retain) struct opaqueCMSampleBuffer { }*previewSampleBuffer;
 @property (nonatomic, retain) struct __IOSurface { }*previewSurface;
-@property (nonatomic) unsigned long long previewSurfaceSize;
 @property (nonatomic, retain) AVCaptureResolvedPhotoSettings *resolvedSettings;
 @property (readonly) AVCapturePhotoSettings *unresolvedSettings;
 @property (nonatomic, readonly) bool usesIOSurfaceDelegateCallbacks;
@@ -46,14 +44,12 @@
 - (id)initWithDelegate:(id)arg1 settings:(id)arg2;
 - (struct opaqueCMSampleBuffer { }*)previewSampleBuffer;
 - (struct __IOSurface { }*)previewSurface;
-- (unsigned long long)previewSurfaceSize;
 - (id)resolvedSettings;
 - (void)setFiredCallbackFlags:(unsigned int)arg1;
 - (void)setFiredPhotoCallbacksCount:(unsigned long long)arg1;
 - (void)setFiredRawPhotoCallbacksCount:(unsigned long long)arg1;
 - (void)setPreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)setPreviewSurface:(struct __IOSurface { }*)arg1;
-- (void)setPreviewSurfaceSize:(unsigned long long)arg1;
 - (void)setResolvedSettings:(id)arg1;
 - (id)unresolvedSettings;
 - (bool)usesIOSurfaceDelegateCallbacks;

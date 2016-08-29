@@ -11,6 +11,7 @@
 
 - (void).cxx_destruct;
 - (id)_icon;
+- (id)_iconAccessibilityLabel;
 - (Class)_labeledValueExpectedValueType;
 - (id)_valueString;
 - (bool)optsOutOfAds;

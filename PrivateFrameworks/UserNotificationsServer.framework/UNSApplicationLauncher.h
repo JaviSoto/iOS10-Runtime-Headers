@@ -43,9 +43,9 @@
 - (id)applicationWorkStore;
 - (void)backgroundLaunchApplication:(id)arg1 withContentAvailablePush:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)backgroundLaunchApplication:(id)arg1 withNewsstandPush:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)backgroundLaunchApplication:(id)arg1 withResponse:(id)arg2;
+- (void)backgroundLaunchApplication:(id)arg1 withResponse:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
-- (void)foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4;
+- (void)foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)initWithSystemService:(id)arg1 locationMonitor:(id)arg2 systemStateProvider:(id)arg3;
 - (double)queryBackgroundFetchDuration;
 - (void)setAppLaunchStats:(id)arg1;

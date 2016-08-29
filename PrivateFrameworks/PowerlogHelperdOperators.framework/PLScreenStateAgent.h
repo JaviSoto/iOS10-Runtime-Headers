@@ -16,10 +16,8 @@
 @property (retain) FBSDisplayLayoutMonitor *mainDisplayMonitor;
 @property (readonly) Class superclass;
 
-+ (id)entryAggregateDefinitionBacklightEvent;
 + (id)entryAggregateDefinitionForeground;
 + (id)entryAggregateDefinitions;
-+ (id)entryEventBackwardDefinitionFrameCount;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventForwardScreenState;

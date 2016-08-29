@@ -41,6 +41,7 @@
 - (void)livePhotoViewDidBeginHinting:(id)arg1;
 - (void)livePhotoViewDidEndPlayingVitality:(id)arg1;
 - (id)loadView;
+- (void)removeAllAnimations;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

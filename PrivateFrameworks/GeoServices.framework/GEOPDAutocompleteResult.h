@@ -8,11 +8,13 @@
         unsigned int enableRap : 1; 
     }  _has;
     NSMutableArray * _sections;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool enableRap;
 @property (nonatomic) bool hasEnableRap;
 @property (nonatomic, retain) NSMutableArray *sections;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)sectionsType;
 
@@ -35,6 +37,7 @@
 - (void)setEnableRap:(bool)arg1;
 - (void)setHasEnableRap:(bool)arg1;
 - (void)setSections:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

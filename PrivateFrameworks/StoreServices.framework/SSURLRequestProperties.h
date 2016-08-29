@@ -56,6 +56,7 @@
 @property (readonly) bool canBeResolved;
 @property (readonly, copy) NSString *clientAuditBundleIdentifier;
 @property (readonly, copy) NSData *clientAuditTokenData;
+@property (readonly) NSString *clientBundleIdentifier;
 @property (readonly, copy) NSString *clientIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -98,6 +99,7 @@
 - (bool)canBeResolved;
 - (id)clientAuditBundleIdentifier;
 - (id)clientAuditTokenData;
+- (id)clientBundleIdentifier;
 - (id)clientIdentifier;
 - (id)copyURLRequest;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

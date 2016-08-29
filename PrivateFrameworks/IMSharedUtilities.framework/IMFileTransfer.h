@@ -5,6 +5,7 @@
 @interface IMFileTransfer : NSObject {
     NSDictionary * _AuxTranscoderUserInfo;
     NSString * _accountID;
+    bool  _appMessageFallbackImage;
     NSDictionary * _attributionInfo;
     unsigned long long  _averageTransferRate;
     NSDate * _createdDate;
@@ -51,6 +52,7 @@
 @property (setter=_setLastUpdatedInterval:, nonatomic) double _lastUpdatedInterval;
 @property (setter=_setNeedsWrapper:, nonatomic) bool _needsWrapper;
 @property (nonatomic, retain) NSString *accountID;
+@property (nonatomic) bool appMessageFallbackImage;
 @property (nonatomic, retain) NSDictionary *attributionInfo;
 @property (nonatomic) unsigned long long averageTransferRate;
 @property (nonatomic, readonly) bool canBeAccepted;
@@ -123,6 +125,7 @@
 - (void)_setTransferState:(long long)arg1;
 - (bool)_updateWithDictionaryRepresentation:(id)arg1;
 - (id)accountID;
+- (bool)appMessageFallbackImage;
 - (id)attributionInfo;
 - (unsigned long long)averageTransferRate;
 - (bool)canBeAccepted;
@@ -156,6 +159,7 @@
 - (id)mimeType;
 - (id)otherPerson;
 - (void)setAccountID:(id)arg1;
+- (void)setAppMessageFallbackImage:(bool)arg1;
 - (void)setAttributionInfo:(id)arg1;
 - (void)setAuxTranscoderUserInfo:(id)arg1;
 - (void)setAverageTransferRate:(unsigned long long)arg1;

@@ -12,6 +12,7 @@
 - (double)launchPopularityWithBundleId:(NSString *)arg1 date:(NSDate *)arg2;
 - (double)overallLaunchPopularityForBundleId:(NSString *)arg1;
 - (double)relativeLaunchPopularityWithBundleId:(NSString *)arg1 date:(NSDate *)arg2;
+- (double)relativeLaunchPopularityWithBundleId:(NSString *)arg1 date:(NSDate *)arg2 andFilterSpan:(unsigned int)arg3;
 - (bool)removeAllHistoryForBundleId:(NSString *)arg1;
 - (void)removeLaunchWithBundleId:(NSString *)arg1 withDate:(NSDate *)arg2 timeZone:(NSTimeZone *)arg3;
 - (void)resetData;

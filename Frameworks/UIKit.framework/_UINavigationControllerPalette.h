@@ -114,5 +114,6 @@
 
 - (void)SKUI_beginHidingPaletteShadow;
 - (void)SKUI_endHidingPaletteShadow;
+- (void)resetBackgroundConstraints;
 
 @end

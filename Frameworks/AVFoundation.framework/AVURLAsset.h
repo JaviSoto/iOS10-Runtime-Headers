@@ -59,7 +59,6 @@
 - (void)_setAssetInspectorLoader:(id)arg1;
 - (void)_setUserInfoObject:(id)arg1;
 - (bool)_shouldOptimizeAccessForLinearMoviePlayback;
-- (id)_tracks;
 - (void)_tracksDidChange;
 - (id)assetCache;
 - (id)cacheKey;

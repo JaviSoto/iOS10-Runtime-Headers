@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetUserCurrentRestaurantReservationBookingsIntent : INIntent <NSCopying> {
+@interface INGetUserCurrentRestaurantReservationBookingsIntent : INIntent <INGetUserCurrentRestaurantReservationBookingsIntentExport, NSCopying> {
     NSDate * _earliestBookingDateForResults;
     NSNumber * _maximumNumberOfResults;
     NSString * _reservationIdentifier;
     INRestaurant * _restaurant;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *earliestBookingDateForResults;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSNumber *maximumNumberOfResults;
 @property (nonatomic, copy) NSString *reservationIdentifier;
 @property (nonatomic, copy) INRestaurant *restaurant;
+@property (readonly) Class superclass;
 
 + (id)intentDescription;
 + (bool)supportsSecureCoding;

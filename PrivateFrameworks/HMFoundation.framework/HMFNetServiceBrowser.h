@@ -8,6 +8,7 @@
     NSHashTable * _cachedNetServices;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFNetServiceBrowserDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _domain;
     NSNetServiceBrowser * _internal;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFNetServiceBrowserDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *domain;
 @property (readonly) unsigned long long hash;
@@ -41,6 +43,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
+- (id)delegateQueue;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
 - (id)domain;
@@ -54,6 +57,9 @@
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowserWillSearch:(id)arg1;
+- (void)notifyDelegateBrowserStoppedWithError:(id)arg1;
+- (void)notifyDelegateOfAddedService:(id)arg1;
+- (void)notifyDelegateOfRemovedService:(id)arg1;
 - (id)propertyQueue;
 - (void)removeNetServiceFromCache:(id)arg1;
 - (id)serviceType;

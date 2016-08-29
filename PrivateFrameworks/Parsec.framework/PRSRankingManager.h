@@ -23,11 +23,11 @@
 + (id)quickGlanceBundleIds;
 
 - (void).cxx_destruct;
-- (void)adjustScoresUsingCategoryEngagement:(id)arg1 forTopScores:(id)arg2 forBottomScores:(id)arg3 query:(id)arg4 logInfo:(id)arg5;
-- (id)chooseTopHitsWithMaxCount:(unsigned long long)arg1 disabledGroups:(id)arg2 topHit:(id)arg3 queryString:(id)arg4 cepData:(id)arg5 cumulativeTopHitSet:(id)arg6 localResults:(id)arg7;
+- (void)adjustScoresUsingCategoryEngagement:(id)arg1 forTopScores:(id)arg2 forBottomScores:(id)arg3 query:(id)arg4 logInfo:(id)arg5 usingRankingKnobs:(id)arg6;
+- (id)chooseTopHitsWithMaxCount:(unsigned long long)arg1 disabledGroups:(id)arg2 topHit:(id)arg3 queryString:(id)arg4 cepData:(id)arg5 cumulativeTopHitSet:(id)arg6 sortedResults:(id)arg7;
 - (id)combinedBottomScoreOrder;
 - (id)combinedTopScoreOrder;
-- (void)getRankedCategoriesForQuery:(id)arg1 meanScores:(id)arg2 maxScores:(id)arg3 standardDeviation:(id)arg4 queryIndependentProbabilities:(id)arg5 queryDependentProbabilities:(id)arg6 sectionHeaderToBundleIdMapping:(id)arg7 parsecResultOrdering:(id)arg8 rankingKnobs:(id)arg9 placements:(id)arg10 allowLocal:(bool)arg11 topCategories:(id*)arg12 bottomCategories:(id*)arg13 blacklistedCategories:(id*)arg14 scoresForFeedback:(id*)arg15 scoreToSendInFeedback:(long long)arg16 sessionIdentifier:(unsigned long long)arg17 categoryEngagements:(id)arg18 logString:(id)arg19 cepsUsed:(id)arg20 minimumCEPSource:(id)arg21;
+- (void)getRankedCategoriesForQuery:(id)arg1 meanScores:(id)arg2 maxScores:(id)arg3 standardDeviation:(id)arg4 queryIndependentProbabilities:(id)arg5 queryDependentProbabilities:(id)arg6 sectionHeaderToBundleIdMapping:(id)arg7 parsecResultOrdering:(id)arg8 rankingKnobs:(id)arg9 placements:(id)arg10 allowLocal:(bool)arg11 topCategories:(id*)arg12 bottomCategories:(id*)arg13 blacklistedCategories:(id*)arg14 scoresForFeedback:(id*)arg15 scoreToSendInFeedback:(long long)arg16 sessionIdentifier:(unsigned long long)arg17 categoryEngagements:(id)arg18 logString:(id)arg19 cepsUsed:(id)arg20 poorTextMatchCategories:(id)arg21;
 - (id)getTopHitsBasedOnCategoryOrder:(id)arg1 groupedResults:(id)arg2 CEPTopHitThreshold:(double)arg3 CEPProbabilityFactor:(double)arg4 topHitCountLimit:(long long)arg5;
 - (id)groupedResults;
 - (id)initWithGroupedResult:(id)arg1 preferredTopHitGroups:(id)arg2 shortcuts:(id)arg3;

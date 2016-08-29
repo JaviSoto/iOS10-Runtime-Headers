@@ -15,6 +15,7 @@
     NSMutableArray * _incomingHIDEventsFiltered;
     id /* block */  _receiveBlock;
     struct __CFRunLoopSource { } * _triggerHandOffEventsRunLoopSource;
+    id /* block */  _watchSystemAppFilter;
 }
 
 @property (nonatomic, retain) <UIEventFetcherSink> *eventFetcherSink;

@@ -35,9 +35,6 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)_shouldResolveEffectiveDepartureDateAndTravelTimeToConservativeDepartureDateAndTravelTime;
-- (bool)_shouldResolveEffectiveDepartureDateToConservativeDepartureDate;
-- (bool)_shouldResolveEffectiveTravelTimeToConservativeTravelTime;
 - (id)aggressiveDepartureDate;
 - (double)aggressiveTravelTime;
 - (id)conservativeDepartureDate;

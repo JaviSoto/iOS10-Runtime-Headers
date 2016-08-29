@@ -8,7 +8,6 @@
     PHFetchResult * _keyAssetFetchResult;
     NSString * _localizedDateText;
     NSString * _localizedTitle;
-    PHAsset * _primaryAsset;
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;

@@ -8,6 +8,7 @@
     unsigned long long  _dataAlgorithm;
     unsigned long long  _fragmentCount;
     unsigned long long  _fragmentWidth;
+    bool  _keyPatternsAllowed;
     NSString * _noiseDistribution;
     NSDictionary * _parameterDictionary;
     _DPValueRange * _possibleRange;
@@ -24,6 +25,7 @@
 @property (nonatomic, readonly) unsigned long long dataAlgorithm;
 @property (nonatomic, readonly) unsigned long long fragmentCount;
 @property (nonatomic, readonly) unsigned long long fragmentWidth;
+@property (nonatomic, readonly) bool keyPatternsAllowed;
 @property (nonatomic, readonly, copy) NSString *noiseDistribution;
 @property (nonatomic, readonly) NSDictionary *parameterDictionary;
 @property (nonatomic, readonly) _DPValueRange *possibleRange;
@@ -48,6 +50,7 @@
 - (unsigned long long)fragmentWidth;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
+- (bool)keyPatternsAllowed;
 - (id)noiseDistribution;
 - (id)parameterDictionary;
 - (id)possibleRange;

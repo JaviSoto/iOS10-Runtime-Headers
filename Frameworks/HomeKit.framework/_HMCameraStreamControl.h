@@ -25,6 +25,7 @@
 - (void)_startStream;
 - (void)_stopStream;
 - (id)cameraStream;
+- (void)dealloc;
 - (id)delegate;
 - (void)homedRestarted;
 - (id)initWithCameraProfile:(id)arg1 service:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 home:(id)arg6 profileUniqueIdentifier:(id)arg7;

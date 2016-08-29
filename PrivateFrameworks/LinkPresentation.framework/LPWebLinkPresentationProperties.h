@@ -5,16 +5,14 @@
 @interface LPWebLinkPresentationProperties : NSObject <LPLinkPresentationPropertyProvider> {
     UIColor * _backgroundColor;
     LPCaptionBarPresentationProperties * _captionBar;
+    LPiTunesPlaybackInformation * _iTunesPlaybackInformation;
     LPImage * _icon;
     LPImage * _image;
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
     bool  _preliminary;
     NSString * _quotedText;
-    NSString * _storeIdentifier;
-    NSString * _storefrontIdentifier;
     long long  _style;
-    bool  _supportsiTunesPlayback;
     LPVideo * _video;
 }
 
@@ -23,22 +21,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) LPiTunesPlaybackInformation *iTunesPlaybackInformation;
 @property (nonatomic, retain) LPImage *icon;
 @property (nonatomic, retain) LPImage *image;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaBottomCaptionBar;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaTopCaptionBar;
 @property (getter=isPreliminary, nonatomic) bool preliminary;
 @property (nonatomic, copy) NSString *quotedText;
-@property (nonatomic, copy) NSString *storeIdentifier;
-@property (nonatomic, copy) NSString *storefrontIdentifier;
 @property (nonatomic) long long style;
 @property (readonly) Class superclass;
-@property (nonatomic) bool supportsiTunesPlayback;
 @property (nonatomic, retain) LPVideo *video;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
 - (id)captionBar;
+- (id)iTunesPlaybackInformation;
 - (id)icon;
 - (id)image;
 - (bool)isPreliminary;
@@ -47,21 +44,16 @@
 - (id)quotedText;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCaptionBar:(id)arg1;
+- (void)setITunesPlaybackInformation:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setMediaBottomCaptionBar:(id)arg1;
 - (void)setMediaTopCaptionBar:(id)arg1;
 - (void)setPreliminary:(bool)arg1;
 - (void)setQuotedText:(id)arg1;
-- (void)setStoreIdentifier:(id)arg1;
-- (void)setStorefrontIdentifier:(id)arg1;
 - (void)setStyle:(long long)arg1;
-- (void)setSupportsiTunesPlayback:(bool)arg1;
 - (void)setVideo:(id)arg1;
-- (id)storeIdentifier;
-- (id)storefrontIdentifier;
 - (long long)style;
-- (bool)supportsiTunesPlayback;
 - (id)video;
 
 @end

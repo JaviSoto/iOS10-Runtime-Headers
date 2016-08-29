@@ -10,8 +10,9 @@
     NSPointerArray * _nowPlayingInfoHandlers;
     NSPointerArray * _playbackErrorObservers;
     NSPointerArray * _playbackIntentObservers;
-    AVPlayer * _playerForAVPlayerLayer;
+    bool  _restoringPlaybackState;
     long long  _state;
+    AVPlayerLayer * _videoLayer;
 }
 
 @property (nonatomic, readonly, copy) NSString *activeRouteName;
@@ -21,8 +22,9 @@
 @property (nonatomic, readonly, copy) NSArray *nowPlayingInfoHandlers;
 @property (nonatomic, readonly, copy) NSArray *playbackErrorObservers;
 @property (nonatomic, readonly, copy) NSArray *playbackIntentObservers;
-@property (nonatomic, readonly) AVPlayer *playerForAVPlayerLayer;
+@property (getter=isRestoringPlaybackState, nonatomic, readonly) bool restoringPlaybackState;
 @property (nonatomic) long long state;
+@property (nonatomic, readonly) AVPlayerLayer *videoLayer;
 
 + (Class)queueRequestOperationClass;
 
@@ -33,15 +35,18 @@
 - (id)commandCenter;
 - (id)currentContainer;
 - (id)currentItem;
+- (bool)isRestoringPlaybackState;
 - (id)nowPlayingInfoHandlers;
 - (void)performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (id)playbackErrorObservers;
 - (id)playbackIntentObservers;
-- (id)playerForAVPlayerLayer;
+- (void)preservePlaybackStateImmediately;
 - (void)recordLyricsViewEvent:(id)arg1;
 - (void)registerNowPlayingInfoHandler:(id)arg1;
 - (void)registerPlaybackErrorObserver:(id)arg1;
 - (void)registerPlaybackIntentObserver:(id)arg1;
+- (void)restorePlaybackStateCompletionHandler:(id /* block */)arg1;
+- (void)schedulePlaybackStatePreservation;
 - (void)setCommandCenter:(id)arg1;
 - (void)setCurrentContainer:(id)arg1;
 - (void)setCurrentItem:(id)arg1;
@@ -50,5 +55,6 @@
 - (void)unregisterNowPlayingInfoHandler:(id)arg1;
 - (void)unregisterPlaybackErrorObserver:(id)arg1;
 - (void)unregisterPlaybackIntentObserver:(id)arg1;
+- (id)videoLayer;
 
 @end

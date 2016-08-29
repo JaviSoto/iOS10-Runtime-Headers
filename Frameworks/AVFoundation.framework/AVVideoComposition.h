@@ -65,5 +65,6 @@
 - (void)setRenderSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSourceTrackIDForFrameTiming:(int)arg1;
 - (int)sourceTrackIDForFrameTiming;
+- (void)videoCompositionOutputColorPropertiesWithCustomCompositor:(id)arg1 formatDescriptions:(id)arg2 colorPrimaries:(id*)arg3 transferFunction:(id*)arg4 yCbCrMatrix:(id*)arg5;
 
 @end

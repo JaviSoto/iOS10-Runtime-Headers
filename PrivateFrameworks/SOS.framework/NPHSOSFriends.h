@@ -3,7 +3,6 @@
  */
 
 @interface NPHSOSFriends : NSObject {
-    NPSDomainAccessor * _domainAccessor;
     FKFriendsManager * _friendsManager;
 }
 
@@ -18,20 +17,22 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)SOSDestinationForFriend:(id)arg1;
+- (id)SOSDestinationsForFriend:(id)arg1;
+- (id)SOSFormattedDestinationForFriend:(id)arg1 withDestinationNumber:(id)arg2;
 - (id)SOSFriends;
-- (id)SOSFriendsPreferredDestinations;
-- (id)_domainAccessor;
+- (id)SOSFriendsDestinations;
+- (id)_contactFromFriend:(id)arg1;
 - (id)_getPairedDevice;
-- (bool)addContactAsSOSFriend:(id)arg1 preferredDestination:(id)arg2;
+- (bool)_isEmergencyNumber:(id)arg1;
+- (id)_userDefaults;
+- (bool)addContactAsSOSFriend:(id)arg1 destinationNumber:(id)arg2 error:(id*)arg3;
 - (void)contactStoreDidChange;
 - (void)dealloc;
-- (unsigned long long)friendCount;
 - (id)init;
 - (bool)isConfigured;
 - (bool)longPressTriggersEmergencySOS;
 - (bool)notificationEnabledAndContactsExist;
-- (void)removeSOSFriend:(id)arg1;
+- (void)removeSOSFriend:(id)arg1 destinationNumber:(id)arg2;
 - (void)setConfigured:(bool)arg1;
 - (void)setLongPressTriggersEmergencySOS:(bool)arg1;
 - (void)setShowDialConfirmationPrompt:(bool)arg1;

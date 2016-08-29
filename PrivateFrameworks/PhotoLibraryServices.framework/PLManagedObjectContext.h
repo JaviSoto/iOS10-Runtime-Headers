@@ -82,7 +82,7 @@
 + (id)managedObjectModelURL;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id /* block */)arg3;
 + (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (void)moveOldStoreAside;
++ (bool)moveOldStoreAside;
 + (bool)moveStoreFromURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 + (void)recordVersion:(int)arg1 forStore:(id)arg2 extraMetadata:(id)arg3;
 + (id)relationshipNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;

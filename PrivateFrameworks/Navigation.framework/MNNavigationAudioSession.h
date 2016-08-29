@@ -24,7 +24,7 @@
 - (bool)_beepIfNecessaryWithShortPromptType:(unsigned long long)arg1;
 - (bool)_headphonesAreInUse;
 - (bool)_isVoiceGuidanceEnabled;
-- (void)_speak:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_speak:(id)arg1 fallbackPrompt:(unsigned long long)arg2 completionBlock:(id /* block */)arg3;
 - (unsigned long long)appContext;
 - (void)beginSession;
 - (void)clearAllAnnouncements;

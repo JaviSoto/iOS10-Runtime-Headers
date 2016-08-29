@@ -41,6 +41,7 @@
 @property (nonatomic, readonly) TSTTableDataList *styleDataList;
 
 - (id)addPasteboardCustomFormat:(id)arg1 toDocument:(id)arg2 updatingPasteboardFormat:(bool)arg3;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDForCellWithRichTextStorage:(id)arg1 inRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (void)clearPasteboardCustomFormatMap;
 - (id)commentStorageDataList;
 - (id)conditionalStyleSetDataList;
@@ -60,7 +61,7 @@
 - (bool)hasFormulaAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (bool)hasPasteboardCustomFormats;
 - (id)importWarningSetDataList;
-- (id)indicesForValueCellsInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)indicesForValueOrCommentCellsInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)initWithArchive:(const struct DataStore { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct HeaderStorage {} *x5; struct Reference {} *x6; struct TileStorage {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; unsigned int x17; struct TableRBTree {} *x18; struct TableRBTree {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Reference {} *x23; unsigned int x24; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (id)initWithOwner:(id)arg1;
 - (void)makePasteboardCustomFormatList;

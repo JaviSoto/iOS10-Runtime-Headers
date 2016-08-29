@@ -6,7 +6,7 @@
     NTKUtilityComplicationFactory * _complicationFactory;
     long long  _dataMode;
     <NTKActivityFaceViewFactoryDelegate> * _delegate;
-    bool  _hasBeenLive;
+    bool  _hasBeenLiveOrOnDeck;
     bool  _isHistoricalDataLoaded;
     bool  _isLoadingData;
     double  _lastWristRaiseTime;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NTKActivityFaceViewFactoryDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) bool hasBeenLive;
+@property (nonatomic) bool hasBeenLiveOrOnDeck;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isHistoricalDataLoaded;
 @property (nonatomic) bool isLoadingData;
@@ -35,6 +35,7 @@
 @property (nonatomic, retain) NSDate *timeTravelDate;
 @property (nonatomic, retain) NTKActivityFaceTimeline *timeline;
 
++ (void)_purgeGLContexts;
 + (id)prelaunchApplicationIdentifiers;
 + (void)prewarm;
 + (bool)userActiveEnergyIsCalories;
@@ -54,7 +55,6 @@
 - (double)_lisaGapForState:(long long)arg1;
 - (void)_loadCurrentEntry;
 - (void)_nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;
-- (void)_purgeGLContexts;
 - (void)_resetWristRaiseAnimationTimeout;
 - (void)_startExtendOperationIfNecessaryForWindow:(id)arg1 withDate:(id)arg2 minBuffer:(double)arg3;
 - (void)_updateDimStateForCurrentTimeline;
@@ -74,11 +74,11 @@
 - (unsigned long long)faceView:(id)arg1 keylineLabelAlignmentForComplicationSlot:(id)arg2;
 - (long long)faceView:(id)arg1 legacyLayoutOverrideforComplicationType:(unsigned long long)arg2 slot:(id)arg3;
 - (id)faceView:(id)arg1 newLegacyViewForComplication:(id)arg2 family:(long long)arg3 slot:(id)arg4;
-- (void)handleTap;
-- (bool)hasBeenLive;
+- (bool)hasBeenLiveOrOnDeck;
 - (id)init;
 - (bool)isHistoricalDataLoaded;
 - (bool)isLoadingData;
+- (void)launchActivityApp;
 - (void)loadLayoutRulesForFaceView:(id)arg1;
 - (void)nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)performWristRaiseAnimation;
@@ -87,7 +87,7 @@
 - (void)setComplicationFactory:(id)arg1;
 - (void)setDataMode:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasBeenLive:(bool)arg1;
+- (void)setHasBeenLiveOrOnDeck:(bool)arg1;
 - (void)setIsHistoricalDataLoaded:(bool)arg1;
 - (void)setIsLoadingData:(bool)arg1;
 - (void)setShowsCanonicalContent:(bool)arg1;

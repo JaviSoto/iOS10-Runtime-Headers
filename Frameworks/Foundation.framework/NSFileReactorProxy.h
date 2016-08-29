@@ -8,7 +8,10 @@
     id  _reactorID;
 }
 
++ (void)_enumerateParentDirectoriesStartingAtURL:(id)arg1 usingBlock:(id /* block */)arg2;
+
 - (id)_clientProxy;
+- (bool)allowedForURL:(id)arg1;
 - (id)client;
 - (void)collectDebuggingInformationWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;

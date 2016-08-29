@@ -49,6 +49,7 @@
 - (void)avChat:(id)arg1 setSendingAudio:(bool)arg2;
 - (void)avChat:(id)arg1 setSendingVideo:(bool)arg2;
 - (void)avChat:(id)arg1 setValidatedIdentity:(struct __SecIdentity { }*)arg2;
+- (void)cancelConferenceForAVChat:(id)arg1;
 - (unsigned long long)capabilities;
 - (unsigned long long)capabilitiesOfCPU;
 - (unsigned long long)capabilitiesOfNetwork;

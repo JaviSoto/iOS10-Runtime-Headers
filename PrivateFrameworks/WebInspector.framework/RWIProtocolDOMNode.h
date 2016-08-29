@@ -23,6 +23,7 @@
 @property (nonatomic) long long pseudoType;
 @property (nonatomic, copy) NSString *publicId;
 @property (nonatomic, copy) NSString *role;
+@property (nonatomic) long long shadowRootType;
 @property (nonatomic, copy) NSArray *shadowRoots;
 @property (nonatomic, copy) NSString *systemId;
 @property (nonatomic, retain) RWIProtocolDOMNode *templateContent;
@@ -68,11 +69,13 @@
 - (void)setPseudoType:(long long)arg1;
 - (void)setPublicId:(id)arg1;
 - (void)setRole:(id)arg1;
+- (void)setShadowRootType:(long long)arg1;
 - (void)setShadowRoots:(id)arg1;
 - (void)setSystemId:(id)arg1;
 - (void)setTemplateContent:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setXmlVersion:(id)arg1;
+- (long long)shadowRootType;
 - (id)shadowRoots;
 - (id)systemId;
 - (id)templateContent;

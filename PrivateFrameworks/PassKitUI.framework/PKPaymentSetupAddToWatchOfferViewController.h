@@ -24,6 +24,7 @@
 - (void)_handleDismissal:(bool)arg1;
 - (void)_hideSpinner;
 - (void)_openAppTapped:(id)arg1;
+- (void)_setIdleTimerDisabled:(bool)arg1;
 - (void)_showSpinner;
 - (long long)context;
 - (void)dealloc;

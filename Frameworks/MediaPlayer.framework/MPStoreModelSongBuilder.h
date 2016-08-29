@@ -9,6 +9,7 @@
         unsigned int duration : 1; 
         unsigned int trackNumber : 1; 
         unsigned int discNumber : 1; 
+        unsigned int grouping : 1; 
         unsigned int explicit : 1; 
         unsigned int artistUploadedContent : 1; 
         unsigned int hasVideo : 1; 
@@ -17,6 +18,7 @@
         unsigned int keepLocalEnableState : 1; 
         unsigned int keepLocalManagedStatus : 1; 
         unsigned int localNetworkFileURL : 1; 
+        unsigned int hasCloudSyncSource : 1; 
         unsigned int homeSharingAssetAvailable : 1; 
         unsigned int localFileAsset : 1; 
         unsigned int libraryAdded : 1; 
@@ -29,6 +31,10 @@
         unsigned int shouldShowComposer : 1; 
         unsigned int storeRedownloadable : 1; 
         unsigned int volumeNormalization : 1; 
+        unsigned int classicalWork : 1; 
+        unsigned int classicalMovement : 1; 
+        unsigned int classicalMovementCount : 1; 
+        unsigned int classicalMovementNumber : 1; 
         struct { 
             unsigned int identifiers : 1; 
             unsigned int title : 1; 

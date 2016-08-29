@@ -70,6 +70,7 @@
 - (id)engineLibrary;
 - (void)getStatusDictionaryWithCompletionHandler:(id /* block */)arg1;
 - (void)getStatusWithCompletionHandler:(id /* block */)arg1;
+- (bool)hasOngoingDownloadOperations;
 - (id)initWithEngineLibrary:(id)arg1;
 - (bool)isClientInForeground;
 - (bool)isMinglingEnabled;

@@ -19,6 +19,7 @@
 @property (retain) NSMutableSet *updatingCities;
 
 - (void).cxx_destruct;
+- (id)_commaSeparatedUpdatingCitiesNames;
 - (void)_handleForecastOperationCompletion:(id)arg1;
 - (id)_queue_executeFetchForCity:(id)arg1 completion:(id /* block */)arg2;
 - (void)cancelAllFetchRequests;

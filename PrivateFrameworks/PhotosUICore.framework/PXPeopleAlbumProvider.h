@@ -2,7 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPeopleAlbumProvider : NSObject <PXPeopleDataSourceDelegate> {
+@interface PXPeopleAlbumProvider : NSObject <PXPeopleDataSourceDelegate, PXPhotoLibraryUIChangeObserver> {
+    long long  _cachedPeopleCount;
+    bool  _didInitiatePeopleCountFetchRequest;
+    bool  _didInitiateReCacheRequest;
     PXPeoplePersonDataSource * _favoriteDS;
     bool  _favoriteLoaded;
     NSMutableDictionary * _fetchedContainers;
@@ -11,12 +14,19 @@
         double width; 
         double height; 
     }  _imageSize;
+    PHFetchResult * _importantPeopleCountFetchResult;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
     bool  _notificationSent;
+    PHFetchResult * _ordinaryPeopleCountFetchResult;
     PXPeoplePersonDataSource * _otherDS;
     bool  _otherLoaded;
+    PHPhotoLibrary * _photoLibrary;
     PXPeopleProgressManager * _progressMgr;
+    id /* block */  _requestCompletion;
 }
 
+@property (nonatomic) long long cachedPeopleCount;
+@property (getter=isCountAvailable, nonatomic, readonly) bool countAvailable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PXPeoplePersonDataSource *favoriteDS;
@@ -25,17 +35,25 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *imageCache;
 @property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic, retain) PHFetchResult *importantPeopleCountFetchResult;
 @property (nonatomic) bool notificationSent;
+@property (nonatomic, retain) PHFetchResult *ordinaryPeopleCountFetchResult;
 @property (nonatomic, retain) PXPeoplePersonDataSource *otherDS;
 @property (nonatomic) bool otherLoaded;
+@property (nonatomic, readonly) long long peopleCount;
 @property (nonatomic, retain) PXPeopleProgressManager *progressMgr;
+@property (nonatomic, copy) id /* block */ requestCompletion;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_asyncAddImagesToCacheWithItems:(id)arg1 completion:(id /* block */)arg2;
+- (void)_invalidateCache;
 - (id)_members;
 - (void)_reCacheImagesCompletion:(id /* block */)arg1;
 - (bool)_shouldShowInterstitialProgress;
+- (void)_updateCachedCountIfNeeded;
+- (void)_updatePeopleCountFetchResultsIfNeeded;
+- (long long)cachedPeopleCount;
 - (void)dealloc;
 - (id)favoriteDS;
 - (bool)favoriteLoaded;
@@ -43,25 +61,33 @@
 - (id)imageCache;
 - (void)imageCacheDidChanged:(id)arg1;
 - (struct CGSize { double x1; double x2; })imageSize;
+- (id)importantPeopleCountFetchResult;
 - (id)init;
-- (void)invalidateImageCache;
+- (bool)isCountAvailable;
 - (bool)notificationSent;
+- (id)ordinaryPeopleCountFetchResult;
 - (id)otherDS;
 - (bool)otherLoaded;
-- (unsigned long long)peopleCount;
+- (long long)peopleCount;
 - (void)peopleDataSource:(id)arg1 didApplyIncrementalChanges:(id)arg2;
 - (void)peopleDataSourceMembersChanged:(id)arg1;
 - (id)peopleViewController;
+- (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)progressMgr;
 - (void)requestAlbumImagesWithSize:(struct CGSize { double x1; double x2; })arg1 completion:(id /* block */)arg2;
+- (id /* block */)requestCompletion;
+- (void)setCachedPeopleCount:(long long)arg1;
 - (void)setFavoriteDS:(id)arg1;
 - (void)setFavoriteLoaded:(bool)arg1;
 - (void)setFetchedContainers:(id)arg1;
 - (void)setImageCache:(id)arg1;
 - (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImportantPeopleCountFetchResult:(id)arg1;
 - (void)setNotificationSent:(bool)arg1;
+- (void)setOrdinaryPeopleCountFetchResult:(id)arg1;
 - (void)setOtherDS:(id)arg1;
 - (void)setOtherLoaded:(bool)arg1;
 - (void)setProgressMgr:(id)arg1;
+- (void)setRequestCompletion:(id /* block */)arg1;
 
 @end

@@ -76,7 +76,7 @@
 - (bool)clientWantsSingleProperty;
 - (id)contactNavigationController;
 - (bool)contactNavigationController:(id)arg1 canSelectContact:(id)arg2;
-- (bool)contactNavigationController:(id)arg1 presentContactViewController:(id)arg2 animated:(bool)arg3;
+- (bool)contactNavigationController:(id)arg1 presentViewController:(id)arg2 animated:(bool)arg3;
 - (bool)contactNavigationController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (bool)contactNavigationController:(id)arg1 shouldSelectContact:(id)arg2 atIndexPath:(id)arg3;
 - (bool)contactNavigationController:(id)arg1 shouldShowCardForContact:(id)arg2;

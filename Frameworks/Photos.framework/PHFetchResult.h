@@ -74,6 +74,7 @@
 - (void)getMediaTypeCounts;
 - (unsigned long long)indexOfObject:(id)arg1;
 - (unsigned long long)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)init;
 - (id)initWithQuery:(id)arg1;
 - (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(bool)arg3 usingManagedObjectContext:(id)arg4;
 - (bool)isRegisteredForChangeNotificationDeltas;

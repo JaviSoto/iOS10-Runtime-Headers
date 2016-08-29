@@ -100,8 +100,10 @@
 - (void)setGridAdapterForName:(id)arg1;
 - (void)setIsFakeSeriesForHiddenDataExport:(bool)arg1;
 - (void)setName:(id)arg1;
+- (void)setNonStyle:(id)arg1;
 - (void)setSeriesStorage:(id)arg1;
 - (void)setSeriesType:(id)arg1;
+- (void)setStyle:(id)arg1;
 - (void)setValue:(id)arg1 forAxisID:(id)arg2 index:(unsigned long long)arg3;
 - (bool)showTrendLineLegendText;
 - (int)specificPropertyForGeneric:(int)arg1;

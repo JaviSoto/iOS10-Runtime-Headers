@@ -42,13 +42,6 @@
     bool  optimizesImagesForOfflineVideoStabilization;
     AVCapturePhotoSettings * photoSettingsForSceneMonitoring;
     NSMutableArray * prepareRequests;
-    struct { 
-        unsigned int imageCount; 
-        unsigned int outputFormat; 
-        unsigned int outputWidth; 
-        unsigned int outputHeight; 
-        unsigned int rawOutputFormat; 
-    }  preparedPhotoProps;
     NSMutableArray * requests;
     struct OpaqueFigSimpleMutex { } * requestsLock;
     NSObject<OS_dispatch_queue> * sceneDetectionObserversDispatchQueue;

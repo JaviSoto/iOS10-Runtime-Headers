@@ -79,6 +79,7 @@
     double  _unfocusedShadowVerticalOffset;
     bool  _useShadowImage;
     _UIFloatingContentSpecialAnimatingView * _visualEffectContainerView;
+    double  _visualEffectContainerViewScaleFactor;
 }
 
 @property (nonatomic) bool _disableOutsetShadowPath;
@@ -112,6 +113,7 @@
 @property (nonatomic) double unfocusedShadowVerticalOffset;
 @property (nonatomic) bool useShadowImage;
 @property (nonatomic, readonly) UIView *visualEffectContainerView;
+@property (nonatomic) double visualEffectContainerViewScaleFactor;
 
 + (id)_defaultFocusAnimationConfiguration;
 + (Class)layerClass;
@@ -199,6 +201,7 @@
 - (void)setUnfocusedShadowRadius:(double)arg1;
 - (void)setUnfocusedShadowVerticalOffset:(double)arg1;
 - (void)setUseShadowImage:(bool)arg1;
+- (void)setVisualEffectContainerViewScaleFactor:(double)arg1;
 - (void)set_disableOutsetShadowPath:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shadowContentsCenter;
 - (struct CGSize { double x1; double x2; })shadowExpansion;
@@ -215,5 +218,6 @@
 - (double)unfocusedShadowVerticalOffset;
 - (bool)useShadowImage;
 - (id)visualEffectContainerView;
+- (double)visualEffectContainerViewScaleFactor;
 
 @end

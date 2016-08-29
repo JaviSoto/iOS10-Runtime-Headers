@@ -59,6 +59,7 @@
     UIImage * _placeHolderImage;
     PXRoundedCornerOverlayView * _roundedCornerOverlayView;
     bool  _shouldPrepareForPlayback;
+    bool  _showsLivePhoto;
     NSString * _subtitle;
     PUTextBannerView * _textBannerView;
     NSString * _title;
@@ -106,6 +107,7 @@
 @property (nonatomic, readonly) bool providesVisualFeedbackOnPress;
 @property (nonatomic, retain) PXRoundedCornerOverlayView *roundedCornerOverlayView;
 @property (nonatomic) bool shouldPrepareForPlayback;
+@property (nonatomic) bool showsLivePhoto;
 @property (nonatomic, retain) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PUTextBannerView *textBannerView;
@@ -213,6 +215,7 @@
 - (void)setPlaceHolderImage:(id)arg1;
 - (void)setRoundedCornerOverlayView:(id)arg1;
 - (void)setShouldPrepareForPlayback:(bool)arg1;
+- (void)setShowsLivePhoto:(bool)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTextBannerVisible:(bool)arg1;
 - (void)setTitle:(id)arg1;
@@ -220,6 +223,7 @@
 - (void)setUseOverlay:(bool)arg1;
 - (void)set_crossfadeImageView:(id)arg1;
 - (bool)shouldPrepareForPlayback;
+- (bool)showsLivePhoto;
 - (void)startPlaybackWithStyle:(long long)arg1;
 - (void)stopPlayback;
 - (id)subtitle;

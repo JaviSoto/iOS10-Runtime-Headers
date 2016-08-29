@@ -13,11 +13,17 @@
     id  _extensionMatchingContext;
     NSString * _inputModeContextIdentifier;
     NSArray * _inputModesWithoutHardwareSupport;
+    NSObject * _keyboardTagForUserNotification;
     UIKeyboardInputMode * _lastUsedInputMode;
+    bool  _loadingExtensions;
+    bool  _needsUpdateExtensions;
+    NSString * _newModeForUserNotification;
     UIKeyboardInputMode * _nextInputModeToUse;
     int  _notifyPasscodeChangedToken;
     bool  _shouldRunContinuousDiscovery;
     bool  _skipExtensionInputModes;
+    struct __CFUserNotification { } * _userNotification;
+    struct __CFRunLoopSource { } * _userNotificationRunLoopSource;
     NSArray * defaultInputModes;
     NSArray * defaultKeyboardInputModes;
     NSArray * defaultNormalizedInputModes;
@@ -93,6 +99,7 @@
 - (id)defaultRawInputModes;
 - (id)delegate;
 - (bool)deviceStateIsLocked;
+- (void)didAcceptAddKeyboardInputMode;
 - (void)didEnterBackground:(id)arg1;
 - (id)enabledInputModeIdentifiers;
 - (id)enabledInputModeIdentifiers:(bool)arg1;
@@ -100,8 +107,12 @@
 - (id)enabledInputModes;
 - (id)extensionInputModes;
 - (id)extensionMatchingContext;
+- (void)extensionsChanged;
 - (id)filteredTVInputModesFromInputModes:(id)arg1;
+- (void)handleLastUsedInputMode:(id)arg1 withNewInputMode:(id)arg2;
+- (void)handleSpecificHardwareKeyboard;
 - (id)hardwareInputMode;
+- (id)hardwareLayoutToUseForInputMode:(id)arg1;
 - (bool)identifierIsValidSystemInputMode:(id)arg1;
 - (id)identifiersFromInputModes:(id)arg1;
 - (id)init;
@@ -109,6 +120,7 @@
 - (id)inputModeForASCIIToggleWithTraits:(id)arg1;
 - (id)inputModeIdentifierLastUsedForLanguage:(id)arg1;
 - (id)inputModeLastUsedForLanguage:(id)arg1;
+- (id)inputModeToAddForKeyboardLanguage:(id)arg1 countryCode:(id)arg2 activeModes:(id)arg3;
 - (id)inputModeWithIdentifier:(id)arg1;
 - (id)inputModesFromIdentifiers:(id)arg1;
 - (id)inputModesWithoutHardwareSupport;
@@ -128,6 +140,7 @@
 - (id)normalizedInputModes;
 - (void)performWithForcedExtensionInputModes:(id /* block */)arg1;
 - (void)performWithoutExtensionInputModes:(id /* block */)arg1;
+- (void)releaseAddKeyboardNotification;
 - (void)saveDeviceUnlockPasscodeInputModes;
 - (void)setCurrentInputMode:(id)arg1;
 - (void)setCurrentInputModeInPreference:(id)arg1;
@@ -147,6 +160,7 @@
 - (void)setNormalizedInputModes:(id)arg1;
 - (void)setShouldRunContinuousDiscovery:(bool)arg1;
 - (bool)shouldRunContinuousDiscovery;
+- (void)showAddKeyboardAlertForInputModeIdentifier:(id)arg1;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startDictationConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)stopDictation;
@@ -154,6 +168,7 @@
 - (id)suggestedInputModesForCurrentLocale:(bool)arg1 fallbackToDefaultInputModes:(bool)arg2;
 - (id)suggestedInputModesForPreferredLanguages;
 - (id)supportedInputModeIdentifiers;
+- (id)supportedInputModesFromArray:(id)arg1;
 - (void)switchToCurrentSystemInputMode;
 - (void)switchToDictationInputMode;
 - (void)updateCurrentAndNextInputModes;

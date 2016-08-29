@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEONavigation : NSObject <GEOComposedRouteObserver> {
+@interface GEONavigation : NSObject {
     NSDate * _arrivalDate;
     GEONavigationDetails * _details;
     NSDate * _displayETA;
@@ -21,8 +21,6 @@
 
 @property (nonatomic) unsigned long long announcementStage;
 @property (nonatomic, readonly) NSDate *arrivalDate;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *destinationName;
 @property (nonatomic) long long displayStep;
 @property (nonatomic, readonly) double distanceRemainingOnRoute;
@@ -33,7 +31,6 @@
 @property (nonatomic, readonly) int guidanceLevelIgnoringTimeCriterion;
 @property (nonatomic) bool guidancePromptsEnabled;
 @property (nonatomic, readonly) bool hasStartedGuidance;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isNavigating;
 @property (nonatomic, readonly) GEOLocation *location;
 @property (nonatomic, readonly) bool locationUnreliable;
@@ -44,7 +41,6 @@
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, readonly) GEORouteMatch *routeMatch;
 @property (nonatomic, readonly) bool shouldSuppressCellularDataAlerts;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeUntilNextAnnouncement;
 
 + (bool)_canRunNavigationBasedOnDistanceForRoute:(id)arg1 withCurrentLocation:(id)arg2;
@@ -67,10 +63,6 @@
 - (void)addObserver:(id)arg1;
 - (unsigned long long)announcementStage;
 - (id)arrivalDate;
-- (void)composedRoute:(id)arg1 changedSelectedRideInClusteredLeg:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
-- (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
-- (void)composedRouteUpdatedSnappedPaths:(id)arg1;
-- (void)composedRouteUpdatedTraffic:(id)arg1;
 - (void)dealloc;
 - (id)destinationName;
 - (long long)displayStep;

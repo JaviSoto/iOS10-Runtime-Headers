@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)addToBlackList:(id)arg1;
+- (id)allAppsLaunchedAfterDate:(id)arg1;
 - (void)appSuspendedTriggerExternalEvent:(id)arg1;
 - (void)appSwitchedObserver:(id)arg1;
 - (void)clearTrendingCache;

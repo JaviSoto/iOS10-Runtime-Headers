@@ -83,6 +83,7 @@
 - (void)_updateWithSubstituteAsset:(id)arg1 shouldSelect:(bool)arg2;
 - (bool)assetExplorerReviewScreenActionManager:(id)arg1 canPerformActionType:(unsigned long long)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;
 - (void)assetExplorerReviewScreenActionManager:(id)arg1 didPressSelectForAsset:(id)arg2;
+- (void)assetExplorerReviewScreenActionManager:(id)arg1 didToggleLivePhoto:(id)arg2;
 - (bool)assetExplorerReviewScreenActionManager:(id)arg1 shouldEnableActionType:(unsigned long long)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;
 - (void)assetExplorerReviewScreenActionManagerDidPressCancel:(id)arg1;
 - (void)assetExplorerReviewScreenActionManagerDidPressDone:(id)arg1;

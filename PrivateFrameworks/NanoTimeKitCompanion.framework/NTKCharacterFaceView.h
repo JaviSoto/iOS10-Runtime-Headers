@@ -32,6 +32,7 @@
 - (void)_applyShowsCanonicalContent;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (void)_cleanupAfterZoom;
+- (void)_configureComplicationFactory;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
@@ -55,6 +56,7 @@
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_supportsTimeScrubbing;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_tapToSpeakRect;
 - (void)_unloadSnapshotContentViews;
 - (bool)_usesCustomZoom;
 - (long long)_utilitySlotForSlot:(id)arg1;

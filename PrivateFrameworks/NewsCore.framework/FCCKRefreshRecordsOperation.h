@@ -3,7 +3,9 @@
  */
 
 @interface FCCKRefreshRecordsOperation : FCOperation {
+    CKRecordID * _canaryRecordID;
     NSDictionary * _changeTagsByRecordID;
+    bool  _checkForDeletions;
     FCCKDatabase * _database;
     NSMutableSet * _deletedRecordIDs;
     NSArray * _desiredKeys;
@@ -16,7 +18,9 @@
     NSMutableDictionary * _updatedRecordsByRecordID;
 }
 
+@property (nonatomic, copy) CKRecordID *canaryRecordID;
 @property (nonatomic, copy) NSDictionary *changeTagsByRecordID;
+@property (nonatomic) bool checkForDeletions;
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, retain) NSMutableSet *deletedRecordIDs;
 @property (nonatomic, copy) NSArray *desiredKeys;
@@ -30,7 +34,9 @@
 
 - (void).cxx_destruct;
 - (void)_continueRefreshing;
+- (id)canaryRecordID;
 - (id)changeTagsByRecordID;
+- (bool)checkForDeletions;
 - (id)database;
 - (id)deletedRecordIDs;
 - (id)desiredKeys;
@@ -39,12 +45,15 @@
 - (id)operationError;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)prepareOperation;
 - (id)recordIDs;
 - (id /* block */)refreshRecordsCompletionBlock;
 - (id)refreshedRecordIDs;
 - (id)remainingRecordIDBatches;
 - (void)resetForRetry;
+- (void)setCanaryRecordID:(id)arg1;
 - (void)setChangeTagsByRecordID:(id)arg1;
+- (void)setCheckForDeletions:(bool)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDeletedRecordIDs:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;

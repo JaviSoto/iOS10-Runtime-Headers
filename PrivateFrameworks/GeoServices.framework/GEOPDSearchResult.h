@@ -15,6 +15,7 @@
     NSString * _resultDisplayHeader;
     GEOPDSearchClientBehavior * _searchClientBehavior;
     int  _searchResultType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDRelatedSearchSuggestion *defaultRelatedSearchSuggestion;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSString *resultDisplayHeader;
 @property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
 @property (nonatomic) int searchResultType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)disambiguationLabelType;
 + (Class)relatedSearchSuggestionType;
@@ -78,6 +80,7 @@
 - (void)setResultDisplayHeader:(id)arg1;
 - (void)setSearchClientBehavior:(id)arg1;
 - (void)setSearchResultType:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

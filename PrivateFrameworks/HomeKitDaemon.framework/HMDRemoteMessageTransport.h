@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteMessageTransport : HMFMessageTransport {
+@interface HMDRemoteMessageTransport : HMFMessageTransport <HMFLogging> {
     HMDAccountRegistry * _accountRegistry;
     long long  _qualityOfService;
     bool  _secure;
 }
 
 @property (nonatomic, readonly) HMDAccountRegistry *accountRegistry;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long qualityOfService;
 @property (getter=isSecure, nonatomic, readonly) bool secure;
+@property (readonly) Class superclass;
 
-+ (id)remoteMessageFromMessage:(id)arg1 accountRegistry:(id)arg2;
++ (id)logCategory;
++ (id)remoteMessageFromMessage:(id)arg1 secure:(bool)arg2 accountRegistry:(id)arg3;
++ (unsigned long long)restriction;
 
 - (void).cxx_destruct;
 - (id)accountRegistry;

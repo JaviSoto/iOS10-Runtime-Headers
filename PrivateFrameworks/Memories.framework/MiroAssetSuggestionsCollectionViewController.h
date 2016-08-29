@@ -12,7 +12,7 @@
     bool  _showDebugInterfaces;
 }
 
-@property (nonatomic, retain) NSMutableArray *allAssets;
+@property (nonatomic, readonly) NSMutableArray *allAssets;
 @property (nonatomic, retain) NSArray *assets;
 @property (nonatomic) <MiroAssetSuggestionsCollectionViewControllerDelegate> *delegate;
 @property (nonatomic, retain) UIBarButtonItem *doneButton;
@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_assetAtIndex:(unsigned long long)arg1;
-- (unsigned long long)_assetCount;
+- (long long)_indexOfAssetID:(id)arg1;
 - (id)_selectedAssets;
 - (void)_setupPopoverPresentationIfNecessary:(id)arg1 fromView:(id)arg2;
 - (void)_updateDebugLabelsOnCell:(id)arg1 withAsset:(id)arg2;
@@ -39,10 +39,9 @@
 - (id)delegate;
 - (void)done:(id)arg1;
 - (id)doneButton;
-- (long long)indexOfAsset:(id)arg1;
 - (id)memoryLocalizedTitle;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (void)setAllAssets:(id)arg1;
+- (void)selectCellsWithAssetIDs:(id)arg1;
 - (void)setAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDoneButton:(id)arg1;

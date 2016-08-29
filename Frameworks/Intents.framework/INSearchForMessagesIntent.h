@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSearchForMessagesIntent : INIntent <INSearchForMessagesIntent>
+@interface INSearchForMessagesIntent : INIntent <INSearchForMessagesIntentExport>
 
 @property (nonatomic, readonly) unsigned long long attributes;
 @property (nonatomic, readonly, copy) INDateComponentsRange *dateTimeRange;
@@ -36,12 +36,8 @@
 - (long long)groupNamesOperator;
 - (id)identifiers;
 - (long long)identifiersOperator;
-- (id)initWithOptions:(unsigned long long)arg1 recipients:(id)arg2 senders:(id)arg3 contents:(id)arg4 attributes:(unsigned long long)arg5 dateTimeRange:(id)arg6 identifiers:(id)arg7;
-- (id)initWithOptions:(unsigned long long)arg1 recipients:(id)arg2 senders:(id)arg3 contents:(id)arg4 attributes:(unsigned long long)arg5 dateTimeRange:(id)arg6 identifiers:(id)arg7 notificationIdentifiers:(id)arg8;
 - (id)initWithRecipients:(id)arg1 senders:(id)arg2 contents:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6;
 - (id)initWithRecipients:(id)arg1 senders:(id)arg2 contents:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7;
-- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributeSet:(id)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7;
-- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributeSet:(id)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 groupNames:(id)arg8;
 - (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 groupNames:(id)arg8;
 - (id)notificationIdentifiers;
 - (long long)notificationIdentifiersOperator;

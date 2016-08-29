@@ -45,7 +45,7 @@
 - (bool)hasIncidentComponent;
 - (bool)hasLineColorString;
 - (id)incidents;
-- (id)initWithPlaceData:(id)arg1;
+- (id)initWithMapItem:(id)arg1;
 - (bool)isIncidentsTTLExpired;
 - (id)labelItems;
 - (id)lineColorString;

@@ -28,6 +28,7 @@
 - (void)addStrokeWithColor:(id)arg1;
 - (id)archiveData;
 - (id)colorsInMessage;
+- (void)convertToSimulatedPlaybackSpeed;
 - (bool)didDrawPoints;
 - (void)didEndWisp;
 - (bool)didEndWisping;

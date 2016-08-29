@@ -7,6 +7,7 @@
     NSMutableSet * _foundDevices;
     NSHashTable * _observers;
     unsigned long long  _scanTypes;
+    bool  _xpcSetupInProgress;
 }
 
 @property (retain) <SFContinuityScannerProtocol><NSXPCProxyCreating> *connectionProxy;
@@ -17,6 +18,7 @@
 @property (retain) NSHashTable *observers;
 @property unsigned long long scanTypes;
 @property (readonly) Class superclass;
+@property bool xpcSetupInProgress;
 
 + (id)sharedManager;
 
@@ -38,7 +40,10 @@
 - (void)setFoundDevices:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setScanTypes:(unsigned long long)arg1;
-- (void)setupXPCConnection;
+- (void)setXpcSetupInProgress:(bool)arg1;
+- (void)setupProxyIfNeeded;
 - (void)xpcManagerConnectionInterrupted;
+- (void)xpcManagerDidResumeConnection:(id)arg1;
+- (bool)xpcSetupInProgress;
 
 @end

@@ -27,9 +27,17 @@
 + (id)entryEventBackwardDefinitionCLPCStatsCounters;
 + (id)entryEventBackwardDefinitionCLPCStatsFrameRateHistogram;
 + (id)entryEventBackwardDefinitionCLPCStatsLeadingController;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS0;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS1;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS2;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS3;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS4;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS5;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS6;
 + (id)entryEventBackwardDefinitionCPUStatsActiveTimeHistogram;
 + (id)entryEventBackwardDefinitionCPUStatsCPUPerformanceStates;
 + (id)entryEventBackwardDefinitionCPUStatsDVDStats;
++ (id)entryEventBackwardDefinitionCPUStatsEvents;
 + (id)entryEventBackwardDefinitionCPUStatsIdleTimeHistogram;
 + (id)entryEventBackwardDefinitionCPUStatsVoltageDomainPerformanceStates;
 + (id)entryEventBackwardDefinitionClpcStatsMetricHistograms;

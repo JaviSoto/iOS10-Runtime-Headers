@@ -4,41 +4,48 @@
 
 @interface PKAuthenticatorEvaluationContext : NSObject <LAUIDelegate> {
     LAContext * _LAContext;
+    NSMutableArray * _accessHandlers;
     PKAuthenticator * _authenticator;
     id /* block */  _completionHandler;
     <PKAuthenticatorDelegate> * _delegate;
     bool  _fingerPresent;
     bool  _fingerPresentTimeoutExpired;
     bool  _fingerPresentTimeoutRequired;
+    bool  _invalidated;
     NSObject<OS_dispatch_source> * _liftFingerTimeout;
+    bool  _passcodeActive;
+    bool  _passphraseActive;
     unsigned long long  _presentationFlags;
     PKAuthenticatorEvaluationRequest * _request;
     bool  _shouldLiftFinger;
     double  _touchIDBeginTime;
+    bool  _usingExternalContext;
 }
 
-@property (nonatomic, readonly) LAContext *LAContext;
 @property (nonatomic) <PKAuthenticatorDelegate> *delegate;
 @property (nonatomic, readonly) bool fingerPresent;
 @property (nonatomic, readonly) bool fingerPresentTimeoutExpired;
 @property (nonatomic, readonly) bool fingerPresentTimeoutRequired;
+@property (nonatomic, readonly) bool passcodeActive;
+@property (nonatomic, readonly) bool passphraseActive;
 @property (nonatomic, readonly) unsigned long long presentationFlags;
 @property (nonatomic, readonly) PKAuthenticatorEvaluationRequest *request;
 @property (nonatomic, readonly) bool shouldLiftFinger;
 
 - (void).cxx_destruct;
-- (id)LAContext;
 - (void)_clearLiftFinger;
+- (void)_createContextWithExternalizedContext:(id)arg1;
 - (bool)_delegateSupportsPasscodeDismissal;
 - (bool)_delegateSupportsPasscodePresentation;
 - (bool)_delegateSupportsPassphraseDismissal;
 - (bool)_delegateSupportsPassphrasePresentation;
-- (unsigned long long)_didPresentFlagForAuthenticatorViewType:(long long)arg1;
+- (unsigned long long)_didPresentFlagForAuthenticatorViewType:(long long)arg1 custom:(bool)arg2;
 - (void)_dismissAuthenticatorViewOfType:(long long)arg1;
 - (void)_handleLiftFingerEvent;
 - (void)_presentAuthenticatorViewOfType:(long long)arg1 withParams:(id)arg2;
 - (unsigned long long)_presentationFlagForAuthenticatorViewType:(long long)arg1;
 - (void)_requestRemoteAuthenticatorViewControllerOfType:(long long)arg1 withClassName:(id)arg2 bundleIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)accessLAContext:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(id /* block */)arg3;
@@ -52,6 +59,8 @@
 - (id)init;
 - (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2 forAuthenticator:(id)arg3;
 - (void)invalidate;
+- (bool)passcodeActive;
+- (bool)passphraseActive;
 - (unsigned long long)presentationFlags;
 - (id)request;
 - (void)setDelegate:(id)arg1;

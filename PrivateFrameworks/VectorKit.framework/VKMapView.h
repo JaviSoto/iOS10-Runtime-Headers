@@ -43,6 +43,7 @@
     VKMemoryObserver * _memoryObserver;
     VKNavContext * _navContext;
     VKNavCameraController * _navigationCameraController;
+    long long  _navigationDisplayRate;
     struct vector<OnscreenTimestampData, std::__1::allocator<OnscreenTimestampData> > { 
         struct OnscreenTimestampData {} *__begin_; 
         struct OnscreenTimestampData {} *__end_; 
@@ -106,6 +107,7 @@
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; } mapDisplayStyle;
 @property (nonatomic, readonly) GEOMapRegion *mapRegion;
 @property (nonatomic) long long mapType;
+@property (nonatomic) long long navigationDisplayRate;
 @property (nonatomic) long long navigationShieldSize;
 @property (nonatomic, readonly) double pitch;
 @property (getter=isPitched, nonatomic, readonly) bool pitched;
@@ -298,6 +300,7 @@
 - (void)navigationCameraHasStartedPanning;
 - (void)navigationCameraHasStoppedPanning;
 - (void)navigationCameraReturnToPuck;
+- (long long)navigationDisplayRate;
 - (long long)navigationShieldSize;
 - (void)onTimerFired:(id)arg1;
 - (void)openLoaderConnection;
@@ -349,6 +352,7 @@
 - (void)setApplicationState:(unsigned char)arg1 displayedSearchResultsType:(unsigned char)arg2;
 - (void)setApplicationUILayout:(long long)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCameraFramingInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
@@ -392,6 +396,7 @@
 - (void)setMapType:(long long)arg1;
 - (void)setMapType:(long long)arg1 animated:(bool)arg2;
 - (void)setNavContext:(id)arg1;
+- (void)setNavigationDisplayRate:(long long)arg1;
 - (void)setNavigationShieldSize:(long long)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsLayout;

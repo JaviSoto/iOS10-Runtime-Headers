@@ -4,7 +4,6 @@
 
 @interface CKDPCodeFunctionInvokeRequest : PBRequest <NSCopying> {
     NSString * _functionName;
-    NSMutableArray * _recordParameters;
     NSData * _serializedParameters;
     NSString * _serviceName;
 }
@@ -13,16 +12,12 @@
 @property (nonatomic, readonly) bool hasFunctionName;
 @property (nonatomic, readonly) bool hasSerializedParameters;
 @property (nonatomic, readonly) bool hasServiceName;
-@property (nonatomic, retain) NSMutableArray *recordParameters;
 @property (nonatomic, retain) NSData *serializedParameters;
 @property (nonatomic, retain) NSString *serviceName;
 
 + (id)options;
-+ (Class)recordParametersType;
 
 - (void).cxx_destruct;
-- (void)addRecordParameters:(id)arg1;
-- (void)clearRecordParameters;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -35,15 +30,11 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (id)recordParameters;
-- (id)recordParametersAtIndex:(unsigned long long)arg1;
-- (unsigned long long)recordParametersCount;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (id)serializedParameters;
 - (id)serviceName;
 - (void)setFunctionName:(id)arg1;
-- (void)setRecordParameters:(id)arg1;
 - (void)setSerializedParameters:(id)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)writeTo:(id)arg1;

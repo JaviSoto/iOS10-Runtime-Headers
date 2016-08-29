@@ -4,6 +4,7 @@
 
 @interface PHAExecutive : NSObject <NSXPCListenerDelegate, PHPhotoLibraryAvailabilityObserver> {
     NSObject<OS_xpc_object> * _backgroundAnalysisActivity;
+    bool  _backgroundAnalysisActivityTriggered;
     NSObject<OS_dispatch_source> * _backgroundAnalysisMonitorTimer;
     NSMutableSet * _clients;
     long long  _countOfCoordinatorsRunningBackgroundAnalysis;
@@ -11,7 +12,7 @@
     bool  _isPhotoAnalysisAgent;
     NSMutableDictionary * _managersByLibraryPath;
     PHAPhotoLibraryList * _photoLibraryList;
-    unsigned int  _powerAssertionID;
+    PHASleepWakeMonitor * _sleepWakeMonitor;
     unsigned char  _state;
 }
 
@@ -25,15 +26,19 @@
 @property (readonly) unsigned long long hash;
 @property (retain) NSMutableDictionary *managersByLibraryPath;
 @property (retain) PHAPhotoLibraryList *photoLibraryList;
-@property unsigned int powerAssertionID;
+@property (retain) PHASleepWakeMonitor *sleepWakeMonitor;
 @property unsigned char state;
 @property (readonly) Class superclass;
+
++ (void)registerEmptyBackgroundActivity;
 
 - (void).cxx_destruct;
 - (void)_backgroundActivityDidBegin;
 - (void)_installBackgroundAnalysisMonitor;
+- (void)_localeDidChangeNotification:(id)arg1;
 - (bool)_photoAnalysisEnabled;
 - (void)_registerBackgroundActivity;
+- (void)_stopBackgroundActivity;
 - (id)_urlForSystemPhotoLibrary;
 - (id)backgroundAnalysisActivity;
 - (id)backgroundAnalysisMonitorTimer;
@@ -41,6 +46,7 @@
 - (id)clientInfoForManager:(id)arg1;
 - (id)clients;
 - (long long)countOfCoordinatorsRunningBackgroundAnalysis;
+- (void)dealloc;
 - (void)dispatchAsyncToExecutiveStateQueue:(id /* block */)arg1;
 - (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)dumpStatusToLog;
@@ -52,7 +58,6 @@
 - (id)managersByLibraryPath;
 - (void)photoLibraryDidBecomeUnavailable:(id)arg1;
 - (id)photoLibraryList;
-- (unsigned int)powerAssertionID;
 - (void)removeClientHandler:(id)arg1;
 - (void)setBackgroundAnalysisActivity:(id)arg1;
 - (void)setBackgroundAnalysisMonitorTimer:(id)arg1;
@@ -61,13 +66,16 @@
 - (void)setExecutiveStateQueue:(id)arg1;
 - (void)setManagersByLibraryPath:(id)arg1;
 - (void)setPhotoLibraryList:(id)arg1;
-- (void)setPowerAssertionID:(unsigned int)arg1;
+- (void)setSleepWakeMonitor:(id)arg1;
 - (void)setState:(unsigned char)arg1;
 - (void)shutdown;
+- (id)sleepWakeMonitor;
 - (void)startup;
 - (unsigned char)state;
 - (id)statusAsDictionary;
+- (void)stopBackgroundActivity;
 - (void)terminateManagerForPhotoLibraryURL:(id)arg1;
 - (void)terminateManagerIfQuiescentAndNoConnectedClients:(id)arg1;
+- (void)triggerBackgroundActivity;
 
 @end

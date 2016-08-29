@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideFareLineItem : NSObject <NSCopying, NSSecureCoding> {
+@interface INRideFareLineItem : NSObject <INRideFareLineItemExport, NSCopying, NSSecureCoding> {
     NSString * _currencyCode;
     NSDecimalNumber * _price;
     NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *currencyCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDecimalNumber *price;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
 
 + (bool)supportsSecureCoding;

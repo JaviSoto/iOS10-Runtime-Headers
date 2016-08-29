@@ -20,6 +20,7 @@
     NSMutableArray * _trainingSessions;
 }
 
+@property (readonly) int audioSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VTUITrainingManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -44,6 +45,7 @@
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
+- (int)audioSource;
 - (bool)cancelTrainingForID:(long long)arg1;
 - (id)cleanupWithCompletion:(id /* block */)arg1;
 - (void)closeSessionBeforeStartWithStatus:(int)arg1 successfully:(bool)arg2 withCompletion:(id /* block */)arg3;

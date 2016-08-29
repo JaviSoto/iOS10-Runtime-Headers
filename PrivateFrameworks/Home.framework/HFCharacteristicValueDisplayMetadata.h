@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *sortKey;
 @property (nonatomic) long long transitioningPrimaryState;
 
++ (long long)_unknownStatePriorityForServiceType:(id)arg1;
++ (id)displayMetadataForBridgeAccessory:(id)arg1 withContextProvider:(id)arg2;
 + (id)displayMetadataForServiceType:(id)arg1 characteristicReadResponse:(id)arg2;
 
 - (void).cxx_destruct;

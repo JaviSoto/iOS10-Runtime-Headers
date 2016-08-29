@@ -15,6 +15,7 @@
 + (id)responseWithRequest:(id)arg1 error:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)error;
 - (id)initWithRequest:(id)arg1 error:(id)arg2;
 - (id)request;

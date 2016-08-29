@@ -19,6 +19,7 @@
     bool  _audioEnabled;
     float  _audioVolume;
     ISLayerPlayer * _crossfadePlayer;
+    <ISBasePlayerDelegate> * _delegate;
     ISPlayerState * _lastAppliedLayoutInfo;
     ISPlayerItem * _playerItem;
     long long  _status;
@@ -37,6 +38,7 @@
 @property (nonatomic) float audioVolume;
 @property (nonatomic, readonly) ISLayerPlayer *crossfadePlayer;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ISBasePlayerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (setter=_setLastAppliedLayoutInfo:, nonatomic, retain) ISPlayerState *lastAppliedLayoutInfo;
@@ -50,6 +52,9 @@
 - (bool)_audioEnabledInternal;
 - (void)_audioEnabledInternal:(bool)arg1;
 - (void)_configureNewOutput:(id)arg1;
+- (void)_handleError:(id)arg1;
+- (void)_handleErrorsIfNeeded;
+- (void)_handleMediaServicesReset;
 - (id)_outputs;
 - (void)_playerItemDidPlayToEnd:(id)arg1;
 - (id)_playerItemDidPlayToEndObserver;
@@ -60,6 +65,7 @@
 - (void)_setPlayerItemDidPlayToEndObserver:(id)arg1;
 - (void)_setStatus:(long long)arg1;
 - (void)_setVideoForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_setVideoPlayer:(id)arg1;
 - (void)_setVideoVolume:(float)arg1;
 - (void)_setVideoWillPlayToEndObserver:(id)arg1;
 - (void)_updateContentFromPlayerItem;
@@ -92,6 +98,7 @@
 - (id)crossfadePlayer;
 - (double)currentCrossfadeTime;
 - (void)dealloc;
+- (id)delegate;
 - (void)didAddOutput:(id)arg1;
 - (void)enumerateOutputsWithBlock:(id /* block */)arg1;
 - (id)init;
@@ -106,6 +113,7 @@
 - (void)setActiveBehavior:(id)arg1;
 - (void)setAudioEnabled:(bool)arg1;
 - (void)setAudioVolume:(float)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setPlayerItem:(id)arg1;
 - (long long)status;
 - (void)statusDidChange;

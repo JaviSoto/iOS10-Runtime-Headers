@@ -10,9 +10,13 @@
         double width; 
         double height; 
     }  documentViewSize;
+    bool  forceUseMainThread;
+    bool  ignoreChangedBoundsForBoxNotification;
+    bool  m_enablePageShadows;
     NSMutableDictionary * pageFrames;
     PageImagePool * pageImagePool;
     NSMutableDictionary * pageViews;
+    bool  shouldAntiAlias;
     <PDFPageVisibilityDelegate> * viewVisibilityDelegate;
 }
 

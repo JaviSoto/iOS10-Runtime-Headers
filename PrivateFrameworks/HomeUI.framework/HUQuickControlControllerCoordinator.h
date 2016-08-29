@@ -18,6 +18,7 @@
     HFSimpleItemManager * _reachabilityItemManager;
     bool  _reachable;
     NSString * _secondaryStatusText;
+    bool  _showIconOffState;
     HFOverrideCharacteristicValueSource * _valueSource;
 }
 
@@ -40,6 +41,7 @@
 @property (nonatomic, readonly) HFSimpleItemManager *reachabilityItemManager;
 @property (getter=isReachable, nonatomic, readonly) bool reachable;
 @property (nonatomic, copy) NSString *secondaryStatusText;
+@property (nonatomic, readonly) bool showIconOffState;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) HFOverrideCharacteristicValueSource *valueSource;
 
@@ -83,6 +85,7 @@
 - (void)setInteractionHost:(id)arg1;
 - (void)setPrimaryStatusText:(id)arg1;
 - (void)setSecondaryStatusText:(id)arg1;
+- (bool)showIconOffState;
 - (id)valueSource;
 - (id)valueSource:(id)arg1 overrideValueForCharacteristic:(id)arg2;
 - (bool)valueSource:(id)arg1 shouldOverrideValueForCharacteristic:(id)arg2;

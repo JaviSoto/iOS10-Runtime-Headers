@@ -3,7 +3,7 @@
  */
 
 @interface _NCWidgetViewController : UIViewController <SBUISizeObservingViewDelegate, _NCWidgetViewController_Service_IPC> {
-    _UIViewControllerTransitionContext * _activeTransitionContext;
+    NSMutableArray * _activeTransitionContexts;
     NSMapTable * _activeTransitionContextsByRequestID;
     struct UIEdgeInsets { 
         double top; 
@@ -11,6 +11,7 @@
         double bottom; 
         double right; 
     }  _clientMarginInsets;
+    NSString * _containerIdentifier;
     UIViewController<NCWidgetProviding> * _contentProvidingViewController;
     struct { 
         unsigned int implementsPerformUpdateWithCompletionHandler : 1; 
@@ -18,6 +19,16 @@
         unsigned int implementsActiveDisplayModeDidChange : 1; 
     }  _contentProvidingViewControllerFlags;
     UIView * _contentView;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _initialBounds;
     double  _lastRequestedHeight;
     NSMutableArray * _pendingSizeTransitionUUIDStack;
     NSObject<OS_dispatch_queue> * _remoteViewControllerProxyQueue;
@@ -28,12 +39,14 @@
 }
 
 @property (getter=_activeTransitionContextsByRequestID, nonatomic, retain) NSMapTable *activeTransitionContextsByRequestID;
+@property (getter=_containerIdentifier, nonatomic, copy) NSString *containerIdentifier;
 @property (getter=_contentProvidingViewController, nonatomic, retain) UIViewController<NCWidgetProviding> *contentProvidingViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=_pendingSizeTransitionUUIDStack, nonatomic, readonly) NSMutableArray *pendingSizeTransitionUUIDStack;
 @property (readonly) Class superclass;
+@property (getter=_widgetIdentifier, nonatomic, copy) NSString *widgetIdentifier;
 
 + (id)_exportedInterface;
 + (void)_reduceTransparencyDidChange:(id)arg1;
@@ -43,13 +56,12 @@
 - (void).cxx_destruct;
 - (void)__closeTransactionForPreferredHeightChangeWithIdentifier:(id)arg1;
 - (void)__openTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(id)arg2;
-- (void)__performOutstandingAnimationsForRequestWithIdentifier:(id)arg1;
 - (void)__performOutstandingCompletionForRequestWithIdentifier:(id)arg1;
 - (void)__performUpdateWithReplyHandler:(id /* block */)arg1;
+- (void)__prepareForAnimationsForRequestWithIdentifier:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)__requestEncodedLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)__setActiveDisplayMode:(long long)arg1 requestIdentifier:(id)arg2;
 - (void)__setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(long long)arg2;
-- (void)__setWidgetIdentifier:(id)arg1;
 - (void)__viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 requestIdentifier:(id)arg2;
 - (id)_activeTransitionContextsByRequestID;
 - (long long)_clientLargestSupportedDisplayMode;
@@ -57,9 +69,12 @@
 - (double)_clientPreferredContentHeightPermittingAutolayout:(bool)arg1;
 - (void)_closeTransactionForActiveDisplayModeChangeWithIdentifier:(id)arg1;
 - (void)_closeTransactionWithAppearState:(int)arg1;
+- (void)_configureAnimatorForTransitionContext:(id)arg1;
+- (id)_containerIdentifier;
 - (id)_contentProvidingViewController;
 - (id)_customAnimator:(bool)arg1;
 - (bool)_disableAutomaticKeyboardBehavior;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (double)_effectiveHeightForRequestedHeight:(double)arg1;
 - (void)_encodeLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)_enqueueProxyRequest:(id /* block */)arg1;
@@ -69,13 +84,13 @@
 - (void)_requestMarginInsets;
 - (void)_requestPreferredViewHeight:(double)arg1 usingAutolayout:(bool)arg2;
 - (void)_requestPreferredViewHeight:(double)arg1 usingAutolayout:(bool)arg2 force:(bool)arg3;
-- (double)_sanitizedClientContentWidthForProposedHostWidth:(double)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sanitizedClientFrameFromHostSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setActiveDisplayMode:(long long)arg1 requestIdentifier:(id)arg2 force:(bool)arg3;
 - (void)_setContentProvidingViewController:(id)arg1;
+- (void)_setMaximumWidth:(double)arg1 forDisplayMode:(long long)arg2;
 - (bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (id)_transitionContextForRequestIdentifier:(id)arg1 usingAutolayout:(bool)arg2 createIfNecessary:(bool)arg3;
 - (id)_widgetExtensionContext;
+- (id)_widgetIdentifier;
 - (void)_willAppearInRemoteViewController;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)dealloc;
@@ -84,7 +99,9 @@
 - (void)loadView;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setActiveTransitionContextsByRequestID:(id)arg1;
+- (void)setContainerIdentifier:(id)arg1;
 - (void)setContentProvidingViewController:(id)arg1;
+- (void)setWidgetIdentifier:(id)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;

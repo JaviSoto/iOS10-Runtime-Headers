@@ -23,10 +23,11 @@
 - (id)_operationForPruningSamplesExcludingTypes:(id)arg1 daysOld:(unsigned long long)arg2 calendar:(id)arg3 nowDate:(id)arg4;
 - (id)_operationForPruningSeriesMoreThanDaysOld:(unsigned long long)arg1 calendar:(id)arg2 nowDate:(id)arg3;
 - (id)_operationForPruningThirdPartySampleTypes:(id)arg1 daysOld:(unsigned long long)arg2 calendar:(id)arg3 nowDate:(id)arg4;
+- (id)_operationsForPruningActivitySharingDataWithCalendar:(id)arg1 nowDate:(id)arg2;
 - (id)_operationsForPruningWithCalendar:(id)arg1 nowDate:(id)arg2;
 - (void)_performPruneDatabaseActivity:(id)arg1;
 - (void)_queue_pruneExpiredDeletedObjectsWithNowDate:(id)arg1 completion:(id /* block */)arg2;
-- (void)_queue_pruneExpiredSamplesWithNowDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_pruneExpiredSamplesWithOptions:(unsigned long long)arg1 fromNowDate:(id)arg2 completion:(id /* block */)arg3;
 - (void)_registerActivity;
 - (void)_setLastAttemptDate:(id)arg1 completed:(bool)arg2;
 - (void)daemonReady:(id)arg1;

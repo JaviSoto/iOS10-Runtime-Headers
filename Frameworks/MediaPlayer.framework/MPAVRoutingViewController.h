@@ -8,13 +8,15 @@
     int  _airPlayPasswordAlertDidCancelToken;
     long long  _avItemType;
     NSArray * _cachedRoutes;
+    bool  _cachedRoutesHasRoutePickedOnPairedDevice;
     bool  _cachedShowAirPlayDebugButton;
     <MPAVRoutingViewControllerDelegate> * _delegate;
     long long  _discoveryModeBeforeEnteringBackground;
     NSNumber * _discoveryModeOverride;
-    UILabel * _emptyStateLabel;
+    MPAVRoutingEmptyStateView * _emptyStateView;
     bool  _hasCachedAirPlayDebugButtonStatus;
     unsigned long long  _iconStyle;
+    MPAVRoute * _lastPendingPickedRoute;
     unsigned long long  _mirroringStyle;
     bool  _needsDisplayedRoutesUpdate;
     long long  _routeDiscoveryMode;
@@ -88,6 +90,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(bool)arg2;
+- (void)routingController:(id)arg1 pickedRouteDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAVItemType:(long long)arg1;
 - (void)setAllowMirroring:(bool)arg1;

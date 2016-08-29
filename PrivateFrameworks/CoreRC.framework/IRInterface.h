@@ -22,7 +22,7 @@
 - (bool)isRxInterface;
 - (bool)isTxInterface;
 - (unsigned long long)maxStoredCommands;
-- (bool)processSubframe:(unsigned int*)arg1 start:(int)arg2 count:(int)arg3 timestamp:(unsigned long long)arg4;
+- (bool)processTimings:(const unsigned int*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 timestamp:(unsigned long long)arg3;
 - (void)receivedCommand:(id)arg1;
 - (void)receivedFrame:(id)arg1;
 - (bool)resetAllButtons:(id*)arg1;

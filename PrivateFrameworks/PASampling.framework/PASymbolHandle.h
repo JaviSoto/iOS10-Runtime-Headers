@@ -21,6 +21,7 @@
 @property (readonly) NSString *symbolOwnerBundleIdentifier;
 @property (readonly) NSString *symbolOwnerBundleShortVersion;
 @property (readonly) NSString *symbolOwnerBundleVersion;
+@property (readonly) bool symbolOwnerIsTextExecSegment;
 @property (readonly) NSString *symbolOwnerName;
 @property (retain) NSString *symbolOwnerPath;
 @property (readonly) unsigned long long symbolOwnerStartAddressInTask;
@@ -51,13 +52,16 @@
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (unsigned int)sourceColumnNumberForAddress:(unsigned long long)arg1;
 - (id)sourceFileNameForAddress:(unsigned long long)arg1;
+- (unsigned long long)sourceLengthForAddress:(unsigned long long)arg1;
 - (unsigned int)sourceLineNumberForAddress:(unsigned long long)arg1;
+- (unsigned long long)sourceStartAddressInTaskForAddress:(unsigned long long)arg1;
 - (unsigned long long)symbolLength;
 - (id)symbolName;
 - (id)symbolOwnerBinaryVersion;
 - (id)symbolOwnerBundleIdentifier;
 - (id)symbolOwnerBundleShortVersion;
 - (id)symbolOwnerBundleVersion;
+- (bool)symbolOwnerIsTextExecSegment;
 - (id)symbolOwnerName;
 - (id)symbolOwnerPath;
 - (unsigned long long)symbolOwnerStartAddressInTask;

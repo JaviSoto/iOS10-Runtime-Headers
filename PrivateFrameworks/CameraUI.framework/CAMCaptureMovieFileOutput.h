@@ -27,11 +27,9 @@
 
 - (void).cxx_destruct;
 - (id)_captureEngine;
-- (void)_incrementSettingsIDAndStoreCaptureUserInfo;
 - (id)_removeOnCompletionSettingsIDs;
 - (id)_userInfoBySettingsID;
 - (id)_userInfoQueue;
-- (void)_userInfoQueueIncrementSettingsID;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (id)currentUserInfo;

@@ -3,6 +3,7 @@
  */
 
 @interface QLTransitionContext : NSObject <NSSecureCoding> {
+    bool  _contextPreparedToSend;
     double  _hostNavigationOffset;
     QLPreviewController * _previewController;
     struct CGSize { 
@@ -52,10 +53,12 @@
 + (bool)useZoomTransitionForPreviewController:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_snapshotSourceViewIfNeeded;
 - (void)encodeWithCoder:(id)arg1;
 - (double)hostNavigationOffset;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithQLPreviewController:(id)arg1 toViewController:(id)arg2;
+- (void)prepareContextToSend;
 - (struct CGSize { double x1; double x2; })previewItemSize;
 - (void)setHostNavigationOffset:(double)arg1;
 - (void)setPreviewItemSize:(struct CGSize { double x1; double x2; })arg1;

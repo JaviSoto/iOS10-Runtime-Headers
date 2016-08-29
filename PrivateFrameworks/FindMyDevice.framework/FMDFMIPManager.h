@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)_destroyXPCConnection;
-- (void)_forceALUpgradeAlertWithCompletion:(id /* block */)arg1;
 - (void)_forceFMWUpgradeAlertWithCompletion:(id /* block */)arg1;
 - (void)_initiateLostModeExitAuthForIDSDeviceID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_isRunningAsMobileUser;

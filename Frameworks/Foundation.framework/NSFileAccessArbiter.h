@@ -21,6 +21,12 @@
 @property (readonly) NSXPCConnection *superarbitrationConnection;
 @property (readonly) Class superclass;
 
++ (void)_gainedBirdProviderFromClient:(id)arg1;
++ (void)_lostBirdProviderFromClient:(id)arg1;
++ (void)_registerForTokenChangeNotificationsWithQueue:(id)arg1;
++ (void)_wakeUpBirdWithUID:(unsigned int)arg1 queue:(id)arg2 thenContinue:(id /* block */)arg3;
++ (void)ensureProvidersIfNecessaryForClaim:(id)arg1 readingAtLocation:(id)arg2 queue:(id)arg3 thenContinue:(id /* block */)arg4;
+
 - (bool)_addPresenter:(id)arg1 ofItemAtURL:(id)arg2 watchingFile:(bool)arg3 withLastEventID:(id)arg4;
 - (bool)_addProvider:(id)arg1 ofItemsAtURL:(id)arg2;
 - (void)_enumerateSubarbitersUsingBlock:(id /* block */)arg1;
@@ -34,7 +40,7 @@
 - (void)_willRemoveReactor:(id)arg1;
 - (void)_writerWithPurposeID:(id)arg1 didMoveItemAtURL:(id)arg2 toURL:(id)arg3;
 - (void)addPresenter:(id)arg1 withID:(id)arg2 fileURL:(id)arg3 lastPresentedItemEventIdentifier:(id)arg4 options:(unsigned long long)arg5 responses:(unsigned long long)arg6;
-- (void)addProvider:(id)arg1 withID:(id)arg2 forProvidedItemsURL:(id)arg3 options:(unsigned long long)arg4 withServer:(id)arg5 reply:(id /* block */)arg6;
+- (void)addProvider:(id)arg1 withID:(id)arg2 uniqueID:(id)arg3 forProvidedItemsURL:(id)arg4 options:(unsigned long long)arg5 withServer:(id)arg6 reply:(id /* block */)arg7;
 - (oneway void)cancelAccessClaimForID:(id)arg1;
 - (void)dealloc;
 - (void)getDebugInformationIncludingEverything:(bool)arg1 withString:(id)arg2 fromPid:(int)arg3 thenContinue:(id /* block */)arg4;
@@ -45,8 +51,9 @@
 - (void)performBarrierWithCompletionHandler:(id /* block */)arg1;
 - (oneway void)prepareToArbitrateForURLs:(id)arg1;
 - (void)provideDebugInfoWithLocalInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)provideSubarbiterDebugInfoIncludingEverything:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (oneway void)removePresenterWithID:(id)arg1;
-- (oneway void)removeProviderWithID:(id)arg1;
+- (oneway void)removeProviderWithID:(id)arg1 uniqueID:(id)arg2;
 - (oneway void)revokeAccessClaimForID:(id)arg1;
 - (oneway void)revokeSubarbitrationClaimForID:(id)arg1;
 - (id)rootNode;

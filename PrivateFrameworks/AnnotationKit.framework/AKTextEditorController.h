@@ -5,7 +5,9 @@
 @interface AKTextEditorController : NSObject <NSTextStorageDelegate, UITextViewDelegate> {
     AKAnnotation<AKTextAnnotationProtocol> * _annotation;
     AKController * _controller;
-    bool  _inEndEditing;
+    double  _handleCompensatingScaleFactor;
+    bool  _isInAdjustAnnotationFrameToFitText;
+    bool  _isInEndEditing;
     AKPageController * _pageController;
     double  _renderingTextStorageScaleFactor;
     struct CGPoint { 
@@ -21,9 +23,11 @@
 @property AKController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property double handleCompensatingScaleFactor;
 @property (readonly) unsigned long long hash;
-@property (getter=isInEndEditing) bool inEndEditing;
 @property (nonatomic, readonly) bool isEditing;
+@property bool isInAdjustAnnotationFrameToFitText;
+@property bool isInEndEditing;
 @property AKPageController *pageController;
 @property double renderingTextStorageScaleFactor;
 @property struct CGPoint { double x1; double x2; } startingContentInset;
@@ -42,6 +46,7 @@
 - (void)_endEditing;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
+- (id)_newScaledPaths:(id)arg1 withScaleFactor:(double)arg2 aboutCenter:(struct CGPoint { double x1; double x2; })arg3;
 - (void)_performBlockOnMainThread:(id /* block */)arg1;
 - (void)_registerForKeyboardNotifications;
 - (void)_returnScrollViewAfterShownKeyboard;
@@ -53,14 +58,18 @@
 - (id)controller;
 - (void)dealloc;
 - (void)endEditing;
+- (double)handleCompensatingScaleFactor;
 - (id)initWithController:(id)arg1;
 - (bool)isEditing;
+- (bool)isInAdjustAnnotationFrameToFitText;
 - (bool)isInEndEditing;
 - (id)pageController;
 - (double)renderingTextStorageScaleFactor;
 - (void)setAnnotation:(id)arg1;
 - (void)setController:(id)arg1;
-- (void)setInEndEditing:(bool)arg1;
+- (void)setHandleCompensatingScaleFactor:(double)arg1;
+- (void)setIsInAdjustAnnotationFrameToFitText:(bool)arg1;
+- (void)setIsInEndEditing:(bool)arg1;
 - (void)setPageController:(id)arg1;
 - (void)setRenderingTextStorageScaleFactor:(double)arg1;
 - (void)setStartingContentInset:(struct CGPoint { double x1; double x2; })arg1;

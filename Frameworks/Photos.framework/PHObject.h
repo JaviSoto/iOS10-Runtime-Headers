@@ -31,6 +31,7 @@
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)managedEntityName;
 + (bool)managedObjectSupportsBursts;
++ (bool)managedObjectSupportsFaceVisibility;
 + (bool)managedObjectSupportsHiddenState;
 + (bool)managedObjectSupportsMontage;
 + (bool)managedObjectSupportsPendingState;

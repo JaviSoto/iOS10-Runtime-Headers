@@ -8,7 +8,6 @@
     NSXPCConnection * _connection;
     PETScalarEventTracker * _consumerInitTracker;
     unsigned long long  _consumerType;
-    _DECDataProtectionMonitor * _dataProtectionMonitor;
     id /* block */  _handler;
     unsigned long long  _limit;
     NSObject<OS_dispatch_queue> * _queue;
@@ -16,13 +15,15 @@
     unsigned long long  _timeout;
 }
 
-@property (nonatomic) unsigned long long category;
-@property (nonatomic) unsigned long long consumerType;
+@property unsigned long long category;
+@property unsigned long long consumerType;
 
 - (void).cxx_destruct;
 - (void)_setupConnection;
 - (unsigned long long)category;
 - (unsigned long long)consumerType;
+- (void)dealloc;
+- (void)decDeviceIdWithReply:(id /* block */)arg1;
 - (void)fetchPredictionsWithLimit:(unsigned long long)arg1 criteria:(id)arg2 handler:(id /* block */)arg3;
 - (void)fetchPredictionsWithLimit:(unsigned long long)arg1 criteria:(id)arg2 timeout:(unsigned long long)arg3 handler:(id /* block */)arg4;
 - (void)fetchPredictionsWithLimit:(unsigned long long)arg1 handler:(id /* block */)arg2;
@@ -33,6 +34,7 @@
 - (id)init;
 - (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2;
 - (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2 queue:(id)arg3;
+- (void)invalidate;
 - (void)provideAppWidgetFeedback:(id)arg1 handler:(id /* block */)arg2;
 - (void)provideZkwSpotlightFeedback:(id)arg1 handler:(id /* block */)arg2;
 - (void)receivePrediction:(id)arg1 consumer:(unsigned long long)arg2 reply:(id /* block */)arg3;

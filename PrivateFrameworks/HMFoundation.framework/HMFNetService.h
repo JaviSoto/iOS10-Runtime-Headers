@@ -7,6 +7,7 @@
     HMFNetAddress * _address;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFNetServiceDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _domain;
     NSNetService * _internal;
     NSString * _name;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFNetServiceDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *domain;
 @property (readonly) unsigned long long hash;
@@ -47,6 +49,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
+- (id)delegateQueue;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
 - (id)domain;

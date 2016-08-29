@@ -3,29 +3,33 @@
  */
 
 @interface SPUIPeekDelegate : NSObject <UIInteractionProgressObserver, UIViewControllerPreviewingDelegate> {
+    bool  _didPeek;
     UITableViewCell * _hiddenCell;
     UIView * _hiddenSectionHeader;
     NSIndexPath * _indexPath;
     bool  _keyboardShouldReturn;
     SFSearchResult * _result;
+    bool  _shouldFadeOutTableView;
     SPUITableViewController * _viewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property bool didPeek;
 @property (readonly) unsigned long long hash;
 @property (retain) UITableViewCell *hiddenCell;
 @property (retain) UIView *hiddenSectionHeader;
 @property (retain) NSIndexPath *indexPath;
 @property bool keyboardShouldReturn;
 @property (retain) SFSearchResult *result;
+@property bool shouldFadeOutTableView;
 @property (readonly) Class superclass;
 @property SPUITableViewController *viewController;
 
 - (void).cxx_destruct;
 - (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
-- (id)committedViewControllerForPreviewViewController:(id)arg1;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(bool)arg2;
+- (bool)didPeek;
 - (void)fillParentViewController:(id)arg1 withChild:(id)arg2;
 - (id)hiddenCell;
 - (id)hiddenSectionHeader;
@@ -38,12 +42,15 @@
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (id)result;
+- (void)setDidPeek:(bool)arg1;
 - (void)setHiddenCell:(id)arg1;
 - (void)setHiddenSectionHeader:(id)arg1;
 - (void)setIndexPath:(id)arg1;
 - (void)setKeyboardShouldReturn:(bool)arg1;
 - (void)setResult:(id)arg1;
+- (void)setShouldFadeOutTableView:(bool)arg1;
 - (void)setViewController:(id)arg1;
+- (bool)shouldFadeOutTableView;
 - (void)showSectionHeader;
 - (id)viewController;
 

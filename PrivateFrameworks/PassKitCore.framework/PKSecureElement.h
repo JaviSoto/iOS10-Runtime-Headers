@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _deletingAllAppletsPropertyConcurrentQueue;
     NSObject<OS_dispatch_source> * _deletingAllAppletsTimer;
     NSObject<OS_dispatch_queue> * _deletingAllAppletsTimerConcurrentQueue;
+    NSObject<OS_dispatch_queue> * _objectDisposalQueue;
     NSObject<OS_dispatch_queue> * _observerConcurrentQueue;
     NSHashTable * _observers;
     NFSecureElement * _secureElement;
@@ -39,6 +40,7 @@
 - (bool)isDeletingAllApplets;
 - (bool)isInRestrictedMode;
 - (bool)isProductionSigned;
+- (void)legacyStateInformationWithCompletion:(id /* block */)arg1;
 - (void)markAllAppletsForDeletionWithExternalAuthorization:(id)arg1 completion:(id /* block */)arg2;
 - (void)markAppletWithIdentifierForDeletion:(id)arg1 completion:(id /* block */)arg2;
 - (void)markAppletsWithIdentifiersForDeletion:(id)arg1 completion:(id /* block */)arg2;
@@ -55,7 +57,8 @@
 - (bool)setRegistrationInformation:(id)arg1 primaryRegionTopic:(id)arg2;
 - (void)signChallenge:(id)arg1 forPaymentApplication:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)signChallenge:(id)arg1 signatureEntanglementMode:(unsigned long long)arg2 completion:(id /* block */)arg3;
-- (void)stateInformationWithAuthenticationData:(id)arg1 completion:(id /* block */)arg2;
+- (void)signatureForAuthToken:(id)arg1 completion:(id /* block */)arg2;
+- (void)stateInformationWithCompletion:(id /* block */)arg1;
 - (unsigned long long)supportedTechnologies;
 - (void)unregisterObserver:(id)arg1;
 

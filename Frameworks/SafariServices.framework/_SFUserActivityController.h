@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFUserActivityController : NSObject {
-    NSUserActivity * _proactiveConnectionActivity;
-}
-
-@property (nonatomic, readonly) NSUserActivity *proactiveConnectionActivity;
+@interface _SFUserActivityController : NSObject
 
 + (id)searchableItemAttributesForDictionary:(id)arg1;
 + (id)sharedActivityController;
-
-- (void).cxx_destruct;
-- (void)_invalidateProactiveConnectionActivity;
-- (void)makeProactiveConnectionActivityCurrent:(id)arg1;
-- (id)proactiveConnectionActivity;
-- (void)updateProactiveConnectionActivityWithItemAttributes:(id)arg1;
 
 @end

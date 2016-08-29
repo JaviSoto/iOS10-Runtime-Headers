@@ -5,31 +5,27 @@
 @interface VSDeveloperIdentityProviderChangeOperation : VSAsyncOperation {
     long long  _changeKind;
     NSXPCConnection * _connection;
-    NSError * _error;
     VSIdentityProvider * _identityProvider;
-    NSArray * _identityProviders;
+    VSFailable * _result;
 }
 
 @property (nonatomic) long long changeKind;
 @property (nonatomic, retain) NSXPCConnection *connection;
-@property (nonatomic, copy) NSError *error;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
-@property (nonatomic, copy) NSArray *identityProviders;
+@property (nonatomic, retain) VSFailable *result;
 
 - (void).cxx_destruct;
 - (id)_serviceWithErrorHandler:(id /* block */)arg1;
 - (long long)changeKind;
 - (id)connection;
 - (void)dealloc;
-- (id)error;
 - (void)executionDidBegin;
 - (id)identityProvider;
-- (id)identityProviders;
 - (id)init;
+- (id)result;
 - (void)setChangeKind:(long long)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setError:(id)arg1;
 - (void)setIdentityProvider:(id)arg1;
-- (void)setIdentityProviders:(id)arg1;
+- (void)setResult:(id)arg1;
 
 @end

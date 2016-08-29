@@ -115,6 +115,7 @@
 - (void)cancelLoading;
 - (void)dealloc;
 - (void)didPerformChanges;
+- (void)discardContentBelowLoadingTarget;
 - (id)error;
 - (id)init;
 - (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2;

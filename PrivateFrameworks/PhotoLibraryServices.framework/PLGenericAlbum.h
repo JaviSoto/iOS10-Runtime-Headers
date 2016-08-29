@@ -136,13 +136,13 @@
 + (id)uuidFromGroupURL:(id)arg1;
 + (id)wallpaperAlbumInLibrary:(id)arg1;
 
-- (void)_applyTrashedState:(short)arg1 date:(bool)arg2 :(id)arg3;
+- (void)_applyTrashedState:(short)arg1 date:(bool)arg2 :(id)arg3 cascade:(bool)arg4;
 - (id)_compactDebugDescription;
 - (id)_itemIdentifier;
 - (id)_kindDescription;
 - (id)_prettyDescription;
 - (void)applyPropertiesFromAlbumChange:(id)arg1;
-- (void)applyTrashedState:(short)arg1;
+- (void)applyTrashedState:(short)arg1 cascade:(bool)arg2;
 - (unsigned long long)approximateCount;
 - (id)assetsByObjectIDAtIndexes:(id)arg1;
 - (unsigned long long)assetsCount;

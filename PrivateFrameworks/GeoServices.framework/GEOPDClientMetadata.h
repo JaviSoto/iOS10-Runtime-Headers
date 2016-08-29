@@ -3,6 +3,7 @@
  */
 
 @interface GEOPDClientMetadata : PBCodable <NSCopying> {
+    GEOABSecondPartyPlaceRequestClientMetaData * _abClientMetadata;
     GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
     unsigned int  _dayOfWeek;
     NSString * _debugApiKey;
@@ -23,8 +24,10 @@
     int  _requiredVersion;
     int  _resultListAttributionSupport;
     unsigned int  _timeSinceMapEnteredForeground;
+    PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *abClientMetadata;
 @property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic) unsigned int dayOfWeek;
 @property (nonatomic, retain) NSString *debugApiKey;
@@ -34,6 +37,7 @@
 @property (nonatomic, retain) NSMutableArray *deviceHistoricalLocations;
 @property (nonatomic, retain) NSString *deviceKeyboardLanguage;
 @property (nonatomic, retain) NSString *deviceSpokenLanguage;
+@property (nonatomic, readonly) bool hasAbClientMetadata;
 @property (nonatomic, readonly) bool hasAdditionalEnabledMarkets;
 @property (nonatomic) bool hasDayOfWeek;
 @property (nonatomic, readonly) bool hasDebugApiKey;
@@ -50,11 +54,13 @@
 @property (nonatomic) int requiredVersion;
 @property (nonatomic) int resultListAttributionSupport;
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)deviceHistoricalLocationType;
 
 - (int)StringAsRequiredVersion:(id)arg1;
 - (int)StringAsResultListAttributionSupport:(id)arg1;
+- (id)abClientMetadata;
 - (void)addDeviceHistoricalLocation:(id)arg1;
 - (id)additionalEnabledMarkets;
 - (void)clearDeviceHistoricalLocations;
@@ -73,6 +79,7 @@
 - (id)deviceKeyboardLanguage;
 - (id)deviceSpokenLanguage;
 - (id)dictionaryRepresentation;
+- (bool)hasAbClientMetadata;
 - (bool)hasAdditionalEnabledMarkets;
 - (bool)hasDayOfWeek;
 - (bool)hasDebugApiKey;
@@ -95,6 +102,7 @@
 - (id)requiredVersionAsString:(int)arg1;
 - (int)resultListAttributionSupport;
 - (id)resultListAttributionSupportAsString:(int)arg1;
+- (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setDayOfWeek:(unsigned int)arg1;
 - (void)setDebugApiKey:(id)arg1;
@@ -114,6 +122,7 @@
 - (void)setResultListAttributionSupport:(int)arg1;
 - (void)setTimeSinceMapEnteredForeground:(unsigned int)arg1;
 - (unsigned int)timeSinceMapEnteredForeground;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

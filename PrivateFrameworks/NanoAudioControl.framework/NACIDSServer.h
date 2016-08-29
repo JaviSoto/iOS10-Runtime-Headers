@@ -40,11 +40,14 @@
 - (void)_handleSetVolume:(id)arg1;
 - (void)_hapticIntensityDidChangeNotification:(id)arg1;
 - (bool)_hasRequestedVolumeAtLeastOnce;
+- (void)_sendCurrentHapticIntensityValue;
+- (void)_sendCurrentObservingValues;
 - (void)_sendEUVolumeLimit:(float)arg1 category:(id)arg2;
 - (void)_sendHapticIntensity:(float)arg1;
 - (void)_sendMessage:(id)arg1 type:(long long)arg2 timeout:(double)arg3 queueOne:(id)arg4 retry:(bool)arg5;
 - (void)_sendProminentHapticState:(bool)arg1;
 - (void)_sendSystemMutedState:(bool)arg1;
+- (void)_sendVolumeControlAvailability:(bool)arg1 category:(id)arg2;
 - (void)_sendVolumeValue:(float)arg1 category:(id)arg2;
 - (void)_sendVolumeWarningEnabled:(bool)arg1 category:(id)arg2;
 - (void)_setRequestedVolumeAtLeastOnce;

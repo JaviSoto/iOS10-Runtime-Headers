@@ -77,6 +77,7 @@
 - (void)_safeFetchDaemonPreferenceForKey:(id)arg1 expectedReturnClass:(Class)arg2 completion:(id /* block */)arg3;
 - (void)_saveActiveWorkout:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_saveObjects:(id)arg1 atomically:(bool)arg2 completion:(id /* block */)arg3;
+- (void)_saveRelatedSamplesForActiveWorkout:(id)arg1 workout:(id)arg2 server:(id)arg3 clientCompletion:(id /* block */)arg4;
 - (id /* block */)_selectCompletionOnClientQueue:(id /* block */)arg1;
 - (void)_sendNextObjectBatch:(id)arg1 lastRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 server:(id)arg3 transaction:(id)arg4 completion:(id /* block */)arg5;
 - (void)_serverProxyWithCompletion:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
@@ -150,6 +151,7 @@
 - (void)executeQuery:(id)arg1;
 - (void)fetchAllDevicesWithCompletion:(id /* block */)arg1;
 - (void)fetchAllFitnessFriendsActivityDataWithCompletion:(id /* block */)arg1;
+- (void)fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchMedicalIDDataCreateIfNecessary:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchMedicalIDDataWithCompletion:(id /* block */)arg1;
 - (void)finishLocationSeries:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;

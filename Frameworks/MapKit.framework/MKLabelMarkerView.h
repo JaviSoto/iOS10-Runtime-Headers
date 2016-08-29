@@ -12,6 +12,7 @@
     UIColor * _balloonStrokeColor;
     MKMapView * _mapView;
     bool  _needsToResolveBalloonAttributes;
+    double  _smallBalloonScaleFactor;
 }
 
 @property (nonatomic) MKMapView *mapView;
@@ -20,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_addBalloonCalloutView:(id)arg1;
-- (bool)_balloonCalloutShouldOriginateFromSmallSize;
+- (bool)_balloonCalloutShouldOriginateFromSmallSize:(double*)arg1;
 - (long long)_balloonCalloutStyle;
 - (id)_balloonContentView;
 - (id)_balloonImage;

@@ -7,7 +7,6 @@
     NTKUtilityComplicationFactory * _complicationFactory;
     unsigned long long  _dateStyle;
     unsigned long long  _density;
-    bool  _needsDateComplicationLayoutUpdate;
 }
 
 @property (nonatomic, readonly) NTKUtilitarianScene *analogScene;
@@ -18,6 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)_swatchColorForColorOption:(id)arg1;
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
 + (id)_swatchImageFaceName;
 + (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;

@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) EAGLSharegroup *shareGroup;
 
 + (void)_deallocInstance;
++ (void)prime;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -37,14 +38,13 @@
 - (bool)_initPrograms;
 - (bool)_initTextures;
 - (void)_loadTexture:(unsigned long long)arg1;
+- (void)_prime;
 - (void)_purge;
 - (void)_renderWithScene:(id)arg1 viewport:(struct NUViewport { int x1; int x2; unsigned int x3; unsigned int x4; })arg2 prime:(bool)arg3;
 - (void)_requireTexture:(unsigned long long)arg1 sync:(bool)arg2;
 - (unsigned int)createVertexArray;
 - (void)dealloc;
 - (id)init;
-- (void)prime;
-- (void)primeScene:(id)arg1;
 - (void)purge;
 - (void)renderWithScene:(id)arg1 viewport:(struct NUViewport { int x1; int x2; unsigned int x3; unsigned int x4; })arg2;
 - (id)shareGroup;

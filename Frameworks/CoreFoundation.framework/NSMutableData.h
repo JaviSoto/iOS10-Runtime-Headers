@@ -54,6 +54,12 @@
 - (void)mf_convertNetworkLineEndingsToUnixInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)mf_makeImmutable;
 
+// Image: /System/Library/PrivateFrameworks/MobileStorage.framework/MobileStorage
+
++ (id)dataWithHexString:(id)arg1;
+
+- (id)initDataWithHexString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy
 
 - (void)appendType:(unsigned char)arg1 length:(unsigned short)arg2 value:(const void*)arg3;

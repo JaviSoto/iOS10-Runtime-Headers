@@ -121,7 +121,6 @@
 - (id)p_tstFormulaFromForumulaWrapper:(id)arg1;
 - (void)p_unregisterAllFormulaeFromCalcEngine:(id)arg1;
 - (id)p_untitledLabelWithIndex:(unsigned long long)arg1;
-- (void)p_updateForTableIDHistoryWithCalcEngine:(id)arg1;
 - (id)rawFormulaStorage;
 - (struct { bool x1; bool x2; bool x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
 - (id)referencedEntities;
@@ -129,6 +128,7 @@
 - (bool)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
+- (void)repairBadRefsInFormulas:(id)arg1;
 - (void)repairMissingCategoryLabelsInMap:(id)arg1;
 - (void)repairMissingCategoryLabelsInMap:(id)arg1 ignoringNonVisibleLabels:(bool)arg2;
 - (void)repairMissingSeriesLabelsInMap:(id)arg1;
@@ -154,6 +154,7 @@
 - (void)synchronizeModelFromFormulaStorage:(id)arg1;
 - (void)unregisterFromCalculationEngine:(id)arg1;
 - (id)untitledLabelOfType:(unsigned long long)arg1 formulaMap:(id)arg2 existingLabels:(id)arg3 runningIndex:(unsigned long long*)arg4;
+- (void)updateForTableIDHistoryWithCalcEngine:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;

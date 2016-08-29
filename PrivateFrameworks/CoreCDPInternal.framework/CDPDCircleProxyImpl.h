@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (bool)_performSOSCBlock:(id /* block */)arg1 error:(id*)arg2;
+- (bool)anyPeerHasEnabledViewsInSet:(id)arg1 error:(id*)arg2;
 - (id)cdpContext;
 - (int)circleStatus:(id*)arg1;
 - (bool)hasNonViewAwarePeers;

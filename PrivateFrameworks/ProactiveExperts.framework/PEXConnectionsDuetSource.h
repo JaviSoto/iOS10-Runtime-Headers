@@ -14,7 +14,9 @@
 + (id)sharedInstance;
 
 - (id)duetLocationUserActivitiesWithLimit:(unsigned long long)arg1;
+- (bool)isDuetEventAuthorized:(id)arg1 bundleID:(id)arg2;
 - (bool)isEligibleForTextBasedPredictions:(id)arg1;
 - (id)locationItemsWithCriteria:(id)arg1 earliest:(id)arg2 latest:(id)arg3 limit:(unsigned long long)arg4 consumer:(unsigned long long)arg5 category:(unsigned long long)arg6;
+- (id)whitespaceAndNewlineCharacterSet;
 
 @end

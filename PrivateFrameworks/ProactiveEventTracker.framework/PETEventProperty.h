@@ -10,8 +10,6 @@
 @property (nonatomic, readonly) NSString *longestValueString;
 @property (nonatomic, readonly) NSString *name;
 
-// Image: /System/Library/PrivateFrameworks/ProactiveEventTracker.framework/ProactiveEventTracker
-
 + (id)freeValuedPropertyWithName:(id)arg1;
 + (id)propertyWithName:(id)arg1 enumMapping:(id)arg2;
 + (id)propertyWithName:(id)arg1 enumMapping:(id)arg2 autoSanitizeValues:(bool)arg3;
@@ -30,9 +28,5 @@
 - (id)name;
 - (id)possibleValues;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })validRange;
-
-// Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
-
-+ (id)booleanPropertyWithName:(id)arg1;
 
 @end

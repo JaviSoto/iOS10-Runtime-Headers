@@ -16,6 +16,7 @@
 - (bool)hasLoadedContentData;
 - (bool)isFaceModeEnabled;
 - (bool)isSelecting;
+- (bool)isUserInteractionEnabled;
 - (void)loadContentData;
 - (NSString *)localizedCaption;
 - (NSString *)localizedDisclosureTitle;
@@ -28,6 +29,7 @@
 - (void)setFaceModeEnabled:(bool)arg1;
 - (void)setSelecting:(bool)arg1;
 - (void)setSpec:(PXWidgetSpec *)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (void)setWidgetDelegate:(id <PXWidgetDelegate>)arg1;
 - (PXWidgetSpec *)spec;
 - (bool)supportsFaceMode;

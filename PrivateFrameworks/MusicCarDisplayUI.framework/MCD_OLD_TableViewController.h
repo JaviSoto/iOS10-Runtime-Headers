@@ -6,7 +6,7 @@
     bool  _alwaysShowNavBar;
     AVExternalDevice * _externalDevice;
     bool  _limitedUI;
-    UIView * _nowPlayingButton;
+    MCDNowPlayingButton * _nowPlayingButton;
     MPAVController * _player;
     MPMediaQuery * _query;
     <MCDCarDisplayServiceProvider> * _serviceProvider;

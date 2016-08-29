@@ -58,7 +58,6 @@
 - (id)homeDirectoryPath;
 - (id)homeDirectoryURL;
 - (id)initWithHomeDirectory:(id)arg1 daemon:(id)arg2;
-- (void)invalidate;
 - (void)invalidateAndWait;
 - (id)metadataManager;
 - (id)migrationManager;

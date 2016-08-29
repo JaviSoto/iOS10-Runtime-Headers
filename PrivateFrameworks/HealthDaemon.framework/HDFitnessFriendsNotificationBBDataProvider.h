@@ -27,6 +27,7 @@
 - (id)_fakeWorkoutDuringDayStartingAtDate:(id)arg1;
 - (void)_migrateSectionInfo;
 - (id)_newPrepopulatedBulletinRequestForContact:(id)arg1;
+- (id)_phoneNumberFromDefaults;
 - (void)_queue_addBulletinRequest:(id)arg1 fromContact:(id)arg2 isFakedBulletin:(bool)arg3;
 - (void)_queue_withdrawBulletinRequest:(id)arg1 fromFriendWithID:(id)arg2;
 - (void)_showAchievementEarnedNotificationFromContact:(id)arg1 achievement:(id)arg2 isFakedBulletin:(bool)arg3;

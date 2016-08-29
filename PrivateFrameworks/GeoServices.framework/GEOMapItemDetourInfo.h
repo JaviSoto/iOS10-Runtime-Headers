@@ -8,6 +8,7 @@
 
 @property (nonatomic, readonly) double detourDistance;
 @property (getter=_detourInfo, nonatomic, readonly) GEOPDResultDetourInfo *detourInfo;
+@property (nonatomic, readonly) NSData *detourInfoAsData;
 @property (nonatomic, readonly) double detourTime;
 @property (nonatomic, readonly) double distanceToPlace;
 @property (nonatomic, readonly) double timeToPlace;
@@ -15,6 +16,7 @@
 - (id)_detourInfo;
 - (void)dealloc;
 - (double)detourDistance;
+- (id)detourInfoAsData;
 - (double)detourTime;
 - (double)distanceToPlace;
 - (id)init;

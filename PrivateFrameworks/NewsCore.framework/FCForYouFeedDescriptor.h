@@ -3,12 +3,14 @@
  */
 
 @interface FCForYouFeedDescriptor : FCMultiTagFeedDescriptor <FCFeedPaginating> {
+    FCForYouGroupsConfiguration * _forYouGroupsConfiguration;
     long long  _trendingAndSavedStoriesCount;
     NSArray * _unreadSavedStories;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FCForYouGroupsConfiguration *forYouGroupsConfiguration;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) long long trendingAndSavedStoriesCount;
@@ -21,9 +23,11 @@
 - (id)feedGroupEmitters;
 - (id)feedPaginator;
 - (long long)feedSortMethod;
+- (id)forYouGroupsConfiguration;
 - (id)iAdFeedID;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2;
+- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 forYouGroupsConfiguration:(id)arg3;
 - (id)name;
+- (void)setForYouGroupsConfiguration:(id)arg1;
 - (void)setTrendingAndSavedStoriesCount:(long long)arg1;
 - (void)setUnreadSavedStories:(id)arg1;
 - (long long)trendingAndSavedStoriesCount;

@@ -27,7 +27,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
-@property (getter=isSkLoaded, nonatomic, readonly) bool skLoading;
+@property (getter=isSkLoading, nonatomic, readonly) bool skLoading;
 @property (nonatomic, copy) SKUIStorePage *storePage;
 @property (readonly) Class superclass;
 
@@ -56,7 +56,7 @@
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (bool)isSkLoaded;
+- (bool)isSkLoading;
 - (void)loadURL:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)loadURLRequest:(id)arg1 withCompletionBlock:(id /* block */)arg2;

@@ -14,7 +14,6 @@
 @property (nonatomic, readonly) long long minimumFrameDuration;
 @property (nonatomic, readonly) double minimumRefreshRate;
 @property (getter=isPaused, nonatomic) bool paused;
-@property (nonatomic) float preferredFrameRate;
 @property (nonatomic) long long preferredFramesPerSecond;
 @property (nonatomic, readonly) double targetTimestamp;
 @property (nonatomic, readonly) double timestamp;

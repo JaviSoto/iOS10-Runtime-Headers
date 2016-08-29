@@ -16,6 +16,7 @@
     id  _supportedCommandsNotificationToken;
     MPUSupportedRemoteControls * _supportedRemoteControls;
     MPUTransportControlMediaRemoteController * _transportControlMediaRemoteController;
+    MPUVolumeHUDController * _volumeHUDController;
 }
 
 @property (nonatomic, readonly) NSArray *allowedTransportControlTypes;

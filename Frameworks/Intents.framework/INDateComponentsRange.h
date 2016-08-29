@@ -2,13 +2,20 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INDateComponentsRange : NSObject <NSCopying, NSSecureCoding> {
+@interface INDateComponentsRange : NSObject <INDateComponentsRangeExport, NSCopying, NSSecureCoding> {
     NSDateComponents * _endDateComponents;
     NSDateComponents * _startDateComponents;
 }
 
+@property (nonatomic, readonly, copy) NSDateInterval *dateInterval;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSDate *endDate;
 @property (nonatomic, readonly, copy) NSDateComponents *endDateComponents;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSDate *startDate;
 @property (nonatomic, readonly, copy) NSDateComponents *startDateComponents;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

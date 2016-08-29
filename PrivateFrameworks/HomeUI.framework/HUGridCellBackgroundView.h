@@ -4,7 +4,7 @@
 
 @interface HUGridCellBackgroundView : UIView {
     unsigned long long  _backgroundState;
-    HFWallpaper * _blurredWallpaper;
+    HFWallpaperSlice * _blurredWallpaperSlice;
     UIView * _ccBaseMaterialView;
     double  _cornerRadius;
     HUGridCellBackgroundDisplayOptions * _displayOptions;
@@ -23,7 +23,7 @@
 }
 
 @property (nonatomic) unsigned long long backgroundState;
-@property (nonatomic, retain) HFWallpaper *blurredWallpaper;
+@property (nonatomic, retain) HFWallpaperSlice *blurredWallpaperSlice;
 @property (nonatomic, retain) UIView *ccBaseMaterialView;
 @property (nonatomic) double cornerRadius;
 @property (nonatomic, retain) HUGridCellBackgroundDisplayOptions *displayOptions;
@@ -48,17 +48,18 @@
 - (void)_updateWallpaperContentsRect;
 - (void)_updateWallpaperContentsScale;
 - (unsigned long long)backgroundState;
-- (id)blurredWallpaper;
+- (id)blurredWallpaperSlice;
 - (id)ccBaseMaterialView;
 - (id)ccuiPunchOutMaskForView:(id)arg1;
 - (double)cornerRadius;
+- (void)didMoveToSuperview;
 - (id)displayOptions;
 - (id)effectView;
 - (bool)isPressed;
 - (void)layoutSubviews;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedWallpaperRect;
 - (void)setBackgroundState:(unsigned long long)arg1;
-- (void)setBlurredWallpaper:(id)arg1;
+- (void)setBlurredWallpaperSlice:(id)arg1;
 - (void)setCcBaseMaterialView:(id)arg1;
 - (void)setCornerRadius:(double)arg1;
 - (void)setDisplayOptions:(id)arg1;
@@ -66,6 +67,6 @@
 - (void)setNormalizedWallpaperRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPressed:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidMoveToSuperview;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

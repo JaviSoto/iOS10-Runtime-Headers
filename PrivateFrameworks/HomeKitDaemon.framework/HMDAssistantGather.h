@@ -32,7 +32,7 @@
 - (id)currentHomeUUID;
 - (id)currentHomekitObjects;
 - (void)gatherHomeKitObjects;
-- (void)getSyncEntityObjectsWithCompletionHandler:(id /* block */)arg1;
+- (void)getSyncEntityObjectsWithValidity:(id)arg1 completionHandler:(id /* block */)arg2;
 - (long long)homeCount;
 - (id)homeKitObjects;
 - (id)initWithHomeManager:(id)arg1 queue:(id)arg2;

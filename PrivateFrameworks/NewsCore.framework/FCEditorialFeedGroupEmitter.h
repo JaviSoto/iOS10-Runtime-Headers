@@ -16,8 +16,9 @@
 @property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
 @property (readonly) Class superclass;
 
++ (id)editorialFeedTransformationWithContext:(id)arg1;
+
 - (id)groupEmitterIdentifier;
-- (id)init;
 - (id)initWithMinPrecedingTopicGroups:(unsigned long long)arg1;
 - (id)initWithNoDistanceRequirements;
 - (unsigned long long)minPrecedingTopicGroups;

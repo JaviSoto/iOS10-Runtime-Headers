@@ -3,12 +3,8 @@
  */
 
 @interface HDActivityAWDActivityFitnessDailyEvent : PBCodable <NSCopying> {
-    long long  _activeActivitySharingFriendCount;
-    long long  _activitySharingLeaderboardRank;
     NSMutableArray * _exerciseMinuteHours;
     struct { 
-        unsigned int activeActivitySharingFriendCount : 1; 
-        unsigned int activitySharingLeaderboardRank : 1; 
         unsigned int monthsSinceFirstWatchUsage : 1; 
         unsigned int moveRingCompletionPercentage : 1; 
         unsigned int timestamp : 1; 
@@ -24,11 +20,7 @@
     NSString * _userToken;
 }
 
-@property (nonatomic) long long activeActivitySharingFriendCount;
-@property (nonatomic) long long activitySharingLeaderboardRank;
 @property (nonatomic, retain) NSMutableArray *exerciseMinuteHours;
-@property (nonatomic) bool hasActiveActivitySharingFriendCount;
-@property (nonatomic) bool hasActivitySharingLeaderboardRank;
 @property (nonatomic) bool hasMonthsSinceFirstWatchUsage;
 @property (nonatomic) bool hasMoveRingCompletionPercentage;
 @property (nonatomic) bool hasTimestamp;
@@ -43,8 +35,6 @@
 + (Class)exerciseMinuteHoursType;
 
 - (void).cxx_destruct;
-- (long long)activeActivitySharingFriendCount;
-- (long long)activitySharingLeaderboardRank;
 - (void)addExerciseMinuteHours:(id)arg1;
 - (void)addStandEventMinutesSinceMidnightRoundedTo10:(long long)arg1;
 - (void)clearExerciseMinuteHours;
@@ -57,8 +47,6 @@
 - (id)exerciseMinuteHours;
 - (id)exerciseMinuteHoursAtIndex:(unsigned long long)arg1;
 - (unsigned long long)exerciseMinuteHoursCount;
-- (bool)hasActiveActivitySharingFriendCount;
-- (bool)hasActivitySharingLeaderboardRank;
 - (bool)hasMonthsSinceFirstWatchUsage;
 - (bool)hasMoveRingCompletionPercentage;
 - (bool)hasTimestamp;
@@ -69,11 +57,7 @@
 - (long long)monthsSinceFirstWatchUsage;
 - (long long)moveRingCompletionPercentage;
 - (bool)readFrom:(id)arg1;
-- (void)setActiveActivitySharingFriendCount:(long long)arg1;
-- (void)setActivitySharingLeaderboardRank:(long long)arg1;
 - (void)setExerciseMinuteHours:(id)arg1;
-- (void)setHasActiveActivitySharingFriendCount:(bool)arg1;
-- (void)setHasActivitySharingLeaderboardRank:(bool)arg1;
 - (void)setHasMonthsSinceFirstWatchUsage:(bool)arg1;
 - (void)setHasMoveRingCompletionPercentage:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;

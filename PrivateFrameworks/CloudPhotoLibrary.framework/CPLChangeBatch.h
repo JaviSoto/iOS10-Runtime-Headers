@@ -4,6 +4,8 @@
 
 @interface CPLChangeBatch : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding> {
     NSMutableDictionary * _additionalRecords;
+    bool  _calculateEstimatedBatchSize;
+    unsigned long long  _estimatedBatchSize;
     NSMutableDictionary * _localResources;
     NSMutableArray * _records;
 }
@@ -29,6 +31,7 @@
 - (id)cplFullDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)estimatedBatchSize;
 - (id)extractDeletesFromBatchDeletedRecordIdentifiers:(id*)arg1 trashedRecordIdentifiers:(id*)arg2;
 - (void)extractInitialDownloadBatch:(id*)arg1 shouldConsiderRecordFilter:(id /* block */)arg2;
 - (id)init;

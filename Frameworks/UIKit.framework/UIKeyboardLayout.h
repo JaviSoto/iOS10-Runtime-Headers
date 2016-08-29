@@ -6,6 +6,7 @@
     NSUUID * _activeTouchUUID;
     UIKBCadenceMonitor * _cadenceMonitor;
     unsigned long long  _cursorLocation;
+    id /* block */  _deferredTaskForActiveTouch;
     id /* block */  _deferredTouchDownTask;
     id /* block */  _deferredTouchMovedTask;
     NSMutableDictionary * _deferredTouchTaskLists;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) UIKBCadenceMonitor *cadenceMonitor;
 @property (nonatomic) unsigned long long cursorLocation;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) id /* block */ deferredTaskForActiveTouch;
 @property (nonatomic, copy) id /* block */ deferredTouchDownTask;
 @property (nonatomic, copy) id /* block */ deferredTouchMovedTask;
 @property (nonatomic, retain) NSMutableDictionary *deferredTouchTaskLists;
@@ -73,6 +75,7 @@
 - (bool)_canAddTouchesToScreenGestureRecognizer:(id)arg1;
 - (void)_enumerateDeferredTouchUUIDs:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_executeDeferredTouchTasks;
+- (bool)_handRestRecognizerCancelShouldBeEnd;
 - (bool)_hasRelatedTouchesForTouchState:(id)arg1;
 - (void)_ignoreTouchState:(id)arg1;
 - (void)_notifyLayoutOfGesturePosition:(struct CGPoint { double x1; double x2; })arg1 relativeToEdge:(unsigned long long)arg2;
@@ -112,6 +115,7 @@
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(bool)arg1 clearingDimming:(bool)arg2;
 - (void)dealloc;
+- (id /* block */)deferredTaskForActiveTouch;
 - (id /* block */)deferredTouchDownTask;
 - (id /* block */)deferredTouchMovedTask;
 - (id)deferredTouchTaskLists;
@@ -135,7 +139,7 @@
 - (unsigned char)getHandRestRecognizerState;
 - (id)getHorizontalOffsetFromHomeRowForRowRelativeToHomeRow:(long long)arg1;
 - (id)handRestRecognizer;
-- (void)handRestRecognizerNotifyRestForBegin:(bool)arg1 location:(struct CGPoint { double x1; double x2; })arg2 timestamp:(double)arg3 pathIndex:(int)arg4 touchUUID:(id)arg5;
+- (void)handRestRecognizerNotifyRestForBegin:(bool)arg1 location:(struct CGPoint { double x1; double x2; })arg2 timestamp:(double)arg3 pathIndex:(int)arg4 touchUUID:(id)arg5 context:(id)arg6;
 - (bool)handRestRecognizerShouldNeverIgnoreTouchState:(id)arg1 fromPoint:(struct CGPoint { double x1; double x2; })arg2 toPoint:(struct CGPoint { double x1; double x2; })arg3 forRestingState:(unsigned long long)arg4 otherRestedTouchLocations:(id)arg5;
 - (id /* block */)handRestRecognizerSilenceNextTouchDown;
 - (struct CGSize { double x1; double x2; })handRestRecognizerStandardKeyPixelSize;
@@ -171,6 +175,7 @@
 - (bool)queryShouldNeverIgnoreTouchStateWithIdentifier:(id)arg1 touchState:(id)arg2 startPoint:(struct CGPoint { double x1; double x2; })arg3 forRestingState:(unsigned long long)arg4;
 - (void)recognizer:(id)arg1 beginTouchDownForTouchWithId:(id)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3 forBeginState:(unsigned long long)arg4 whenStateReady:(id /* block */)arg5;
 - (void)recognizer:(id)arg1 cancelTouchOnLayoutWithId:(id)arg2 startPoint:(struct CGPoint { double x1; double x2; })arg3 endPoint:(struct CGPoint { double x1; double x2; })arg4 whenReady:(id /* block */)arg5;
+- (void)recognizer:(id)arg1 continueTrackingIgnoredTouchWithId:(id)arg2 currentPoint:(struct CGPoint { double x1; double x2; })arg3 whenReady:(id /* block */)arg4;
 - (void)recognizer:(id)arg1 releaseTouchToLayoutWithId:(id)arg2 startPoint:(struct CGPoint { double x1; double x2; })arg3 endPoint:(struct CGPoint { double x1; double x2; })arg4 whenReady:(id /* block */)arg5;
 - (void)recognizer:(id)arg1 restartTouchDownForTouchWithId:(id)arg2 startingAt:(double)arg3 atPoint:(struct CGPoint { double x1; double x2; })arg4 currentPoint:(struct CGPoint { double x1; double x2; })arg5 whenStateReady:(id /* block */)arg6;
 - (void)recognizer:(id)arg1 shouldContinueTrackingTouchWithId:(id)arg2 startingAt:(double)arg3 atPoint:(struct CGPoint { double x1; double x2; })arg4 currentPoint:(struct CGPoint { double x1; double x2; })arg5 forContinueState:(unsigned long long)arg6 whenStateReady:(id /* block */)arg7;
@@ -189,6 +194,7 @@
 - (void)setAutoshift:(bool)arg1;
 - (void)setCadenceMonitor:(id)arg1;
 - (void)setCursorLocation:(unsigned long long)arg1;
+- (void)setDeferredTaskForActiveTouch:(id /* block */)arg1;
 - (void)setDeferredTouchDownTask:(id /* block */)arg1;
 - (void)setDeferredTouchMovedTask:(id /* block */)arg1;
 - (void)setDeferredTouchTaskLists:(id)arg1;
@@ -264,6 +270,7 @@
 - (void)updateBackgroundCorners;
 - (void)updateLocalizedKeys:(bool)arg1;
 - (void)updateTouchProcessingForKeyboardChange;
+- (void)updateTouchProcessingForKeyplaneChange;
 - (bool)usesAutoShift;
 - (void)willBeginIndirectSelectionGesture;
 - (void)willMoveToWindow:(id)arg1;

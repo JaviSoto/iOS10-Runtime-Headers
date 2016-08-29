@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (bool)_appendBatchToStorage:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
-- (bool)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 stop:(bool*)arg3 error:(id*)arg4;
 - (bool)_popChangeBatchOfDeletedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)appendBatch:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
 - (id)changeWithIdentifier:(id)arg1;

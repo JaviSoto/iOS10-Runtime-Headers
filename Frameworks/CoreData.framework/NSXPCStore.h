@@ -3,7 +3,7 @@
  */
 
 @interface NSXPCStore : NSIncrementalStore {
-    NSPersistentStoreCache * _cache;
+    NSGenerationalRowCache * _cache;
     NSMutableDictionary * _changeCache;
     NSSQLCore * _core;
     NSGenerationToken * _identifier;
@@ -23,9 +23,9 @@
 + (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 
 - (id)_cacheNodePropertiesFromObject:(id)arg1;
-- (id)_cachedRowForObjectWithID:(id)arg1;
-- (id)_cachedRowForRelationship:(id)arg1 onObjectWithID:(id)arg2;
-- (void)_clearCachedRowForObjectWithID:(id)arg1;
+- (id)_cachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
+- (id)_cachedRowForRelationship:(id)arg1 onObjectWithID:(id)arg2 generation:(id)arg3;
+- (void)_clearCachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
 - (void)_commitChangesForRequest:(id)arg1;
 - (id)_createAndCacheRowForObjectWithID:(id)arg1 propertyValues:(id)arg2 inContext:(id)arg3 error:(id*)arg4;
 - (id)_executeSaveRequest:(id)arg1 forceInsertsToUpdates:(bool)arg2 withContext:(id)arg3 interrupts:(unsigned long long*)arg4 error:(id*)arg5;
@@ -33,9 +33,10 @@
 - (Class)_objectIDClass;
 - (id)_sanityCheckToken;
 - (void)_updateRollbackCacheForObjectWithID:(id)arg1 relationship:(id)arg2 withValuesFrom:(id)arg3;
-- (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3;
-- (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3 withTimestamp:(double)arg4;
-- (void)cacheFetchedRows:(id)arg1 forManagedObjects:(id)arg2;
+- (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3 generation:(id)arg4;
+- (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3 withTimestamp:(double)arg4 generation:(id)arg5;
+- (void)cacheFetchedRows:(id)arg1 forManagedObjects:(id)arg2 generation:(id)arg3;
+- (id)currentQueryGeneration;
 - (void)dealloc;
 - (void)decodePrefetchArray:(id)arg1 forSources:(id)arg2 context:(id)arg3;
 - (void)decodePrefetchResult:(id)arg1 forSources:(id)arg2 context:(id)arg3;
@@ -51,11 +52,12 @@
 - (id)executePullChangesRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executeSaveRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
+- (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (bool)load:(id*)arg1;
 - (bool)loadMetadata:(id*)arg1;
-- (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
-- (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
+- (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
+- (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (id)model;
 - (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (struct _NSScalarObjectID { Class x1; }*)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
@@ -74,7 +76,7 @@
 - (void)setURL:(id)arg1;
 - (void)setupRemoteStoreObserver;
 - (id)sqlCore;
-- (void)teardownRemoteStoreObserver;
+- (bool)supportsGenerationalQuerying;
 - (id)type;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;

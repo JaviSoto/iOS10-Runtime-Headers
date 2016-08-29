@@ -7,7 +7,8 @@
     NSObject<OS_dispatch_queue> * _activityRateLimiterQueue;
     NSObject<OS_dispatch_source> * _batchExecutionSource;
     NSObject<OS_dispatch_queue> * _batchExecutionSourceQueue;
-    <_DKKnowledgeSaving> * _knowledgeStore;
+    <_DKKnowledgeSaving><_DKKnowledgeDeleting><_DKKnowledgeQuerying><_DKKnowledgeEventStreamDeleting> * _knowledgeStore;
+    NSObject<OS_dispatch_queue> * _knowledgeStoreDeletionQueue;
     NSMutableArray * _pendingOperations;
     NSObject<OS_dispatch_queue> * _pendingOperationsQueue;
     <_CDInteractionRecording><_CDInteractionDeleting> * _recorder;
@@ -33,6 +34,7 @@
 - (void)deleteAllSearchableItemsWithBundleID:(id)arg1;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (void)deleteKnowledgeEventsWithBundleID:(id)arg1;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 bundleID:(id)arg2;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2;
 - (void)deleteSearchableItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2;

@@ -62,6 +62,7 @@
 - (id)assistantSwitch;
 - (void)autoscrollTimerFired:(id)arg1;
 - (bool)centerPopUpOverKey;
+- (id)containerView;
 - (void)dealloc;
 - (unsigned long long)defaultSelectedIndex;
 - (void)didSelectItemAtIndex:(unsigned long long)arg1;
@@ -140,6 +141,5 @@
 - (bool)usesShadowView;
 - (bool)usesStraightLeftEdge;
 - (bool)usesTable;
-- (id)viewThatContainsBaseKey;
 
 @end

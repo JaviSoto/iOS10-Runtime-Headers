@@ -13,6 +13,7 @@
     NSString * softwareLayout;
 }
 
+@property (nonatomic, readonly) NSString *automaticHardwareLayout;
 @property (nonatomic, readonly) NSBundle *containingBundle;
 @property (nonatomic, readonly) NSString *containingBundleDisplayName;
 @property (nonatomic, readonly) bool defaultLayoutIsASCIICapable;
@@ -40,6 +41,7 @@
 + (id)softwareLayoutFromIdentifier:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (id)automaticHardwareLayout;
 - (id)containingBundle;
 - (id)containingBundleDisplayName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -63,6 +63,10 @@
 - (id)_knownParticipantEqualToParticipant:(id)arg1;
 - (bool)_participantArray:(id)arg1 containsEquivalentWithPermissionsParticipant:(id)arg2;
 - (bool)_participantArray:(id)arg1 isEquivalentToArray:(id)arg2;
+- (void)_removeAllParticipants;
+- (void)_removeParticipantBypassingChecks:(id)arg1;
+- (void)_removePendingPrivateParticipants;
+- (void)_setPublicPermissionNoSideEffects:(long long)arg1;
 - (void)_stripPersonalInfo;
 - (void)addParticipant:(id)arg1;
 - (id)addedParticipantIDs;
@@ -71,6 +75,7 @@
 - (bool)allowsReadOnlyParticipantsToSeeEachOther;
 - (void)clearModifiedParticipants;
 - (id)containerID;
+- (id)copyWithOriginalValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentUserParticipant;
 - (id)debugDescription;
@@ -78,7 +83,6 @@
 - (void)encodeSystemFieldsWithCoder:(id)arg1;
 - (id)encryptedPublicSharingKey;
 - (bool)hasEncryptedData;
-- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRootRecord:(id)arg1;
@@ -86,7 +90,6 @@
 - (id)invitedKeysToRemove;
 - (id)invitedProtectionData;
 - (id)invitedProtectionEtag;
-- (bool)isEqual:(id)arg1;
 - (id)lastFetchedParticipants;
 - (id)owner;
 - (id)participants;

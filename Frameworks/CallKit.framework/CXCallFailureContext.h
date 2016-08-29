@@ -9,6 +9,7 @@
     bool  _hasLocationSettingsRemediation;
     bool  _hasWiFiSettingsRemediation;
     NSString * _message;
+    long long  _providerEndedReason;
     long long  _providerErrorCode;
     NSString * _title;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic) bool hasWiFiSettingsRemediation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic) long long providerEndedReason;
 @property (nonatomic) long long providerErrorCode;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
@@ -39,6 +41,7 @@
 - (bool)hasWiFiSettingsRemediation;
 - (id)initWithCoder:(id)arg1;
 - (id)message;
+- (long long)providerEndedReason;
 - (long long)providerErrorCode;
 - (id)sanitizedCopy;
 - (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;
@@ -48,6 +51,7 @@
 - (void)setHasLocationSettingsRemediation:(bool)arg1;
 - (void)setHasWiFiSettingsRemediation:(bool)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setProviderEndedReason:(long long)arg1;
 - (void)setProviderErrorCode:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

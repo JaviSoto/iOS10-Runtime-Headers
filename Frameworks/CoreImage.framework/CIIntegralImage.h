@@ -3,19 +3,15 @@
  */
 
 @interface CIIntegralImage : CIFilter {
-    NSNumber * inputComputeIntegralImageManually;
     CIImage * inputImage;
 }
 
-@property (nonatomic, retain) NSNumber *inputComputeIntegralImageManually;
 @property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 
-- (id)inputComputeIntegralImageManually;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setInputComputeIntegralImageManually:(id)arg1;
 - (void)setInputImage:(id)arg1;
 
 @end

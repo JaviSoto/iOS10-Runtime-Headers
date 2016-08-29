@@ -7,6 +7,7 @@
     UILayoutGuide * _firstBaselineLayoutGuide;
     UIFont * _font;
     bool  _isDirty;
+    bool  _isWaitingToMoveToWindow;
     UILayoutGuide * _lastBaselineLayoutGuide;
     NSArray * _legibilityConstraints;
     _UILegibilitySettings * _legibilitySettings;
@@ -36,6 +37,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) long long textAlignment;
 @property (nonatomic, copy) UIColor *textColor;
+@property (nonatomic) bool useColorFilters;
 
 - (void).cxx_destruct;
 - (double)_layoutGuideOffsetFromBottom:(id)arg1;
@@ -46,6 +48,7 @@
 - (bool)adjustsFontSizeToFitWidth;
 - (id)attributedText;
 - (double)baselineOffset;
+- (void)didMoveToWindow;
 - (double)firstBaselineOffsetFromBottom;
 - (id)font;
 - (id)initWithCoder:(id)arg1;
@@ -73,12 +76,13 @@
 - (void)setString:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setUseColorFilters:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)strength;
 - (id)string;
 - (long long)textAlignment;
 - (id)textColor;
-- (void)updateConstraints;
+- (bool)useColorFilters;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
 

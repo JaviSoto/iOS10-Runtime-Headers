@@ -200,6 +200,7 @@
 - (id)geoFenceMapRegion;
 - (bool)hasExpiredComponents;
 - (bool)isDisputed;
+- (bool)isEqualToMapItem:(id)arg1;
 - (bool)isEventAllDay;
 - (bool)isValid;
 - (void)loadTransitAttributionDetails:(id /* block */)arg1;

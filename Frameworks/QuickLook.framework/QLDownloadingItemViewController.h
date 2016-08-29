@@ -13,14 +13,17 @@
     bool  _downloading;
     <QLDownloadingItemViewControllerDelegate> * _downloadingDelegate;
     QLDetailItemViewControllerState * _nonCancelableDownloadingState;
+    QLDetailItemViewControllerState * _previewLoadingState;
     id  _progressSubscriber;
     QLRoundProgressView * _progressView;
     QLDetailItemViewControllerState * _readyForDownloadState;
+    bool  _showsLoadingPreviewSpinner;
 }
 
-@property bool downloaded;
-@property <QLDownloadingItemViewControllerDelegate> *downloadingDelegate;
-@property (retain) QLRoundProgressView *progressView;
+@property (nonatomic) bool downloaded;
+@property (nonatomic) <QLDownloadingItemViewControllerDelegate> *downloadingDelegate;
+@property (nonatomic, readonly) QLRoundProgressView *progressView;
+@property (nonatomic) bool showsLoadingPreviewSpinner;
 
 - (void).cxx_destruct;
 - (id)_newDownloadOperation;
@@ -41,7 +44,8 @@
 - (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setDownloaded:(bool)arg1;
 - (void)setDownloadingDelegate:(id)arg1;
-- (void)setProgressView:(id)arg1;
+- (void)setShowsLoadingPreviewSpinner:(bool)arg1;
+- (bool)showsLoadingPreviewSpinner;
 - (void)viewDidLoad;
 
 @end

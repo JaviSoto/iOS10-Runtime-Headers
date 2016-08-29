@@ -29,8 +29,10 @@
 - (bool)hasTasks;
 - (bool)ignoredOnBegin;
 - (id)initWithTouchUUID:(id)arg1 withPathIndex:(unsigned long long)arg2;
+- (bool)isExecutingFirstTask;
 - (double)originalStartTime;
 - (unsigned long long)pathIndex;
+- (void)removeTasksMatchingFilter:(id /* block */)arg1;
 - (void)setIgnoredOnBegin:(bool)arg1;
 - (id)touchUUID;
 

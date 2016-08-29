@@ -82,7 +82,7 @@
 - (void)rampToVideoZoomFactor:(float)arg1 withRampType:(int)arg2 rate:(float)arg3 duration:(double)arg4 commandID:(int)arg5;
 - (void)registerForAEMatrixMetadata;
 - (bool)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
-- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 clientBracketMode:(int)arg5;
+- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 clientBracketMode:(int)arg5;
 - (id)sensorIDDictionaryByPortType;
 - (void)setActiveFormatIndex:(long long)arg1;
 - (bool)setAutoFlashEnabled:(bool)arg1 error:(id*)arg2;
@@ -118,7 +118,7 @@
 - (bool)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)startupFaceDetectionIfNeeded;
 - (bool)stillImageCaptureEnabled;
-- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
+- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
 - (void)stopCameraInfo;
 - (bool)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)streamsReady;

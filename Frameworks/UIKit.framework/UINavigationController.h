@@ -98,7 +98,7 @@
     UIView * _navigationTransitionView;
     unsigned int  _popSoundID;
     unsigned int  _pushSoundID;
-    NSMapTable * _rememberedFocusedViews;
+    NSMapTable * _rememberedFocusedItemsByViewController;
     long long  _savedNavBarStyleBeforeSheet;
     long long  _savedToolBarStyleBeforeSheet;
     double  _statusBarHeightForHideShow;
@@ -160,6 +160,7 @@
 @property (nonatomic) bool pretendNavBarHidden;
 @property (nonatomic, readonly) UIViewController *previousViewController;
 @property (nonatomic, readonly) PXSnapBackController *px_snapBackController;
+@property (getter=_rememberedFocusedItemsByViewController, nonatomic, readonly) NSMapTable *rememberedFocusedItemsByViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIToolbar *toolbar;
 @property (getter=isToolbarHidden, nonatomic) bool toolbarHidden;
@@ -229,7 +230,7 @@
 - (id)_findViewControllerToPopTo;
 - (id)_findViewControllerToPopToForNavigationItem:(id)arg1;
 - (void)_finishInteractiveTransition:(double)arg1 transitionContext:(id)arg2;
-- (void)_forgetFocusedViewForViewController:(id)arg1;
+- (void)_forgetFocusedItemForViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 displayingTopView:(bool)arg2 andBottomView:(bool)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForPalette:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForViewController:(id)arg1;
@@ -322,10 +323,11 @@
 - (void)_privateWillShowViewController:(id)arg1;
 - (void)_propagateContentAdjustmentsForControllersWithSharedViews;
 - (bool)_reallyWantsFullScreenLayout;
-- (id)_recallRememberedFocusedViewForViewController:(id)arg1;
+- (id)_recallRememberedFocusedItemForViewController:(id)arg1;
 - (void)_releaseContainerViews;
-- (void)_rememberFocusedView:(id)arg1 forViewController:(id)arg2;
-- (void)_rememberPresentingFocusedView:(id)arg1;
+- (void)_rememberFocusedItem:(id)arg1 forViewController:(id)arg2;
+- (void)_rememberPresentingFocusedItem:(id)arg1;
+- (id)_rememberedFocusedItemsByViewController;
 - (void)_repositionPaletteWithNavigationBarHidden:(bool)arg1 duration:(double)arg2 shouldUpdateNavigationItems:(bool)arg3;
 - (void)_resetBottomBarHiddenState;
 - (id)_screenEdgePanGestureRecognizer;
@@ -413,6 +415,7 @@
 - (void)_startPaletteTransitionIfNecessary:(id)arg1 animated:(bool)arg2;
 - (void)_startToolbarTransitionIfNecessary:(id)arg1 animated:(bool)arg2;
 - (void)_startTransition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
+- (void)_stopTransitionsImmediately;
 - (long long)_subclassPreferredFocusedViewPrioritizationType;
 - (void)_tabBarControllerDidFinishShowingTabBar:(id)arg1 isHidden:(bool)arg2;
 - (id)_toolbarAnimationId;
@@ -594,6 +597,7 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visibleViewController;
 - (bool)wasLastOperationAnimated;
 - (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;

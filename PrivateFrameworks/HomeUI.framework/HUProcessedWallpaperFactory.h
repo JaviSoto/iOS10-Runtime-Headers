@@ -9,8 +9,9 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (id)blurredWallpaperForWallpaper:(id)arg1;
-- (id)processedWallpaperForVariant:(long long)arg1 wallpaper:(id)arg2;
-- (id)processedWallpaperForWallpaper:(id)arg1;
+- (id)blurredImageForWallpaper:(id)arg1 image:(id)arg2;
+- (id)croppedImageFromWallpaper:(id)arg1 image:(id)arg2;
+- (id)processedImageForVariant:(long long)arg1 wallpaper:(id)arg2 image:(id)arg3;
+- (id)processedImageForWallpaper:(id)arg1 image:(id)arg2;
 
 @end

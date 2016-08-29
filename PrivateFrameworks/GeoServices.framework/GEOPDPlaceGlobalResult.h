@@ -9,6 +9,7 @@
     GEOPDSearchBrowseCategorySuggestionResult * _browseCategorySuggestionResult;
     GEOPDCanonicalLocationSearchResult * _canonicalSearchResult;
     GEOPDCategorySearchResult * _categorySearchResult;
+    GEOPDFeatureIdGeocodingResult * _featureIdGeocodingResult;
     GEOPDGeocodingResult * _geocodingResult;
     GEOPDLocationDirectedSearchResult * _locationDirectedSearchResult;
     GEOPDMerchantLookupResult * _merchantLookupResult;
@@ -22,6 +23,7 @@
     GEOPDSearchZeroKeywordCategorySuggestionResult * _searchZeroKeywordCategorySuggestionResult;
     GEOPDSearchZeroKeywordWithSearchResultsSuggestionResult * _searchZeroKeywordWithSearchResultsSuggestionResult;
     GEOPDSiriSearchResult * _siriSearchResult;
+    PBUnknownFields * _unknownFields;
     GEOPDVendorSpecificPlaceRefinementResult * _vendorSpecificPlaceRefinementResult;
 }
 
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) GEOPDSearchBrowseCategorySuggestionResult *browseCategorySuggestionResult;
 @property (nonatomic, retain) GEOPDCanonicalLocationSearchResult *canonicalSearchResult;
 @property (nonatomic, retain) GEOPDCategorySearchResult *categorySearchResult;
+@property (nonatomic, retain) GEOPDFeatureIdGeocodingResult *featureIdGeocodingResult;
 @property (nonatomic, retain) GEOPDGeocodingResult *geocodingResult;
 @property (nonatomic, readonly) bool hasAddressObjectGeocodingResult;
 @property (nonatomic, readonly) bool hasAutocompleteResult;
@@ -38,6 +41,7 @@
 @property (nonatomic, readonly) bool hasBrowseCategorySuggestionResult;
 @property (nonatomic, readonly) bool hasCanonicalSearchResult;
 @property (nonatomic, readonly) bool hasCategorySearchResult;
+@property (nonatomic, readonly) bool hasFeatureIdGeocodingResult;
 @property (nonatomic, readonly) bool hasGeocodingResult;
 @property (nonatomic, readonly) bool hasLocationDirectedSearchResult;
 @property (nonatomic, readonly) bool hasMerchantLookupResult;
@@ -64,6 +68,7 @@
 @property (nonatomic, retain) GEOPDSearchZeroKeywordCategorySuggestionResult *searchZeroKeywordCategorySuggestionResult;
 @property (nonatomic, retain) GEOPDSearchZeroKeywordWithSearchResultsSuggestionResult *searchZeroKeywordWithSearchResultsSuggestionResult;
 @property (nonatomic, retain) GEOPDSiriSearchResult *siriSearchResult;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDVendorSpecificPlaceRefinementResult *vendorSpecificPlaceRefinementResult;
 
 - (id)addressObjectGeocodingResult;
@@ -77,6 +82,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)featureIdGeocodingResult;
 - (id)geocodingResult;
 - (bool)hasAddressObjectGeocodingResult;
 - (bool)hasAutocompleteResult;
@@ -84,6 +90,7 @@
 - (bool)hasBrowseCategorySuggestionResult;
 - (bool)hasCanonicalSearchResult;
 - (bool)hasCategorySearchResult;
+- (bool)hasFeatureIdGeocodingResult;
 - (bool)hasGeocodingResult;
 - (bool)hasLocationDirectedSearchResult;
 - (bool)hasMerchantLookupResult;
@@ -119,6 +126,7 @@
 - (void)setBrowseCategorySuggestionResult:(id)arg1;
 - (void)setCanonicalSearchResult:(id)arg1;
 - (void)setCategorySearchResult:(id)arg1;
+- (void)setFeatureIdGeocodingResult:(id)arg1;
 - (void)setGeocodingResult:(id)arg1;
 - (void)setLocationDirectedSearchResult:(id)arg1;
 - (void)setMerchantLookupResult:(id)arg1;
@@ -134,6 +142,7 @@
 - (void)setSiriSearchResult:(id)arg1;
 - (void)setVendorSpecificPlaceRefinementResult:(id)arg1;
 - (id)siriSearchResult;
+- (id)unknownFields;
 - (id)vendorSpecificPlaceRefinementResult;
 - (void)writeTo:(id)arg1;
 

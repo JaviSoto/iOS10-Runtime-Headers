@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDesiredVersion : BRCVersion <PQLBindable> {
+@interface BRCDesiredVersion : BRCVersion <PQLValuable> {
     NSError * _downloadError;
     union { 
         unsigned int value; 
@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) bool wantsContent;
 @property (nonatomic, readonly) bool wantsThumbnail;
 
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

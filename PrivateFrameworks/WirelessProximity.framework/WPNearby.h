@@ -4,19 +4,15 @@
 
 @interface WPNearby : WPClient {
     long long  _btBandwidthState;
-    unsigned short  _currentDataSize;
-    NSMutableData * _currentReceivedData;
     <WPNearbyDelegate> * _delegate;
     NSMutableDictionary * _discoveredPeers;
-    bool  _receivedFirstPacket;
+    NSMutableDictionary * _transfers;
 }
 
 @property long long btBandwidthState;
-@property (nonatomic) unsigned short currentDataSize;
-@property (nonatomic, retain) NSMutableData *currentReceivedData;
 @property (nonatomic) <WPNearbyDelegate> *delegate;
 @property (nonatomic, retain) NSMutableDictionary *discoveredPeers;
-@property (nonatomic) bool receivedFirstPacket;
+@property (retain) NSMutableDictionary *transfers;
 
 + (unsigned char)clientTypeFromNearbyType:(long long)arg1;
 + (bool)holdVoucherForConnections;
@@ -33,8 +29,6 @@
 - (id)clientAsString;
 - (void)connectToPeer:(id)arg1;
 - (void)connectedDevice:(id)arg1 withError:(id)arg2 shouldDiscover:(bool)arg3;
-- (unsigned short)currentDataSize;
-- (id)currentReceivedData;
 - (id)delegate;
 - (void)deviceDiscovered:(id)arg1;
 - (void)disconnectFromPeer:(id)arg1;
@@ -46,21 +40,17 @@
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)invalidate;
 - (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;
-- (void)notifyClientOfReceivedData:(id)arg1 fromPeripheral:(id)arg2;
 - (void)populateClientGATT:(id /* block */)arg1;
 - (void)receivedData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4;
-- (bool)receivedFirstPacket;
 - (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)scanningStartedOfType:(unsigned char)arg1;
 - (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)sendData:(id)arg1 toPeer:(id)arg2;
 - (void)sentData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4 withError:(id)arg5;
 - (void)setBtBandwidthState:(long long)arg1;
-- (void)setCurrentDataSize:(unsigned short)arg1;
-- (void)setCurrentReceivedData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveredPeers:(id)arg1;
-- (void)setReceivedFirstPacket:(bool)arg1;
+- (void)setTransfers:(id)arg1;
 - (void)startAdvertisingOfType:(long long)arg1 data:(id)arg2 priority:(long long)arg3 mode:(long long)arg4;
 - (void)startAdvertisingOfType:(long long)arg1 withData:(id)arg2;
 - (void)startAdvertisingOfType:(long long)arg1 withData:(id)arg2 priority:(long long)arg3;
@@ -74,6 +64,7 @@
 - (void)stopScanningForType:(long long)arg1;
 - (void)stopTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (void)stoppedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (id)transfers;
 - (void)updateAdvertisingRequest:(id)arg1 withUpdate:(id /* block */)arg2;
 - (void)updatedNotificationState:(bool)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 withPeripheral:(id)arg4;
 

@@ -18,6 +18,7 @@
     NSString * _placeNameHint;
     int  _placeTypeHint;
     int  _resultProviderId;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int addressGeocodeAccuracyHint;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSString *placeNameHint;
 @property (nonatomic) int placeTypeHint;
 @property (nonatomic) int resultProviderId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)formattedAddressLineHintType;
 
@@ -93,6 +95,7 @@
 - (void)setPlaceNameHint:(id)arg1;
 - (void)setPlaceTypeHint:(int)arg1;
 - (void)setResultProviderId:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

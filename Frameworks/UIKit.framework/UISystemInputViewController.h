@@ -73,6 +73,7 @@
 - (id)_accessoryViewControllerForEdge:(long long)arg1;
 - (void)_addAccessoryViewController:(id)arg1;
 - (void)_addChildInputViewController;
+- (void)_clearCursorLocationIfNotFirstResponder;
 - (void)_createKeyboardIfNecessary;
 - (void)_didSuspend:(id)arg1;
 - (bool)_disableAutomaticKeyboardBehavior;
@@ -81,6 +82,7 @@
 - (unsigned long long)_horizontalLayoutTypeForEdge:(long long)arg1;
 - (id)_promptLabel;
 - (void)_removeAccessoryViewController:(id)arg1;
+- (void)_resetDelegate;
 - (void)_returnButtonPressed;
 - (void)_setNonInputViewVisibility:(bool)arg1;
 - (id)_traitCollectionForUserInterfaceStyle;
@@ -118,7 +120,7 @@
 - (void)notifyDelegateWithAccessoryVisibility:(bool)arg1;
 - (id)persistentDelegate;
 - (void)populateCoreHierarchy;
-- (id)preferredFocusedItem;
+- (id)preferredFocusEnvironments;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKChatController : CKCoreChatController <AFContextProvider, CKActionMenuGestureRecognizerButtonDelegate, CKBrowserDragControllerTranscriptDelegate, CKChatInputControllerDelegate, CKDetailsControllerDelegate, CKEffectPickerViewControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKMessageEntryViewDelegate, CKNavbarCanvasViewControllerDelegate, CKPhotoPickerControllerDelegate, CKReaderViewControllerDelegate, CKSendAnimationBalloonProvider, CKSendAnimationManagerDelegate, CKThrowAnimationManagerDelegate, CKTrimControllerDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, CKVideoMessageRecordingViewControllerDelegate, CNContactViewControllerDelegate, EKEventEditViewDelegate, PHPhotoLibraryChangeObserver, PKAddPassesViewControllerDelegate, QLPreviewControllerDelegate, SGUIBannerViewDelegate, UIGestureRecognizerDelegate, UIInteractionProgressObserver, UIPreviewInteractionDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, UIViewControllerTransitioningDelegate> {
+@interface CKChatController : CKCoreChatController <AFContextProvider, CKActionMenuGestureRecognizerButtonDelegate, CKBrowserDragControllerTranscriptDelegate, CKChatInputControllerDelegate, CKDetailsControllerDelegate, CKEffectPickerViewControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKMessageEntryViewDelegate, CKNavbarCanvasViewControllerDelegate, CKPhotoPickerControllerDelegate, CKReaderViewControllerDelegate, CKSendAnimationBalloonProvider, CKSendAnimationManagerDelegate, CKThrowAnimationManagerDelegate, CKTrimControllerDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, CKVideoMessageRecordingViewControllerDelegate, CNContactViewControllerDelegate, EKEventEditViewDelegate, PHPhotoLibraryChangeObserver, PKAddPassesViewControllerDelegate, QLPreviewControllerDelegate, SGUIBannerViewDelegate, UIGestureRecognizerDelegate, UIInteractionProgressObserver, UIPopoverPresentationControllerDelegate, UIPreviewInteractionDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, UIViewControllerTransitioningDelegate> {
     UIToolbar * _actionsToolbar;
     CKAudioTrimViewController * _audioTrimController;
     IMScheduledUpdater * _autorotationUpdater;
@@ -52,7 +52,6 @@
     }  _startingScrollOffset;
     double  _stickerTranscriptScrollDelta;
     CADisplayLink * _stickerTranscriptScrollDisplayLink;
-    CKSuggestionsProxy * _suggestionsProxy;
     long long  _targetFirstResponder;
     CKThrowAnimationManager * _throwAnimationManager;
     CKScheduledUpdater * _transcriptInlineNotificationUpdater;
@@ -104,7 +103,6 @@
 @property (getter=isShowingVideoMessageRecordingView, nonatomic) bool showingVideoMessageRecordingView;
 @property (nonatomic) double stickerTranscriptScrollDelta;
 @property (nonatomic, retain) CADisplayLink *stickerTranscriptScrollDisplayLink;
-@property (nonatomic, retain) CKSuggestionsProxy *suggestionsProxy;
 @property (readonly) Class superclass;
 @property (nonatomic) long long targetFirstResponder;
 @property (nonatomic, retain) CKThrowAnimationManager *throwAnimationManager;
@@ -178,9 +176,10 @@
 - (void)_showReaderForAggregateChatItem:(id)arg1;
 - (void)_showVCalViewerForMediaObject:(id)arg1;
 - (void)_showVCardViewerForMediaObject:(id)arg1;
-- (void)_sizeAndPositionBannerView:(id)arg1;
+- (void)_sizeAndPositionBannerView:(id)arg1 animated:(bool)arg2;
 - (void)_sizeEffectPickerWindow;
 - (void)_stickerTranscriptScrollDisplayLinkFired;
+- (id)_suggestionsNotificationNameForChat:(id)arg1;
 - (id)_supportedMediaTypesForPhotoPicker;
 - (void)_textInputModeDidChange:(id)arg1;
 - (void)_transferFinishedNotification:(id)arg1;
@@ -190,6 +189,7 @@
 - (void)_updateInputViewFrameIfNecessary;
 - (void)_updateNavigationButtons;
 - (void)_updateTranscriptInlineNotification;
+- (void)_updateTranscriptOffsetForBannerView;
 - (void)_willSendComposition:(id)arg1 inConversation:(id)arg2;
 - (void)actionMenuGestureRecognizerButtonDidTouchDownButton:(id)arg1;
 - (void)actionMenuGestureRecognizerButtonDidTouchUpInsideButton:(id)arg1;
@@ -235,7 +235,7 @@
 - (void)cleanUpDarkEffectStyle;
 - (void)clearCurrentMessageThread;
 - (id)collectionViewControllerForImpactEffectManager:(id)arg1;
-- (id)committedViewControllerForPreviewViewController:(id)arg1;
+- (void)composeRecipientViewShouldResignFirstResponder;
 - (id)composition;
 - (id)compositionBeingTrimmed;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
@@ -245,6 +245,7 @@
 - (void)didReceiveMemoryWarning;
 - (void)dismissDetailsController:(id)arg1;
 - (void)dismissKeyboard;
+- (void)dismissPresentedViewController:(id)arg1;
 - (void)dismissPresentedViewController:(id)arg1;
 - (void)dismissVideoMessageRecordingViewController;
 - (id)dragControllerTranscriptDelegate;
@@ -267,12 +268,12 @@
 - (id)extensionPayloadBeingSent;
 - (void)forciblyUnloadChatInputController;
 - (void)fullScreenBalloonViewController:(id)arg1 deleteStickerWithTransferGUID:(id)arg2;
-- (void)fullScreenBalloonViewController:(id)arg1 didDisappearWithSendAnimation:(bool)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(long long)arg2 forChatItem:(id)arg3;
 - (void)fullScreenBalloonViewController:(id)arg1 stickerPackTappedWithAdamID:(id)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 verticallyScrollTranscriptByAmount:(double)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(bool)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 willDisappearWithSendAnimation:(bool)arg2;
+- (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)getContainerWidth:(double*)arg1 offset:(double*)arg2;
@@ -338,6 +339,8 @@
 - (bool)prefersStatusBarHidden;
 - (void)prepareForSuspend;
 - (void)presentTrimControllerForMediaObject:(id)arg1;
+- (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
+- (id)presentedControllerDoneButtonItem;
 - (id)previewActionsForPreviewController:(id)arg1;
 - (id)previewController;
 - (bool)previewController:(id)arg1 canShareItem:(id)arg2;
@@ -426,7 +429,6 @@
 - (void)setShowingVideoMessageRecordingView:(bool)arg1;
 - (void)setStickerTranscriptScrollDelta:(double)arg1;
 - (void)setStickerTranscriptScrollDisplayLink:(id)arg1;
-- (void)setSuggestionsProxy:(id)arg1;
 - (void)setTargetFirstResponder:(long long)arg1;
 - (void)setThrowAnimationManager:(id)arg1;
 - (void)setTranscriptInlineNotificationUpdater:(id)arg1;
@@ -454,7 +456,6 @@
 - (void)suggestionsBannerView:(id)arg1 didTapAddForEvent:(id)arg2 wantsToPresentEventViewController:(id)arg3;
 - (void)suggestionsBannerView:(id)arg1 wantsToPushMixedSuggestionsViewController:(id)arg2;
 - (void)suggestionsBannerViewDidDismiss:(id)arg1;
-- (id)suggestionsProxy;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)supportedMediaTypesForPhotoPicker:(id)arg1;
 - (void)tapGestureRecognized:(id)arg1;
@@ -465,13 +466,16 @@
 - (double)throwAnimationManagerAccessoryViewHeight:(id)arg1;
 - (id)throwAnimationManagerEntryView:(id)arg1;
 - (void)throwAnimationManagerPrepareForThrowAnimation:(id)arg1 context:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })throwAnimationWindowFrame:(id)arg1;
 - (id)throwBalloonsForSendAnimationContext:(id)arg1;
+- (double)topInsetPadding;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (void)transcriptCollectionViewController:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didEndImpactEffectAnimationWithSendAnimationContext:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didTapAttributionButtonForChatItem:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 didTapPluginStatusButtonForChatItem:(id)arg2;
 - (bool)transcriptCollectionViewController:(id)arg1 shouldCleanupFullscreenEffectUI:(id)arg2;
 - (bool)transcriptCollectionViewController:(id)arg1 shouldSetupFullscreenEffectUI:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 willBeginImpactEffectAnimationWithSendAnimationContext:(id)arg2;

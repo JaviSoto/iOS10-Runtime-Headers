@@ -17,6 +17,7 @@
 
 @property (nonatomic) bool allowManualDismiss;
 @property (nonatomic, retain) UIView *blockingView;
+@property (nonatomic, readonly) NSString *contentExtensionIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -25,6 +26,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NCMediaPlayPauseButton *mediaPlayPauseButton;
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
+@property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (nonatomic, retain) NSMutableArray *queuedRequests;
 @property (nonatomic, retain) <_UNNotificationExtensionRemoteInterface> *remoteService;
 @property (readonly) Class superclass;
@@ -36,6 +38,7 @@
 - (void)_flushQueuedRequests;
 - (void)_loadViewControllerForExtension:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_mediaPlayPauseButtonTapped:(id)arg1;
+- (id)_requestActionForActionIdentifier:(id)arg1;
 - (id)_responseForAction:(id)arg1 notification:(id)arg2 response:(id)arg3;
 - (void)_setupExtensionViewController:(id)arg1;
 - (void)_setupMediaButton;
@@ -45,6 +48,7 @@
 - (id)blockingView;
 - (bool)canBecomeFirstResponder;
 - (bool)canResignFirstResponder;
+- (id)contentExtensionIdentifier;
 - (unsigned long long)customContentLocation;
 - (void)dealloc;
 - (bool)defaultContentHidden;

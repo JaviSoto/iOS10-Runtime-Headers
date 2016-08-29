@@ -13,6 +13,7 @@
     NSString * _memoryUUID;
     PSIQuery * _query;
     NSObject<OS_dispatch_queue> * _queue;
+    unsigned long long  _searchCategories;
     NSString * _searchString;
     PUSiriSearch * _siriSearch;
     unsigned long long  _taskId;
@@ -32,6 +33,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) bool isEmpty;
 @property (setter=_setMemoryUUID:, retain) NSString *memoryUUID;
+@property unsigned long long searchCategories;
 @property (setter=_setSearchString:, copy) NSString *searchString;
 @property (setter=_setSiriSearch:, retain) PUSiriSearch *siriSearch;
 @property (readonly) Class superclass;
@@ -69,8 +71,10 @@
 - (bool)isEmpty;
 - (id)memoryUUID;
 - (void)restart;
+- (unsigned long long)searchCategories;
 - (id)searchString;
 - (void)setDelegate:(id)arg1;
+- (void)setSearchCategories:(unsigned long long)arg1;
 - (id)siriSearch;
 - (id)uuids;
 

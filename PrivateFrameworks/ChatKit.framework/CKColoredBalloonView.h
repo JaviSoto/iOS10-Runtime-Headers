@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (void)addFilter:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
-- (id)backdropMask;
 - (struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned long long x5; BOOL x6; bool x7; bool x8; bool x9; })balloonDescriptor;
 - (void)clearFilters;
 - (BOOL)color;

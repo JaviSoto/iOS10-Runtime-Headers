@@ -8,6 +8,8 @@
 
 @property (nonatomic) bool shouldCache;
 
++ (bool)_canConvertBetweenCoordinateSpace:(id)arg1 andCoordinateSpace:(id)arg2;
++ (bool)canConvertBetweenCoordinateSpaceIdentifier:(void*)arg1 andCoordinateSpaceIdentifier:(void*)arg2;
 + (id)defaultConverter;
 
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformOfCoordinateSpace:(id)arg1 relativeToCoordinateSpace:(id)arg2;

@@ -20,13 +20,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
 
-+ (id /* block */)_characteristicTypeComparator;
 + (id)_percentFormatter;
 
 - (void).cxx_destruct;
 - (id)_characteristicTypeToTargetValuesMap;
-- (id)_naturalLanguageDescriptionForActions;
-- (id)_naturalLanguageDescriptionForCharacteristicType:(id)arg1 targetValues:(id)arg2;
+- (void)_getDesiredItemDescription:(id*)arg1 controlDescription:(id*)arg2 withSourceItemResults:(id)arg3;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 - (id)actionBuilders;

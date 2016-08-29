@@ -3,21 +3,24 @@
  */
 
 @interface VCPCNNModel : NSObject {
-    struct CNNBlock {} * _blocks;
-    struct CNNData { float *x1; struct CNNSize { int x_2_1_1[4]; } x2; } * _output;
+    VCPCNNBlock * _blocks;
+    VCPCNNMetalContext * _context;
+    VCPCNNData * _output;
     short  _quantFactor;
+    bool  _useGPU;
 }
 
-@property (readonly) struct CNNData { float *x1; struct CNNSize { int x_2_1_1[4]; } x2; }*output;
+@property (readonly) VCPCNNData *output;
 
-- (int)add:(struct CNNBlock { int (**x1)(); struct CNNSize { int x_2_1_1[4]; } x2; struct CNNSize { int x_3_1_1[4]; } x3; struct CNNData {} *x4; struct CNNData {} *x5; }*)arg1;
-- (void)dealloc;
-- (int)dynamicForward:(struct CNNData { float *x1; struct CNNSize { int x_2_1_1[4]; } x2; }*)arg1 paramFileUrl:(id)arg2 cancel:(id /* block */)arg3;
-- (int)forward:(struct CNNData { float *x1; struct CNNSize { int x_2_1_1[4]; } x2; }*)arg1;
+- (void).cxx_destruct;
+- (int)add:(id)arg1;
+- (int)dynamicForward:(id)arg1 paramFileUrl:(id)arg2 cancel:(id /* block */)arg3;
+- (int)forward:(id)arg1;
+- (id)getGPUContext;
 - (id)init;
-- (id)initWithQuantFactor:(short)arg1;
-- (int)initailizeNetwork:(const struct CNNSize { int x1[4]; }*)arg1 paramFileUrl:(id)arg2;
-- (struct CNNData { float *x1; struct CNNSize { int x_2_1_1[4]; } x2; }*)output;
+- (id)initWithParameters:(short)arg1 useGPU:(bool)arg2;
+- (int)initailizeNetwork:(id)arg1 paramFileUrl:(id)arg2;
+- (id)output;
 - (int)size;
 
 @end

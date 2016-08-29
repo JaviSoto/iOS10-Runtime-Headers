@@ -11,7 +11,6 @@
     NSSQLiteStatement * _deletionStatementCache;
     NSSQLEntity * _entity;
     NSSQLiteStatement * _faultingStatementCache;
-    NSMutableArray * _fetchStatements;
     NSSQLiteStatement * _insertStatementCache;
     NSMutableDictionary * _toManyRelationshipStatementCache;
 }
@@ -24,7 +23,6 @@
 - (void)cacheDeletionStatement:(id)arg1;
 - (void)cacheFaultingStatement:(id)arg1;
 - (void)cacheFaultingStatement:(id)arg1 andFetchRequest:(id)arg2 forRelationship:(id)arg3;
-- (void)cacheFetchStatement:(id)arg1;
 - (void)cacheInsertStatement:(id)arg1;
 - (void)clearCachedStatements;
 - (id)correlationDeleteStatementForRelationship:(id)arg1;

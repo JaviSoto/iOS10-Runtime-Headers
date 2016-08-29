@@ -51,6 +51,7 @@
         bool respondsToTileTransitionCoordinatorForChangeFromFrame; 
         bool respondsToTileTransitionCoordinatorForReattachedTileControllers; 
         bool respondsToTileTransitionCoordinatorForLayoutInvalidationContext; 
+        bool respondsToCanBypass20069585Check; 
     }  _tileTransitionDelegateFlags;
     <PUTilingViewTileUseDelegate> * _tileUseDelegate;
     struct { 

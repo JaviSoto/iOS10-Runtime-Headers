@@ -5,11 +5,12 @@
 
 @required
 
+- (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 
 @optional
 
-- (GEOLogContext *)logContextForEventType:(int)arg1;
+- (GEOLogContext *)logContextForLogMsgEvent:(GEOLogMsgEvent *)arg1;
 - (int)searchFieldTypeForAnalytics;
 
 @end

@@ -23,6 +23,7 @@
 
 @property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;
 @property (nonatomic, retain) SKUIResourceLoader *artworkLoader;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIItemCollectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -54,6 +55,7 @@
 - (id)artworkLoader;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)cancelArtworkLoadForItemIndex:(long long)arg1;
+- (id)clientContext;
 - (void)configureCellLayout:(id)arg1 forIndex:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
@@ -79,6 +81,7 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setArtworkContext:(id)arg1;
 - (void)setArtworkLoader:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIconDataConsumer:(id)arg1;
 - (void)setItems:(id)arg1;

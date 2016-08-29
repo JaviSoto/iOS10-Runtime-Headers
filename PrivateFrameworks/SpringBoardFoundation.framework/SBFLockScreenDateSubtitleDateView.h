@@ -3,30 +3,36 @@
  */
 
 @interface SBFLockScreenDateSubtitleDateView : SBFLockScreenDateSubtitleView {
-    double  _alignmentPercentage;
+    double  _alignmentPercent;
     SBUILegibilityLabel * _alternateDateLabel;
     NSDate * _date;
 }
 
-@property (nonatomic) double alignmentPercentage;
+@property (nonatomic) double alignmentPercent;
 @property (nonatomic, retain) SBUILegibilityLabel *alternateDateLabel;
 @property (nonatomic, retain) NSDate *date;
 
 - (void).cxx_destruct;
 - (id)_alternateDateString;
+- (id)_createReplicateView;
 - (id)_lunarCalendarIdentifier;
+- (double)_lunarDateLabelYOffsetFromDateLabel;
 - (void)_setupAlternateDateLabel;
 - (bool)_showAlternateDate;
-- (double)alignmentPercentage;
+- (double)alignmentPercent;
 - (id)alternateDateLabel;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alternateDateLabelFrame;
 - (id)date;
 - (void)dealloc;
 - (id)initWithDate:(id)arg1;
 - (void)layoutSubviews;
-- (void)setAlignmentPercentage:(double)arg1;
+- (id)replicate;
+- (void)setAlignmentPercent:(double)arg1;
 - (void)setAlternateDateLabel:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
+- (void)setStrength:(double)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })subtitleLabelFrame;
 
 @end

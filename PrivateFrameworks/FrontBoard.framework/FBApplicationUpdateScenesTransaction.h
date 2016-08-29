@@ -5,11 +5,8 @@
 @interface FBApplicationUpdateScenesTransaction : FBSynchronizedTransactionGroup <FBApplicationProcessLaunchTransactionObserver, FBUpdateSceneTransactionObserver> {
     NSString * _bundleID;
     NSMutableArray * _pendingUpdateSceneBlocks;
-    FBApplicationProcess * _process;
     FBApplicationProcessLaunchTransaction * _processLaunchTransaction;
     bool  _processLaunched;
-    FBProcessManager * _processManager;
-    FBSceneManager * _sceneManager;
     NSMutableArray * _updateSceneTransactions;
     bool  _waitsForSceneCommits;
 }

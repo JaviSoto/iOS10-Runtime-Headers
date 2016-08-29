@@ -21,8 +21,8 @@
     }  _effectViewFlags;
     _UIVisualEffectFilterView * _grayscaleSubview;
     NSString * _groupName;
+    UIImage * _maskImage;
     UIView * _maskView;
-    UIView * _maskViewSnapshot;
     UIVisualEffect * _overrideEffect;
 }
 
@@ -30,6 +30,7 @@
 @property (setter=_setCornerRadius:, nonatomic) double _cornerRadius;
 @property (nonatomic, readonly) NSArray *_effectViews;
 @property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
+@property (setter=_setMaskImage:, nonatomic, retain) UIImage *_maskImage;
 @property (nonatomic, readonly) UIVisualEffect *_trueEffect;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, copy) UIVisualEffect *effect;
@@ -52,7 +53,8 @@
 - (id)_effectViews;
 - (id)_groupName;
 - (bool)_isBlurDisabled;
-- (id)_maskViewSnapshotContents;
+- (id)_maskImage;
+- (id)_maskViewImageMask;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildEffectViewForCurrentEffect;
 - (void)_setBlurDisabled:(bool)arg1;
@@ -60,6 +62,7 @@
 - (void)_setCornerRadius:(double)arg1;
 - (void)_setEffect:(id)arg1;
 - (void)_setGroupName:(id)arg1;
+- (void)_setMaskImage:(id)arg1;
 - (void)_setTintOpacity:(double)arg1;
 - (void)_setupEffectsViewsForSettings:(id)arg1;
 - (bool)_shouldRegenerateMasksForNewMaskView:(id)arg1;
@@ -76,6 +79,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEffect:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)maskView;
 - (id)overrideEffect;
 - (void)setContentView:(id)arg1;

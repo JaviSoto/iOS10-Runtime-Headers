@@ -32,6 +32,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
+- (id)name;
 - (unsigned long long)numberOfAssets;
 - (void)requestFaceTileImageWithTargetSize:(struct CGSize { double x1; double x2; })arg1 cropFactor:(unsigned long long)arg2 round:(bool)arg3 cacheResult:(bool)arg4 completionBlock:(id /* block */)arg5;
 

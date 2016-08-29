@@ -10,6 +10,7 @@
 @property (nonatomic, copy) NSString *chatIdentifier;
 @property (nonatomic, copy) NSDate *dateLastMessageReadInThread;
 @property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSString *effect;
 @property (nonatomic, copy) NSString *groupName;
 @property (nonatomic, copy) NSString *groupNameId;
 @property (nonatomic) bool hasGroupName;
@@ -34,6 +35,7 @@
 - (id)chatIdentifier;
 - (id)dateLastMessageReadInThread;
 - (id)dateSent;
+- (id)effect;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)groupName;
@@ -52,6 +54,7 @@
 - (void)setChatIdentifier:(id)arg1;
 - (void)setDateLastMessageReadInThread:(id)arg1;
 - (void)setDateSent:(id)arg1;
+- (void)setEffect:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setGroupNameId:(id)arg1;
 - (void)setHasGroupName:(bool)arg1;

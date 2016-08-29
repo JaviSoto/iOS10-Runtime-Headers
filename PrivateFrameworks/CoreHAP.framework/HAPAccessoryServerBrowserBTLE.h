@@ -58,6 +58,7 @@
 - (void)_forgetPairedAccesoryWithIdentifier:(id)arg1;
 - (void)_handleTargetedScanTimeout;
 - (bool)_hasPairedAccessoriesOfType:(unsigned long long)arg1;
+- (bool)_hasRecentlySeenAccessoriesWithIdentifiers:(id)arg1;
 - (void)_notifyDelegatesOfRemovedAccessoryServer:(id)arg1;
 - (unsigned long long)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4 statusFlags:(id*)arg5 stateNumber:(id*)arg6 category:(id*)arg7 configNumber:(id*)arg8;
 - (void)_performTargetedScanForAccessoryWithIdentifier:(id)arg1;
@@ -70,7 +71,7 @@
 - (bool)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 forPeripheral:(id)arg6 advertisementFormat:(unsigned long long)arg7 stateChanged:(bool*)arg8;
 - (void)_startDiscoveringAccessoryServers;
 - (void)_startScanningForPairingPeers;
-- (void)_startScanningForReachability;
+- (void)_startScanningForReachability:(id)arg1;
 - (void)_stopActiveScan;
 - (void)_updateTargetedScanTimer;
 - (void)accessoryServerBrowserBTLE:(id)arg1 didDiscoverHAPPeripheral:(id)arg2 accessoryName:(id)arg3 pairingIdentifier:(id)arg4 advertisementFormat:(unsigned long long)arg5 statusFlags:(id)arg6 stateNumber:(id)arg7 category:(id)arg8 configurationNumber:(id)arg9;

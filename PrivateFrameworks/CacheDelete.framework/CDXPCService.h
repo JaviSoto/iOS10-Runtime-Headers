@@ -6,12 +6,14 @@
     bool  _isConnected;
     bool  _isInterrupted;
     bool  _isInvalidated;
+    NSObject<OS_dispatch_source> * _watchdog_timer;
     NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic) bool isConnected;
 @property (nonatomic) bool isInterrupted;
 @property (nonatomic) bool isInvalidated;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *watchdog_timer;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
@@ -39,7 +41,9 @@
 - (void)setIsConnected:(bool)arg1;
 - (void)setIsInterrupted:(bool)arg1;
 - (void)setIsInvalidated:(bool)arg1;
+- (void)setWatchdog_timer:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
+- (id)watchdog_timer;
 - (id)xpcConnection;
 
 @end

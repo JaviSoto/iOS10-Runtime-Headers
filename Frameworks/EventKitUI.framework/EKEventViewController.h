@@ -13,6 +13,7 @@
     UIView * _blankFooterView;
     bool  _calendarPreviewIsInlineDayView;
     UIViewController * _confirmationAlertPresentationSourceViewController;
+    struct NSDictionary { Class x1; } * _context;
     EKEventDetailItem * _currentEditItem;
     NSArray * _currentSections;
     bool  _dead;
@@ -73,6 +74,7 @@
 @property (nonatomic) bool allowsSubitems;
 @property (nonatomic) bool calendarPreviewIsInlineDayView;
 @property (nonatomic) UIViewController *confirmationAlertPresentationSourceViewController;
+@property (nonatomic, retain) NSDictionary *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <EKEventViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -114,7 +116,6 @@
 - (bool)_isDisplayingSuggestion;
 - (void)_keyboardWasHidden:(id)arg1;
 - (void)_keyboardWasShown:(id)arg1;
-- (void)_layoutStatusButtonsForInterfaceOrientation:(long long)arg1;
 - (void)_localeChanged;
 - (bool)_navigationBarShouldBeHidden;
 - (void)_performDelete:(long long)arg1;
@@ -163,6 +164,7 @@
 - (bool)canBecomeFirstResponder;
 - (void)completeWithAction:(long long)arg1;
 - (id)confirmationAlertPresentationSourceViewController;
+- (struct NSDictionary { Class x1; }*)context;
 - (void)dealloc;
 - (id)delegate;
 - (void)detailItem:(id)arg1 performActionsOnCellAtIndexPath:(id)arg2 actions:(id /* block */)arg3;
@@ -187,7 +189,7 @@
 - (double)eventStatusButtonsViewButtonFontSize:(id)arg1;
 - (id)getCurrentContext;
 - (bool)hideCalendarPreview;
-- (id)initWithEvent:(id)arg1;
+- (id)initWithContext:(struct NSDictionary { Class x1; }*)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)inlineDayViewRespectsSelectedCalendarsFilter;
 - (void)invokeAction:(long long)arg1;
@@ -210,6 +212,7 @@
 - (void)setAllowsSubitems:(bool)arg1;
 - (void)setCalendarPreviewIsInlineDayView:(bool)arg1;
 - (void)setConfirmationAlertPresentationSourceViewController:(id)arg1;
+- (void)setContext:(struct NSDictionary { Class x1; }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditorHideTransition:(int)arg1;
 - (void)setEditorShowTransition:(int)arg1;

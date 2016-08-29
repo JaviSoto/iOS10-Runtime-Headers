@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
  */
 
-@interface LPVideoView : LPComponentView <UIGestureRecognizerDelegate> {
+@interface LPVideoView : LPComponentView <LPMediaPlayer, UIGestureRecognizerDelegate> {
     bool  _disablePlayback;
     bool  _hasBuilt;
     UIImageView * _muteButtonView;
@@ -23,13 +23,15 @@
     bool  _wasPlayingWhenUnparented;
 }
 
+@property (getter=isActive, nonatomic) bool active;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isMuted;
+@property (nonatomic, readonly) bool isPlaying;
 @property (getter=isMuted, nonatomic) bool muted;
 @property (getter=isPlaying, nonatomic) bool playing;
 @property (nonatomic, readonly) bool shouldAutoPlay;
-@property (nonatomic, readonly) bool shouldContinuePlayingAfterResumingApp;
 @property (nonatomic, readonly) bool shouldShowMuteButton;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool usesSharedAudioSession;
@@ -45,7 +47,6 @@
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)componentViewDidMoveToWindow;
-- (double)contentAspectRatio;
 - (id)createVideoPlayerView;
 - (void)dealloc;
 - (void)didChangeMutedState:(bool)arg1;
@@ -54,18 +55,20 @@
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
 - (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(bool)arg5;
+- (bool)isActive;
 - (bool)isMuted;
 - (bool)isPlaying;
 - (void)layoutComponentView;
 - (void)removePlaceholderViews;
+- (void)setActive:(bool)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setPlaying:(bool)arg1;
 - (bool)shouldAutoPlay;
-- (bool)shouldContinuePlayingAfterResumingApp;
 - (bool)shouldShowMuteButton;
 - (void)showMuteButton;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tapRecognized:(id)arg1;
+- (void)updateMuteButtonImage;
 - (bool)usesSharedAudioSession;
 - (id)video;
 

@@ -128,6 +128,7 @@
 - (id)initWithLocale:(id)arg1;
 - (id)initWithStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;
 - (bool)isCellContentsEqualToCell:(id)arg1;
+- (bool)isCellContentsEqualToCell:(id)arg1 richTextStyleComparisonBlock:(id /* block */)arg2;
 - (bool)isEmpty;
 - (bool)isEmptyForDataStore;
 - (id)locale;

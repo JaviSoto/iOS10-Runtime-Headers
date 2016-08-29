@@ -6,6 +6,7 @@
     VSAccountMetadataRequest * _accountMetadataRequest;
     bool  _allowsPrivacyUI;
     NSString * _requestingAppDisplayName;
+    bool  _requiresPrivacyUI;
 }
 
 @property (nonatomic, copy) VSAccountMetadataRequest *accountMetadataRequest;
@@ -13,6 +14,7 @@
 @property (nonatomic) bool allowsPrivacyUI;
 @property (nonatomic, readonly, copy) NSString *localizedVideoTitle;
 @property (nonatomic, copy) NSString *requestingAppDisplayName;
+@property (nonatomic) bool requiresPrivacyUI;
 @property (nonatomic, readonly, copy) NSArray *supportedIdentityProviderIdentifiers;
 
 + (bool)supportsSecureCoding;
@@ -30,9 +32,11 @@
 - (bool)isEqual:(id)arg1;
 - (id)localizedVideoTitle;
 - (id)requestingAppDisplayName;
+- (bool)requiresPrivacyUI;
 - (void)setAccountMetadataRequest:(id)arg1;
 - (void)setAllowsPrivacyUI:(bool)arg1;
 - (void)setRequestingAppDisplayName:(id)arg1;
+- (void)setRequiresPrivacyUI:(bool)arg1;
 - (id)supportedIdentityProviderIdentifiers;
 
 @end

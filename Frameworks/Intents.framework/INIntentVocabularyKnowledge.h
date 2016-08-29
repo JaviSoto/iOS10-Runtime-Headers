@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntentVocabularyKnowledge : INVocabulary
+@interface INIntentVocabularyKnowledge : _INVocabulary
 
 + (id)sharedKnowledge;
 

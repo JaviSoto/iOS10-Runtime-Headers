@@ -13,7 +13,9 @@
     NSNumber * _includeDuplicateAssetsNumber;
     NSNumber * _includeFavoriteMemoriesCollectionListNumber;
     NSNumber * _includeHiddenAssetsNumber;
+    NSNumber * _includeNonvisibleFacesNumber;
     NSNumber * _includePendingMemoriesNumber;
+    NSNumber * _includePlacesSmartAlbumNumber;
     NSNumber * _includeRejectedMemoriesNumber;
     NSNumber * _includeTrashedAssetsNumber;
     NSNumber * _includeWallpaperAssetsNumber;
@@ -45,7 +47,9 @@
 @property (nonatomic) bool includeDuplicateAssets;
 @property (nonatomic) bool includeFavoriteMemoriesCollectionList;
 @property (nonatomic) bool includeHiddenAssets;
+@property (nonatomic) bool includeNonvisibleFaces;
 @property (nonatomic) bool includePendingMemories;
+@property (nonatomic) bool includePlacesSmartAlbum;
 @property (nonatomic) bool includeRejectedMemories;
 @property (nonatomic) bool includeTrashedAssets;
 @property (nonatomic) bool includeWallpaperAssets;
@@ -83,7 +87,9 @@
 - (bool)includeDuplicateAssets;
 - (bool)includeFavoriteMemoriesCollectionList;
 - (bool)includeHiddenAssets;
+- (bool)includeNonvisibleFaces;
 - (bool)includePendingMemories;
+- (bool)includePlacesSmartAlbum;
 - (bool)includeRejectedMemories;
 - (bool)includeTrashedAssets;
 - (bool)includeWallpaperAssets;
@@ -109,7 +115,9 @@
 - (void)setIncludeDuplicateAssets:(bool)arg1;
 - (void)setIncludeFavoriteMemoriesCollectionList:(bool)arg1;
 - (void)setIncludeHiddenAssets:(bool)arg1;
+- (void)setIncludeNonvisibleFaces:(bool)arg1;
 - (void)setIncludePendingMemories:(bool)arg1;
+- (void)setIncludePlacesSmartAlbum:(bool)arg1;
 - (void)setIncludeRejectedMemories:(bool)arg1;
 - (void)setIncludeTrashedAssets:(bool)arg1;
 - (void)setIncludeWallpaperAssets:(bool)arg1;

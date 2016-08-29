@@ -6,6 +6,7 @@
     id /* block */  _completionBlock;
     NSXPCConnection * _connection;
     UAPasteboardGeneration * _currentGeneration;
+    bool  _currentGenerationHasUpdates;
     NSSet * _disallowdTypes;
     id /* block */  _localPasteboardWasFetched;
     NSObject<OS_dispatch_queue> * _pasteboardReadQ;
@@ -18,6 +19,7 @@
 @property id /* block */ completionBlock;
 @property (retain) NSXPCConnection *connection;
 @property (retain) UAPasteboardGeneration *currentGeneration;
+@property bool currentGenerationHasUpdates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSSet *disallowdTypes;
@@ -40,6 +42,7 @@
 - (id /* block */)completionBlock;
 - (id)connection;
 - (id)currentGeneration;
+- (bool)currentGenerationHasUpdates;
 - (id)disallowdTypes;
 - (void)doClearLocalPasteboardInfo;
 - (void)fetchPasteboardDataForProcess:(int)arg1 withCompletion:(id /* block */)arg2;
@@ -49,14 +52,18 @@
 - (bool)isRemotePasteboardAvaliable;
 - (id /* block */)localPasteboardWasFetched;
 - (id)pasteboardReadQ;
+- (void)pickupLocalChanges:(id)arg1 iterNumber:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (bool)remotePasteboardAvaliable;
 - (void)requestRemotePasteboardDataForProcess:(int)arg1 withCompletion:(id /* block */)arg2;
 - (void)requestRemotePasteboardTypesForProcess:(int)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendUpdateToServer;
+- (id)serializeItem:(id)arg1 intoInfo:(id)arg2 withFile:(id)arg3;
+- (id)serializeType:(id)arg1 intoInfo:(id)arg2 withFile:(id)arg3;
 - (id)serverQ;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setCurrentGeneration:(id)arg1;
+- (void)setCurrentGenerationHasUpdates:(bool)arg1;
 - (void)setDisallowdTypes:(id)arg1;
 - (void)setLocalPasteboardWasFetched:(id /* block */)arg1;
 - (void)setPasteboardReadQ:(id)arg1;

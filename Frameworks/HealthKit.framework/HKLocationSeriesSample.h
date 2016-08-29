@@ -21,6 +21,7 @@
 - (void)_setCodableLocationSeries:(id)arg1;
 - (id)_validateConfiguration;
 - (id)_validateSample;
+- (id)_valueDescription;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKFitnessFriendsRelationship : NSObject <NSCopying, NSSecureCoding> {
+@interface _HKFitnessFriendsRelationship : NSObject <HDFitnessFriendsCloudKitCodable, NSCopying, NSSecureCoding> {
     NSSet * _addresses;
     NSData * _archivedCloudKitSystemFields;
     NSData * _archivedRelationshipShareID;
@@ -14,6 +14,7 @@
     NSString * _preferredReachableAddress;
     NSString * _preferredReachableService;
     NSArray * _relationshipEvents;
+    NSUUID * _relationshipUUID;
     long long  _version;
 }
 
@@ -27,9 +28,11 @@
 @property (nonatomic, readonly) NSDate *dateForLatestDataShown;
 @property (nonatomic, readonly) NSDate *dateForLatestOutgoingInviteRequest;
 @property (nonatomic, readonly) NSDate *dateForLatestRelationshipStart;
-@property (nonatomic, readonly) NSDate *dateForLatestRelationshipStartOnDevice;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasIncomingInviteRequest;
 @property (nonatomic, readonly) bool hasOutgoingInviteRequest;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *incomingHandshakeToken;
 @property (nonatomic, readonly) bool isActivityDataCurrentlyVisible;
 @property (nonatomic, readonly) bool isAwaitingInviteResponse;
@@ -39,6 +42,8 @@
 @property (nonatomic, copy) NSString *preferredReachableAddress;
 @property (nonatomic, copy) NSString *preferredReachableService;
 @property (nonatomic, copy) NSArray *relationshipEvents;
+@property (nonatomic, copy) NSUUID *relationshipUUID;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDate *timestamp;
 @property (nonatomic) long long version;
 
@@ -47,9 +52,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_dateForLatestRelationshipStartUsingDeviceTimestamp:(bool)arg1;
 - (void)_enumerateEventsInReverseChronologicalOrderUsingBlock:(id /* block */)arg1;
-- (bool)_isActivityDataVisibleForDate:(id)arg1 useDeviceTimestamp:(bool)arg2;
+- (bool)_isActivityDataVisibleForDate:(id)arg1;
 - (id)_mostRecentEventsWithCount:(long long)arg1;
 - (unsigned long long)_nextAnchor;
 - (id)addresses;
@@ -63,7 +67,6 @@
 - (id)dateForLatestDataShown;
 - (id)dateForLatestOutgoingInviteRequest;
 - (id)dateForLatestRelationshipStart;
-- (id)dateForLatestRelationshipStartOnDevice;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasIncomingInviteRequest;
@@ -75,7 +78,6 @@
 - (void)insertEvents:(id)arg1;
 - (bool)isActivityDataCurrentlyVisible;
 - (bool)isActivityDataVisibleForDate:(id)arg1;
-- (bool)isActivityDataVisibleForDeviceDate:(id)arg1;
 - (bool)isAwaitingInviteResponse;
 - (bool)isFriendshipCurrentlyActive;
 - (bool)isMuteEnabled;
@@ -83,6 +85,7 @@
 - (id)preferredReachableAddress;
 - (id)preferredReachableService;
 - (id)relationshipEvents;
+- (id)relationshipUUID;
 - (void)setAddresses:(id)arg1;
 - (void)setArchivedCloudKitSystemFields:(id)arg1;
 - (void)setArchivedRelationshipShareID:(id)arg1;
@@ -94,6 +97,7 @@
 - (void)setPreferredReachableAddress:(id)arg1;
 - (void)setPreferredReachableService:(id)arg1;
 - (void)setRelationshipEvents:(id)arg1;
+- (void)setRelationshipUUID:(id)arg1;
 - (void)setVersion:(long long)arg1;
 - (id)timestamp;
 - (long long)version;
@@ -104,6 +108,6 @@
 + (id)fitnessFriendRelationshipsWithRelationshipAndEventRecords:(id)arg1;
 
 - (id)recordFromArchivedSystemFields;
-- (id)recordsWithZoneID:(id)arg1;
+- (id)recordWithZoneID:(id)arg1;
 
 @end

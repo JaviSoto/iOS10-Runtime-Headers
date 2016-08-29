@@ -27,7 +27,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) <HUQuickControlViewInteractionDelegate> *interactionDelegate;
 @property (nonatomic) struct CGPoint { double x1; double x2; } lastTouchLocation;
-@property (nonatomic, retain) HUQuickControlStepperViewProfile *profile;
+@property (nonatomic, copy) HUQuickControlStepperViewProfile *profile;
+@property (nonatomic, retain) id secondaryValue;
 @property (nonatomic, retain) NSArray *segmentViews;
 @property (nonatomic, retain) NSNumber *selectedSegmentIndex;
 @property (nonatomic, retain) NSArray *separatorViews;

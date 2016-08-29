@@ -22,6 +22,7 @@
 
 @property (nonatomic, copy) NSString *customPlaceholderText;
 @property (nonatomic) bool lockIconHasEVCertificateTint;
+@property (setter=_setNavigationBar:, nonatomic) _SFNavigationBar *navigationBar;
 @property (nonatomic) bool overrideBarStyleForSecurityWarning;
 @property (nonatomic, retain) _SFFluidProgressView *progressView;
 @property (nonatomic) bool readerButtonSelected;
@@ -40,6 +41,7 @@
 - (id)customPlaceholderText;
 - (id)init;
 - (bool)lockIconHasEVCertificateTint;
+- (id)navigationBar;
 - (bool)overrideBarStyleForSecurityWarning;
 - (id)progressView;
 - (bool)readerButtonSelected;

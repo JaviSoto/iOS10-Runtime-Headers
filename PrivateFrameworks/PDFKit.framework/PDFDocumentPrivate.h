@@ -47,7 +47,6 @@
     bool  respondsToDidMatchString;
     bool  respondsToDidUnlock;
     bool  respondsToPrintJobTitle;
-    bool  showsAnnotations;
     bool  sortAnnotations;
     NSString * xmpNameSpace;
     NSString * xmpPrefix;

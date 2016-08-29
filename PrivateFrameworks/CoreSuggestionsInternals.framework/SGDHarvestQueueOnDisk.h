@@ -8,9 +8,7 @@
     SGSqliteDatabase * _db;
     NSString * _dirPath;
     long long  _idCounter;
-    SGMItemDequeued * _itemDequeuedTracker;
     unsigned long long  _maxQueueItems;
-    NSObject<OS_dispatch_queue> * _metricsQueue;
     NSObject<OS_dispatch_queue> * _queue;
     SGDHarvestQueueFileReader * _reader;
     SGDHarvestQueueFileWriter * _writerHighPriority;
@@ -26,7 +24,6 @@
 - (bool)_migrateDb:(id)arg1;
 - (void)_popWithStringAfterWhereClause:(id)arg1 binder:(id /* block */)arg2 callback:(id /* block */)arg3;
 - (void)_read:(struct { int x1; int x2; unsigned int x3; })arg1 fileId:(int)arg2 callback:(id /* block */)arg3;
-- (void)_recordTimeInQueue:(long long)arg1;
 - (void)_trimPermafailDirectory;
 - (void)_unlinkFileWithIdLocked:(int)arg1;
 - (void)addItemWithSourceKey:(id)arg1 messageId:(id)arg2 highPriority:(bool)arg3 item:(id)arg4 callback:(id /* block */)arg5;

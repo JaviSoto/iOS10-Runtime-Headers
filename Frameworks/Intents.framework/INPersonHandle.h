@@ -2,11 +2,15 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPersonHandle : NSObject <NSCopying, NSSecureCoding> {
+@interface INPersonHandle : NSObject <INPersonHandleExport, NSCopying, NSSecureCoding> {
     long long  _type;
     NSString * _value;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, copy) NSString *value;
 

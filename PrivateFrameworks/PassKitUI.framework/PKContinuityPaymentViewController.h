@@ -37,6 +37,7 @@
 - (void)_didFailWithFatalError:(id)arg1;
 - (void)_didSucceed;
 - (id)_evaluationRequest;
+- (void)_invalidPaymentDataWithParam:(id)arg1;
 - (void)_payWithPasscodePressed:(id)arg1;
 - (void)_processClientCallback:(id)arg1;
 - (void)_resetAndScheduleTimeout;

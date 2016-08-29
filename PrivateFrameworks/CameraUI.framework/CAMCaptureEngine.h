@@ -11,6 +11,7 @@
     NSObject<OS_dispatch_queue> * __effectsPreviewSampleBufferQueue;
     CIContext * __effectsPreviewSurfaceFilteringContext;
     NSObject<OS_dispatch_queue> * __effectsPreviewSurfaceFilteringQueue;
+    long long  __engineOptions;
     NSObject<OS_dispatch_queue> * __metadataObjectsQueue;
     unsigned long long  __numberOfRecoveryAttempts;
     unsigned int  __panoramaAssertionIdentifier;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_effectsPreviewSampleBufferQueue;
 @property (nonatomic, readonly) CIContext *_effectsPreviewSurfaceFilteringContext;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_effectsPreviewSurfaceFilteringQueue;
+@property (nonatomic, readonly) long long _engineOptions;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_metadataObjectsQueue;
 @property (setter=_setNumberOfRecoveryAttempts:, nonatomic) unsigned long long _numberOfRecoveryAttempts;
 @property (setter=_setPanoramaAssertionIdentifier:, nonatomic) unsigned int _panoramaAssertionIdentifier;
@@ -94,6 +96,7 @@
 - (id)_effectsPreviewSampleBufferQueue;
 - (id)_effectsPreviewSurfaceFilteringContext;
 - (id)_effectsPreviewSurfaceFilteringQueue;
+- (long long)_engineOptions;
 - (void)_executeCommand:(id)arg1 withContext:(id)arg2;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
@@ -144,6 +147,7 @@
 - (void)_setPanoramaProcessor:(id)arg1;
 - (void)_setPerformingRecovery:(bool)arg1;
 - (void)_setupKeyValueObservingForLegacyStillImageOutput;
+- (bool)_shouldStartSessionOnConfigurationChanges;
 - (void)_subgraphQueueCreatePanoramaImageQueueIfNecessary;
 - (void)_subgraphQueueCreatePanoramaProcessorIfNecessary;
 - (void)_subgraphQueueHandlePanoramaErrorNotification:(struct __CFString { }*)arg1;
@@ -157,7 +161,7 @@
 - (void)_updateEffectsSubgraph;
 - (bool)_updatePanoramaSubgraphForEnteringBackground:(bool)arg1;
 - (void)_validateSessionRecovery;
-- (id)_validateVideoAtURL:(id)arg1 withCaptureError:(id)arg2 isVideoComplement:(bool)arg3 reportedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 outActualDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg5 outVideoRecordingStoppedReason:(long long*)arg6;
+- (id)_validateVideoAtURL:(id)arg1 withCaptureError:(id)arg2 isVideoComplement:(bool)arg3 stillImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 reportedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 outActualDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6 outVideoRecordingStoppedReason:(long long*)arg7;
 - (id)_videoPreviewLayer;
 - (bool)areManagedDevicesLockedForConfiguration;
 - (id)audioCaptureDevice;
@@ -169,7 +173,6 @@
 - (void)captureOutput:(id)arg1 didFinishCaptureForResolvedSettings:(id)arg2 error:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishProcessingLivePhotoToMovieFileAtURL:(id)arg2 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 resolvedSettings:(id)arg5 error:(id)arg6;
 - (void)captureOutput:(id)arg1 didFinishProcessingOriginalPhotoSurface:(struct __IOSurface { }*)arg2 originalPhotoSurfaceSize:(unsigned long long)arg3 previewPhotoSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 resolvedSettings:(id)arg6 error:(id)arg7;
-- (void)captureOutput:(id)arg1 didFinishProcessingPhotoSurface:(struct __IOSurface { }*)arg2 ofSize:(unsigned long long)arg3 withPreviewSurface:(struct __IOSurface { }*)arg4 ofSize:(unsigned long long)arg5 metadata:(id)arg6 forSettings:(id)arg7 error:(id)arg8;
 - (void)captureOutput:(id)arg1 didFinishProcessingPhotoSurface:(struct __IOSurface { }*)arg2 photoSurfaceSize:(unsigned long long)arg3 previewPhotoSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 resolvedSettings:(id)arg6 error:(id)arg7;
 - (void)captureOutput:(id)arg1 didFinishRecordingLivePhotoMovieForEventualFileAtURL:(id)arg2 resolvedSettings:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
@@ -185,8 +188,8 @@
 - (void)enqueueCommand:(id)arg1;
 - (void)enumerateCaptureServicesUsingBlock:(id /* block */)arg1;
 - (id)frontCameraDevice;
-- (id)init;
-- (id)initWithPowerController:(id)arg1;
+- (id)initWithOptions:(long long)arg1;
+- (id)initWithPowerController:(id)arg1 options:(long long)arg2;
 - (bool)isInterrupted;
 - (id)legacyStillImageOutput;
 - (id)metadataOutput;

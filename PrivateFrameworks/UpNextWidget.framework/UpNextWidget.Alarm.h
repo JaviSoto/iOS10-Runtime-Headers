@@ -5,11 +5,13 @@
 @interface UpNextWidget.Alarm : NSObject <NSSecureCoding> {
     void clockAppSectionURL;
     void fireDate;
+    void identifier;
     void title;
 }
 
 @property (nonatomic, retain) NSURL *clockAppSectionURL;
 @property (nonatomic, retain) NSDate *fireDate;
+@property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSString *shallowDescription;
 @property (nonatomic, copy) NSString *title;
 
@@ -19,11 +21,13 @@
 - (id)clockAppSectionURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fireDate;
+- (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTitle:(id)arg1 fireDate:(id)arg2 clockAppSectionURL:(id)arg3;
+- (id)initWithTitle:(id)arg1 fireDate:(id)arg2 identifier:(id)arg3 clockAppSectionURL:(id)arg4;
 - (void)setClockAppSectionURL:(id)arg1;
 - (void)setFireDate:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)shallowDescription;
 - (id)title;

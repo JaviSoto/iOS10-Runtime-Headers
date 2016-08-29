@@ -116,6 +116,7 @@
 - (id)nonPlaceholderConversations;
 - (void)noteUnreadCountsChanged;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)performResumeDeferredSetup;
 - (void)performSearch:(id)arg1 completion:(id /* block */)arg2;
 - (void)prepareForResume;
 - (void)prepareForSuspend;

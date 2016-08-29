@@ -33,6 +33,7 @@
 - (void)_addObserverForSignificantTimeChanges;
 - (void)_applicationStateDidRestore;
 - (void)_backgroundRefreshApplicationsDidChange;
+- (void)_ensureAttachmentsIntegrity;
 - (bool)_isBundleIdentifierAuthorizedForRegionMonitoring:(id)arg1;
 - (void)_localeDidChange;
 - (void)_migrateNotificationCategories;

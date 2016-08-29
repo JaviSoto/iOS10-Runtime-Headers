@@ -11,6 +11,8 @@
     NSString * _lastCurrentTimeString;
     double  _lastDisplayedDuration;
     NSString * _lastRemainingTimeString;
+    UIImageView * _liveBackgroundImage;
+    UILabel * _liveLabel;
     UILabel * _remainingTimeLabel;
     MPDetailScrubController * _scrubController;
     bool  _scrubbingEnabled;
@@ -55,6 +57,7 @@
 - (id)_timeLabelFont;
 - (id)_trackImage;
 - (id)_trackImageWithAlternateStyle:(bool)arg1 rounded:(bool)arg2;
+- (void)_updateLabelAvoidance;
 - (void)_updateTimeLabels;
 - (bool)ccuiSupportsDelayedTouchesByContainingScrollViewForGesture:(id)arg1;
 - (double)currentTime;

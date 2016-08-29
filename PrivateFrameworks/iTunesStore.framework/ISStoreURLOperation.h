@@ -5,7 +5,8 @@
 @interface ISStoreURLOperation : ISURLOperation {
     long long  _activeMachineDataStyle;
     NSNumber * _authenticatedDSID;
-    <ISBiometricTouchIDDelegate> * _biometricDelegate;
+    ISBiometricAuthenticationContext * _biometricAuthenticationContext;
+    <ISBiometricPurchaseDelegate> * _biometricDelegate;
     bool  _canSendGUIDParameter;
     bool  _ignorePreexistingSecureToken;
     bool  _isURLBagRequest;
@@ -15,9 +16,6 @@
     bool  _needsURLBag;
     SSVFairPlaySAPSession * _sapSession;
     bool  _shouldSendXTokenHeader;
-    bool  _shouldSendXTouchIDHeaders;
-    NSString * _touchIDChallenge;
-    NSString * _touchIDSignature;
     bool  _urlKnownToBeTrusted;
     bool  _useUserSpecificURLBag;
 }
@@ -26,7 +24,8 @@
 @property (readonly) SSURLBagContext *URLBagContext;
 @property (getter=isURLBagRequest, nonatomic) bool URLBagRequest;
 @property (retain) NSNumber *authenticatedDSID;
-@property <ISBiometricTouchIDDelegate> *biometricDelegate;
+@property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
+@property <ISBiometricPurchaseDelegate> *biometricDelegate;
 @property bool canSendGUIDParameter;
 @property <ISStoreURLOperationDelegate> *delegate;
 @property (nonatomic) bool ignorePreexistingSecureToken;
@@ -36,14 +35,11 @@
 @property bool needsURLBag;
 @property bool performsMachineDataActions;
 @property bool shouldSendXTokenHeader;
-@property bool shouldSendXTouchIDHeaders;
-@property (copy) NSString *touchIDChallenge;
-@property (copy) NSString *touchIDSignature;
 @property bool urlKnownToBeTrusted;
 @property bool useUserSpecificURLBag;
 
-+ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 account:(id)arg3;
-+ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3;
++ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 account:(id)arg3 clientBundleIdentifier:(id)arg4;
++ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3 clientBundleIdentifier:(id)arg4;
 + (id)_authKitSession;
 + (id)_restrictionsHeaderValue;
 + (void)addITunesStoreHeadersToRequest:(id)arg1 withAccountIdentifier:(id)arg2;
@@ -64,17 +60,17 @@
 - (id)_copyAuthenticationContextForAttemptNumber:(long long)arg1;
 - (bool)_isErrorTokenError:(id)arg1;
 - (id)_loadURLBagInterpreterWithRequest:(id)arg1 requestProperties:(id)arg2;
-- (bool)_performBiometricFallbackOperation;
 - (bool)_performMachineDataRequest:(id)arg1;
-- (bool)_performTouchIDSignatureRequestWithChallenge:(id)arg1 reason:(id)arg2;
 - (bool)_processResponseData:(id)arg1 error:(id*)arg2;
 - (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (void)_runURLOperation;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(bool)arg2;
+- (bool)_shouldRetryForTouchIDChallengeWithError:(id)arg1;
 - (id)_urlBagForContext:(id)arg1;
 - (void)_willSendRequest:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
+- (id)biometricAuthenticationContext;
 - (id)biometricDelegate;
 - (bool)canSendGUIDParameter;
 - (bool)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
@@ -90,6 +86,7 @@
 - (bool)performsMachineDataActions;
 - (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
+- (void)setBiometricAuthenticationContext:(id)arg1;
 - (void)setBiometricDelegate:(id)arg1;
 - (void)setCanSendGUIDParameter:(bool)arg1;
 - (void)setIgnorePreexistingSecureToken:(bool)arg1;
@@ -100,17 +97,11 @@
 - (void)setPerformsMachineDataActions:(bool)arg1;
 - (void)setSAPSession:(id)arg1;
 - (void)setShouldSendXTokenHeader:(bool)arg1;
-- (void)setShouldSendXTouchIDHeaders:(bool)arg1;
-- (void)setTouchIDChallenge:(id)arg1;
-- (void)setTouchIDSignature:(id)arg1;
 - (void)setURLBagRequest:(bool)arg1;
 - (void)setUrlKnownToBeTrusted:(bool)arg1;
 - (void)setUseUserSpecificURLBag:(bool)arg1;
 - (bool)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
 - (bool)shouldSendXTokenHeader;
-- (bool)shouldSendXTouchIDHeaders;
-- (id)touchIDChallenge;
-- (id)touchIDSignature;
 - (bool)urlKnownToBeTrusted;
 - (bool)useUserSpecificURLBag;
 

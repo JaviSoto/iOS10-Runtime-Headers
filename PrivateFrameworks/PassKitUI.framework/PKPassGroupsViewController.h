@@ -32,7 +32,9 @@
 @property (nonatomic) unsigned long long suppressedContent;
 @property (getter=isWelcomeStateEnabled, nonatomic) bool welcomeStateEnabled;
 
++ (void)beginSuppressingFooter;
 + (void)beginTrackingAction;
++ (void)endSuppressingFooter;
 + (void)endTrackingAction;
 + (bool)isPerformingAction;
 
@@ -42,6 +44,7 @@
 - (void)_dismissPresentedVCsWithRequirements:(unsigned long long)arg1 performAction:(id /* block */)arg2;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
+- (void)_handleFooterSupressionChange:(id)arg1;
 - (void)_handleNotifyToken:(int)arg1;
 - (void)_handleStatusBarChange:(id)arg1;
 - (void)_localeDidChangeNotification:(id)arg1;
@@ -52,6 +55,7 @@
 - (void)_presentWithUpdatedPasses:(id /* block */)arg1;
 - (void)_regionConfigurationDidChangeNotification;
 - (void)_startPassViewedNotificationTimer;
+- (void)_updateFooterSupression;
 - (void)_updateStatusBarGradientOpacity:(bool)arg1;
 - (void)addVASPassWithIdentifier:(id)arg1;
 - (void)allowIdleTimer;

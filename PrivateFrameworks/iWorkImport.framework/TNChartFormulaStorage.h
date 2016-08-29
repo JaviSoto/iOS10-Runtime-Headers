@@ -14,6 +14,7 @@
 - (id)areaFormulaWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
 - (unsigned long long)categoryLabelFormulaType;
 - (void)clearCachesForCalculationEngine:(id)arg1;
+- (id)copyByRewriting:(bool)arg1 withCalcEngine:(id)arg2 andHostID:(struct __CFUUID { }*)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;
 - (bool)dataFormulaAreRegularForSeriesInsertionWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;

@@ -10,7 +10,6 @@
     bool  _jitter;
     UILayoutGuide * _labelAndBadge;
     NSLayoutConstraint * _labelConstraintBadge;
-    NSLayoutConstraint * _labelConstraintNoBadge;
     unsigned long long  _shinyStatus;
     CKBrowserSelectionLabelAccessoryView * _shinyStatusView;
 }
@@ -23,7 +22,6 @@
 @property (nonatomic) bool jitter;
 @property (nonatomic, retain) UILayoutGuide *labelAndBadge;
 @property (nonatomic, retain) NSLayoutConstraint *labelConstraintBadge;
-@property (nonatomic, retain) NSLayoutConstraint *labelConstraintNoBadge;
 @property (nonatomic) unsigned long long shinyStatus;
 @property (nonatomic, retain) CKBrowserSelectionLabelAccessoryView *shinyStatusView;
 
@@ -46,7 +44,6 @@
 - (bool)jitter;
 - (id)labelAndBadge;
 - (id)labelConstraintBadge;
-- (id)labelConstraintNoBadge;
 - (void)prepareForReuse;
 - (void)setBadgeView:(id)arg1;
 - (void)setBrowserLabel:(id)arg1;
@@ -55,7 +52,6 @@
 - (void)setJitter:(bool)arg1;
 - (void)setLabelAndBadge:(id)arg1;
 - (void)setLabelConstraintBadge:(id)arg1;
-- (void)setLabelConstraintNoBadge:(id)arg1;
 - (void)setShinyStatus:(unsigned long long)arg1;
 - (void)setShinyStatusView:(id)arg1;
 - (unsigned long long)shinyStatus;

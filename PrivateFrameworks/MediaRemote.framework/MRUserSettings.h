@@ -6,6 +6,8 @@
     NSUserDefaults * _userDefaults;
 }
 
+@property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
+@property (nonatomic, readonly) double broadcastCommandWaitDuration;
 @property (nonatomic, readonly) bool hasTelevisionSocketQOSLevelSet;
 @property (nonatomic, readonly) double televisionNowPlayingInfoArtworkCoalesceDuration;
 @property (nonatomic, readonly) double televisionNowPlayingInfoCoalesceDuration;
@@ -17,6 +19,8 @@
 
 + (id)currentSettings;
 
+- (double)bluetoothDeviceResumeDuration;
+- (double)broadcastCommandWaitDuration;
 - (void)dealloc;
 - (bool)hasTelevisionSocketQOSLevelSet;
 - (id)init;

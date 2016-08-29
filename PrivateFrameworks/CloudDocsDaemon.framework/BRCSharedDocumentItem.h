@@ -9,9 +9,12 @@
 
 - (id)aliasItemIDForAppLibrary:(id)arg1;
 - (id)asSharedDocument;
+- (void)deleteShareAcceptationFault;
 - (id)enclosurePathRelativeToRoot;
+- (bool)getPrivateAppLibraryAliasURL:(id*)arg1 aliasContainer:(id*)arg2;
 - (id)initAsShareAcceptationFaultWithFilename:(id)arg1 itemID:(id)arg2 appLibrary:(id)arg3;
 - (bool)isShareAcceptationFault;
+- (bool)isSharedDocument;
 - (void)markLiveFromStageAsShareAcceptationFault;
 - (id)parentFileID;
 - (float)prepareDeletionSyncUpWithOperation:(id)arg1 defaults:(id)arg2;

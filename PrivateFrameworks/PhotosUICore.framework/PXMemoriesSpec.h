@@ -60,7 +60,6 @@
 @property (nonatomic, readonly) unsigned long long feedMemoriesPerRow;
 @property (nonatomic, readonly) long long feedScrollDirection;
 @property (nonatomic, readonly) double feedSecondaryImagePaddingBottom;
-@property (nonatomic, readonly) double feedSecondaryImagePaddingTop;
 @property (nonatomic, readonly) long long feedSectionLayoutAxis;
 @property (nonatomic, readonly) Class feedTransitionAnimationCoordinatorClass;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } highlightedSectionHeaderOffset;
@@ -99,7 +98,6 @@
 - (unsigned long long)feedMemoriesPerRow;
 - (long long)feedScrollDirection;
 - (double)feedSecondaryImagePaddingBottom;
-- (double)feedSecondaryImagePaddingTop;
 - (long long)feedSectionLayoutAxis;
 - (Class)feedTransitionAnimationCoordinatorClass;
 - (struct CGPoint { double x1; double x2; })highlightedSectionHeaderOffset;

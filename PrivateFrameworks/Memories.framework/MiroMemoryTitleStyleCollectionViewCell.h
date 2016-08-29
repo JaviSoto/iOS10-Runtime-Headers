@@ -11,6 +11,7 @@
 @property (nonatomic, retain) UIImageView *posterImageView;
 
 - (void).cxx_destruct;
+- (void)applyLayoutAttributes:(id)arg1;
 - (id)label;
 - (id)posterImageView;
 - (void)setLabel:(id)arg1;

@@ -7,6 +7,7 @@
     bool  _allowsManualEntry;
     long long  _context;
     <PKPaymentSetupViewControllerDelegate> * _delegate;
+    bool  _hideSetupLater;
     bool  _nextButtonPushed;
     PKPaymentProvisioningController * _provisioningController;
     bool  _skipFlowPicker;

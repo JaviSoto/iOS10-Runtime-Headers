@@ -53,6 +53,7 @@
 - (id)cameraProfileUUIDs;
 - (id)cameraProfiles;
 - (id)clientQueue;
+- (void)dealloc;
 - (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleConfigureNotification:(id)arg1;

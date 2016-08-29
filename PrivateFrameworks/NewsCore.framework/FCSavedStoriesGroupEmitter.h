@@ -30,7 +30,6 @@
 - (bool)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;
 - (id)initWithDesiredArticlesCount:(long long)arg1 listOfUnreadArticles:(id)arg2;
-- (id)initWithMinPrecedingTopicGroups:(unsigned long long)arg1 desiredArticlesCount:(long long)arg2;
 - (unsigned long long)minPrecedingTopicGroups;
 - (id)operationToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
 - (id)readingList;

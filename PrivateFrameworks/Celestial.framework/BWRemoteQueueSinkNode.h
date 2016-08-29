@@ -18,6 +18,8 @@
     }  _lastPTS;
     struct OpaqueFigFlatDictionaryKeySpec { } * _makerNoteKeySpec;
     bool  _mediaTypeIsVideo;
+    struct OpaqueFigSimpleMutex { } * _peerTerminationMutex;
+    bool  _pixelBufferAttachmentModificationAllowed;
     struct remoteQueueSenderOpaque { } * _remoteQueueSender;
     bool  _sentDiagnosticMetadata;
     struct shmemPoolOpaque { } * _sharedMemoryPool;
@@ -42,6 +44,7 @@
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (id)initWithMediaType:(unsigned int)arg1;
 - (id)nodeSubType;
+- (bool)pixelBufferAttachmentModificationAllowed;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)registerSurfacesFromSourcePool:(id)arg1;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
@@ -50,6 +53,7 @@
 - (void)setClientVideoRetainedBufferCount:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscardsLateSampleBuffers:(bool)arg1;
+- (void)setPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (void)setVideoColorInfoOverride:(id)arg1;
 - (id)videoColorInfoOverride;
 

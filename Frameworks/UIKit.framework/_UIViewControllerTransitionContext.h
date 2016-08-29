@@ -19,11 +19,11 @@
     id /* block */  __postInteractiveCompletionHandler;
     long long  __state;
     id /* block */  __willCompleteHandler;
+    bool  _animated;
     UIView * _containerView;
     bool  _currentlyInteractive;
     NSArray * _disabledViews;
     bool  _initiallyInteractive;
-    bool  _isAnimated;
     long long  _presentationStyle;
     double  _previousPercentComplete;
     bool  _rotating;
@@ -63,7 +63,6 @@
 @property (getter=_initiallyInteractive, setter=_setInitiallyInteractive:, nonatomic) bool initiallyInteractive;
 @property (getter=isInteractive, nonatomic, readonly) bool interactive;
 @property (getter=isInterruptible, setter=_setInterruptible:, nonatomic) bool interruptible;
-@property (setter=_setIsAnimated:, nonatomic) bool isAnimated;
 @property (setter=_setPresentationStyle:, nonatomic) long long presentationStyle;
 @property (getter=_isRotating, setter=_setRotating:, nonatomic) bool rotating;
 @property (readonly) Class superclass;

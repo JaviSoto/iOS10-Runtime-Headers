@@ -60,12 +60,14 @@
 @property (nonatomic, retain) NSString *uuid;
 
 + (id)_allSyncableFacesInManagedObjectContext:(id)arg1;
++ (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
 + (id)detectedFaceWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
 + (id)findExistingFaceMatchingRef:(id)arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)insertInManagedObjectContext:(id)arg1;
++ (id)predicatesToExcludeNonVisibleFaces;
 + (long long)resetAssetForAllSyncableFacesInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)userCuratedFacePredicate;
 
@@ -75,13 +77,11 @@
 - (void)awakeFromInsert;
 - (id)debugLogDescription;
 - (void)delete;
-- (bool)isSyncableChange;
 - (bool)nameSourceAuto;
 - (id)rejectedPeople;
 - (void)removeFaceprint;
 - (void)setNameSourceAuto:(bool)arg1;
 - (void)setRejectedPeople:(id)arg1;
-- (bool)supportsCloudUpload;
 - (void)willSave;
 
 @end

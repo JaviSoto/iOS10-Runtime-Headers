@@ -14,9 +14,11 @@
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didEndImpactEffectAnimationWithSendAnimationContext:(id <CKSendAnimationContext>)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didSelectItemAtIndexPath:(NSIndexPath *)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didTapAttributionButtonForChatItem:(CKMessageStatusChatItem *)arg2;
+- (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didTapPluginStatusButtonForChatItem:(CKMessageStatusChatItem *)arg2;
 - (bool)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 shouldCleanupFullscreenEffectUI:(CKFullScreenEffect *)arg2;
 - (bool)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 shouldSetupFullscreenEffectUI:(CKFullScreenEffect *)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 willBeginImpactEffectAnimationWithSendAnimationContext:(id <CKSendAnimationContext>)arg2;
+- (NSArray *)transcriptCollectionViewControllerAdditionalFullscreenEffectViews:(CKTranscriptCollectionViewController *)arg1;
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(CKTranscriptCollectionViewController *)arg1;
 - (void)transcriptCollectionViewControllerDidInsertAssociatedChatItem:(CKTranscriptCollectionViewController *)arg1;
 - (void)transcriptCollectionViewControllerDidInset:(CKTranscriptCollectionViewController *)arg1;

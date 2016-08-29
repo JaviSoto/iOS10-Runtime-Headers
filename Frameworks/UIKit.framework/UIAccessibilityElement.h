@@ -3,7 +3,6 @@
  */
 
 @interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification> {
-    id  _accessibilityContainer;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -35,7 +34,6 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (id)accessibilityContainer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrameInContainerSpace;
 - (id)accessibilityHint;
@@ -44,7 +42,6 @@
 - (id)accessibilityValue;
 - (id)initWithAccessibilityContainer:(id)arg1;
 - (bool)isAccessibilityElement;
-- (void)setAccessibilityContainer:(id)arg1;
 - (void)setAccessibilityFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAccessibilityFrameInContainerSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAccessibilityHint:(id)arg1;

@@ -70,6 +70,7 @@
         } __table_; 
     }  _loadObservers;
     NSObject<OS_dispatch_queue> * _loadObserversQueue;
+    bool  _losesDataOnWrite;
     unsigned int  _mode;
     int  _modifyObjectCount;
     long long  _modifyObjectToken;
@@ -102,6 +103,7 @@
     NSHashTable * _suspendedAsynchronousObjectModifiers;
     TSUTemporaryDirectory * _temporaryDirectory;
     NSObject<OS_dispatch_queue> * _temporaryDirectoryQueue;
+    NSSet * _unsupportedFeatureIdentifiers;
     NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
@@ -142,6 +144,7 @@
 @property (nonatomic, readonly) NSData *keychainGenericItem;
 @property (nonatomic) long long lastObjectIdentifier;
 @property (nonatomic, readonly) NSString *lastPasswordAttempted;
+@property (nonatomic, readonly) bool losesDataOnWrite;
 @property (nonatomic, readonly) bool needsDownload;
 @property (nonatomic, readonly) long long packageType;
 @property (nonatomic, readonly) NSString *passphraseHint;
@@ -157,6 +160,7 @@
 @property (nonatomic, retain) TSPObject *supportObject;
 @property (nonatomic, retain) TSPObjectContainer *supportObjectContainer;
 @property (nonatomic, readonly) TSPPackage *supportPackage;
+@property (nonatomic, readonly) NSSet *unsupportedFeatureIdentifiers;
 @property (nonatomic, readonly) NSUUID *versionUUID;
 
 + (id)documentRevisionAtURL:(id)arg1 passphrase:(id)arg2 error:(id*)arg3;
@@ -270,6 +274,7 @@
 - (id)keychainGenericItem;
 - (long long)lastObjectIdentifier;
 - (id)lastPasswordAttempted;
+- (bool)losesDataOnWrite;
 - (long long)modifyObjectTokenForNewObject;
 - (bool)needsDownload;
 - (id)newDocumentResourceDataProvider;
@@ -281,6 +286,7 @@
 - (id)objectWithUUID:(id)arg1;
 - (id)objectWithUUID:(id)arg1 onlyIfLoaded:(bool)arg2 validateNewObjects:(bool)arg3 identifier:(long long*)arg4;
 - (id)objectWithUUIDIfAvailable:(id)arg1;
+- (id)objectWithUUIDIfAvailableAndLoaded:(id)arg1;
 - (id)objectWithUUIDPath:(id)arg1;
 - (id)objectsFromUUIDs:(id)arg1;
 - (long long)packageType;
@@ -315,7 +321,7 @@
 - (void)requestAutosave;
 - (void)resetDocumentRevision;
 - (void)resumeAsynchronousModifications;
-- (void)resumeAutosave;
+- (void)resumeAutosaveWithReason:(id)arg1;
 - (void)resumeLoadingModifiedFlushedComponents;
 - (bool)saveToURL:(id)arg1 packageType:(long long)arg2 encryptionKey:(id)arg3 originalURL:(id)arg4 error:(id*)arg5;
 - (unsigned long long)saveToken;
@@ -339,9 +345,10 @@
 - (id)supportObjectContainer;
 - (id)supportPackage;
 - (void)suspendAsynchronousModificationsForObjectTargetType:(unsigned long long)arg1;
-- (void)suspendAutosave;
+- (void)suspendAutosaveWithReason:(id)arg1;
 - (void)suspendLoadingModifiedFlushedComponentsAndWait;
 - (id)temporaryDirectory;
+- (id)unsupportedFeatureIdentifiers;
 - (bool)updateDocumentUUIDPreserveOriginalDocumentSupport:(bool)arg1 preserveShareUUID:(bool)arg2 error:(id*)arg3;
 - (long long)updateModifyObjectToken;
 - (id)versionUUID;

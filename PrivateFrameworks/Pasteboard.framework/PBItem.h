@@ -54,6 +54,7 @@
 - (id)availableTypes;
 - (bool)canInstantiateObjectOfClass:(Class)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasRepresentationConformingToType:(id)arg1;
 - (bool)hasRepresentationOfType:(id)arg1;

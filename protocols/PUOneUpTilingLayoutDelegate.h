@@ -12,6 +12,7 @@
 - (struct CGPoint { double x1; double x2; })layout:(PUOneUpTilingLayout *)arg1 contentOffsetForItemAtIndexPath:(NSIndexPath *)arg2;
 - (bool)layout:(PUOneUpTilingLayout *)arg1 disableInitialZoomToFillForItemAtIndexPath:(NSIndexPath *)arg2;
 - (double)layout:(PUOneUpTilingLayout *)arg1 minimumVisibleAccessoryHeightForItemAtIndexPath:(NSIndexPath *)arg2;
+- (double)layout:(PUOneUpTilingLayout *)arg1 minimumVisibleContentHeightForItemAtIndexPath:(NSIndexPath *)arg2;
 - (PUModelTileTransform *)layout:(PUOneUpTilingLayout *)arg1 modelTileTransformForItemAtIndexPath:(NSIndexPath *)arg2;
 - (bool)layout:(PUOneUpTilingLayout *)arg1 shouldShowAccessoryForItemAtIndexPath:(NSIndexPath *)arg2;
 - (bool)layout:(PUOneUpTilingLayout *)arg1 shouldShowBufferingIndicatorForItemAtIndexPath:(NSIndexPath *)arg2;

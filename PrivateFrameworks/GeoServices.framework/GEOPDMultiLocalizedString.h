@@ -4,9 +4,11 @@
 
 @interface GEOPDMultiLocalizedString : PBCodable <NSCopying> {
     NSMutableArray * _localizedStrings;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *localizedStrings;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)localizedStringType;
 
@@ -26,6 +28,7 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setLocalizedStrings:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -7,6 +7,7 @@
     bool  _backgroundBlurred;
     UIView * _backgroundOverlayView;
     UIView * _backgroundView;
+    UIView * _customBackgroundView;
     NCLookViewFontProvider * _fontProvider;
     NCNotificationAction * _notificationAction;
     NSString * _preferredContentSizeCategory;
@@ -18,6 +19,7 @@
 @property (getter=isBackgroundBlurred, nonatomic) bool backgroundBlurred;
 @property (nonatomic, retain) UIView *backgroundOverlayView;
 @property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, retain) UIView *customBackgroundView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_fontProvider, setter=_setFontProvider:, nonatomic, retain) NCLookViewFontProvider *fontProvider;
@@ -45,6 +47,7 @@
 - (bool)adjustsFontForContentSizeCategory;
 - (id)backgroundOverlayView;
 - (id)backgroundView;
+- (id)customBackgroundView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isBackgroundBlurred;
 - (void)layoutSubviews;
@@ -54,6 +57,7 @@
 - (void)setBackgroundBlurred:(bool)arg1;
 - (void)setBackgroundOverlayView:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
+- (void)setCustomBackgroundView:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setNotificationAction:(id)arg1;
 - (void)setPreferredContentSizeCategory:(id)arg1;

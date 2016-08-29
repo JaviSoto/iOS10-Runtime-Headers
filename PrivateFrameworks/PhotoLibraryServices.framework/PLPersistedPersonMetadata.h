@@ -4,6 +4,7 @@
 
 @interface PLPersistedPersonMetadata : NSObject {
     NSArray * _detectedFaces;
+    NSString * _displayName;
     NSString * _fullName;
     int  _manualOrder;
     NSURL * _metadataURL;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, retain) NSArray *detectedFaces;
+@property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *fullName;
 @property (nonatomic) int manualOrder;
 @property (nonatomic, retain) NSURL *metadataURL;
@@ -41,6 +43,7 @@
 - (void)_saveMetadata;
 - (id)description;
 - (id)detectedFaces;
+- (id)displayName;
 - (id)fullName;
 - (bool)hasAllAssetsAvailableInManagedObjectContext:(id)arg1 includePendingAssetChanges:(bool)arg2;
 - (id)init;
@@ -56,6 +59,7 @@
 - (id)rejectedFaces;
 - (void)removePersistedData;
 - (void)setDetectedFaces:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setManualOrder:(int)arg1;
 - (void)setMetadataURL:(id)arg1;

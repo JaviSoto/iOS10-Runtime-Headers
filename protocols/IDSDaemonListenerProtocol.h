@@ -75,7 +75,7 @@
 - (void)registrationFailedForAccount:(NSString *)arg1 needsDeletion:(NSNumber *)arg2;
 - (void)serviceUserIDs:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)session:(NSString *)arg1 audioEnabled:(bool)arg2;
-- (void)session:(NSString *)arg1 invitationSentToTokens:(NSSet *)arg2;
+- (void)session:(NSString *)arg1 invitationSentToTokens:(NSSet *)arg2 shouldBreakBeforeMake:(bool)arg3;
 - (void)session:(NSString *)arg1 muted:(bool)arg2;
 - (void)sessionAcceptReceived:(NSString *)arg1 fromID:(NSString *)arg2 withData:(NSData *)arg3;
 - (void)sessionCancelReceived:(NSString *)arg1 fromID:(NSString *)arg2 withData:(NSData *)arg3;

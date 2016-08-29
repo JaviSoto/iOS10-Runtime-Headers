@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIButtonSectionController : CCUIControlCenterSectionViewController <CCUIButtonControllerDelegate, _UISettingsKeyPathObserver> {
+@interface CCUIButtonSectionController : CCUIControlCenterSectionViewController <CCUIButtonControllerDelegate, CCUIButtonStackPagingViewDelegate, _UISettingsKeyPathObserver> {
     NSMutableDictionary * _moduleControllersByID;
     NSMutableArray * _modules;
     NSMutableDictionary * _modulesByID;
@@ -30,12 +30,14 @@
 - (id)_sortKeyForModule:(id)arg1;
 - (id)_supportedButtonModuleClasses;
 - (void)_updateSettings;
+- (void)beginSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (void)buttonController:(id)arg1 publishStatusUpdate:(id)arg2;
 - (bool)buttonControllerShouldUseSmallButtons:(id)arg1;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (void)dealloc;
 - (bool)dismissModalFullScreenIfNeeded;
+- (void)endSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (id)init;
 - (id)sectionIdentifier;
 - (id)settings;

@@ -13,6 +13,7 @@
         unsigned int timeToPlace : 1; 
     }  _has;
     unsigned int  _timeToPlace;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int detourDistance;
@@ -23,9 +24,11 @@
 @property (nonatomic) bool hasDistanceToPlace;
 @property (nonatomic) bool hasTimeToPlace;
 @property (nonatomic) unsigned int timeToPlace;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (int)detourDistance;
 - (int)detourTime;
@@ -48,6 +51,7 @@
 - (void)setHasTimeToPlace:(bool)arg1;
 - (void)setTimeToPlace:(unsigned int)arg1;
 - (unsigned int)timeToPlace;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

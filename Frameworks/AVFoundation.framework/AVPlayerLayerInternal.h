@@ -15,7 +15,6 @@
     bool  isPresentationLayer;
     bool  isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } * isReadyForDisplayMutex;
-    AVPlayerItem * itemMarkedReadyForDisplay;
     bool  lanczosDownscalingEnabled;
     long long  lanczosDownscalingFactor;
     struct CGSize { 
@@ -27,6 +26,7 @@
     CALayer * placeholderContentLayerDuringPIPMode;
     AVPlayer * player;
     AVPlayer * playerBeingObserved;
+    <AVCallbackCancellation> * playerCurrentItemHasVideoFrameEnqueuedKVOInvoker;
     bool  preventsChangesToSublayerHierarchy;
     NSObject<OS_dispatch_queue> * serialQueue;
     bool  shouldObservePlayer;

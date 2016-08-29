@@ -43,6 +43,7 @@
 - (void)addStyle:(id)arg1 withIdentifier:(id)arg2;
 - (void)addStyle:(id)arg1 withParent:(id)arg2;
 - (void)addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
+- (void)addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3 shouldDoDOLC:(bool)arg4;
 - (id)allPresenterNotesStyles;
 - (bool)baseStyleSetUpdated;
 - (id)baseStyles;
@@ -86,6 +87,7 @@
 - (id)namedStylesOfClass:(Class)arg1;
 - (id)pVariationOfStyle:(id)arg1 propertyMap:(id)arg2 matchStyles:(id)arg3 context:(id)arg4;
 - (void)p_addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
+- (void)p_addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3 shouldDoDOLC:(bool)arg4;
 - (void)p_addStyleToParentChildren:(id)arg1;
 - (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long long x_3_2_1; } x_1_1_3; } x1; }*)p_allFilteredIdentifiersInArchive:(const struct StylesheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; bool x9; bool x10; }*)arg1 unarchiver:(id)arg2;
 - (id)p_boxedLabelTypesForNotesListStyles;
@@ -114,6 +116,7 @@
 - (void)setParent:(id)arg1 ofStyle:(id)arg2;
 - (void)setParent:(id)arg1 withParentStyleMap:(struct __CFDictionary { }*)arg2;
 - (bool)shouldDelayArchiving;
+- (void)style:(id)arg1 didChangeUUIDToValue:(id)arg2 fromValue:(id)arg3;
 - (id)styleWithIdentifier:(id)arg1;
 - (id)styleWithIdentifier:(id)arg1 componentMask:(int)arg2;
 - (id)styleWithUUIDIfAvailable:(id)arg1;

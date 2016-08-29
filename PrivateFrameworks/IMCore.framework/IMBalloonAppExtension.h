@@ -8,6 +8,7 @@
     NSUUID * _requestIdentifier;
 }
 
+@property (nonatomic, readonly) NSString *containingBundleIdentifier;
 @property (nonatomic, readonly, retain) NSExtension *extension;
 @property (nonatomic, retain) LSPlugInKitProxy *proxy;
 @property NSUUID *requestIdentifier;
@@ -30,11 +31,10 @@
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-+ (id)image:(id)arg1 atSize:(struct CGSize { double x1; double x2; })arg2 maskedByImage:(id)arg3;
-
 - (id)__ck_breadcrumbImage;
 - (id)__ck_browserImage;
 - (id)__ck_statusImage;
 - (id)_adamID;
+- (id)containingBundleIdentifier;
 
 @end

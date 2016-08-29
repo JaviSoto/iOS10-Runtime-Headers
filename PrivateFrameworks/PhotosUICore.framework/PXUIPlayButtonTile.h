@@ -8,6 +8,7 @@
     UIImage * __backgroundImage;
     long long  __style;
     bool  _allowsBackdropStatisticsSuppression;
+    <PXDisplayAsset> * _assetForImageExtraction;
     <PXUIPlayButtonTileDelegate> * _delegate;
     UIView<PXVideoOverlayButton> * _hifiPlayButtonView;
     PXImageExtraction * _imageExtraction;

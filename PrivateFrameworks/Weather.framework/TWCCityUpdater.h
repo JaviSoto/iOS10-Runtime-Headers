@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic) <WeatherUpdaterDelegate> *delegate;
-@property (retain) WAForecastModelController *forecastModelController;
+@property (nonatomic, retain) WAForecastModelController *forecastModelController;
 @property (nonatomic, retain) NSLocale *locale;
 @property (nonatomic, retain) NSString *trackingParameter;
 

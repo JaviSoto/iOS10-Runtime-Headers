@@ -6,10 +6,10 @@
     NSString * _audioSourceIdentifier;
     int  _callIdentifier;
     NSString * _contactIdentifier;
-    NSString * _destinationID;
     bool  _dialAssisted;
     long long  _dialType;
     bool  _endpointOnCurrentDevice;
+    TUHandle * _handle;
     bool  _hostOnCurrentDevice;
     struct CGSize { 
         double width; 
@@ -41,6 +41,7 @@
 @property (getter=isDialAssisted, nonatomic) bool dialAssisted;
 @property (nonatomic) long long dialType;
 @property (nonatomic) bool endpointOnCurrentDevice;
+@property (nonatomic, retain) TUHandle *handle;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool hostOnCurrentDevice;
 @property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
@@ -64,8 +65,10 @@
 + (id /* block */)callIdentifierToContactIdentifierTransformBlock;
 + (id /* block */)contactIdentifierToCallIdentifierTransformBlock;
 + (long long)dialRequestTypeForIntentDestinationType:(long long)arg1;
++ (long long)handleTypeForQueryItem:(id)arg1;
 + (long long)intentTTYTypeForTTYType:(long long)arg1;
 + (long long)originatingUITypeForString:(id)arg1;
++ (id)queryItemValueForHandleType:(long long)arg1;
 + (void)setCallIdentifierToContactIdentifierTransformBlock:(id /* block */)arg1;
 + (void)setContactIdentifierToCallIdentifierTransformBlock:(id /* block */)arg1;
 + (id)stringForDialType:(long long)arg1;
@@ -80,7 +83,7 @@
 - (id)URLHost;
 - (id)URLQueryItems;
 - (id)URLScheme;
-- (id)_contactFromINPerson:(id)arg1 bestGuessDestinationID:(id*)arg2;
+- (id)_contactFromINPerson:(id)arg1 bestGuessHandle:(id*)arg2;
 - (id)audioSourceIdentifier;
 - (id)audioSourceIdentifierURLQueryItem;
 - (bool)boolValueForQueryItemWithName:(id)arg1 inURLComponents:(id)arg2;
@@ -100,6 +103,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (bool)endpointOnCurrentDevice;
 - (id)forceAssistURLQueryItem;
+- (id)handle;
+- (id)handleForPersonHandle:(id)arg1;
+- (id)handleFromURL:(id)arg1;
+- (id)handleTypeURLQueryItem;
 - (unsigned long long)hash;
 - (bool)hostOnCurrentDevice;
 - (id)init;
@@ -124,6 +131,7 @@
 - (id)originatingUIURLQueryItem;
 - (bool)performDialAssist;
 - (bool)performLocalDialAssist;
+- (id)personHandleForHandle:(id)arg1;
 - (id)provider;
 - (id)providerManager;
 - (int)service;
@@ -135,6 +143,7 @@
 - (void)setDialAssisted:(bool)arg1;
 - (void)setDialType:(long long)arg1;
 - (void)setEndpointOnCurrentDevice:(bool)arg1;
+- (void)setHandle:(id)arg1;
 - (void)setHostOnCurrentDevice:(bool)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;

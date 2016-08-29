@@ -25,6 +25,7 @@
 - (void)setCurrentValue:(id)arg1;
 - (void)setEndValue:(id)arg1;
 - (void)setStartValue:(id)arg1;
+- (void)setValueImmediate:(id)arg1;
 - (id)startValue;
 - (void)update:(double)arg1;
 

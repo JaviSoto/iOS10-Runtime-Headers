@@ -50,8 +50,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool useStillImage;
 
-+ (bool)_wantsIrisRemakerURLForActivityType:(id)arg1;
-+ (bool)_wantsPhotoRemakerURLForActivityType:(id)arg1;
 + (bool)supportsPhotoIrisBundleForActivityType:(id)arg1;
 
 - (void).cxx_destruct;
@@ -62,6 +60,7 @@
 - (void)_cleanupPhotoRemaker;
 - (void)_cleanupRemaker;
 - (id)_createTempPhotoIrisBundle;
+- (id)_customAccessibilityLabel;
 - (void)_fetchImageWithProgressHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)_fetchPhotoIrisForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3 wantsAssetsLibraryURL:(bool)arg4;
 - (void)_fetchVideoForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3 wantsAssetsLibraryURL:(bool)arg4;
@@ -92,8 +91,10 @@
 - (id)_videoComplementAssetURL;
 - (id)_videoRemakerURL;
 - (bool)_wantsAssetsLibraryURLForActivityType:(id)arg1;
+- (bool)_wantsIrisRemakerURLForActivityType:(id)arg1;
 - (bool)_wantsLocalAssetsForActivityType:(id)arg1;
 - (bool)_wantsPhotoIrisBundleForActivityType:(id)arg1;
+- (bool)_wantsPhotoRemakerURLForActivityType:(id)arg1;
 - (bool)_wantsVideoRemakerForActivityType:(id)arg1 adjustmentData:(id)arg2 wantsAssetsLibraryURL:(bool)arg3;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

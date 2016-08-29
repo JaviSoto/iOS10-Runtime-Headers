@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delayTimer;
+- (void)dispatchResponse:(id)arg1;
 - (id)initWithOneTimeRequest:(id)arg1 priority:(long long)arg2 responseHandler:(id /* block */)arg3;
 - (id)initWithRequest:(id)arg1 priority:(long long)arg2 responseHandler:(id /* block */)arg3;
 - (bool)isOneTimeRequest;

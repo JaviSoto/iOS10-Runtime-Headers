@@ -3,6 +3,7 @@
  */
 
 @interface _UIStackedImageContainerLayer : CALayer <CALayerDelegate> {
+    bool  _animatingStateChange;
     bool  _animatingToNormalState;
     double  _animationDelay;
     UIView * _animationView;
@@ -13,7 +14,6 @@
     CATransformLayer * _cursorRotationTransformLayer;
     id  _flatImage;
     CALayer * _flatLayer;
-    CALayer * _flatShadowLayer;
     struct CGPoint { 
         double x; 
         double y; 
@@ -152,6 +152,7 @@
 - (id)layerStack;
 - (void)layoutSublayers;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)removeAllAnimations;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setControlState:(unsigned long long)arg1;

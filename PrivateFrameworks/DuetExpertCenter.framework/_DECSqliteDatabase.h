@@ -13,7 +13,7 @@
     NSOperationQueue * _operationQueue;
     NSCache * _queryCache;
     NSObject<OS_dispatch_queue> * _queue;
-    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } * _threadInQueue;
+    /* Warning: Unrecognized filer type: '^' using 'void*' */ void* _threadInQueue;
     int  _transactionDepth;
     bool  _transactionRolledback;
     NSObject<OS_dispatch_queue> * _workQueue;

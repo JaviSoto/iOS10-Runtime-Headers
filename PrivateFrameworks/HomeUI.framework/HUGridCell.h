@@ -48,6 +48,7 @@
 - (id)item;
 - (id)layoutOptions;
 - (void)layoutOptionsDidChange;
+- (void)layoutSubviews;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (long long)primaryState;

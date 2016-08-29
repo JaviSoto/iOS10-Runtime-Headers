@@ -29,7 +29,10 @@
 @property (nonatomic) double traceDuration;
 @property (nonatomic, retain) NSString *tracePath;
 
++ (Class)bookmarkType;
+
 - (void).cxx_destruct;
+- (int)StringAsEventType:(id)arg1;
 - (void)addBookmark:(id)arg1;
 - (id)bookmarkAtIndex:(unsigned long long)arg1;
 - (id)bookmarks;
@@ -41,6 +44,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)eventType;
+- (id)eventTypeAsString:(int)arg1;
 - (bool)hasCurrentPosition;
 - (bool)hasEventType;
 - (bool)hasRecordedBookmarkID;

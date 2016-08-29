@@ -39,6 +39,7 @@
 + (void)initialize;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (Class)migrationManagerClass;
++ (Class)rowCacheClass;
 + (bool)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 
 - (id)URL;
@@ -68,7 +69,6 @@
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)faultHandler;
 - (Class)faultHandlerClass;
-- (void)finalize;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)identifier;
 - (void)incrementInUseCounter;

@@ -22,10 +22,10 @@
 - (id)allVoicemailsWithTranscription;
 - (id)allVoicemailsWithoutTranscription;
 - (bool)alreadyAttemptedVoicemailTranscriptionForVoicemail:(id)arg1;
+- (void)cancelAttemptedVoicemailTranscriptionForVoicemail:(id)arg1;
 - (bool)confidenceModelExistsOnDevice;
 - (void)dealloc;
 - (bool)deviceHasSpeechAssets;
-- (bool)deviceIsChargingOrRunningOffACPower;
 - (void)endRetranscribingTask;
 - (bool)hasInsomniaAssertion;
 - (id)init;

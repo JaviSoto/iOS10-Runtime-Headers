@@ -13,13 +13,18 @@
     NSData * _globals;
     struct _carheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6[128]; BOOL x7[256]; unsigned char x8[16]; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; } * _header;
     void * _imagedb;
+    unsigned int  _isMemoryMapped;
     struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; } * _keyfmt;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
-    /* Warning: unhandled array encoding: '[3@]' */ id  _renditionInfoCache;
+    /* Warning: unhandled array encoding: '[10@]' */ id  _renditionInfoCache;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _renditionInfoCacheLock;
     unsigned short  _renditionInfoCacheLookup;
-    bool  _swap;
+    unsigned int  _reserved;
+    unsigned int  _swap;
     void * _zcbezeldb;
     void * _zcglyphdb;
 }

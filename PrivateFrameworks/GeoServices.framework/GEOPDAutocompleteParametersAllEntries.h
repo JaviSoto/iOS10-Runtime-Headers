@@ -10,6 +10,7 @@
     bool  _highlightDiff;
     int  _maxResults;
     NSString * _query;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -20,6 +21,7 @@
 @property (nonatomic) bool highlightDiff;
 @property (nonatomic) int maxResults;
 @property (nonatomic, retain) NSString *query;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (void)copyTo:(id)arg1;
@@ -44,6 +46,7 @@
 - (void)setMaxResults:(int)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

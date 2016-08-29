@@ -7,4 +7,8 @@
 
 - (NSArray *)childInfos;
 
+@optional
+
+- (bool)prohibitsModificationToChildren;
+
 @end

@@ -27,7 +27,7 @@
 }
 
 + (Class)classForMimePart;
-+ (id)copyMessageWithSelection:(id)arg1 toMailbox:(id)arg2 markAsRead:(bool)arg3 deleteOriginals:(bool)arg4 isDeletion:(bool)arg5;
++ (id)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(bool)arg3 deleteOriginals:(bool)arg4 isDeletion:(bool)arg5;
 + (bool)createEmptyStoreForPath:(id)arg1;
 + (bool)createEmptyStoreIfNeededForPath:(id)arg1;
 + (Class)headersClass;
@@ -46,7 +46,6 @@
 - (void)allMessageFlagsDidChange:(id)arg1;
 - (unsigned long long)allNonDeletedCountIncludingServerSearch:(bool)arg1 andThreadSearch:(bool)arg2;
 - (bool)allowsAppend;
-- (unsigned long long)appendMessageSelections:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (unsigned long long)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2;
 - (unsigned long long)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3;
 - (unsigned long long)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4;
@@ -62,6 +61,7 @@
 - (id)copyMessagesMatchingText:(id)arg1;
 - (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2;
+- (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;
@@ -102,6 +102,7 @@
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
 - (id)messageForMessageID:(id)arg1 options:(unsigned int)arg2;
 - (id)messageForRemoteID:(id)arg1;
+- (id)messageForRemoteID:(id)arg1 inMailbox:(id)arg2;
 - (id)messageIdRollCall:(id)arg1;
 - (void)messagesWereAdded:(id)arg1;
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
@@ -114,8 +115,6 @@
 - (void)openSynchronously;
 - (void)purgeMessagesBeyondLimit:(unsigned long long)arg1 keepingMessage:(id)arg2;
 - (id)remoteIDsFromUniqueRemoteIDs:(id)arg1;
-- (id)remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 error:(id*)arg3;
-- (id)remoteIDsMatchingSearchText:(id)arg1 criterion:(id)arg2 limit:(unsigned int)arg3 error:(id*)arg4;
 - (unsigned long long)serverMessageCount;
 - (unsigned long long)serverUnreadCount;
 - (unsigned long long)serverUnreadOnlyOnServerCount;
@@ -123,7 +122,6 @@
 - (void)setFlagForAllMessages:(id)arg1 state:(bool)arg2;
 - (void)setFlagsCancelled:(id)arg1 forMessages:(id)arg2;
 - (void)setFlagsForAllMessagesFromDictionary:(id)arg1;
-- (id)setFlagsFromDictionary:(id)arg1 forMessageSelection:(id)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)setFlagsLocallyFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setLibrary:(id)arg1;
@@ -137,6 +135,8 @@
 - (id)status;
 - (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(bool)arg3;
 - (id)storePathRelativeToAccount;
+- (id)storeSearchResultMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 error:(id*)arg3;
+- (id)storeSearchResultMatchingSearchText:(id)arg1 criterion:(id)arg2 limit:(unsigned int)arg3 error:(id*)arg4;
 - (void)structureDidChange;
 - (bool)supportsArchiving;
 - (unsigned long long)totalCount;

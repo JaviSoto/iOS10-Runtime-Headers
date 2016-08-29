@@ -17,6 +17,7 @@
     int  _requestType;
     NSMutableArray * _spokenLanguages;
     int  _status;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *debugApiKey;
@@ -34,6 +35,7 @@
 @property (nonatomic) int requestType;
 @property (nonatomic, retain) NSMutableArray *spokenLanguages;
 @property (nonatomic) int status;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)displayLanguageType;
 + (Class)placeResultType;
@@ -93,6 +95,7 @@
 - (unsigned long long)spokenLanguagesCount;
 - (int)status;
 - (id)statusAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

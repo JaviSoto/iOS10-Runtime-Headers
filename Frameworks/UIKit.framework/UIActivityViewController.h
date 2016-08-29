@@ -92,6 +92,7 @@
 - (id)_availableActivitiesForItems:(id)arg1;
 - (id)_availableActivitiesForItems:(id)arg1 applicationExtensionActivities:(id)arg2;
 - (id)_availableActivitiesMatchingOnlyUserElectedExtensions:(bool)arg1;
+- (void)_beginPresentedViewControllerActivityForcedStrongReference;
 - (void)_cancel;
 - (void)_changeActionButtonToDone;
 - (void)_cleanupActivityWithSuccess:(bool)arg1;
@@ -99,6 +100,7 @@
 - (id)_containedAlertController;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (double)_displayHeight;
+- (void)_endPresentedViewControllerActivityForcedStrongReference;
 - (void)_executeActivity;
 - (void)_mailAutosaveWithHandler:(id /* block */)arg1;
 - (void)_notifyReloadImageForActivity:(id)arg1;
@@ -110,7 +112,9 @@
 - (void)_prepareActivity:(id)arg1;
 - (void)_prepareActivity:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentUserDefaultsController:(id)arg1;
+- (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_reloadImageForActivity:(id)arg1;
+- (bool)_requiresCustomPresentationController;
 - (void)_resetAfterActivity:(bool)arg1;
 - (void)_setDarkStyleOnLegacyApp;
 - (void)_setPopoverController:(id)arg1;
@@ -144,6 +148,7 @@
 - (id)contentController;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)didDismissViewController:(id)arg1;
 - (id /* block */)dismissCompletionHandler;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;

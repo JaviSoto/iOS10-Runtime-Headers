@@ -8,6 +8,7 @@
     unsigned long long  _epochTimestamp;
     NSString * _merchantIdentifier;
     NSString * _nonce;
+    NSString * _retryNonce;
     NSString * _sessionIdentifier;
     NSData * _signature;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) unsigned long long epochTimestamp;
 @property (nonatomic, readonly) NSString *merchantIdentifier;
 @property (nonatomic, readonly) NSString *nonce;
+@property (nonatomic, retain) NSString *retryNonce;
 @property (nonatomic, readonly) NSString *sessionIdentifier;
 @property (nonatomic, readonly) NSData *signature;
 
@@ -40,7 +42,9 @@
 - (id)merchantIdentifier;
 - (id)nonce;
 - (id)protobuf;
+- (id)retryNonce;
 - (id)sessionIdentifier;
+- (void)setRetryNonce:(id)arg1;
 - (id)signature;
 - (bool)supportsURL:(id)arg1;
 

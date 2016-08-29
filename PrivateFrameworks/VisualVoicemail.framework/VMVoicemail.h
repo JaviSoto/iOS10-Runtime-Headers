@@ -109,5 +109,6 @@
 - (id)transcript;
 - (unsigned long long)transcriptionState;
 - (id)transcriptionURL;
+- (bool)wasTranscriptionAttempted;
 
 @end

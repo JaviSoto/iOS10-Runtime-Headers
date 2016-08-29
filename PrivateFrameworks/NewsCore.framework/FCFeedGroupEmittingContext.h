@@ -26,6 +26,7 @@
 @property (nonatomic, readonly, copy) NSSet *articleIDs;
 @property (nonatomic, readonly) FCCloudContext *cloudContext;
 @property (nonatomic, readonly, copy) NSSet *clusterIDs;
+@property (nonatomic, readonly) unsigned long long countOfArticlesInPrecedingGroup;
 @property (nonatomic, readonly) unsigned long long desiredHeadlineCount;
 @property (nonatomic, readonly, copy) FCFeedEdition *edition;
 @property (nonatomic, readonly) NSDate *editionKeyDate;
@@ -46,10 +47,12 @@
 - (void).cxx_destruct;
 - (void)_aduitGroups:(id)arg1;
 - (id)_filterTransformationWithFilterOptions:(long long)arg1 groupTypes:(id)arg2 includeArticlesFromGroupTypes:(bool)arg3;
+- (id)allArticleIDs;
 - (id)articleIDs;
 - (id)articleIDsContainedByGroupType:(long long)arg1;
 - (id)cloudContext;
 - (id)clusterIDs;
+- (unsigned long long)countOfArticlesInPrecedingGroup;
 - (unsigned long long)countOfFollowingAdjacentGroupsWithType:(long long)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithType:(long long)arg1;
 - (id)creationDateOfFollowingGroupWithType:(long long)arg1;
@@ -71,6 +74,7 @@
 - (bool)isFirstPageInRefreshSession;
 - (bool)isTopOfRefreshSession;
 - (id)pageDateRange;
+- (bool)pageHasPrecedingGroupWithType:(long long)arg1;
 - (id)personalizer;
 - (id)precedingAdjacentHeadlinesFromGroupType:(long long)arg1;
 - (long long)precedingGroupType;

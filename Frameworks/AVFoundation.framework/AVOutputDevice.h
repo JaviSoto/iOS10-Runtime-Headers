@@ -21,6 +21,7 @@
 - (id)_weakReference;
 - (float)batteryLevel;
 - (void)dealloc;
+- (id)description;
 - (long long)deviceType;
 - (struct OpaqueFigEndpoint { }*)figEndpoint;
 - (void)finalize;

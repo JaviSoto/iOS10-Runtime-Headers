@@ -138,6 +138,7 @@
 - (id)insertBefore:(id)arg1 :(id)arg2;
 - (id)insertBefore:(id)arg1 refChild:(id)arg2;
 - (void)inspect;
+- (bool)isConnected;
 - (bool)isContentEditable;
 - (bool)isDefaultNamespace:(id)arg1;
 - (bool)isEqualNode:(id)arg1;

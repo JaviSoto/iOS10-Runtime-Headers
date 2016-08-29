@@ -31,6 +31,7 @@
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;
+- (id)preview;
 - (bool)read;
 - (bool)readIsSet;
 - (id)remoteID;

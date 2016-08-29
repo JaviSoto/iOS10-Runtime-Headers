@@ -19,6 +19,7 @@
         unsigned int verticalLayout : 2; 
         unsigned int horizontallyResizable : 1; 
         unsigned int verticallyResizable : 1; 
+        unsigned int freezeTextContainerSize : 1; 
     }  _tcvFlags;
     NSTextContainer * _textContainer;
     struct UIEdgeInsets { 
@@ -36,6 +37,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UITextContainerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_freezeTextContainerSize, setter=_setFreezeTextContainerSize:, nonatomic) bool freezeTextContainerSize;
 @property (readonly) unsigned long long hash;
 @property (getter=isHorizontallyResizable, nonatomic) bool horizontallyResizable;
 @property (nonatomic, readonly) NSLayoutManager *layoutManager;
@@ -59,7 +61,9 @@
 - (void)_ensureLayoutCompleteToEndOfCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_ensureMinAndMaxSizesConsistentWithBounds;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_extendedGlyphRangeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 maxGlyphIndex:(unsigned long long)arg2 drawingToScreen:(bool)arg3;
+- (bool)_freezeTextContainerSize;
 - (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 oldRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 settingAction:(id /* block */)arg3;
+- (void)_setFreezeTextContainerSize:(bool)arg1;
 - (void)_sizeToConstrainedContainerUsedRect;
 - (void)dealloc;
 - (id)delegate;

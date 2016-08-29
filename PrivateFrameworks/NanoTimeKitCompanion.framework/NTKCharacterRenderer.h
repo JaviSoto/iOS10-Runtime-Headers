@@ -14,6 +14,7 @@
     _Body * _body;
     double  _brightness;
     NSCalendar * _cal;
+    float  _characterScale;
     UIColor * _clothingColor;
     int  _clothingColorLoc;
     int  _curPose;
@@ -28,6 +29,8 @@
     _Foot * _foot;
     double  _fromHourPercent;
     double  _fromMinutePercent;
+    void _globalOffset;
+    void _globalScale;
     _Head * _head;
     union _GLKMatrix4 { 
         struct { 
@@ -98,7 +101,6 @@
     double  _toHourPercent;
     double  _toMinutePercent;
     float  _zoomFraction;
-    float  _zoomScaleMickey;
 }
 
 @property (nonatomic, readonly) bool active;
@@ -107,12 +109,15 @@
 @property (nonatomic) double backgroundBrightness;
 @property (retain) _Body *body;
 @property (nonatomic) double brightness;
+@property (readonly) float characterScale;
 @property (readonly) UIColor *clothingColor;
 @property (readonly) int clothingColorLoc;
 @property (readonly) float curTimeMod15Sec;
 @property (readonly) float curTimeMod1Sec;
 @property (readonly) double desaturation;
 @property (retain) _Foot *foot;
+@property void globalOffset;
+@property void globalScale;
 @property (retain) _Head *head;
 @property (readonly) union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; } headMatrix;
 @property (nonatomic, readonly) NTKCharacterResourceLoader *loader;
@@ -120,7 +125,6 @@
 @property (readonly) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } neckBone;
 @property (nonatomic, readonly) NSString *prefix;
 @property (readonly) float zoomFraction;
-@property (readonly) float zoomScaleMickey;
 
 + (id)rendererWithCharacter:(unsigned long long)arg1 loader:(id)arg2;
 
@@ -154,10 +158,12 @@
 - (double)backgroundBrightness;
 - (id)body;
 - (double)brightness;
+- (float)characterScale;
 - (void)cleanupAfterZoom;
 - (void)cleanupToOverrideDate:(id)arg1;
 - (id)clothingColor;
 - (int)clothingColorLoc;
+- (void)copyStateFrom:(id)arg1;
 - (int)curPose;
 - (int)curState;
 - (float)curTimeMod15Sec;
@@ -166,6 +172,9 @@
 - (void)dealloc;
 - (double)desaturation;
 - (id)foot;
+- (void)forceUpdateTimeVariables;
+- (void)globalOffset;
+- (void)globalScale;
 - (id)head;
 - (union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })headMatrix;
 - (id)initWithCharacter:(unsigned long long)arg1 loader:(id)arg2 prefix:(id)arg3;
@@ -192,6 +201,8 @@
 - (void)setBrightness:(double)arg1;
 - (void)setClothingColor:(id)arg1 andDesaturation:(double)arg2;
 - (void)setFoot:(id)arg1;
+- (void)setGlobalOffset;
+- (void)setGlobalScale;
 - (void)setHead:(id)arg1;
 - (void)setOverrideDateFraction:(double)arg1;
 - (void)setScrubOffset:(float)arg1;
@@ -202,6 +213,5 @@
 - (void)setupVAOs;
 - (void)significantTimeChanged:(id)arg1;
 - (float)zoomFraction;
-- (float)zoomScaleMickey;
 
 @end

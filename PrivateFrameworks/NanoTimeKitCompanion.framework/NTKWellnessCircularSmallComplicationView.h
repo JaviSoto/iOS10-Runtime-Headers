@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (double)_ringDiameter;
 - (double)_ringGapWidth;
+- (double)_ringStrokeWidth;
 - (void)_setLayoutEmptyRingsNoDot;
 - (void)_updateForTemplateChange;
 - (bool)_wantsPlatter;

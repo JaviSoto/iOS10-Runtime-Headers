@@ -125,6 +125,7 @@
 - (void)updateLocationOfInterestWithIdentifier:(id)arg1 customLabel:(id)arg2 handler:(id /* block */)arg3;
 - (void)updateLocationOfInterestWithIdentifier:(id)arg1 mapItem:(id)arg2 handler:(id /* block */)arg3;
 - (void)updateLocationOfInterestWithIdentifier:(id)arg1 type:(long long)arg2 handler:(id /* block */)arg3;
+- (void)updateLocationOfInterestWithIdentifier:(id)arg1 type:(long long)arg2 mapItem:(id)arg3 customLabel:(id)arg4 handler:(id /* block */)arg5;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 geoMapItem:(id)arg2;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 location:(id)arg2;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 notes:(id)arg2;

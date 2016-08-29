@@ -13,7 +13,7 @@
 
 @property (nonatomic, copy) NSString *appBundleID;
 @property (nonatomic, copy) NSString *appBundlePath;
-@property (nonatomic, copy) NSString *baseDirectoryPath;
+@property (nonatomic, readonly, copy) NSString *baseDirectoryPath;
 
 + (id)_customVocabularyDirectory;
 + (id)_globalClassQueue;
@@ -25,8 +25,7 @@
 
 - (void).cxx_destruct;
 - (id)_appBundle;
-- (id)_baseDirectoryPathForIntentSlot:(id)arg1 error:(id*)arg2;
-- (id)_createDirectoryAtPath:(id)arg1;
+- (id)_baseDirectoryPathForIntentSlot:(id)arg1;
 - (id)_documentWithItems:(id)arg1 forIntentSlot:(id)arg2;
 - (id)_validator;
 - (void)_writeLatestVocabularyItems:(id)arg1 forIntentSlot:(id)arg2 completion:(id /* block */)arg3;
@@ -36,12 +35,12 @@
 - (void)checkIfSyncSlot:(id)arg1 isAllowedWithCompletion:(id /* block */)arg2;
 - (id)deleteEverything;
 - (id)deleteIntentSlot:(id)arg1;
+- (id)deleteVocabularyStoreItemAt:(id)arg1;
 - (id)getPathToLatestVocabulary:(id*)arg1 pathDuringReading:(id*)arg2 sentVocabulary:(id*)arg3 forIntentSlot:(id)arg4;
 - (id)init;
-- (id)initWithBaseDirectory:(id)arg1 appBundleID:(id)arg2 appBundlePath:(id)arg3 error:(id*)arg4;
+- (id)initWithBaseDirectory:(id)arg1 appBundleID:(id)arg2 appBundlePath:(id)arg3;
 - (void)setAppBundleID:(id)arg1;
 - (void)setAppBundlePath:(id)arg1;
-- (void)setBaseDirectoryPath:(id)arg1;
 - (void)writeLatestVocabularyItems:(id)arg1 forIntentSlot:(id)arg2 completion:(id /* block */)arg3;
 
 @end

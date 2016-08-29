@@ -60,8 +60,8 @@
 @property (nonatomic) bool showsEmergencyCallButton;
 @property (nonatomic) bool showsStatusField;
 @property (getter=_statusState, setter=_setStatusState:, nonatomic) unsigned long long statusState;
-@property (getter=_statusSubtitleText, nonatomic, readonly, copy) NSString *statusSubtitleText;
-@property (getter=_statusText, nonatomic, readonly, copy) NSString *statusText;
+@property (getter=_statusSubtitleText, setter=_setStatusSubtitleText:, nonatomic, copy) NSString *statusSubtitleText;
+@property (getter=_statusText, setter=_setStatusText:, nonatomic, copy) NSString *statusText;
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
 
@@ -94,13 +94,14 @@
 - (void)_setLegibilitySettings:(id)arg1;
 - (void)_setLuminosityBoost:(double)arg1;
 - (void)_setStatusState:(unsigned long long)arg1;
+- (void)_setStatusState:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_setStatusSubtitleText:(id)arg1;
 - (void)_setStatusText:(id)arg1;
 - (unsigned long long)_statusState;
 - (unsigned long long)_statusStateForLockoutState:(unsigned long long)arg1;
 - (id)_statusSubtitleText;
 - (id)_statusText;
-- (void)_updateStatusStateForLockout;
+- (void)_updateStatusStateForLockoutIfNecessaryAnimatedly:(bool)arg1;
 - (void)_updateStatusTextForBioEvent:(unsigned long long)arg1 animated:(bool)arg2;
 - (id)authenticationFeedbackBehavior;
 - (void)autofillForSuccessfulMesaAttemptWithCompletion:(id /* block */)arg1;

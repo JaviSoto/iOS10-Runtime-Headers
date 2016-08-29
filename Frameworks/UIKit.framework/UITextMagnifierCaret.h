@@ -3,6 +3,8 @@
  */
 
 @interface UITextMagnifierCaret : UITextMagnifier {
+    long long  _delayedAnimationType;
+    bool  _isAnimating;
     struct CGPoint { 
         double x; 
         double y; 

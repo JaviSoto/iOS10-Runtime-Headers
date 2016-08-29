@@ -46,7 +46,6 @@
 - (long long)maximumItemCount;
 - (id)mediaQuery;
 - (id)mediaQueryDataSource;
-- (id)newDownloadInformationController;
 - (unsigned long long)numberOfEntitiesInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfIndexBarEntries;
 - (unsigned long long)numberOfSections;

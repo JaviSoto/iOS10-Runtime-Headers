@@ -25,6 +25,7 @@
 - (void)remote_addSamples:(id)arg1 toWorkout:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_associateSamplesWithUUIDs:(id)arg1 withWorkout:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_attachWorkoutServerWithClient:(id)arg1 serverConfiguration:(id)arg2 handler:(id /* block */)arg3;
+- (void)remote_freezeLocationSeriesWithUUIDs:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_generateWorkoutMarkerWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_getFirstPartyWorkoutSnapshotWithCompletion:(id /* block */)arg1;
 - (void)remote_hasAnyActiveWorkouts:(id /* block */)arg1;

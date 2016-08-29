@@ -15,7 +15,6 @@
 @property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
-- (int)_authenticatedCircleStatus:(id*)arg1;
 - (void)_joinCDPCircleIgnoringBackups:(bool)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)_peerCount;
 - (id)_peerDeviceNamesByPeerID;
@@ -26,6 +25,7 @@
 - (void)_requestToJoinWithRequestBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_resetCicleToResolvePendingAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (void)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
+- (int)authenticatedCircleStatus:(id*)arg1;
 - (void)cancelApplicationToJoinCircle;
 - (id)circleProxy;
 - (int)circleStatus;

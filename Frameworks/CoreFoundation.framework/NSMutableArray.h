@@ -61,7 +61,6 @@
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObjectsFromOrderedSet:(id)arg2;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObjectsFromOrderedSet:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObjectsFromSet:(id)arg2;
-- (void)rollObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 by:(long long)arg2;
 - (void)setArray:(id)arg1;
 - (void)setObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
@@ -213,6 +212,10 @@
 
 - (id)section_pop;
 - (void)section_push:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
+- (void)fm_safeAddObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -373,6 +376,7 @@
 - (void)tsu_addObjectsFromNonNilArray:(id)arg1;
 - (id)tsu_dequeue;
 - (void)tsu_enqueue:(id)arg1;
+- (unsigned long long)tsu_insertObject:(id)arg1 usingComparator:(id /* block */)arg2;
 - (id)tsu_pop;
 - (void)tsu_push:(id)arg1;
 - (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;

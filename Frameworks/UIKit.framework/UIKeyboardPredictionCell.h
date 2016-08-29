@@ -77,7 +77,6 @@
 - (bool)isCenter;
 - (bool)isLongCandidate;
 - (bool)isTypedString;
-- (id)keyViewForState:(int)arg1;
 - (id)label;
 - (id)prediction;
 - (void)scrollLabelWithText:(id)arg1 force:(bool)arg2;
@@ -89,6 +88,7 @@
 - (void)setIsCenter:(bool)arg1;
 - (void)setIsLongCandidate:(bool)arg1;
 - (void)setIsTypedString:(bool)arg1;
+- (void)setKeyViewForState:(int)arg1;
 - (void)setSlotID:(unsigned int)arg1;
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 withAttrText:(id)arg2;

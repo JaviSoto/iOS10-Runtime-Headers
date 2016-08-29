@@ -42,6 +42,7 @@
 - (bool)_allowMultipleColumns;
 - (void)_animateSplitToWidth:(double)arg1;
 - (bool)_canShowColumnIndex:(unsigned long long)arg1;
+- (void)_collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (id)_columnToggleButtonImage;
 - (id)_contentSizesForColumnWidths:(id)arg1;
 - (bool)_currentSizeMightAllowMultipleColumns;
@@ -65,7 +66,6 @@
 - (void)_updateButtonsForColumnCount:(unsigned long long)arg1 animatingChange:(bool)arg2;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)_willShowColumnCount:(unsigned long long)arg1;
-- (void)collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2;
 - (id)columnWidths;
 - (void)dealloc;
 - (id)delegate;

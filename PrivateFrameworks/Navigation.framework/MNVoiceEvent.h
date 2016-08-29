@@ -15,13 +15,14 @@
 @property (nonatomic, readonly, copy) NSString *textToSpeak;
 
 + (id)eventWithPrompt:(unsigned long long)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
-+ (id)eventWithText:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
++ (id)eventWithText:(id)arg1 fallbackPrompt:(unsigned long long)arg2 options:(unsigned long long)arg3 completion:(id /* block */)arg4;
++ (bool)isValidShortPromptType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id /* block */)completion;
 - (id)description;
 - (id)initWithPrompt:(unsigned long long)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
-- (id)initWithText:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (id)initWithText:(id)arg1 fallbackPrompt:(unsigned long long)arg2 options:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (bool)isEqualToEvent:(id)arg1;
 - (unsigned long long)options;
 - (unsigned long long)shortPromptType;

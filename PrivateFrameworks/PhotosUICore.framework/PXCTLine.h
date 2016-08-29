@@ -60,6 +60,7 @@
 @property (nonatomic, readonly) NSString *string;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } stringRange;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } textPosition;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
 @property (getter=isTruncated, nonatomic, readonly) bool truncated;
 @property (nonatomic, readonly) double width;
 
@@ -70,6 +71,7 @@
 - (double)baselinePosition;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentBounds;
 - (struct CGContext { }*)context;
+- (const struct CGPath { }*)createPath;
 - (void)dealloc;
 - (double)descent;
 - (double)descentPosition;
@@ -86,10 +88,12 @@
 - (void)prepare;
 - (id)referenceAttributedString;
 - (void)scaleBy:(double)arg1;
+- (void)scaleVerticallyBy:(double)arg1;
 - (id)shadow;
 - (id)string;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })stringRange;
 - (struct CGPoint { double x1; double x2; })textPosition;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
 - (void)translateHorizontallyBy:(double)arg1;
 - (void)translateVerticallyBy:(double)arg1;
 - (double)width;

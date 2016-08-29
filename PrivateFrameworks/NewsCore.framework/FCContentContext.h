@@ -28,6 +28,8 @@
 @property (nonatomic, retain) <FCNetworkReachabilityRequirement> *supportedCountryNetworkReachabilityRequirement;
 @property (nonatomic, readonly) FCTagController *tagController;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (void)_updateReachabilityGivenRequirements;
 - (id)appConfiguration;
@@ -38,11 +40,11 @@
 - (id)contentStoreFrontID;
 - (void)databaseHasBeenRateLimited:(id)arg1 retryAfter:(double)arg2;
 - (void)dealloc;
-- (void)enableFlushing;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)flintResourceManager;
 - (bool)hasBeenRateLimited;
-- (id)initWithContentDatabase:(id)arg1 contentContainer:(id)arg2 contentHostDirectory:(id)arg3 contentDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(bool)arg6 desiredHeadlineFieldOptions:(unsigned long long)arg7;
-- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3;
+- (id)initWithContentDatabase:(id)arg1 contentContainer:(id)arg2 contentHostDirectory:(id)arg3 contentDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(bool)arg6 desiredHeadlineFieldOptions:(unsigned long long)arg7 feedUsage:(long long)arg8;
+- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3 feedUsage:(long long)arg4;
 - (id)internalContentContext;
 - (void)networkReachabilityRequirementDidBecomeDirty:(id)arg1;
 - (void)setContentDirectory:(id)arg1;

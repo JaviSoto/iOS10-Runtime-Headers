@@ -22,7 +22,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;

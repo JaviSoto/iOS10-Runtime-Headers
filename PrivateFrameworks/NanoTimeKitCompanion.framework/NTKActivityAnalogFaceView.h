@@ -5,22 +5,11 @@
 @interface NTKActivityAnalogFaceView : NTKAnalogFaceView <NTKActivityFaceViewFactoryDelegate> {
     UIView * _activityContainerView;
     double  _activityViewsAlpha;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  _auxiliaryLaunchRect;
     UILabel * _briskMinutesLabel;
     double  _contentScale;
     NTKDateComplicationController * _dateComplicationController;
     NTKActivityDateComplicationLabel * _dateComplicationLabel;
     NTKActivityDialView * _dialView;
-    NTKWellnessEntryModel * _editingEntryModel;
     UILabel * _energyLabel;
     NSMutableDictionary * _faceColorsToSchemes;
     NTKActivityFaceViewFactory * _faceViewFactory;
@@ -56,11 +45,9 @@
 - (void)_applyShowsCanonicalContent;
 - (void)_applyShowsLockedUI;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_auxiliaryLaunchRect;
 - (id)_cachedSchemeForFaceColor:(unsigned long long)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_cleanupAfterZoom;
-- (void)_clearAuxiliaryLaunchRect;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (struct CGPoint { double x1; double x2; })_contentCenterOffset;

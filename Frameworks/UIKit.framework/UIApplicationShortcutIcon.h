@@ -11,6 +11,7 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)iconWithCustomImage:(id)arg1;
++ (id)iconWithCustomImage:(id)arg1 isTemplate:(bool)arg2;
 + (id)iconWithTemplateImageName:(id)arg1;
 + (id)iconWithType:(long long)arg1;
 + (long long)sbsIconTypeForIconType:(long long)arg1;

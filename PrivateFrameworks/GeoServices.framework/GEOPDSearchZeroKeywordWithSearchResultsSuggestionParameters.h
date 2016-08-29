@@ -13,6 +13,7 @@
     }  _has;
     unsigned int  _maxCategories;
     unsigned int  _maxResultsPerCategory;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) unsigned int blurredHourOfDay;
@@ -23,11 +24,13 @@
 @property (nonatomic) bool hasMaxResultsPerCategory;
 @property (nonatomic) unsigned int maxCategories;
 @property (nonatomic) unsigned int maxResultsPerCategory;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (unsigned int)blurredHourOfDay;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)dayOfWeek;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasBlurredHourOfDay;
@@ -48,6 +51,7 @@
 - (void)setHasMaxResultsPerCategory:(bool)arg1;
 - (void)setMaxCategories:(unsigned int)arg1;
 - (void)setMaxResultsPerCategory:(unsigned int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

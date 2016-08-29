@@ -8,6 +8,7 @@
     bool  _autoUnlockEnabled;
     bool  _autoUnlockWatch;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _errorHandler;
     id /* block */  _eventMessageHandler;
     bool  _hasProblem;
     NSString * _identifier;
@@ -23,6 +24,7 @@
     NSUUID * _serviceUUID;
     bool  _supportsAirPlayReceiver;
     bool  _wakeDevice;
+    bool  _watchLocked;
     NSXPCConnection * _xpcCnx;
 }
 
@@ -30,6 +32,7 @@
 @property (nonatomic) bool autoUnlockEnabled;
 @property (nonatomic) bool autoUnlockWatch;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) id /* block */ errorHandler;
 @property (nonatomic, copy) id /* block */ eventMessageHandler;
 @property (nonatomic) bool hasProblem;
 @property (nonatomic, copy) NSString *identifier;
@@ -42,6 +45,7 @@
 @property (nonatomic, copy) NSUUID *serviceUUID;
 @property (nonatomic) bool supportsAirPlayReceiver;
 @property (nonatomic) bool wakeDevice;
+@property (nonatomic) bool watchLocked;
 
 + (bool)supportsSecureCoding;
 
@@ -60,6 +64,7 @@
 - (id)description;
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
+- (id /* block */)errorHandler;
 - (id /* block */)eventMessageHandler;
 - (bool)hasProblem;
 - (id)identifier;
@@ -75,6 +80,7 @@
 - (void)sendEvent:(id)arg1;
 - (void)sendRequest:(id)arg1;
 - (void)sendResponse:(id)arg1;
+- (void)serviceError:(id)arg1;
 - (void)serviceReceivedEvent:(id)arg1;
 - (void)serviceReceivedRequest:(id)arg1;
 - (void)serviceReceivedResponse:(id)arg1;
@@ -83,6 +89,7 @@
 - (void)setAutoUnlockEnabled:(bool)arg1;
 - (void)setAutoUnlockWatch:(bool)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setErrorHandler:(id /* block */)arg1;
 - (void)setEventMessageHandler:(id /* block */)arg1;
 - (void)setHasProblem:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -95,8 +102,10 @@
 - (void)setServiceUUID:(id)arg1;
 - (void)setSupportsAirPlayReceiver:(bool)arg1;
 - (void)setWakeDevice:(bool)arg1;
+- (void)setWatchLocked:(bool)arg1;
 - (bool)supportsAirPlayReceiver;
 - (void)updateWithService:(id)arg1;
 - (bool)wakeDevice;
+- (bool)watchLocked;
 
 @end

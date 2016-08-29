@@ -9,6 +9,7 @@
 
 @optional
 
+- (void)widgetComposition:(PXWidgetComposition *)arg1 didUpdateCompositionWithDefaultAnimationOptions:(id <NSObject>)arg2;
 - (long long)widgetComposition:(PXWidgetComposition *)arg1 loadingPriorityForWidget:(id <PXWidget>)arg2;
 - (bool)widgetComposition:(PXWidgetComposition *)arg1 requestViewControllerDismissalAnimated:(bool)arg2;
 - (bool)widgetComposition:(PXWidgetComposition *)arg1 shouldUseEdgeToEdgeLayoutForWidget:(id <PXWidget>)arg2;

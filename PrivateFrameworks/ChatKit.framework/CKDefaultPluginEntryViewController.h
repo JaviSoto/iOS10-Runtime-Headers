@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IMBalloonPlugin *plugin;
-@property (nonatomic, readonly) UIViewController<CKTranscriptBalloonPluginController> *pluginBubbleViewController;
+@property (nonatomic, retain) UIViewController<CKTranscriptBalloonPluginController> *pluginBubbleViewController;
 @property (readonly) Class superclass;
 @property (readonly) bool wantsClearButton;
 @property (readonly) bool wantsEdgeToEdgeLayout;
@@ -35,6 +35,7 @@
 - (void)setBalloonView:(id)arg1;
 - (void)setDatasource:(id)arg1;
 - (void)setPlugin:(id)arg1;
+- (void)setPluginBubbleViewController:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

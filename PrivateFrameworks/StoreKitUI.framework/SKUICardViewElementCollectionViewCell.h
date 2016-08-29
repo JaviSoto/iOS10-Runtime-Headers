@@ -41,9 +41,7 @@
 - (void)_buttonAction:(id)arg1;
 - (double)_dividerHeight:(id)arg1;
 - (void)_imageTapAction:(id)arg1;
-- (void)_noFeedbackButtonTapped;
 - (void)_performDefaultActionForViewElement:(id)arg1;
-- (void)_yesFeedbackButtonTapped;
 - (id)adCardBackgroundView;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)artworkBoundingSize;

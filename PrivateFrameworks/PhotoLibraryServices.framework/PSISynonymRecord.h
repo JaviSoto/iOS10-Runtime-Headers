@@ -11,6 +11,7 @@
 @property (nonatomic, copy) NSString *synonym;
 
 - (short)category;
+- (void)dealloc;
 - (id)initWithSynonym:(id)arg1 category:(short)arg2;
 - (void)setCategory:(short)arg1;
 - (void)setSynonym:(id)arg1;

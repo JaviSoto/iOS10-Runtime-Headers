@@ -29,6 +29,7 @@
 - (bool)shouldShowTitlePaddingView;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)sizeToFit;
+- (void)tintColorDidChange;
 - (id)titleLabel;
 - (id)titlePaddingView;
 

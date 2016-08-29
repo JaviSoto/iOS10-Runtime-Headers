@@ -23,6 +23,7 @@
     int  _notifyTokenForFramework;
     BRCThrottleBase * _readerThrottle;
     BRCAccountSession * _session;
+    NSString * _sourceAppIdentifier;
     NSObject<OS_dispatch_source> * _timerForForcedForegroundPeriod;
     NSObject<OS_dispatch_source> * _timerForGraceForegroundPeriod;
     BRCTransferStream * _uploadStream;
@@ -47,6 +48,7 @@
 
 + (id)_contextIdentifierForAppLibrary:(id)arg1;
 + (id)_contextIdentifierForZone:(id)arg1 metadata:(bool)arg2;
++ (id)_sourceAppIdentifierForZone:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_armForegroundGraceTimerForClientDescription:(id)arg1;
@@ -77,7 +79,7 @@
 - (id)energyBudget;
 - (void)forceContainerForegroundForDuration:(double)arg1;
 - (id)foregroundClients;
-- (id)initWithSession:(id)arg1 contextIdentifier:(id)arg2 isShared:(bool)arg3;
+- (id)initWithSession:(id)arg1 contextIdentifier:(id)arg2 sourceAppIdentifier:(id)arg3 isShared:(bool)arg4;
 - (bool)isForeground;
 - (bool)isShared;
 - (void)notifyDuetFromAccessByBundleID:(id)arg1;

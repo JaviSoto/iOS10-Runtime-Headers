@@ -21,8 +21,8 @@
     unsigned long long  _symbolicLinkReferenceCount;
 }
 
-- (id)_childrenExcludingExcessNodes:(bool)arg1;
-- (bool)_mayContainCriticalDebuggingInformation;
+- (id)_childrenExcludingExcessNodes:(bool)arg1 excludingReactors:(bool)arg2;
+- (bool)_mayContainCriticalDebuggingInformationExcludingReactors:(bool)arg1;
 - (void)addAccessClaim:(id)arg1;
 - (void)addPresenter:(id)arg1;
 - (void)addProgressPublisher:(id)arg1;
@@ -37,7 +37,7 @@
 - (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forAddingLeafNode:(id)arg3 create:(bool)arg4;
 - (id)descendantForFileURL:(id)arg1;
 - (id)description;
-- (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(bool)arg2;
+- (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(bool)arg2 excludingReactors:(bool)arg3;
 - (void)forEachAccessClaimOnItemOrContainedItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachAccessClaimOnItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachDescendantPerformProcedure:(id /* block */)arg1;
@@ -73,12 +73,14 @@
 - (void)removeProvider:(id)arg1;
 - (void)removeSelfIfUseless;
 - (id)sensitiveDescription;
+- (id)sensitiveSubarbiterDescription;
 - (void)setArbitrationBoundary;
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;
 - (void)setParent:(id)arg1 name:(id)arg2;
 - (bool)setProvider:(id)arg1;
 - (void)setSymbolicLinkDestination:(id)arg1;
 - (id)standardizedURL;
+- (id)subarbiterDescription;
 - (id)url;
 - (id)urlOfSubitemAtPath:(id)arg1 plusPath:(id)arg2;
 

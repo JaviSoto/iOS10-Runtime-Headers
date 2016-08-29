@@ -4,6 +4,7 @@
 
 @interface ACDAccountSync : NSObject {
     int  _circleToken;
+    bool  _duchessEnabled;
     bool  _enabled;
     int  _keychainToken;
     ACAccountStore * _store;
@@ -14,6 +15,7 @@
 + (id)accountSyncPropertiesForAccount:(id)arg1;
 + (id)accountSyncSupportedTypes;
 + (id)accountSyncUnsupportedTypes;
++ (id)duchessHostnames;
 + (id)sharedAccountSyncServer;
 
 - (void).cxx_destruct;
@@ -55,7 +57,6 @@
 - (id)smtpAccounts;
 - (bool)supportedType:(id)arg1;
 - (void)sync;
-- (void)syncHostnameAccounts;
 - (bool)unsupportedType:(id)arg1;
 - (void)waitForBuddy;
 

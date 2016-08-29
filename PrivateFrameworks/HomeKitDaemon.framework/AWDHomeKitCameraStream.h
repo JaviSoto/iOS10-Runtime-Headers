@@ -4,7 +4,7 @@
 
 @interface AWDHomeKitCameraStream : PBCodable <NSCopying> {
     unsigned long long  _duration;
-    int  _errorCode;
+    unsigned int  _errorCode;
     struct { 
         unsigned int duration : 1; 
         unsigned int startupDelay : 1; 
@@ -24,7 +24,7 @@
 }
 
 @property (nonatomic) unsigned long long duration;
-@property (nonatomic) int errorCode;
+@property (nonatomic) unsigned int errorCode;
 @property (nonatomic) bool hasDuration;
 @property (nonatomic) bool hasErrorCode;
 @property (nonatomic) bool hasIsLocal;
@@ -52,7 +52,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
-- (int)errorCode;
+- (unsigned int)errorCode;
 - (bool)hasDuration;
 - (bool)hasErrorCode;
 - (bool)hasIsLocal;
@@ -74,7 +74,7 @@
 - (id)resolutionOnCloseAsString:(int)arg1;
 - (id)sessionID;
 - (void)setDuration:(unsigned long long)arg1;
-- (void)setErrorCode:(int)arg1;
+- (void)setErrorCode:(unsigned int)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasIsLocal:(bool)arg1;

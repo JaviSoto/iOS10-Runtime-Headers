@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSADocumentRoot : TSWPDocumentRoot <TSKImportExportDelegate> {
+@interface TSADocumentRoot : TSWPDocumentRoot <TSDScrollingAwareChangeSource, TSKImportExportDelegate> {
     NSArray * _buildVersionHistory;
     TSCECalculationEngine * _calculationEngine;
     TSTCustomFormatList * _deprecatedTablesCustomFormatList;
@@ -18,7 +18,7 @@
     TSAFunctionBrowserState * _functionBrowserState;
     bool  _hasPreUFFVersion;
     bool  _isClosed;
-    bool  _needsMovieCompatibilityUpgrade;
+    bool  _needsMediaCompatibilityUpgrade;
     int  _needsToCaptureViewState;
     TSAShortcutController * _shortcutController;
     TSKCustomFormatList * _tablesCustomFormatList;
@@ -37,13 +37,13 @@
 @property (nonatomic, readonly) bool documentLocaleWasUpdated;
 @property (nonatomic) bool hasPreUFFVersion;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) NSArray *incompatibleMovieInfosUnplayableOnAllDevices;
-@property (nonatomic, readonly) NSArray *incompatibleMovieInfosUnplayableOnThisDevice;
+@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
+@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
 @property (nonatomic, readonly) bool isBrowsingVersions;
 @property (nonatomic, readonly) bool isClosed;
 @property (nonatomic, readonly) NSSet *missingFontWarningMessages;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic) bool needsMovieCompatibilityUpgrade;
+@property (nonatomic) bool needsMediaCompatibilityUpgrade;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *templateIdentifier;
 @property (nonatomic, readonly) TSKViewState *viewState;
@@ -118,7 +118,7 @@
 - (id)missingFontWarningMessages;
 - (id)name;
 - (id)namedTextStyles;
-- (bool)needsMovieCompatibilityUpgrade;
+- (bool)needsMediaCompatibilityUpgrade;
 - (id)newExporterForType:(id)arg1 options:(id)arg2 preferredType:(id*)arg3;
 - (struct CGImageSource { }*)newImageSourceForDocumentCachePath:(id)arg1;
 - (bool)objectsNeedToBeMigrated:(id)arg1;
@@ -154,6 +154,7 @@
 - (id)protected_defaultTextPresetOrdering;
 - (id)readBuildVersionHistoryFromDiskHasPreUFFVersion:(bool)arg1;
 - (id)referencedStylesOfClass:(Class)arg1;
+- (void)removeRedundantStyleOverridesAndEnsureReferencedStylesAreInStylesheet;
 - (void)removeWarning:(id)arg1;
 - (void)resetViewState;
 - (void)resumeBackgroundActivities;
@@ -169,11 +170,12 @@
 - (void)setDocumentLanguage:(id)arg1;
 - (void)setFunctionBrowserState:(id)arg1;
 - (void)setHasPreUFFVersion:(bool)arg1;
-- (void)setNeedsMovieCompatibilityUpgrade:(bool)arg1;
+- (void)setNeedsMediaCompatibilityUpgrade:(bool)arg1;
 - (void)setShortcutController:(id)arg1;
 - (void)setTemplateIdentifier:(id)arg1;
 - (id)shortcutController;
 - (bool)shouldAllowDrawableInGroups:(id)arg1 forImport:(bool)arg2;
+- (bool)shouldCancelScrollingToSelectionPath:(id)arg1 forChanges:(id)arg2;
 - (void)stashUpgradeState:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; struct Reference {} *x16; bool x17; }*)arg1 unarchiver:(id)arg2;
 - (void)suspendBackgroundActivities;
 - (void)suspendThumbnailing;
@@ -188,7 +190,6 @@
 - (void)upgradeTextStylesForUnityBeforeSingleStylesheetUpgrade;
 - (void)upgradeTextStylesForUnityPlusFromFileFormatVersion:(unsigned long long)arg1;
 - (void)upgradeTextboxPresets;
-- (void)upgradeToRemoveRedundantStyleOverrides;
 - (void)upgradeToSingleStylesheet;
 - (id)viewState;
 - (id)warningLocationDescriptionForAffectedObjects:(id)arg1 sortingInfo:(id*)arg2;

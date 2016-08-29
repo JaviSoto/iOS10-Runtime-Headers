@@ -29,7 +29,7 @@
 @property (nonatomic, readonly) <WBUFormAutoFillFrameHandle> *frame;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) bool textFieldLooksLikeCreditCardFormField;
+@property (nonatomic, readonly) bool textFieldLooksLikeCreditCardNumericFormField;
 @property (nonatomic, readonly) NSString *textFieldValue;
 @property (nonatomic, readonly) UIView<WBUFormAutoFillWebView> *webView;
 
@@ -62,8 +62,8 @@
 - (bool)_shouldUsePasswordGenerationAssistanceForTextField;
 - (void)_suggestPasswordForNewAccountOrChangePasswordForm;
 - (bool)_textFieldIsEmptyPasswordField;
+- (bool)_textFieldLooksLikeCreditCardFormField;
 - (void)_updateAutoFillButton;
-- (id)_valuesToFillFromMatches:(id)arg1;
 - (id)_viewControllerToPresentFrom;
 - (void)acceptedAutoFillWord:(id)arg1;
 - (void)annotateForm:(id)arg1 withValues:(id)arg2;
@@ -85,8 +85,7 @@
 - (bool)hasCurrentSuggestions;
 - (id)initWithFormDataController:(id)arg1;
 - (void)invalidate;
-- (void)performAutoFillForDisplayDataWithMultipleMatches:(id)arg1;
-- (void)performAutoFillForSingleDisplayData:(id)arg1;
+- (void)performAutoFillForDisplayData:(id)arg1;
 - (void)performAutoFillWithMatchSelections:(id)arg1 doNotFill:(id)arg2 contact:(id)arg3;
 - (void)setAutoFillButtonTitle:(id)arg1;
 - (void)setDataController:(id)arg1;
@@ -96,7 +95,7 @@
 - (id)suggestionsForString:(id)arg1;
 - (void)switchToCustomInputViewWithMatches:(id)arg1 contact:(id)arg2;
 - (void)textDidChangeInForm:(id)arg1 textField:(id)arg2;
-- (bool)textFieldLooksLikeCreditCardFormField;
+- (bool)textFieldLooksLikeCreditCardNumericFormField;
 - (id)textFieldValue;
 - (id)titleOfAutoFillButton;
 - (id)webView;

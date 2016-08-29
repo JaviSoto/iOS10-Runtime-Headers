@@ -5,9 +5,9 @@
 @interface PLCloudResourcePrefetchManager : NSObject {
     PLCloudPhotoLibraryManager * _cplManager;
     long long  _defaultPrefetchMode;
-    bool  _enqueuedAutomaticPrefetch;
+    bool  _enqueuedCheckCPLBGDownload;
     NSMutableSet * _inflightResources;
-    NSDate * _lastPrefetchDate;
+    NSDate * _lastCheckCPLBGDownloadDate;
     PLPhotoLibrary * _photoLibrary;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -17,8 +17,9 @@
 
 - (id)_assetPredicateForCPLResourceType:(unsigned long long)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 - (bool)_canPrefetch;
-- (void)_forceAutomaticPrefetchDueToSettingsChange;
-- (void)_handlePrefetchError:(id)arg1 forPLCloudResource:(id)arg2;
+- (void)_checkCPLBackgroundDownloadOperations;
+- (void)_cleanupInflightResources;
+- (void)_handlePrefetchError:(id)arg1 forPLCloudResourceWithObjectID:(id)arg2;
 - (id)_identifierForResourceDownload:(id)arg1;
 - (void)_incrementPrefetchCountForPLCloudResources:(id)arg1;
 - (id)_irisConditionString;

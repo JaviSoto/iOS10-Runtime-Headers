@@ -17,6 +17,7 @@
     NSIndexPath * _indexPath;
     MCDPCModel * _model;
     MCDPCItem * _rootItem;
+    NSObject<OS_dispatch_queue> * _serialAccessContainerQueue;
     bool  _showPlaybackProgress;
 }
 

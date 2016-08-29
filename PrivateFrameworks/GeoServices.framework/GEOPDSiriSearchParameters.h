@@ -19,6 +19,7 @@
     NSMutableArray * _searchSubstringDescriptors;
     int  _sortOrder;
     bool  _structuredSearch;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -41,6 +42,7 @@
 @property (nonatomic, retain) NSMutableArray *searchSubstringDescriptors;
 @property (nonatomic) int sortOrder;
 @property (nonatomic) bool structuredSearch;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 + (Class)businessCategoryFilterType;
@@ -99,6 +101,7 @@
 - (int)sortOrder;
 - (id)sortOrderAsString:(int)arg1;
 - (bool)structuredSearch;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

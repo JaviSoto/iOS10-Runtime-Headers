@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/RemindersUI.framework/RemindersUI
  */
 
-@interface RMUIUpNextCell : UITableViewCell {
+@interface RMUIUpNextCell : UIView {
     UIImageView * _circleImageView;
+    UIView * _contentView;
     RMUIUpNextLabel * _locationLabel;
     UIVisualEffectView * _primaryVibrantView;
     RMUIUpNextRowSeparator * _rowSeparator;
@@ -13,8 +14,11 @@
     RMUIUpNextLabel * _titleLabel;
 }
 
+@property (nonatomic, readonly) UIView *contentView;
+
 - (void).cxx_destruct;
-- (id)initWithReminder:(id)arg1 reuseIdentifier:(id)arg2 showRowSeparator:(bool)arg3;
+- (id)contentView;
+- (id)initWithReminder:(id)arg1 showRowSeparator:(bool)arg2;
 - (double)leftMarginForTimeViewWidth:(double)arg1;
 - (id)priorityImageForLevel:(long long)arg1 withColor:(id)arg2;
 - (double)rightMarginForTimeViewWidth:(double)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPerson : NSObject <INCacheableContainer, INSpeakable, NSCopying, NSSecureCoding> {
+@interface INPerson : NSObject <INCacheableContainer, INPersonExport, INSpeakable, NSCopying, NSSecureCoding> {
     NSArray * _aliases;
     NSString * _contactIdentifier;
     NSString * _customIdentifier;
@@ -62,7 +62,6 @@
 - (id)initWithHandle:(id)arg1 displayName:(id)arg2 contactIdentifier:(id)arg3;
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 contactIdentifier:(id)arg3;
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5;
-- (id)initWithNameComponents:(id)arg1 displayName:(id)arg2 userName:(id)arg3 userIdentifier:(id)arg4 userURIString:(id)arg5 contactIdentifier:(id)arg6;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(long long)arg8;
 - (bool)isEqual:(id)arg1;

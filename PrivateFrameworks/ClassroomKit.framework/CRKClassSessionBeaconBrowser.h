@@ -54,6 +54,7 @@
 - (void)stopBrowsing;
 - (void)stopScanningForDevicesInAllZones;
 - (void)stopScanningForDevicesInZone:(id)arg1;
+- (void)updateScanner;
 - (void)updateZones;
 - (id)zoneDataForOrganizationUUID:(id)arg1;
 - (void)zoneTracker:(id)arg1 didFailToRegisterZones:(id)arg2 withError:(id)arg3;

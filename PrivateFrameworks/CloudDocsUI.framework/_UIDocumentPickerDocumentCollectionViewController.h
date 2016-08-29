@@ -81,6 +81,7 @@
 - (void)scrollSortViewToVisible;
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (id)serviceViewController;
 - (void)setContentSizeAdjustment:(double)arg1;
 - (void)setDisplayMode:(long long)arg1;

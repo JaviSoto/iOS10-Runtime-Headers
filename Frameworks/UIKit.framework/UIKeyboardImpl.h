@@ -60,6 +60,7 @@
     bool  m_didAutomaticallyInsertSpaceBeforeChangingInputMode;
     bool  m_didSyncDocumentStateToInputDelegate;
     UIDelayedAction * m_disablePredictionViewTimer;
+    bool  m_disableSyncTextChanged;
     bool  m_doubleSpacePeriodPreference;
     bool  m_doubleSpacePeriodWasAppliedInCurrentContext;
     id /* block */  m_externalTask;
@@ -79,11 +80,13 @@
     bool  m_insideKeyInputDelegateCall;
     bool  m_isCapsLocked;
     bool  m_isRotating;
+    bool  m_keyboardDelegateStateNeedsRefresh;
     TIKeyboardState * m_keyboardState;
     NSMutableDictionary * m_keyedLayouts;
     NSMutableArray * m_keyplaneNamesCurrentDelegate;
     NSMutableArray * m_keyplaneNamesPreviousDelegate;
     UIView * m_languageIndicator;
+    double  m_lastDisablePredictionViewTime;
     UIKeyboardLayout * m_layout;
     bool  m_longPress;
     UIDelayedAction * m_longPressAction;
@@ -117,7 +120,6 @@
     bool  m_shiftNeedsUpdate;
     bool  m_shiftPreventAutoshift;
     bool  m_shouldChargeKeys;
-    bool  m_shouldSetInputModeInNextRun;
     bool  m_shouldSkipCandidateGeneration;
     bool  m_shouldUpdateCacheOnInputModesChange;
     bool  m_showInputModeIndicator;
@@ -185,7 +187,6 @@
 @property (nonatomic) bool receivedCandidatesInCurrentInputMode;
 @property bool rivenSplitLock;
 @property (nonatomic, readonly) UITextSelectionView *selectionView;
-@property (nonatomic) bool shouldSetInputModeInNextRun;
 @property (nonatomic, readonly) bool shouldShowCandidateBar;
 @property (nonatomic) bool shouldSkipCandidateSelection;
 @property (nonatomic) bool showInputModeIndicator;
@@ -213,6 +214,7 @@
 + (struct CGSize { double x1; double x2; })defaultSizeForInterfaceOrientation:(long long)arg1;
 + (double)floatingWidth;
 + (void)hardwareKeyboardAvailabilityChanged;
++ (bool)isActivatingForeground;
 + (bool)isFloating;
 + (bool)isSplit;
 + (id)keyboardScreen;
@@ -286,6 +288,7 @@
 - (void)_setShiftLockedEnabled:(bool)arg1;
 - (bool)_shouldMinimizeForHardwareKeyboard;
 - (bool)_shouldRequestInputManagerSyncForKeyboardOutputCallbacks:(id)arg1;
+- (void)_updateExternalDeviceInputSettingForWindow:(id)arg1;
 - (void)_updateInputViewControllerOutput:(id)arg1 forKeyboardOutput:(id)arg2;
 - (void)_updateKeyboardConfigurations;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
@@ -360,6 +363,7 @@
 - (bool)callShouldReplaceExtendedRange:(long long)arg1 withText:(id)arg2 includeMarkedText:(bool)arg3;
 - (bool)canHandleEvent:(id)arg1;
 - (bool)canHandleKeyHitTest;
+- (bool)canOfferPredictionsForTraits;
 - (bool)canShowAppConnections;
 - (bool)canUpdateIdleTimer;
 - (void)cancelAllKeyEvents;
@@ -454,7 +458,6 @@
 - (void)ejectKeyDown;
 - (id)emojiCandidate:(id)arg1;
 - (void)enable;
-- (void)enablePredictionViewIfNeeded;
 - (id /* block */)externalTask;
 - (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)fadeAutocorrectPrompt;
@@ -506,6 +509,7 @@
 - (void)handleKeyboardInput:(id)arg1 executionContext:(id)arg2;
 - (void)handleModifiersChangeForKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (void)handleObserverCallback;
+- (void)handlePredictionViewIfNeeded;
 - (id)handleReplacement:(id)arg1 forSpaceAndInput:(id)arg2;
 - (void)handleStringInput:(id)arg1 withFlags:(unsigned long long)arg2 withInputManagerHint:(id)arg3 executionContext:(id)arg4;
 - (bool)handleTabWithShift:(bool)arg1;
@@ -591,6 +595,7 @@
 - (unsigned long long)phraseBoundary;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)postInputViewControllerShouldUpdateNotification:(id)arg1;
 - (bool)predictionForTraits;
 - (bool)predictionForTraitsWithForceEnable:(bool)arg1;
 - (bool)predictionFromPreference;
@@ -708,7 +713,6 @@
 - (void)setShiftNeedsUpdate;
 - (void)setShiftOffIfNeeded;
 - (void)setShiftPreventAutoshift:(bool)arg1;
-- (void)setShouldSetInputModeInNextRun:(bool)arg1;
 - (void)setShouldSkipCandidateSelection:(bool)arg1;
 - (void)setShouldUpdateCacheOnInputModesChange:(bool)arg1;
 - (void)setShowInputModeIndicator:(bool)arg1;
@@ -738,7 +742,6 @@
 - (bool)shouldGenerateCandidatesAfterSelectionChange;
 - (bool)shouldRapidDelete;
 - (bool)shouldRapidDeleteWithDelegate;
-- (bool)shouldSetInputModeInNextRun;
 - (bool)shouldShowCandidateBar;
 - (bool)shouldSkipCandidateSelection;
 - (bool)shouldSwitchFromInputManagerMode:(id)arg1 toInputMode:(id)arg2;

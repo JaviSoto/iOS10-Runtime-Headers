@@ -95,7 +95,6 @@
 - (void)deactivateAndPurgeIdentify;
 - (void)dealloc;
 - (id)description;
-- (void)device:(id)arg1 nsuuidChanged:(id)arg2;
 - (id)devices;
 - (id)displayName;
 - (id)initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;

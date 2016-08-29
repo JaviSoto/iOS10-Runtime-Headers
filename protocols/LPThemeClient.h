@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)themeDidChange;
+- (void)themeParametersDidChange;
 
 @end

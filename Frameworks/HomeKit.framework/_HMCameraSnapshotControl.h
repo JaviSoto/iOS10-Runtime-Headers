@@ -12,9 +12,13 @@
 
 - (void).cxx_destruct;
 - (void)_callDelegate:(id)arg1 error:(id)arg2;
+- (void)_getMostRecentSnapshot;
 - (void)_handleSnapshot:(id)arg1 error:(id)arg2 cameraSessionID:(id)arg3;
+- (void)_registerNotificationHandlers;
 - (void)_takeSnapshot;
+- (void)dealloc;
 - (id)delegate;
+- (void)homeConfigurationFetchedNotification:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)mostRecentSnapshot;
 - (void)setDelegate:(id)arg1;

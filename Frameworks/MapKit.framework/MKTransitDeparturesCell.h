@@ -18,8 +18,10 @@
     bool  _inactive;
     UIButton * _incidentButton;
     bool  _incidentButtonHidden;
+    NSLayoutConstraint * _incidentIconHorizontalConstraint;
     UIImageView * _incidentIconImageView;
     NSString * _incidentTitle;
+    NSArray * _initialConstraints;
     NSLayoutConstraint * _labelBufferConstraint;
     NSLayoutConstraint * _labelLeadingMarginConstraint;
     NSArray * _labelToDepartureConstraints;
@@ -129,6 +131,7 @@
 - (void)layoutSubviews;
 - (double)lineImageViewSize;
 - (bool)padBottom;
+- (void)prepareForReuse;
 - (void)refreshDeparturesDisplay;
 - (void)setCenterContent:(bool)arg1;
 - (void)setCountdownReferenceDate:(id)arg1;

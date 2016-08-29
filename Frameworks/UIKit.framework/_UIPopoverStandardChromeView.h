@@ -9,6 +9,7 @@
     bool  _arrowVisible;
     long long  _backgroundStyle;
     _UIPopoverBackgroundVisualEffectView * _blurView;
+    _UIVisualEffectCaptureView * _blurViewCapture;
     bool  _debugMode;
     UIView * _leftCapView;
     UIColor * _popoverBackgroundColor;
@@ -29,11 +30,13 @@
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
 
 - (void).cxx_destruct;
+- (void)_configureEffectView;
 - (void)_layoutArrowViewsLeftOrRight;
 - (void)_layoutArrowViewsNone;
 - (void)_layoutArrowViewsUpOrDown;
 - (void)_loadNecessaryViews;
 - (bool)_needsSeperateBlending;
+- (void)_removeEffectView;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_shadowInsets;
 - (struct CGSize { double x1; double x2; })_shadowOffset;
 - (double)_shadowOpacity;

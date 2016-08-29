@@ -16,7 +16,7 @@
         } allocators[64]; 
         unsigned int count; 
     }  _bufferHeaps;
-    struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; int x2; int x3; int x4; id x5; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; long long x25; void*x26; struct  struct CGPoint { double x_1_1_1; double x_1_1_2;  {} x27; void*x28; void*x29; void*x30; void*x31; void*x32; short x33; void*x34; const void*x35; BOOL x36; void*x37; void*x38; unsigned char x39; void*x40; unsigned short x41; int x42; void*x43; void*x44; void*x45; struct  double x_2_1_1; double x_2_1_2;  {} x46; void*x47; void*x48; void*x49; void*x50; void*x51; } * _commandBufferStoragePool;
+    /* Warning: unhandled struct encoding: '{MTLIOAccelCommandBufferStoragePool={storageQueue=^{MTLIOAccelCommandBufferStorage}^^{MTLIOAccelCommandBufferStorage}}iii@}' */ struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; int x2; int x3; int x4; id x5; } * _commandBufferStoragePool;
     unsigned int  _configBits;
     unsigned int  _deviceBits;
     struct __IOAccelDevice { } * _deviceRef;
@@ -67,6 +67,7 @@
 - (id)newCommandQueueWithMaxCommandBufferCount:(unsigned long long)arg1;
 - (id)newFence;
 - (int)numCommandBuffers;
+- (unsigned long long)recommendedMaxWorkingSetSize;
 - (void)releaseFenceIndex:(unsigned int)arg1;
 - (void)setComputePipelineStateCommandShmemSize:(unsigned int)arg1;
 - (void)setHwResourcePool:(id*)arg1 count:(int)arg2;

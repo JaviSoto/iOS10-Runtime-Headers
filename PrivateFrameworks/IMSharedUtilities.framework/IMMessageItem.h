@@ -67,6 +67,7 @@
 - (void)_clearBodyData;
 - (void)_generateBodyDataIfNeeded;
 - (void)_generateBodyTextIfNeeded;
+- (id)_localizedBackwardsCompatibleExpressiveSendText;
 - (void)_regenerateBodyData;
 - (void)_regenerateBodyText;
 - (void)_updateFlags:(unsigned long long)arg1;

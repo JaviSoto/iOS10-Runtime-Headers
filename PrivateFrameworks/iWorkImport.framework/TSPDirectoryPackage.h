@@ -10,7 +10,7 @@
 + (unsigned long long)zipArchiveOptions;
 + (id)zipArchiveURLFromPackageURL:(id)arg1;
 
-- (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 completion:(id /* block */)arg6;
+- (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 canLink:(bool)arg6 completion:(id /* block */)arg7;
 - (id)dataAtRelativePath:(id)arg1 allowDecryption:(bool)arg2 error:(id*)arg3;
 - (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
 - (bool)hasDataAtRelativePath:(id)arg1;

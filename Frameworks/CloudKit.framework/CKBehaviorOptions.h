@@ -88,6 +88,7 @@
 - (id)productVersion;
 - (double)publicIdentitiesExpirationTimeout;
 - (unsigned long long)recentProxiesToSave;
+- (unsigned long long)recordCacheSizeLimit;
 - (bool)sandboxCloudD;
 - (unsigned long long)savedErrorCount;
 - (bool)sendDebugHeader;
@@ -135,6 +136,7 @@
 - (void)setUseStingray:(bool)arg1;
 - (id)setupBaseURL;
 - (double)shareAcceptorRetrievingDialogDelay;
+- (double)shareAcceptorRetrievingDialogMinPeriod;
 - (bool)shouldDecryptRecordsBeforeSave;
 - (bool)shouldLogProtobufBinary;
 - (bool)shouldProfileSQL;

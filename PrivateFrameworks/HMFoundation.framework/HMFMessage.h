@@ -19,6 +19,7 @@
 @property (nonatomic, readonly, copy) NSString *effectiveLocationBundleIdentifier;
 @property (getter=isEntitledForAPIAccess, nonatomic, readonly) bool entitledForAPIAccess;
 @property (getter=isEntitledForBackgroundMode, nonatomic, readonly) bool entitledForBackgroundMode;
+@property (getter=isEntitledForBridgeSPIAccess, nonatomic, readonly) bool entitledForBridgeSPIAccess;
 @property (getter=isEntitledForSPIAccess, nonatomic, readonly) bool entitledForSPIAccess;
 @property (getter=isEntitledMessage, nonatomic, readonly) bool entitledMessage;
 @property (nonatomic, copy) NSUUID *identifier;
@@ -119,6 +120,7 @@
 - (bool)isAuthorizedForMicrophoneAccess;
 - (bool)isEntitledForAPIAccess;
 - (bool)isEntitledForBackgroundMode;
+- (bool)isEntitledForBridgeSPIAccess;
 - (bool)isEntitledForSPIAccess;
 - (id)proxyConnection;
 - (int)sourcePid;

@@ -22,7 +22,6 @@
     CKDPNotificationSyncResponse * _notificationSyncResponse;
     unsigned int  _operationCost;
     CKDPPostCommentResponse * _postCommentResponse;
-    CKDPPromoteContainerSchemaResponse * _promoteContainerSchemaResponse;
     CKDPPulseResponse * _pulseResponse;
     CKDPQueryRetrieveResponse * _queryRetrieveResponse;
     CKDPRecordDeleteResponse * _recordDeleteResponse;
@@ -32,7 +31,6 @@
     CKDPRecordRetrieveResponse * _recordRetrieveResponse;
     CKDPRecordRetrieveVersionsResponse * _recordRetrieveVersionsResponse;
     CKDPRecordSaveResponse * _recordSaveResponse;
-    CKDPResetContainerResponse * _resetContainerResponse;
     CKDPOperation * _response;
     CKDPResponseOperationResult * _result;
     CKDPSetBadgeCountResponse * _setBadgeCountResponse;
@@ -88,7 +86,6 @@
 @property (nonatomic, readonly) bool hasNotificationSyncResponse;
 @property (nonatomic) bool hasOperationCost;
 @property (nonatomic, readonly) bool hasPostCommentResponse;
-@property (nonatomic, readonly) bool hasPromoteContainerSchemaResponse;
 @property (nonatomic, readonly) bool hasPulseResponse;
 @property (nonatomic, readonly) bool hasQueryRetrieveResponse;
 @property (nonatomic, readonly) bool hasRecordDeleteResponse;
@@ -98,7 +95,6 @@
 @property (nonatomic, readonly) bool hasRecordRetrieveResponse;
 @property (nonatomic, readonly) bool hasRecordRetrieveVersionsResponse;
 @property (nonatomic, readonly) bool hasRecordSaveResponse;
-@property (nonatomic, readonly) bool hasResetContainerResponse;
 @property (nonatomic, readonly) bool hasResponse;
 @property (nonatomic, readonly) bool hasResult;
 @property (nonatomic, readonly) bool hasSetBadgeCountResponse;
@@ -136,7 +132,6 @@
 @property (nonatomic, retain) CKDPNotificationSyncResponse *notificationSyncResponse;
 @property (nonatomic) unsigned int operationCost;
 @property (nonatomic, retain) CKDPPostCommentResponse *postCommentResponse;
-@property (nonatomic, retain) CKDPPromoteContainerSchemaResponse *promoteContainerSchemaResponse;
 @property (nonatomic, retain) CKDPPulseResponse *pulseResponse;
 @property (nonatomic, retain) CKDPQueryRetrieveResponse *queryRetrieveResponse;
 @property (nonatomic, retain) CKDPRecordDeleteResponse *recordDeleteResponse;
@@ -146,7 +141,6 @@
 @property (nonatomic, retain) CKDPRecordRetrieveResponse *recordRetrieveResponse;
 @property (nonatomic, retain) CKDPRecordRetrieveVersionsResponse *recordRetrieveVersionsResponse;
 @property (nonatomic, retain) CKDPRecordSaveResponse *recordSaveResponse;
-@property (nonatomic, retain) CKDPResetContainerResponse *resetContainerResponse;
 @property (nonatomic, retain) CKDPOperation *response;
 @property (nonatomic, retain) CKDPResponseOperationResult *result;
 @property (nonatomic, retain) CKDPSetBadgeCountResponse *setBadgeCountResponse;
@@ -206,7 +200,6 @@
 - (bool)hasNotificationSyncResponse;
 - (bool)hasOperationCost;
 - (bool)hasPostCommentResponse;
-- (bool)hasPromoteContainerSchemaResponse;
 - (bool)hasPulseResponse;
 - (bool)hasQueryRetrieveResponse;
 - (bool)hasRecordDeleteResponse;
@@ -216,7 +209,6 @@
 - (bool)hasRecordRetrieveResponse;
 - (bool)hasRecordRetrieveVersionsResponse;
 - (bool)hasRecordSaveResponse;
-- (bool)hasResetContainerResponse;
 - (bool)hasResponse;
 - (bool)hasResult;
 - (bool)hasSetBadgeCountResponse;
@@ -257,7 +249,6 @@
 - (id)notificationSyncResponse;
 - (unsigned int)operationCost;
 - (id)postCommentResponse;
-- (id)promoteContainerSchemaResponse;
 - (id)pulseResponse;
 - (id)queryRetrieveResponse;
 - (bool)readFrom:(id)arg1;
@@ -268,7 +259,6 @@
 - (id)recordRetrieveResponse;
 - (id)recordRetrieveVersionsResponse;
 - (id)recordSaveResponse;
-- (id)resetContainerResponse;
 - (id)response;
 - (id)result;
 - (void)setAssetUploadTokenRetrieveResponse:(id)arg1;
@@ -289,7 +279,6 @@
 - (void)setNotificationSyncResponse:(id)arg1;
 - (void)setOperationCost:(unsigned int)arg1;
 - (void)setPostCommentResponse:(id)arg1;
-- (void)setPromoteContainerSchemaResponse:(id)arg1;
 - (void)setPulseResponse:(id)arg1;
 - (void)setQueryRetrieveResponse:(id)arg1;
 - (void)setRecordDeleteResponse:(id)arg1;
@@ -299,7 +288,6 @@
 - (void)setRecordRetrieveResponse:(id)arg1;
 - (void)setRecordRetrieveVersionsResponse:(id)arg1;
 - (void)setRecordSaveResponse:(id)arg1;
-- (void)setResetContainerResponse:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setSetBadgeCountResponse:(id)arg1;

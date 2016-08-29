@@ -21,6 +21,8 @@
     bool  _usesPrivateCookieStore;
 }
 
+@property (nonatomic, readonly) NSURLCache *URLCache;
+@property (nonatomic, readonly) NSString *URLCacheID;
 @property (getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) bool _loadsHTTPFailures;
 @property (getter=_shouldSetCookies, setter=_setShouldSetCookies:) bool _shouldSetCookies;
 @property (getter=_usesPrivateCookieStore, setter=_setUsesPrivateCookieStore:) bool _usesPrivateCookieStore;
@@ -43,12 +45,13 @@
 @property bool tracksPerformanceMetrics;
 @property (getter=isUploadProgressRequested, nonatomic) bool uploadProgressRequested;
 
++ (struct __CFURLStorageSession { }*)_sharedCacheStorageSession;
 + (id)copyUserAgent;
-+ (bool)isSharedCacheStorageSession:(struct __CFURLStorageSession { }*)arg1;
-+ (struct __CFURLStorageSession { }*)newSharedCacheStorageSession;
 + (struct _CFURLCache { }*)sharedCFURLCache;
 
 - (void).cxx_destruct;
+- (id)URLCache;
+- (id)URLCacheID;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithEvent:(id)arg3 error:(id)arg4;
@@ -97,6 +100,7 @@
 - (bool)_shouldSetCookies;
 - (void)_stopConnection;
 - (void)_stopIfCancelled;
+- (id)_stringForCachePolicy:(unsigned long long)arg1;
 - (void)_updateProgress;
 - (bool)_usesPrivateCookieStore;
 - (bool)_validateContentLength:(long long)arg1 error:(id*)arg2;

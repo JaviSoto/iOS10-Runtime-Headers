@@ -3,27 +3,25 @@
  */
 
 @interface VSStoreRequestOperation : VSAsyncOperation {
-    NSError * _error;
-    SSRequest * _request;
+    VSStoreRequest * _request;
     int  _requestCompletionFlag;
+    VSFailable * _result;
+    SSRequest * _storeServicesRequest;
 }
 
-@property (nonatomic, readonly, copy) NSString *URLBagKey;
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) SSRequest *request;
-@property (nonatomic, readonly, copy) NSDictionary *requestParameters;
+@property (nonatomic, copy) VSStoreRequest *request;
+@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) SSRequest *storeServicesRequest;
 
 - (void).cxx_destruct;
-- (id)URLBagKey;
-- (void)_handleResponseData:(id)arg1;
 - (bool)_isFirstToFinish;
 - (void)cancel;
-- (id)error;
 - (void)executionDidBegin;
-- (void)handleResponseObject:(id)arg1;
 - (id)request;
-- (id)requestParameters;
-- (void)setError:(id)arg1;
+- (id)result;
 - (void)setRequest:(id)arg1;
+- (void)setResult:(id)arg1;
+- (void)setStoreServicesRequest:(id)arg1;
+- (id)storeServicesRequest;
 
 @end

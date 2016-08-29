@@ -53,6 +53,7 @@
 - (void)_noteVolumeOrLockPressed;
 - (id)_prepareNewAlertControllerWithLockedState:(bool)arg1 requirePasscodeForActions:(bool)arg2;
 - (bool)_preventLockOver;
+- (id)_publicDescription;
 - (void)_setOccluded:(bool)arg1;
 - (id)alertController;
 - (int)alertPriority;

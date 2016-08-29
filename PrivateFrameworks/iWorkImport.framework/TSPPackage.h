@@ -46,7 +46,7 @@
 - (bool)checkPassword:(id)arg1;
 - (id)componentZipArchive;
 - (bool)containsData:(id)arg1;
-- (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 completion:(id /* block */)arg6;
+- (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 canLink:(bool)arg6 completion:(id /* block */)arg7;
 - (id)dataAtRelativePath:(id)arg1 allowDecryption:(bool)arg2 error:(id*)arg3;
 - (id)decryptionKey;
 - (void)didCloseDocument;
@@ -81,6 +81,7 @@
 - (void)peformSynchronousAccessToZipArchive:(id /* block */)arg1;
 - (void)prepareForDocumentReplacementWithSuccess:(bool)arg1 forSafeSave:(bool)arg2 originalURL:(id)arg3;
 - (bool)reloadZipArchiveIfNeededWithURLImpl:(id)arg1 isLazyLoading:(bool)arg2 error:(id*)arg3;
+- (void)removeAllDataReferences;
 - (void)setZipArchive:(id)arg1;
 - (id)zipArchive;
 

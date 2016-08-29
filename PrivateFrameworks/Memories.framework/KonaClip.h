@@ -59,7 +59,6 @@
 @property (nonatomic, readonly) NSArray *multiUpContainedClips;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSizeWithTransform;
-@property (nonatomic, readonly) NSArray *newAutoEditRanges;
 @property (nonatomic, retain) KonaClip *nextTransition;
 @property (nonatomic) bool placeholder;
 @property (nonatomic, retain) KonaClip *precisionSourceClip;
@@ -89,7 +88,6 @@
 @property (nonatomic) int transitionEatRight;
 @property (nonatomic) float translateX;
 @property (nonatomic) float translateY;
-@property (nonatomic) bool userChangedAudioEnabled;
 @property (nonatomic) int userEditedSize;
 @property (nonatomic) bool userEditing;
 @property (nonatomic, readonly) NSString *uuid;
@@ -126,7 +124,6 @@
 - (id)clipBackground;
 - (bool)clipContentsEqual:(id)arg1;
 - (int)clipType;
-- (void)convertRangesByClipSpeed:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (void)dealloc;
@@ -173,14 +170,15 @@
 - (id)multiUpContainedClips;
 - (id)name;
 - (struct CGSize { double x1; double x2; })naturalSizeWithTransform;
-- (id)newAutoEditRanges;
 - (id)nextTransition;
+- (int)paddedMaxDur;
+- (int)paddedMaxEnd;
+- (int)paddedMinStart;
 - (bool)placeholder;
 - (id)plistRepresentationFromProject:(id)arg1;
 - (id)precisionSourceClip;
 - (int)precisionTrack;
 - (bool)projectMovie;
-- (id)rangesByTrimmingToBounds:(id)arg1;
 - (int)rawSourceDuration;
 - (float)rotation;
 - (float)scaleFactor;
@@ -234,7 +232,6 @@
 - (void)setTransitionEatRight:(int)arg1;
 - (void)setTranslateX:(float)arg1;
 - (void)setTranslateY:(float)arg1;
-- (void)setUserChangedAudioEnabled:(bool)arg1;
 - (void)setUserEditedSize:(int)arg1;
 - (void)setUserEditing:(bool)arg1;
 - (bool)showActivity;
@@ -256,7 +253,6 @@
 - (float)translateX;
 - (float)translateY;
 - (void)updateSourceCaches;
-- (bool)userChangedAudioEnabled;
 - (int)userEditedSize;
 - (bool)userEditing;
 - (id)uuid;

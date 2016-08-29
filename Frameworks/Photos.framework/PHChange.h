@@ -39,11 +39,13 @@
 - (id)deletedObjectIDs;
 - (id)description;
 - (bool)hasIncrementalChanges;
+- (bool)hiddenStateChangedForPHAssetOID:(id)arg1;
 - (id)init;
 - (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(bool)arg2;
 - (id)insertedObjectIDs;
 - (void)preloadChangeDetailsForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2 handler:(id /* block */)arg3;
 - (void)preloadSimulatedChangeDetailsForManualFetchResults:(id)arg1 handler:(id /* block */)arg2;
+- (bool)trashedStateChangedForPHAssetOID:(id)arg1;
 - (id)updatedObjectIDs;
 
 @end

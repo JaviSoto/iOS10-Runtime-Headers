@@ -4,27 +4,23 @@
 
 @interface VSCredentialSaveOperation : VSAsyncOperation {
     VSAccountStore * _accountStore;
-    NSError * _error;
-    VSAccount * _savedAccount;
+    VSFailable * _result;
     VSAccount * _unsavedAccount;
 }
 
 @property (nonatomic, retain) VSAccountStore *accountStore;
-@property (nonatomic, retain) NSError *error;
-@property (nonatomic, retain) VSAccount *savedAccount;
+@property (nonatomic, retain) VSFailable *result;
 @property (nonatomic, retain) VSAccount *unsavedAccount;
 
 - (void).cxx_destruct;
 - (void)_didSaveAccount:(id)arg1 withResult:(bool)arg2 error:(id)arg3;
 - (id)accountStore;
-- (id)error;
 - (void)executionDidBegin;
 - (id)init;
 - (id)initWithUnsavedAccount:(id)arg1 accountStore:(id)arg2;
-- (id)savedAccount;
+- (id)result;
 - (void)setAccountStore:(id)arg1;
-- (void)setError:(id)arg1;
-- (void)setSavedAccount:(id)arg1;
+- (void)setResult:(id)arg1;
 - (void)setUnsavedAccount:(id)arg1;
 - (id)unsavedAccount;
 

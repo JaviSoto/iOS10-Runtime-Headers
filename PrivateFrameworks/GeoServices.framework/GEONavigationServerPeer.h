@@ -13,6 +13,7 @@
 - (void)requestActiveRouteDetailsData;
 - (void)requestGuidanceState;
 - (void)requestRouteSummary;
+- (void)requestSelectedRideOption;
 - (void)requestStepIndex;
 - (void)requestTransitSummary;
 - (void)requestUpdates;

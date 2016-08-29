@@ -10,7 +10,6 @@
     unsigned long long  _genericIndex;
     NSObject<OS_xpc_object> * _oolObjects;
     struct __CFDictionary { } * _replacedByDelegateObjects;
-    struct __CFDictionary { } * _replacedObjects;
 }
 
 @property NSXPCConnection *_connection;

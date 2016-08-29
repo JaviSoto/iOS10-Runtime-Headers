@@ -8,9 +8,13 @@
     NSString * _burstUUID;
     double  _duration;
     bool  _fetchingMetadata;
-    int  _fetchingMetadataLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _fetchingMetadataLock;
     bool  _fetchingThumbnail;
-    int  _fetchingThumbnailLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _fetchingThumbnailLock;
     long long  _fileSize;
     bool  _hasMetadata;
     bool  _hasOverriddenOrientation;
@@ -59,6 +63,7 @@
 - (bool)hasOverriddenOrientation;
 - (bool)hasThumbnail;
 - (bool)highFramerate;
+- (id)init;
 - (bool)isRaw;
 - (id)metadata;
 - (id)metadata_hidden;

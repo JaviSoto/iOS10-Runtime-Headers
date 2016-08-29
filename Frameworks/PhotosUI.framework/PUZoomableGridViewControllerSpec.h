@@ -48,11 +48,6 @@
         double height; 
     }  _magnifiedImageSize;
     double  _magnifiedYOffset;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _referenceSize;
-    UITraitCollection * _traitCollection;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -88,8 +83,6 @@
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } magnifiedDragEdgeInsets;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } magnifiedImageSize;
 @property (nonatomic) double magnifiedYOffset;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } referenceSize;
-@property (nonatomic, readonly) UITraitCollection *traitCollection;
 @property (nonatomic, readonly) long long yearsLevelCellFillMode;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } yearsLevelSectionHeaderContentInset;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } yearsLevelSectionHeaderHighlightInset;
@@ -121,15 +114,14 @@
 - (id)gridSpec;
 - (id)init;
 - (id)initWithUserTraitCollection:(id)arg1 referenceSize:(struct CGSize { double x1; double x2; })arg2;
+- (bool)isEqual:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })magnifiedDragEdgeInsets;
 - (struct CGSize { double x1; double x2; })magnifiedImageSize;
 - (double)magnifiedYOffset;
 - (id)mapViewControllerSpec;
 - (id)newGridSpec;
-- (struct CGSize { double x1; double x2; })referenceSize;
 - (void)setMagnifiedDragEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setMagnifiedYOffset:(double)arg1;
-- (id)traitCollection;
 - (long long)yearsLevelCellFillMode;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })yearsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })yearsLevelSectionHeaderHighlightInset;

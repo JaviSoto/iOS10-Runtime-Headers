@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPauseWorkoutIntent : INIntent <INPauseWorkoutIntent>
+@interface INPauseWorkoutIntent : INIntent <INPauseWorkoutIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (id)_debug_owningItemManager;
 - (unsigned long long)_effectiveLoadingStateForSuggestedLoadingState:(unsigned long long)arg1;
-- (id)_finalOutcomeForSubclassOutcome:(id)arg1 previousResults:(id)arg2;
+- (id)_finalOutcomeForSubclassOutcome:(id)arg1 previousResults:(id)arg2 updateOptions:(id)arg3;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)cancellableInFlightUpdateFuture;
 - (void)copyLatestResultsFromItem:(id)arg1;

@@ -4,6 +4,7 @@
 
 @interface PXMemoriesFontsSpec : NSObject {
     double  _baselineDistance;
+    NSDictionary * _fallbackTitleTextAttributes;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, readonly) double baselineDistance;
+@property (nonatomic, readonly) NSDictionary *fallbackTitleTextAttributes;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic, readonly) NSDictionary *subtitleTextAttributes;
 @property (nonatomic, readonly) NSDictionary *titleTextAttributes;
@@ -39,6 +41,7 @@
 - (void).cxx_destruct;
 - (id)_initWithIdentifier:(struct PXMemoryFontsSpecIdentifier { long long x1; long long x2; long long x3; double x4; })arg1 titleFontName:(id)arg2;
 - (double)baselineDistance;
+- (id)fallbackTitleTextAttributes;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (id)subtitleTextAttributes;
 - (id)titleTextAttributes;

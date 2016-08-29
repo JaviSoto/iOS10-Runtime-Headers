@@ -14,7 +14,7 @@
 @property (setter=_setSandboxExtensionWrapper:, nonatomic, retain) PHSandboxExtensionWrapper *sandboxExtensionWrapper;
 
 + (bool)_isResourceFileCreatedOnDemandWithType:(long long)arg1 asset:(id)arg2;
-+ (id)resourceForType:(long long)arg1 fromAsset:(id)arg2 usingLibrary:(id)arg3;
++ (id)resourceForType:(long long)arg1 fromAsset:(id)arg2 managedAsset:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_acquireSandboxExtensionIfNeeded;
@@ -36,7 +36,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)fileReservation;
-- (id)initWithResourceType:(long long)arg1 fromAsset:(id)arg2 managedAsset:(id)arg3 usingLibrary:(id)arg4;
+- (id)initWithResourceType:(long long)arg1 fromAsset:(id)arg2 managedAsset:(id)arg3;
 - (bool)isLibraryAssetResource;
 - (bool)pin;
 - (id)sandboxExtensionWrapper;

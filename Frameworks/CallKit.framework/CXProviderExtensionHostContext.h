@@ -18,10 +18,10 @@
 - (id)delegate;
 - (oneway void)handleActionTimeout:(id)arg1;
 - (oneway void)handleAudioSessionActivationStateChangedTo:(bool)arg1;
-- (oneway void)handleAuthorizationChangedTo:(bool)arg1;
 - (oneway void)registerWithConfiguration:(id)arg1;
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (oneway void)reportAudioFinishedForCallWithUUID:(id)arg1;
 - (oneway void)reportCallWithUUID:(id)arg1 changedFrequencyData:(id)arg2 forDirection:(long long)arg3;
 - (oneway void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(long long)arg3;
 - (oneway void)reportCallWithUUID:(id)arg1 endedAtDate:(id)arg2 privateReason:(long long)arg3 failureContext:(id)arg4;
@@ -31,6 +31,5 @@
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 sentInvitationAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 startedConnectingAtDate:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (oneway void)updateAuthorization;
 
 @end

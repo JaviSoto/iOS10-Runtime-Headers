@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetRestaurantGuestIntentResponse : INIntentResponse {
+@interface INGetRestaurantGuestIntentResponse : INIntentResponse <INGetRestaurantGuestIntentResponseExport> {
     INRestaurantGuest * _guest;
     INRestaurantGuestDisplayPreferences * _guestDisplayPreferences;
 }
 
 @property (nonatomic, readonly) long long code;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) INRestaurantGuest *guest;
 @property (nonatomic, copy) INRestaurantGuestDisplayPreferences *guestDisplayPreferences;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

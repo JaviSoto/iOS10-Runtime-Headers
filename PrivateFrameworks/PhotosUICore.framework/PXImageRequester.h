@@ -43,6 +43,7 @@
         bool imageRequest; 
         bool isInCloud; 
     }  _needsUpdateFlags;
+    UIImage * _opportunisticImage;
     double  _scale;
     struct CGSize { 
         double width; 
@@ -64,6 +65,7 @@
 @property (setter=_setImage:, nonatomic, retain) UIImage *image;
 @property (setter=_setIsInCloud:, nonatomic) bool isInCloud;
 @property (nonatomic, readonly) PXUIMediaProvider *mediaProvider;
+@property (setter=_setOpportunisticImage:, nonatomic, retain) UIImage *opportunisticImage;
 @property (nonatomic, readonly) double scale;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
@@ -84,6 +86,7 @@
 - (void)_setHasFullQuality:(bool)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setIsInCloud:(bool)arg1;
+- (void)_setOpportunisticImage:(id)arg1;
 - (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })_targetSize;
 - (void)_updateIfNeeded;
@@ -106,6 +109,7 @@
 - (bool)isInCloud;
 - (id)mediaProvider;
 - (id)mutableChangeObject;
+- (id)opportunisticImage;
 - (void)performChanges:(id /* block */)arg1;
 - (double)scale;
 - (void)setAsset:(id)arg1;

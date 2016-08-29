@@ -3,11 +3,12 @@
  */
 
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
-    NSURL * _URL;
     <TSPCryptoInfo> * _decryptionInfo;
     bool  _gilligan_isRemote;
     bool  _isMissingData;
     bool  _isMissingOriginalData;
+    bool  _leakTemporaryFile;
+    TSPTemporaryDataStorageURL * _temporaryDataStorageURL;
 }
 
 @property (nonatomic, readonly) bool isMissingData;
@@ -18,11 +19,12 @@
 - (id)decryptionInfo;
 - (bool)gilligan_isRemote;
 - (id)init;
-- (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2;
-- (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2 isMissingOriginalData:(bool)arg3 isMissingData:(bool)arg4;
-- (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2 isMissingOriginalData:(bool)arg3 isMissingData:(bool)arg4 gilligan_isRemote:(bool)arg5;
+- (id)initWithTemporaryDataStorageURL:(id)arg1 decryptionInfo:(id)arg2;
+- (id)initWithTemporaryDataStorageURL:(id)arg1 decryptionInfo:(id)arg2 isMissingOriginalData:(bool)arg3 isMissingData:(bool)arg4;
+- (id)initWithTemporaryDataStorageURL:(id)arg1 decryptionInfo:(id)arg2 isMissingOriginalData:(bool)arg3 isMissingData:(bool)arg4 gilligan_isRemote:(bool)arg5;
 - (bool)isMissingData;
 - (bool)isMissingOriginalData;
+- (void)leakTemporaryFile;
 - (unsigned long long)length;
 - (void)performIOChannelReadWithAccessor:(id /* block */)arg1;
 - (void)performReadWithAccessor:(id /* block */)arg1;

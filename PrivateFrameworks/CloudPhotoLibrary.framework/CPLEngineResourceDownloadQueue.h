@@ -52,6 +52,7 @@
 - (id)downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(bool)arg3 proposedTaskIdentifier:(id)arg4 didStartHandler:(id /* block */)arg5 progressHandler:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 - (bool)enqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned long long)arg2 error:(id*)arg3;
 - (id)enumeratorForDownloadedResources;
+- (bool)hasActiveOrQueuedBackgroundDownloadOperations;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (void)launchDownloadTasks:(id)arg1;
 - (bool)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 taskIdentifier:(unsigned long long)arg2 error:(id*)arg3;
@@ -60,6 +61,7 @@
 - (bool)removeBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)resetDequeuedBackgroundDownloadTasksWithError:(id*)arg1;
 - (bool)resetWithError:(id*)arg1;
+- (void)sanityCheck;
 - (id)status;
 
 @end

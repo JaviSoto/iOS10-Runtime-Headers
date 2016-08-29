@@ -13,21 +13,25 @@
     }  mOriginalSize;
 }
 
+@property (nonatomic, readonly) bool canResetMediaSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } defaultOriginalSize;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic) bool isPlaceholder;
+@property (nonatomic, readonly) TSPData *mediaDataForDragging;
 @property (nonatomic, readonly) NSString *mediaDisplayName;
 @property (nonatomic, readonly) NSString *mediaFileType;
 @property (nonatomic) struct CGSize { double x1; double x2; } originalSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } rawDataSize;
 @property (nonatomic) bool wasMediaReplaced;
 
+- (bool)canResetMediaSize;
 - (struct CGPoint { double x1; double x2; })centerForReplacingWithNewMedia;
 - (id)copyWithContext:(id)arg1;
 - (struct CGSize { double x1; double x2; })defaultOriginalSize;
 - (unsigned int)flags;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (bool)isPlaceholder;
+- (id)mediaDataForDragging;
 - (id)mediaDisplayName;
 - (id)mediaFileType;
 - (struct CGSize { double x1; double x2; })originalSize;

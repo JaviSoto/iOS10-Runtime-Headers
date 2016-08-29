@@ -13,6 +13,7 @@
 - (id)sceneClassificationWorker;
 - (id)sceneNodesForSceneIdentifiers:(id)arg1 error:(id*)arg2;
 - (id)sceneTaxonomyHash;
+- (id)searchResultNodesForSceneClassifications:(id)arg1 error:(id*)arg2;
 - (id)searchResultNodesForSceneIdentifiers:(id)arg1 error:(id*)arg2;
 
 @end

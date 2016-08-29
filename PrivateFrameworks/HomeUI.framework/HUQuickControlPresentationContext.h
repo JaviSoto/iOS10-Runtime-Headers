@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUQuickControlPresentationContext : NSObject {
+@interface HUQuickControlPresentationContext : NSObject <NSCopying> {
     unsigned long long  _colorStyle;
     HMHome * _home;
     HFItem<NSCopying> * _item;
@@ -27,6 +27,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)colorStyle;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)home;
 - (id)item;
 - (void)setColorStyle:(unsigned long long)arg1;

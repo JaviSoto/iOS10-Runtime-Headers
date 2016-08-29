@@ -9,6 +9,7 @@
     unsigned long long  _themeType;
     bool  _themeWasExplicitySet;
     id /* block */  _tintColorProvider;
+    id /* block */  _titleFontProvider;
     NSPointerArray * _viewControllerListeners;
     NSPointerArray * _viewListeners;
 }
@@ -38,10 +39,13 @@
 @property (nonatomic, readonly) UIFont *titleFont;
 
 + (id)_currentTheme:(unsigned long long)arg1;
++ (bool)_shouldAutoSwitchTheme;
 + (void)addThemeChangedListener:(id)arg1;
 + (id)currentTheme;
 + (void)setTheme:(unsigned long long)arg1;
 + (void)setTintColorProvider:(id /* block */)arg1;
++ (void)setTitleFontProvider:(id /* block */)arg1;
++ (id)themeWithThemeType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_addThemeChangedListener:(id)arg1;
@@ -51,6 +55,7 @@
 - (void)_notifyAllListenersOfTintChange:(id)arg1 visitedSet:(id)arg2;
 - (void)_setTheme:(unsigned long long)arg1;
 - (void)_setTintColorProvider:(id /* block */)arg1;
+- (void)_setTitleFontProvider:(id /* block */)arg1;
 - (void)_tintColorDidChange;
 - (id)attributionFont;
 - (id)backgroundColor;

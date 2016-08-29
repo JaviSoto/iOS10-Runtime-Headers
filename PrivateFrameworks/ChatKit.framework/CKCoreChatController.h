@@ -62,6 +62,7 @@
 - (void)_refreshActiveChat:(id)arg1;
 - (void)_refreshServiceForSending;
 - (void)_registerSendProgressDelegate;
+- (void)_removeExistingCollectionViewController;
 - (void)_setConversationDeferredSetup;
 - (void)_setTitle:(id)arg1 animated:(bool)arg2;
 - (void)_transferFinishedNotification:(id)arg1;
@@ -83,10 +84,10 @@
 - (id)fullScreenBalloonViewController;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullScreenBalloonViewController:(id)arg1 balloonFrameForChatItem:(id)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 didAppearAnimated:(bool)arg2;
-- (void)fullScreenBalloonViewController:(id)arg1 didDisappearWithSendAnimation:(bool)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(long long)arg2 forChatItem:(id)arg3;
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(bool)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 willDisappearWithSendAnimation:(bool)arg2;
+- (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
 - (void)fullScreenBalloonViewControllerHandleDismissTap:(id)arg1;
 - (double)gradientBottomPlaceholderHeight;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrameWithInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
@@ -100,6 +101,7 @@
 - (void)loadView;
 - (void)parentControllerDidBecomeActive;
 - (void)parentControllerDidResume:(bool)arg1 animating:(bool)arg2;
+- (void)preferredSendingServiceChanged;
 - (void)prepareForSuspend;
 - (id)progressBar;
 - (void)refreshServiceForSending;
@@ -143,9 +145,10 @@
 - (void)transcriptCollectionViewController:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didEndImpactEffectAnimationWithSendAnimationContext:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (bool)transcriptCollectionViewController:(id)arg1 shouldCleanupFinishedFullscreenEffect:(id)arg2;
+- (bool)transcriptCollectionViewController:(id)arg1 shouldCleanupFullscreenEffectUI:(id)arg2;
 - (bool)transcriptCollectionViewController:(id)arg1 shouldSetupFullscreenEffectUI:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 willBeginImpactEffectAnimationWithSendAnimationContext:(id)arg2;
+- (id)transcriptCollectionViewControllerAdditionalFullscreenEffectViews:(id)arg1;
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInsertAssociatedChatItem:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;

@@ -5,6 +5,7 @@
 @interface BRCCloudFileProvider : BRCFileProvider <BRCReachabilityDelegate, BRItemNotificationReceiving> {
     NSMutableDictionary * _downloadTrackersByDocID;
     NSMutableDictionary * _filePresenterByKey;
+    NSMutableSet * _keysPendingImmediateReads;
     NSMutableDictionary * _readersURLAndIDToDocID;
     NSMutableDictionary * _recursiveReadsByURLAndID;
 }

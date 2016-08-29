@@ -13,7 +13,6 @@
     NSMapTable * _plattersToDarkeningViews;
     double  _revealPercentage;
     CCUIControlCenterSettings * _settings;
-    CCUITouchForwardingView * _touchForwardingView;
     bool  _useMaxDarkness;
 }
 

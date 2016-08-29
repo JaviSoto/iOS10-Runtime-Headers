@@ -6,6 +6,9 @@
     bool  _arrivedFromAd;
     NSString * _articleId;
     NSData * _articleViewingSessionId;
+    NSString * _campaignId;
+    NSString * _campaignType;
+    NSString * _creativeId;
     struct { 
         unsigned int paidSubscriptionConversionPointExposureLocation : 1; 
         unsigned int paidSubscriptionConversionPointType : 1; 
@@ -30,9 +33,15 @@
 @property (nonatomic) bool arrivedFromAd;
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic, retain) NSData *articleViewingSessionId;
+@property (nonatomic, retain) NSString *campaignId;
+@property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic) bool hasArrivedFromAd;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
+@property (nonatomic, readonly) bool hasCampaignId;
+@property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasCreativeId;
 @property (nonatomic, readonly) bool hasIadQtoken;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointExposureLocation;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointType;
@@ -61,12 +70,18 @@
 - (bool)arrivedFromAd;
 - (id)articleId;
 - (id)articleViewingSessionId;
+- (id)campaignId;
+- (id)campaignType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasArrivedFromAd;
 - (bool)hasArticleId;
 - (bool)hasArticleViewingSessionId;
+- (bool)hasCampaignId;
+- (bool)hasCampaignType;
+- (bool)hasCreativeId;
 - (bool)hasIadQtoken;
 - (bool)hasPaidSubscriptionConversionPointExposureLocation;
 - (bool)hasPaidSubscriptionConversionPointType;
@@ -93,6 +108,9 @@
 - (void)setArrivedFromAd:(bool)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setArticleViewingSessionId:(id)arg1;
+- (void)setCampaignId:(id)arg1;
+- (void)setCampaignType:(id)arg1;
+- (void)setCreativeId:(id)arg1;
 - (void)setHasArrivedFromAd:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointExposureLocation:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointType:(bool)arg1;

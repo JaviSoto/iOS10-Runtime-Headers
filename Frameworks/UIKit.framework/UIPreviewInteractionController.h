@@ -3,10 +3,12 @@
  */
 
 @interface UIPreviewInteractionController : NSObject <UIGestureRecognizerDelegate, UIInteractionProgressObserver, UIPreviewInteractionDelegate, _UIForcePresentationControllerDelegate> {
+    bool  _behaviorTurnedOn;
     id  _currentCommitTransition;
     UIPresentationController<UIForcePresentationController> * _currentPresentationController;
     UIViewController * _currentPreviewViewController;
     <UIForceTransitioningDelegate> * _currentTransitionDelegate;
+    _UIDeepPressAnalyzer * _deepPressAnalyzer;
     <UIPreviewInteractionControllerDelegate> * _delegate;
     _UISystemSoundPlayer * _feedbackBehavior;
     UIInteractionProgress * _interactionProgressForCommit;
@@ -23,8 +25,7 @@
     _UIRevealGestureRecognizer * _revealGestureRecognizer;
     UIView * _sourceView;
     bool  _statusBarWasHidden;
-    UIGestureRecognizer * _touchObservingGestureRecognizer;
-    UIView * _touchSelectionWorkaroundSnapshotView;
+    _UITouchesObservingGestureRecognizer * _touchObservingGestureRecognizer;
     UIWindow * _windowForPreviewPresentation;
 }
 
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) UIViewController *currentPreviewViewController;
 @property (nonatomic, retain) <UIForceTransitioningDelegate> *currentTransitionDelegate;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) _UIDeepPressAnalyzer *deepPressAnalyzer;
 @property (nonatomic) <UIPreviewInteractionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
@@ -51,18 +53,18 @@
 @property (nonatomic) UIView *sourceView;
 @property (nonatomic) bool statusBarWasHidden;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) UIGestureRecognizer *touchObservingGestureRecognizer;
-@property (nonatomic, retain) UIView *touchSelectionWorkaroundSnapshotView;
+@property (nonatomic, retain) _UITouchesObservingGestureRecognizer *touchObservingGestureRecognizer;
 @property (nonatomic, retain) UIWindow *windowForPreviewPresentation;
 
 - (void).cxx_destruct;
-- (void)_activateFeedbackInCoordinateSpace:(id)arg1;
+- (void)_activateFeedback;
+- (void)_activateFeedbackIfNeeded;
+- (void)_configureCommitInteractionProgressForView:(id)arg1;
 - (void)_deactivateFeedbackIfNeeded;
 - (void)_finalizeInteractivePreview;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_handleRevealGesture:(id)arg1;
 - (void)_handleTouchObservingGesture:(id)arg1;
-- (id)_insertTouchSelectionWorkaroundSnapshotViewToView:(id)arg1 presentationController:(id)arg2;
 - (void)_panningRecognizerDidFire:(id)arg1;
 - (bool)_previewingIsPossibleForView:(id)arg1;
 - (void)_resetCustomPresentationHooks;
@@ -82,6 +84,7 @@
 - (id)currentPreviewViewController;
 - (id)currentTransitionDelegate;
 - (void)dealloc;
+- (id)deepPressAnalyzer;
 - (id)delegate;
 - (id)feedbackBehavior;
 - (void)forcePresentationController:(id)arg1 didSelectMenuItem:(id)arg2;
@@ -113,6 +116,7 @@
 - (void)setCurrentPresentationController:(id)arg1;
 - (void)setCurrentPreviewViewController:(id)arg1;
 - (void)setCurrentTransitionDelegate:(id)arg1;
+- (void)setDeepPressAnalyzer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFeedbackBehavior:(id)arg1;
 - (void)setInteractionProgressForCommit:(id)arg1;
@@ -126,14 +130,12 @@
 - (void)setSourceView:(id)arg1;
 - (void)setStatusBarWasHidden:(bool)arg1;
 - (void)setTouchObservingGestureRecognizer:(id)arg1;
-- (void)setTouchSelectionWorkaroundSnapshotView:(id)arg1;
 - (void)setWindowForPreviewPresentation:(id)arg1;
 - (id)sourceView;
 - (bool)startInteractivePreviewAtLocation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
 - (bool)startInteractivePreviewWithGestureRecognizer:(id)arg1;
 - (bool)statusBarWasHidden;
 - (id)touchObservingGestureRecognizer;
-- (id)touchSelectionWorkaroundSnapshotView;
 - (id)windowForPreviewPresentation;
 
 @end

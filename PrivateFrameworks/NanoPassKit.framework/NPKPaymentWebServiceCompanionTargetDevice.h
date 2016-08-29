@@ -53,6 +53,7 @@
 - (void)handlePaymentOptionsDefaultsChanged;
 - (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePreferredAID:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
+- (void)handleShowPaymentSetupRequest:(id)arg1;
 - (void)handleValueAddedServiceTransactions:(id)arg1;
 - (void)handleWebServiceContextNeededRequest:(id)arg1;
 - (id)init;

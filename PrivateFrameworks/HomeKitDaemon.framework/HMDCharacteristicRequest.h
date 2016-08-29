@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)characteristic;
+- (id)description;
 - (id)initWithCharacteristic:(id)arg1;
 - (id)previousValue;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLabelMarkerShield : VKFeatureMarker <GEOTransitShieldDataSource> {
+@interface VKLabelMarkerShield : NSObject <GEOTransitShieldDataSource> {
     VKImageSourceKey * _imageKey;
 }
 

@@ -52,7 +52,7 @@
 - (void)accessoryBrowsingManager:(id)arg1 didFindNewAccessory:(id)arg2;
 - (void)accessoryBrowsingManager:(id)arg1 didRemoveNewAccessory:(id)arg2;
 - (void)addPairingObserver:(id)arg1;
-- (void)cancel;
+- (id)cancel;
 - (bool)hasFailedAccessories;
 - (id)home;
 - (id)init;

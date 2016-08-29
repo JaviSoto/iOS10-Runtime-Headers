@@ -14,7 +14,7 @@
     HDDaemon * _healthDaemon;
     bool  _isActivityAppVisible;
     bool  _isWatch;
-    NSDate * _lastReportedFriendsDate;
+    int  _pairingStatusChangedToken;
     HDFitnessFriendsPeriodicUpdateManager * _periodicUpdateManager;
     NSObject<OS_dispatch_queue> * _readWriteQueue;
     HDFitnessFriendsRelationshipManager * _relationshipManager;
@@ -43,7 +43,7 @@
 - (void).cxx_destruct;
 - (void)_completeSetupIfNeeded;
 - (void)_notifySubmanagersOfManagerReady;
-- (void)_reportHasFriends:(bool)arg1;
+- (void)_queue_nanoRegistryInfoChanged;
 - (bool)_shouldCompleteSetup;
 - (void)_waitUntilSubmanagersReady;
 - (id)activityDataManager;
@@ -58,6 +58,7 @@
 - (id)deviceLocalActivitySharingKeyValueDomain;
 - (id)fakingManager;
 - (void)fetchAndUpdateActivityDataForAllFriendsWithCompletion:(id /* block */)arg1;
+- (void)fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)friendListManager;
 - (id)friends;
 - (id)gatewayManager;

@@ -59,7 +59,7 @@
 + (id)titleFontNameFromMovieData:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_representativeAssetIDs;
+- (id)_representativeAndCuratedAssetIDs;
 - (id)assetListPredicate;
 - (bool)canContainAssets;
 - (bool)canPerformEditOperation:(long long)arg1;

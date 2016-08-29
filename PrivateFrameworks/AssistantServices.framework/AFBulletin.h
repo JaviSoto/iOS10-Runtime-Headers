@@ -4,6 +4,7 @@
 
 @interface AFBulletin : NSObject <NSSecureCoding> {
     bool  _allDay;
+    BBBulletin * _bbBulletin;
     NSString * _bulletinID;
     NSDate * _date;
     NSString * _displayName;
@@ -23,6 +24,7 @@
 }
 
 @property (getter=isAllDay, nonatomic, readonly) bool allDay;
+@property (nonatomic, readonly) BBBulletin *bbBulletin;
 @property (nonatomic, readonly, copy) NSString *bulletinID;
 @property (nonatomic, readonly, copy) NSDate *date;
 @property (nonatomic, copy) NSString *displayName;
@@ -43,6 +45,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)bbBulletin;
 - (id)bulletinID;
 - (id)date;
 - (id)displayName;

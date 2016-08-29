@@ -42,9 +42,17 @@
 - (id)suggestedFilename;
 - (id)textEncodingName;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (bool)sf_hasXMLAttachment;
+
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
 - (id)_cacheTime;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
+- (bool)safari_hasAttachment;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 

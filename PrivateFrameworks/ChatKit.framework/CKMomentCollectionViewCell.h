@@ -21,5 +21,6 @@
 - (void)setEffect:(id)arg1;
 - (void)setEffectViews:(id)arg1;
 - (void)setupForEffect:(id)arg1;
+- (void)stopAnimation;
 
 @end

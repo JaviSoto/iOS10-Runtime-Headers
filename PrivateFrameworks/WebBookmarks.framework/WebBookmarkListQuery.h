@@ -31,6 +31,7 @@
 - (id)debugDescription;
 - (int)folderID;
 - (id)init;
+- (id)initWithBookmarksWhere:(id)arg1 folderID:(int)arg2 orderBy:(id)arg3 usingFilter:(id)arg4;
 - (id)initWithBookmarksWhere:(id)arg1 orderBy:(id)arg2 usingFilter:(id)arg3;
 - (id)initWithFolderID:(int)arg1 inCollection:(id)arg2 includeHidden:(bool)arg3 usingFilter:(id)arg4;
 - (bool)isCustomQuery;

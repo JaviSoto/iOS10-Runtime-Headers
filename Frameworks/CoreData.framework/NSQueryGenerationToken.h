@@ -9,9 +9,9 @@
 + (id)nostoresQueryGenerationToken;
 + (id)unpinnedQueryGenerationToken;
 
+- (id)_generationalComponentForStore:(id)arg1;
 - (id)_storesForRequestRoutingFrom:(id)arg1;
 - (id)_token;
-- (id)_tokenForStore:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (bool)isEqual:(id)arg1;

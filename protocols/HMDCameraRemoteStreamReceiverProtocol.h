@@ -6,6 +6,6 @@
 @required
 
 - (IDSSession *)session;
-- (void)setupReceiver;
+- (void)setupReceiver:(NSString *)arg1;
 
 @end

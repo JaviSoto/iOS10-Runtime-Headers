@@ -14,11 +14,13 @@
         } size; 
     }  _alignmentRect;
     bool  _allowsMultiPassEncoding;
+    bool  _allowsOptimalPacking;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
 @property (nonatomic, retain) NSString *alignmentRectString;
 @property (nonatomic) bool allowsMultiPassEncoding;
+@property (nonatomic) bool allowsOptimalPacking;
 @property (nonatomic, retain) TDPNGAsset *asset;
 @property (nonatomic, retain) TDThemeCompressionType *compressionType;
 @property (nonatomic) bool isTintable;
@@ -39,6 +41,7 @@
 - (id)_slicesToUseForCSI;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
 - (bool)allowsMultiPassEncoding;
+- (bool)allowsOptimalPacking;
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
 - (void)awakeFromFetch;
 - (bool)canBePackedWithDocument:(id)arg1;
@@ -49,6 +52,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })primitiveAlignmentRect;
 - (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAllowsMultiPassEncoding:(bool)arg1;
+- (void)setAllowsOptimalPacking:(bool)arg1;
 - (void)setPrimitiveAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)updatePackingPropertiesWithDocument:(id)arg1;
 

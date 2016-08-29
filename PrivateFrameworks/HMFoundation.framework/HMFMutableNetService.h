@@ -34,5 +34,6 @@
 - (void)startPublishingWithCompletionHandler:(id /* block */)arg1;
 - (void)stopPublishing;
 - (void)updateTXTRecord;
+- (void)updateTXTRecordWithData:(id)arg1;
 
 @end

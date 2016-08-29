@@ -27,6 +27,7 @@
     SKUIIndexBarControl * _indexBarControl;
     NSIndexPath * _indexPathOfEditedCell;
     NSArray * _initialOverlayURLs;
+    bool  _itemsChangedStateWhileDisappeared;
     long long  _lastInterfaceOrientation;
     NSNumber * _lastKnownWidth;
     long long  _layoutStyle;

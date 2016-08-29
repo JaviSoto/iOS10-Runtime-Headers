@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) double dY;
 
 + (id)ruleOffset;
++ (id)ruleOffsetWithDX:(double)arg1 dY:(double)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)dX;

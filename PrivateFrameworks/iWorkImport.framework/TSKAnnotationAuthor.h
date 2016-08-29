@@ -2,28 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAnnotationAuthor : TSPObject {
+@interface TSKAnnotationAuthor : TSPObject <TSPCopying> {
     NSString * _appearanceColorForAuthor;
     TSUColor * mColor;
+    bool  mIsPublicAuthor;
     NSString * mName;
+    NSString * mPublicID;
 }
 
 @property (nonatomic, readonly) NSString *appearanceColorForAuthor;
 @property (nonatomic, readonly) NSString *authorColorName;
 @property (nonatomic, readonly) TSUColor *cellViolatorColor;
 @property (nonatomic, readonly) TSUColor *changeAdornmentsColor;
+@property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) TSUColor *flagFillColor;
 @property (nonatomic, readonly) TSUColor *flagPressedColor;
 @property (nonatomic, readonly) TSUColor *flagStrokeColor;
 @property (nonatomic, readonly) TSUColor *gradientEndColor;
 @property (nonatomic, readonly) TSUColor *gradientStartColor;
+@property (nonatomic, readonly) bool hasPublicID;
 @property (nonatomic, readonly) TSUColor *indicatorDarkColor;
 @property (nonatomic, readonly) TSUColor *indicatorLightColor;
+@property (nonatomic, readonly) bool isPublicAuthor;
 @property (nonatomic, readonly) NSString *menuSwatchColorForAuthor;
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) TSUColor *popoverAuthorLabelColor;
 @property (nonatomic, readonly) TSUColor *popoverButtonTintColor;
 @property (nonatomic, readonly) TSUColor *popoverColor;
+@property (nonatomic, readonly) NSString *publicID;
 @property (nonatomic, readonly) bool showAuthorComments;
 @property (nonatomic, readonly) TSUColor *sidebarChangeBarColor;
 @property (nonatomic, readonly) TSUColor *sidebarDecoratorLineColor;
@@ -49,6 +55,7 @@
 + (id)normalizedAuthorNameForAuthorName:(id)arg1;
 + (id)p_authorColorDictionaryForAuthorIndex:(unsigned long long)arg1;
 + (unsigned long long)p_authorColorIndexWithColor:(id)arg1 forIndicator:(bool)arg2;
++ (id)p_publicIDFromSeed:(id)arg1 privateID:(id)arg2;
 + (unsigned long long)presetColorCount;
 
 - (bool)allowsImplicitComponentOwnership;
@@ -57,27 +64,36 @@
 - (id)cellViolatorColor;
 - (id)changeAdornmentsColor;
 - (id)componentRootObject;
+- (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)displayName;
 - (id)flagFillColor;
 - (id)flagPressedColor;
 - (id)flagStrokeColor;
 - (id)gradientEndColor;
 - (id)gradientStartColor;
+- (bool)hasPublicID;
 - (unsigned long long)hash;
 - (id)indicatorDarkColor;
 - (id)indicatorLightColor;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 color:(id)arg3;
+- (id)initWithContext:(id)arg1 name:(id)arg2 color:(id)arg3 privateID:(id)arg4;
+- (id)initWithContext:(id)arg1 name:(id)arg2 color:(id)arg3 publicID:(id)arg4 isPublicAuthor:(bool)arg5;
 - (bool)isEqual:(id)arg1;
+- (bool)isPreferredOver:(id)arg1;
+- (bool)isPublicAuthor;
+- (bool)matchesAuthor:(id)arg1;
+- (bool)matchesPrivateID:(id)arg1;
 - (id)menuSwatchColorForAuthor;
 - (id)name;
 - (unsigned long long)p_authorColorIndex;
 - (id)popoverAuthorLabelColor;
 - (id)popoverButtonTintColor;
 - (id)popoverColor;
+- (id)publicID;
 - (void)saveToArchiver:(id)arg1;
-- (void)setName:(id)arg1;
 - (void)setStorageColor:(id)arg1;
 - (bool)showAuthorComments;
 - (id)sidebarChangeBarColor;

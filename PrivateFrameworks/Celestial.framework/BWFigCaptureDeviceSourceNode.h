@@ -64,6 +64,8 @@
     unsigned int  _streamSensorPixelFormatAfterFormatChange;
     bool  _temporalNoiseReductionEnabled;
     BWNodeOutput * _videoCaptureOutput;
+    NSDictionary * _videoCaptureOutputColorInfoOverride;
+    bool  _videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 }
 
 @property (readonly) BWFigVideoCaptureDevice *captureDevice;
@@ -75,6 +77,8 @@
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
 @property (readonly) BWNodeOutput *videoCaptureOutput;
+@property (nonatomic, copy) NSDictionary *videoCaptureOutputColorInfoOverride;
+@property (nonatomic) bool videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 
 + (int)_indexOfFormatInFormatsArray:(id)arg1 matchingSensorDimensions:(struct { int x1; int x2; })arg2 sensorPixelFormat:(unsigned int)arg3 sensorFormatIndex:(int)arg4;
 + (id)captureDeviceSourceNodeWithCaptureDevice:(id)arg1;
@@ -143,12 +147,16 @@
 - (void)setSensorFormatIndex:(int)arg1;
 - (void)setSensorPixelFormat:(unsigned int)arg1;
 - (void)setTemporalNoiseReductionEnabled:(bool)arg1;
+- (void)setVideoCaptureOutputColorInfoOverride:(id)arg1;
+- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (bool)start:(id*)arg1;
 - (id)stillImageOutput;
 - (bool)stop:(id*)arg1;
 - (bool)temporalNoiseReductionEnabled;
 - (void)updateOutputRequirements;
 - (id)videoCaptureOutput;
+- (id)videoCaptureOutputColorInfoOverride;
+- (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (void)willStop;
 
 @end

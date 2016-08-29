@@ -7,33 +7,33 @@
     void containingVisualEffectView;
     void font;
     void label;
+    void lineBreakMode;
     void numberOfLines;
-    void persistentConstraints;
     void text;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedText;
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic, readonly) UIView *forFirstBaselineLayout;
-@property (nonatomic, readonly) UIView *forLastBaselineLayout;
+@property (nonatomic, retain) _TtC12UpNextWidget25TintColorAsTextColorLabel *label;
+@property (nonatomic) long long lineBreakMode;
 @property (nonatomic) long long numberOfLines;
 @property (nonatomic, copy) NSString *text;
-
-+ (bool)requiresConstraintBasedLayout;
 
 - (id /* block */).cxx_destruct;
 - (id)attributedText;
 - (id)font;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)label;
+- (long long)lineBreakMode;
 - (long long)numberOfLines;
 - (void)setAttributedText:(id)arg1;
 - (void)setFont:(id)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setLineBreakMode:(long long)arg1;
 - (void)setNumberOfLines:(long long)arg1;
 - (void)setText:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
-- (void)updateConstraints;
-- (id)viewForFirstBaselineLayout;
-- (id)viewForLastBaselineLayout;
 
 @end

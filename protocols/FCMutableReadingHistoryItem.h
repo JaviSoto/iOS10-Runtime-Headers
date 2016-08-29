@@ -13,6 +13,7 @@
 - (bool)hasArticleBeenSeen;
 - (NSString *)identifier;
 - (NSDate *)lastVisitedAt;
+- (unsigned long long)maxVersionRead;
 - (void)setArticleID:(NSString *)arg1;
 - (void)setArticleLikingStatus:(unsigned long long)arg1;
 - (void)setHasArticleBeenConsumed:(bool)arg1;
@@ -20,5 +21,6 @@
 - (void)setHasArticleBeenRead:(bool)arg1;
 - (void)setHasArticleBeenSeen:(bool)arg1;
 - (void)setLastVisitedAt:(NSDate *)arg1;
+- (void)setMaxVersionRead:(unsigned long long)arg1;
 
 @end

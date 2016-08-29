@@ -85,6 +85,7 @@
 - (id)asNumber;
 - (bool)hk_isAfterDate:(id)arg1;
 - (bool)hk_isBeforeDate:(id)arg1;
+- (bool)isEqualToDateToSecondAccuracy:(id)arg1;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
@@ -317,6 +318,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
++ (id)dateFromFileNameDescription:(id)arg1;
 + (id)timeIntervalDescription:(double)arg1;
 
 - (id)fileNameDescription;
@@ -406,8 +408,6 @@
 + (id)readValueFromKeyValuePair:(id)arg1;
 
 - (id)fc_dateBySubtractingTimeInterval:(double)arg1;
-- (void)fc_gregorianDescriptionWithCompletion:(id /* block */)arg1;
-- (void)fc_gregorianDescriptionWithFlags:(long long)arg1 completion:(id /* block */)arg2;
 - (bool)fc_isEarlierThan:(id)arg1;
 - (bool)fc_isLaterThan:(id)arg1;
 - (bool)fc_isWithinTimeInterval:(double)arg1 ofDate:(id)arg2;
@@ -461,7 +461,6 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (bool)px_isSameDayAsDate:(id)arg1;
-- (bool)px_sharesComponents:(unsigned long long)arg1 withDate:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
 

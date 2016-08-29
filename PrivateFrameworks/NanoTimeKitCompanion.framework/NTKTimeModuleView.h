@@ -4,6 +4,7 @@
 
 @interface NTKTimeModuleView : NTKModuleView <NTKTimeView> {
     CLKUITimeLabelStyle * _defaultStyle;
+    bool  _frozen;
     <NTKTimeModuleViewTapClient> * _tapDelegate;
     NTKDigitalTimeLabel * _timeLabel;
     CLKFont * _timeTravelFont;
@@ -12,6 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isFrozen, nonatomic) bool frozen;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool pausedForZooming;
 @property (readonly) Class superclass;
@@ -25,7 +27,9 @@
 - (void)_layoutContentView;
 - (id)_timeTravelFont;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isFrozen;
 - (bool)pausedForZooming;
+- (void)setFrozen:(bool)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setPausedForZooming:(bool)arg1;
 - (void)setTapDelegate:(id)arg1;

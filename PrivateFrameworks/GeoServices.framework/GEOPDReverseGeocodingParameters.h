@@ -10,6 +10,7 @@
     NSMutableArray * _locations;
     int  _placeTypeLimit;
     bool  _preserveOriginalLocation;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool hasPlaceTypeLimit;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic) int placeTypeLimit;
 @property (nonatomic) bool preserveOriginalLocation;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)locationType;
 
@@ -45,6 +47,7 @@
 - (void)setLocations:(id)arg1;
 - (void)setPlaceTypeLimit:(int)arg1;
 - (void)setPreserveOriginalLocation:(bool)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

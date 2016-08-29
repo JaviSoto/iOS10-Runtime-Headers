@@ -10,7 +10,9 @@
         long long epoch; 
     }  _HDRStillCaptureReferenceFramePTS;
     long long  _activeFormatIndex;
+    bool  _activeStillImageCaptureIsSingleFrameCapture;
     int  _activeStillImageCaptureType;
+    int  _activeStillImagePrimaryCaptureType;
     NSDictionary * _attributes;
     bool  _avoidsSphereRecentering;
     float  _baseZoomFactor;
@@ -25,7 +27,6 @@
     bool  _faceDetectionEnabled;
     bool  _faceDetectionMetadataRequested;
     bool  _flashEnabled;
-    bool  _frameSkippingEnabledAsConfigured;
     NSDictionary * _geometricDistortionCoefficients;
     bool  _grabNextFrame;
     bool  _hasSphere;
@@ -61,6 +62,7 @@
     int  _stillImageCaptureStateLock;
     struct OpaqueFigCaptureStream { } * _stream;
     NSObject<OS_dispatch_queue> * _streamNotificationDispatchQueue;
+    int  _streamRatioAsConfigured;
     bool  _streaming;
     bool  _streamingEnabledAsConfigured;
     NSArray * _supportedFormats;
@@ -118,7 +120,6 @@
 - (void)_resetStillImageCaptureState;
 - (void)_serviceTimeMachineWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_setFaceDetectionEnabled:(bool)arg1;
-- (void)_setStreamingEnabledWhenConfiguredAsSlave:(bool)arg1 frameSkippingEnabled:(bool)arg2;
 - (bool)_updateCaptureStateWithStillImageSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 orError:(int)arg2;
 - (int)_updateFaceDetectionConfigurationOnStream:(id)arg1;
 - (void)_updateFaceDetectionEnabledOnStream;
@@ -170,7 +171,6 @@
 - (void)setStillImageBufferTimeMachineHandler:(id /* block */)arg1;
 - (void)setStillImageCaptureDelegate:(id)arg1;
 - (void)setStillImageCaptureEnabled:(bool)arg1;
-- (void)setStreamingEnabledAsConfigured:(bool)arg1 frameSkippingEnabled:(bool)arg2;
 - (void)setTimeMachineEnabled:(bool)arg1;
 - (void)setUsesStillFusionReferenceFramePTSForDidCaptureCallback:(bool)arg1;
 - (void)sourceNodeDidStartStreaming;

@@ -7,13 +7,15 @@
 + (void)_mergeFaces:(id)arg1 rejectedFaces:(id)arg2 toPerson:(id)arg3 personChangeRequest:(id*)arg4 newPersonLocalIdentifier:(id*)arg5;
 + (id)_rejectedFacesForPerson:(id)arg1;
 + (id)assetCollectionListFetchResultForPerson:(id)arg1;
++ (void)changePeople:(id)arg1 toPersonType:(long long)arg2;
 + (id)changePerson:(id)arg1 toPersonType:(long long)arg2;
 + (id)dataSourceArrayForHomeViewController;
 + (id)identifiersForPeople:(id)arg1;
 + (void)mergePersons:(id)arg1 withPerson:(id)arg2;
 + (long long)personTypeForDataSource:(id)arg1;
 + (id)personWithPersonUri:(id)arg1;
-+ (void)reSequenceManualOrderForPeople:(id)arg1;
++ (void)reSequenceFavorites:(id)arg1 afterMovingModels:(id)arg2 toType:(long long)arg3;
++ (void)reSequenceManualOrderForPersonChangeRequests:(id)arg1;
 + (id)sharedContactStore;
 + (id)showDetailsForPerson:(id)arg1;
 

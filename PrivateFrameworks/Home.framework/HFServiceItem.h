@@ -32,7 +32,6 @@
 - (id)_initForCopyWithValueSource:(id)arg1 service:(id)arg2 controlItemsByIdentifier:(id)arg3;
 - (void)_setupControlItems;
 - (void)_setupControlItemsWithControlItemsByIdentifier:(id)arg1;
-- (id)_standardErrorResultsForDisplayMetadata:(id)arg1 readCharacteristics:(id)arg2;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 - (id)allControlItems;
@@ -61,7 +60,7 @@
 - (void)setControlItemsByIdentifier:(id)arg1;
 - (void)setIncrementalStateControlItem:(id)arg1;
 - (void)setPrimaryStateControlItem:(id)arg1;
-- (id)standardResultsWithDisplayMetadata:(id)arg1 readCharacteristics:(id)arg2;
+- (id)standardResultsWithDisplayMetadata:(id)arg1 readCharacteristics:(id)arg2 updateOptions:(id)arg3;
 - (bool)supportsControlWithCharacteristicTypes:(id)arg1;
 - (id)updateWithOptions:(id)arg1;
 - (id)valueSource;

@@ -22,7 +22,10 @@
     NSPredicate * _filterPredicate;
     unsigned long long  _filteringAttributesIndexValue;
     NSMutableSet * _filteringKeys;
+    NSMutableSet * _filteringObjectKeyPaths;
+    NSMutableSet * _filteringOids;
     unsigned long long  _filteringRelationshipsIndexValue;
+    NSMutableDictionary * _filteringRelationshipsIndexValueByBaseEntityName;
     unsigned long long  _objectToContainerRelationshipIndexValue;
     PHPhotoLibrary * _photoLibrary;
     bool  _preparedCombinedQueryKeys;
@@ -41,6 +44,8 @@
 @property (readonly) NSFetchRequest *fetchRequest;
 @property (readonly) NSString *fetchType;
 @property (readonly) NSPredicate *filterPredicate;
+@property (nonatomic, readonly) NSSet *filteringOids;
+@property (nonatomic, readonly) NSDictionary *filteringRelationshipsIndexValueByBaseEntityName;
 @property (readonly) PHPhotoLibrary *photoLibrary;
 @property (readonly) NSArray *seedOIDs;
 
@@ -48,10 +53,8 @@
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
 + (id)_fetchTypeForLocalIdentifiers:(id)arg1;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 options:(id)arg2 phClass:(Class)arg3;
-+ (id)_predicateForAllAssetsFromRepresentativeAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)_queryForPersonsInAssetsWithObjectIDs:(id)arg1 withOptions:(id)arg2;
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
-+ (id)_representativeAssetIDsForMemory:(id)arg1;
 + (id)_rootFolderID;
 + (id)_transformedSortDescriptors:(id)arg1 forFetchType:(id)arg2;
 + (bool)_validateLocalIdentifiers:(id)arg1 compatibilityWithFetchType:(id)arg2;
@@ -153,7 +156,9 @@
 - (id)fetchType;
 - (id)filterPredicate;
 - (unsigned long long)filteringAttributesIndexValue;
+- (id)filteringOids;
 - (unsigned long long)filteringRelationshipsIndexValue;
+- (id)filteringRelationshipsIndexValueByBaseEntityName;
 - (id)initForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
 - (id)initForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;
 - (unsigned long long)objectToContainerRelationshipIndexValue;

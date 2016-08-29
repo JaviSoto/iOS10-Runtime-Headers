@@ -14,6 +14,7 @@
 + (id)cacheKeyWithFontName:(id)arg1 size:(double)arg2;
 
 - (void)dealloc;
+- (id)description;
 - (id)fontName;
 - (double)fontSize;
 - (unsigned long long)hash;

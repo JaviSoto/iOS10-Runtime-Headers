@@ -19,7 +19,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)libraryView;
 - (long long)maximumResultsPerScope;
 - (id)mediaLibrary;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;

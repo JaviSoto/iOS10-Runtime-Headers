@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSArray *gapTimeRanges;
 @property (nonatomic, retain) NSArray *timeRanges;
 
++ (void)clearCache;
 + (id)infoForAsset:(id)arg1;
 + (void)initialize;
 

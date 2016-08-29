@@ -8,8 +8,10 @@
     NTPBRecordBase * _base;
     NSMutableArray * _blockedStorefrontIds;
     NSString * _channelDefaultSectionId;
+    NSMutableArray * _channelSectionFeedConfigurations;
     NSMutableArray * _channelSectionIds;
     long long  _contentProvider;
+    NSString * _coverArticleListId;
     NSString * _coverImageURL;
     NTPBFeedConfiguration * _feedConfiguration;
     unsigned long long  _forYouCutoffTime;
@@ -19,6 +21,7 @@
         unsigned int contentProvider : 1; 
         unsigned int forYouCutoffTime : 1; 
         unsigned int forYouMaximumArticleCount : 1; 
+        unsigned int minimumNewsVersion : 1; 
         unsigned int score : 1; 
         unsigned int tagNameImageBaselineShift : 1; 
         unsigned int tagNameImageScaleFactor : 1; 
@@ -39,13 +42,12 @@
     bool  _isNotificationEnabled;
     bool  _isPublic;
     NSString * _logoURL;
-    NSString * _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSString * _name;
     NSString * _nameImageForDarkBackgroundURL;
     NSString * _nameImageMaskURL;
     NSString * _nameImageMaskWidgetHQURL;
     NSString * _nameImageMaskWidgetLQURL;
-    NSString * _nameImageMaskWidgetURL;
     NSData * _nameImageMetadata;
     NSString * _nameImageURL;
     NSString * _parentId;
@@ -75,8 +77,10 @@
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic, retain) NSMutableArray *blockedStorefrontIds;
 @property (nonatomic, retain) NSString *channelDefaultSectionId;
+@property (nonatomic, retain) NSMutableArray *channelSectionFeedConfigurations;
 @property (nonatomic, retain) NSMutableArray *channelSectionIds;
 @property (nonatomic) long long contentProvider;
+@property (nonatomic, retain) NSString *coverArticleListId;
 @property (nonatomic, retain) NSString *coverImageURL;
 @property (nonatomic, retain) NTPBFeedConfiguration *feedConfiguration;
 @property (nonatomic) unsigned long long forYouCutoffTime;
@@ -85,6 +89,7 @@
 @property (nonatomic, readonly) bool hasBase;
 @property (nonatomic, readonly) bool hasChannelDefaultSectionId;
 @property (nonatomic) bool hasContentProvider;
+@property (nonatomic, readonly) bool hasCoverArticleListId;
 @property (nonatomic, readonly) bool hasCoverImageURL;
 @property (nonatomic, readonly) bool hasFeedConfiguration;
 @property (nonatomic) bool hasForYouCutoffTime;
@@ -95,13 +100,12 @@
 @property (nonatomic) bool hasIsNotificationEnabled;
 @property (nonatomic) bool hasIsPublic;
 @property (nonatomic, readonly) bool hasLogoURL;
-@property (nonatomic, readonly) bool hasMinimumNewsVersion;
+@property (nonatomic) bool hasMinimumNewsVersion;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic, readonly) bool hasNameImageForDarkBackgroundURL;
 @property (nonatomic, readonly) bool hasNameImageMaskURL;
 @property (nonatomic, readonly) bool hasNameImageMaskWidgetHQURL;
 @property (nonatomic, readonly) bool hasNameImageMaskWidgetLQURL;
-@property (nonatomic, readonly) bool hasNameImageMaskWidgetURL;
 @property (nonatomic, readonly) bool hasNameImageMetadata;
 @property (nonatomic, readonly) bool hasNameImageURL;
 @property (nonatomic, readonly) bool hasParentId;
@@ -125,13 +129,12 @@
 @property (nonatomic) bool isNotificationEnabled;
 @property (nonatomic) bool isPublic;
 @property (nonatomic, retain) NSString *logoURL;
-@property (nonatomic, retain) NSString *minimumNewsVersion;
+@property (nonatomic) long long minimumNewsVersion;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *nameImageForDarkBackgroundURL;
 @property (nonatomic, retain) NSString *nameImageMaskURL;
 @property (nonatomic, retain) NSString *nameImageMaskWidgetHQURL;
 @property (nonatomic, retain) NSString *nameImageMaskWidgetLQURL;
-@property (nonatomic, retain) NSString *nameImageMaskWidgetURL;
 @property (nonatomic, retain) NSData *nameImageMetadata;
 @property (nonatomic, retain) NSString *nameImageURL;
 @property (nonatomic, retain) NSString *parentId;
@@ -159,6 +162,7 @@
 
 + (Class)allowedStorefrontIdsType;
 + (Class)blockedStorefrontIdsType;
++ (Class)channelSectionFeedConfigurationsType;
 + (Class)channelSectionIdsType;
 + (Class)iAdCategoriesType;
 + (Class)iAdKeywordsType;
@@ -172,6 +176,7 @@
 
 - (void)addAllowedStorefrontIds:(id)arg1;
 - (void)addBlockedStorefrontIds:(id)arg1;
+- (void)addChannelSectionFeedConfigurations:(id)arg1;
 - (void)addChannelSectionIds:(id)arg1;
 - (void)addIAdCategories:(id)arg1;
 - (void)addIAdKeywords:(id)arg1;
@@ -191,11 +196,15 @@
 - (id)blockedStorefrontIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)blockedStorefrontIdsCount;
 - (id)channelDefaultSectionId;
+- (id)channelSectionFeedConfigurations;
+- (id)channelSectionFeedConfigurationsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)channelSectionFeedConfigurationsCount;
 - (id)channelSectionIds;
 - (id)channelSectionIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)channelSectionIdsCount;
 - (void)clearAllowedStorefrontIds;
 - (void)clearBlockedStorefrontIds;
+- (void)clearChannelSectionFeedConfigurations;
 - (void)clearChannelSectionIds;
 - (void)clearIAdCategories;
 - (void)clearIAdKeywords;
@@ -208,6 +217,7 @@
 - (void)clearRelatedTopicIdsForOnboardings;
 - (long long)contentProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)coverArticleListId;
 - (id)coverImageURL;
 - (void)dealloc;
 - (id)description;
@@ -219,6 +229,7 @@
 - (bool)hasBase;
 - (bool)hasChannelDefaultSectionId;
 - (bool)hasContentProvider;
+- (bool)hasCoverArticleListId;
 - (bool)hasCoverImageURL;
 - (bool)hasFeedConfiguration;
 - (bool)hasForYouCutoffTime;
@@ -235,7 +246,6 @@
 - (bool)hasNameImageMaskURL;
 - (bool)hasNameImageMaskWidgetHQURL;
 - (bool)hasNameImageMaskWidgetLQURL;
-- (bool)hasNameImageMaskWidgetURL;
 - (bool)hasNameImageMetadata;
 - (bool)hasNameImageURL;
 - (bool)hasParentId;
@@ -266,13 +276,12 @@
 - (bool)isPublic;
 - (id)logoURL;
 - (void)mergeFrom:(id)arg1;
-- (id)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)name;
 - (id)nameImageForDarkBackgroundURL;
 - (id)nameImageMaskURL;
 - (id)nameImageMaskWidgetHQURL;
 - (id)nameImageMaskWidgetLQURL;
-- (id)nameImageMaskWidgetURL;
 - (id)nameImageMetadata;
 - (id)nameImageURL;
 - (id)parentId;
@@ -311,8 +320,10 @@
 - (void)setBase:(id)arg1;
 - (void)setBlockedStorefrontIds:(id)arg1;
 - (void)setChannelDefaultSectionId:(id)arg1;
+- (void)setChannelSectionFeedConfigurations:(id)arg1;
 - (void)setChannelSectionIds:(id)arg1;
 - (void)setContentProvider:(long long)arg1;
+- (void)setCoverArticleListId:(id)arg1;
 - (void)setCoverImageURL:(id)arg1;
 - (void)setFeedConfiguration:(id)arg1;
 - (void)setForYouCutoffTime:(unsigned long long)arg1;
@@ -326,6 +337,7 @@
 - (void)setHasIsExplicitContent:(bool)arg1;
 - (void)setHasIsNotificationEnabled:(bool)arg1;
 - (void)setHasIsPublic:(bool)arg1;
+- (void)setHasMinimumNewsVersion:(bool)arg1;
 - (void)setHasPublisherPaidLeakyPaywallOptOut:(bool)arg1;
 - (void)setHasPublisherPaidWebOptIn:(bool)arg1;
 - (void)setHasScore:(bool)arg1;
@@ -340,13 +352,12 @@
 - (void)setIsNotificationEnabled:(bool)arg1;
 - (void)setIsPublic:(bool)arg1;
 - (void)setLogoURL:(id)arg1;
-- (void)setMinimumNewsVersion:(id)arg1;
+- (void)setMinimumNewsVersion:(long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameImageForDarkBackgroundURL:(id)arg1;
 - (void)setNameImageMaskURL:(id)arg1;
 - (void)setNameImageMaskWidgetHQURL:(id)arg1;
 - (void)setNameImageMaskWidgetLQURL:(id)arg1;
-- (void)setNameImageMaskWidgetURL:(id)arg1;
 - (void)setNameImageMetadata:(id)arg1;
 - (void)setNameImageURL:(id)arg1;
 - (void)setParentId:(id)arg1;

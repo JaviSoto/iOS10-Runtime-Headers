@@ -42,6 +42,7 @@
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
 - (bool)_shouldFreezeSceneForEditMode:(long long)arg1;
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)_unloadSnapshotContentViews;
 - (bool)_wantsOpportunisticLiveFaceLoading;
 - (id)analogScene;
 - (id)circleView;

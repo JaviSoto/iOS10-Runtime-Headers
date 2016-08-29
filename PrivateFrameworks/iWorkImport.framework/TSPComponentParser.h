@@ -17,6 +17,7 @@
             int allocated_size_; 
             int total_size_; 
         } message_infos_; 
+        bool should_merge_; 
     }  _archiveInfo;
     unsigned int  _archiveInfoLength;
     <TSPComponentParserDelegate> * _delegate;

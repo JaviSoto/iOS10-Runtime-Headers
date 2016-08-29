@@ -5,6 +5,8 @@
 @interface SFBLEDevice : NSObject <NSSecureCoding> {
     NSData * _advertisementData;
     NSDictionary * _advertisementFields;
+    NSData * _bluetoothAddress;
+    NSUUID * _counterpartIdentifier;
     long long  _distance;
     NSUUID * _identifier;
     double  _lastSeen;
@@ -12,6 +14,9 @@
     double  _pairCheckTime;
     bool  _paired;
     long long  _rssi;
+    long long  _rssiCeiling;
+    unsigned char  _rssiCount;
+    long long  _rssiFloor;
     BOOL  _rssiHistory;
     unsigned char  _rssiIndex;
     long long  _smoothedRSSI;
@@ -19,6 +24,8 @@
 
 @property (nonatomic, copy) NSData *advertisementData;
 @property (nonatomic, copy) NSDictionary *advertisementFields;
+@property (nonatomic, copy) NSData *bluetoothAddress;
+@property (nonatomic, copy) NSUUID *counterpartIdentifier;
 @property (nonatomic) long long distance;
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic) double lastSeen;
@@ -26,17 +33,18 @@
 @property (nonatomic) double pairCheckTime;
 @property (nonatomic) bool paired;
 @property (nonatomic, readonly) long long rssi;
+@property (nonatomic, readonly) long long rssiCeiling;
+@property (nonatomic, readonly) long long rssiFloor;
 @property (nonatomic, readonly) long long smoothedRSSI;
 
-+ (void)setRSSIFilterType:(unsigned int)arg1;
++ (void)setRSSIEstimatorInfo:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)_rssiFilterFloor:(long long)arg1;
-- (bool)_rssiFilterMedian:(long long)arg1;
-- (bool)_rssiFilterRaw:(long long)arg1;
 - (id)advertisementData;
 - (id)advertisementFields;
+- (id)bluetoothAddress;
+- (id)counterpartIdentifier;
 - (id)description;
 - (long long)distance;
 - (void)encodeWithCoder:(id)arg1;
@@ -47,8 +55,12 @@
 - (double)pairCheckTime;
 - (bool)paired;
 - (long long)rssi;
+- (long long)rssiCeiling;
+- (long long)rssiFloor;
 - (void)setAdvertisementData:(id)arg1;
 - (void)setAdvertisementFields:(id)arg1;
+- (void)setBluetoothAddress:(id)arg1;
+- (void)setCounterpartIdentifier:(id)arg1;
 - (void)setDistance:(long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastSeen:(double)arg1;

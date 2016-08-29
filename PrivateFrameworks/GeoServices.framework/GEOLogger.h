@@ -4,7 +4,8 @@
 
 @interface GEOLogger : NSObject {
     GEOLogContext * _cachedLogContext;
-    NSMutableArray * _logContextDelegates;
+    NSHashTable * _logContextDelegates;
+    NSLock * _logContextDelegatesLock;
     NSObject<OS_dispatch_queue> * _loggerQueue;
     void * _loggerQueueIdentityKey;
     void * _loggerQueueIdentityValue;
@@ -14,6 +15,7 @@
 + (id)sharedLogger;
 
 - (void)_captureLogMsgEvent:(id)arg1 withMergedContext:(id)arg2;
+- (id)cachedStateOfType:(int)arg1;
 - (void)captureLogMsgEvent:(id)arg1;
 - (void)captureLogMsgEvent:(id)arg1 withLogContext:(id)arg2;
 - (void)dealloc;
@@ -26,5 +28,6 @@
 - (void)unregisterAllLogContextDelegates;
 - (void)unregisterLogContextDelegate:(id)arg1;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
+- (void)updateLogMsgStatesFromCachedContextInLogMessage:(id)arg1;
 
 @end

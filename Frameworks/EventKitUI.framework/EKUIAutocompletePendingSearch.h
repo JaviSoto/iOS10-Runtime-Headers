@@ -13,10 +13,11 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)_eventKitQueue;
 + (id)_queue;
++ (void)_updateResult:(id)arg1 withEvent:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_updateResult:(id)arg1 withEvent:(id)arg2;
 - (void)cancel;
 - (id)initWithEventStore:(id)arg1 searchString:(id)arg2 maximumResultCount:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)searchWithString:(id)arg1 completionHandler:(id /* block */)arg2;

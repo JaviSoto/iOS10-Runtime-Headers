@@ -71,6 +71,7 @@
 - (id)notificationAckURL;
 - (void)refresh;
 - (id)renewRecoveryTokenURL;
+- (bool)requestNewURLBagIfNecessaryWithError:(id*)arg1;
 - (id)startProvisioningURL;
 - (id)stingrayDisableURL;
 - (id)syncAnisetteURL;

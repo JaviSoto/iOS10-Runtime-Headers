@@ -12,6 +12,8 @@
     NSString * _path;
 }
 
+@property (nonatomic, readonly) TSPDirectoryPackage *package;
+
 - (void).cxx_destruct;
 - (bool)copyToTemporaryURL:(id)arg1 encryptionInfo:(id)arg2;
 - (id)decryptionInfo;
@@ -23,6 +25,7 @@
 - (bool)isInPackage:(id)arg1;
 - (bool)isMissingData;
 - (unsigned long long)length;
+- (id)package;
 - (unsigned char)packageIdentifier;
 - (id)packageLocator;
 - (void)performIOChannelReadWithAccessor:(id /* block */)arg1;

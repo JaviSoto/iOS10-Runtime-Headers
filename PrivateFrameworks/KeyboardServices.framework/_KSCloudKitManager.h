@@ -7,6 +7,7 @@
     CKContainer * _cloudKitContainer;
     CKDatabase * _cloudKitDatabase;
     NSObject<OS_dispatch_queue> * _dataQueue;
+    CKDatabase * _publicDatabase;
     CKRecordZone * _recordZone;
     NSString * _recordZoneKey;
     NSString * _subscriptionKey;
@@ -14,6 +15,7 @@
 
 @property (nonatomic, retain) CKContainer *cloudKitContainer;
 @property (nonatomic, retain) CKDatabase *cloudKitDatabase;
+@property (nonatomic, retain) CKDatabase *publicDatabase;
 @property (nonatomic, retain) CKRecordZone *recordZone;
 @property (nonatomic, retain) NSString *recordZoneKey;
 @property (nonatomic, retain) NSString *subscriptionKey;
@@ -26,11 +28,13 @@
 - (id)cloudKitDatabase;
 - (void)dealloc;
 - (void)didStoreLocalChangesForChangeToken:(id)arg1;
+- (void)fetchPublicRecordsWithNames:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchRecordsWithPriority:(unsigned long long)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchRecordsWithPriority:(unsigned long long)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3 retryCount:(unsigned long long)arg4;
 - (id)init;
 - (id)initWithRecordZoneName:(id)arg1;
 - (bool)isAccountAvailable;
+- (id)publicDatabase;
 - (void)queryAccountStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)recordIDForName:(id)arg1;
 - (id)recordWithName:(id)arg1 type:(id)arg2 attributes:(id)arg3;
@@ -40,6 +44,7 @@
 - (id)resolveConflicts:(id)arg1;
 - (void)setCloudKitContainer:(id)arg1;
 - (void)setCloudKitDatabase:(id)arg1;
+- (void)setPublicDatabase:(id)arg1;
 - (void)setRecordZone:(id)arg1;
 - (void)setRecordZoneKey:(id)arg1;
 - (void)setSubscriptionKey:(id)arg1;
@@ -49,5 +54,6 @@
 - (id)subscriptionKey;
 - (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned long long)arg3 completionHandler:(id /* block */)arg4 retryCount:(unsigned long long)arg5;
+- (id)userIdentity;
 
 @end

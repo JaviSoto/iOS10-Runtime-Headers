@@ -78,7 +78,6 @@
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setRSSIThreshold:(long long)arg1;
 - (void)setRssiThreshold:(long long)arg1;
 - (void)setScanCache:(bool)arg1;
 - (void)setScanRate:(long long)arg1;

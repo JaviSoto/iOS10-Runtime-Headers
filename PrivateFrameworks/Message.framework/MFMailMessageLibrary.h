@@ -49,6 +49,7 @@
 - (unsigned int)_attachmentCountForAggregatedMailboxes:(id)arg1;
 - (bool)_canSelectMessagesWithOptions:(unsigned int)arg1 db:(struct sqlite3 { }*)arg2;
 - (bool)_checkpointDatabase;
+- (unsigned int)_computeUnreadCountForMailboxes:(id)arg1;
 - (id)_connectionForWriting:(bool)arg1;
 - (struct __CFDictionary { }*)_copyReferenceHashesWithoutMessagesForMessageWithConversation:(id)arg1;
 - (id)_firstDateForQuery:(id)arg1 inMailbox:(id)arg2;
@@ -240,6 +241,7 @@
 - (id)queryForCriterion:(id)arg1 db:(struct sqlite3 { }*)arg2 options:(unsigned int)arg3 baseTable:(unsigned int)arg4 isSubquery:(bool)arg5 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6;
 - (id)queryForCriterion:(id)arg1 db:(struct sqlite3 { }*)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (void)rebuildActiveAccountsClauseWithAccounts:(id)arg1;
+- (void)recomputeUnreadCountForMailboxWithURL:(id)arg1;
 - (id)referencesFromHeaders:(id)arg1;
 - (id)remoteStoreForMessage:(id)arg1;
 - (void)removeAllMessagesFromMailbox:(id)arg1 removeMailbox:(bool)arg2 andNotify:(bool)arg3;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDRequest : NSObject <ASDRequestClient> {
+@interface ASDRequest : ASDBaseClient <ASDRequestClient> {
     NSXPCConnection * _connection;
 }
 

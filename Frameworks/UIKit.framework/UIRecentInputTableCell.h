@@ -16,7 +16,6 @@
 + (id)unfocusedTextColorForBlurEffectStyle:(long long)arg1;
 
 - (void).cxx_destruct;
-- (void)_setupSelectedBackgroundView;
 - (bool)_tvIsDarkMode;
 - (void)_updateAppearance;
 - (long long)blurEffectStyle;

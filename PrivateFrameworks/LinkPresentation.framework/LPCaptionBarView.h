@@ -7,12 +7,13 @@
     LPComponentView<LPTextStyleable> * _belowBottomCaptionView;
     LPComponentView<LPTextStyleable> * _bottomCaptionView;
     bool  _hasEverBuilt;
+    LPiTunesPlaybackInformation * _iTunesPlaybackInformation;
+    LPCaptionBarAccessoryView * _leftAccessoryView;
     UIView * _leftIconView;
     LPiTunesPlayButtonView * _playButton;
     LPCaptionBarPresentationProperties * _presentationProperties;
+    LPCaptionBarAccessoryView * _rightAccessoryView;
     UIView * _rightIconView;
-    NSString * _storeIdentifier;
-    NSString * _storefrontIdentifier;
     LPCaptionBarStyle * _style;
     LPVerticalTextStackView * _textStackView;
     LPComponentView<LPTextStyleable> * _topCaptionView;
@@ -35,7 +36,7 @@
 - (id)init;
 - (id)initWithStyle:(id)arg1 presentationProperties:(id)arg2;
 - (void)layoutComponentView;
-- (void)setStoreIdentifierForPlayback:(id)arg1 withStorefrontIdentifier:(id)arg2;
+- (void)setPlaybackInformation:(id)arg1;
 - (void)setUseProgressSpinner:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)useProgressSpinner;

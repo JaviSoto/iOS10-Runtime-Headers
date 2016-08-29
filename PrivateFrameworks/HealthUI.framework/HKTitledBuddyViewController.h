@@ -5,11 +5,14 @@
 @interface HKTitledBuddyViewController : HKViewController <HKTitledBuddyHeaderViewDelegate> {
     UIVisualEffectView * _anchoredButtonContainerView;
     UIStackView * _bodyStackView;
+    NSArray * _buttons;
     UIStackView * _containerStackView;
+    HKTitledLogoBuddyHeaderView * _header;
     UIActivityIndicatorView * _loadingIndicator;
     UIScrollView * _scrollView;
 }
 
+@property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
 
 + (id)embedView:(id)arg1 inContainerViewWithMinimumEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
@@ -21,11 +24,14 @@
 - (id)bodyString;
 - (id)bottomAnchoredButtons;
 - (void)buttonAtIndexTapped:(long long)arg1;
+- (id)buttons;
+- (id)headerView;
 - (id)init;
 - (void)linkButtonTapped:(id)arg1;
 - (id)linkButtonTitle;
 - (id)loadingIndicator;
 - (void)reloadViews;
+- (bool)shouldHideNavigationBar;
 - (id)subsequentViews;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)titleImage;

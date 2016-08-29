@@ -7,7 +7,7 @@
 
 - (void)_didReceiveNotification:(UNNotification *)arg1;
 - (void)_didReceiveNotificationResponse:(UNNotificationResponse *)arg1;
-- (void)_loadAudioAccessoryView;
+- (void)_loadAudioAccessoryViewForNotification:(UNNotification *)arg1;
 - (void)_mediaPause;
 - (void)_mediaPlay;
 - (void)_updateMediaPlayPauseButton;

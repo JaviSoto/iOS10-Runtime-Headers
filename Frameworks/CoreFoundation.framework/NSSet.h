@@ -124,6 +124,10 @@
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (void)ph_enumerateIntersectionWithSet:(id)arg1 usingBlock:(id /* block */)arg2;
+
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;
@@ -157,6 +161,19 @@
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
 - (id)DACompactDescription;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
++ (id)fm_setWithSafeObject:(id)arg1;
+
+- (bool)fm_any:(id /* block */)arg1;
+- (void)fm_each:(id /* block */)arg1;
+- (id)fm_filter:(id /* block */)arg1;
+- (id)fm_firstObjectPassingTest:(id /* block */)arg1;
+- (id)fm_map:(id /* block */)arg1;
+- (id)fm_setByFlattening;
+- (id)fm_setByIntersectingWithSet:(id)arg1;
+- (id)fm_setByRemovingObjectsFromSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FriendKit.framework/FriendKit
 
@@ -207,6 +224,7 @@
 
 + (id)na_setWithSafeObject:(id)arg1;
 
+- (bool)na_all:(id /* block */)arg1;
 - (bool)na_any:(id /* block */)arg1;
 - (void)na_each:(id /* block */)arg1;
 - (id)na_filter:(id /* block */)arg1;
@@ -289,6 +307,7 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
++ (id)tsp_consolidateFeatureInfos:(id)arg1 andReturnReadVersion:(out unsigned long long*)arg2 writeVersion:(out unsigned long long*)arg3;
 + (id)tsu_intersectionOfSets:(id)arg1;
 + (bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;

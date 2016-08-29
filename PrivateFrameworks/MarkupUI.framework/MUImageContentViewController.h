@@ -5,6 +5,7 @@
 @interface MUImageContentViewController : MUContentViewController <MUContentViewControllerAKControllerSubdelegate, MUContentViewControllerProtocol, UIScrollViewDelegate> {
     bool  _centersIgnoringContentInsets;
     UIView * _combinedContentView;
+    bool  _didSetup;
     double  _downsampledImageScale;
     struct UIEdgeInsets { 
         double top; 
@@ -15,6 +16,7 @@
     UIImageView * _imageView;
     bool  _inDoubleTapZoom;
     id /* block */  _loadCompletionBlock;
+    UITapGestureRecognizer * _localDoubleTapRecognizer;
     double  _maxImageDimension;
     struct CGPoint { 
         double x; 
@@ -32,12 +34,14 @@
 @property (nonatomic, retain) UIView *combinedContentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property bool didSetup;
 @property double downsampledImageScale;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic) bool inDoubleTapZoom;
 @property (copy) id /* block */ loadCompletionBlock;
+@property (retain) UITapGestureRecognizer *localDoubleTapRecognizer;
 @property double maxImageDimension;
 @property (nonatomic) bool navigationModeHorizontal;
 @property (readonly) unsigned long long pageCount;
@@ -58,6 +62,7 @@
 - (void)_prepareToRotate;
 - (void)_recoverFromRotation;
 - (void)_setupScrollViewForImageOfScaledSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_uninstallOverlayOfController:(id)arg1 forPageAtIndex:(unsigned long long)arg2;
 - (void)_updateMinMaxZoomFactor;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_zoomRectForScale:(double)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2;
 - (double)_zoomToFitZoomFactor;
@@ -73,6 +78,7 @@
 - (void)didEnterToolMode;
 - (void)didExitToolMode;
 - (void)didReceiveMemoryWarning;
+- (bool)didSetup;
 - (double)downsampledImageScale;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (struct CGSize { double x1; double x2; })idealContentSizeForScreenSize:(struct CGSize { double x1; double x2; })arg1 windowDecorationSize:(struct CGSize { double x1; double x2; })arg2;
@@ -81,7 +87,7 @@
 - (id)initWithAnnotationController:(id)arg1;
 - (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned long long)arg1;
 - (id /* block */)loadCompletionBlock;
-- (void)loadView;
+- (id)localDoubleTapRecognizer;
 - (double)maxImageDimension;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned long long)arg1;
 - (id)newContentSnapshotPDFDataIncludingAdornments:(bool)arg1 atScale:(double)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 onOverlayAtPageIndex:(unsigned long long)arg4;
@@ -89,6 +95,7 @@
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setCentersIgnoringContentInsets:(bool)arg1;
 - (void)setCombinedContentView:(id)arg1;
+- (void)setDidSetup:(bool)arg1;
 - (void)setDownsampledImageScale:(double)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setImage:(id)arg1;
@@ -96,6 +103,7 @@
 - (void)setImageView:(id)arg1;
 - (void)setInDoubleTapZoom:(bool)arg1;
 - (void)setLoadCompletionBlock:(id /* block */)arg1;
+- (void)setLocalDoubleTapRecognizer:(id)arg1;
 - (void)setMaxImageDimension:(double)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setSourceImagePixelSize:(struct CGSize { double x1; double x2; })arg1;
@@ -104,6 +112,8 @@
 - (bool)shouldPlaceFormElementAtPoint:(struct CGPoint { double x1; double x2; })arg1 onOverlayAtPageIndex:(unsigned long long)arg2;
 - (bool)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned long long)arg2;
 - (struct CGSize { double x1; double x2; })sourceImagePixelSize;
+- (void)teardown;
+- (void)uninstallAllAnnotationControllerOverlays;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

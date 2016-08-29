@@ -5,6 +5,7 @@
 @interface CKUIBehaviorNano : CKUIBehavior
 
 - (struct CGSize { double x1; double x2; })aggregateAcknowledgmentTranscriptBalloonSize;
+- (id)arouetReplyImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsets;
 - (struct CGSize { double x1; double x2; })attachmentBalloonSize;
 - (id)attachmentTextFont;
@@ -72,7 +73,6 @@
 - (struct CGPoint { double x1; double x2; })messageAcknowledgmentTranscriptBalloonRelativePosition;
 - (struct CGSize { double x1; double x2; })messageAcknowledgmentTranscriptBalloonSize;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })messageAcknowledgmentTranscriptGlyphInset;
-- (id)messageReplyImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minTranscriptMarginInsets;
 - (bool)opensLocationsInMapsApp;
 - (id)playButtonArrowImage;

@@ -18,6 +18,7 @@
     NSMutableArray * _requestedComponents;
     NSMutableArray * _spokenLanguages;
     bool  _suppressResultsRequiringAttribution;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSMutableArray *requestedComponents;
 @property (nonatomic, retain) NSMutableArray *spokenLanguages;
 @property (nonatomic) bool suppressResultsRequiringAttribution;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)displayLanguageType;
 + (Class)requestedComponentType;
@@ -130,6 +132,7 @@
 - (id)spokenLanguages;
 - (unsigned long long)spokenLanguagesCount;
 - (bool)suppressResultsRequiringAttribution;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

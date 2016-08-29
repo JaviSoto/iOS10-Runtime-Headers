@@ -92,7 +92,7 @@
 @property (nonatomic) unsigned long long schedulingPriority;
 @property (nonatomic, retain) NSDate *startAfter;
 @property (nonatomic, retain) NSDate *startBefore;
-@property (nonatomic, retain) NSDate *startDate;
+@property (retain) NSDate *startDate;
 @property (nonatomic, copy) id /* block */ startHandler;
 @property (nonatomic, retain) NSDate *submitDate;
 @property (nonatomic) bool supportsAnyApplication;

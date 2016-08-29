@@ -24,6 +24,7 @@
     PHAAnalysisStateObserver * _stateObserver;
     NSMutableArray * _waitingForegroundJobs;
     PHAWorkerWarmer * _warmer;
+    NSMutableSet * _workerTypesServicedForUserFG;
     NSDictionary * _workersByType;
 }
 
@@ -53,9 +54,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSMutableArray *waitingForegroundJobs;
 @property (nonatomic, readonly) PHAWorkerWarmer *warmer;
+@property (nonatomic, retain) NSMutableSet *workerTypesServicedForUserFG;
 @property (nonatomic, readonly) NSDictionary *workersByType;
 
 - (void).cxx_destruct;
+- (void)_cleanupStuckAnalysisState;
 - (id)_defaultWorkersByType;
 - (void)_dispatchTransactionAsyncWithName:(const char *)arg1 block:(id /* block */)arg2;
 - (void)_inq_enforceTimeoutForJob:(id)arg1;
@@ -98,7 +101,7 @@
 - (bool)isQuiescent;
 - (id)jobCoalescer;
 - (void)jobCoalescer:(id)arg1 didProduceJob:(id)arg2;
-- (void)jobConstraintsObserver:(id)arg1 constraintsDidChange:(id)arg2;
+- (void)jobConstraintsObserver:(id)arg1 constraintsDidChange:(id)arg2 mask:(id)arg3;
 - (id)jobGenerator;
 - (id)maintenanceTimer;
 - (id)manager;
@@ -120,11 +123,13 @@
 - (void)setQueue:(id)arg1;
 - (void)setRunningJobTransaction:(id)arg1;
 - (void)setShouldIgnoreConstraintChanges:(bool)arg1;
+- (void)setWorkerTypesServicedForUserFG:(id)arg1;
 - (bool)shouldIgnoreConstraintChanges;
 - (id)stateObserver;
 - (id)statusAsDictionary;
 - (id)waitingForegroundJobs;
 - (id)warmer;
+- (id)workerTypesServicedForUserFG;
 - (id)workersByType;
 
 @end

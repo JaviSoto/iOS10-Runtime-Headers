@@ -11,6 +11,7 @@
     NSMutableOrderedSet * _clientAssetsInProgress;
     NSMutableOrderedSet * _clientAssetsRemaining;
     NSMutableDictionary * _detailedProgress;
+    bool  _handledTaskCompletion;
     bool  _peerRequestsComplete;
     bool  _requestsComplete;
     NSMutableOrderedSet * _serverAssetsInProgress;

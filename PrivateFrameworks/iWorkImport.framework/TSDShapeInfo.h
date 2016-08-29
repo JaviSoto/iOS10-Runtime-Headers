@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDShapeInfo : TSDStyledInfo <TSDInfoWithPathSource, TSDMixing, TSDReducableInfo, TSKSearchable> {
+@interface TSDShapeInfo : TSDStyledInfo <TSDCompatibilityAwareMediaContainer, TSDInfoWithPathSource, TSDMixing, TSDReducibleImageContainer, TSKSearchable> {
     TSDPathSource * mPathSource;
     TSDShapeStyle * mStyle;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) TSDFill *fill;
@@ -30,11 +31,11 @@
 
 - (id)animationFilters;
 - (id)copyWithContext:(id)arg1;
+- (id)datasForReplacingMediaContentsWithAssociatedHints;
 - (void)dealloc;
 - (int)elementKind;
 - (id)fill;
 - (id)headLineEnd;
-- (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
@@ -46,6 +47,7 @@
 - (bool)isValidShapeToUnarchive;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ShapeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct Reference {} *x6; struct PathSourceArchive {} *x7; struct LineEndArchive {} *x8; struct LineEndArchive {} *x9; }*)arg1 unarchiver:(id)arg2;
+- (long long)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)objectForProperty:(int)arg1;

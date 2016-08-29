@@ -53,9 +53,10 @@
 - (double)defaultPaddingBetweenHeaderAndRowsForTableView:(id)arg1;
 - (double)defaultPaddingBetweenRowsForTableView:(id)arg1;
 - (double)defaultPlainFirstSectionHeaderHeightForTableView:(id)arg1;
-- (double)defaultPlainHeaderLabelYPositionForTableView:(id)arg1 headerBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 textRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (double)defaultPlainHeaderLabelYPositionForTableView:(id)arg1 headerBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 textRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 isHeader:(bool)arg4;
 - (id)defaultReorderControlImageForCell:(id)arg1 inTableView:(id)arg2;
 - (struct CGSize { double x1; double x2; })defaultReorderControlSizeForCell:(id)arg1 inTableView:(id)arg2;
+- (bool)defaultRowHeightDependsOnCellStyle;
 - (double)defaultRowHeightForTableView:(id)arg1;
 - (double)defaultRowHeightForTableView:(id)arg1 cellStyle:(long long)arg2;
 - (double)defaultSectionContentMarginWidthForTableView:(id)arg1;

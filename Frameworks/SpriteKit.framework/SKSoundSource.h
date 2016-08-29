@@ -25,7 +25,7 @@
 - (id)init;
 - (bool)isPlaying;
 - (void)pause;
-- (void)play;
+- (bool)play;
 - (struct CGPoint { double x1; double x2; })position;
 - (void)purgeCompletedBuffers;
 - (void)queueBuffer:(id)arg1;

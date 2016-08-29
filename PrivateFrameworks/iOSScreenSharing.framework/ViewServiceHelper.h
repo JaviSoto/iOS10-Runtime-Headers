@@ -21,6 +21,7 @@
 - (id)listener;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)pauseResumeResponse:(id)arg1;
+- (void)pidNotification:(id)arg1;
 - (void)run;
 - (void)setDelegate:(id)arg1;
 - (void)setListener:(id)arg1;

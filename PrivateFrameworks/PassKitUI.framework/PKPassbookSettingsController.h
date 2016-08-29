@@ -40,6 +40,7 @@
 - (void).cxx_destruct;
 - (void)_addPaymentCard;
 - (id)_bridgeSpecifiers;
+- (void)_canTransferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_companionPassSpecifiers;
 - (id)_currentDefaultPaymentPass;
 - (id)_defaultContactEmailSpecifier;

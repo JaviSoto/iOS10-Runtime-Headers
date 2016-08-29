@@ -10,12 +10,14 @@
     int  _pendingUpdates;
     long long  _recentClientCount;
     bool  _updating;
+    NSUUID * _userDictionaryUUID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSUUID *userDictionaryUUID;
 
 + (double)decrementClientDelay;
 + (id)sharedInstance;
@@ -32,6 +34,8 @@
 - (void)managedKeyboardSettingsDidChange:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)resetCache;
+- (void)setUserDictionaryUUID:(id)arg1;
 - (void)updateCache;
+- (id)userDictionaryUUID;
 
 @end

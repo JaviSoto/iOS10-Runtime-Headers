@@ -22,11 +22,11 @@
 - (void)_setCapabilities:(unsigned long long)arg1;
 - (void)_setStorefrontIdentifier:(id)arg1;
 - (void)_storefrontDidChangeNotification;
-- (bool)canPlayMusicForItemWithStorefrontIdentifier:(id)arg1;
 - (unsigned long long)capabilities;
 - (id)init;
 - (void)registerForStoreAvailablityChangesWithToken:(id)arg1 handler:(id /* block */)arg2;
 - (id)storefrontIdentifier;
 - (void)unregisterForStoreAvailablityChangesWithToken:(id)arg1;
+- (unsigned long long)userStateForMediaStorefrontIdentifier:(id)arg1;
 
 @end

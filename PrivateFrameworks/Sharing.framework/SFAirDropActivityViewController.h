@@ -26,6 +26,7 @@
     UIVisualEffectView * _instructionsVibrancyView;
     bool  _itemsReady;
     bool  _itemsRequested;
+    struct __SFOperation { } * _logger;
     UILabel * _noAWDLLabel;
     NSLayoutConstraint * _noAWDLRightConstraint;
     UILabel * _noWifiLabel;

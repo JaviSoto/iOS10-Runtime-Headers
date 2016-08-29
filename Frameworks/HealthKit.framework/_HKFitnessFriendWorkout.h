@@ -22,7 +22,6 @@
 @property (nonatomic) double duration;
 @property (nonatomic, readonly) NSDate *filter_date;
 @property (nonatomic, readonly) NSUUID *filter_friendUUID;
-@property (nonatomic, readonly) bool filter_shouldUseDeviceTimestamp;
 @property (nonatomic, retain) NSUUID *friendUUID;
 @property (nonatomic, retain) HKQuantity *goal;
 @property (nonatomic) unsigned long long goalType;
@@ -38,7 +37,7 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)fitnessFriendWorkoutFromHKWorkout:(id)arg1;
-+ (id)fitnessFriendworkoutWithActivityType:(unsigned long long)arg1 friendUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned long long)arg9 goal:(id)arg10 bundleID:(id)arg11 isWatchWorkout:(bool)arg12;
++ (id)fitnessFriendworkoutWithActivityType:(unsigned long long)arg1 friendUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned long long)arg9 goal:(id)arg10 bundleID:(id)arg11 isWatchWorkout:(bool)arg12 isIndoorWorkout:(bool)arg13;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -79,7 +78,6 @@
 - (id)codableRepresentationForSync;
 - (id)filter_date;
 - (id)filter_friendUUID;
-- (bool)filter_shouldUseDeviceTimestamp;
 - (id)recordWithZoneID:(id)arg1;
 
 @end

@@ -25,9 +25,9 @@
 + (bool)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (double)defaultTimeoutInterval;
++ (id)frRequestWithURL:(id)arg1;
++ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 + (id)getObjectKeyWithIndex:(long long)arg1;
-+ (id)requestWithURL:(id)arg1;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 + (void)setAllowsAnyHTTPSCertificate:(bool)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setDefaultTimeoutInterval:(double)arg1;
@@ -91,6 +91,13 @@
 - (id)_gkDictionaryKey;
 - (id)_gkSAPSession;
 - (void)_gkSetSAPSession:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (void)load;
++ (id)overrideUserAgent;
++ (id)requestWithURL:(id)arg1;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 

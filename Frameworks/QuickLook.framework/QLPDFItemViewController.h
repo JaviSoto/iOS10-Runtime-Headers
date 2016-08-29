@@ -7,6 +7,7 @@
     bool  _isFullScreen;
     long long  _lastSavedEditNumber;
     QLMUViewController * _markupViewController;
+    bool  _showingSignatureView;
     double  _topInset;
 }
 
@@ -35,16 +36,17 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customSketchOverlayInsets;
 - (bool)hasChangesToUndo;
-- (void)hideNavbar:(bool)arg1;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)previewBecameFullScreen:(bool)arg1 animated:(bool)arg2;
 - (void)previewDidDisappear:(bool)arg1;
+- (void)previewWillAppear:(bool)arg1;
 - (void)previewWillDisappear:(bool)arg1;
 - (id)scrollView;
 - (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setHasChangesToUndo:(bool)arg1;
 - (void)setTopInset:(double)arg1;
 - (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (void)showingSignatureView:(bool)arg1;
 - (id)toolbarButtons;
 - (double)topInset;
 - (void)traitCollectionDidChange:(id)arg1;

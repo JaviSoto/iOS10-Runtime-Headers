@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUReviewAsset : NSObject <PUEditableAsset> {
+@interface PUReviewAsset : NSObject <PUCAMReviewAsset, PUEditableAsset> {
     bool  _HDR;
+    PFAssetAdjustments * _assetAdjustments;
     NSString * _burstIdentifier;
+    bool  _canPlayPhotoIris;
     NSDate * _creationDate;
     double  _duration;
     NSString * _identifier;
@@ -29,13 +31,11 @@
     unsigned long long  _numberOfRepresentedAssets;
     unsigned long long  _pixelHeight;
     unsigned long long  _pixelWidth;
-    PHAdjustmentData * _providedAdjustmentData;
     NSURL * _providedFullsizeImageURL;
     NSURL * _providedFullsizeRenderImageURL;
     NSURL * _providedFullsizeRenderVideoURL;
     NSDictionary * _providedImageMetadata;
     UIImage * _providedPreviewImage;
-    NSDictionary * _providedVideoAdjustments;
     NSURL * _providedVideoURL;
     bool  _representsBurst;
 }
@@ -43,6 +43,7 @@
 @property (getter=isHDR, nonatomic, readonly) bool HDR;
 @property (getter=isAdjusted, nonatomic, readonly) bool adjusted;
 @property (nonatomic, readonly) double aspectRatio;
+@property (nonatomic, readonly) PFAssetAdjustments *assetAdjustments;
 @property (nonatomic, readonly, copy) NSString *burstIdentifier;
 @property (nonatomic, readonly) bool canPlayPhotoIris;
 @property (getter=isContentAdjustmentAllowed, nonatomic, readonly) bool contentAdjustmentAllowed;
@@ -80,13 +81,14 @@
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
 @property (nonatomic, readonly) unsigned long long pixelHeight;
 @property (nonatomic, readonly) unsigned long long pixelWidth;
-@property (nonatomic, readonly) PHAdjustmentData *providedAdjustmentData;
+@property (nonatomic, readonly) AVAsset *providedAVAsset;
+@property (nonatomic, readonly) AVAudioMix *providedAudioMix;
 @property (nonatomic, readonly) NSURL *providedFullsizeImageURL;
 @property (nonatomic, readonly) NSURL *providedFullsizeRenderImageURL;
 @property (nonatomic, readonly) NSURL *providedFullsizeRenderVideoURL;
 @property (nonatomic, readonly) NSDictionary *providedImageMetadata;
+@property (nonatomic, readonly) PHLivePhoto *providedLivePhoto;
 @property (nonatomic, readonly) UIImage *providedPreviewImage;
-@property (nonatomic, readonly) NSDictionary *providedVideoAdjustments;
 @property (nonatomic, readonly) NSURL *providedVideoURL;
 @property (nonatomic, readonly) bool representsBurst;
 @property (getter=isResourceDownloadPossible, nonatomic, readonly) bool resourceDownloadPossible;
@@ -109,6 +111,7 @@
 - (void)_removeFileAtURL:(id)arg1;
 - (id)_uniqueDestinationURLForFileURL:(id)arg1 inDirectory:(id)arg2;
 - (double)aspectRatio;
+- (id)assetAdjustments;
 - (id)burstIdentifier;
 - (bool)canPlayPhotoIris;
 - (void)cancelContentEditingInputRequest:(unsigned long long)arg1;
@@ -126,7 +129,9 @@
 - (id)initWithPhoto:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 captureDate:(id)arg4 metadata:(id)arg5 burstIdentifier:(id)arg6 representedCount:(unsigned long long)arg7 fullsizeImageURL:(id)arg8 identifier:(id)arg9;
 - (id)initWithReviewAsset:(id)arg1;
 - (id)initWithReviewAsset:(id)arg1 baseImageURL:(id)arg2 renderedImageURL:(id)arg3 baseVideoURL:(id)arg4 renderedVideoURL:(id)arg5 pixelWidth:(unsigned long long)arg6 pixelHeight:(unsigned long long)arg7 assetAdjustments:(id)arg8 duration:(double)arg9;
+- (id)initWithReviewAsset:(id)arg1 baseImageURL:(id)arg2 renderedImageURL:(id)arg3 baseVideoURL:(id)arg4 renderedVideoURL:(id)arg5 previewImage:(id)arg6 pixelWidth:(unsigned long long)arg7 pixelHeight:(unsigned long long)arg8 assetAdjustments:(id)arg9 duration:(double)arg10;
 - (id)initWithReviewAsset:(id)arg1 linkFileURLsToUniquePathsInDirectory:(id)arg2;
+- (id)initWithReviewAsset:(id)arg1 linkFileURLsToUniquePathsInDirectory:(id)arg2 canPlayPhotoIris:(bool)arg3;
 - (id)initWithReviewAsset:(id)arg1 primaryResourceURL:(id)arg2;
 - (bool)isAdjusted;
 - (bool)isContentAdjustmentAllowed;
@@ -158,14 +163,12 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (unsigned long long)pixelHeight;
 - (unsigned long long)pixelWidth;
-- (id)providedAdjustmentData;
 - (id)providedFullsizeImageURL;
 - (id)providedFullsizeRenderImageURL;
 - (id)providedFullsizeRenderVideoURL;
 - (id)providedImageMetadata;
 - (id)providedImageURLForImageVersion:(long long)arg1;
 - (id)providedPreviewImage;
-- (id)providedVideoAdjustments;
 - (id)providedVideoURL;
 - (id)providedVideoURLForImageVersion:(long long)arg1;
 - (id)providedVideoURLForVideoVersion:(long long)arg1;

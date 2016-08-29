@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
+@interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton, PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
     CLInUseAssertion * _CLInUse;
     PKPaymentSetupCardDetailsFooterView * _cardDetailsFooterView;
     bool  _hideSetupLaterButton;

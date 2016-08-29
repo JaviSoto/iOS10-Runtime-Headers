@@ -41,6 +41,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *invalidationContexts;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } referenceSize;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *tilingControllersRequestingFocus;
@@ -76,6 +77,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromTilingController:(id)arg2;
 - (id)convertScrollInfo:(id)arg1 fromTilingController:(id)arg2;
 - (id)init;
+- (id)invalidationContexts;
 - (struct CGPoint { double x1; double x2; })originForTilingController:(id)arg1;
 - (struct CGPoint { double x1; double x2; })preferredOriginForTilingController:(id)arg1;
 - (struct CGSize { double x1; double x2; })referenceSize;

@@ -3,7 +3,7 @@
  */
 
 @interface WKPaymentAuthorizationViewControllerDelegate : NSObject <PKPaymentAuthorizationViewControllerDelegate, PKPaymentAuthorizationViewControllerPrivateDelegate> {
-    bool  _authorized;
+    bool  _didReachFinalState;
     struct BlockPtr<void (NSArray *)>="m_block"@? {}  _didSelectPaymentMethodCompletion;
     struct BlockPtr<void (PKPaymentAuthorizationStatus, NSArray *, NSArray *)>="m_block"@? {}  _didSelectShippingContactCompletion;
     struct BlockPtr<void (PKPaymentAuthorizationStatus, NSArray *)>="m_block"@? {}  _didSelectShippingMethodCompletion;

@@ -7,7 +7,6 @@
 - (void)_adjustTitle;
 - (id)init;
 - (void)setSpecifier:(id)arg1;
-- (bool)shouldReloadSpecifiersOnResume;
 - (id)specifiers;
 
 @end

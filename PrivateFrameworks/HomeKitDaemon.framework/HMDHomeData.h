@@ -3,6 +3,7 @@
  */
 
 @interface HMDHomeData : NSObject {
+    bool  _accessAllowedWhenLocked;
     NSArray * _accessories;
     HMDAccount * _account;
     HMDApplicationData * _applicationData;
@@ -10,6 +11,8 @@
     NSString * _currentDevice;
     NSUUID * _dataTag;
     long long  _dataVersion;
+    NSDictionary * _demoAccessories;
+    bool  _demoFinalized;
     NSArray * _homes;
     NSArray * _incomingInvitations;
     NSUUID * _lastCurrentHomeUUID;
@@ -20,6 +23,7 @@
     NSArray * _uuidsOfRemovedHomes;
 }
 
+@property (nonatomic, readonly) bool accessAllowedWhenLocked;
 @property (nonatomic, readonly, copy) NSArray *accessories;
 @property (nonatomic, readonly) HMDAccount *account;
 @property (nonatomic, readonly, copy) HMDApplicationData *applicationData;
@@ -27,6 +31,8 @@
 @property (nonatomic, readonly, copy) NSString *currentDevice;
 @property (nonatomic, readonly, copy) NSUUID *dataTag;
 @property (nonatomic, readonly) long long dataVersion;
+@property (nonatomic, readonly, copy) NSDictionary *demoAccessories;
+@property (nonatomic, readonly) bool demoFinalized;
 @property (nonatomic, readonly, copy) NSArray *homes;
 @property (nonatomic, readonly, copy) NSArray *incomingInvitations;
 @property (nonatomic, readonly, copy) NSUUID *lastCurrentHomeUUID;
@@ -37,6 +43,7 @@
 @property (nonatomic, readonly, copy) NSArray *uuidsOfRemovedHomes;
 
 - (void).cxx_destruct;
+- (bool)accessAllowedWhenLocked;
 - (id)accessories;
 - (id)account;
 - (id)applicationData;
@@ -44,9 +51,11 @@
 - (id)currentDevice;
 - (id)dataTag;
 - (long long)dataVersion;
+- (id)demoAccessories;
+- (bool)demoFinalized;
 - (id)homes;
 - (id)incomingInvitations;
-- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 lastCurrentHomeUUID:(id)arg4 dataVersion:(long long)arg5 dataTag:(id)arg6 uuidsOfRemovedHomes:(id)arg7 incomingInvitations:(id)arg8 assistantGenerationCounter:(unsigned long long)arg9 currentDevice:(id)arg10 pendingReasonSaved:(id)arg11 pendingUserManagementOperations:(id)arg12 applicationData:(id)arg13 residentEnabledState:(long long)arg14 account:(id)arg15;
+- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 lastCurrentHomeUUID:(id)arg4 dataVersion:(long long)arg5 dataTag:(id)arg6 uuidsOfRemovedHomes:(id)arg7 incomingInvitations:(id)arg8 assistantGenerationCounter:(unsigned long long)arg9 currentDevice:(id)arg10 pendingReasonSaved:(id)arg11 pendingUserManagementOperations:(id)arg12 applicationData:(id)arg13 residentEnabledState:(long long)arg14 account:(id)arg15 accessAllowedWhenLocked:(bool)arg16 demoAccessories:(id)arg17 demoFinalized:(bool)arg18;
 - (id)lastCurrentHomeUUID;
 - (id)pendingReasonSaved;
 - (id)pendingUserManagementOperations;

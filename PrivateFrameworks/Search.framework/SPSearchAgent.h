@@ -23,6 +23,7 @@
     NSString * _lastVoiceQuery;
     bool  _liveAndCached;
     NSMutableArray * _mutableSections;
+    NSString * _mutableSessionEntityString;
     bool  _newQuery;
     bool  _observersAdded;
     bool  _oneShotZKWSEnabled;
@@ -39,6 +40,7 @@
     bool  _searchThroughAllowed;
     NSArray * _sections;
     int  _seqNo;
+    NSString * _sessionEntityString;
     bool  _shouldCacheResults;
     int  _storedSeqNo;
     <SPSearchSuggestionsDelegate> * _suggestionsDelegate;
@@ -62,6 +64,7 @@
 @property (nonatomic, retain) NSString *rankingDebugLog;
 @property (nonatomic, retain) NSArray *searchDomains;
 @property (readonly) NSArray *sections;
+@property (readonly) NSString *sessionEntityString;
 @property (nonatomic) <SPSearchSuggestionsDelegate> *suggestionsDelegate;
 @property (readonly) Class superclass;
 @property (readonly) NSString *web_fbq;
@@ -72,6 +75,7 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (bool)_setSearchDomains:(id)arg1;
 - (bool)_shouldIgnoreQuery:(id)arg1;
 - (bool)_shouldPromptUserToOpenTTR;
 - (void)activate;
@@ -81,7 +85,8 @@
 - (void)cachedZKWAvailable:(bool)arg1;
 - (void)cancelCurrentQuery;
 - (void)clear;
-- (void)clearInternal:(int)arg1;
+- (void)clearInternal:(int)arg1 invalidate:(bool)arg2;
+- (void)clearLastQueryString;
 - (long long)contentFilters;
 - (int)currentQuerySeqNo;
 - (void)deactivate;
@@ -90,7 +95,7 @@
 - (void)disableUpdates;
 - (void)enableUpdates;
 - (id)fbq;
-- (void)finishRanking:(id)arg1;
+- (void)finishRanking:(id)arg1 blendingDuration:(double)arg2;
 - (bool)forceStableResults;
 - (id)getTapToRadarPunchOutForRanking;
 - (void)handleHiddenResult:(id)arg1 shownResult:(id)arg2 inSection:(id)arg3;
@@ -101,6 +106,7 @@
 - (id)initWithZKWLevel:(int)arg1 andOptions:(int)arg2;
 - (void)internetDomainsChanged;
 - (void)invalidateCurrentQuery;
+- (void)invalidateCurrentQuery:(bool)arg1;
 - (int)levelZKW;
 - (void)mergeSections;
 - (int)options;
@@ -115,15 +121,16 @@
 - (id)queryProcessor;
 - (id)queryString;
 - (id)rankingDebugLog;
-- (id)resultWithIdentifier:(id)arg1 title:(id)arg2 url:(id)arg3 fbr:(id)arg4;
+- (id)resultWithIdentifier:(id)arg1 title:(id)arg2 url:(id)arg3;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
-- (void)searchDaemonQuery:(id)arg1 gotResultSet:(id)arg2 replace:(bool)arg3 complete:(bool)arg4 finished:(bool)arg5;
+- (void)searchDaemonQuery:(id)arg1 gotResultSet:(id)arg2 replace:(bool)arg3 complete:(bool)arg4 finished:(bool)arg5 blendingDuration:(double)arg6 geoEntityString:(id)arg7;
 - (void)searchDaemonRankingLog:(id)arg1;
 - (void)searchDaemonSuggestionsArray:(id)arg1;
 - (id)searchDomains;
 - (id)sectionAtIndex:(unsigned int)arg1;
 - (unsigned long long)sectionCount;
 - (id)sections;
+- (id)sessionEntityString;
 - (void)setDelegate:(id)arg1;
 - (void)setForceStableResults:(bool)arg1;
 - (void)setInfinitePatience:(bool)arg1;
@@ -138,8 +145,7 @@
 - (void)setRankingDebugLog:(id)arg1;
 - (void)setSearchDomains:(id)arg1;
 - (void)setSuggestionsDelegate:(id)arg1;
-- (void)stuffChanged;
-- (void)stuffChangedNotification;
+- (void)settingsChanged;
 - (id)suggestionsDelegate;
 - (void)updateResultsThroughDelegate;
 - (void)updateResultsThroughDelegate:(bool)arg1 complete:(bool)arg2;

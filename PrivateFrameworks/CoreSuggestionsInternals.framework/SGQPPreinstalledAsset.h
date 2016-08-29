@@ -7,9 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)_readPlist:(id)arg1 property:(id)arg2;
+- (id)_pathForResourceWithName:(id)arg1 extension:(id)arg2;
 - (unsigned long long)assetVersion;
 - (id)initWithPath:(id)arg1 language:(id)arg2 abGroup:(id)arg3;
-- (id)phraseBookPath;
 
 @end

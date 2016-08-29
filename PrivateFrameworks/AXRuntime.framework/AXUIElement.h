@@ -21,6 +21,7 @@
 + (struct __AXUIElement { }*)systemWideAXUIElement;
 + (id)uiApplicationAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
++ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 forApplication:(struct __AXUIElement { }*)arg2 contextId:(unsigned int)arg3;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 hitTestOrientation:(int)arg2;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 startWithElement:(id)arg2;
 + (id)uiElementWithAXElement:(struct __AXUIElement { }*)arg1;

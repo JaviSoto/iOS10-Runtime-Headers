@@ -59,6 +59,7 @@
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (unsigned long long)layoutMode;
+- (id)nameLayoutAttributesCollectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)prepareForAnimation;
 - (void)prepareLayout;
 - (void)setAttrCollection:(id)arg1;

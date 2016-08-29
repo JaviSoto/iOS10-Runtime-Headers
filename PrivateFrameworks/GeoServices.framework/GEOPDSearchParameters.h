@@ -17,6 +17,7 @@
     GEOPDAutocompleteEntry * _suggestionEntry;
     NSData * _suggestionEntryMetadata;
     NSData * _suggestionMetadata;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) GEOPDAutocompleteEntry *suggestionEntry;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
 @property (nonatomic, retain) NSData *suggestionMetadata;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (int)StringAsSearchType:(id)arg1;
@@ -87,6 +89,7 @@
 - (id)suggestionEntry;
 - (id)suggestionEntryMetadata;
 - (id)suggestionMetadata;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

@@ -31,7 +31,7 @@
     double  _lastTouchTimestamp;
     id  _layerContext;
     bool  _notedOverlayInsetChange;
-    UIView * _rememberedFocusedView;
+    <UIFocusItem> * _rememberedFocusedItem;
     CALayer * _rootLayer;
     NSArray * _rootViewConstraints;
     UIViewController * _rootViewController;
@@ -87,7 +87,6 @@
         unsigned int statusBarFollowsOrientation : 1; 
         unsigned int secure : 1; 
         unsigned int isMainSceneSized : 1; 
-        unsigned int debugNeedsFocusItemOverlayUpdate : 1; 
         unsigned int didSetRestorationIdentifier : 1; 
         unsigned int resigningFirstResponderFromHost : 1; 
     }  _windowFlags;
@@ -118,6 +117,7 @@
 @property (getter=_fromWindowOrientation, setter=_setFromWindowOrientation:, nonatomic) long long fromWindowOrientation;
 @property (readonly) unsigned long long hash;
 @property (getter=isKeyWindow, nonatomic, readonly) bool keyWindow;
+@property (getter=_rememberedFocusedItem, setter=_setRememberedFocusedItem:, nonatomic) <UIFocusItem> *rememberedFocusedItem;
 @property (nonatomic, retain) UIViewController *rootViewController;
 @property (nonatomic, retain) UIScreen *screen;
 @property (readonly) Class superclass;
@@ -192,6 +192,7 @@
 - (void)_addTintView:(id)arg1;
 - (void)_adjustSizeClassesAndResizeWindowToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)_adjustedWindowLevelFromLevel:(double)arg1;
+- (bool)_allowsLinkPreviewInteractionInViewServices;
 - (bool)_alwaysGetsContexts;
 - (id)_animationController;
 - (id)_appearanceContainer;
@@ -255,6 +256,7 @@
 - (void)_destroyContext;
 - (void)_detachSceneLayer;
 - (void)_didSnapshot;
+- (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (bool)_disableAutomaticKeyboardBehavior;
 - (bool)_disableAutomaticKeyboardUI;
 - (bool)_disableGroupOpacity;
@@ -321,6 +323,7 @@
 - (long long)_orientationForRootTransform;
 - (long long)_orientationForViewTransform;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_overlayInsets;
+- (id)_overridingDestinationEnvironmentForFocusUpdateInContext:(id)arg1;
 - (id)_parentFocusEnvironment;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(long long)arg3;
 - (void)_propagateTraitCollectionChangedForStateRestoration;
@@ -329,6 +332,7 @@
 - (void)_registerScrollToTopView:(id)arg1;
 - (void)_registerViewForSubtreeMonitoring:(id)arg1;
 - (id)_registeredScrollToTopViews;
+- (id)_rememberedFocusedItem;
 - (void)_removeAllViewControllersFromWindowHierarchy;
 - (void)_removeFocusEngine;
 - (void)_removeRotationViewController:(id)arg1;
@@ -372,6 +376,7 @@
 - (void)_setLegacyOrientationChecks:(bool)arg1;
 - (void)_setMouseDownView:(id)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (void)_setMouseEnteredView:(id)arg1;
+- (void)_setRememberedFocusedItem:(id)arg1;
 - (void)_setRepresentsSelfHostedContent:(bool)arg1;
 - (void)_setRootViewConstraints:(id)arg1;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(long long)arg2 updateStatusBar:(bool)arg3 duration:(double)arg4 force:(bool)arg5 isRotating:(bool)arg6;
@@ -438,6 +443,7 @@
 - (void)_unregisterScrollToTopView:(id)arg1;
 - (void)_unregisterViewForSubtreeMonitoring:(id)arg1;
 - (void)_updateAppTintView;
+- (void)_updateConstraintsIfNeededPostponeVariableChangeNotifications:(bool)arg1;
 - (void)_updateCurrentTintView;
 - (void)_updateCurrentTintViewForPotentialTintView:(id)arg1;
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientation;
@@ -566,7 +572,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)undo:(id)arg1;
 - (id)undoManager;
-- (void)updateConstraintsIfNeeded;
 - (void)updateFocusIfNeeded;
 - (void)updatePreferredFocusedItemIfNeeded;
 - (struct CGPoint { double x1; double x2; })warpPoint:(struct CGPoint { double x1; double x2; })arg1;

@@ -14,8 +14,8 @@
     <_UIForcePresentationControllerDelegate> * _forcePresentationControllerDelegate;
     bool  _hasAskedForCommitInternally;
     bool  _hasAskedForDismissalInternally;
-    UIView * _highlightedPreviewCellSnapshotView;
-    UIView * _initialPreviewCellSnapshotView;
+    UIView * _initialSourceViewSnapshot;
+    UIWindow * _initialSourceViewSnapshotWindow;
     UIPreviewForceInteractionProgress * _interactionProgressForBreathing;
     UIPreviewForceInteractionProgress * _interactionProgressForCommit;
     UIInteractionProgress * _interactionProgressForPresentation;
@@ -42,7 +42,7 @@
     NSLayoutConstraint * _trailingQuickActionViewEdgeConstraint;
     bool  _trailingQuickActionViewSelected;
     _UIPreviewPresentationAnimator * _unhighlightPreviewCellSnapshotViewAnimator;
-    UIView * _updatedPreviewCellSnapshotView;
+    UIView * _updatedSourceViewSnapshot;
 }
 
 @property (nonatomic, readonly) UIView *_revealContainerView;
@@ -61,8 +61,8 @@
 @property (nonatomic) bool hasAskedForCommitInternally;
 @property (nonatomic) bool hasAskedForDismissalInternally;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) UIView *highlightedPreviewCellSnapshotView;
-@property (nonatomic, retain) UIView *initialPreviewCellSnapshotView;
+@property (nonatomic, retain) UIView *initialSourceViewSnapshot;
+@property (nonatomic, retain) UIWindow *initialSourceViewSnapshotWindow;
 @property (nonatomic, retain) UIPreviewForceInteractionProgress *interactionProgressForBreathing;
 @property (nonatomic, retain) UIPreviewForceInteractionProgress *interactionProgressForCommit;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForPresentation;
@@ -90,7 +90,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *trailingQuickActionViewEdgeConstraint;
 @property (nonatomic) bool trailingQuickActionViewSelected;
 @property (nonatomic, retain) _UIPreviewPresentationAnimator *unhighlightPreviewCellSnapshotViewAnimator;
-@property (nonatomic, retain) UIView *updatedPreviewCellSnapshotView;
+@property (nonatomic, retain) UIView *updatedSourceViewSnapshot;
 
 + (id)_backgroundEffectForTraitCollection:(id)arg1 interactive:(bool)arg2;
 + (bool)_shouldApplyVisualEffectsToPresentingView;
@@ -127,9 +127,11 @@
 - (bool)_platterIsInInitialPositionMostly;
 - (bool)_platterIsSelectingPreviewActions;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_preferredSourceViewRect;
+- (void)_prepareInitialSourceViewSnapshot;
 - (void)_preparePresentationContainerViewForPreviewInteraction;
 - (void)_preparePresentationContainerViewForPreviewTransition;
 - (void)_presentSubActionSheetForPreviewActionGroup:(id)arg1;
+- (void)_presentationTransitionWillBeginForContainerEffectView:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_presentedActionSheetCenterForActionSheet:(id)arg1;
 - (void)_previewTransitionDidComplete:(bool)arg1;
 - (double)_quickActionSelectionOffset;
@@ -147,7 +149,6 @@
 - (void)_triggerQuickActionHandlerIfNeeded;
 - (void)_unhighlightPreviewCellSnapshotViewsIfNeeded;
 - (void)_updateBreathingTransformWithProgress:(double)arg1 animated:(bool)arg2;
-- (void)_updateRevealContainerView:(id)arg1 forTableViewCell:(id)arg2 sourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)_updateRevealContainerViewForSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateVisibiltyOfPreviewActionChromeForCurrentState;
 - (id)_viewsParticipatingInNavigationControllerTransition;
@@ -173,11 +174,11 @@
 - (id)forcePresentationControllerDelegate;
 - (bool)hasAskedForCommitInternally;
 - (bool)hasAskedForDismissalInternally;
-- (id)highlightedPreviewCellSnapshotView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (struct CGPoint { double x1; double x2; })initialCenterForLeadingSwipeActionView;
 - (struct CGPoint { double x1; double x2; })initialCenterForTrailingSwipeActionView;
-- (id)initialPreviewCellSnapshotView;
+- (id)initialSourceViewSnapshot;
+- (id)initialSourceViewSnapshotWindow;
 - (void)interactionProgress:(id)arg1 didEnd:(bool)arg2;
 - (void)interactionProgressDidUpdate:(id)arg1;
 - (id)interactionProgressForBreathing;
@@ -224,8 +225,8 @@
 - (void)setForcePresentationControllerDelegate:(id)arg1;
 - (void)setHasAskedForCommitInternally:(bool)arg1;
 - (void)setHasAskedForDismissalInternally:(bool)arg1;
-- (void)setHighlightedPreviewCellSnapshotView:(id)arg1;
-- (void)setInitialPreviewCellSnapshotView:(id)arg1;
+- (void)setInitialSourceViewSnapshot:(id)arg1;
+- (void)setInitialSourceViewSnapshotWindow:(id)arg1;
 - (void)setInteractionProgressForBreathing:(id)arg1;
 - (void)setInteractionProgressForCommit:(id)arg1;
 - (void)setInteractionProgressForPresentation:(id)arg1;
@@ -252,7 +253,7 @@
 - (void)setTrailingQuickActionViewEdgeConstraint:(id)arg1;
 - (void)setTrailingQuickActionViewSelected:(bool)arg1;
 - (void)setUnhighlightPreviewCellSnapshotViewAnimator:(id)arg1;
-- (void)setUpdatedPreviewCellSnapshotView:(id)arg1;
+- (void)setUpdatedSourceViewSnapshot:(id)arg1;
 - (void)set_sourceViewSnapshotAndScaleTransformSuppressed:(bool)arg1;
 - (void)setupAdditionalModalGestureRecognizers;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
@@ -264,6 +265,6 @@
 - (id)trailingSwipeActionView;
 - (id)unhighlightPreviewCellSnapshotViewAnimator;
 - (void)updateSwipeActionsIfApplicable;
-- (id)updatedPreviewCellSnapshotView;
+- (id)updatedSourceViewSnapshot;
 
 @end

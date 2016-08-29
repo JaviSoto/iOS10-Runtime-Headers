@@ -18,6 +18,8 @@
 - (id)_connection;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
+- (void)_handleHeartbeatConnectionReply:(id)arg1;
+- (void)_handleHeartbeatSourceEvent;
 - (id)_heartbeatQueue;
 - (id)_heartbeatSource;
 - (id)_keepAliveQueue;

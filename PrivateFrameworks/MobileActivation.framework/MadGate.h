@@ -12,6 +12,7 @@
 - (id)connection;
 - (id)copyActivationRecord:(id*)arg1;
 - (id)copyRegulatoryImages:(id*)arg1;
+- (id)copyUCRTToken:(id*)arg1;
 - (id)createActivationInfo:(id*)arg1;
 - (id)createRecertInfo:(id*)arg1;
 - (id)createTunnel1ActivationInfo:(id)arg1 error:(id*)arg2;

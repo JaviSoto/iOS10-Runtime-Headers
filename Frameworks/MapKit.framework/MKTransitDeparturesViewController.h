@@ -4,6 +4,7 @@
 
 @interface MKTransitDeparturesViewController : _MKTableViewController <MKDynamicTransitUIContainer, MKTransitDeparturesCellDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, _MKTransitConnectionCellDelegate> {
     bool  _allowsTransitLineSelection;
+    bool  _animatingRowInsertion;
     NSMutableDictionary * _cachedColumnCenteringWidths;
     NSMapTable * _cachedDirectionsForSystem;
     NSMutableDictionary * _cachedMaxImageWidths;
@@ -36,6 +37,7 @@
         double width; 
         double height; 
     }  _newSize;
+    NSMutableSet * _pagedSectionIdentifiers;
     NSMutableDictionary * _sectionControllers;
     NSMutableArray * _sections;
     bool  _showDisambiguation;
@@ -137,6 +139,7 @@
 - (id)departureCutoffDate;
 - (void)incidentButtonSelectedInDeparturesCell:(id)arg1;
 - (void)infoButtonSelectedInConnectionCell:(id)arg1;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithMapItem:(id)arg1 allowTransitLineSelection:(bool)arg2;
 - (bool)isInSiri;
 - (id)lastCutoffDateWithValidSchedule;

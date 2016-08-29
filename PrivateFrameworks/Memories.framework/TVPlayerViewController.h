@@ -24,6 +24,9 @@
     MiroMemoryPosterGenerator * _posterGenerator;
     UIImageView * _posterImageView;
     id  _proVideoPeriodicCaller;
+    bool  _progressHasDownload;
+    UILabel * _progressLabel;
+    UIProgressView * _progressUIView;
     UIView * _scrimView;
     UIActivityIndicatorView * _spinnerView;
     unsigned long long  _startTime;
@@ -53,12 +56,17 @@
 @property (nonatomic, retain) MiroMemoryPosterGenerator *posterGenerator;
 @property (nonatomic, retain) UIImageView *posterImageView;
 @property (nonatomic, retain) id proVideoPeriodicCaller;
+@property bool progressHasDownload;
+@property (nonatomic, retain) UILabel *progressLabel;
+@property (nonatomic, retain) UIProgressView *progressUIView;
 @property (nonatomic, retain) UIView *scrimView;
 @property (nonatomic, retain) UIActivityIndicatorView *spinnerView;
 @property unsigned long long startTime;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
 - (bool)_deviceIsRunningInternalOS;
 - (void)_displayHeroImageWithPlayOverlay:(bool)arg1;
 - (void)_endAggDTimer;
@@ -67,11 +75,14 @@
 - (void)_mediaServicesReset:(id)arg1;
 - (id)_moodIDForIndexPath:(id)arg1;
 - (void)_prepareForPlayback;
+- (void)_setUIProgressView;
+- (void)_setUpProgressLabel;
 - (void)_startAggDTimer;
 - (void)_undimOverlayView;
 - (void)_updateDurationLabels;
 - (bool)aggFirstPlayback;
 - (id)autoEditor;
+- (void)calculateAndSetProgress:(float)arg1;
 - (id)cloudDownloader;
 - (void)configurePlaybackViewsAndControllersWithProject:(id)arg1;
 - (void)configureProVideoCallback;
@@ -111,6 +122,9 @@
 - (id)posterImageView;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)proVideoPeriodicCaller;
+- (bool)progressHasDownload;
+- (id)progressLabel;
+- (id)progressUIView;
 - (id)scrimView;
 - (void)setAggFirstPlayback:(bool)arg1;
 - (void)setAutoEditor:(id)arg1;
@@ -134,6 +148,9 @@
 - (void)setPosterGenerator:(id)arg1;
 - (void)setPosterImageView:(id)arg1;
 - (void)setProVideoPeriodicCaller:(id)arg1;
+- (void)setProgressHasDownload:(bool)arg1;
+- (void)setProgressLabel:(id)arg1;
+- (void)setProgressUIView:(id)arg1;
 - (void)setScrimView:(id)arg1;
 - (void)setSpinnerView:(id)arg1;
 - (void)setStartTime:(unsigned long long)arg1;

@@ -69,5 +69,6 @@
 - (void)stopPerformingUpdatesWithErrorEncountered:(bool)arg1;
 - (void)updateCollectionInterval:(double)arg1 forType:(id)arg2;
 - (void)updateHistoricalData;
+- (void)updateHistoricalDataWithCompletion:(id /* block */)arg1;
 
 @end

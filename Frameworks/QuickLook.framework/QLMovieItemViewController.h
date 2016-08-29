@@ -5,6 +5,7 @@
 @interface QLMovieItemViewController : QLMediaItemViewController <AVPictureInPictureControllerDelegate> {
     PHPlaceholderView * _airPlayPlaceholderView;
     NSLayoutConstraint * _bottomScrubberConstraint;
+    bool  _isObservingPlayerExternalPlaybackActive;
     QLOverlayPlayButton * _playButton;
     bool  _previewIsVisisble;
     QLVideoScrubberView * _scrubber;

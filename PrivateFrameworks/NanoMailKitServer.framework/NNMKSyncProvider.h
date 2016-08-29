@@ -15,6 +15,7 @@
     unsigned long long  _initialSyncMessagesCount;
     double  _initialSyncProgress;
     unsigned long long  _initialSyncResendInterval;
+    NSDate * _lastRetryDate;
     NNMKProtoFetchRequest * _latestFetchRequest;
     NSMutableSet * _messageIdsToIgnoreStatusUpdates;
     NNMKMessagesSyncServiceServer * _messagesSyncService;
@@ -25,6 +26,7 @@
     NNMKProtectedContentSyncServiceServer * _protectedContentSyncService;
     NNMKProtectedSyncServiceServer * _protectedSyncService;
     NSObject<OS_dispatch_queue> * _providerQueue;
+    unsigned long long  _retryCountForRequestingMissingHeadersInBatchedResponse;
     bool  _trackingInitialSync;
     bool  _waitingForBatchedMessagesForFetchResponse;
 }
@@ -44,6 +46,7 @@
 @property (nonatomic) unsigned long long initialSyncMessagesCount;
 @property (nonatomic) double initialSyncProgress;
 @property (nonatomic) unsigned long long initialSyncResendInterval;
+@property (nonatomic, retain) NSDate *lastRetryDate;
 @property (nonatomic, retain) NNMKProtoFetchRequest *latestFetchRequest;
 @property (nonatomic, retain) NSMutableSet *messageIdsToIgnoreStatusUpdates;
 @property (nonatomic, readonly) bool messagesSyncActive;
@@ -57,6 +60,7 @@
 @property (nonatomic, retain) NNMKProtectedContentSyncServiceServer *protectedContentSyncService;
 @property (nonatomic, retain) NNMKProtectedSyncServiceServer *protectedSyncService;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *providerQueue;
+@property (nonatomic) unsigned long long retryCountForRequestingMissingHeadersInBatchedResponse;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *syncedMailboxAccountId;
 @property (nonatomic, readonly) NSString *syncedMailboxCustomName;
@@ -158,6 +162,7 @@
 - (unsigned long long)initialSyncMessagesCount;
 - (double)initialSyncProgress;
 - (unsigned long long)initialSyncResendInterval;
+- (id)lastRetryDate;
 - (id)latestFetchRequest;
 - (void)markConversationIdForNotNotify:(id)arg1;
 - (void)markConversationIdForNotify:(id)arg1 messages:(id)arg2 includesProtectedMessages:(bool)arg3;
@@ -198,6 +203,7 @@
 - (void)reportMessageContentDownloadFailureForMessageId:(id)arg1;
 - (void)reportWillDownloadFirstMessages;
 - (void)resendIDSIdentifier:(id)arg1;
+- (unsigned long long)retryCountForRequestingMissingHeadersInBatchedResponse;
 - (void)setAccountsSyncService:(id)arg1;
 - (void)setContentSyncService:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -210,6 +216,7 @@
 - (void)setInitialSyncMessagesCount:(unsigned long long)arg1;
 - (void)setInitialSyncProgress:(double)arg1;
 - (void)setInitialSyncResendInterval:(unsigned long long)arg1;
+- (void)setLastRetryDate:(id)arg1;
 - (void)setLatestFetchRequest:(id)arg1;
 - (void)setMessageIdsToIgnoreStatusUpdates:(id)arg1;
 - (void)setMessagesSyncService:(id)arg1;
@@ -220,6 +227,7 @@
 - (void)setProtectedContentSyncService:(id)arg1;
 - (void)setProtectedSyncService:(id)arg1;
 - (void)setProviderQueue:(id)arg1;
+- (void)setRetryCountForRequestingMissingHeadersInBatchedResponse:(unsigned long long)arg1;
 - (void)setTrackingInitialSync:(bool)arg1;
 - (void)setWaitingForBatchedMessagesForFetchResponse:(bool)arg1;
 - (void)syncCoordinator:(id)arg1 beginSyncSession:(id)arg2;

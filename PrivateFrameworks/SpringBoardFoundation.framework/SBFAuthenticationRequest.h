@@ -26,6 +26,7 @@
 - (id)initWithType:(unsigned long long)arg1 source:(long long)arg2 payload:(id)arg3;
 - (id)initWithType:(unsigned long long)arg1 source:(long long)arg2 payload:(id)arg3 handler:(id /* block */)arg4;
 - (id)payload;
+- (id)publicDescription;
 - (long long)source;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

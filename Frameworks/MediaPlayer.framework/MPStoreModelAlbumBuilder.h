@@ -17,10 +17,15 @@
         unsigned int keepLocalManagedStatus : 1; 
         unsigned int libraryAddEligible : 1; 
         unsigned int compilation : 1; 
+        unsigned int classical : 1; 
         unsigned int releaseDate : 1; 
         unsigned int artwork : 1; 
         unsigned int year : 1; 
         unsigned int preorder : 1; 
+        unsigned int editorNotes : 1; 
+        unsigned int shortEditorNotes : 1; 
+        unsigned int volumeNormalization : 1; 
+        unsigned int songPopularity : 1; 
         struct { 
             unsigned int identifiers : 1; 
             unsigned int name : 1; 

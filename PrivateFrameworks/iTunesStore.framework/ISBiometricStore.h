@@ -2,20 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISBiometricStore : NSObject
+@interface ISBiometricStore : NSObject {
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    bool  _shouldUseTouchID2;
+}
 
 @property long long biometricState;
+@property (readonly) NSNumber *lastRegisteredAccountIdentifier;
 
-+ (id)_newUserLabelWithAccountID:(id)arg1;
++ (id)keychainLabelForAccountID:(id)arg1;
++ (id)sharedInstance;
++ (bool)shouldUseTouchID2;
 
-- (id)_queryForPrivateKeyWithLabel:(id)arg1 prompt:(id)arg2;
+- (void).cxx_destruct;
+- (bool)_isIdentityMapValidForAccountIdentifier:(id)arg1;
+- (void)_updateTouchIDVersionWithBagKey:(id)arg1;
+- (void)_updateUserDefaultsKey:(struct __CFString { }*)arg1 withBooleanValue:(bool)arg2;
+- (long long)biometricAvailabilityForAccountIdentifier:(id)arg1;
 - (long long)biometricState;
+- (bool)canPerformBiometricOptIn;
 - (void)clearLastRegisteredAccountIdentifier;
-- (id)copyPublicKeyDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
 - (id)createAttestationDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
-- (bool)deleteKeychainTokensForAccountIdentifier:(id)arg1 error:(id*)arg2;
-- (bool)generateKeychainTokensForAccountIdentifier:(id)arg1 error:(id*)arg2;
+- (unsigned long long)identityMapCount;
+- (id)initWithBagListener;
+- (id)lastRegisteredAccountIdentifier;
+- (id)publicKeyDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
+- (void)registerAccountIdentifier:(id)arg1;
+- (void)saveIdentityMapForAccountIdentifier:(id)arg1;
 - (void)setBiometricState:(long long)arg1;
+- (bool)shouldUseTouchID2;
 - (id)signData:(id)arg1 withPrompt:(id)arg2 forAccountIdentifier:(id)arg3 error:(id*)arg4;
 
 @end

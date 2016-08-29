@@ -5,7 +5,6 @@
 @interface HMDCloudFetchLogEvent : HMDLogEvent
 
 + (id)fetchFromCloud;
-+ (void)initialize;
 + (id)uuid;
 
 @end

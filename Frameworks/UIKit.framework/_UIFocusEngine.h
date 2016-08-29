@@ -181,7 +181,6 @@
 - (void)_runPerformanceTestWithName:(id)arg1 fakeEvents:(struct { double x1; long long x2; double x3; double x4; double x5; double x6; }*)arg2 count:(int)arg3;
 - (void)_scrollView:(id)arg1 toOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (id)_scrollViewToPeekFocusMovement:(id)arg1 fromItem:(id)arg2;
-- (void)_sendDelayedPressEventWithType:(long long)arg1 timestamp:(double)arg2;
 - (void)_sendFocusDirectionNotificationWithDirection:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)_sendFocusMovementActionIfPossible:(id)arg1;
 - (void)_sendGestureBeginNotification;

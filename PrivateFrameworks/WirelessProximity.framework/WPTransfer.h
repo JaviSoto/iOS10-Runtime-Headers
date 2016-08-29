@@ -13,6 +13,7 @@
     long long  _lockScanTimer;
     NSMutableData * _notificationData;
     bool  _scanning;
+    bool  _sendingTransferComplete;
     bool  _sentEOM;
     bool  _unsubscribeComing;
 }
@@ -27,6 +28,7 @@
 @property long long lockScanTimer;
 @property (retain) NSMutableData *notificationData;
 @property bool scanning;
+@property bool sendingTransferComplete;
 @property bool sentEOM;
 @property bool unsubscribeComing;
 
@@ -65,6 +67,7 @@
 - (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)scanningStartedOfType:(unsigned char)arg1;
 - (void)scanningStoppedOfType:(unsigned char)arg1;
+- (bool)sendingTransferComplete;
 - (void)sentData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4 withError:(id)arg5;
 - (bool)sentEOM;
 - (void)setAdvertiserConnected:(bool)arg1;
@@ -77,6 +80,7 @@
 - (void)setLockScanTimer:(long long)arg1;
 - (void)setNotificationData:(id)arg1;
 - (void)setScanning:(bool)arg1;
+- (void)setSendingTransferComplete:(bool)arg1;
 - (void)setSentEOM:(bool)arg1;
 - (void)setUnsubscribeComing:(bool)arg1;
 - (void)startAdvertising;

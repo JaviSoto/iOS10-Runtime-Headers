@@ -37,14 +37,12 @@
 - (id)_credentialEntryFieldForSpecifier:(id)arg1;
 - (void)_deleteAccountButtonTapped:(id)arg1;
 - (void)_hideDeletingAccountHUD;
-- (id)_identityProviderDisplayName;
 - (void)_linkButtonTapped:(id)arg1;
 - (id)_linkURL;
+- (void)_presentError:(id)arg1;
 - (void)_setText:(id)arg1 forSpecifier:(id)arg2;
-- (void)_showDeleteAlertForError:(id)arg1;
 - (void)_showDeletingAccountHUD;
 - (void)_showNavigationBarButtons;
-- (void)_showValidationAlertForError:(id)arg1;
 - (id)_specifierForTextField:(id)arg1;
 - (void)_startValidation;
 - (void)_stopValidationAndShowButtons:(bool)arg1;

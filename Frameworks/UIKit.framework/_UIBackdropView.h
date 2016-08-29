@@ -11,6 +11,7 @@
     double  _appliesOutputSettingsAnimationDuration;
     bool  _appliesOutputSettingsAutomatically;
     bool  _appliesOutputSettingsAutomaticallyEnabledComputesColorSettings;
+    bool  _applySaturationBeforeBlur;
     bool  _applySettingsAfterLayout;
     bool  _applyingBackdropChanges;
     bool  _applyingTransition;
@@ -84,6 +85,7 @@
 @property (nonatomic) double appliesOutputSettingsAnimationDuration;
 @property (nonatomic) bool appliesOutputSettingsAutomatically;
 @property (nonatomic) bool appliesOutputSettingsAutomaticallyEnabledComputesColorSettings;
+@property (nonatomic) bool applySaturationBeforeBlur;
 @property (nonatomic) bool applySettingsAfterLayout;
 @property (nonatomic) bool applyingBackdropChanges;
 @property (nonatomic) bool applyingTransition;
@@ -187,6 +189,7 @@
 - (bool)appliesOutputSettingsAutomaticallyEnabledComputesColorSettings;
 - (void)applyOverlayBlendMode:(long long)arg1 toView:(id)arg2;
 - (void)applyOverlayBlendModeToView:(id)arg1;
+- (bool)applySaturationBeforeBlur;
 - (void)applySettings:(id)arg1;
 - (bool)applySettingsAfterLayout;
 - (void)applySettingsWithBuiltInAnimation:(id)arg1;
@@ -279,6 +282,7 @@
 - (void)setAppliesOutputSettingsAnimationDuration:(double)arg1;
 - (void)setAppliesOutputSettingsAutomatically:(bool)arg1;
 - (void)setAppliesOutputSettingsAutomaticallyEnabledComputesColorSettings:(bool)arg1;
+- (void)setApplySaturationBeforeBlur:(bool)arg1;
 - (void)setApplySettingsAfterLayout:(bool)arg1;
 - (void)setApplyingBackdropChanges:(bool)arg1;
 - (void)setApplyingTransition:(bool)arg1;

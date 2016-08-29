@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)authorizationData;
+- (id)description;
 - (id)identifier;
 - (id)initWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4;
 - (id)value;

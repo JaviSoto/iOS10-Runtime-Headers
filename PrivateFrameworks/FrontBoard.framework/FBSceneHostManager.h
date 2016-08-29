@@ -8,6 +8,7 @@
     UIColor * _defaultBackgroundColorWhileNotHosting;
     unsigned long long  _defaultHostedLayerTypes;
     <FBSceneHostManagerDelegate> * _delegate;
+    NSMutableSet * _disableHostingAssertions;
     struct { 
         unsigned int delegateOverrideRequester : 1; 
         unsigned int DEPRECATED_delegateOverrideRequester : 1; 
@@ -39,11 +40,13 @@
 @property (getter=isSuspended, nonatomic, readonly) bool suspended;
 
 - (void)_activateRequester:(id)arg1;
+- (id)_activeHostRequester;
 - (id)_hostViewForRequester:(id)arg1;
 - (id)_hostViewForRequester:(id)arg1 enableAndOrderFront:(bool)arg2;
 - (id)_overrideRequesterIfNecessary:(id)arg1;
 - (id)_snapshotContextForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 excludedContextIDs:(id)arg2 opaque:(bool)arg3 outTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg4;
 - (id)_snapshotContextForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 excludedLayers:(id)arg2 opaque:(bool)arg3;
+- (void)_updateActiveHostRequester;
 - (id)_wrapperViewForRequester:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
@@ -54,6 +57,7 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)disableHostingForReason:(id)arg1;
 - (void)disableHostingForRequester:(id)arg1;
 - (void)enableHostingForRequester:(id)arg1 orderFront:(bool)arg2;
 - (void)enableHostingForRequester:(id)arg1 priority:(long long)arg2;

@@ -30,7 +30,6 @@
 @property (nonatomic, retain) NSMapTable *identifiersToIndexes;
 @property (nonatomic, readonly) NSArray *indexSections;
 @property (nonatomic, retain) NSArray *keysToFetch;
-@property (nonatomic, readonly) CNContact *meContact;
 @property (nonatomic, readonly) NSString *meContactIdentifier;
 @property (nonatomic) bool observingContacts;
 @property (nonatomic, readonly) NSArray *sections;

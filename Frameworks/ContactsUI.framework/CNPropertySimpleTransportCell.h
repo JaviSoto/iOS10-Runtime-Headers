@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)prepareForReuse;
 - (id)recentCallout;
 - (id)rightMostView;
 - (void)setActionsColor:(id)arg1;

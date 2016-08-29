@@ -33,6 +33,7 @@
 - (bool)_shouldReloadChatItem:(id)arg1 oldChatItem:(id)arg2;
 - (bool)_shouldReloadChatItemWithAssociatedChatItems:(id)arg1 oldAssociatedChatItems:(id)arg2;
 - (id)chatItemForIMChatItem:(id)arg1;
+- (bool)shouldShowExpressiveMessageTextAsText:(id)arg1;
 - (bool)shouldShowRaiseMessageStatus;
 - (id)testChatItems;
 

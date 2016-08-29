@@ -78,6 +78,7 @@
 @property (readonly) NSString *trueString;
 @property (readonly) NSArray *weekdaySymbols;
 
++ (id)applicationLocale;
 + (unsigned long long)autoupdatingCurrentLocaleChangeCount;
 + (id)cacheKeyForCFLocale:(struct __CFLocale { }*)arg1;
 + (id)canonicalizeLocaleIdentifier:(id)arg1;
@@ -114,6 +115,7 @@
 - (void)dealloc;
 - (id)decimalSeparator;
 - (id)description;
+- (id)displayLanguageName;
 - (id)documentLanguageIdentifier;
 - (id)falseString;
 - (id)functionLocalizationDictionary;

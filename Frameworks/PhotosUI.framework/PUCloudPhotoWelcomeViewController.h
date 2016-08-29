@@ -7,7 +7,6 @@
     bool  _enableOnAppear;
     PSCloudStorageOffersManager * _offersManager;
     bool  _requireStorageUpgrade;
-    UIBarButtonItem * _skipBarButtonItem;
     AAUIGenericTermsRemoteUI * _termsManager;
     PUCloudPhotoWelcomeView * _welcomeView;
 }
@@ -16,7 +15,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) UIBarButtonItem *skipBarButtonItem;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUCloudPhotoWelcomeView *welcomeView;
 
@@ -37,12 +35,11 @@
 - (void)_handleGoButtonTapped;
 - (void)_presentStoragePurchaseController;
 - (void)_setCompletionHandler:(id /* block */)arg1;
-- (void)_skipButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
+- (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(bool)arg2;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
@@ -50,7 +47,6 @@
 - (long long)preferredInterfaceOrientationForPresentation;
 - (void)setWelcomeView:(id)arg1;
 - (bool)shouldAutorotate;
-- (id)skipBarButtonItem;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

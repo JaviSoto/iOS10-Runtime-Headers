@@ -34,7 +34,7 @@
 - (double)_contentWidth;
 - (void)_updateFieldPlaceholder;
 - (void)_updateFieldText;
-- (void)adjustLayoutForEditing:(bool)arg1 animated:(bool)arg2;
+- (void)adjustLayoutForEditing:(bool)arg1 maxWidth:(double)arg2 animated:(bool)arg3;
 - (id)avatarViews;
 - (id)containerStretchingConstraints;
 - (id)containerView;

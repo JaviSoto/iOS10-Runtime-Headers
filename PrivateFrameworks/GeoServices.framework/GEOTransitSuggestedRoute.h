@@ -86,6 +86,7 @@
 - (bool)hasTravelTimeConservativeEstimate;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (bool)isWalkingOnlyRoute;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)rank;
 - (bool)readFrom:(id)arg1;

@@ -10,6 +10,7 @@
 - (void)_accessibilityActivate;
 - (struct CGPoint { double x1; double x2; })_accessibilityConvertPointToViewSpace:(struct CGPoint { double x1; double x2; })arg1;
 - (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)_accessibilityFieldsetAncestor;
+- (bool)_accessibilityHasTouchEventListener;
 - (bool)_accessibilityIsLandmarkRole:(int)arg1;
 - (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)_accessibilityLandmarkAncestor;
 - (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)_accessibilityListAncestor;

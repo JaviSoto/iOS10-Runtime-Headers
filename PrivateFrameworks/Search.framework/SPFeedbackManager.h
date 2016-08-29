@@ -26,6 +26,7 @@
 - (void)resultsDidBecomeVisible:(id)arg1;
 - (void)searchViewDidAppear:(id)arg1;
 - (void)searchViewDidDisappear:(id)arg1;
+- (void)sectionHeaderDidBecomeVisible:(id)arg1;
 - (void)sendCustomFeedback:(id)arg1;
 - (void)sendFeedbackMessage:(SEL)arg1 withFeedback:(id)arg2;
 - (void)suggestionsDidBecomeVisible:(id)arg1;

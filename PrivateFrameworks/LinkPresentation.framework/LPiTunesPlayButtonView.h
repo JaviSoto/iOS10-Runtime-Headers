@@ -3,21 +3,26 @@
  */
 
 @interface LPiTunesPlayButtonView : LPComponentView <LPContentInsettable> {
-    LPiTunesPlayButton * _button;
+    LPPlayButton * _button;
     struct UIEdgeInsets { 
         double top; 
         double left; 
         double bottom; 
         double right; 
     }  _contentInset;
-    NSString * _storefrontIdentifier;
+    LPiTunesPlaybackInformation * _playbackInformation;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithStoreIdentifier:(id)arg1 withStorefrontIdentifier:(id)arg2;
+- (id)initWithPlaybackInformation:(id)arg1;
+- (void)installPlaceholderButton;
+- (void)installPreviewButton;
+- (void)installiTunesButton;
 - (void)layoutComponentView;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)updateVisibility;
+- (void)updateButton;
+- (void)updateButtonForRadio;
+- (void)updateButtonForSongOrAlbum;
 
 @end

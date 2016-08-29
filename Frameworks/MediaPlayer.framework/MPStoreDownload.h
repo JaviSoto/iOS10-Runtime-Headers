@@ -9,6 +9,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _attributes;
     bool  _canceled;
+    NSString * _downloadFilePath;
     NSMutableArray * _overridePhaseIdentifiers;
     long long  _type;
 }
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) NSString *phaseIdentifier;
 @property (nonatomic, readonly) NSError *purchaseError;
 @property (getter=isPurchasing, nonatomic, readonly) bool purchasing;
+@property (nonatomic, readonly) long long reason;
 @property (nonatomic, readonly) NSDictionary *rentalInformation;
 @property (getter=isRestore, nonatomic, readonly) bool restore;
 @property (nonatomic, readonly) long long storeItemIdentifier;
@@ -47,9 +49,11 @@
 - (id)_SSPurchaseResponse;
 - (void)_addOverridePhaseIdentifier:(id)arg1;
 - (id)_currentOverridePhaseIdentifier;
+- (id)_getDownloadFilePath;
 - (bool)_isCanceled;
 - (void)_removeOverridePhaseIdentifier:(id)arg1;
 - (void)_setCanceled:(bool)arg1;
+- (void)_setDownloadFilePath:(id)arg1;
 - (void)_setSSDownload:(id)arg1;
 - (void)_setSSPurchase:(id)arg1 SSPurchaseResponse:(id)arg2;
 - (id)_valueForDownloadProperty:(id)arg1;
@@ -71,6 +75,7 @@
 - (double)percentComplete;
 - (id)phaseIdentifier;
 - (id)purchaseError;
+- (long long)reason;
 - (id)rentalInformation;
 - (void)resetCachedRentalInformation;
 - (long long)storeItemIdentifier;

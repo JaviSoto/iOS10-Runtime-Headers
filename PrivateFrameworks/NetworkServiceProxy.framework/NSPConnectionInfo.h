@@ -6,6 +6,7 @@
     long long  _IPType;
     NSDictionary * _TCPInfo;
     bool  _TFOSucceeded;
+    NWPath * _connectedPath;
     double  _connectionDelay;
     NSString * _edgeAddress;
     long long  _edgeType;
@@ -20,11 +21,13 @@
     unsigned long long  _multipathSubflowCount;
     NSDictionary * _multipathSubflowSwitchCounts;
     long long  _pathType;
+    double  _timeIntervalSinceLastUsage;
 }
 
 @property long long IPType;
 @property (retain) NSDictionary *TCPInfo;
 @property bool TFOSucceeded;
+@property (retain) NWPath *connectedPath;
 @property double connectionDelay;
 @property (retain) NSString *edgeAddress;
 @property long long edgeType;
@@ -39,6 +42,7 @@
 @property unsigned long long multipathSubflowCount;
 @property (retain) NSDictionary *multipathSubflowSwitchCounts;
 @property long long pathType;
+@property double timeIntervalSinceLastUsage;
 
 + (bool)supportsSecureCoding;
 
@@ -46,6 +50,7 @@
 - (long long)IPType;
 - (id)TCPInfo;
 - (bool)TFOSucceeded;
+- (id)connectedPath;
 - (double)connectionDelay;
 - (id)edgeAddress;
 - (long long)edgeType;
@@ -63,6 +68,7 @@
 - (unsigned long long)multipathSubflowCount;
 - (id)multipathSubflowSwitchCounts;
 - (long long)pathType;
+- (void)setConnectedPath:(id)arg1;
 - (void)setConnectionDelay:(double)arg1;
 - (void)setEdgeAddress:(id)arg1;
 - (void)setEdgeType:(long long)arg1;
@@ -80,5 +86,7 @@
 - (void)setPathType:(long long)arg1;
 - (void)setTCPInfo:(id)arg1;
 - (void)setTFOSucceeded:(bool)arg1;
+- (void)setTimeIntervalSinceLastUsage:(double)arg1;
+- (double)timeIntervalSinceLastUsage;
 
 @end

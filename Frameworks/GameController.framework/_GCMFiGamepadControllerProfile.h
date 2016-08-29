@@ -16,6 +16,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1;
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
+- (id)menuButton;
 - (id)motion;
 - (id)name;
 - (void)setPlayerIndex:(long long)arg1;

@@ -417,6 +417,7 @@
 - (void)loadView;
 - (id)localizedSelectionTitle;
 - (id)localizedTitleForAssetCollection:(id)arg1;
+- (id)localizedTitleForAssetCollection:(id)arg1 titleCategory:(long long*)arg2;
 - (id)localizedTitleForAssets:(id)arg1;
 - (id)longPressGestureRecognizer;
 - (id)mainGridLayout;

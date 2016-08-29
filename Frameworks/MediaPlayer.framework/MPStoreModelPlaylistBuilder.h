@@ -21,12 +21,15 @@
         unsigned int keepLocalEnableState : 1; 
         unsigned int keepLocalManagedStatus : 1; 
         unsigned int curatorPlaylist : 1; 
+        unsigned int owner : 1; 
         unsigned int publicPlaylist : 1; 
+        unsigned int visiblePlaylist : 1; 
         unsigned int subscribed : 1; 
         unsigned int userEditableComponents : 1; 
         unsigned int shareURL : 1; 
         unsigned int shareShortURL : 1; 
         unsigned int descriptionText : 1; 
+        unsigned int cloudVersionHash : 1; 
         struct { 
             unsigned int identifiers : 1; 
             unsigned int name : 1; 

@@ -18,7 +18,6 @@
 
 - (bool)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;
-- (id)init;
 - (id)initWithMinPrecedingTopicGroups:(unsigned long long)arg1;
 - (id)initWithNoDistanceRequirements;
 - (unsigned long long)minPrecedingTopicGroups;

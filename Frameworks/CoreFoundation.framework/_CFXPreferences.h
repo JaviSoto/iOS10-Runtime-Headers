@@ -25,6 +25,8 @@
 - (void)alreadylocked_withSources:(id /* block */)arg1;
 - (unsigned char)appSynchronizeWithIdentifier:(struct __CFString { }*)arg1 container:(struct __CFString { }*)arg2;
 - (bool)appValueIsForcedForKey:(struct __CFString { }*)arg1 appIdentifier:(struct __CFString { }*)arg2;
+- (void)assertEquivalence:(bool)arg1 ofIdentifiers:(struct __CFArray { }*)arg2 containers:(struct __CFArray { }*)arg3 cloudConfigurationURLs:(struct __CFArray { }*)arg4;
+- (void)assertEquivalence:(bool)arg1 ofIdentifiers:(struct __CFArray { }*)arg2 users:(struct __CFArray { }*)arg3 hosts:(struct __CFArray { }*)arg4 containers:(struct __CFArray { }*)arg5 managedFlags:(struct __CFArray { }*)arg6 cloudFlags:(struct __CFArray { }*)arg7;
 - (bool)canLookUpAgents;
 - (void*)copyAppValueForKey:(struct __CFString { }*)arg1 identifier:(struct __CFString { }*)arg2 container:(struct __CFString { }*)arg3 configurationURL:(struct __CFURL { }*)arg4;
 - (struct __CFString { }*)copyDescriptionOfSearchLists;
@@ -54,6 +56,7 @@
 - (void)replaceValuesInVolatileSourceNamed:(struct __CFString { }*)arg1 withValues:(struct __CFDictionary { }*)arg2;
 - (void)resetPreferences:(bool)arg1;
 - (void)setAccessRestricted:(bool)arg1 forAppIdentifier:(struct __CFString { }*)arg2;
+- (void)setBackupDisabled:(bool)arg1 identifier:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 host:(struct __CFString { }*)arg4 container:(struct __CFString { }*)arg5;
 - (void)setCloudSyncEnabled:(bool)arg1 forKey:(struct __CFString { }*)arg2 appIdentifier:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4;
 - (void)setDaemonCacheEnabled:(bool)arg1 identifier:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 host:(struct __CFString { }*)arg4 container:(struct __CFString { }*)arg5;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 appIdentifier:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4 configurationURL:(struct __CFURL { }*)arg5;

@@ -69,10 +69,6 @@
 
 - (void)cat_addDependencies:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
-
-- (void)addCompletionBlock:(id /* block */)arg1;
-
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 - (id)ic_loggingIdentifier;

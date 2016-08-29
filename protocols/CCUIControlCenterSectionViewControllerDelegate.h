@@ -5,7 +5,9 @@
 
 @required
 
+- (void)beginSuppressingPunchOutMaskCachingForReason:(NSString *)arg1;
 - (<CCUIControlCenterSystemAgent> *)controlCenterSystemAgent;
+- (void)endSuppressingPunchOutMaskCachingForReason:(NSString *)arg1;
 - (long long)layoutStyle;
 - (void)noteSectionEnabledStateDidChange:(CCUIControlCenterSectionViewController *)arg1;
 - (void)section:(CCUIControlCenterSectionViewController *)arg1 publishStatusUpdate:(CCUIControlCenterStatusUpdate *)arg2;

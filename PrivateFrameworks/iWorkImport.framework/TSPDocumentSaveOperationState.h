@@ -21,6 +21,7 @@
     NSURL * _relativeURLForExternalData;
     unsigned long long  _saveToken;
     bool  _shouldLeavePendingEndSave;
+    bool  _shouldResumeAsynchronousModifications;
     TSPObject * _supportObject;
     TSPPackageWriter * _supportPackageWriter;
 }
@@ -43,6 +44,7 @@
 @property (nonatomic, copy) NSURL *relativeURLForExternalData;
 @property (nonatomic) unsigned long long saveToken;
 @property (nonatomic) bool shouldLeavePendingEndSave;
+@property (nonatomic) bool shouldResumeAsynchronousModifications;
 @property (nonatomic, retain) TSPObject *supportObject;
 @property (nonatomic, retain) TSPPackageWriter *supportPackageWriter;
 
@@ -82,9 +84,11 @@
 - (void)setRelativeURLForExternalData:(id)arg1;
 - (void)setSaveToken:(unsigned long long)arg1;
 - (void)setShouldLeavePendingEndSave:(bool)arg1;
+- (void)setShouldResumeAsynchronousModifications:(bool)arg1;
 - (void)setSupportObject:(id)arg1;
 - (void)setSupportPackageWriter:(id)arg1;
 - (bool)shouldLeavePendingEndSave;
+- (bool)shouldResumeAsynchronousModifications;
 - (id)supportObject;
 - (id)supportPackageWriter;
 

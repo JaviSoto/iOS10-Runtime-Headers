@@ -15,5 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (bool)isDirectory;
+- (bool)verifyAccessByProcessIdentifier:(int)arg1;
 
 @end

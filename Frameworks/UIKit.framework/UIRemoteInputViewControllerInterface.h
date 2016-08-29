@@ -19,6 +19,7 @@
 - (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)_performInputViewControllerOutput:(id)arg1;
 - (void)_tearDownRemoteService;
+- (void)dealloc;
 - (id)responseDelegate;
 - (void)setResponseDelegate:(id)arg1;
 

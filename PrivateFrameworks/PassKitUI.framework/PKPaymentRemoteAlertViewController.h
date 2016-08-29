@@ -14,6 +14,7 @@
     CLInUseAssertion * _passbookForegroundAssertion;
     PKPaymentService * _paymentService;
     long long  _presentationSource;
+    unsigned long long  _presentationStartTime;
     bool  _processHomeButtonEvents;
 }
 
@@ -28,6 +29,7 @@
 
 - (void).cxx_destruct;
 - (void)_contactlessInterfaceSessionDidAuthorize:(id)arg1;
+- (void)_contactlessInterfaceSessionFinishTransaction:(id)arg1;
 - (void)_dismissForSource:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)_dismissIfRestricted;
 - (bool)_notificationIsFromChildViewController:(id)arg1;

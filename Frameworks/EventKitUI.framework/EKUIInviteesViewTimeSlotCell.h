@@ -41,6 +41,10 @@
     NSDate * _startDate;
     UITapGestureRecognizer * _tappedMoreRecognizer;
     UITextView * _textViewForTextSizeTesting;
+    NSTimeZone * _timeZone;
+    UILabel * _timeZoneTimeLabel;
+    NSLayoutConstraint * _timeZoneTimeLabelHeightConstraint;
+    NSLayoutConstraint * _timeZoneTimeLabelToBottomTimeLabelConstraint;
     UILabel * _topTimeLabel;
     NSLayoutConstraint * _topTimeLabelHeightConstraint;
     NSLayoutConstraint * _topTimeLabelToTopContentViewConstraint;
@@ -80,6 +84,10 @@
 @property (nonatomic, retain) UITapGestureRecognizer *tappedMoreRecognizer;
 @property (nonatomic, retain) UITextView *textViewForTextSizeTesting;
 @property (nonatomic, readonly) UIColor *timeTextColor;
+@property (nonatomic, retain) NSTimeZone *timeZone;
+@property (nonatomic, retain) UILabel *timeZoneTimeLabel;
+@property (nonatomic, retain) NSLayoutConstraint *timeZoneTimeLabelHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *timeZoneTimeLabelToBottomTimeLabelConstraint;
 @property (nonatomic, retain) UILabel *topTimeLabel;
 @property (nonatomic, retain) NSLayoutConstraint *topTimeLabelHeightConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *topTimeLabelToTopContentViewConstraint;
@@ -112,6 +120,7 @@
 - (void)_resetParticipantsTextIfNeeded;
 - (void)_resetPreferredMaxLayoutWidths;
 - (void)_resetTimeTextIfNeeded;
+- (bool)_shouldDisplayTimeZone;
 - (void)_showPreviewButtonTapped:(id)arg1;
 - (id)_textForParticipant:(id)arg1 color:(id)arg2;
 - (bool)_textWillFit:(id)arg1;
@@ -171,6 +180,10 @@
 - (void)setStartDate:(id)arg1;
 - (void)setTappedMoreRecognizer:(id)arg1;
 - (void)setTextViewForTextSizeTesting:(id)arg1;
+- (void)setTimeZone:(id)arg1;
+- (void)setTimeZoneTimeLabel:(id)arg1;
+- (void)setTimeZoneTimeLabelHeightConstraint:(id)arg1;
+- (void)setTimeZoneTimeLabelToBottomTimeLabelConstraint:(id)arg1;
 - (void)setTopTimeLabel:(id)arg1;
 - (void)setTopTimeLabelHeightConstraint:(id)arg1;
 - (void)setTopTimeLabelToTopContentViewConstraint:(id)arg1;
@@ -185,6 +198,10 @@
 - (id)tappedMoreRecognizer;
 - (id)textViewForTextSizeTesting;
 - (id)timeTextColor;
+- (id)timeZone;
+- (id)timeZoneTimeLabel;
+- (id)timeZoneTimeLabelHeightConstraint;
+- (id)timeZoneTimeLabelToBottomTimeLabelConstraint;
 - (id)topTimeLabel;
 - (id)topTimeLabelHeightConstraint;
 - (id)topTimeLabelToTopContentViewConstraint;
@@ -192,6 +209,6 @@
 - (bool)updateFontBasedConstraints;
 - (bool)updateParticipantsText;
 - (bool)updateTimeText;
-- (void)updateWithStartDate:(id)arg1 endDate:(id)arg2 busyParticipants:(id)arg3 showAllParticipants:(bool)arg4 checked:(bool)arg5;
+- (void)updateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 busyParticipants:(id)arg4 showAllParticipants:(bool)arg5 checked:(bool)arg6;
 
 @end

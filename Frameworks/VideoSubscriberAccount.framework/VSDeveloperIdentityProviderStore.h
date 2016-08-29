@@ -3,19 +3,19 @@
  */
 
 @interface VSDeveloperIdentityProviderStore : NSObject <VSDeveloperServiceProtocol> {
-    NSPersistentContainer * _persistentContainer;
+    VSPersistentContainer * _persistentContainer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSPersistentContainer *persistentContainer;
+@property (nonatomic, retain) VSPersistentContainer *persistentContainer;
 @property (readonly) Class superclass;
 
-+ (id)_identityProviderEntity;
-+ (id)_managedObjectModel;
-
 - (void).cxx_destruct;
+- (id)_developerIdentityProviderInContext:(id)arg1;
+- (id)_fetchRequest;
+- (void)_performBlock:(id /* block */)arg1;
 - (void)addDeveloperIdentityProvider:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchDeveloperIdentityProvidersWithCompletionHandler:(id /* block */)arg1;
 - (id)init;

@@ -5,6 +5,7 @@
 @interface CNPostalAddressEditorViewController : UITableViewController <CNPresenterDelegate, CNPropertyCellDelegate> {
     CNMutableContact * _contact;
     bool  _editNames;
+    bool  _editingExistingContact;
     CNCardPropertyGroup * _propertyGroup;
     NSMutableArray * _propertyItems;
     NSString * _propertyKey;

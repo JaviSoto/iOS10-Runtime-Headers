@@ -4,8 +4,10 @@
 
 @interface CAMCaptureCapabilities : NSObject {
     double  __backCaptureInterval;
+    double  __backPhotoModeMaximumZoomFactor;
     double  __backVideoModeMaximumZoomFactor;
     double  __frontCaptureInterval;
+    double  __frontPhotoModeMaximumZoomFactor;
     double  __frontVideoModeMaximumZoomFactor;
     bool  _back1080p120Supported;
     long long  _back1080pMaxFPS;
@@ -58,8 +60,10 @@
 }
 
 @property (nonatomic, readonly) double _backCaptureInterval;
+@property (nonatomic, readonly) double _backPhotoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _backVideoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _frontCaptureInterval;
+@property (nonatomic, readonly) double _frontPhotoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _frontVideoModeMaximumZoomFactor;
 @property (getter=isBack1080p120Supported, nonatomic, readonly) bool back1080p120Supported;
 @property (nonatomic, readonly) long long back1080pMaxFPS;
@@ -113,8 +117,10 @@
 + (id)capabilities;
 
 - (double)_backCaptureInterval;
+- (double)_backPhotoModeMaximumZoomFactor;
 - (double)_backVideoModeMaximumZoomFactor;
 - (double)_frontCaptureInterval;
+- (double)_frontPhotoModeMaximumZoomFactor;
 - (double)_frontVideoModeMaximumZoomFactor;
 - (long long)back1080pMaxFPS;
 - (long long)back720pMaxFPS;

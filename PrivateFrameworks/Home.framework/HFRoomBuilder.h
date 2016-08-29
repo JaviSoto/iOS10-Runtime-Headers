@@ -2,23 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFRoomBuilder : HFItemBuilder <HFWallpaperBuilder> {
+@interface HFRoomBuilder : HFItemBuilder {
     HFMutableSetDiff * _accessoryUUIDs;
-    NAFuture * _loadedWallpaperFuture;
     NSString * _name;
-    HFWallpaper * _wallpaper;
+    HFWallpaperEditCollectionBuilder * _wallpaperBuilder;
 }
 
 @property (nonatomic, readonly) NSSet *accessories;
 @property (nonatomic, readonly) HFMutableSetDiff *accessoryUUIDs;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NAFuture *loadedWallpaperFuture;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) HMRoom *room;
-@property (readonly) Class superclass;
-@property (nonatomic, retain) HFWallpaper *wallpaper;
+@property (nonatomic, retain) HFWallpaperEditCollectionBuilder *wallpaperBuilder;
 
 + (Class)homeKitRepresentationClass;
 
@@ -27,7 +21,6 @@
 - (id)_performValidation;
 - (id)_updateAccessories;
 - (id)_updateName;
-- (id)_updateWallpaper;
 - (id)accessories;
 - (id)accessoryUUIDs;
 - (void)addAccessory:(id)arg1;
@@ -35,15 +28,12 @@
 - (unsigned long long)hash;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 - (bool)isEqual:(id)arg1;
-- (id)loadedWallpaperFuture;
 - (id)name;
 - (void)removeAccessory:(id)arg1;
 - (id)room;
-- (void)setLoadedWallpaperFuture:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setRoom:(id)arg1;
-- (void)setWallpaper:(id)arg1;
-- (id)wallpaper;
-- (id)wallpaperFuture;
+- (void)setWallpaperBuilder:(id)arg1;
+- (id)wallpaperBuilder;
 
 @end

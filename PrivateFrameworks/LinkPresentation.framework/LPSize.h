@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
  */
 
-@interface LPSize : NSObject {
+@interface LPSize : NSObject <NSCopying> {
     LPPointUnit * _height;
     LPPointUnit * _width;
 }
@@ -13,6 +13,7 @@
 
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })asSize;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)height;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setHeight:(id)arg1;

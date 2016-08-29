@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDDemoDataGeneratorWorkoutConfiguration : NSObject {
+@interface HDDemoDataGeneratorWorkoutConfiguration : NSObject <NSSecureCoding> {
     unsigned long long  _activityType;
+    bool  _createdFromNSKeyedUnarchiver;
     double  _distanceCyclingRateInMiles;
     double  _distanceWalkingRateInMiles;
     double  _endTime;
@@ -24,14 +25,19 @@
 @property (nonatomic) double kcalRate;
 @property (nonatomic) double startTime;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (unsigned long long)activityType;
+- (bool)createdFromNSKeyedUnarchiver;
 - (double)distanceCyclingRateInMiles;
 - (double)distanceWalkingRateInMiles;
+- (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
 - (id)goal;
 - (unsigned long long)goalType;
 - (bool)indoor;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPrototype:(id)arg1 currentDemoDataTime:(double)arg2;
 - (double)kcalRate;
 - (void)setActivityType:(unsigned long long)arg1;

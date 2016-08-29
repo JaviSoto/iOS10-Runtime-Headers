@@ -8,7 +8,10 @@
     NSString * _fileSize;
     UILabel * _fileSizeLabel;
     NSString * _fileType;
+    NSLayoutConstraint * _iconHeightConstraint;
     UIImageView * _iconImageView;
+    NSLayoutConstraint * _iconWidthConstraint;
+    NSLayoutConstraint * _lineHeightBetweenIconAndFileNameLabelConstraint;
     UIView * _spacingView;
     UIStackView * _stackView;
 }
@@ -19,6 +22,7 @@
 @property (nonatomic, retain) UIImageView *iconImageView;
 
 - (void).cxx_destruct;
+- (void)_configureOrientationBasedConstraints:(long long)arg1;
 - (void)_updateDocumentSizeLabel;
 - (void)_updatePropertiesDefinedByContentSizeCategory;
 - (id)fileName;
@@ -30,5 +34,6 @@
 - (void)setFileSize:(id)arg1;
 - (void)setFileType:(id)arg1;
 - (void)setIconImageView:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -3,7 +3,6 @@
  */
 
 @interface _HKFitnessFriendContact : NSObject <NSCopying, NSSecureCoding> {
-    NSUUID * _contactUUID;
     NSSet * _destinations;
     NSString * _fullName;
     NSString * _linkedContactStoreIdentifier;
@@ -12,7 +11,7 @@
     NSString * _shortName;
 }
 
-@property (nonatomic, copy) NSUUID *contactUUID;
+@property (nonatomic, readonly) NSUUID *contactUUID;
 @property (nonatomic, copy) NSSet *destinations;
 @property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *fullName;
@@ -38,7 +37,6 @@
 - (id)linkedContactStoreIdentifier;
 - (id)relationship;
 - (id)remoteRelationship;
-- (void)setContactUUID:(id)arg1;
 - (void)setDestinations:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setLinkedContactStoreIdentifier:(id)arg1;
@@ -49,9 +47,8 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
 
-- (id)_anyEmailForContact:(id)arg1;
-- (id)_anyPhoneNumberForContact:(id)arg1;
-- (id)bestDestinationFromKnownDestinations;
+- (id)_bestDestinationForContact:(id)arg1;
+- (id)_bestDestinationFromKnownDestinations;
 - (id)primaryDestinationForMessaging;
 
 @end

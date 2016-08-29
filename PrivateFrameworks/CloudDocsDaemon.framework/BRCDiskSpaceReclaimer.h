@@ -33,6 +33,7 @@
 - (id)computePurgeableSpaceForAllUrgencies;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)didAccessDocument:(id)arg1;
+- (void)didUpdateMtimeOnDocument:(id)arg1;
 - (bool)documentUpdateEvictability:(id)arg1;
 - (bool)documentWasAccessedRecently:(id)arg1;
 - (bool)documentWasCreated:(id)arg1;

@@ -8,6 +8,7 @@
     bool  _deviceDidMigrateOnCloud;
     bool  _didCheckMigrationOnCloud;
     bool  _didMigrateForCurrentAccount;
+    NSString * _directoryPath;
     _KSTextReplacementLegacyStore * _legacyStore;
     NSObject<OS_dispatch_queue> * _migrationQueue;
     bool  _pendingMigration;
@@ -21,6 +22,7 @@
 @property (nonatomic) bool deviceDidMigrateOnCloud;
 @property (nonatomic) bool didCheckMigrationOnCloud;
 @property (nonatomic) bool didMigrateForCurrentAccount;
+@property (nonatomic, copy) NSString *directoryPath;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _KSTextReplacementLegacyStore *legacyStore;
 @property (nonatomic) bool pendingMigration;
@@ -40,14 +42,17 @@
 - (bool)deviceDidMigrateOnCloud;
 - (bool)didCheckMigrationOnCloud;
 - (bool)didMigrateForCurrentAccount;
+- (id)directoryPath;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithDirectoryPath:(id)arg1;
 - (id)initWithDirectoryPath:(id)arg1 forceMigration:(bool)arg2 forceCloudKitSync:(bool)arg3;
 - (id)legacyStore;
 - (void)migrateLegacyStore;
 - (void)migrateLocallyCheckCompatibility:(bool)arg1;
+- (double)minimumUptimeRemaining;
 - (void)notifyTextReplacementDidChange;
 - (bool)pendingMigration;
+- (void)pullMigrationSettings;
 - (void)pushAllLocalRecordsOnceIfNeeded;
 - (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
 - (void)resetMigrationState;
@@ -57,6 +62,7 @@
 - (void)setDeviceDidMigrateOnCloud:(bool)arg1;
 - (void)setDidCheckMigrationOnCloud:(bool)arg1;
 - (void)setDidMigrateForCurrentAccount:(bool)arg1;
+- (void)setDirectoryPath:(id)arg1;
 - (void)setLegacyStore:(id)arg1;
 - (void)setPendingMigration:(bool)arg1;
 - (void)setTextReplacementStore:(id)arg1;

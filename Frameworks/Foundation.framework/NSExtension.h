@@ -3,6 +3,7 @@
  */
 
 @interface NSExtension : NSObject <_NSExtensionContextHosting> {
+    NSSet * __allowedErrorClasses;
     long long  __assertionRefCount;
     NSBundle * __extensionBundle;
     NSMutableDictionary * __extensionContexts;
@@ -26,6 +27,7 @@
     NSString * _version;
 }
 
+@property (setter=_setAllowedErrorClasses:, nonatomic, copy) NSSet *_allowedErrorClasses;
 @property (setter=_setAssertionRefCount:, nonatomic) long long _assertionRefCount;
 @property (setter=_setExtensionBundle:, nonatomic, retain) NSBundle *_extensionBundle;
 @property (setter=_setExtensionContexts:, nonatomic, retain) NSMutableDictionary *_extensionContexts;
@@ -71,6 +73,7 @@
 + (void)initializeFiltering;
 + (id)predicateForActivationRule:(id)arg1;
 
+- (id)_allowedErrorClasses;
 - (long long)_assertionRefCount;
 - (id)_bareExtensionServiceConnection;
 - (void)_cancelRequestWithError:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id /* block */)arg3;
@@ -108,6 +111,8 @@
 - (id)_safePluginQueue;
 - (void)_safelyBeginUsing:(id /* block */)arg1;
 - (void)_safelyEndUsing:(id /* block */)arg1;
+- (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(id /* block */)arg2;
+- (void)_setAllowedErrorClasses:(id)arg1;
 - (void)_setAssertionRefCount:(long long)arg1;
 - (void)_setExtensionBundle:(id)arg1;
 - (void)_setExtensionContexts:(id)arg1;
@@ -159,10 +164,10 @@
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)_extensionMatchingDictionaryForIntentClassNames:(id)arg1 extensionPointName:(id)arg2 launchId:(id)arg3;
-+ (void)_findAppsWithAnyIntentsExtensionCheckingSiriEnabled:(bool)arg1 completion:(id /* block */)arg2;
++ (void)_findAppsWithAnyIntentsExtensionCheckingSiriEnabledUseFilter:(long long)arg1 completion:(id /* block */)arg2;
 + (id)_intents_extensionMatchingAttributesForIntents:(id)arg1;
 + (void)_intents_findAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
-+ (void)_intents_findSiriEnabledAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
++ (void)_intents_findPossibleSiriEnabledAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
 + (void)_intents_matchExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
 + (void)_intents_matchSiriExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
 + (void)_intents_matchSiriUIExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;

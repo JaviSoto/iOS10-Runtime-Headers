@@ -2,23 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/DifferentialPrivacy
  */
 
-@interface _DPKeyNames : NSObject {
-    NSString * _keyName;
-    NSString * _propertyName;
-}
-
-@property (nonatomic, readonly, copy) NSString *keyName;
-@property (nonatomic, readonly, copy) NSString *propertyName;
+@interface _DPKeyNames : NSObject
 
 + (id)allKeyNames;
-+ (id)keyNamessFromDictionary:(id)arg1;
++ (id)keyNamesGroupedByBudgetName;
 + (id)keyPropertiesForKey:(id)arg1;
 + (id)propertiesFromNamesFile:(id)arg1;
-
-- (void).cxx_destruct;
-- (id)init;
-- (id)initWithDictionary:(id)arg1;
-- (id)keyName;
-- (id)propertyName;
 
 @end

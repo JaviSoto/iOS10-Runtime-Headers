@@ -8,7 +8,7 @@
 
 - (id)activityItems;
 - (bool)canMarkup;
-- (void)generatePreviews;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
 - (bool)hasPreviews;

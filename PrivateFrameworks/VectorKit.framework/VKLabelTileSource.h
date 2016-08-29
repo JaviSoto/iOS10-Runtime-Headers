@@ -22,6 +22,7 @@
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 sharedResources:(id)arg4 labelManager:(const struct shared_ptr<md::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg5;
 - (unsigned char)labelScaleFactor;
 - (bool)localizeLabels;
+- (unsigned int)maximumDownloadZoomLevel;
 - (bool)maximumZoomLevelBoundsCamera;
 - (bool)minimumZoomLevelBoundsCamera;
 - (void)setLabelScaleFactor:(unsigned char)arg1;

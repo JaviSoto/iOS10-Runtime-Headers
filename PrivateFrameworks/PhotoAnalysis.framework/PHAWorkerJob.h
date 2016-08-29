@@ -6,6 +6,7 @@
     unsigned long long  _countOfFailedStarts;
     <PHAWorkerJobDelegate> * _delegate;
     bool  _ignoreFurtherResults;
+    bool  _isReactionJob;
     double  _lastReportTimeAsInterval;
     PHPhotoLibrary * _photoLibrary;
     unsigned long long  _scenario;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) bool finished;
 @property (nonatomic) bool ignoreFurtherResults;
 @property (readonly) double intervalSinceLastReport;
+@property (setter=setIsReactionJob:, nonatomic) bool isReactionJob;
 @property double lastReportTimeAsInterval;
 @property (nonatomic, retain) PHPhotoLibrary *photoLibrary;
 @property (nonatomic, readonly) unsigned long long scenario;
@@ -38,6 +40,7 @@
 - (id)initWithWorkerType:(short)arg1 scenario:(unsigned long long)arg2 library:(id)arg3;
 - (double)intervalSinceLastReport;
 - (bool)isEqualToWorkerJob:(id)arg1;
+- (bool)isReactionJob;
 - (double)lastReportTimeAsInterval;
 - (id)photoLibrary;
 - (void)prepare;
@@ -45,6 +48,7 @@
 - (void)setCountOfFailedStarts:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIgnoreFurtherResults:(bool)arg1;
+- (void)setIsReactionJob:(bool)arg1;
 - (void)setLastReportTimeAsInterval:(double)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)setTreatMissingResultsAsFailures:(bool)arg1;

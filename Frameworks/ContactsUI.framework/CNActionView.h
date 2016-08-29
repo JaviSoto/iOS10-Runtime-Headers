@@ -42,7 +42,6 @@
 + (id)contentColorForDisabledBoldState;
 + (id)contentColorForDisabledVibrantDarkState;
 + (void)fadeInView:(id)arg1;
-+ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)actionDelegate;
@@ -61,8 +60,11 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (double)intrinsicContentWidth;
+- (void)layoutSubviews;
 - (id)longPressGestureRecognizer;
 - (id)platterView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForPlatterView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForTitleLabelForFont:(id)arg1;
 - (void)setActionDelegate:(id)arg1;
 - (void)setActivatedContstrants:(id)arg1;
 - (void)setDisabled:(bool)arg1;
@@ -79,12 +81,13 @@
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setType:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (long long)style;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)tapGestureRecognizer;
 - (id)title;
 - (id)titleLabel;
 - (id)type;
-- (void)updateConstraints;
 - (void)updateImageViewStateAnimated:(bool)arg1;
 - (void)updateLabelStateAnimated:(bool)arg1;
 - (void)updatePlatterViewStateAnimated:(bool)arg1;

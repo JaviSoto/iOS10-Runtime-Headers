@@ -9,8 +9,8 @@
     NSObject<OS_dispatch_queue> * _outgoingDispatchQueue;
     HDFitnessFriendsMessageQueue * _outgoingMessageQueue;
     HDFitnessFriendsMessageQueue * _persistedMessageQueue;
+    HDFitnessFriendsMessageQueue * _retryMessageQueue;
     NSString * _serviceIdentifier;
-    HDFitnessFriendsMessageQueue * _undeliveredMessageQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +31,7 @@
 - (void)_handleInviteRequest:(id)arg1 fromSenderAddress:(id)arg2 messageHandledCompletion:(id /* block */)arg3;
 - (void)_handleInviteResponse:(id)arg1 fromSenderAddress:(id)arg2 messageHandledCompletion:(id /* block */)arg3;
 - (void)_handleMessage:(id)arg1 identifier:(id)arg2;
+- (void)_handleMessageSendSuccess:(bool)arg1 error:(id)arg2 identifier:(id)arg3;
 - (void)_handleWithdrawInviteRequest:(id)arg1 fromSenderAddress:(id)arg2 messageHandledCompletion:(id /* block */)arg3;
 - (id)_idsIdentifierForDestination:(id)arg1;
 - (id)_idsIdentifiersForDestinations:(id)arg1;
@@ -42,7 +43,7 @@
 - (id)delegate;
 - (id)initWithServiceIdentifier:(id)arg1;
 - (void)processPersistedMessageQueue;
-- (void)processUndeliveredMessageQueue;
+- (void)processRetryMessageQueue;
 - (void)sendFinalizeHandshake:(id)arg1 toDestinations:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendInviteRequest:(id)arg1 toDestinations:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendInviteResponse:(id)arg1 toDestinations:(id)arg2 completion:(id /* block */)arg3;

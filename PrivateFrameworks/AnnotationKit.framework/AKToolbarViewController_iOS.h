@@ -60,7 +60,7 @@
 - (id)_createNewCustomViewToolbarButtonWithImage:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (id)_createNewToggleToolbarButtonWithImage:(id)arg1 tag:(long long)arg2 target:(id)arg3 selector:(SEL)arg4;
 - (void)_deleteSelectedItems:(id)arg1;
-- (void)_dismissCurrentlyPresentedPopover;
+- (void)_dismissCurrentlyPresentedPopoverAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)_doodleModeToolbarImage;
 - (void)_layoutAttributeContainer;
 - (void)_layoutToolbarForTraitCollection:(id)arg1;
@@ -79,6 +79,7 @@
 - (void)_undoManagerNotification:(id)arg1;
 - (void)_updateToggleButton:(id)arg1 withTraitCollection:(id)arg2;
 - (bool)_validateUndoButton;
+- (unsigned long long)_workaroundToolbarPopoverPositioningBug26744300;
 - (double)additionalOffset;
 - (id)attributeToolbarContainer;
 - (id)attributeToolbarViewController;

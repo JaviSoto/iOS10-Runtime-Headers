@@ -47,6 +47,7 @@
 
 - (id)_constraintCopyOfConstraint:(id)arg1 replaceItem:(id)arg2 withItem:(id)arg3;
 - (void)_exciseSearchBarFromCurrentContext;
+- (void)_layoutPresentationWithSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (void)_placeSearchBarBackIntoOriginalContext;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
 - (id)_presentedViewControllerForPresentationController:(id)arg1 traitCollection:(id)arg2;
@@ -64,6 +65,7 @@
 - (long long)adaptivePresentationStyle;
 - (bool)animatorShouldLayoutPresentationViews;
 - (id)backgroundObscuringView;
+- (void)containerViewWillLayoutSubviews;
 - (void)dealloc;
 - (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)dismissalTransitionWillBegin;

@@ -12,10 +12,10 @@
     NSMutableArray * _completions;
     double  _delay;
     double  _drag;
-    double  _duration;
     long long  _finishingPosition;
     double  _fractionComplete;
     double  _fractionCompleteWhenContinued;
+    double  _internalDuration;
     bool  _interruptible;
     bool  _introspectable;
     bool  _manualHitTestingEnabled;
@@ -47,6 +47,7 @@
 @property (getter=_finishingPosition, setter=_setFinishingPosition:, nonatomic) long long finishingPosition;
 @property (nonatomic) double fractionComplete;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) double internalDuration;
 @property (getter=isInterruptible, nonatomic) bool interruptible;
 @property (getter=isIntrospectable, nonatomic) bool introspectable;
 @property (getter=isManualHitTestingEnabled, nonatomic) bool manualHitTestingEnabled;
@@ -156,6 +157,7 @@
 - (id)initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 initialVelocity:(struct CGVector { double x1; double x2; })arg4 animations:(id /* block */)arg5;
 - (void)interactionProgress:(id)arg1 didEnd:(bool)arg2;
 - (void)interactionProgressDidUpdate:(id)arg1;
+- (double)internalDuration;
 - (bool)isInterruptible;
 - (bool)isIntrospectable;
 - (bool)isManualHitTestingEnabled;
@@ -168,8 +170,8 @@
 - (void)reverseAnimation;
 - (void)reverseAnimationWithTimingParameters:(id)arg1 durationFactor:(double)arg2;
 - (void)setAnimationDescriptionMap:(id)arg1;
-- (void)setDuration:(double)arg1;
 - (void)setFractionComplete:(double)arg1;
+- (void)setInternalDuration:(double)arg1;
 - (void)setInterruptible:(bool)arg1;
 - (void)setIntrospectable:(bool)arg1;
 - (void)setManualHitTestingEnabled:(bool)arg1;

@@ -5,6 +5,8 @@
 @interface CNUIContactsEnvironment : NSObject {
     CNUIAccountsFacade * _accountsFacade;
     long long  _accountsFacade_once;
+    <CNUIUserActionDiscoveringEnvironment> * _actionDiscoveringEnvironment;
+    long long  _actionDiscoveringEnvironment_once;
     <CNUIPRLikenessResolver> * _cachingLikenessResolver;
     long long  _cachingLikenessResolver_once;
     CNContactsEnvironment * _cnEnvironment;
@@ -16,6 +18,8 @@
     long long  _duetConsumer_once;
     CNUIFMFFacade * _fmfFacade;
     long long  _fmfFacade_once;
+    CNUIIDSAvailabilityProvider * _idsAvailabilityProvider;
+    long long  _idsAvailabilityProvider_once;
     CNUIMeContactMonitor * _meMonitor;
     long long  _meMonitor_once;
     PRPersonaStore * _personaStore;
@@ -26,12 +30,14 @@
 }
 
 @property (nonatomic, retain) CNUIAccountsFacade *accountsFacade;
+@property (nonatomic, retain) <CNUIUserActionDiscoveringEnvironment> *actionDiscoveringEnvironment;
 @property (nonatomic, retain) <CNUIPRLikenessResolver> *cachingLikenessResolver;
 @property (nonatomic, readonly) CNContactsEnvironment *cnEnvironment;
 @property (nonatomic, retain) CNContactStore *contactStore;
 @property (nonatomic, retain) <CNSchedulerProvider> *defaultSchedulerProvider;
 @property (nonatomic, retain) _DECConsumer *duetConsumer;
 @property (nonatomic, retain) CNUIFMFFacade *fmfFacade;
+@property (nonatomic, retain) CNUIIDSAvailabilityProvider *idsAvailabilityProvider;
 @property (nonatomic, retain) CNUIMeContactMonitor *meMonitor;
 @property (nonatomic, retain) PRPersonaStore *personaStore;
 @property (nonatomic, retain) <CNUIPlaceholderProviderFactory> *placeholderProviderFactory;
@@ -41,12 +47,14 @@
 
 - (void).cxx_destruct;
 - (id)accountsFacade;
+- (id)actionDiscoveringEnvironment;
 - (id)cachingLikenessResolver;
 - (id)cnEnvironment;
 - (id)contactStore;
 - (id)defaultSchedulerProvider;
 - (id)duetConsumer;
 - (id)fmfFacade;
+- (id)idsAvailabilityProvider;
 - (id)init;
 - (id)initWithContactsEnvironment:(id)arg1;
 - (id)meMonitor;
@@ -54,11 +62,13 @@
 - (id)placeholderProviderFactory;
 - (id)servicesProvider;
 - (void)setAccountsFacade:(id)arg1;
+- (void)setActionDiscoveringEnvironment:(id)arg1;
 - (void)setCachingLikenessResolver:(id)arg1;
 - (void)setContactStore:(id)arg1;
 - (void)setDefaultSchedulerProvider:(id)arg1;
 - (void)setDuetConsumer:(id)arg1;
 - (void)setFmfFacade:(id)arg1;
+- (void)setIdsAvailabilityProvider:(id)arg1;
 - (void)setMeMonitor:(id)arg1;
 - (void)setPersonaStore:(id)arg1;
 - (void)setPlaceholderProviderFactory:(id)arg1;

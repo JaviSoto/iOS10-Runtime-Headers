@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKCloudPlayer : GKBasePlayer <NSSecureCoding> {
+@interface GKCloudPlayer : GKBasePlayer <NSCopying, NSSecureCoding> {
     NSString * _identifier;
     NSString * _name;
 }
@@ -10,10 +10,11 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *name;
 
-+ (void)getCurrentSignedInPlayer:(id /* block */)arg1;
++ (void)getCurrentSignedInPlayerForContainer:(id)arg1 completionHandler:(id /* block */)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;

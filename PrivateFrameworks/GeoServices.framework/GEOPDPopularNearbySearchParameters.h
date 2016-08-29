@@ -10,6 +10,7 @@
     unsigned int  _maxResults;
     int  _searchType;
     NSData * _suggestionEntryMetadata;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -20,6 +21,7 @@
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) int searchType;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (int)StringAsSearchType:(id)arg1;
@@ -46,6 +48,7 @@
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (id)suggestionEntryMetadata;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

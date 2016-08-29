@@ -13,7 +13,7 @@
 - (void)moveToFront;
 - (void)showErrorDeviceOfflineForShareURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)showErrorInstallNativeAppForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
-- (void)showErrorItemIsNoLongerSharedForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorItemUnavailableOrAccessRestrictedForShareURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)showErrorNativeAppDisabledByProfileForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
 - (void)showErrorParticipantLimitReachedForShareURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)showErrorReasonUnknownForShareURL:(id)arg1 reply:(id /* block */)arg2;

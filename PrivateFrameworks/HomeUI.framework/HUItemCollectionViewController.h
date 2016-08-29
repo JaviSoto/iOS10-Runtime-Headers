@@ -56,7 +56,6 @@
 - (void)setItemManager:(id)arg1;
 - (void)setWantsPreferredContentSize:(bool)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (id)subclass_preloadContent;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

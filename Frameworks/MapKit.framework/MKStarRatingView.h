@@ -30,6 +30,7 @@
 @property (nonatomic) long long starStyle;
 
 + (id)ratingAsAttributedString:(double)arg1 baseFont:(id)arg2 style:(long long)arg3;
++ (id)ratingAsAttributedString:(double)arg1 baseFont:(id)arg2 style:(long long)arg3 theme:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)_layoutStarViewsCreatingIfNeeded:(bool)arg1;

@@ -4,18 +4,24 @@
 
 @interface MKSearchFoundationFeedbackListener : NSObject <SFFeedbackListener> {
     unsigned long long  _clientType;
+    NSArray * _sections;
 }
 
 @property (nonatomic) unsigned long long clientType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *sections;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (unsigned long long)clientType;
 - (void)didEngageResult:(id)arg1;
+- (void)didRankSections:(id)arg1;
 - (id)initWithClientType:(unsigned long long)arg1;
 - (void)resultsDidBecomeVisible:(id)arg1;
+- (id)sections;
 - (void)setClientType:(unsigned long long)arg1;
+- (void)setSections:(id)arg1;
 
 @end

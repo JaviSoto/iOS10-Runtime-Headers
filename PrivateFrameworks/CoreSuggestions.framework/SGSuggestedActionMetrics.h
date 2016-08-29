@@ -12,9 +12,11 @@
     SGMEventBannerConfirmed * _eventBannerConfirmed;
     SGMEventBannerRejected * _eventBannerRejected;
     SGMEventInBanner * _eventInBanner;
+    SGMMaybeInformationShown * _maybeInformationShown;
     SGMNLEventBannerConfirmed * _nlEventBannerConfirmed;
     SGMNLEventBannerRejected * _nlEventBannerRejected;
     SGMNLEventInBanner * _nlEventInBanner;
+    SGMUnknownContactInformationShown * _unknownContactInformationShown;
 }
 
 @property (nonatomic, retain) SGMContactConfirmed *contactConfirmed;
@@ -26,9 +28,11 @@
 @property (nonatomic, retain) SGMEventBannerConfirmed *eventBannerConfirmed;
 @property (nonatomic, retain) SGMEventBannerRejected *eventBannerRejected;
 @property (nonatomic, retain) SGMEventInBanner *eventInBanner;
+@property (nonatomic, retain) SGMMaybeInformationShown *maybeInformationShown;
 @property (nonatomic, retain) SGMNLEventBannerConfirmed *nlEventBannerConfirmed;
 @property (nonatomic, retain) SGMNLEventBannerRejected *nlEventBannerRejected;
 @property (nonatomic, retain) SGMNLEventInBanner *nlEventInBanner;
+@property (nonatomic, retain) SGMUnknownContactInformationShown *unknownContactInformationShown;
 
 + (id)instance;
 + (void)recordBannerConfirmedWithContact:(id)arg1 proposedCNContact:(id)arg2 confirmedCNContact:(id)arg3 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg4;
@@ -38,6 +42,8 @@
 + (void)recordBannerShownWithContacts:(id)arg1 events:(id)arg2 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg3;
 + (void)recordContactDetailEngagementWithResolution:(long long)arg1 detailType:(struct SGMContactDetailType_ { unsigned long long x1; })arg2 extractionType:(unsigned long long)arg3;
 + (void)recordContactDetailUsage:(id)arg1 withApp:(id)arg2;
++ (void)recordMaybeContactFrom:(unsigned long long)arg1;
++ (void)recordMaybeContactRequested;
 
 - (void).cxx_destruct;
 - (id)contactConfirmed;
@@ -50,6 +56,7 @@
 - (id)eventBannerRejected;
 - (id)eventInBanner;
 - (id)init;
+- (id)maybeInformationShown;
 - (id)nlEventBannerConfirmed;
 - (id)nlEventBannerRejected;
 - (id)nlEventInBanner;
@@ -62,8 +69,11 @@
 - (void)setEventBannerConfirmed:(id)arg1;
 - (void)setEventBannerRejected:(id)arg1;
 - (void)setEventInBanner:(id)arg1;
+- (void)setMaybeInformationShown:(id)arg1;
 - (void)setNlEventBannerConfirmed:(id)arg1;
 - (void)setNlEventBannerRejected:(id)arg1;
 - (void)setNlEventInBanner:(id)arg1;
+- (void)setUnknownContactInformationShown:(id)arg1;
+- (id)unknownContactInformationShown;
 
 @end

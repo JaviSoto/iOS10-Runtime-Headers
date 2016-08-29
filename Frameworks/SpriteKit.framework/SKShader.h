@@ -34,6 +34,7 @@
     NSPointerArray * _targetNodes;
     NSMutableDictionary * _uniformData;
     NSMutableArray * _uniforms;
+    bool  _usesSpriteSizeUniform;
     bool  _usesTimeUniform;
 }
 

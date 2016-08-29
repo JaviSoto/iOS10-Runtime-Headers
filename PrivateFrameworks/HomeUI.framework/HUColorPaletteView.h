@@ -10,7 +10,7 @@
     NSArray * _colorSwatchViews;
     UILongPressGestureRecognizer * _gestureRecognizer;
     <HUQuickControlColorPaletteViewInteractionDelegate> * _interactionDelegate;
-    HUQuickControlSimpleViewProfile * _profile;
+    HUQuickControlViewProfile * _profile;
     HFColorPaletteColor * _selectedColor;
     NSNumber * _trackingColorIndex;
     bool  _userInteractionActive;
@@ -26,7 +26,8 @@
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) <HUQuickControlColorPaletteViewInteractionDelegate> *interactionDelegate;
-@property (nonatomic, retain) HUQuickControlSimpleViewProfile *profile;
+@property (nonatomic, copy) HUQuickControlViewProfile *profile;
+@property (nonatomic, retain) id secondaryValue;
 @property (nonatomic, retain) HFColorPaletteColor *selectedColor;
 @property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;

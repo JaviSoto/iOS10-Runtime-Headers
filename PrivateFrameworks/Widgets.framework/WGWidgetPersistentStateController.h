@@ -30,7 +30,5 @@
 - (long long)largestAvailableDisplayModeForWidgetWithIdentifier:(id)arg1;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (bool)setLargestAvailableDisplayMode:(long long)arg1 forWidgetWithIdentifier:(id)arg2;
-- (bool)setUserSpecifiedDisplayMode:(long long)arg1 forWidgetWithIdentifier:(id)arg2;
-- (long long)userSpecifiedDisplayModeForWidgetWithIdentifier:(id)arg1;
 
 @end

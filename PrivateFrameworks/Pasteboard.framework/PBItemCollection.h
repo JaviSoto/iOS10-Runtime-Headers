@@ -15,7 +15,6 @@
     NSXPCConnection * _itemQueue_remoteDataProviderConnection;
     NSXPCListenerEndpoint * _itemQueue_remoteDataProviderEndpoint;
     long long  _itemQueue_remotePasteboardState;
-    NSString * _persistenceName;
 }
 
 @property (nonatomic, readonly) NSUUID *UUID;
@@ -69,6 +68,7 @@
 - (id)dataConsumersEndpoint;
 - (id)dataConsumersListener;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)establishConnectionToDataProviderCompletionBlock:(id /* block */)arg1;
 - (id)expirationDate;
@@ -102,7 +102,6 @@
 - (id)name;
 - (id)originatorBundleID;
 - (id)originatorTeamID;
-- (id)persistenceName;
 - (id)persistenceName;
 - (id)privateMetadata;
 - (void)setChangeCount:(long long)arg1;

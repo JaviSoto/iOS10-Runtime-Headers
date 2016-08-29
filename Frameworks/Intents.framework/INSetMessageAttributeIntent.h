@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetMessageAttributeIntent : INIntent <INSetMessageAttributeIntent>
+@interface INSetMessageAttributeIntent : INIntent <INSetMessageAttributeIntentExport>
 
 @property (nonatomic, readonly) long long attribute;
 @property (readonly, copy) NSString *debugDescription;

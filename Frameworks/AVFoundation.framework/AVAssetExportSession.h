@@ -66,7 +66,6 @@
 - (void)_createRemakerAndBeginExport;
 - (id)_determineCompatibleFileTypes;
 - (id)_effectiveColorPropertiesForVideoSetting:(id)arg1;
-- (struct CGSize { double x1; double x2; })_getSourceDimension;
 - (float)_getSourceVideoFrameRate;
 - (long long)_getTrackCountOfType:(id)arg1 checkEnabled:(bool)arg2;
 - (struct CGSize { double x1; double x2; })_getUntransformedSourceDimension;
@@ -84,7 +83,7 @@
 - (void)_updateProgress;
 - (void)_validateOutputFileTypeForExport;
 - (bool)_validateSettablePropertiesReturningError:(id*)arg1;
-- (id)_videoCompositionProcessorPropertiesForVideoSetting:(id)arg1;
+- (id)_videoCompositionProcessorProperties;
 - (id)_videoCompressionPropertiesForVideoSetting:(id)arg1 targetFrameRate:(float)arg2;
 - (id)_videoProcessingOptionsForVideoSetting:(id)arg1 withRemaker:(struct OpaqueFigRemaker { }*)arg2;
 - (id)_videoScalingPropertiesForVideoSetting:(id)arg1;

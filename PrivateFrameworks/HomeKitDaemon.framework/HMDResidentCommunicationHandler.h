@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDResidentCommunicationHandler : NSObject <HMFTimerDelegate> {
+@interface HMDResidentCommunicationHandler : NSObject <HMFLogging, HMFTimerDelegate> {
     HMDDevice * _device;
     NSMapTable * _dispatchedReadRequests;
     NSUUID * _homeUUID;
@@ -28,6 +28,7 @@
 + (void)_clearAllPendingRequests:(id)arg1 error:(id)arg2;
 + (void)_processResponseForMultireadRequest:(id)arg1 overallError:(id)arg2 response:(id)arg3;
 + (id)createResponseSubset:(id)arg1 overallError:(id)arg2 readRequest:(id)arg3 error:(id*)arg4;
++ (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_processResponse:(id)arg1 overallError:(id)arg2 messageIdentifier:(id)arg3;

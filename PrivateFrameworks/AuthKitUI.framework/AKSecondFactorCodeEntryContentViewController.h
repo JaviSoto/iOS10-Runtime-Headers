@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
  */
 
-@interface AKSecondFactorCodeEntryContentViewController : UIViewController <AKClearable, AKJiggling> {
+@interface AKSecondFactorCodeEntryContentViewController : UIViewController <AKSecondFactorCodeEntry> {
     NSArray * _activeConstraints;
     AKAppleIDAuthenticationContext * _authenticationContext;
     AKCodeEntryView * _codeGeneratorView;
@@ -36,6 +36,7 @@
 - (void)setActiveConstraints:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setCodeGeneratorView:(id)arg1;
+- (void)setPasscodeFieldDisabled:(bool)arg1;
 - (void)setReason:(id)arg1;
 - (void)setTitleHeaderViewController:(id)arg1;
 - (id)titleHeaderViewController;

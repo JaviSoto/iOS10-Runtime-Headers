@@ -75,6 +75,7 @@
 - (void)setEta:(id)arg1;
 - (id)spokenTexts;
 - (struct { unsigned int x1; float x2; })startValidCoordinateRange;
+- (void)updateAlertIDWithAlert:(id)arg1;
 - (void)updateLocation:(id)arg1;
 
 @end

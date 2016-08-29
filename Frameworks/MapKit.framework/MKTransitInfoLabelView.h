@@ -12,6 +12,7 @@
     MKMapItem * _mapItem;
     double  _maxWidth;
     long long  _shieldSize;
+    double  _spaceBetweenIcons;
     double  _spaceBetweenShields;
     bool  _truncateBySwitchingToTextOnly;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic) double maxWidth;
 @property (nonatomic) long long shieldSize;
+@property (nonatomic) double spaceBetweenIcons;
 @property (nonatomic) double spaceBetweenShields;
 @property (nonatomic) bool truncateBySwitchingToTextOnly;
 
@@ -51,9 +53,11 @@
 - (void)setMapItem:(id)arg1;
 - (void)setMaxWidth:(double)arg1;
 - (void)setShieldSize:(long long)arg1;
+- (void)setSpaceBetweenIcons:(double)arg1;
 - (void)setSpaceBetweenShields:(double)arg1;
 - (void)setTruncateBySwitchingToTextOnly:(bool)arg1;
 - (long long)shieldSize;
+- (double)spaceBetweenIcons;
 - (double)spaceBetweenShields;
 - (bool)truncateBySwitchingToTextOnly;
 

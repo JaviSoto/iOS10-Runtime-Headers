@@ -12,7 +12,7 @@
     HKWorkoutConfiguration * _workoutConfiguration;
 }
 
-@property (nonatomic, readonly) NSUUID *UUID;
+@property (setter=_setUUID:, nonatomic, retain) NSUUID *UUID;
 @property (nonatomic) <_HKWorkoutSessionDelegate> *delegate;
 @property (readonly) NSDate *endDate;
 @property (readonly) NSDate *startDate;
@@ -23,6 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)UUID;
+- (void)_setUUID:(id)arg1;
 - (bool)_validateWorkoutConfiguration:(id)arg1 errorOut:(id*)arg2;
 - (id)delegate;
 - (id)description;

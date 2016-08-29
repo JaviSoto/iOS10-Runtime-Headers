@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRestaurantReservationUserBooking : INRestaurantReservationBooking <NSCopying> {
+@interface INRestaurantReservationUserBooking : INRestaurantReservationBooking <INRestaurantReservationUserBookingExport, NSCopying> {
     NSString * _advisementText;
     NSDate * _dateStatusModified;
     INRestaurantGuest * _guest;
@@ -13,10 +13,14 @@
 
 @property (nonatomic, copy) NSString *advisementText;
 @property (nonatomic, retain) NSDate *dateStatusModified;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) INRestaurantGuest *guest;
 @property (nonatomic, copy) NSString *guestProvidedSpecialRequestText;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) INRestaurantOffer *selectedOffer;
 @property (nonatomic) unsigned long long status;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

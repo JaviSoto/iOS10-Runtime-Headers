@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLMemoryAsset : PBCodable <NSCopying, NSSecureCoding> {
+@interface CPLMemoryAsset : PBCodable <NSCopying> {
     CPLMemoryAssetFlag * _assetFlag;
     NSString * _assetIdentifier;
     NSData * _assetMovieData;
@@ -18,8 +18,6 @@
 @property (nonatomic, readonly) bool hasMasterFingerprint;
 @property (nonatomic, retain) NSString *masterFingerprint;
 
-+ (bool)supportsSecureCoding;
-
 - (void).cxx_destruct;
 - (id)assetFlag;
 - (id)assetIdentifier;
@@ -28,13 +26,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (void)encodeWithCoder:(id)arg1;
 - (bool)hasAssetFlag;
 - (bool)hasAssetIdentifier;
 - (bool)hasAssetMovieData;
 - (bool)hasMasterFingerprint;
 - (unsigned long long)hash;
-- (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)masterFingerprint;
 - (void)mergeFrom:(id)arg1;

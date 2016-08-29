@@ -45,6 +45,11 @@
 - (id)_fillColor;
 - (void)_incrementAnimationCount;
 - (void)_layoutSubviews:(bool)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_modernResizableBackgroundImageCapInsets;
+- (bool)_modernResizableBackgroundImageEnabled;
+- (struct CGSize { double x1; double x2; })_modernResizableBackgroundImageSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernResizableContentsCenter;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernResizableContentsRect;
 - (double)_pixelDisplayedImageHeight;
 - (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(bool)arg3 cornerRadiusAdjustment:(double)arg4;
 - (id)_sectionBorderColor;
@@ -54,6 +59,8 @@
 - (id)_topShadowColor;
 - (id)_topShadowViewWithColor:(id)arg1;
 - (void)_updateSeparatorViews;
+- (bool)_useModernResizableBackgroundImage;
+- (bool)_useResizableBackgroundImage;
 - (id)backgroundColor;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;

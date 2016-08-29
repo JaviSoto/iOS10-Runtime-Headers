@@ -8,6 +8,7 @@
     NSDate * _date;
     NSDate * _dateRead;
     NSString * _displayName;
+    NSString * _effect;
     NSString * _groupID;
     NSString * _guid;
     bool  _isAudioMessage;
@@ -26,6 +27,7 @@
 @property (retain) NSDate *date;
 @property (retain) NSDate *dateRead;
 @property (retain) NSString *displayName;
+@property (retain) NSString *effect;
 @property (retain) NSString *groupID;
 @property (retain) NSString *guid;
 @property bool isAudioMessage;
@@ -47,6 +49,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
+- (id)effect;
 - (id)groupID;
 - (id)guid;
 - (bool)isAudioMessage;
@@ -61,6 +64,7 @@
 - (void)setDate:(id)arg1;
 - (void)setDateRead:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setEffect:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setIsAudioMessage:(bool)arg1;

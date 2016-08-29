@@ -4,6 +4,7 @@
 
 @interface ICCloudSyncingObject : NSManagedObject <ICCloudObject, ICLoggable> {
     NSMutableDictionary * _decryptedValues;
+    bool  mergingUnappliedEncryptedRecord;
     bool  needsToLoadDecryptedValues;
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic) bool isPasswordProtected;
 @property (nonatomic, readonly) bool isUnsupported;
 @property (nonatomic) bool markedForDeletion;
+@property (getter=isMergingUnappliedEncryptedRecord, nonatomic) bool mergingUnappliedEncryptedRecord;
 @property (nonatomic) long long minimumSupportedNotesVersion;
 @property (nonatomic) bool needsInitialFetchFromCloud;
 @property (nonatomic) bool needsToBeFetchedFromCloud;
@@ -108,6 +110,7 @@
 - (bool)isEncryptableKeyBinaryData:(id)arg1;
 - (bool)isInCloud;
 - (bool)isInICloudAccount;
+- (bool)isMergingUnappliedEncryptedRecord;
 - (bool)isOwnedByCurrentUser;
 - (long long)isPushingSameOrLaterThanVersion:(long long)arg1;
 - (bool)isSharedRootObject;
@@ -158,6 +161,7 @@
 - (void)setDeletedByThisDevice:(bool)arg1;
 - (void)setFailedToSyncCount:(long long)arg1;
 - (void)setInCloud:(bool)arg1;
+- (void)setMergingUnappliedEncryptedRecord:(bool)arg1;
 - (void)setNeedsToBeFetchedFromCloud:(bool)arg1;
 - (void)setNeedsToLoadDecryptedValues:(bool)arg1;
 - (void)setNumberOfPushAttemptsToWaitCount:(long long)arg1;

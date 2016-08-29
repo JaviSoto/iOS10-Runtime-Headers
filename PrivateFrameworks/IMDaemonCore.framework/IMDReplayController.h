@@ -8,6 +8,7 @@
 
 + (id)sharedInstance;
 
+- (void)_processBatch:(id)arg1;
 - (void)dealloc;
 - (void)deleteReplayDBIfNotUnderFirstUnlock;
 - (id)init;

@@ -283,6 +283,10 @@
 
 + (id)hu_staticPreferredFontForTextStyle:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
+
+- (id)_lp_CSSFontWeight;
+
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (double)MPU_scaledValueForValue:(double)arg1;

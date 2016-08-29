@@ -20,7 +20,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned long long filteringOptions;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) MPMediaLibraryView *libraryView;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (getter=isMultiQuery, nonatomic, readonly) bool multiQuery;
 @property (nonatomic, copy) NSArray *scopedContainers;
@@ -36,7 +35,6 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isMultiQuery;
-- (id)libraryView;
 - (id)mediaLibrary;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
 - (id)scopedContainers;

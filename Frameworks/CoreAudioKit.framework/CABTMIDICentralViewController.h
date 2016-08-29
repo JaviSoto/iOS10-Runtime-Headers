@@ -10,7 +10,6 @@
     UIBarButtonItem * editButton;
     UIBarButtonItem * forgetButton;
     bool  inEditingMode;
-    NSMutableArray * incompleteConnectionList;
     UIActivityIndicatorView * indicator;
     NSMutableArray * peripheralList;
 }
@@ -49,6 +48,7 @@
 - (id)title;
 - (void)updateButtonsToMatchTableState;
 - (void)updatePeripheralTable;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

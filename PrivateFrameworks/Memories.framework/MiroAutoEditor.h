@@ -4,6 +4,7 @@
 
 @interface MiroAutoEditor : NSObject {
     bool  _didJustSubmitAJob;
+    id /* block */  _downloadCompleted;
     float  _downloadProgress;
     MiroMemory * _memory;
     MovieController * _movieController;
@@ -13,10 +14,12 @@
     Project * _project;
     long long  _remainingAssetsToDownload;
     bool  _shouldBuildMovieController;
+    bool  _shouldSave;
     bool  _topLevelCancel;
 }
 
 @property bool didJustSubmitAJob;
+@property (nonatomic, copy) id /* block */ downloadCompleted;
 @property float downloadProgress;
 @property (nonatomic, retain) MiroMemory *memory;
 @property (retain) MovieController *movieController;
@@ -27,10 +30,13 @@
 @property long long remainingAssetsToDownload;
 @property (retain) <MiroSequence> *sequence;
 @property bool shouldBuildMovieController;
+@property bool shouldSave;
 @property bool topLevelCancel;
 
++ (id)sharedInstanceForPregenerate;
+
 - (void).cxx_destruct;
-- (void)_autoEditWithCompletionHandler:(id /* block */)arg1;
+- (void)_autoEditMemory:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_cancel;
 - (id)_printDataForAssetAsString:(id)arg1 andPickInfo:(id)arg2;
 - (id)_returnTextDebugAsString;
@@ -38,8 +44,11 @@
 - (void)cancelAutoEdit;
 - (void)dealloc;
 - (bool)didJustSubmitAJob;
+- (id /* block */)downloadCompleted;
 - (float)downloadProgress;
 - (id)durationsForAsset:(id)arg1 itemDuration:(double)arg2;
+- (void)fetchAndPrintAssets:(id)arg1 andMemory:(id)arg2;
+- (id)initForPregenerate;
 - (id)initWithMemory:(id)arg1 shouldBuildMovieController:(bool)arg2;
 - (bool)isBusy;
 - (id)memory;
@@ -48,12 +57,14 @@
 - (id)observer;
 - (id)operationQueue;
 - (void)performAutoEdit;
-- (void)pregenerateMovieWithCompletionHandler:(id /* block */)arg1;
+- (void)performPersist;
+- (void)pregenerateMemory:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (float)progress;
 - (id)project;
 - (long long)remainingAssetsToDownload;
 - (id)sequence;
 - (void)setDidJustSubmitAJob:(bool)arg1;
+- (void)setDownloadCompleted:(id /* block */)arg1;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setMemory:(id)arg1;
 - (void)setMovieController:(id)arg1;
@@ -64,8 +75,11 @@
 - (void)setRemainingAssetsToDownload:(long long)arg1;
 - (void)setSequence:(id)arg1;
 - (void)setShouldBuildMovieController:(bool)arg1;
+- (void)setShouldSave:(bool)arg1;
 - (void)setTopLevelCancel:(bool)arg1;
 - (bool)shouldBuildMovieController;
+- (bool)shouldNotifyProgress;
+- (bool)shouldSave;
 - (bool)topLevelCancel;
 - (void)updateDownloadProgress:(float)arg1;
 - (void)updateMovieController:(id)arg1;

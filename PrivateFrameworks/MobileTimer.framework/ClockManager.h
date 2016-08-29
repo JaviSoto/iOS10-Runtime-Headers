@@ -33,6 +33,7 @@
 - (void)_refreshScheduledLocalNotificationsCacheWithNotifications:(id)arg1;
 - (void)addNotificationObserver:(id)arg1;
 - (void)cancelLocalNotification:(id)arg1;
+- (void)cancelLocalNotifications:(id)arg1;
 - (bool)discardOldVersion;
 - (id)init;
 - (bool)isIgnoringNotificationPostRequests;

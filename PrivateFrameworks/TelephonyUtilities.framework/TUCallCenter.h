@@ -6,10 +6,20 @@
     TUAudioDeviceController * _audioDeviceController;
     TUCallServicesInterface * _callServicesInterface;
     CNContactStore * _contactStore;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _localLandscapeAspectRatio;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _localPortraitAspectRatio;
     TUCallProviderManager * _providerManager;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) TUCall *activeVideoCall;
+@property (getter=isAddCallAllowed, nonatomic, readonly) bool addCallAllowed;
 @property (getter=isAmbiguous, nonatomic, readonly) bool ambiguous;
 @property (nonatomic, readonly) bool anyCallIsEndpointOnCurrentDevice;
 @property (nonatomic, readonly) bool anyCallIsHostedOnCurrentDevice;
@@ -41,7 +51,10 @@
 @property (nonatomic, readonly) TUCall *incomingCall;
 @property (nonatomic, readonly, copy) NSArray *incomingCalls;
 @property (nonatomic, readonly) TUCall *incomingVideoCall;
+@property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
+@property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
 @property (nonatomic, retain) TUCallProviderManager *providerManager;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)callCenterWithQueue:(id)arg1;
 + (id)displayedCallFromCalls:(id)arg1;
@@ -49,7 +62,7 @@
 + (const void*)sharedAddressBook;
 + (id)sharedContactStore;
 + (id)sharedInstance;
-+ (id)sharedInstanceWithQueue:(id)arg1 daemonDelegate:(id)arg2;
++ (id)sharedInstanceWithQueue:(id)arg1 daemonDelegate:(id)arg2 shouldRegister:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)_allCalls;
@@ -122,8 +135,6 @@
 - (void)disconnectCall:(id)arg1;
 - (void)disconnectCall:(id)arg1 withReason:(int)arg2;
 - (void)disconnectCurrentCallAndActivateHeld;
-- (void)disconnectNonRelayingCalls;
-- (void)disconnectRelayingCalls;
 - (id)displayedCall;
 - (id)displayedCallFromCalls:(id)arg1;
 - (id)displayedCalls;
@@ -159,6 +170,8 @@
 - (bool)isSwappable;
 - (bool)isTakingCallsPrivateAllowed;
 - (void)launchAppForDialRequest:(id)arg1 completion:(id /* block */)arg2;
+- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
+- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
 - (id)providerManager;
 - (void)pullCallFromClientUsingHandoffActivityUserInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)pullHostedCallsFromPairedHostDevice;
@@ -166,13 +179,17 @@
 - (void)pushHostedCallsToPairedClientDevice;
 - (void)pushRelayingCallsToHost;
 - (void)pushRelayingCallsToHostWithSourceIdentifier:(id)arg1;
+- (id)queue;
 - (void)registerWithCompletionHandler:(id /* block */)arg1;
 - (void)resumeCall:(id)arg1;
 - (void)sendFieldModeDigits:(id)arg1;
 - (void)setAudioDeviceController:(id)arg1;
 - (void)setCallServicesInterface:(id)arg1;
 - (void)setContactStore:(id)arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setProviderManager:(id)arg1;
+- (void)setQueue:(id)arg1;
 - (bool)shouldPreferRelayOverDirectSecondaryCallingForProvider:(id)arg1;
 - (void)swapCalls;
 - (void)ungroupCall:(id)arg1;

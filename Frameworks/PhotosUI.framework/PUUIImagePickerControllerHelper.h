@@ -22,6 +22,7 @@
 - (void)_pushImageViewControllerForAsset:(id)arg1 allowEditing:(bool)arg2 expectsLivePhoto:(bool)arg3;
 - (void)_selectAsset:(id)arg1 withHintCollection:(id)arg2 hintIndexPath:(id)arg3;
 - (void)cancelCurrentAssetDownload;
+- (bool)clientSuppressesForchTouch;
 - (id)gridViewController;
 - (void)handleSelectionOfAsset:(id)arg1 inCollection:(id)arg2;
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;

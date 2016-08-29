@@ -28,8 +28,8 @@
 + (id)validateWholeMinuteDate:(id)arg1 onCalendar:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_activateFireDateTrigger;
-- (void)_activateSignificantEventTrigger;
+- (void)_activateFireDateTrigger:(id*)arg1;
+- (void)_activateSignificantEventTrigger:(id*)arg1;
 - (void)_closestDatesForStartDate:(id)arg1 earliestDate:(id)arg2 timeZone:(id)arg3 deliveryRepeatInterval:(id)arg4 returnDateBefore:(id*)arg5 returnDateAfter:(id*)arg6;
 - (void)_disableTimer:(id)arg1;
 - (void)_handleUpdateTimerTriggerPropertiesRequest:(id)arg1;

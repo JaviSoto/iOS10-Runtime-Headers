@@ -10,7 +10,9 @@
 - (<CNCapabilities> *)capabilities;
 - (CNContactStore *)contactStore;
 - (<CNUIUserActionDiscoveringEnvironment> *)copyWithContactStore:(CNContactStore *)arg1;
+- (<CNSchedulerProvider> *)highLatencySchedulerProvider;
 - (CNUIIDSContactPropertyResolver *)idsContactPropertyResolver;
 - (<CNMCProfileConnection> *)profileConnection;
+- (<CNSchedulerProvider> *)schedulerProvider;
 
 @end

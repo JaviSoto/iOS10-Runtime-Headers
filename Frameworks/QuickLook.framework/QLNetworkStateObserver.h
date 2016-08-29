@@ -4,6 +4,7 @@
 
 @interface QLNetworkStateObserver : NSObject <QLNetworkStateListener, RadiosPreferencesDelegate> {
     NSMutableArray * _completionBlocks;
+    int  _iCloudDriveReachabilityToken;
     unsigned long long  _networkState;
     NSObject<OS_dispatch_queue> * _queue;
     RadiosPreferences * _radiosPreferences;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) <QLNetworkStateListener> *remoteObserver;
 @property (readonly) Class superclass;
 
++ (bool)networkAccessShouldGoThroughCloudDocsDaemon;
 + (id)sharedInstance;
 + (bool)usingRemoteNetworkObserver;
 
@@ -29,6 +31,7 @@
 - (void)_updateCompletionBlocks;
 - (void)_updateNetworkActivityIndicator;
 - (void)_updateNetworkStateWithFlags:(unsigned int)arg1;
+- (void)_updateNetworkStateWithNotifyToken:(int)arg1;
 - (void)_updateRemoteObserver;
 - (void)airplaneModeChanged;
 - (id)init;

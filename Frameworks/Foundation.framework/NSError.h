@@ -72,10 +72,10 @@
 - (id)_web_initWithDomain:(id)arg1 code:(long long)arg2 failingURL:(id)arg3;
 - (id)_web_initWithDomain_nowarn:(id)arg1 code:(long long)arg2 URL:(id)arg3;
 - (id)_web_localizedDescription;
-- (id)brc_description;
 - (long long)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
@@ -170,7 +170,6 @@
 + (id)hmErrorWithCode:(long long)arg1 userInfo:(id)arg2;
 
 - (bool)isHMError;
-- (id)shortDescription;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -193,6 +192,7 @@
 
 + (id)_ph_genericErrorWithUnderlyingError:(id)arg1 localizedDescription:(id)arg2;
 + (id)ph_errorWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3;
++ (id)ph_genericEntitlementError;
 + (id)ph_genericErrorWithLocalizedDescription:(id)arg1;
 + (id)ph_genericErrorWithUnderlyingError:(id)arg1 localizedDescription:(id)arg2;
 
@@ -329,7 +329,7 @@
 
 + (id)brc_daemonAccessDisabledError;
 + (id)brc_errorWithDomain:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3;
-+ (void)load;
++ (void)initialize;
 
 - (id)_brc_cloudKitInternalWithErrorCode:(long long)arg1;
 - (id)_brc_cloudKitPluginErrorPayload;
@@ -346,6 +346,7 @@
 - (unsigned long long)brc_containerResetErrorForSharedZone:(bool)arg1 resetReason:(const char **)arg2;
 - (bool)brc_containsCloudKitErrorCode:(long long)arg1;
 - (bool)brc_containsCloudKitInternalErrorCode:(long long)arg1;
+- (id)brc_description;
 - (bool)brc_isBlacklistError;
 - (bool)brc_isCloudKitAssetFileModified;
 - (bool)brc_isCloudKitCancellationError;
@@ -370,7 +371,6 @@
 - (id)brc_strippedError;
 - (int)brc_syncOperationErrorKind;
 - (id)brc_wrappedError;
-- (id)description;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -465,6 +465,16 @@
 
 - (id)DAExtendedDescription;
 
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
++ (id)fm_cancelledError;
++ (id)fm_errorWithCode:(unsigned long long)arg1;
++ (id)fm_genericError;
++ (id)fm_timeoutError;
+
+- (bool)fm_isCancelledError;
+- (bool)fm_isTimeoutError;
+
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (id)sceneMessageErrorWithCode:(long long)arg1;
@@ -507,6 +517,7 @@
 + (id)hmfErrorWithCode:(long long)arg1 userInfo:(id)arg2;
 
 - (bool)isHMFError;
+- (id)shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
@@ -540,7 +551,6 @@
 - (id)conciseCKError;
 - (id)hmErrorFromCKError;
 - (bool)isHMError;
-- (id)shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
@@ -617,6 +627,8 @@
 + (id)_navigation_errorWithCode:(long long)arg1;
 + (id)_navigation_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 
+- (id)_navigation_errorCodeAsString;
+
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
 + (id)na_cancelledError;
@@ -630,10 +642,12 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)fc_belowMinimumVersionError;
++ (id)fc_canaryDownError;
 + (id)fc_errorWithCode:(long long)arg1 description:(id)arg2 additionalUserInfo:(id)arg3;
 + (id)fc_feedDroppedError;
 + (id)fc_notAvailableError;
 + (id)fc_notCachedError;
++ (id)fc_offlineErrorWithReason:(long long)arg1;
 
 - (bool)fc_isCKErrorWithCode:(long long)arg1;
 - (bool)fc_isCKUnknownItemError;

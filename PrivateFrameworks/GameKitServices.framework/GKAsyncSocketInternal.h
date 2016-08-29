@@ -16,6 +16,8 @@
     NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
+
 - (void)closeConnectionNow;
 - (id /* block */)connectedHandler;
 - (void)dealloc;

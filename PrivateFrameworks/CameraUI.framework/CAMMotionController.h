@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) long long captureOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) long long deviceOrientation;
 @property (setter=_setDominantPhysicalButton:, nonatomic) long long dominantPhysicalButton;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long interfaceOrientation;
 @property (nonatomic, readonly) long long panoramaCaptureOrientation;
 @property (readonly) Class superclass;
 
@@ -39,10 +39,10 @@
 - (long long)captureOrientation;
 - (void)dealloc;
 - (void)deviceDidChangeOrientation:(id)arg1;
-- (long long)deviceOrientation;
 - (long long)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
 - (id)init;
+- (long long)interfaceOrientation;
 - (long long)panoramaCaptureOrientation;
 
 @end

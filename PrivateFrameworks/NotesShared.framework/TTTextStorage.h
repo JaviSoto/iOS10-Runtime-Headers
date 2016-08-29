@@ -20,6 +20,7 @@
     bool  _filterSubstringAttributes;
     bool  _filterSubstringAttributesForPlainText;
     bool  _isApplyingUndoCommand;
+    bool  _isChangingSelectionByGestures;
     bool  _isDictating;
     bool  _isDragging;
     bool  _isEndingEditing;
@@ -65,6 +66,7 @@
 @property (nonatomic) bool filterSubstringAttributesForPlainText;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isApplyingUndoCommand;
+@property (nonatomic) bool isChangingSelectionByGestures;
 @property (nonatomic) bool isDictating;
 @property (nonatomic) bool isDragging;
 @property (nonatomic, readonly) bool isEditingTemporaryAttributes;
@@ -143,6 +145,7 @@
 - (id)initWithData:(id)arg1 andReplicaID:(id)arg2;
 - (id)initWithReplicaID:(id)arg1;
 - (bool)isApplyingUndoCommand;
+- (bool)isChangingSelectionByGestures;
 - (bool)isDeletingContentAttachmentWithReplacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 replacementLength:(unsigned long long)arg2;
 - (bool)isDeletingDictationAttachmentWithReplacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 replacementLength:(unsigned long long)arg2;
 - (bool)isDictating;
@@ -185,6 +188,7 @@
 - (void)setFilterSubstringAttributes:(bool)arg1;
 - (void)setFilterSubstringAttributesForPlainText:(bool)arg1;
 - (void)setIsApplyingUndoCommand:(bool)arg1;
+- (void)setIsChangingSelectionByGestures:(bool)arg1;
 - (void)setIsDictating:(bool)arg1;
 - (void)setIsDragging:(bool)arg1;
 - (void)setIsEndingEditing:(bool)arg1;

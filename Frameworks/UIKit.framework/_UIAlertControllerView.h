@@ -259,6 +259,7 @@
 - (void)_updateLabelFontSizes;
 - (void)_updateLabelMaximumLines;
 - (void)_updateLabelTextColor;
+- (void)_updateMainScrollableHeaderViewHasRealContent;
 - (void)_updateMessageLabelContents;
 - (void)_updateMessageLabelFontSize;
 - (void)_updatePreferredAction;

@@ -8,6 +8,7 @@
 - (void)addCharacteristic:(WPCharacteristic *)arg1 forService:(NSUUID *)arg2;
 - (void)checkAllowDuplicates:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)connectToPeer:(NSUUID *)arg1;
+- (void)disableScanning;
 - (void)disconnectFromPeer:(NSUUID *)arg1;
 - (void)discoverCharacteristicsAndServices:(NSDictionary *)arg1 forPeripheral:(NSUUID *)arg2;
 - (void)enableTestMode;

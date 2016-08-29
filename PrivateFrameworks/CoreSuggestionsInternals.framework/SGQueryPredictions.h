@@ -3,6 +3,7 @@
  */
 
 @interface SGQueryPredictions : NSObject <SFFeedbackListener, SGQPAssetUpdateDelegate> {
+    SGQPAssetManager * _assetManager;
     SGSqlEntityStore * _harvestStore;
     SGQPMetricsTracker * _metricsTracker;
     SGQPLanguageContext * _noLanguageContext;
@@ -17,6 +18,7 @@
 @property (retain) SGQPLanguageContext *primaryLanguageContext;
 @property (readonly) Class superclass;
 
++ (id)detectLanguageFromText:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

@@ -10,6 +10,8 @@
     unsigned long long  _contextOptions;
     ICNotesCrossProcessChangeCoordinator * _crossProcessChangeCoordinator;
     ICNote * _currentNote;
+    NSError * _databaseOpenError;
+    bool  _databaseOpenFailedDueToLowDiskSpace;
     bool  _delaySaving;
     bool  _didResumeIndexing;
     NSManagedObjectContext * _managedObjectContext;
@@ -29,6 +31,8 @@
 @property (nonatomic) unsigned long long contextOptions;
 @property (nonatomic, retain) ICNotesCrossProcessChangeCoordinator *crossProcessChangeCoordinator;
 @property (nonatomic, retain) ICNote *currentNote;
+@property (nonatomic, retain) NSError *databaseOpenError;
+@property (nonatomic) bool databaseOpenFailedDueToLowDiskSpace;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) bool delaySaving;
 @property (readonly, copy) NSString *description;
@@ -51,6 +55,7 @@
 + (bool)legacyNotesDisabled;
 + (id)managedObjectModel;
 + (id)persistentStoreURL;
++ (id)persistentStoreWriteAheadLogURL;
 + (id)searchIndexerDataSource;
 + (void)setLegacyNotesDisabled:(bool)arg1;
 + (id)sharedContext;
@@ -80,6 +85,8 @@
 - (void)createPersistentStore;
 - (id)crossProcessChangeCoordinator;
 - (id)currentNote;
+- (id)databaseOpenError;
+- (bool)databaseOpenFailedDueToLowDiskSpace;
 - (void)dealloc;
 - (bool)delaySaving;
 - (void)deleteEverything;
@@ -141,6 +148,8 @@
 - (void)setContextOptions:(unsigned long long)arg1;
 - (void)setCrossProcessChangeCoordinator:(id)arg1;
 - (void)setCurrentNote:(id)arg1;
+- (void)setDatabaseOpenError:(id)arg1;
+- (void)setDatabaseOpenFailedDueToLowDiskSpace:(bool)arg1;
 - (void)setDelaySaving:(bool)arg1;
 - (void)setDidResumeIndexing:(bool)arg1;
 - (void)setNextId:(id)arg1;

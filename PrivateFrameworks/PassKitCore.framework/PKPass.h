@@ -129,6 +129,7 @@
 - (id)embeddedLocations;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
+- (id)fieldForKey:(id)arg1;
 - (id)footerImage;
 - (id)frontFaceImage;
 - (id)frontFieldBuckets;
@@ -235,6 +236,8 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
+- (id)_generateIcon:(id)arg1 withVariant:(int)arg2;
+- (id)_icon;
 - (id)icon;
 - (id)mailAttachmentIcon;
 

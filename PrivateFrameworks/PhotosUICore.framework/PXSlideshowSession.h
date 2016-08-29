@@ -19,10 +19,15 @@
 @property (nonatomic, readonly) long long startIndex;
 @property (readonly) Class superclass;
 
++ (void*)_loadSlideshowFrameworkIfNeeded;
++ (void)initialize;
++ (void)preloadSlideshowFrameworkInBackground;
+
 - (void).cxx_destruct;
 - (void)_initPresentationViewController;
 - (id)_presentationGuidelines;
 - (id)assetCollection;
+- (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithAssetCollection:(id)arg1 startIndex:(long long)arg2;

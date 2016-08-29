@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntentResolutionResult : NSObject <INIntentResolutionResultDataProviding> {
+@interface INIntentResolutionResult : NSObject <INIntentResolutionResultDataProviding, INIntentResolutionResultExport> {
     NSArray * _alternatives;
     NSString * _conflictingParameterKeyPath;
     NSArray * _disambiguationItems;

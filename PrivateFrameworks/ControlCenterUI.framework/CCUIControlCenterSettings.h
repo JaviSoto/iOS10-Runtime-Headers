@@ -19,7 +19,6 @@
     CCUIControlCenterSettingsSectionSettings * _settingsSectionSettings;
     CCUIControlCenterShortcutSectionSettings * _shortcutSectionSettings;
     bool  _useNewBounce;
-    bool  _usesPlatterShadow;
 }
 
 @property double attachmentFrequencyAbove;
@@ -38,7 +37,6 @@
 @property (retain) CCUIControlCenterSettingsSectionSettings *settingsSectionSettings;
 @property (retain) CCUIControlCenterShortcutSectionSettings *shortcutSectionSettings;
 @property bool useNewBounce;
-@property bool usesPlatterShadow;
 
 + (id)settingsControllerModule;
 
@@ -73,10 +71,8 @@
 - (void)setSettingsSectionSettings:(id)arg1;
 - (void)setShortcutSectionSettings:(id)arg1;
 - (void)setUseNewBounce:(bool)arg1;
-- (void)setUsesPlatterShadow:(bool)arg1;
 - (id)settingsSectionSettings;
 - (id)shortcutSectionSettings;
 - (bool)useNewBounce;
-- (bool)usesPlatterShadow;
 
 @end

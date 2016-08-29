@@ -7,8 +7,8 @@
 + (id)_enumerationValueLocalizationKeys;
 + (id)_localizedStateForValue:(id)arg1 characteristicType:(id)arg2;
 + (id)_presentationTypeForType:(id)arg1;
-+ (id)_presentationValueForValue:(id)arg1 type:(id)arg2;
 + (id)_secureStateMap;
 + (id)localizedStateForCharacteristic:(id)arg1;
++ (id)presentationValueForValue:(id)arg1 type:(id)arg2;
 
 @end

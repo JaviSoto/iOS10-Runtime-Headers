@@ -8,13 +8,14 @@
 }
 
 - (void).cxx_destruct;
+- (void)_loadDbAsync:(bool)arg1;
+- (bool)_tryLoadDb;
 - (void)close;
 - (id)dateOfLastPredictionForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithInMemoryStore;
 - (id)initWithPath:(id)arg1;
 - (id)initWithSqliteDatabase:(id)arg1;
-- (void)loadDb;
 - (id)resultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2;
 - (id)resultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 error:(id*)arg3;
 - (unsigned long long)schemaVersion;

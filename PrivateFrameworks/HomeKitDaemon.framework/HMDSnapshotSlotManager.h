@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotSlotManager : NSObject <HMFLogging, HMFTimerDelegate> {
+@interface HMDSnapshotSlotManager : NSObject <HMFLogging> {
+    HMDAccessory * _accessory;
+    NSString * _imageCacheDirectory;
     NSString * _logID;
     HMDSnapshotFile * _mostRecentSnapshot;
-    HMFTimer * _mostRecentSnapshotInvalidationTimer;
     HMFMessageDispatcher * _msgDispatcher;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     CAContext * _snapshotContext;
@@ -13,12 +14,14 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, readonly) HMDAccessory *accessory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *imageCacheDirectory;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, retain) HMDSnapshotFile *mostRecentSnapshot;
-@property (nonatomic, retain) HMFTimer *mostRecentSnapshotInvalidationTimer;
+@property (getter=isMostRecentSnapshotValid, nonatomic, readonly) bool mostRecentSnapshotValid;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, retain) CAContext *snapshotContext;
@@ -29,25 +32,29 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (id)createSlotForSnapshotFile:(id)arg1 requestMessages:(id)arg2 accessory:(id)arg3;
+- (void)_updateMostRecentSnapshot:(id)arg1;
+- (id)accessory;
+- (id)addReferenceToMostRecentSnapshotFileForMessage:(id)arg1;
+- (id)createSlotForSnapshotFile:(id)arg1 requestMessages:(id)arg2;
+- (void)dealloc;
+- (void)findMostRecentSnapshot;
 - (void)handleForegroundAppsNotification:(id)arg1;
 - (void)handleReleaseSnapshot:(id)arg1;
-- (id)initWithWorkQueue:(id)arg1 logID:(id)arg2;
+- (id)imageCacheDirectory;
+- (id)initWithAccessory:(id)arg1 workQueue:(id)arg2 imageCacheDirectory:(id)arg3 logID:(id)arg4;
+- (bool)isMostRecentSnapshotValid;
 - (id)logID;
 - (id)logIdentifier;
 - (id)mostRecentSnapshot;
-- (id)mostRecentSnapshotInvalidationTimer;
 - (id)msgDispatcher;
 - (id)payloadForSnapshotFile:(id)arg1;
 - (id)propertyQueue;
 - (void)registerForMessages;
 - (void)setMostRecentSnapshot:(id)arg1;
-- (void)setMostRecentSnapshotInvalidationTimer:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setSnapshotContext:(id)arg1;
 - (id)snapshotContext;
 - (id)snapshotSlots;
-- (void)timerDidFire:(id)arg1;
 - (id)workQueue;
 
 @end

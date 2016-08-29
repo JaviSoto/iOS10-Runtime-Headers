@@ -12,12 +12,14 @@
         unsigned long long size; 
     }  _muids;
     int  _resultProviderId;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool hasResultProviderId;
 @property (nonatomic, readonly) unsigned long long*muids;
 @property (nonatomic, readonly) unsigned long long muidsCount;
 @property (nonatomic) int resultProviderId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)addMuid:(unsigned long long)arg1;
 - (void)clearMuids;
@@ -39,6 +41,7 @@
 - (void)setHasResultProviderId:(bool)arg1;
 - (void)setMuids:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 - (void)setResultProviderId:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

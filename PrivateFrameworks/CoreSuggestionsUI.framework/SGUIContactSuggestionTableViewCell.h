@@ -19,6 +19,7 @@
 @property (nonatomic) <SGUIContactSuggestionTableViewCellDelegate> *delegate;
 @property (nonatomic, retain) SGRealtimeContact *realtimeContact;
 
++ (id)actionButtonTitleForContact:(id)arg1;
 + (double)bottomMarginConstant;
 + (id)buttonTitleFont;
 + (id)descriptionFont;

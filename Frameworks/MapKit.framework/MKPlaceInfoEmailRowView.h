@@ -5,6 +5,7 @@
 @interface MKPlaceInfoEmailRowView : MKPlaceInfoContactRowView
 
 - (id)_icon;
+- (id)_iconAccessibilityLabel;
 - (Class)_labeledValueExpectedValueType;
 - (id)_valueString;
 

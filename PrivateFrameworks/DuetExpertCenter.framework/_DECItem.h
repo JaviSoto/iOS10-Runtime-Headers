@@ -26,7 +26,10 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isEqualToItem:(id)arg1;
+- (bool)isEqualToItem:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
 - (id)metadata;
 - (void)setIdentifier:(id)arg1;

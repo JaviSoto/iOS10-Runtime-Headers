@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, copy) NSSet *highestRankedSubscribedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *purchasedTagIDs;
-@property (nonatomic, readonly, copy) NSSet *recentlyReadArticleIDs;
+@property (nonatomic, readonly, copy) NSDictionary *recentlyReadArticles;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,6 +29,6 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutedTagIDs;
 - (id)purchasedTagIDs;
-- (id)recentlyReadArticleIDs;
+- (id)recentlyReadArticles;
 
 @end

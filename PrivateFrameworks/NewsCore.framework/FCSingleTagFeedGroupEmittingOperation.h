@@ -4,6 +4,8 @@
 
 @interface FCSingleTagFeedGroupEmittingOperation : FCFeedGroupEmittingOperation
 
+- (void)_fetchOrdinaryHeadlinesWithCompletionHandler:(id /* block */)arg1;
+- (void)_fetchPinnedHeadlinesWithCompletionHandler:(id /* block */)arg1;
 - (unsigned long long)feedItemsToFetchForDesiredHeadlineCount:(unsigned long long)arg1;
 - (id)feedTransformations;
 - (void)performOperation;

@@ -15,6 +15,7 @@
 - (id)_stringForRSSI;
 - (id)contentsImage;
 - (double)extraLeftPadding;
+- (double)extraRightPadding;
 - (double)maximumOverlap;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (bool)updateForNewData:(id)arg1 actions:(int)arg2;

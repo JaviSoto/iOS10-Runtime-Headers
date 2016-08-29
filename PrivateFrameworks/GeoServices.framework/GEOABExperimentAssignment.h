@@ -11,6 +11,7 @@
     int  _placeRequestType;
     NSString * _querySubstring;
     int  _serviceType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOABDebugPanelExperimentBranch *debugExperimentBranch;
@@ -21,6 +22,7 @@
 @property (nonatomic) int placeRequestType;
 @property (nonatomic, retain) NSString *querySubstring;
 @property (nonatomic) int serviceType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (int)StringAsPlaceRequestType:(id)arg1;
 - (int)StringAsServiceType:(id)arg1;
@@ -49,6 +51,7 @@
 - (void)setPlaceRequestType:(int)arg1;
 - (void)setQuerySubstring:(id)arg1;
 - (void)setServiceType:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

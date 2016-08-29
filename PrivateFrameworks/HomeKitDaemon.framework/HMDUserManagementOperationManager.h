@@ -31,6 +31,7 @@
 - (void)__registerIfNeededForReachablityChangeNotificationsForAccessory:(id)arg1;
 - (void)__removeOperationAndProcessDependantOperations:(id)arg1;
 - (void)__save;
+- (void)_cleanPriorOperations:(id)arg1;
 - (id)_filteredOperationsForAccessory:(id)arg1;
 - (id)_filteredOperationsWithDependency:(id)arg1;
 - (void)_handleAccessoryIsReachable:(id)arg1;

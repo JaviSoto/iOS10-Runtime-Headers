@@ -5,11 +5,13 @@
 @interface GEOABClientDebugPanelExperimentBranch : PBCodable <NSCopying> {
     NSMutableArray * _configKeyValues;
     GEOABDebugPanelExperimentBranch * _debugExperimentBranch;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *configKeyValues;
 @property (nonatomic, retain) GEOABDebugPanelExperimentBranch *debugExperimentBranch;
 @property (nonatomic, readonly) bool hasDebugExperimentBranch;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)configKeyValueType;
 
@@ -31,6 +33,7 @@
 - (bool)readFrom:(id)arg1;
 - (void)setConfigKeyValues:(id)arg1;
 - (void)setDebugExperimentBranch:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

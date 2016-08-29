@@ -12,7 +12,6 @@
     NSMutableArray * _rows;
     MKPlaceSectionRowView * _selectedRow;
     bool  _shouldHideContactInfo;
-    bool  _topHairlineHidden;
     NSMutableArray * _unusedRows;
 }
 
@@ -28,7 +27,6 @@
 @property (nonatomic, retain) <_MKPlaceItem> *placeItem;
 @property (nonatomic) bool shouldHideContactInfo;
 @property (readonly) Class superclass;
-@property (getter=isTopHairlineHidden, nonatomic) bool topHairlineHidden;
 
 - (void).cxx_destruct;
 - (void)_addContactRow:(id)arg1 ofType:(unsigned long long)arg2 toViews:(id)arg3 forceTitles:(bool)arg4;
@@ -45,7 +43,6 @@
 - (void)_menuDismissed:(id)arg1;
 - (void)_rowLongPressed:(id)arg1;
 - (void)_shareAddress:(id)arg1 fromView:(id)arg2;
-- (id)_stackView;
 - (void)_updateViewsAnimated:(bool)arg1;
 - (void)attributionLinkWasClicked:(id)arg1;
 - (id)contact;
@@ -56,7 +53,6 @@
 - (id)infoCardChildPossibleActions;
 - (id)infoDelegate;
 - (id)initWithPlaceItem:(id)arg1;
-- (bool)isTopHairlineHidden;
 - (id)mapItem;
 - (bool)offlineMode;
 - (id)owner;
@@ -68,7 +64,6 @@
 - (void)setOwner:(id)arg1;
 - (void)setPlaceItem:(id)arg1;
 - (void)setShouldHideContactInfo:(bool)arg1;
-- (void)setTopHairlineHidden:(bool)arg1;
 - (bool)shouldHideContactInfo;
 - (bool)shouldShowDetails;
 - (void)viewDidLoad;

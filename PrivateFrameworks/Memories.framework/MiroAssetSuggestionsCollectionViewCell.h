@@ -39,6 +39,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *videoIndicatorTrailingConstraint;
 
 - (void).cxx_destruct;
+- (void)applyLayoutAttributes:(id)arg1;
 - (void)awakeFromNib;
 - (void)configureWithAsset:(id)arg1 selected:(bool)arg2;
 - (id)debugGradient;

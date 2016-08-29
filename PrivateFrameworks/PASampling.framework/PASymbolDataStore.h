@@ -5,6 +5,7 @@
 @interface PASymbolDataStore : NSObject <PASerializable> {
     NSString * _dscSymDir;
     NSMutableArray * _dsymPaths;
+    PAImageInfo * _kernelCache;
     NSMutableDictionary * _pidToCSSymbolicatorCache;
     PAImageInfo * _sharedCache32bit;
     struct _CSRange { 
@@ -28,6 +29,7 @@
 @property (readonly, copy) NSString *description;
 @property (retain) NSString *dscSymDir;
 @property (readonly) unsigned long long hash;
+@property (retain) PAImageInfo *kernelCache;
 @property (retain) PAImageInfo *sharedCache32bit;
 @property (retain) PAImageInfo *sharedCache64bit;
 @property bool shouldSymbolicate;
@@ -58,11 +60,13 @@
 - (void)flushCachedSymbolicatorForPid:(int)arg1;
 - (void)flushSymbolicatorCache;
 - (id)init;
+- (id)kernelCache;
 - (void)makeSureKernelBinariesAreKnown;
 - (id)ownerContainingSymbol:(id)arg1;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (struct _CSRange { unsigned long long x1; unsigned long long x2; })rangeOfSharedCacheWithArchitecture:(struct _CSArchitecture { int x1; int x2; })arg1;
 - (void)setDscSymDir:(id)arg1;
+- (void)setKernelCache:(id)arg1;
 - (void)setSharedCache32bit:(id)arg1;
 - (void)setSharedCache64bit:(id)arg1;
 - (void)setShouldSymbolicate:(bool)arg1;

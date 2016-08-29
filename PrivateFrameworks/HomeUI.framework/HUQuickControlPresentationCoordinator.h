@@ -41,7 +41,9 @@
 - (void)_handleMutuallyExclusiveGesture:(id)arg1;
 - (void)_handlePressGesture:(id)arg1;
 - (void)_installGestureRecognizer;
+- (void)_logUserMetricsAfterPress;
 - (void)_prepareForTapticFeedbackIfAvailable;
+- (void)_preparePressedItemContextForPresentationContext:(id)arg1 startApplier:(bool)arg2;
 - (void)_pressGestureDidBecomeActive;
 - (void)_pressGestureDidBeginWithLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_pressGestureDidEnd:(bool)arg1;
@@ -60,6 +62,7 @@
 - (bool)hasDetailsActionForQuickControlViewController:(id)arg1 item:(id)arg2;
 - (id)initWithTargetView:(id)arg1 delegate:(id)arg2;
 - (id)mutuallyExclusiveGestureRecognizers;
+- (void)presentQuickControlAnimatedWithContext:(id)arg1;
 - (id)presentationContext;
 - (id)presentingViewController;
 - (id)pressGestureActiveTimerCancellationToken;

@@ -3,6 +3,8 @@
  */
 
 @interface SBFWallpaperConfigurationManager : NSObject <BSDescriptionProviding> {
+    unsigned long long  _batchChangeCount;
+    long long  _batchNotifyVariants;
     bool  _cachedVariantsShareWallpaperConfiguration;
     bool  _cachedVariantsShareWallpaperConfigurationValid;
     NSArray * _dataStores;
@@ -43,24 +45,29 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)beginChangeBatch;
 - (id)cachedProceduralWallpaperWithIdentifier:(id)arg1 options:(id)arg2 forVariant:(long long)arg3;
 - (bool)cachedVariantsShareWallpaperConfiguration;
 - (void)clearCacheForVariants:(long long)arg1;
+- (void)clearDelayedChangeNotifications;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForOldCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(bool)arg2 zoomScale:(double)arg3 oldParallaxFactor:(double)arg4 forImageSize:(struct CGSize { double x1; double x2; })arg5 newZoomScale:(double*)arg6;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForViewPort:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(bool)arg2 zoomScale:(double)arg3 parallaxFactor:(double)arg4 forImageSize:(struct CGSize { double x1; double x2; })arg5 contentScaleFactor:(double)arg6;
 - (id)dataStores;
 - (void)dealloc;
+- (void)delayNotifyingChangeForVariants:(long long)arg1;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (long long)effectiveSharedVariantForVariants:(long long)arg1;
+- (void)endChangeBatch;
 - (void)getBestCropRect:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 zoomScale:(out double*)arg2 forImageSize:(struct CGSize { double x1; double x2; })arg3 portrait:(bool)arg4 parallaxFactor:(double)arg5;
 - (id)homeScreenWallpaperConfiguration;
 - (id)init;
 - (id)initWithWallpaperDataStores:(id)arg1;
 - (id)initWithWallpaperDataStores:(id)arg1 wallpaperSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 sizeType:(long long)arg4;
 - (bool)isCachedVariantsShareWallpaperConfigurationValid;
+- (bool)isInChangeBatch;
 - (bool)isProceduralWallpaperInfoValid:(id)arg1;
 - (bool)isVideoSupportedByDefaultForVariant:(long long)arg1;
 - (bool)isVideoSupportedForVariant:(long long)arg1;
@@ -68,6 +75,7 @@
 - (id)magnifyMode;
 - (void)migrateWallpaperOptionsForImageIfNecessaryForVariant:(long long)arg1;
 - (id)normalizeImage:(id)arg1;
+- (void)notifyDelegateOfChangesToVariants:(long long)arg1;
 - (unsigned long long)numberOfCachedStaticImages;
 - (long long)parallaxDeviceType;
 - (double)parallaxFactorForCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(bool)arg2 forImageSize:(struct CGSize { double x1; double x2; })arg3 zoomScale:(double)arg4;
@@ -86,7 +94,7 @@
 - (void)removeWallpaperOptionsForVariants:(long long)arg1;
 - (void)restoreDefaultWallpaperForAllVariantsAndNotify:(bool)arg1;
 - (void)safeMigrateWallpaperImageIfNecessary;
-- (bool)safeMigrateWallpaperImageIfNecessaryForVariant:(long long)arg1;
+- (bool)safeMigrateWallpaperImageIfNecessaryForVariant:(long long)arg1 representingVariants:(long long)arg2;
 - (void)saveCroppedVideo:(id)arg1 toURL:(id)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setCachedVariantsShareWallpaperConfiguration:(bool)arg1;
 - (void)setCachedVariantsShareWallpaperConfigurationValid:(bool)arg1;

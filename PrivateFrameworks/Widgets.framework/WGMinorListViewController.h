@@ -2,11 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGMinorListViewController : WGWidgetListViewController {
-    UIView * _snapshotView;
-}
+@interface WGMinorListViewController : WGWidgetListViewController
 
-- (void).cxx_destruct;
 - (id)_group;
 - (void)orderOfVisibleWidgetsDidChange:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

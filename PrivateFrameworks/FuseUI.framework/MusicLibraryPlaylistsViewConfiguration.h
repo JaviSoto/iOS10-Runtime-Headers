@@ -29,7 +29,6 @@
 - (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
 - (long long)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
 - (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
-- (long long)handleSelectionOfUnplayableEntityValueContext:(id)arg1 withPlayabilityResult:(unsigned long long)arg2 fromViewController:(id)arg3;
 - (id)init;
 - (id)initWithPlaylistsFilter:(id)arg1 playlistsConfigurationOptions:(unsigned long long)arg2;
 - (id)loadEntityViewDescriptor;

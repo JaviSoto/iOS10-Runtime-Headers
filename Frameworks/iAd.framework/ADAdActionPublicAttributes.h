@@ -5,6 +5,7 @@
 @interface ADAdActionPublicAttributes : NSObject <NSSecureCoding> {
     int  _action;
     bool  _actionLeavesApplication;
+    NSString * _actionURLString;
     bool  _actionViewControllerHidesStatusBar;
     unsigned long long  _actionViewControllerPresentationOrientationMask;
     long long  _modalPresentationStyle;
@@ -13,6 +14,7 @@
 
 @property (nonatomic) int action;
 @property (nonatomic) bool actionLeavesApplication;
+@property (nonatomic, copy) NSString *actionURLString;
 @property (nonatomic) bool actionViewControllerHidesStatusBar;
 @property (nonatomic) unsigned long long actionViewControllerPresentationOrientationMask;
 @property (nonatomic) long long modalPresentationStyle;
@@ -23,6 +25,7 @@
 - (id)_actionDescription;
 - (int)action;
 - (bool)actionLeavesApplication;
+- (id)actionURLString;
 - (bool)actionViewControllerHidesStatusBar;
 - (unsigned long long)actionViewControllerPresentationOrientationMask;
 - (void)dealloc;
@@ -32,6 +35,7 @@
 - (long long)modalPresentationStyle;
 - (void)setAction:(int)arg1;
 - (void)setActionLeavesApplication:(bool)arg1;
+- (void)setActionURLString:(id)arg1;
 - (void)setActionViewControllerHidesStatusBar:(bool)arg1;
 - (void)setActionViewControllerPresentationOrientationMask:(unsigned long long)arg1;
 - (void)setModalPresentationStyle:(long long)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSecureSession : HMFMessageTransport <HMFLogging> {
+@interface HMDSecureSession : HMFMessageTransport {
     bool  _clientMode;
     HMDDevice * _currentDevice;
     HAPRemoteSession * _hapRemoteSession;
@@ -18,10 +18,7 @@
 
 @property (nonatomic) bool clientMode;
 @property (nonatomic, readonly) HMDDevice *currentDevice;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HAPRemoteSession *hapRemoteSession;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMDRemoteIdentityRegistry *identityRegistry;
 @property (nonatomic, readonly) HMDAWDRemoteSessionMetric *metric;
 @property (nonatomic, retain) HMDUser *peer;
@@ -29,18 +26,16 @@
 @property (nonatomic, readonly, copy) NSUUID *sessionID;
 @property (nonatomic, copy) id /* block */ sessionStoppedNotificationHandler;
 @property (nonatomic, copy) id /* block */ stoppedNotificationHandler;
-@property (readonly) Class superclass;
 @property (nonatomic) bool supportsSharedIdentities;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
-
-+ (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_configureAsClient:(bool)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)clientMode;
+- (void)closedWithError:(id)arg1;
 - (id)currentDevice;
 - (void)dealloc;
-- (void)handleSecureMessage:(id)arg1;
+- (void)handleSecureMessage:(id)arg1 fromTransport:(id)arg2;
 - (id)hapRemoteSession;
 - (id)identityRegistry;
 - (id)initWithCurrentDevice:(id)arg1 peerDevice:(id)arg2 identityRegistry:(id)arg3 clientMode:(bool)arg4 sessionID:(id)arg5;

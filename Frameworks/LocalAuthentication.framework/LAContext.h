@@ -29,6 +29,7 @@
 - (id)_serverPropertyValueForOption:(long long)arg1;
 - (void)_setServerPropertyForOption:(long long)arg1 value:(id)arg2;
 - (bool)canEvaluatePolicy:(long long)arg1 error:(id*)arg2;
+- (void)dealloc;
 - (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
 - (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(long long)arg2 localizedReason:(id)arg3 reply:(id /* block */)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(long long)arg2 options:(id)arg3 reply:(id /* block */)arg4;
@@ -53,6 +54,7 @@
 - (id)localizedFallbackTitle;
 - (id)maxBiometryFailures;
 - (void)prearmTouchIDWithReply:(id /* block */)arg1;
+- (void)resetWithReply:(id /* block */)arg1;
 - (void)setCancelButtonVisible:(bool)arg1;
 - (void)setCredential:(id)arg1 forProcessedEvent:(long long)arg2 credentialType:(long long)arg3 reply:(id /* block */)arg4;
 - (bool)setCredential:(id)arg1 type:(long long)arg2;

@@ -35,6 +35,7 @@
 - (void).cxx_destruct;
 - (void)_confirmedEnd;
 - (void)_confirmedStart;
+- (void)_continue;
 - (void)_fetchNextBatch;
 - (void)_handleEndSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (bool)_handleEndSessionResponse:(id)arg1 error:(id*)arg2;

@@ -9,6 +9,7 @@
     }  _has;
     unsigned int  _maxResults;
     int  _sortOrder;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) bool hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) int sortOrder;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (int)StringAsSortOrder:(id)arg1;
@@ -40,6 +42,7 @@
 - (void)setViewportInfo:(id)arg1;
 - (int)sortOrder;
 - (id)sortOrderAsString:(int)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

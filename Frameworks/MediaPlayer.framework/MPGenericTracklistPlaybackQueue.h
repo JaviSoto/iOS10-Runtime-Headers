@@ -3,10 +3,12 @@
  */
 
 @interface MPGenericTracklistPlaybackQueue : MPRemotePlaybackQueue {
+    long long  _repeatType;
     long long  _shuffleType;
     NSArray * _trackIdentifiers;
 }
 
+@property (nonatomic, readonly) long long repeatType;
 @property (nonatomic, readonly) long long shuffleType;
 @property (nonatomic, readonly) NSArray *trackIdentifiers;
 
@@ -15,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
+- (long long)repeatType;
 - (long long)shuffleType;
 - (id)trackIdentifiers;
 - (bool)verifyWithError:(id*)arg1;

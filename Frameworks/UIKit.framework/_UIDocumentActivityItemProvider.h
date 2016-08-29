@@ -14,6 +14,7 @@
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)documentInteractionController;
 - (id)item;
+- (void)main;
 - (void)setDocumentInteractionController:(id)arg1;
 
 @end

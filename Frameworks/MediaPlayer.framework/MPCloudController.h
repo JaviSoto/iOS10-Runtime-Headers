@@ -69,6 +69,9 @@
 - (id)init;
 - (bool)isCellularDataRestricted;
 - (void)isCellularDataRestrictedDidChangeNotification:(id)arg1;
+- (bool)isCellularDataRestrictedForMusic;
+- (bool)isCellularDataRestrictedForStoreApps;
+- (bool)isCellularDataRestrictedForVideos;
 - (bool)isCloudEnabled;
 - (bool)isCloudLibraryEnabled;
 - (bool)isGeniusEnabled;
@@ -95,6 +98,9 @@
 - (void)setLikedState:(long long)arg1 forPlaylistWithGlobalID:(id)arg2;
 - (void)setPlaylistProperties:(id)arg1 trackList:(id)arg2 forPlaylistWithPersistentID:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (bool)shouldProhibitActionsForCurrentNetworkConditions;
+- (bool)shouldProhibitMusicActionForCurrentNetworkConditions;
+- (bool)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
+- (bool)shouldProhibitVideosActionForCurrentNetworkConditions;
 - (void)updateSubscribedPlaylistWithSagaID:(unsigned long long)arg1 ignoreMinRefreshInterval:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)uploadArtworkForPlaylist:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)uploadCloudItemProperties;

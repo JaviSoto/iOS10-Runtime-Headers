@@ -32,6 +32,6 @@
 - (id)session;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
-- (void)setupReceiver;
+- (void)setupReceiver:(id)arg1;
 
 @end

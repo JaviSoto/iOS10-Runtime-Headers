@@ -65,6 +65,7 @@
 @property (nonatomic, retain) NSString *messageForRoutePlanning;
 @property (nonatomic, readonly) NSString *messageForRouteStepping;
 @property (nonatomic, retain) NSString *messageForRouteStepping;
+@property (nonatomic, readonly) unsigned long long muid;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic) unsigned int startDatetime;

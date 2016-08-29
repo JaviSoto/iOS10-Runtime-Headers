@@ -28,7 +28,9 @@
 - (id)fullAddressWithMultiline:(bool)arg1;
 - (struct shared_ptr<addr_obj::AddressObject> { struct AddressObject {} *x1; struct __shared_weak_count {} *x2; })getConvertedAO;
 - (bool)hasKnownAccuracy;
+- (unsigned long long)hash;
 - (id)initWithPlaceDataAddressObject:(id)arg1 placeDataAddress:(id)arg2 placeDataInfo:(id)arg3 placeDataEntity:(id)arg4 language:(id)arg5 country:(id)arg6 phoneticLocale:(id)arg7;
+- (bool)isEqual:(id)arg1;
 - (int)knownAccuracy;
 - (id)name;
 - (id)parkingDisplayName;

@@ -48,14 +48,10 @@
 @property (nonatomic, readonly) NSURL *fileURL;
 @property (nonatomic) bool isWriter;
 
-+ (void)_removeDatabases:(id)arg1 reason:(id)arg2;
 + (bool)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(bool*)arg2 resultCode:(int*)arg3 error:(id*)arg4;
-+ (bool)deleteDatabaseAtURL:(id)arg1 reason:(id)arg2 preserveCopy:(bool)arg3;
 + (id)highFrequencyDatabaseURLWithHomeDirectoryPath:(id)arg1;
 + (id)mainDatabaseURLWithHomeDirectoryPath:(id)arg1;
 + (id)protectedDatabaseURLWithHomeDirectoryPath:(id)arg1;
-+ (void)removeAllDatabasesWithHomeDirectoryPath:(id)arg1 reason:(id)arg2;
-+ (void)removeProtectedDatabaseWithHomeDirectoryPath:(id)arg1 reason:(id)arg2;
 + (id)virtualFilesystemModule;
 
 - (id).cxx_construct;
@@ -73,12 +69,14 @@
 - (id)_schemaForTableWithName:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (bool)_setPragma:(id)arg1 integerValue:(long long)arg2 withDatabaseName:(id)arg3 error:(id*)arg4;
 - (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(bool)arg2 error:(id*)arg3;
+- (bool)_verifyDatabaseOpenAndReturnError:(id*)arg1;
 - (void)accessDatabaseUsingBlock:(id /* block */)arg1;
 - (bool)accessHFDForReadingWithError:(id*)arg1 block:(id /* block */)arg2;
 - (bool)accessHFDForWritingWithError:(id*)arg1 block:(id /* block */)arg2;
 - (bool)attachDatabaseWithName:(id)arg1 fileURL:(id)arg2 error:(id*)arg3;
 - (bool)attachProtectedDatabaseWithURL:(id)arg1 error:(id*)arg2;
 - (bool)checkpointRequired;
+- (void)close;
 - (bool)columnIsNullable:(id)arg1 inTable:(id)arg2 error:(id*)arg3;
 - (void)dealloc;
 - (id)delegate;

@@ -7,7 +7,7 @@
     NSString * _paymentInstrumentName;
     PKPaymentMethod * _paymentMethod;
     NSString * _paymentNetwork;
-    NSString * _sessionIdentifier;
+    NSURL * _redeemURL;
     NSString * _transactionIdentifier;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *paymentInstrumentName;
 @property (nonatomic, retain) PKPaymentMethod *paymentMethod;
 @property (nonatomic, copy) NSString *paymentNetwork;
-@property (nonatomic, retain) NSString *sessionIdentifier;
+@property (nonatomic, retain) NSURL *redeemURL;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
 + (id)paymentTokenWithProtobuf:(id)arg1;
@@ -33,12 +33,12 @@
 - (id)paymentMethod;
 - (id)paymentNetwork;
 - (id)protobuf;
-- (id)sessionIdentifier;
+- (id)redeemURL;
 - (void)setPaymentData:(id)arg1;
 - (void)setPaymentInstrumentName:(id)arg1;
 - (void)setPaymentMethod:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
-- (void)setSessionIdentifier:(id)arg1;
+- (void)setRedeemURL:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;
 

@@ -65,6 +65,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isFrozen, nonatomic) bool frozen;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 

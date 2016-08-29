@@ -16,8 +16,8 @@
 @property (nonatomic, readonly, copy) NSArray *minimalActions;
 @property (nonatomic, readonly) unsigned long long options;
 
++ (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 intentIdentifiers:(id)arg3 options:(unsigned long long)arg4;
 + (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 options:(unsigned long long)arg5;
-+ (id)categoryWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 options:(unsigned long long)arg4;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

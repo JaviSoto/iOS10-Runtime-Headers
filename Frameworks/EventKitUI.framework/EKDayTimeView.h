@@ -52,6 +52,7 @@
 + (void)_invalidateCachedValues;
 + (void)_invalidateWidth;
 + (id)_noonLocalizedString;
++ (double)_noonLocalizedWidthForOrientation:(long long)arg1;
 + (id)_normalFontForOrientation:(long long)arg1;
 + (void)_registerForInvalidation;
 + (double)_timeTextWidthForOrientation:(long long)arg1;

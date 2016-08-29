@@ -5,8 +5,7 @@
 
 @required
 
-- (void)eventSuggestionCell:(SGUIEventSuggestionTableViewCell *)arg1 didTapAddForEventSuggestion:(SGRealtimeEvent *)arg2;
+- (void)eventSuggestionCell:(SGUIEventSuggestionTableViewCell *)arg1 didTapConfirmForEventSuggestion:(SGRealtimeEvent *)arg2;
 - (void)eventSuggestionCell:(SGUIEventSuggestionTableViewCell *)arg1 didTapIgnoreForEventSuggestion:(SGRealtimeEvent *)arg2;
-- (void)eventSuggestionCell:(SGUIEventSuggestionTableViewCell *)arg1 didTapUpdateForEventSuggestion:(SGRealtimeEvent *)arg2;
 
 @end

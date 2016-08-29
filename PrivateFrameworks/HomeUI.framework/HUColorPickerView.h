@@ -9,7 +9,7 @@
     <HUQuickControlColorPickerViewInteractionDelegate> * _interactionDelegate;
     HUQuickControlMagnifierView * _magnifierView;
     unsigned long long  _mirroringAxisBias;
-    HUQuickControlSimpleViewProfile * _profile;
+    HUQuickControlViewProfile * _profile;
     struct { 
         double r; 
         double g; 
@@ -35,7 +35,8 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } magnifierLocation;
 @property (nonatomic, retain) HUQuickControlMagnifierView *magnifierView;
 @property (nonatomic) unsigned long long mirroringAxisBias;
-@property (nonatomic, retain) HUQuickControlSimpleViewProfile *profile;
+@property (nonatomic, copy) HUQuickControlViewProfile *profile;
+@property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) struct { double x1; double x2; double x3; double x4; } selectedColor;
 @property (nonatomic) struct { double x1; double x2; } selectedColorCoordinate;
 @property (nonatomic) long long sizeSubclass;

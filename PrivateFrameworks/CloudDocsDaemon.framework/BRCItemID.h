@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isDocuments;
-@property (nonatomic, readonly) bool isNormalAppLibraryRoot;
+@property (nonatomic, readonly) bool isNonDesktopAppLibraryRoot;
 @property (nonatomic, readonly) NSString *itemIDString;
 @property (readonly) Class superclass;
 
@@ -31,7 +31,7 @@
 - (void).cxx_destruct;
 - (const char *)UTF8String;
 - (id)_directoryRecordName;
-- (id)_initAsLibraryRootWithAppLibraryRowID:(id)arg1;
+- (id)_initAsLibraryRootWithAppLibraryRowID:(id)arg1 enclosureUUID:(id)arg2;
 - (id)appLibraryRowID;
 - (id)contentsRecordIDInZoneID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -57,7 +57,7 @@
 - (bool)isDocuments;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToItemID:(id)arg1;
-- (bool)isNormalAppLibraryRoot;
+- (bool)isNonDesktopAppLibraryRoot;
 - (id)itemIDString;
 - (id)itemUUIDString;
 - (id)pcsChainDocumentStructureReferenceInZoneID:(id)arg1;

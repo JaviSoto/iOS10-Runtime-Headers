@@ -3,8 +3,7 @@
  */
 
 @interface VTSiriRestrictionOnLockScreenMonitor : VTEventMonitor <MCProfileConnectionObserver> {
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
+    bool  _isRestricted;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,16 +13,14 @@
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
+- (bool)_checkSiriRestrictedOnLockScreen;
 - (void)_didReceiveRestrictionChanged:(bool)arg1;
 - (void)_didReceiveRestrictionChangedInQueue:(bool)arg1;
-- (void)_startMonitoring;
+- (void)_notifyObserver:(id)arg1 withRestricted:(bool)arg2;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (bool)isRestricted;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)removeObserver:(id)arg1;
 
 @end

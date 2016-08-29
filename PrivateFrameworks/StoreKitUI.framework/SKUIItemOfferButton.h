@@ -7,6 +7,7 @@
     double  _borderColorAlphaMultiplier;
     bool  _borderCornerRadiusMatchesHalfBoundingDimension;
     UIView * _borderView;
+    SKUIBuyButtonDescriptor * _buttonDescriptor;
     SKUIFocusedTouchGestureRecognizer * _cancelGestureRecognizer;
     id /* block */  _centerImageProvider;
     UIImage * _cloudImage;
@@ -29,7 +30,6 @@
     double  _progress;
     SKUICircleProgressIndicator * _progressIndicator;
     bool  _showsConfirmationState;
-    SKUIItemOfferButtonState * _state;
     NSMutableAttributedString * _titleAttributedString;
     struct CGSize { 
         double width; 
@@ -43,6 +43,7 @@
 }
 
 @property (nonatomic) double borderColorAlphaMultiplier;
+@property (nonatomic, retain) SKUIBuyButtonDescriptor *buttonDescriptor;
 @property (nonatomic, copy) id /* block */ centerImageProvider;
 @property (nonatomic, copy) UIColor *cloudTintColor;
 @property (nonatomic, copy) NSString *confirmationTitle;
@@ -76,6 +77,7 @@
 + (bool)_sizeMattersForTitleStyle:(long long)arg1;
 + (struct CGSize { double x1; double x2; })_titleSizeThatFitsForSize:(struct CGSize { double x1; double x2; })arg1 titleStyle:(long long)arg2 mutableAttributedString:(id)arg3;
 + (id)_universalPlusImageWithTintColor:(id)arg1;
++ (bool)canOpenItemForItemState:(id)arg1 clientContext:(id)arg2;
 + (id)cloudImageWithTintColor:(id)arg1 arrowTintColor:(id)arg2;
 + (id)cloudTintColorForBackgroundColor:(id)arg1;
 + (id)itemOfferButtonWithAppearance:(id)arg1;
@@ -111,6 +113,7 @@
 - (void)_updateForChangedTitleProperty;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (double)borderColorAlphaMultiplier;
+- (id)buttonDescriptor;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (id /* block */)centerImageProvider;
 - (id)cloudTintColor;
@@ -124,6 +127,7 @@
 - (id)element;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (long long)fillStyle;
+- (bool)hasImage;
 - (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isDisabledButSelectable;
@@ -139,6 +143,7 @@
 - (bool)restores;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBorderColorAlphaMultiplier:(double)arg1;
+- (void)setButtonDescriptor:(id)arg1;
 - (void)setCenterImageProvider:(id /* block */)arg1;
 - (void)setCloudTintColor:(id)arg1;
 - (void)setColoringWithAppearance:(id)arg1;

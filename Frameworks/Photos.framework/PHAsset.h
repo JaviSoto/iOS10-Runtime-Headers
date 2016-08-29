@@ -4,6 +4,7 @@
 
 @interface PHAsset : PHObject <CLSInvestigationItem, CLSSnapshotSupportProtocol, MiroMetadata, PUEditableAsset, PXDisplayAsset, PXLayoutItemInput, PXPlacesGeotaggable, _PLImageLoadingAsset> {
     NSDate * _adjustmentTimestamp;
+    bool  _assetDescriptionWasSet;
     int  _avalanchePickType;
     NSString * _burstIdentifier;
     CLLocation * _cachedLocation;
@@ -55,6 +56,7 @@
 @property (nonatomic, readonly) PHAdjustmentData *adjustmentData;
 @property (nonatomic, readonly) NSDate *adjustmentTimestamp;
 @property (nonatomic, readonly) double aspectRatio;
+@property (nonatomic) bool assetDescriptionWasSet;
 @property (nonatomic, readonly) long long assetSource;
 @property (nonatomic, readonly) int avalanchePickType;
 @property (nonatomic, readonly) double badQualityThreshold;
@@ -137,6 +139,7 @@
 @property (nonatomic, readonly) bool miro_IrisVideoUsable;
 @property (nonatomic, readonly) double miro_IrisVideoUsableDuration;
 @property (nonatomic, readonly) long long miro_analysisVersion;
+@property (nonatomic, retain) PHAssetResource *miro_cachedLocalMostUsefulResource;
 @property (nonatomic, retain) NSArray *miro_desirableRanges;
 @property (nonatomic, readonly) unsigned long long miro_faceCount;
 @property (nonatomic, readonly) unsigned long long miro_flags;
@@ -189,12 +192,13 @@
 + (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 onlyKey:(bool)arg4;
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
 + (bool)_isLivePhotoWithPhotoIris:(bool)arg1 hasAdjustments:(bool)arg2 videoCpDuration:(long long)arg3 videoCPVisibility:(unsigned short)arg4 sourceType:(unsigned long long)arg5;
-+ (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 renderingError:(id)arg3;
++ (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 adjustmentInfo:(id)arg3 renderingError:(id)arg4;
 + (id)_transformMediaSubtypeComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)_unfetchedPropertySetsForAssets:(id)arg1 fromPropertySets:(id)arg2;
 + (id)corePropertiesToFetch;
 + (id)entityKeyForPropertyKey:(id)arg1;
++ (id)faceWorkerPropertiesToFetch;
 + (id)fetchAssetsForFaceGroups:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsForFaces:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsForPerson:(id)arg1 options:(id)arg2;
@@ -210,6 +214,7 @@
 + (id)fetchAssetsWithMediaType:(long long)arg1 options:(id)arg2;
 + (id)fetchAssetsWithOptions:(id)arg1;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1;
++ (id)fetchCuratedAssetsInAssetCollection:(id)arg1 referencePersons:(id)arg2;
 + (id)fetchKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referencePersons:(id)arg2;
@@ -256,6 +261,7 @@
 - (int)analysisStateForWorkerType:(short)arg1 outLastIgnoreDate:(id*)arg2 outIgnoreUntilDate:(id*)arg3;
 - (double)aspectRatio;
 - (id)assetAnalysisStateProperties;
+- (bool)assetDescriptionWasSet;
 - (long long)assetSource;
 - (id)assetUserActivityProperties;
 - (id)assetsLibraryURL;
@@ -386,6 +392,7 @@
 - (short)savedAssetType;
 - (id)sceneAnalysisProperties;
 - (id)sceneClassifications;
+- (void)setAssetDescriptionWasSet:(bool)arg1;
 - (unsigned long long)sourceType;
 - (id)thumbnailIdentifier;
 - (unsigned long long)thumbnailIndex;
@@ -426,7 +433,7 @@
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
 + (id)_coalescedRangesFromRanges:(id)arg1;
-+ (id)_constrainRange:(id)arg1 toClip:(id)arg2 projectFrameRate:(int)arg3;
++ (id)_constrainRange:(id)arg1 selectionStart:(int)arg2 duration:(int)arg3;
 + (double)_miro_analysisRelatedScoreMaxForVideo:(bool)arg1;
 + (double)_miro_camMotionScoreMaxForVideo:(bool)arg1;
 + (double)_miro_faceScoreMaxForVideo:(bool)arg1;
@@ -498,6 +505,7 @@
 - (double)miro_IrisVideoUsableDuration;
 - (id)miro_allRanges;
 - (long long)miro_analysisVersion;
+- (id)miro_cachedLocalMostUsefulResource;
 - (double)miro_computeStaticScoreWithScoreReasonString:(id*)arg1;
 - (double)miro_computeStaticScoreWithScoreReasonString:(id*)arg1 scoreLog:(id*)arg2 writeToFile:(bool)arg3 ignoreSetting:(bool)arg4;
 - (void)miro_deleteRangesWithType:(unsigned long long)arg1;
@@ -516,7 +524,7 @@
 - (id)miro_rangesWithType:(unsigned long long)arg1 predicate:(id)arg2;
 - (double)miro_rawQualityScore;
 - (double)miro_score;
-- (void)miro_scoreLogForDebugDisplayWithScoreReasonString:(id*)arg1 scoreLog:(id*)arg2;
+- (double)miro_scoreLogForDebugDisplayWithScoreReasonString:(id*)arg1 scoreLog:(id*)arg2;
 - (void)miro_setRanges:(id)arg1 replaceType:(unsigned long long)arg2;
 - (id)miro_transientRangesWithType:(unsigned long long)arg1;
 - (unsigned long long)miro_voiceCount;
@@ -525,12 +533,14 @@
 - (id)mostUsefulResource;
 - (id)mostUsefulResourceForExport;
 - (id)newAutoEditRanges;
+- (id)newAutoEditRangesConstrainedToClip:(id)arg1;
 - (int)numberOfNeededRangesForDuration:(double)arg1;
 - (id)originalRepresentation;
 - (id)pickListRanges;
 - (struct CGSize { double x1; double x2; })pixelSize;
 - (id)preferredRepresentation;
 - (double)qualityValueForAnalysisValue:(double)arg1;
+- (id)rangesByTrimmingToBounds:(id)arg1 selectionStart:(int)arg2 duration:(int)arg3;
 - (int)requestAVAssetWithOptions:(id)arg1 resultHandler:(id /* block */)arg2;
 - (int)requestExportSessionWithOptions:(id)arg1 exportPreset:(id)arg2 resultHandler:(id /* block */)arg3;
 - (int)requestImageForTargetSize:(struct CGSize { double x1; double x2; })arg1 contentMode:(long long)arg2 options:(id)arg3 resultHandler:(id /* block */)arg4;
@@ -540,6 +550,7 @@
 - (float)scoreForAutoEditRange:(id)arg1 resultChildVoiceRange:(id*)arg2;
 - (void)scoreInterestingSubranges:(id)arg1;
 - (void)scoreRanges:(id)arg1 scoreForDuration:(bool)arg2;
+- (void)setMiro_cachedLocalMostUsefulResource:(id)arg1;
 - (void)setMiro_desirableRanges:(id)arg1;
 - (id)simplerSceneRangesRemovingLowQualityRanges;
 - (id)userSetSloMoRange;
@@ -590,20 +601,22 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (id)px_fetchAssetsInArray:(id)arg1;
-+ (id)px_fetchCameraRollAssetsWithLocation;
++ (id)px_fetchPlacesAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 
 - (void)_px_adjustRectWithFaces:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 forAssetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 verticalContentMode:(long long)arg3;
-- (long long)compareTo:(id)arg1;
-- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceAreaRect;
 - (unsigned long long)isContentEqualTo:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(long long)arg2;
 - (id)px_mailingAddressIncludeZipCode:(bool)arg1;
-- (id)px_mapItemForAsset;
 - (id)px_postalAddressIncludeZipCode:(bool)arg1;
 - (id)px_singleLineMailingAddressIncludeZipCode:(bool)arg1;
 - (struct CGSize { double x1; double x2; })size;
 - (double)weight;
+
+// Image: /System/Library/PrivateFrameworks/PlacesKit.framework/PlacesKit
+
+- (long long)compareTo:(id)arg1;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 

@@ -2,21 +2,27 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetAvailableRestaurantReservationBookingsIntent : INIntent <NSCopying> {
+@interface INGetAvailableRestaurantReservationBookingsIntent : INIntent <INGetAvailableRestaurantReservationBookingsIntentExport, NSCopying> {
     NSDate * _earliestBookingDateForResults;
     NSDate * _latestBookingDateForResults;
     NSNumber * _maximumNumberOfResults;
     unsigned long long  _partySize;
     NSDate * _preferredBookingDate;
+    NSDateComponents * _preferredBookingDateComponents;
     INRestaurant * _restaurant;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *earliestBookingDateForResults;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDate *latestBookingDateForResults;
 @property (nonatomic, copy) NSNumber *maximumNumberOfResults;
 @property (nonatomic) unsigned long long partySize;
-@property (nonatomic, copy) NSDate *preferredBookingDate;
+@property (nonatomic, retain) NSDate *preferredBookingDate;
+@property (nonatomic, copy) NSDateComponents *preferredBookingDateComponents;
 @property (nonatomic, copy) INRestaurant *restaurant;
+@property (readonly) Class superclass;
 
 + (id)intentDescription;
 + (bool)supportsSecureCoding;
@@ -31,12 +37,14 @@
 - (id)maximumNumberOfResults;
 - (unsigned long long)partySize;
 - (id)preferredBookingDate;
+- (id)preferredBookingDateComponents;
 - (id)restaurant;
 - (void)setEarliestBookingDateForResults:(id)arg1;
 - (void)setLatestBookingDateForResults:(id)arg1;
 - (void)setMaximumNumberOfResults:(id)arg1;
 - (void)setPartySize:(unsigned long long)arg1;
 - (void)setPreferredBookingDate:(id)arg1;
+- (void)setPreferredBookingDateComponents:(id)arg1;
 - (void)setRestaurant:(id)arg1;
 
 @end

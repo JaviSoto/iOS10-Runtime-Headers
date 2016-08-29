@@ -11,6 +11,7 @@
     bool  _firstRun;
     NSDate * _firstSampleDate;
     NSDate * _lastRunDate;
+    NSDate * _lastSampleDate;
     double  _startTime;
     HDDemoDataGeneratorWorkoutConfiguration * _workoutConfiguration;
 }
@@ -19,12 +20,14 @@
 @property (nonatomic, readonly) NSDate *currentDate;
 @property (nonatomic) long long currentDay;
 @property (nonatomic) double currentTime;
+@property (getter=isCycling, nonatomic, readonly) bool cycling;
 @property (nonatomic) double endTime;
 @property (getter=isExercising, nonatomic, readonly) bool exercising;
 @property (getter=isFinished, nonatomic) bool finished;
 @property (getter=isFirstRun, nonatomic) bool firstRun;
 @property (nonatomic, retain) NSDate *firstSampleDate;
 @property (nonatomic, retain) NSDate *lastRunDate;
+@property (nonatomic, retain) NSDate *lastSampleDate;
 @property (getter=isRunning, nonatomic, readonly) bool running;
 @property (nonatomic) double startTime;
 @property (nonatomic, retain) HDDemoDataGeneratorWorkoutConfiguration *workoutConfiguration;
@@ -42,11 +45,13 @@
 - (id)firstSampleDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isCycling;
 - (bool)isExercising;
 - (bool)isFinished;
 - (bool)isFirstRun;
 - (bool)isRunning;
 - (id)lastRunDate;
+- (id)lastSampleDate;
 - (void)setCurrentDay:(long long)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setEndTime:(double)arg1;
@@ -54,6 +59,7 @@
 - (void)setFirstRun:(bool)arg1;
 - (void)setFirstSampleDate:(id)arg1;
 - (void)setLastRunDate:(id)arg1;
+- (void)setLastSampleDate:(id)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setWorkoutConfiguration:(id)arg1;
 - (double)startTime;

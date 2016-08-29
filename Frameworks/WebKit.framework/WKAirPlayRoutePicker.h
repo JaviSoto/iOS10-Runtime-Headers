@@ -3,7 +3,7 @@
  */
 
 @interface WKAirPlayRoutePicker : UIView <UIPopoverControllerDelegate> {
-    struct RetainPtr<MPAudioVideoRoutingActionSheet> { 
+    struct RetainPtr<MPAVRoutingSheet> { 
         void *m_ptr; 
     }  _actionSheet;
     struct RetainPtr<MPAudioVideoRoutingPopoverController> { 

@@ -3,6 +3,7 @@
  */
 
 @interface AppLaunchStats : NSObject <DuetLoggerProtocol, DuetSaveAndRestore, NWNetworkOfInterestManagerDelegate> {
+    NSSet * _trendCandidates;
     int  allowedMaxCount;
     AppLaunchStatsAppWorkSpace * aplsAppWorkSpace;
     AppLaunchStatsDelayLaunch * aplsDelayLaunch;
@@ -84,7 +85,6 @@
     NSMutableDictionary * topicAbleList;
     BudgetPool * topicLimiter;
     CDSession * topicSession;
-    NSSet * trendCandidates;
     int  trendToken;
     int  whiteListAppToken;
 }
@@ -93,6 +93,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *appLaunchStatDQueue;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *conn;
 @property (nonatomic, readonly) id /* block */ pendingHandler;
+@property (retain) NSSet *trendCandidates;
 
 - (void).cxx_destruct;
 - (void)ableAdmissionForTopic:(id)arg1 attribute:(id)arg2 value:(id)arg3 withHandler:(id /* block */)arg4;
@@ -169,11 +170,13 @@
 - (void)setAppLaunchStatsPendingHandler:(id /* block */)arg1 queue:(id)arg2;
 - (void)setDelayLaunchFor:(id)arg1 with:(double)arg2;
 - (void)setPendingWorkQueue:(id)arg1;
+- (void)setTrendCandidates:(id)arg1;
 - (bool)shouldDeferNetworking;
 - (void)testAndReleaseBlueList;
 - (void)testDatabaseAge:(id /* block */)arg1;
 - (void)testOneHourBudgetExpirytime;
 - (id)trackedNOIForInterface:(long long)arg1;
+- (id)trendCandidates;
 - (void)trendQueryLaunchApp:(id /* block */)arg1;
 - (void)triggerLaunchQueue:(id)arg1;
 - (void)updateAliveList;

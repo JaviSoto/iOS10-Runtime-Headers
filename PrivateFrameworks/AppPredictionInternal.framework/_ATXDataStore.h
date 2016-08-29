@@ -50,15 +50,18 @@
 - (void)migrate;
 - (long long)migrateToVersion:(unsigned long long)arg1 withMigrationPlan:(id)arg2;
 - (long long)migration_AppLaunchHistogramToTable;
+- (long long)migration_DelinkFromCoreLocationVisitMonitoring;
 - (long long)migration_InstallDateToAppTable;
 - (long long)migration_LaunchHistoriesToAppTable;
 - (long long)migration_RemoveAllSubsequentLaunches;
 - (long long)migration_RemoveFeedbackForUninstalledApps;
+- (long long)migration_RemoveRestoreUserDefault;
 - (void)notifyObserversAboutRestoreCompletion;
 - (void)notifyObserversAboutRestoreStart;
 - (id)pathsToBackUp;
 - (void)removeAllFeedback;
 - (void)removeAppInfoForBundleId:(id)arg1;
+- (void)removeAppLaunchesForBundleId:(id)arg1;
 - (void)removeFeedbackForBundleId:(id)arg1;
 - (bool)removeFile:(id)arg1;
 - (long long)runMigrationPlan:(id)arg1;

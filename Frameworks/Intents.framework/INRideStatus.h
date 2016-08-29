@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideStatus : NSObject <INCacheableContainer, NSCopying, NSSecureCoding> {
+@interface INRideStatus : NSObject <INCacheableContainer, INRideStatusExport, NSCopying, NSSecureCoding> {
     NSArray * _additionalActionActivities;
     INRideCompletionStatus * _completionStatus;
     INRideDriver * _driver;
     CLPlacemark * _dropOffLocation;
     NSDate * _estimatedDropOffDate;
     NSDate * _estimatedPickupDate;
+    NSDate * _estimatedPickupEndDate;
     long long  _phase;
     CLPlacemark * _pickupLocation;
     NSString * _rideIdentifier;
@@ -26,6 +27,7 @@
 @property (nonatomic, copy) CLPlacemark *dropOffLocation;
 @property (nonatomic, copy) NSDate *estimatedDropOffDate;
 @property (nonatomic, copy) NSDate *estimatedPickupDate;
+@property (nonatomic, copy) NSDate *estimatedPickupEndDate;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long phase;
 @property (nonatomic, copy) CLPlacemark *pickupLocation;
@@ -48,6 +50,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)estimatedDropOffDate;
 - (id)estimatedPickupDate;
+- (id)estimatedPickupEndDate;
 - (id)initWithCoder:(id)arg1;
 - (long long)phase;
 - (id)pickupLocation;
@@ -59,6 +62,7 @@
 - (void)setDropOffLocation:(id)arg1;
 - (void)setEstimatedDropOffDate:(id)arg1;
 - (void)setEstimatedPickupDate:(id)arg1;
+- (void)setEstimatedPickupEndDate:(id)arg1;
 - (void)setPhase:(long long)arg1;
 - (void)setPickupLocation:(id)arg1;
 - (void)setRideIdentifier:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDFitnessFriendsFriendListManager : NSObject <HDFitnessFriendsContactsManagerObserver, HDFitnessFriendsManagerReadyObserver> {
+@interface HDFitnessFriendsFriendListManager : NSObject <HDFitnessAppBadgeCountProvider, HDFitnessFriendsContactsManagerObserver, HDFitnessFriendsManagerReadyObserver> {
     HDFitnessFriendsActivityDataManager * _activityDataManager;
     int  _activitySharingHasFriendsChangedToken;
     HDFitnessFriendsContactsManager * _contactsManager;
@@ -11,6 +11,8 @@
     bool  _hasFriendsToShareWith;
     HDDaemon * _healthDaemon;
     bool  _isWatch;
+    NSDate * _lastReportedFriendsDate;
+    long long  _lastReportedNumberOfFriends;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
     HDFitnessFriendsPeriodicUpdateManager * _periodicUpdateManager;
@@ -18,6 +20,7 @@
 }
 
 @property (nonatomic) HDFitnessFriendsActivityDataManager *activityDataManager;
+@property (nonatomic, readonly) unsigned long long badgeCount;
 @property (nonatomic) HDFitnessFriendsContactsManager *contactsManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -31,19 +34,23 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_allContactsPreferringPlaceholderContacts;
 - (void)_handleHasFriendsChanged;
 - (void)_queue_friendListDidUpdate;
 - (id)_queue_friendWithUUID:(id)arg1;
 - (bool)_queue_hasFriendsToShareWith;
 - (void)_queue_notifyObserversOfFriendListChanges;
+- (void)_queue_reportHasNumberOfFriends:(long long)arg1;
 - (void)_queue_updateFriendList;
 - (id)activityDataManager;
 - (void)addObserver:(id)arg1;
+- (unsigned long long)badgeCount;
 - (void)clearFriendListWithCompletion:(id /* block */)arg1;
 - (id)contactsManager;
 - (void)contactsManagerDidUpdateContacts:(id)arg1;
 - (void)dealloc;
 - (void)fitnessFriendsManagerReady:(id)arg1;
+- (id)friendWithUUID:(id)arg1;
 - (id)friends;
 - (bool)hasFriendsToShareWith;
 - (id)healthDaemon;

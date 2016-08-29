@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFWebView : WBUFormAutoFillWebView <_SFJavaScriptDialogPresenting> {
-    _SFJavaScriptDialogView * _dialogView;
+@interface _SFWebView : WBUFormAutoFillWebView <_SFDialogPresenting> {
+    _SFDialogView * _dialogView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (void)_setObscuredInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (bool)canPresentForDialogController:(id)arg1;
 - (void)dismissDialogView:(id)arg1 forDialogController:(id)arg2;
 - (void)layoutSubviews;
 - (void)presentDialogView:(id)arg1 forDialogController:(id)arg2;

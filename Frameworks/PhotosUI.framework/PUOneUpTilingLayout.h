@@ -29,6 +29,7 @@
         bool respondsToModelTileTransformForItemAtIndexPath; 
         bool respondsToContentOffsetForItemAtIndexPath; 
         bool respondsToShouldShowAccessoryForItemAtIndexPath; 
+        bool respondsToMinimumVisibleContentHeightForItemAtIndexPath; 
         bool respondsToMinimumVisibleAccessoryHeightForItemAtIndexPath; 
         bool respondsToShouldShowVideoPlaceholderForItemAtIndexPath; 
         bool respondsToDisableInitialZoomToFillForItemAtIndexPath; 
@@ -69,7 +70,6 @@
     bool  _useAssetExplorerReviewScreenSelectionIndicatorTiles;
     bool  _useBackgroundTile;
     bool  _useBadgeTiles;
-    bool  _useCommentsTiles;
     bool  _useUserTransformTiles;
 }
 
@@ -92,7 +92,6 @@
 @property (nonatomic) bool useAssetExplorerReviewScreenSelectionIndicatorTiles;
 @property (nonatomic) bool useBackgroundTile;
 @property (nonatomic) bool useBadgeTiles;
-@property (nonatomic) bool useCommentsTiles;
 @property (nonatomic) bool useUserTransformTiles;
 
 + (id)centerTileKinds;
@@ -154,7 +153,6 @@
 - (void)setUseAssetExplorerReviewScreenSelectionIndicatorTiles:(bool)arg1;
 - (void)setUseBackgroundTile:(bool)arg1;
 - (void)setUseBadgeTiles:(bool)arg1;
-- (void)setUseCommentsTiles:(bool)arg1;
 - (void)setUseUserTransformTiles:(bool)arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)shouldPinContentToTop;
@@ -166,7 +164,6 @@
 - (bool)useAssetExplorerReviewScreenSelectionIndicatorTiles;
 - (bool)useBackgroundTile;
 - (bool)useBadgeTiles;
-- (bool)useCommentsTiles;
 - (bool)useUserTransformTiles;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRectForItemAtIndexPath:(id)arg1 transitionProgress:(double)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(long long)arg2;

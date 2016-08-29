@@ -11,8 +11,8 @@
     <CNContactListViewControllerDelegate> * _delegate;
     CNUIContactsEnvironment * _environment;
     CNUIPeopleGroupsGridViewController * _groupsGridController;
+    CNContact * _mainStoreMeContact;
     CNAvatarViewController * _meBannerAvatarController;
-    CNContact * _meContact;
     CNContactListBannerView * _meContactBanner;
     NSString * _meContactBannerFootnoteLabel;
     NSString * _meContactBannerFootnoteValue;
@@ -42,8 +42,8 @@
 @property (nonatomic, readonly) CNUIContactsEnvironment *environment;
 @property (nonatomic, retain) CNUIPeopleGroupsGridViewController *groupsGridController;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CNContact *mainStoreMeContact;
 @property (nonatomic, retain) CNAvatarViewController *meBannerAvatarController;
-@property (nonatomic, retain) CNContact *meContact;
 @property (nonatomic, retain) CNContactListBannerView *meContactBanner;
 @property (nonatomic, copy) NSString *meContactBannerFootnoteLabel;
 @property (nonatomic, copy) NSString *meContactBannerFootnoteValue;
@@ -101,8 +101,8 @@
 - (bool)isHandlingSearch;
 - (bool)isSearching;
 - (void)loadView;
+- (id)mainStoreMeContact;
 - (id)meBannerAvatarController;
-- (id)meContact;
 - (id)meContactBanner;
 - (id)meContactBannerFootnoteLabel;
 - (id)meContactBannerFootnoteValue;
@@ -134,8 +134,8 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGroupsGridController:(id)arg1;
+- (void)setMainStoreMeContact:(id)arg1;
 - (void)setMeBannerAvatarController:(id)arg1;
-- (void)setMeContact:(id)arg1;
 - (void)setMeContactBanner:(id)arg1;
 - (void)setMeContactBannerFootnoteLabel:(id)arg1;
 - (void)setMeContactBannerFootnoteValue:(id)arg1;

@@ -21,7 +21,7 @@
     long long  _preferredAdaptivityStyle;
     long long  _preferredStatusBarStyle;
     long long  _preferredStatusBarUpdateAnimation;
-    bool  _prefersStatusBarHidden;
+    long long  _prefersStatusBarHidden;
     long long  _proxiedEditAlertToken;
     UIAlertView * _proxiedEditAlertView;
     long long  _redoButtonIndex;
@@ -108,7 +108,7 @@
 - (void)__viewServiceDidPromoteFirstResponder;
 - (void)__viewServiceDidRegisterScrollToTopView;
 - (void)__viewServiceDidUnregisterScrollToTopView;
-- (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 hidden:(bool)arg2 updateAnimation:(long long)arg3;
+- (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 hidden:(long long)arg2 updateAnimation:(long long)arg3;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(long long)arg1 animationSettings:(id)arg2;
 - (void)__viewServiceDidUpdateTintColor:(id)arg1 duration:(double)arg2;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fence:(id)arg2;
@@ -126,6 +126,7 @@
 - (void)_applicationWillDeactivate:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_awakeWithConnectionInfo:(id)arg1;
+- (void)_cancelProxiedEditAlertViewAnimated:(bool)arg1;
 - (id)_cancelTouchesForCurrentEventInHostedContent;
 - (id)_clientDeferralProperties;
 - (bool)_customizesForPresentationInPopover;

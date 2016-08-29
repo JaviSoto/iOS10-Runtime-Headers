@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDJobManager : NSObject <ASDJobManagerClient, NSXPCListenerDelegate> {
+@interface ASDJobManager : ASDBaseClient <ASDJobManagerClient, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     ASDJobManagerClientConnection * _clientConnection;
     NSXPCConnection * _connection;
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyUpdates:(id)arg1 usingBlock:(id /* block */)arg2;
-- (void)_connectAfterDaemonLaunch;
+- (void)_connectToDaemon;
 - (void)_finishJobsWithIDs:(id)arg1;
 - (void)_getJobsUsingBlock:(id /* block */)arg1;
 - (void)_getJobsWithIDs:(id)arg1 usingBlock:(id /* block */)arg2;
@@ -36,6 +36,7 @@
 - (void)_sendProgressUpdated:(id)arg1;
 - (void)_sendStatesUpdated:(id)arg1;
 - (void)_setupConnection;
+- (bool)_shouldAutomaticallyReconnect;
 - (void)_willFinishJobs:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)cancelJobsWithIDs:(id)arg1 completionBlock:(id /* block */)arg2;

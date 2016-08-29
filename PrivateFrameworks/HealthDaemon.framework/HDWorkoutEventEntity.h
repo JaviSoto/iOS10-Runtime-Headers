@@ -12,7 +12,6 @@
 + (bool)insertWorkoutEventsFromWorkout:(id)arg1 workoutPersistentID:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (long long)protectionClass;
 + (id)statementForEnumeratingEventsForWorkoutInDatabase:(id)arg1 error:(id*)arg2;
-+ (id)workoutEventsWithWorkoutID:(id)arg1 database:(id)arg2;
-+ (id)workoutEventsWithWorkoutID:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (id)workoutEventsWithWorkoutID:(id)arg1 database:(id)arg2 error:(id*)arg3;
 
 @end

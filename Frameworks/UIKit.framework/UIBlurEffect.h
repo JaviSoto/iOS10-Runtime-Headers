@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (bool)_invertAutomaticStyle;
 - (bool)_isATVStyle;
+- (bool)_isAutomaticStyle;
 - (long long)_style;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectForUserInterfaceStyle:(long long)arg1;

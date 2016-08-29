@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
  */
 
-@interface SiriCoreNetworkStreamProvider : NSObject <SiriCoreStreamProvider> {
+@interface SiriCoreNetworkStreamProvider : NSObject <NSURLSessionDelegate, SiriCoreStreamProvider> {
     id /* block */  _completion_block;
     bool  _connectByPOPEnabled;
     NSString * _connectionId;
@@ -18,7 +18,9 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _resolvedHost;
     SAConnectionPolicyRoute * _route;
+    AFWatchdogTimer * _streamCaptureTimer;
     NSURL * _url;
+    NSURLSession * _urlSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +33,7 @@
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 streamTask:(id)arg2 didBecomeInputStream:(id)arg3 outputStream:(id)arg4;
 - (void)_getConfiguredStreamPair:(id /* block */)arg1;
+- (id)_siriCoreConnectionErrorWithCode:(long long)arg1;
 - (id)analysisInfo;
 - (void)close;
 - (id)connectionType;

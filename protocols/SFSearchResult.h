@@ -31,6 +31,7 @@
 - (bool)isLocalApplicationResult;
 - (bool)isQuickGlance;
 - (bool)isSecondaryTitleDetached;
+- (bool)isStaticCorrection;
 - (bool)isStreaming;
 - (NSDictionary *)localFeatures;
 - (NSData *)mapsData;
@@ -50,6 +51,7 @@
 - (bool)preventThumbnailImageScaling;
 - (NSString *)publishDate;
 - (SFPunchout *)punchout;
+- (unsigned long long)queryId;
 - (NSNumber *)queryIndependentScore;
 - (double)rankingScore;
 - (bool)renderHorizontallyWithOtherResultsInCategory;
@@ -89,6 +91,7 @@
 - (void)setIsLocalApplicationResult:(bool)arg1;
 - (void)setIsQuickGlance:(bool)arg1;
 - (void)setIsSecondaryTitleDetached:(bool)arg1;
+- (void)setIsStaticCorrection:(bool)arg1;
 - (void)setIsStreaming:(bool)arg1;
 - (void)setLocalFeatures:(NSDictionary *)arg1;
 - (void)setMapsData:(NSData *)arg1;
@@ -108,6 +111,7 @@
 - (void)setPreventThumbnailImageScaling:(bool)arg1;
 - (void)setPublishDate:(NSString *)arg1;
 - (void)setPunchout:(SFPunchout *)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
 - (void)setQueryIndependentScore:(NSNumber *)arg1;
 - (void)setRankingScore:(double)arg1;
 - (void)setRenderHorizontallyWithOtherResultsInCategory:(bool)arg1;

@@ -45,6 +45,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;

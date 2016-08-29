@@ -13,7 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addProxyOperationWithInfo:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)_addProxyOperationWithInfo:(id)arg1 withBlock:(id /* block */)arg2 longlivedProxyPreparationBlock:(id /* block */)arg3;
 - (void)_handlePerformDaemonCallWithOperationInfo:(id)arg1 completionBlock:(id /* block */)arg2 forwardingBlock:(id /* block */)arg3;
 - (void)accountChangedWithID:(id)arg1;
 - (void)accountStatusWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -80,6 +80,7 @@
 - (void)serverPreferredPushEnvironmentWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setApplicationPermission:(unsigned long long)arg1 enabled:(bool)arg2 setupInfo:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2 setupInfo:(id)arg3;
+- (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 setupInfo:(id)arg4;
 - (void)setProxy:(id)arg1;
 - (void)showAssetCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;

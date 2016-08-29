@@ -4,17 +4,17 @@
 
 @interface FCHandlePushNotificationResult : NSObject <NSCopying> {
     bool  _handled;
-    FCCKRecordZone * _recordZone;
+    NSSet * _recordZones;
 }
 
 @property (getter=wasHandled, nonatomic) bool handled;
-@property (nonatomic, retain) FCCKRecordZone *recordZone;
+@property (nonatomic, retain) NSSet *recordZones;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)recordZone;
+- (id)recordZones;
 - (void)setHandled:(bool)arg1;
-- (void)setRecordZone:(id)arg1;
+- (void)setRecordZones:(id)arg1;
 - (bool)wasHandled;
 
 @end

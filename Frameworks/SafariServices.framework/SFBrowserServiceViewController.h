@@ -4,6 +4,7 @@
 
 @interface SFBrowserServiceViewController : _SFBrowserContentViewController <SFServiceViewControllerProtocol, _SFActivityDelegate> {
     id /* block */  _customActivitiesFetchCompletionHandler;
+    _SFWebViewUsageMonitor * _usageMonitor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,15 +28,15 @@
 - (void)_updateStatusBarAppearance;
 - (void)_willAppearInRemoteViewController;
 - (void)dealloc;
+- (void)didDetectRemoteViewControllerViewIsHidden;
 - (void)didFetchHostAppCustomActivities:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadURL:(id)arg1;
 - (void)repostNotificationInViewService:(id)arg1;
 - (void)safariActivity:(id)arg1 didFinish:(bool)arg2;
-- (void)setConfiguration:(id)arg1;
-- (void)setEntersReaderIfAvailable:(bool)arg1;
 - (void)setIsRunningTransitionAnimation:(bool)arg1;
 - (void)setShowingLinkPreview:(bool)arg1;
 - (void)setTintColor:(id)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

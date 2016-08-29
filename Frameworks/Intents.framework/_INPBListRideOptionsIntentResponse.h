@@ -4,21 +4,15 @@
 
 @interface _INPBListRideOptionsIntentResponse : PBCodable <NSCopying> {
     _INPBTimestamp * _expirationDate;
-    struct { 
-        unsigned int supportsApplePayForPayment : 1; 
-    }  _has;
     NSMutableArray * _paymentMethods;
     NSMutableArray * _rideOptions;
-    bool  _supportsApplePayForPayment;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBTimestamp *expirationDate;
 @property (nonatomic, readonly) bool hasExpirationDate;
-@property (nonatomic) bool hasSupportsApplePayForPayment;
 @property (nonatomic, retain) NSMutableArray *paymentMethods;
 @property (nonatomic, retain) NSMutableArray *rideOptions;
-@property (nonatomic) bool supportsApplePayForPayment;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -35,7 +29,6 @@
 - (id)dictionaryRepresentation;
 - (id)expirationDate;
 - (bool)hasExpirationDate;
-- (bool)hasSupportsApplePayForPayment;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -47,11 +40,8 @@
 - (id)rideOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)rideOptionsCount;
 - (void)setExpirationDate:(id)arg1;
-- (void)setHasSupportsApplePayForPayment:(bool)arg1;
 - (void)setPaymentMethods:(id)arg1;
 - (void)setRideOptions:(id)arg1;
-- (void)setSupportsApplePayForPayment:(bool)arg1;
-- (bool)supportsApplePayForPayment;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

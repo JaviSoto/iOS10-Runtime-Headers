@@ -25,7 +25,7 @@
 - (void)_increaseJobGeneratedGoalLevel;
 - (void)_incrementGeneratedJobCountForWorkerType:(short)arg1;
 - (id)_produceAcknowledgeDeletesJobForWorkerType:(short)arg1 scenario:(unsigned long long)arg2 defaultsDisabledKey:(id)arg3 failureReason:(id*)arg4;
-- (id)_produceAssetAnalysisOrAdditionalJobWithForWorkerType:(short)arg1 workInfoReaderMode:(id)arg2 scenario:(unsigned long long)arg3 allowLoadBalanceSkip:(bool)arg4 additionalStatesToExclude:(id)arg5 canUseNetwork:(bool)arg6 defaultsDisabledKey:(id)arg7 failureReason:(id*)arg8;
+- (id)_produceAssetAnalysisOrAdditionalJobWithForWorkerType:(short)arg1 workInfoReaderMode:(id)arg2 scenario:(unsigned long long)arg3 allowLoadBalanceSkip:(bool)arg4 additionalStatesToExclude:(id)arg5 askAboutAdditionalJobs:(bool)arg6 canUseNetwork:(bool)arg7 defaultsDisabledKey:(id)arg8 failureReason:(id*)arg9;
 - (bool)_shouldLoadBalanceSkipForWorkerType:(short)arg1;
 - (id)_transformWorkInfoByUUIDToWorkInfoByLocalIdentifier:(id)arg1;
 - (id)_workerTypesEligibleForLoadBalanceSkipping;

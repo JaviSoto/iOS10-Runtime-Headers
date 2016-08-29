@@ -3,6 +3,7 @@
  */
 
 @interface MPMediaLibraryArtworkRequest : NSObject {
+    NSObject<OS_dispatch_queue> * _accessSerialQueue;
     long long  _artworkType;
     NSString * _availableArtworkToken;
     long long  _entityType;
@@ -45,6 +46,7 @@
 - (id)libraryArtwork;
 - (unsigned long long)libraryID;
 - (unsigned long long)mediaType;
+- (void)promoteFetchableArtworkTokenIfNeeded;
 - (double)retrievalTime;
 - (void)setAvailableArtworkToken:(id)arg1;
 - (void)setFetchableArtworkSource:(id)arg1;

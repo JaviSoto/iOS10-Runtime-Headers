@@ -16,8 +16,10 @@
     NSString * _binaryResponseLogFilePath;
     long long  _cachedPartitionType;
     long long  _cachedServerType;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
     bool  _cancelled;
     NSDictionary * _clientProvidedAdditionalHeaderValues;
+    NSString * _cloudKitAuthToken;
     id /* block */  _completionBlock;
     CKDClientContext * _context;
     long long  _databaseScope;
@@ -30,6 +32,7 @@
     bool  _didSendRequest;
     NSError * _error;
     NSData * _fakeResponseData;
+    NSDictionary * _fakeResponseOperationResultByItemID;
     bool  _finished;
     NSString * _flowControlKey;
     NSString * _hardwareIDOverride;
@@ -102,8 +105,10 @@
 @property (nonatomic, retain) NSString *binaryResponseLogFilePath;
 @property (nonatomic) long long cachedPartitionType;
 @property (nonatomic) long long cachedServerType;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (getter=isCancelled) bool cancelled;
 @property (nonatomic, retain) NSDictionary *clientProvidedAdditionalHeaderValues;
+@property (nonatomic, retain) NSString *cloudKitAuthToken;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) CKDClientContext *context;
 @property (nonatomic) long long databaseScope;
@@ -113,6 +118,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceID;
 @property (retain) NSError *error;
+@property (nonatomic, retain) NSDictionary *fakeResponseOperationResultByItemID;
 @property (nonatomic, retain) NSString *flowControlKey;
 @property (nonatomic, retain) NSString *hardwareIDOverride;
 @property (nonatomic, readonly) bool hasRequestBody;
@@ -193,6 +199,7 @@
 - (id)_errorFromHTTPResponse:(id)arg1;
 - (void)_fetchContainerScopedUserID;
 - (void)_fetchDeviceID;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_flushRequestResponseLogs;
 - (void)_handleAuthFailure;
 - (void)_handleBadPasswordResponse;
@@ -210,6 +217,8 @@
 - (void)_makeTrafficFileHandleWithPrefix:(id)arg1 outPath:(id*)arg2 outHandle:(id*)arg3;
 - (void)_performRequest;
 - (void)_populateURLSessionConfiguration;
+- (void)_prepareAuthTokens;
+- (void)_prepareCloudKitAuthToken;
 - (id /* block */)_protobufObjectParsedBlock;
 - (void)_registerPushTokens;
 - (id)_requestFileHandle;
@@ -240,9 +249,11 @@
 - (unsigned long long)cachePolicy;
 - (long long)cachedPartitionType;
 - (long long)cachedServerType;
+- (id)callbackQueue;
 - (void)cancel;
 - (id)ckShortDescription;
 - (id)clientProvidedAdditionalHeaderValues;
+- (id)cloudKitAuthToken;
 - (id /* block */)completionBlock;
 - (id)context;
 - (long long)databaseScope;
@@ -255,6 +266,7 @@
 - (id)error;
 - (Class)expectedResponseClass;
 - (bool)expectsSingleObject;
+- (id)fakeResponseOperationResultByItemID;
 - (void)finishWithError:(id)arg1;
 - (id)flowControlKey;
 - (void)generateSignature:(id /* block */)arg1;
@@ -281,8 +293,10 @@
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
 - (long long)partitionType;
 - (id)path;
+- (void)performOnCallbackQueueIfNotFinished:(id /* block */)arg1;
 - (void)performRequest;
 - (bool)preferAnonymousRequests;
+- (void)prepareRequestWithCompletion:(id /* block */)arg1;
 - (id)protobufOperationName;
 - (long long)qualityOfService;
 - (void)reportStatusWithError:(id)arg1;
@@ -333,8 +347,10 @@
 - (void)setBinaryResponseLogFilePath:(id)arg1;
 - (void)setCachedPartitionType:(long long)arg1;
 - (void)setCachedServerType:(long long)arg1;
+- (void)setCallbackQueue:(id)arg1;
 - (void)setCancelled:(bool)arg1;
 - (void)setClientProvidedAdditionalHeaderValues:(id)arg1;
+- (void)setCloudKitAuthToken:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDatabaseScope:(long long)arg1;
@@ -342,6 +358,7 @@
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setError:(id)arg1;
+- (void)setFakeResponseOperationResultByItemID:(id)arg1;
 - (void)setFlowControlKey:(id)arg1;
 - (void)setHardwareIDOverride:(id)arg1;
 - (void)setHaveCachedPartitionType:(bool)arg1;

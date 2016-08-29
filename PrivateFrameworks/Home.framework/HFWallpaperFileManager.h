@@ -9,13 +9,13 @@
 @property (nonatomic, retain) NSURL *wallpaperFolderURL;
 
 - (void).cxx_destruct;
-- (id)clearAllWallpapers;
-- (id)clearWallpapersWithIdentifier:(id)arg1;
-- (id)filenameForType:(long long)arg1 variant:(long long)arg2;
+- (id)filenameForWallpaper:(id)arg1;
 - (id)init;
-- (id)loadWallpaperVariant:(long long)arg1 identifier:(id)arg2 error:(id*)arg3;
+- (bool)originalImageExistsForWallpaper:(id)arg1;
+- (id)originalImageForWallpaper:(id)arg1;
+- (void)pruneUnusedOriginalWallpaperImages:(id)arg1;
+- (void)saveOriginalImage:(id)arg1 forWallpaper:(id)arg2;
 - (void)setWallpaperFolderURL:(id)arg1;
-- (void)storeWallpaperVariants:(id)arg1 identifier:(id)arg2 error:(id*)arg3;
 - (id)wallpaperFolderURL;
 
 @end

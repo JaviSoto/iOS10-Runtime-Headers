@@ -3,12 +3,16 @@
  */
 
 @interface ICNote : ICCloudSyncingObject <ICCloudObject, ICSearchIndexableNote, NSTextStorageDelegate, TTTextStorageDelegate> {
+    bool  _attemptedToMergeWhenChangingSelectionByGesture;
     bool  _attemptedToMergeWhenEditingMarkedText;
     NSMutableSet * _connectedDevices;
     NSMutableSet * _connectedSockets;
+    <ICNoteDelegate> * _delegate;
+    bool  _didAddNotificationCenterObservers;
     bool  _shouldBypassDidUnmarkTextCallback;
     bool  _shouldUseLongDelayWhenSchedulingUnmarkTextTimer;
     TTTextStorage * _textStorage;
+    bool  _textViewNotificationCenterCounter;
     NSTimer * _unmarkTextTimer;
     NSUUID * _uuid;
     TTVectorMultiTimestamp * archivedTimestamp;
@@ -22,11 +26,14 @@
 @property (nonatomic, copy) TTVectorMultiTimestamp *archivedTimestamp;
 @property (nonatomic) short attachmentViewType;
 @property (nonatomic, retain) NSSet *attachments;
+@property (nonatomic) bool attemptedToMergeWhenChangingSelectionByGesture;
 @property (nonatomic) bool attemptedToMergeWhenEditingMarkedText;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (retain) NSData *decryptedData;
+@property (nonatomic) <ICNoteDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didAddNotificationCenterObservers;
 @property (nonatomic, retain) NSSet *folders;
 @property (nonatomic, retain) NSDate *foldersModificationDate;
 @property (nonatomic, readonly) bool hasUnreadChanges;
@@ -51,6 +58,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) TTTextStorage *textStorage;
 @property (nonatomic, readonly) TTTextStorage *textStorageWithoutCreating;
+@property (nonatomic) bool textViewNotificationCenterCounter;
 @property (nonatomic, retain) NSString *thumbnailAttachmentIdentifier;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSTimer *unmarkTextTimer;
@@ -122,6 +130,7 @@
 - (id)addAttachmentWithUTI:(id)arg1 data:(id)arg2 filename:(id)arg3;
 - (id)addAttachmentWithUTI:(id)arg1 data:(id)arg2 filenameExtension:(id)arg3;
 - (id)addAttachmentWithUTI:(id)arg1 withURL:(id)arg2;
+- (void)addNotificationCenterObserversIfNecessary;
 - (void)addShareParticipantsToAttributeSet:(id)arg1;
 - (id)addURLAttachmentWithURL:(id)arg1;
 - (bool)allowsNewTextLength:(unsigned long long)arg1;
@@ -136,6 +145,7 @@
 - (id)attachmentFromRemoteFileWrapper:(id)arg1;
 - (id)attachmentFromStandardFileWrapper:(id)arg1;
 - (id)attachmentWithIdentifier:(id)arg1;
+- (bool)attemptedToMergeWhenChangingSelectionByGesture;
 - (bool)attemptedToMergeWhenEditingMarkedText;
 - (id)authorsExcludingCurrentUser;
 - (void)awakeFromFetch;
@@ -156,8 +166,10 @@
 - (void)decrypt;
 - (id)decryptedData;
 - (void)deduplicateSelfAndCreateNewObjectFromRecord:(id)arg1;
+- (id)delegate;
 - (void)deleteFromLocalDatabase;
 - (void)didAcceptShare:(id)arg1;
+- (bool)didAddNotificationCenterObservers;
 - (void)didChangeNoteText;
 - (void)faultLiveTextStorageIfNecessary;
 - (void)fetchThumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
@@ -224,6 +236,8 @@
 - (void)regenerateTitle;
 - (void)releaseMemoryForIndexing;
 - (void)releaseTextStorage;
+- (void)removeNotificationCenterObservers;
+- (void)removeNotificationCenterObserversIfNecessary;
 - (void)replaceWithDocument:(id)arg1;
 - (id)replicaID;
 - (bool)requiresLegacyTombstoneAfterDeletion;
@@ -242,10 +256,13 @@
 - (id)searchableItemAttributeSet;
 - (id)searchableItemIdentifier;
 - (void)setArchivedTimestamp:(id)arg1;
+- (void)setAttemptedToMergeWhenChangingSelectionByGesture:(bool)arg1;
 - (void)setAttemptedToMergeWhenEditingMarkedText:(bool)arg1;
 - (void)setCryptoInitializationVector:(id)arg1;
 - (void)setCryptoTag:(id)arg1;
 - (void)setDecryptedData:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDidAddNotificationCenterObservers:(bool)arg1;
 - (void)setFolder:(id)arg1;
 - (void)setFolders:(id)arg1;
 - (void)setLegacyManagedObjectID:(id)arg1;
@@ -257,6 +274,7 @@
 - (void)setShouldBypassDidUnmarkTextCallback:(bool)arg1;
 - (void)setShouldUseLongDelayWhenSchedulingUnmarkTextTimer:(bool)arg1;
 - (void)setTextStorage:(id)arg1;
+- (void)setTextViewNotificationCenterCounter:(bool)arg1;
 - (void)setUnmarkTextTimer:(id)arg1;
 - (id)shareTitle;
 - (id)shareType;
@@ -264,8 +282,10 @@
 - (bool)shouldUpdateIndexForChangedValues:(id)arg1;
 - (bool)shouldUseLongDelayWhenSchedulingUnmarkTextTimer;
 - (void)startObservingDataIfNecessary;
+- (void)startObservingTextViewNotifications;
 - (void)startUnmarkTextTimerIfNeeded;
 - (void)stopObservingDataIfNecessary;
+- (void)stopObservingTextViewNotifications;
 - (void)stopUnmarkTextTimerIfNeeded;
 - (bool)supportsDeletionByTTL;
 - (bool)supportsEncryptedValuesDictionary;
@@ -277,7 +297,9 @@
 - (void)textStorageDidPerformUndo:(id)arg1;
 - (void)textStorageWillProcessEditing:(id)arg1;
 - (id)textStorageWithoutCreating;
+- (void)textViewDidEndSelectionChange:(id)arg1;
 - (void)textViewDidUnmarkText:(id)arg1;
+- (bool)textViewNotificationCenterCounter;
 - (struct UIImage { Class x1; }*)thumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 imageScaling:(unsigned long long*)arg3 showAsFileIcon:(bool*)arg4 isMovie:(bool*)arg5 movieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6;
 - (id)trimmedTitle;
 - (void)unmarkForDeletion;

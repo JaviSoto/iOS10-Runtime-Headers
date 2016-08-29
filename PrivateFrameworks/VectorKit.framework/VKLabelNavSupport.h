@@ -45,6 +45,7 @@
     float  _minSignOffsetDistance;
     unsigned long long  _minVisibleOffRoadGraphRoadSigns;
     unsigned long long  _minVisibleProceedToRouteRoadSigns;
+    unsigned char  _navMapMode;
     bool  _needsLayout;
     NSMutableSet * _pendingTiles;
     bool  _preferRightSideLabelPlacement;
@@ -65,6 +66,10 @@
         float offset; 
     }  _routeUserOffset;
     unsigned long long  _stepIndex;
+    struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
+        struct StylesheetManager<gss::PropertyID> {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _styleManager;
     NSMutableSet * _tiles;
     bool  _useRouteSubrange;
     NSMutableArray * _visibleLabels;
@@ -80,6 +85,7 @@
 @property (nonatomic) bool debugDisableRoadSignLimit;
 @property (nonatomic) bool debugEnableShieldsOnRouteLine;
 @property (nonatomic) bool drawRoadSigns;
+@property (nonatomic) unsigned char navMapMode;
 @property (nonatomic, readonly) bool needsLayout;
 @property (nonatomic, retain) VKPolylineOverlayPainter *route;
 @property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
@@ -110,7 +116,7 @@
 - (unsigned char)computeRoutePositionForPOIAtPixel:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 currentPosition:(unsigned char)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3;
 - (id)currentLocationText;
 - (id)currentRoadName;
-- (struct NavCurrentRoadSign { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { struct StylesheetQuery<gss::PropertyID> {} *x_3_1_1; struct __shared_weak_count {} *x_3_1_2; } x3; struct { bool x_4_1_1; bool x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct NavLabelPart {} *x5; struct Mercator2<double> { double x_6_1_1[2]; } x6; struct Matrix<float, 2, 1> { float x_7_1_1[2]; } x7; struct Matrix<float, 2, 1> { float x_8_1_1[2]; } x8; struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_2_1[2]; } x_9_1_1; struct Matrix<float, 2, 1> { float x_2_2_1[2]; } x_9_1_2; } x9; bool x10; bool x11; bool x12; float x13; bool x14; bool x15; float x16; }*)currentRoadSign;
+- (struct NavCurrentRoadSign { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { struct StylesheetQuery<gss::PropertyID> {} *x_3_1_1; struct __shared_weak_count {} *x_3_1_2; } x3; struct { bool x_4_1_1; bool x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct NavLabelPart {} *x5; struct Mercator2<double> { double x_6_1_1[2]; } x6; struct Matrix<float, 2, 1> { float x_7_1_1[2]; } x7; struct Matrix<float, 2, 1> { float x_8_1_1[2]; } x8; struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_2_1[2]; } x_9_1_1; struct Matrix<float, 2, 1> { float x_2_2_1[2]; } x_9_1_2; } x9; }*)currentRoadSign;
 - (float)currentRoadSignPixelHeight;
 - (id)currentShieldGroup;
 - (void)dealloc;
@@ -121,6 +127,7 @@
 - (id)init;
 - (bool)isNavMode;
 - (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
+- (unsigned char)navMapMode;
 - (bool)needsLayout;
 - (unsigned char)orientationForRoadSign:(id)arg1 roadLabel:(id)arg2 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3;
 - (id)route;
@@ -131,8 +138,10 @@
 - (void)setDebugDisableRoadSignLimit:(bool)arg1;
 - (void)setDebugEnableShieldsOnRouteLine:(bool)arg1;
 - (void)setDrawRoadSigns:(bool)arg1;
+- (void)setNavMapMode:(unsigned char)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setStyleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)stylesheetDidChange;
 
 @end

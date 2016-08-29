@@ -5,11 +5,11 @@
 @interface AVCapturePhotoSettingsInternal : NSObject {
     long long  HDRMode;
     bool  autoStillImageStabilizationEnabled;
-    AVMetadataItem * defaultLivePhotoGUID;
-    AVMetadataItem * defaultLivePhotoGUIDForOriginalPhoto;
     long long  flashMode;
     NSDictionary * format;
     bool  highResolutionPhotoEnabled;
+    NSString * livePhotoContentIdentifier;
+    NSString * livePhotoContentIdentifierForOriginalPhoto;
     NSURL * livePhotoMovieFileURL;
     NSURL * livePhotoMovieFileURLForOriginalPhoto;
     NSArray * livePhotoMovieMetadata;

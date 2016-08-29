@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMZoomSlider : UISlider <UIGestureRecognizerDelegate> {
+@interface CAMZoomSlider : UISlider {
     bool  __autozooming;
     UIView * __maxTrackMaskView;
     UIView * __minTrackMaskView;
@@ -26,15 +26,11 @@
 @property (nonatomic, readonly) UIView *_minTrackMaskView;
 @property (nonatomic, readonly) NSTimer *_visibilityTimer;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentRectInsets;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CAMZoomSliderDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) long long layoutStyle;
 @property (getter=isMaximumAutozooming, setter=_setMaximumAutozooming:, nonatomic) bool maximumAutozooming;
 @property (getter=isMinimumAutozooming, setter=_setMinimumAutozooming:, nonatomic) bool minimumAutozooming;
 @property (nonatomic) long long orientation;
-@property (readonly) Class superclass;
 @property (getter=isVisibilityTimerSuspended, nonatomic) bool visibilityTimerSuspended;
 
 + (bool)shouldFadeOutZoomSliderForLayoutStyle:(long long)arg1;
@@ -89,7 +85,6 @@
 - (void)setLayoutStyle:(long long)arg1;
 - (void)setOrientation:(long long)arg1;
 - (void)setOrientation:(long long)arg1 animated:(bool)arg2;
-- (void)setUserInitiatedValue:(float)arg1;
 - (void)setVisibilityTimerSuspended:(bool)arg1;
 - (bool)shouldHideForExpiredVisibilityTimer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;

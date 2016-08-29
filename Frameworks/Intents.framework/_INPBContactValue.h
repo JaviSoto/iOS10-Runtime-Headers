@@ -3,16 +3,22 @@
  */
 
 @interface _INPBContactValue : PBCodable <NSCopying> {
+    NSMutableArray * _aliases;
     _INPBContactHandle * _contactHandle;
     NSString * _customIdentifier;
     NSString * _firstName;
     NSString * _fullName;
+    struct { 
+        unsigned int suggestionType : 1; 
+    }  _has;
     _INPBImageValue * _image;
     NSString * _lastName;
+    int  _suggestionType;
     PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
+@property (nonatomic, retain) NSMutableArray *aliases;
 @property (nonatomic, retain) _INPBContactHandle *contactHandle;
 @property (nonatomic, retain) NSString *customIdentifier;
 @property (nonatomic, retain) NSString *firstName;
@@ -23,15 +29,24 @@
 @property (nonatomic, readonly) bool hasFullName;
 @property (nonatomic, readonly) bool hasImage;
 @property (nonatomic, readonly) bool hasLastName;
+@property (nonatomic) bool hasSuggestionType;
 @property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, retain) _INPBImageValue *image;
 @property (nonatomic, retain) NSString *lastName;
+@property (nonatomic) int suggestionType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
 
++ (Class)aliasesType;
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsSuggestionType:(id)arg1;
+- (void)addAliases:(id)arg1;
+- (id)aliases;
+- (id)aliasesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)aliasesCount;
+- (void)clearAliases;
 - (id)contactHandle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customIdentifier;
@@ -45,6 +60,7 @@
 - (bool)hasFullName;
 - (bool)hasImage;
 - (bool)hasLastName;
+- (bool)hasSuggestionType;
 - (bool)hasValueMetadata;
 - (unsigned long long)hash;
 - (id)image;
@@ -52,13 +68,18 @@
 - (id)lastName;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setAliases:(id)arg1;
 - (void)setContactHandle:(id)arg1;
 - (void)setCustomIdentifier:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFullName:(id)arg1;
+- (void)setHasSuggestionType:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setSuggestionType:(int)arg1;
 - (void)setValueMetadata:(id)arg1;
+- (int)suggestionType;
+- (id)suggestionTypeAsString:(int)arg1;
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;

@@ -37,6 +37,7 @@
 - (id)favoritesEntries;
 - (void)handleContactStoreDidChangeNotification:(id)arg1;
 - (void)handleFavoritesChangedNotification:(id)arg1;
+- (void)handleFavoritesEntryChangedNotification:(id)arg1;
 - (id)init;
 - (id)initWithContactStore:(id)arg1;
 - (void)moveEntryAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;

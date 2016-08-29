@@ -26,8 +26,19 @@
             double width; 
             double height; 
         } size; 
+    }  lastMagnifierRect;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
     }  lastPageRect;
     UIImage * magnifierImage;
+    struct CGImage { } * magnifierImageMask;
     CALayer * magnifierLayer;
     struct CGSize { 
         double width; 

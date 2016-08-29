@@ -31,6 +31,7 @@
 - (id)debugDescription;
 - (void)fixupOffsetFromVersion1WithSymbolOffsetIntoSymbolOwner:(unsigned long long)arg1;
 - (id)initWithCSSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 andOffsetIntoSymbolOwner:(unsigned long long)arg2;
+- (id)initWithOffsetIntoSymbolOwner:(unsigned long long)arg1 length:(unsigned long long)arg2 fileName:(id)arg3 lineNumber:(unsigned int)arg4 columnNumber:(unsigned int)arg5;
 - (bool)isEmptySourceInfo;
 - (unsigned long long)length;
 - (unsigned long long)offsetIntoSymbolOwner;

@@ -13,6 +13,7 @@
     double  _longPressDuration;
     unsigned long long  _numberOfScanLoops;
     double  _pauseOnFirstItemInterval;
+    NSArray * _postActivationScanLocations;
     double  _repeatActionInterval;
     NSArray * _scanningStyles;
     bool  _soundEffectsEnabled;
@@ -30,6 +31,7 @@
 @property (nonatomic) double longPressDuration;
 @property (nonatomic) unsigned long long numberOfScanLoops;
 @property (nonatomic) double pauseOnFirstItemInterval;
+@property (nonatomic, copy) NSArray *postActivationScanLocations;
 @property (nonatomic) double repeatActionInterval;
 @property (nonatomic, copy) NSArray *scanningStyles;
 @property (nonatomic) bool soundEffectsEnabled;
@@ -51,6 +53,7 @@
 - (double)longPressDuration;
 - (unsigned long long)numberOfScanLoops;
 - (double)pauseOnFirstItemInterval;
+- (id)postActivationScanLocations;
 - (double)repeatActionInterval;
 - (id)scanningStyles;
 - (void)setAutoHideTimeout:(double)arg1;
@@ -63,6 +66,7 @@
 - (void)setLongPressDuration:(double)arg1;
 - (void)setNumberOfScanLoops:(unsigned long long)arg1;
 - (void)setPauseOnFirstItemInterval:(double)arg1;
+- (void)setPostActivationScanLocations:(id)arg1;
 - (void)setRepeatActionInterval:(double)arg1;
 - (void)setScanningStyles:(id)arg1;
 - (void)setSoundEffectsEnabled:(bool)arg1;

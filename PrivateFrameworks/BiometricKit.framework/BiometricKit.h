@@ -69,6 +69,8 @@
 - (void)enrollProgressMessage:(unsigned int)arg1;
 - (void)enrollResult:(id)arg1;
 - (bool)fileRadarWithLogs:(id)arg1 withDescription:(id)arg2;
+- (int)forceBioLockout;
+- (int)forceBioLockoutForUser:(unsigned int)arg1;
 - (long long)getBioLockoutState;
 - (long long)getBioLockoutStateForUser:(unsigned int)arg1;
 - (long long)getCalBlobVersion;

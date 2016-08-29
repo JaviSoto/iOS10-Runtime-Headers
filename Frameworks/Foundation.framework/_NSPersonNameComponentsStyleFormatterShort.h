@@ -27,7 +27,6 @@
 - (void)setShortNameFormat:(long long)arg1;
 - (void)setSubFormatter:(id)arg1;
 - (long long)shortNameFormat;
-- (bool)shouldFallBack;
 - (id)subFormatter;
 - (id)variantFormatter;
 

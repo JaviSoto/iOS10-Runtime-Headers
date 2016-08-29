@@ -4,6 +4,7 @@
 
 @interface VMVoicemailTranscriptSegment : NSObject <NSSecureCoding> {
     float  _confidence;
+    unsigned long long  _confidenceRating;
     double  _duration;
     NSString * _substring;
     struct _NSRange { 
@@ -14,6 +15,7 @@
 }
 
 @property (nonatomic, readonly) float confidence;
+@property (nonatomic) unsigned long long confidenceRating;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly, copy) NSString *substring;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } substringRange;
@@ -23,12 +25,14 @@
 
 - (void).cxx_destruct;
 - (float)confidence;
+- (unsigned long long)confidenceRating;
 - (id)debugDescription;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTranscriptionSegment:(id)arg1;
+- (void)setConfidenceRating:(unsigned long long)arg1;
 - (id)substring;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })substringRange;
 - (double)timestamp;

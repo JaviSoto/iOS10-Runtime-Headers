@@ -41,6 +41,7 @@
     _MRSendVirtualTouchEventMessageProtobuf * _sendVirtualTouchEventMessage;
     _MRSendVoiceInputMessageProtobuf * _sendVoiceInputMessage;
     _MRSetArtworkMessageProtobuf * _setArtworkMessage;
+    _MRSetHiliteModeMessageProtobuf * _setHiliteModeMessage;
     _MRSetRecordingStateMessageProtobuf * _setRecordingStateMessage;
     _MRSetStateMessageProtobuf * _setStateMessage;
     _MRTextInputMessageProtobuf * _textInputMessage;
@@ -49,6 +50,7 @@
     int  _type;
     _MRUnregisterGameControllerMessageProtobuf * _unregisterGameController;
     _MRVolumeControlAvailabilityProtobuf * _volumeControlAvailabilityMessage;
+    _MRWakeDeviceMessageProtobuf * _wakeDeviceMessage;
 }
 
 @property (nonatomic, retain) NSString *authenticationToken;
@@ -98,6 +100,7 @@
 @property (nonatomic, readonly) bool hasSendVirtualTouchEventMessage;
 @property (nonatomic, readonly) bool hasSendVoiceInputMessage;
 @property (nonatomic, readonly) bool hasSetArtworkMessage;
+@property (nonatomic, readonly) bool hasSetHiliteModeMessage;
 @property (nonatomic, readonly) bool hasSetRecordingStateMessage;
 @property (nonatomic, readonly) bool hasSetStateMessage;
 @property (nonatomic, readonly) bool hasTextInputMessage;
@@ -106,6 +109,7 @@
 @property (nonatomic) bool hasType;
 @property (nonatomic, readonly) bool hasUnregisterGameController;
 @property (nonatomic, readonly) bool hasVolumeControlAvailabilityMessage;
+@property (nonatomic, readonly) bool hasWakeDeviceMessage;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) _MRKeyboardMessageProtobuf *keyboardMessage;
 @property (nonatomic, retain) _MRNotificationMessageProtobuf *notificationMessage;
@@ -125,6 +129,7 @@
 @property (nonatomic, retain) _MRSendVirtualTouchEventMessageProtobuf *sendVirtualTouchEventMessage;
 @property (nonatomic, retain) _MRSendVoiceInputMessageProtobuf *sendVoiceInputMessage;
 @property (nonatomic, retain) _MRSetArtworkMessageProtobuf *setArtworkMessage;
+@property (nonatomic, retain) _MRSetHiliteModeMessageProtobuf *setHiliteModeMessage;
 @property (nonatomic, retain) _MRSetRecordingStateMessageProtobuf *setRecordingStateMessage;
 @property (nonatomic, retain) _MRSetStateMessageProtobuf *setStateMessage;
 @property (nonatomic, retain) _MRTextInputMessageProtobuf *textInputMessage;
@@ -133,6 +138,7 @@
 @property (nonatomic) int type;
 @property (nonatomic, retain) _MRUnregisterGameControllerMessageProtobuf *unregisterGameController;
 @property (nonatomic, retain) _MRVolumeControlAvailabilityProtobuf *volumeControlAvailabilityMessage;
+@property (nonatomic, retain) _MRWakeDeviceMessageProtobuf *wakeDeviceMessage;
 
 - (int)StringAsType:(id)arg1;
 - (id)authenticationToken;
@@ -187,6 +193,7 @@
 - (bool)hasSendVirtualTouchEventMessage;
 - (bool)hasSendVoiceInputMessage;
 - (bool)hasSetArtworkMessage;
+- (bool)hasSetHiliteModeMessage;
 - (bool)hasSetRecordingStateMessage;
 - (bool)hasSetStateMessage;
 - (bool)hasTextInputMessage;
@@ -195,6 +202,7 @@
 - (bool)hasType;
 - (bool)hasUnregisterGameController;
 - (bool)hasVolumeControlAvailabilityMessage;
+- (bool)hasWakeDeviceMessage;
 - (unsigned long long)hash;
 - (id)identifier;
 - (bool)isEqual:(id)arg1;
@@ -235,6 +243,7 @@
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasType:(bool)arg1;
+- (id)setHiliteModeMessage;
 - (void)setIdentifier:(id)arg1;
 - (void)setKeyboardMessage:(id)arg1;
 - (void)setNotificationMessage:(id)arg1;
@@ -255,6 +264,7 @@
 - (void)setSendVirtualTouchEventMessage:(id)arg1;
 - (void)setSendVoiceInputMessage:(id)arg1;
 - (void)setSetArtworkMessage:(id)arg1;
+- (void)setSetHiliteModeMessage:(id)arg1;
 - (void)setSetRecordingStateMessage:(id)arg1;
 - (void)setSetStateMessage:(id)arg1;
 - (id)setStateMessage;
@@ -264,6 +274,7 @@
 - (void)setType:(int)arg1;
 - (void)setUnregisterGameController:(id)arg1;
 - (void)setVolumeControlAvailabilityMessage:(id)arg1;
+- (void)setWakeDeviceMessage:(id)arg1;
 - (id)textInputMessage;
 - (unsigned long long)timestamp;
 - (id)transactionPackets;
@@ -271,6 +282,7 @@
 - (id)typeAsString:(int)arg1;
 - (id)unregisterGameController;
 - (id)volumeControlAvailabilityMessage;
+- (id)wakeDeviceMessage;
 - (void)writeTo:(id)arg1;
 
 @end

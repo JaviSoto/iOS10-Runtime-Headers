@@ -36,7 +36,7 @@
 - (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned long long)arg2 sizeHint:(unsigned long long)arg3 priority:(long long)arg4;
 - (void)_willDownload:(id)arg1 operationID:(id)arg2;
 - (void)addAliasItem:(id)arg1 toDownloadingItem:(id)arg2;
-- (bool)applyLosersToItem:(id)arg1 serverItem:(id)arg2 atURL:(id)arg3 applySchedulerState:(int*)arg4;
+- (bool)applyLosersToItem:(id)arg1 serverItem:(id)arg2 atURL:(id)arg3 applySchedulerState:(int*)arg4 addedLosers:(id)arg5 removedLosers:(id)arg6;
 - (bool)applyThumbnailToItem:(id)arg1 serverItem:(id)arg2 atURL:(id)arg3 applySchedulerState:(int*)arg4;
 - (void)cancel;
 - (void)cancelAndCleanupItemDownload:(id)arg1 kind:(int)arg2;
@@ -49,6 +49,7 @@
 - (void)evictLosersOnItem:(id)arg1 atURL:(id)arg2 applySchedulerState:(int*)arg3;
 - (bool)hasAdditionsToApplyForItem:(id)arg1 serverItem:(id)arg2;
 - (bool)hasThumbnailToApplyForItem:(id)arg1;
+- (unsigned long long)inFlightSize;
 - (id)initWithAccountSession:(id)arg1;
 - (bool)isDownloadingItem:(id)arg1;
 - (bool)makeContentLive:(id)arg1;

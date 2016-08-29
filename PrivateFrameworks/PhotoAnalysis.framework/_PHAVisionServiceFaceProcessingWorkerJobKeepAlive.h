@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (void)_extendTimeoutAndDispatchAgainIfNecessary;
 - (id)initWithJob:(id)arg1;
+- (id)job;
 - (void)start;
 - (void)stop;
 

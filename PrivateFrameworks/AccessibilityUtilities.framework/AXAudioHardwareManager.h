@@ -4,6 +4,8 @@
 
 @interface AXAudioHardwareManager : NSObject
 
++ (bool)channelsAreAirplay:(id)arg1 route:(id)arg2;
++ (bool)channelsAreWiredHeadphones:(id)arg1;
 + (id)channelsForPort:(id)arg1;
 + (id)defaultPort;
 + (id)defaultPortChannels;

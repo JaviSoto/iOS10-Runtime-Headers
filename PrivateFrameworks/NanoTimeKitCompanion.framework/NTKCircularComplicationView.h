@@ -39,10 +39,11 @@
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (id)_fontForDynamicFontSize:(long long)arg1;
 - (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; struct UIEdgeInsets { double x_13_1_1; double x_13_1_2; double x_13_1_3; double x_13_1_4; } x13; })_layoutConstants;
+- (id)_mediumStackFontForText:(id)arg1;
 - (id)_newLabelSubviewWithFont:(id)arg1;
 - (void)_updateForTemplateChange;
 - (void)_updateLabelsForFontChange;
-- (id)_variableFontForText:(id)arg1;
+- (long long)_variableFontSizeForText:(id)arg1;
 - (bool)_wantsPlatter;
 - (id)complicationTemplate;
 - (id)displayObserver;

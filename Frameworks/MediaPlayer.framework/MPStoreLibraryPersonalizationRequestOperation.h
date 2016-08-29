@@ -11,7 +11,7 @@
 @property (nonatomic, copy) MPStoreLibraryPersonalizationRequest *request;
 @property (nonatomic, copy) id /* block */ responseHandler;
 
-+ (id)personalizedResponseForModelObject:(id)arg1 requestedProperties:(id)arg2;
++ (id)personalizedResponseForContentDescriptor:(id)arg1 requestedProperties:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)execute;

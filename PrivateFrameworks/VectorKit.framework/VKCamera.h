@@ -83,7 +83,7 @@
 
 @property (nonatomic) bool allowDatelineWraparound;
 @property (nonatomic) double aspectRatio;
-@property (nonatomic) /* Warning: unhandled struct encoding: '{VKCameraState={Matrix<double' */ struct  cameraState; /* unknown property attribute:  4>=[16d]}fff} */
+@property (nonatomic) /* Warning: unhandled struct encoding: '{VKCameraState={Matrix<double' */ struct  cameraState; /* unknown property attribute:  4>=[16d]}ddd} */
 @property (nonatomic) double canonicalPitch;
 @property (nonatomic) <VKCameraDelegate> *delegate;
 @property (nonatomic, readonly) double distanceToGroundAndFarClipPlaneIntersection;
@@ -129,7 +129,7 @@
 - (id /* block */)annotationCoordinateTest;
 - (id /* block */)annotationRectTest;
 - (double)aspectRatio;
-- (struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; float x3; float x4; float x5; })cameraState;
+- (struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; double x3; double x4; double x5; })cameraState;
 - (double)canonicalPitch;
 - (void)dealloc;
 - (id)delegate;
@@ -147,7 +147,7 @@
 - (struct Matrix<double, 3, 1> { double x1[3]; })groundPoint;
 - (struct Matrix<double, 3, 1> { double x1[3]; })groundPointFromScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct Matrix<double, 3, 1> { double x1[3]; })groundPointFromScreenPoint:(struct CGPoint { double x1; double x2; })arg1 atGroundLevel:(double)arg2;
-- (bool)hasChangedState:(struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; float x3; float x4; float x5; }*)arg1;
+- (bool)hasChangedState:(struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; double x3; double x4; double x5; }*)arg1;
 - (float)horizontalFieldOfView;
 - (double)horizontalOffset;
 - (id)init;
@@ -171,7 +171,7 @@
 - (double)screenHeightOfGroundAndFarClipPlaneIntersection;
 - (void)setAllowDatelineWraparound:(bool)arg1;
 - (void)setAspectRatio:(double)arg1;
-- (void)setCameraState:(struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; float x3; float x4; float x5; })arg1;
+- (void)setCameraState:(struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; double x3; double x4; double x5; })arg1;
 - (void)setCanonicalPitch:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFractionOfScreenAboveFarClipPlaneAtCanonicalPitch:(double)arg1;

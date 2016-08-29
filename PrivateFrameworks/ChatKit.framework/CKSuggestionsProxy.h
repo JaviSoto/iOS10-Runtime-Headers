@@ -11,6 +11,8 @@
 
 @property (nonatomic, retain) NSObject<SGSuggestionsServiceMessagesProtocol> *suggestionsService;
 
++ (id)sharedInstance;
+
 - (void).cxx_destruct;
 - (id)_filteredRealtimeEvents:(id)arg1;
 - (void)bannerViewForSearchables:(id)arg1 guid:(id)arg2 andCompletion:(id /* block */)arg3;

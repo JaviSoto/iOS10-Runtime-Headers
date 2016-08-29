@@ -25,6 +25,7 @@
     unsigned long long  _expirationEvents;
     bool  _expiresOnPublisherDeath;
     bool  _hasEventDate;
+    bool  _hasPrivateContent;
     BBSectionIcon * _icon;
     bool  _ignoresQuietMode;
     NSArray * _intentIDs;
@@ -42,7 +43,6 @@
     NSDate * _recencyDate;
     NSString * _sectionID;
     long long  _sectionSubtype;
-    bool  _showsMessagePreview;
     BBSound * _sound;
     BBContent * _starkBannerContent;
     NSSet * _subsectionIDs;
@@ -95,6 +95,7 @@
 @property (nonatomic, readonly) NSString *fullAlternateActionLabel;
 @property (nonatomic, readonly) NSString *fullUnlockActionLabel;
 @property (nonatomic) bool hasEventDate;
+@property (nonatomic) bool hasPrivateContent;
 @property (nonatomic, readonly) long long iPodOutAlertType;
 @property (nonatomic, retain) BBSectionIcon *icon;
 @property (nonatomic) bool ignoresQuietMode;
@@ -112,10 +113,12 @@
 @property (nonatomic, copy) NSString *parentSectionID;
 @property (nonatomic, copy) NSArray *peopleIDs;
 @property (nonatomic, readonly) bool playsSoundForModify;
+@property (nonatomic, readonly) bool preemptsPresentedAlert;
 @property (nonatomic, readonly) bool preservesUnlockActionCase;
 @property (nonatomic, readonly) bool preventLock;
 @property (nonatomic, copy) BBAttachmentMetadata *primaryAttachment;
 @property (nonatomic, readonly) bool prioritizeAtTopOfLockScreen;
+@property (nonatomic, readonly) unsigned long long privacySettings;
 @property (nonatomic, retain) NSDate *publicationDate;
 @property (nonatomic, copy) NSString *publisherBulletinID;
 @property (nonatomic, readonly, copy) NSString *publisherMatchID;
@@ -124,6 +127,7 @@
 @property (nonatomic) unsigned long long realertCount_deprecated;
 @property (nonatomic, retain) NSDate *recencyDate;
 @property (nonatomic, copy) NSString *recordID;
+@property (nonatomic, readonly) bool revealsAdditionalContentOnPresentation;
 @property (nonatomic, readonly) NSString *secondaryContentRemoteServiceBundleIdentifier;
 @property (nonatomic, readonly) NSString *secondaryContentRemoteViewControllerClassName;
 @property (nonatomic, copy) NSString *section;
@@ -134,7 +138,6 @@
 @property (nonatomic) long long sectionSubtype;
 @property (nonatomic, readonly) bool showsContactPhoto;
 @property (nonatomic, readonly) bool showsDateInFloatingLockScreenAlert;
-@property (nonatomic) bool showsMessagePreview;
 @property (nonatomic, readonly) bool showsSubtitle;
 @property (nonatomic, readonly) bool showsUnreadIndicatorForNoticesFeed;
 @property (nonatomic, copy) BBAction *snoozeAction;
@@ -229,6 +232,7 @@
 - (id)fullAlternateActionLabel;
 - (id)fullUnlockActionLabel;
 - (bool)hasEventDate;
+- (bool)hasPrivateContent;
 - (unsigned long long)hash;
 - (long long)iPodOutAlertType;
 - (id)icon;
@@ -252,11 +256,13 @@
 - (id)parentSectionID;
 - (id)peopleIDs;
 - (bool)playsSoundForModify;
+- (bool)preemptsPresentedAlert;
 - (bool)preservesUnlockActionCase;
 - (bool)preventLock;
 - (id)primaryAttachment;
 - (long long)primaryAttachmentType;
 - (bool)prioritizeAtTopOfLockScreen;
+- (unsigned long long)privacySettings;
 - (id)publicationDate;
 - (id)publisherBulletinID;
 - (id)publisherMatchID;
@@ -274,6 +280,7 @@
 - (id)responseForRaiseAction;
 - (id)responseForSnoozeAction;
 - (id /* block */)responseSendBlock;
+- (bool)revealsAdditionalContentOnPresentation;
 - (id)safeDescription;
 - (id)secondaryContentRemoteServiceBundleIdentifier;
 - (id)secondaryContentRemoteViewControllerClassName;
@@ -311,6 +318,7 @@
 - (void)setExpireAction:(id)arg1;
 - (void)setExpiresOnPublisherDeath:(bool)arg1;
 - (void)setHasEventDate:(bool)arg1;
+- (void)setHasPrivateContent:(bool)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIgnoresQuietMode:(bool)arg1;
 - (void)setIntentIDs:(id)arg1;
@@ -384,6 +392,7 @@
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
+- (id)blt_uniqueKey;
 - (id)dateOrRecencyDate;
 - (bool)matchesPublisherBulletinID:(id)arg1 andRecordID:(id)arg2;
 - (id)publishDate;

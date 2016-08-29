@@ -3,6 +3,7 @@
  */
 
 @interface CacheDeleteRecentVolumeInfo : CacheDeleteRecent <NSCopying, NSSecureCoding> {
+    NSObject<OS_dispatch_queue> * _collection_queue;
     NSMutableDictionary * _diagnostics;
     NSNumber * _freespace;
     NSMutableDictionary * _services;
@@ -10,6 +11,7 @@
     NSString * _volume;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *collection_queue;
 @property (nonatomic, retain) NSMutableDictionary *diagnostics;
 @property (retain) NSNumber *freespace;
 @property (nonatomic, retain) NSMutableDictionary *services;
@@ -20,6 +22,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)collection_queue;
 - (id)copyInvalidsAtUrgency:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -36,6 +39,7 @@
 - (id)recentInfoAtUrgency:(int)arg1;
 - (void)removeServiceInfo:(id)arg1;
 - (id)services;
+- (void)setCollection_queue:(id)arg1;
 - (void)setDiagnostics:(id)arg1;
 - (void)setFreespace:(id)arg1;
 - (void)setServices:(id)arg1;

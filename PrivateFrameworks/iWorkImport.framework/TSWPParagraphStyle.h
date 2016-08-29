@@ -15,6 +15,7 @@
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)defaultPropertyMap;
 + (id)defaultStyleWithContext:(id)arg1;
++ (id)defaultStyleWithDefaultPropertiesInContext:(id)arg1;
 + (id)defaultValueForProperty:(int)arg1;
 + (id)deprecatedProperties;
 + (void)initialize;

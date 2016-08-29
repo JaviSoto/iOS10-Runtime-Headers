@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKMapView : UIView <GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate> {
+@interface MKMapView : UIView <GEOLogContextDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate> {
     MKAnnotationContainerView * _annotationContainer;
     id /* block */  _annotationCoordinateTest;
     MKMapAnnotationManager * _annotationManager;
@@ -642,6 +642,8 @@
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRegionFromView:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRectToView:(id)arg2;
 - (id)createDrawableForOverlay:(id)arg1;
+- (int)currentMapViewTargetForAnalytics;
+- (int)currentUITargetForAnalytics;
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
@@ -694,7 +696,9 @@
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2 level:(long long)arg3;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
+- (void)invalidateDefaultLocationTimer;
 - (bool)isCompassEnabled;
+- (bool)isCurrentlyRotated;
 - (bool)isLocationConsoleEnabled;
 - (bool)isPitchEnabled;
 - (bool)isRegionChanging;
@@ -717,6 +721,7 @@
 - (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedHeading:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
+- (id)logContextForLogMsgEvent:(id)arg1;
 - (id)mapAttributionWithStringAttributes:(id)arg1;
 - (id)mapAttributionWithStringAttributes:(id)arg1 allowMultiLine:(bool)arg2;
 - (void)mapLayer:(id)arg1 canEnter3DModeDidChange:(bool)arg2;

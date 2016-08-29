@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKViewElement : NSObject <IKStyleableElement> {
+@interface IKViewElement : NSObject <IKAppDocumentStyleChangeObserving, IKStyleableElement> {
     NSString * _accessibilityText;
     NSMutableSet * _activeSingularEvents;
     IKAppDocument * _appDocument;
@@ -31,6 +31,8 @@
 @property (nonatomic, readonly, retain) NSDictionary *attributes;
 @property (nonatomic, copy) NSString *autoHighlightIdentifier;
 @property (nonatomic, retain) NSArray *children;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool didUpdateAutoHighlightIdentifier;
 @property (getter=isDisabled, nonatomic) bool disabled;
 @property (nonatomic, readonly, copy) NSString *elementID;
@@ -38,6 +40,7 @@
 @property (nonatomic, readonly) unsigned long long elementType;
 @property (nonatomic, readonly) SKUIEntityProviderListViewElement *entityProviderList;
 @property (nonatomic, readonly, copy) NSArray *features;
+@property (readonly) unsigned long long hash;
 @property (getter=isImpressionable, nonatomic) bool impressionable;
 @property (nonatomic, readonly) NSDictionary *impressionableAttributes;
 @property (nonatomic, readonly, retain) NSString *itmlID;
@@ -46,6 +49,7 @@
 @property (nonatomic, readonly) <IKStyleableElement> *parentStyleableElement;
 @property (nonatomic, readonly, retain) IKViewElementStyle *style;
 @property (nonatomic, retain) IKViewElementStyleComposer *styleComposer;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned long long updateType;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
@@ -56,7 +60,6 @@
 + (id)supportedFeatures;
 
 - (void).cxx_destruct;
-- (void)_appDocumentDidMarkStylesDirty:(id)arg1;
 - (void)_applyUpdatesToChildrenWithElements:(id)arg1;
 - (void)_reorderAndUpdateChildrenWithElements:(id)arg1;
 - (void)_resetUpdates;
@@ -64,6 +67,7 @@
 - (id)accessibilityText;
 - (id)activeSingularEvents;
 - (id)appDocument;
+- (void)appDocumentDidMarkStylesDirty;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)attributes;
 - (id)autoHighlightIdentifier;

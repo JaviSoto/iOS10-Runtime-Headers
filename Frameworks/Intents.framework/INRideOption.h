@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideOption : NSObject <INCacheableContainer, NSCopying, NSSecureCoding> {
+@interface INRideOption : NSObject <INCacheableContainer, INRideOptionExport, NSCopying, NSSecureCoding> {
     NSArray * _availablePartySizeOptions;
     NSString * _availablePartySizeOptionsSelectionPrompt;
     NSString * _disclaimerMessage;
@@ -13,7 +13,6 @@
     INPriceRange * _priceRange;
     NSString * _specialPricing;
     INImage * _specialPricingBadgeImage;
-    NSString * _subtitle;
     NSUserActivity * _userActivityForBookingInApplication;
     NSNumber * _usesMeteredFare;
 }
@@ -31,7 +30,6 @@
 @property (nonatomic, copy) INPriceRange *priceRange;
 @property (nonatomic, copy) NSString *specialPricing;
 @property (nonatomic, copy) INImage *specialPricingBadgeImage;
-@property (nonatomic, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUserActivity *userActivityForBookingInApplication;
 @property (nonatomic, copy) NSNumber *usesMeteredFare;
@@ -62,12 +60,10 @@
 - (void)setPriceRange:(id)arg1;
 - (void)setSpecialPricing:(id)arg1;
 - (void)setSpecialPricingBadgeImage:(id)arg1;
-- (void)setSubtitle:(id)arg1;
 - (void)setUserActivityForBookingInApplication:(id)arg1;
 - (void)setUsesMeteredFare:(id)arg1;
 - (id)specialPricing;
 - (id)specialPricingBadgeImage;
-- (id)subtitle;
 - (id)userActivityForBookingInApplication;
 - (id)usesMeteredFare;
 

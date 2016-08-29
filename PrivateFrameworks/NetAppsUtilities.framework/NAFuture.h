@@ -48,6 +48,7 @@
 - (void)didCancel;
 - (id /* block */)errorOnlyCompletionHandlerAdapter;
 - (bool)finishWithError:(id)arg1;
+- (bool)finishWithNoResult;
 - (bool)finishWithResult:(id)arg1;
 - (bool)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)flatMap:(id /* block */)arg1;

@@ -32,7 +32,6 @@
 - (void)_associateWithPIPLayer:(id)arg1;
 - (id)_associatedPIPLayer;
 - (id)_closedCaptionLayer;
-- (id)_compactDescription;
 - (void)_configurePlayerWhenEnteringPIP;
 - (void)_configurePlayerWhenLeavingPIP;
 - (void)_disassociateWithPIPLayer;
@@ -48,7 +47,6 @@
 - (void)_restoreClientLayers:(id)arg1 intoMaskLayer:(id)arg2;
 - (void)_scaleVideoLayerUsingLanczosFilterWithSublayerTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
 - (void)_setCanEnterPIPMode:(bool)arg1;
-- (void)_setItem:(id)arg1 readyForDisplay:(bool)arg2;
 - (void)_setPreventsChangesToSublayerHierarchy:(bool)arg1;
 - (void)_setSublayersForPIP:(id)arg1;
 - (void)_setSublayersPreventChangesToSublayerHierarchy:(bool)arg1;

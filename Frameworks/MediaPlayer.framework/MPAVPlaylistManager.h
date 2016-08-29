@@ -8,6 +8,8 @@
     bool  _changingPlayer;
     bool  _changingPlaylistFeeder;
     MPAVItem * _currentItem;
+    <MPAVItemQueueIdentifier> * _currentItemQueueIdentifier;
+    MPQueueFeeder * _currentQueueFeeder;
     <MPAVPlaylistManagerDelegate> * _delegate;
     bool  _goToTargetIndex;
     long long  _lastSelectionDirection;
@@ -46,7 +48,6 @@
 
 - (void).cxx_destruct;
 - (void)_applyVolumeNormalizationForQueuedItems;
-- (void)_awakeFromCoder:(id)arg1;
 - (void)_handleDownloadCancelledForDownloadToken:(unsigned long long)arg1;
 - (long long)_indexForStringIdentifier:(id)arg1;
 - (id)_itemToFollowItemIndex:(long long)arg1 skipUnavailableContent:(bool)arg2;
@@ -68,7 +69,6 @@
 - (bool)allowsUserVisibleUpcomingItems;
 - (id)audioSessionModeOverride;
 - (id)avController;
-- (void)beginEnumeratingQueueFeeder;
 - (bool)canChangePlaylistFeeder;
 - (bool)canSeek;
 - (bool)canSkipItem:(id)arg1;
@@ -83,7 +83,7 @@
 - (unsigned long long)displayCountForItem:(id)arg1;
 - (unsigned long long)displayIndexForItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)endEnumeratingQueueFeeder;
+- (void)finalizeStateRestorationWithCompletionHandler:(id /* block */)arg1;
 - (void)handlePlaybackFailureForItem:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

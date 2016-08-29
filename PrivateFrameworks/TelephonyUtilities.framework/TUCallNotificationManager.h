@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (void)_postNotificationName:(id)arg1 object:(id)arg2;
 - (void)_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
+- (void)audioPropertiesChangedForCall:(id)arg1;
 - (void)cameraTypeChangedForCall:(id)arg1;
 - (void)conferenceParticipantCallsChangedForCallCenter:(id)arg1 conferenceParticipantCalls:(id)arg2;
 - (void)connectedChangedForCall:(id)arg1;
@@ -25,6 +26,7 @@
 - (void)hasAudioFinishedChangedForCall:(id)arg1;
 - (void)hasSentInvitationChangedForCall:(id)arg1;
 - (void)hasUpdatedAudioChangedForCall:(id)arg1;
+- (void)isEmergencyChangedForCall:(id)arg1;
 - (void)isOnHoldChangedForCall:(id)arg1;
 - (void)isSendingAudioChangedForCall:(id)arg1;
 - (void)isUplinkMutedChangedForCall:(id)arg1;

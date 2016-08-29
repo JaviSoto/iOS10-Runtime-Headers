@@ -3,7 +3,6 @@
  */
 
 @interface GEOComposedRoute : NSObject <GEOMapAccessRestrictions> {
-    bool  _allowsNetworkTileLoad;
     GEOMapRegion * _boundingMapRegion;
     unsigned long long  _currentDisplayStep;
     struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; } * _currentManeuverDisplayEndPoints;
@@ -54,7 +53,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *advisoryNotices;
-@property (nonatomic) bool allowsNetworkTileLoad;
+@property (nonatomic, readonly) bool allowsNetworkTileLoad;
 @property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;
 @property (nonatomic, readonly) void*controlPoints;
 @property (nonatomic) unsigned long long currentDisplayStep;
@@ -235,7 +234,6 @@
 - (void)selectRide:(unsigned long long)arg1 forBoardStep:(id)arg2;
 - (void)selectRide:(unsigned long long)arg1 forTripLeg:(id)arg2;
 - (unsigned long long)selectedLegIndex;
-- (void)setAllowsNetworkTileLoad:(bool)arg1;
 - (void)setBoundingMapRegion:(id)arg1;
 - (void)setCurrentDisplayStep:(unsigned long long)arg1;
 - (void)setDestination:(id)arg1;

@@ -211,6 +211,7 @@
 - (void)validateStrokesInEditingSpillingTextRange;
 - (void)validateVisibleRect;
 - (void)viewScaleDidChange;
+- (bool)wantsActivityLine;
 - (void)willBeRemoved;
 - (void)willUpdateLayer:(id)arg1;
 

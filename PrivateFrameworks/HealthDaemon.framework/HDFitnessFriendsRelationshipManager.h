@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDFitnessFriendsRelationshipManager : NSObject <HDFitnessAppBadgeCountProvider, HDFitnessFriendsBBDataProviderDelegate, HDFitnessFriendsCloudKitManagerChangesObserver, HDFitnessFriendsGatewayManagerChangesObserver, HDFitnessFriendsIDSMessageCenterDelegate, HDFitnessFriendsManagerReadyObserver> {
+@interface HDFitnessFriendsRelationshipManager : NSObject <HDFitnessFriendsBBDataProviderDelegate, HDFitnessFriendsCloudKitManagerChangesObserver, HDFitnessFriendsGatewayManagerChangesObserver, HDFitnessFriendsIDSMessageCenterDelegate, HDFitnessFriendsManagerReadyObserver> {
     ACAccountStore * _accountStore;
     HDFitnessFriendsActivityDataManager * _activityDataManager;
     HDFitnessAppBadgeManager * _badgeManager;
-    NSMutableArray * _blocksWaitingOnCloudKitFetch;
     HDFitnessFriendsInvitationBBDataProvider * _bulletinBoardInvitationDataProvider;
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
     CNContactStore * _contactStore;
@@ -20,7 +19,6 @@
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
-@property (nonatomic, readonly) unsigned long long badgeCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -29,10 +27,13 @@
 - (void).cxx_destruct;
 - (void)_contactStoreDidChangeNotification:(id)arg1;
 - (id)_contactWithIncomingHandshakeToken:(id)arg1;
+- (id)_contactWithInviteRequest:(id)arg1 fromSender:(id)arg2;
 - (id)_contactWithOutgoingHandshakeToken:(id)arg1;
 - (id)_contactWithRemoteRelationshipRecordZoneID:(id)arg1;
-- (void)_performBlockAfterCloudKitFetch:(id /* block */)arg1;
-- (void)_performFriendListTransactionForReconciling:(bool)arg1 block:(id /* block */)arg2;
+- (void)_insertInviteForContact:(id)arg1 destination:(id)arg2 serviceIdentifier:(id)arg3;
+- (id)_insertPlaceholderContactWithUUID:(id)arg1 event:(long long)arg2;
+- (void)_performFriendListTransaction:(id /* block */)arg1;
+- (void)_processPersistedMessagesIfNeeded;
 - (void)_queue_acceptShares:(id)arg1 forRelationship:(id)arg2 contact:(id)arg3 completion:(id /* block */)arg4;
 - (void)_queue_addPersonWithCloudKitAddress:(id)arg1 toShares:(id)arg2 completion:(id /* block */)arg3;
 - (id)_queue_allContactsByRecordID;
@@ -42,14 +43,12 @@
 - (void)_queue_reconcileAddressBookAgainstRelationships:(id)arg1;
 - (void)_queue_reconcileCloudKitRelationships:(id)arg1;
 - (void)_queue_saveRelationship:(id)arg1 contact:(id)arg2 completion:(id /* block */)arg3;
-- (void)_queue_saveRelationshipAndFetchOrCreateShare:(id)arg1 contact:(id)arg2 completion:(id /* block */)arg3;
+- (void)_queue_saveRelationshipAndFetchOrCreateShares:(id)arg1 contact:(id)arg2 completion:(id /* block */)arg3;
 - (void)_removeFriendWithUUID:(id)arg1 eventType:(long long)arg2 completion:(id /* block */)arg3;
-- (unsigned long long)badgeCount;
 - (void)beginReceivingMessages;
 - (void)bulletinProvider:(id)arg1 didReceiveActionResponse:(long long)arg2 fromContactWithUUID:(id)arg3;
 - (void)cloudKitManager:(id)arg1 didRecieveNewRelationships:(id)arg2 fromRecordZoneWithID:(id)arg3 moreComing:(bool)arg4 changesProcessedHandler:(id /* block */)arg5;
 - (void)cloudKitManager:(id)arg1 didRecieveNewRemoteRelationships:(id)arg2 fromRecordZoneWithID:(id)arg3 moreComing:(bool)arg4 changesProcessedHandler:(id /* block */)arg5;
-- (void)cloudKitManagerDidFinishFetching:(id)arg1;
 - (void)dealloc;
 - (id)deviceCloudKitAddress;
 - (void)fitnessFriendsManagerReady:(id)arg1;
@@ -60,7 +59,7 @@
 - (void)messageCenter:(id)arg1 didReceiveInviteRequest:(id)arg2 fromSenderAddress:(id)arg3 messageHandledCompletion:(id /* block */)arg4;
 - (void)messageCenter:(id)arg1 didReceiveInviteResponse:(id)arg2 fromSenderAddress:(id)arg3 messageHandledCompletion:(id /* block */)arg4;
 - (void)messageCenter:(id)arg1 didReceiveWithdrawInviteRequest:(id)arg2 fromSenderAddress:(id)arg3 messageHandledCompletion:(id /* block */)arg4;
-- (id)relationshipZone;
+- (void)processRetryMessages;
 - (void)removeFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendInviteResponse:(long long)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendInviteToPersonWithDestination:(id)arg1 callerID:(id)arg2 serviceIdentifier:(id)arg3 completion:(id /* block */)arg4;

@@ -7,6 +7,7 @@
     NSLayoutConstraint * _bottomMargin;
     unsigned long long  _buttonStretchThreshold;
     NSMutableArray * _buttons;
+    <CCUIButtonStackPagingViewDelegate> * _delegate;
     double  _interButtonPadding;
     NSLayoutConstraint * _leadingMargin;
     unsigned long long  _maxButtonsPerPage;
@@ -20,6 +21,7 @@
 @property (nonatomic) unsigned long long buttonStretchThreshold;
 @property (nonatomic, copy) NSArray *buttons;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CCUIButtonStackPagingViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double interButtonPadding;
@@ -38,6 +40,7 @@
 - (void)buttonStack:(id)arg1 didLayoutWithSpacing:(double)arg2;
 - (unsigned long long)buttonStretchThreshold;
 - (id)buttons;
+- (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)interButtonPadding;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
@@ -47,9 +50,11 @@
 - (void)resortButtons;
 - (void)scrollToPage:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)setAxis:(long long)arg1;
 - (void)setButtonStretchThreshold:(unsigned long long)arg1;
 - (void)setButtons:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setInterButtonPadding:(double)arg1;
 - (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setMaxButtonsPerPage:(unsigned long long)arg1;

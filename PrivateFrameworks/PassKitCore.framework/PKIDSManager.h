@@ -8,11 +8,11 @@
     NSHashTable * _delegates;
     NSObject<OS_dispatch_queue> * _idsQueue;
     NSMutableArray * _paymentRequests;
+    NSMutableArray * _pendingCancellations;
+    PKProximityAdvertiser * _proximityAdvertiser;
+    NSMutableDictionary * _recentlySeenUUIDs;
     NSMutableArray * _remoteDevices;
     IDSService * _service;
-    SFDeviceDiscovery * _sharingDiscovery;
-    unsigned int  _sharingPowerAssertionIdentifier;
-    SFService * _sharingService;
     NSObject<OS_dispatch_queue> * _stateQueue;
     NSMutableDictionary * _thumbnailCompletionHandlers;
 }
@@ -28,11 +28,12 @@
 
 - (void).cxx_destruct;
 - (void)_archiveDevicesToDisk;
+- (bool)_deviceIsApplePayCapable:(id)arg1;
 - (bool)_deviceIsRegistered:(id)arg1;
 - (id)_fetchPaymentInstruments;
 - (bool)_hasRegisteredAccounts;
-- (void)_invalidateSharingService;
 - (bool)_isClientDevice;
+- (void)_logCloudPairingState;
 - (void)_paymentCancellationReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentClientUpdateReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentDiscoveryRequestReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
@@ -43,12 +44,11 @@
 - (void)_paymentSetupRequestReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentStatusReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_populateDevicesIfNeeded;
+- (id)_preparePaymentDeviceResponse;
 - (void)_registerListeners;
 - (id)_remoteDevicesWithArchive;
-- (void)_sharingFoundDevice:(id)arg1;
-- (void)_sharingLostDevice:(id)arg1;
-- (void)_startSharingDiscovery;
-- (void)_startSharingService;
+- (void)_sendDeviceDiscoveryRequestWithProximity:(bool)arg1 devices:(id)arg2;
+- (void)_sendDiscoveryResponse:(id)arg1 toDevice:(id)arg2;
 - (void)_thumbnailRequestReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_thumbnailResponseReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)addDelegate:(id)arg1;

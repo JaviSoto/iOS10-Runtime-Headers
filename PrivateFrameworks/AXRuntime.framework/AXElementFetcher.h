@@ -72,11 +72,15 @@
 - (id)_findGroupableMatchingBlock:(id /* block */)arg1 inElementGroup:(id)arg2;
 - (id)_findGroupableMatchingGroupable:(id)arg1 inElementGroup:(id)arg2;
 - (id)_groupWithDictionary:(id)arg1 currentPid:(int)arg2;
-- (id)_groupWithItems:(id)arg1 groupTraits:(int)arg2 label:(id)arg3 currentPid:(int)arg4;
+- (id)_groupWithItems:(id)arg1 groupTraits:(int)arg2 scanningBehaviorTraits:(int)arg3 label:(id)arg4 currentPid:(int)arg5;
+- (void)_handleApplicationWasActivated:(id)arg1;
+- (void)_handleMediaDidBegin:(struct __CFData { }*)arg1;
 - (void)_handleNativeFocusItemDidChange:(struct __CFData { }*)arg1;
 - (void)_handleUpdateElementVisuals:(struct __CFData { }*)arg1;
+- (void)_notifyObserversApplicationWasActivated:(id)arg1;
 - (void)_notifyObserversDidFetchElementsForEvent:(unsigned long long)arg1 foundNewElements:(bool)arg2;
 - (void)_notifyObserversDidScheduleFetchEvent:(unsigned long long)arg1;
+- (void)_notifyObserversMediaDidBegin:(struct __CFData { }*)arg1;
 - (void)_notifyObserversNativeFocusElementDidChange:(id)arg1;
 - (void)_notifyObserversUpdateElementVisuals:(id)arg1;
 - (void)_notifyObserversWillFetchElementsForEvent:(unsigned long long)arg1;

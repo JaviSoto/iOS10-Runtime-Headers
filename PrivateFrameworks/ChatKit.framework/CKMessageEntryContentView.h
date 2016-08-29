@@ -15,6 +15,7 @@
     bool  _needsTextLayout;
     NSString * _overridePlaceholderText;
     bool  _pendingShelfPayloadWillAnimateIn;
+    double  _placeHolderWidth;
     UIView * _pluginDividerLine;
     UIViewController<CKPluginEntryViewController> * _pluginEntryViewController;
     NSString * _requestedPlaceholderText;
@@ -45,6 +46,7 @@
 @property (nonatomic) bool needsTextLayout;
 @property (nonatomic, retain) NSString *overridePlaceholderText;
 @property (nonatomic) bool pendingShelfPayloadWillAnimateIn;
+@property (nonatomic) double placeHolderWidth;
 @property (nonatomic, copy) NSString *placeholderText;
 @property (nonatomic, retain) UIView *pluginDividerLine;
 @property (nonatomic, retain) UIViewController<CKPluginEntryViewController> *pluginEntryViewController;
@@ -102,10 +104,12 @@
 - (bool)needsTextLayout;
 - (id)overridePlaceholderText;
 - (bool)pendingShelfPayloadWillAnimateIn;
+- (double)placeHolderWidth;
 - (id)placeholderText;
 - (id)pluginDividerLine;
 - (id)pluginEntryViewController;
 - (id)pluginView;
+- (void)plugingPayloadWantsResize:(id)arg1;
 - (void)prepareForShelfPayloadAnimation;
 - (id)requestedPlaceholderText;
 - (double)sendButtonTextInsetWidth;
@@ -124,6 +128,7 @@
 - (void)setNeedsTextLayout:(bool)arg1;
 - (void)setOverridePlaceholderText:(id)arg1;
 - (void)setPendingShelfPayloadWillAnimateIn:(bool)arg1;
+- (void)setPlaceHolderWidth:(double)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)setPluginDividerLine:(id)arg1;
 - (void)setPluginEntryViewController:(id)arg1;

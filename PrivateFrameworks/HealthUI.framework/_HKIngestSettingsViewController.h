@@ -3,7 +3,6 @@
  */
 
 @interface _HKIngestSettingsViewController : HKTableViewController <HKSwitchTableViewCellDelegate> {
-    NSString * _cellTitle;
     NSMutableArray * _dataTypeNames;
     HKDataUnitController * _dataUnitController;
     bool  _deviceEnabled;
@@ -12,18 +11,16 @@
     HKHealthStore * _healthStore;
 }
 
-@property (nonatomic, copy) NSString *cellTitle;
 @property (nonatomic, retain) NSUUID *deviceIdentifier;
 @property (nonatomic, retain) HKHealthStore *healthStore;
 
 - (void).cxx_destruct;
 - (id)_initWithHealthStore:(id)arg1 dataUnitController:(id)arg2;
-- (id)cellTitle;
 - (id)deviceIdentifier;
+- (void)fetchEnabledStatusForPeripheral;
 - (id)healthStore;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData:(id)arg1;
-- (void)setCellTitle:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setHealthStore:(id)arg1;
 - (void)switchCellValueChanged:(id)arg1 value:(bool)arg2;

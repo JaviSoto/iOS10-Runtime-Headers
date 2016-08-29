@@ -43,7 +43,6 @@
 - (void)setViewOnWakeService:(id <HDViewOnWakeService>)arg1;
 - (HDAppSubscriptionManager *)subscriptionManager;
 - (HDProfile *)temporaryProfile;
-- (void)terminate;
 - (void)unregisterForLaunchNotification:(const char *)arg1;
 - (HDUserCharacteristicsManager *)userCharacteristicsManager;
 - (<HDViewOnWakeService> *)viewOnWakeService;

@@ -4,6 +4,7 @@
 
 @interface CKRemoteItemForSending : NSObject <NSSecureCoding> {
     NSURL * _appendedBundleURL;
+    MSMessage * _appendedMessage;
     NSData * _appendedRichLinkData;
     NSURL * _appendedRichLinkURL;
     NSURL * _appendedVideoURL;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, retain) NSURL *appendedBundleURL;
+@property (nonatomic, copy) MSMessage *appendedMessage;
 @property (nonatomic, copy) NSData *appendedRichLinkData;
 @property (nonatomic, retain) NSURL *appendedRichLinkURL;
 @property (nonatomic, retain) NSURL *appendedVideoURL;
@@ -31,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)_setPreviewUIImage:(id)arg1;
 - (id)appendedBundleURL;
+- (id)appendedMessage;
 - (id)appendedRichLinkData;
 - (id)appendedRichLinkURL;
 - (id)appendedVideoURL;
@@ -44,11 +47,13 @@
 - (id)initWithAttachmentURL:(id)arg1 description:(id)arg2;
 - (id)initWithAttachmentURL:(id)arg1 description:(id)arg2 previewImage:(id)arg3;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithMSMessage:(id)arg1;
 - (id)initWithRichLinkWithURL:(id)arg1 data:(id)arg2;
 - (struct __IOSurface { }*)previewImage;
 - (bool)previewIsFullyRealizedByChatKit;
 - (id)previewUIImage;
 - (void)setAppendedBundleURL:(id)arg1;
+- (void)setAppendedMessage:(id)arg1;
 - (void)setAppendedRichLinkData:(id)arg1;
 - (void)setAppendedRichLinkURL:(id)arg1;
 - (void)setAppendedVideoURL:(id)arg1;

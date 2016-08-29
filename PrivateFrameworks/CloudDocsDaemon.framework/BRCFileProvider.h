@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _privQueue;
     NSOperationQueue * _queue;
     BRCAccountSession * _session;
+    brc_task_tracker * _tracker;
     NSURL * _url;
 }
 

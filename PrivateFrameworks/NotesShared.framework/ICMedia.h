@@ -18,6 +18,9 @@
 + (id)containerDirectoryURLForMediaWithIdentifier:(id)arg1;
 + (void)deleteMedia:(id)arg1;
 + (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
++ (id)exportableContainerDirectoryURLForMediaWithIdentifier:(id)arg1;
++ (id)exportableMediaDirectoryURL;
++ (id)exportableMediaURLForMediaWithIdentifier:(id)arg1 filename:(id)arg2;
 + (id)keyPathsForValuesAffectingParentCloudObject;
 + (id)mediaDirectoryURL;
 + (id)mediaFileWritingQueue;
@@ -40,8 +43,12 @@
 - (id)data;
 - (id)dataWithoutImageMarkupMetadata:(bool)arg1;
 - (id)decryptedData;
+- (void)deleteExportableMedia;
 - (void)deleteFromLocalDatabase;
 - (id)encryptedMediaURL;
+- (id)exportableContainerDirectoryURL;
+- (id)exportableMediaURL;
+- (id)exportableMediaURLWithUpdatedFileIfNecessary;
 - (id)filename;
 - (bool)hasAllMandatoryFields;
 - (bool)hasFile;
@@ -49,6 +56,7 @@
 - (bool)isArchivedDirectory;
 - (bool)isInICloudAccount;
 - (bool)isValid;
+- (bool)makeSureExportableMediaDirectoryExists:(id*)arg1;
 - (bool)makeSureMediaDirectoryExists:(id*)arg1;
 - (id)mediaArchiveURL;
 - (id)mediaTarArchiveURL;
@@ -73,7 +81,7 @@
 - (void)writeDataFromFileURL:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)writeDataFromFileURL:(id)arg1 waitUntilDone:(bool)arg2 completionBlock:(id /* block */)arg3;
 - (void)writeDataFromFileWrapper:(id)arg1 waitUntilDone:(bool)arg2 completionBlock:(id /* block */)arg3;
-- (void)writeDataFromItemProvider:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)writeDataFromItemProvider:(id)arg1 checkForMarkupData:(bool)arg2 completionBlock:(id /* block */)arg3;
 - (void)writeDataWithFileSize:(unsigned long long)arg1 writeBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
 
 @end

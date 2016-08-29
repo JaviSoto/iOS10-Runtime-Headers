@@ -46,7 +46,6 @@
 - (id)_collectionsFetchResultBySection;
 - (bool)_containsAnyAlbumsWithAssets:(id)arg1;
 - (bool)_containsAnyAssets:(id)arg1;
-- (bool)_containsAnyVirtualCollections:(id)arg1;
 - (void)_enumerateAllPhotoKitCollectionsUsingBlock:(id /* block */)arg1;
 - (void)_fetchAndUpdateCountsForCollection:(id)arg1;
 - (void)_fetchKeyAssetsForCollection:(id)arg1;

@@ -8,6 +8,7 @@
     unsigned long long  _style;
 }
 
+@property (nonatomic) bool adjustsFontSizeToFitWidth;
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, readonly) UILabel *buttonLabel;
 @property (nonatomic, copy) NSString *buttonText;
@@ -15,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_setupConstraints;
+- (bool)adjustsFontSizeToFitWidth;
 - (id)backgroundView;
 - (id)buttonLabel;
 - (id)buttonText;
@@ -22,6 +24,7 @@
 - (id)initWithBackgroundStyle:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
 - (void)setButtonText:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (unsigned long long)style;

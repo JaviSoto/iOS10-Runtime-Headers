@@ -3,23 +3,28 @@
  */
 
 @interface MNVoiceController : NSObject <AVAudioPlayerDelegate, MNVoiceEventQueueDelegate, VSSpeechSynthesizerDelegate> {
+    NSTimer * _activationDebugTimer;
     MNNavigationAudioSession * _activeNavigationSession;
     NSObject<OS_dispatch_queue> * _audioQueue;
     long long  _audioSessionState;
+    unsigned long long  _charactersSpokenCount;
+    double  _charactersSpokenDuration;
     NSString * _currentLanguage;
     long long  _currentLanguageSource;
     NSLocale * _currentLocale;
     MNVoiceEvent * _currentVoiceEvent;
     <VSSpeechSynthesizerDelegate> * _delegate;
+    NSTimer * _eventProcessingTimer;
     MNVoiceEventQueue * _eventQueue;
     bool  _isPersistentConnectionOpen;
+    NSString * _lastSpeech;
+    double  _lastSpeechStartTime;
     AVAudioPlayer * _leftTurnAudioPlayer;
     bool  _muteOverride;
     NSHashTable * _observers;
     NSMutableArray * _postAudioSessionActivationBlocks;
     AVAudioPlayer * _rightTurnAudioPlayer;
     bool  _shouldBePlayingPrompt;
-    NSTimer * _speechTimeoutTimer;
     NSBundle * _spokenBundle;
     VSSpeechSynthesizer * _synthesizer;
     NSString * _uiLanguage;
@@ -38,16 +43,21 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VSSpeechSynthesizer *synthesizer;
 
++ (id)_uiLanguage;
++ (id)_vsPreferencesSpokenLanguageIdentifier;
++ (id)defaultVoiceLanguageWithSource:(long long*)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_activateAudioSession:(id /* block */)arg1;
+- (void)_activationDebugTimerFired:(id)arg1;
 - (void)_audioInterruption:(id)arg1;
 - (void)_audioRoutesChanged:(id)arg1;
 - (void)_deactivateAudioSession;
-- (id)_defaultVoiceLanguageWithSource:(long long*)arg1;
 - (void)_defaultsDidChange;
+- (void)_eventProcessingTimerFired:(id)arg1;
+- (void)_failCurrentEventAndProcessNext;
 - (void)_handleFinishedPlayingBeepWithStatusCode:(int)arg1;
 - (void)_handleFinishedSpeakingWithStatusCode:(int)arg1;
 - (id)_leftTurnAudioPlayer;
@@ -58,18 +68,16 @@
 - (void)_playEvent:(id)arg1;
 - (bool)_playTextEvent:(id)arg1;
 - (void)_processNextEvent;
+- (void)_resetAudioPlayers;
 - (id)_rightTurnAudioPlayer;
 - (void)_setAudioSessionActive:(bool)arg1;
 - (void)_setGender;
 - (void)_setLoggingEnabled:(bool)arg1;
 - (void)_setMaintainInactivePersistentConnection:(bool)arg1;
 - (void)_setVolumeControlEnabled:(bool)arg1;
-- (void)_speechTimeoutTimerFired:(id)arg1;
 - (bool)_stopCurrentEvent;
-- (id)_uiLanguage;
 - (void)_updateCurrentVoiceLanguage;
 - (void)_updateFromAudioRoutes;
-- (id)_vsPreferencesSpokenLanguageIdentifier;
 - (id)activeNavigationSession;
 - (void)addObserver:(id)arg1;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
@@ -94,7 +102,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSynthesizer:(id)arg1;
 - (void)setVolume:(double)arg1;
-- (void)speak:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)speak:(id)arg1 fallbackPrompt:(unsigned long long)arg2 completionBlock:(id /* block */)arg3;
 - (bool)speechMuted;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeaking:(bool)arg2 withError:(id)arg3;
 - (void)stop;

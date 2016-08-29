@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDImageInfo : TSDMediaInfo <TSDContainerInfo, TSDMixing, TSDReducableInfo, TSKTransformableObject, TSSPresetSource> {
+@interface TSDImageInfo : TSDMediaInfo <TSDCompatibilityAwareMediaContainer, TSDContainerInfo, TSDMixing, TSDReducibleImageContainer, TSKTransformableObject, TSSPresetSource> {
     TSPData * mAdjustedImageData;
     bool  mCurrentlyInDocument;
     TSPData * mEnhancedImageData;
     TSDImageAdjustments * mImageAdjustments;
     TSPData * mImageData;
     TSUBezierPath * mInstantAlphaPath;
-    bool  mInterpretsUntaggedImageDataAsGeneric;
     TSDMaskInfo * mMaskInfo;
     struct CGSize { 
         double width; 
@@ -26,6 +25,7 @@
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
 @property (nonatomic, readonly) bool canPasteAsPDF;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) TSPData *enhancedImageData;
@@ -37,7 +37,6 @@
 @property (nonatomic, readonly) TSDMediaStyle *imageStyle;
 @property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
 @property (nonatomic, retain) TSUBezierPath *instantAlphaPath;
-@property (nonatomic) bool interpretsUntaggedImageDataAsGeneric;
 @property (nonatomic, retain) TSDMaskInfo *maskInfo;
 @property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic) struct CGSize { double x1; double x2; } naturalSize;
@@ -55,17 +54,18 @@
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned long long)arg4;
 + (id)bootstrapPropertyMapForPresetIndex:(unsigned long long)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)i_thumbnailForImageData:(id)arg1;
-+ (id)p_resampleAndConvertImageDataToSRGB:(id)arg1 resampled:(bool*)arg2 alreadyInDocument:(bool)arg3;
 + (id)presetKinds;
 
 - (void)acceptVisitor:(id)arg1;
 - (id)adjustedImageData;
 - (bool)canPasteAsPDF;
+- (bool)canResetMediaSize;
 - (struct CGPoint { double x1; double x2; })centerForReplacingWithNewMedia;
 - (id)childInfos;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeFullTransform;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithContext:(id)arg1 style:(id)arg2;
+- (id)datasForReplacingMediaContentsWithAssociatedHints;
 - (void)dealloc;
 - (id)defaultMaskInfo;
 - (id)defaultMaskInfoWithContext:(id)arg1;
@@ -76,7 +76,6 @@
 - (id)i_instantAlphaPathIgnoringNaturalSize;
 - (id)imageAdjustments;
 - (id)imageData;
-- (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)imageStyle;
 - (id)infoForSelectionPath:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
@@ -84,7 +83,6 @@
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 imageData:(id)arg4 originalImageData:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 imageData:(id)arg4 thumbnailImageData:(id)arg5 originalImageData:(id)arg6 imageAdjustments:(id)arg7 adjustedImageData:(id)arg8 thumbnailAdjustedImageData:(id)arg9;
 - (id)instantAlphaPath;
-- (bool)interpretsUntaggedImageDataAsGeneric;
 - (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (bool)isMasked;
 - (bool)isPDF;
@@ -93,6 +91,8 @@
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned long long)arg3;
 - (bool)maskCanBeReset;
 - (id)maskInfo;
+- (long long)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
+- (id)mediaDataForDragging;
 - (id)mediaDisplayName;
 - (id)mediaFileType;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
@@ -119,9 +119,7 @@
 - (void)setImageAdjustments:(id)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setImageData:(id)arg1 thumbnailData:(id)arg2;
-- (void)setImageData:(id)arg1 thumbnailData:(id)arg2 forceDoNotResample:(bool)arg3;
 - (void)setInstantAlphaPath:(id)arg1;
-- (void)setInterpretsUntaggedImageDataAsGeneric:(bool)arg1;
 - (void)setMaskInfo:(id)arg1;
 - (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setOriginalImageData:(id)arg1;

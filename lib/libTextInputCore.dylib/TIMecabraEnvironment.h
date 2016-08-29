@@ -70,6 +70,7 @@
 - (id)mecabraContextWrapper;
 - (void)partiallyCommitInlineCandidate:(void*)arg1;
 - (bool)predictionAnalyzeWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
+- (void)reset;
 - (void)revertInlineCandidate;
 - (void)revertLearningOfCandidateIfNecessary;
 - (id)rightCandidateSurfaces;
@@ -95,5 +96,6 @@
 - (bool)shouldAdjustOnAnalyze;
 - (int)textContentType;
 - (void)updateCursorPosition;
+- (void)updateEnglishCandidatesIfNecessary;
 
 @end

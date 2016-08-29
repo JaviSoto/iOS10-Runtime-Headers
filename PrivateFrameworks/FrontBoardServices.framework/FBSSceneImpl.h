@@ -45,7 +45,6 @@
 - (id)clientProcess;
 - (id)clientSettings;
 - (void)closeSession:(id)arg1;
-- (id)contexts;
 - (id)counterpartAgent;
 - (void)dealloc;
 - (id)delegate;

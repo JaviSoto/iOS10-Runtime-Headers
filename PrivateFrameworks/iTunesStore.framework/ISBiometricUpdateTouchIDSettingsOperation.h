@@ -6,7 +6,6 @@
     NSNumber * _accountIdentifier;
     NSString * _attestationString;
     ISBiometricStore * _biometricStore;
-    long long  _keyRegenerationStyle;
     id /* block */  _resultBlock;
     long long  _status;
 }
@@ -14,26 +13,20 @@
 @property (nonatomic, copy) NSNumber *accountIdentifier;
 @property (nonatomic, copy) NSString *attestationString;
 @property (nonatomic, retain) ISBiometricStore *biometricStore;
-@property (nonatomic) long long keyRegenerationStyle;
 @property (copy) id /* block */ resultBlock;
 @property (readonly) long long status;
 
 - (void).cxx_destruct;
-- (void)_generateKeychainTokens;
-- (id)_generateKeychainTokensIfNotFound;
-- (bool)_keyNotFoundWithError:(id)arg1;
 - (id)_newUpdateTouchIDSettingsOperation;
 - (id)accountIdentifier;
 - (id)attestationString;
 - (id)biometricStore;
 - (id)initWithAccountIdentifier:(id)arg1;
-- (long long)keyRegenerationStyle;
 - (id /* block */)resultBlock;
 - (void)run;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAttestationString:(id)arg1;
 - (void)setBiometricStore:(id)arg1;
-- (void)setKeyRegenerationStyle:(long long)arg1;
 - (void)setResultBlock:(id /* block */)arg1;
 - (long long)status;
 

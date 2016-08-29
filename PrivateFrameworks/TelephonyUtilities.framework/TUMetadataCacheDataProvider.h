@@ -16,7 +16,6 @@
 - (bool)isEmpty;
 - (id)metadataForDestinationID:(id)arg1;
 - (id)providerCache;
-- (void)removeAllObjects;
 - (void)removeMetadataForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setSynchronizationQueue:(id)arg1;

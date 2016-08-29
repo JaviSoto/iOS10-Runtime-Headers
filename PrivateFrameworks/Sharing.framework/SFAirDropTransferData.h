@@ -32,6 +32,7 @@
     NSString * _senderEmailHash;
     NSString * _senderFirstName;
     NSString * _senderID;
+    bool  _senderIsMe;
     NSString * _senderLastName;
     bool  _soundPlayed;
     NSDate * _timeLastUserInteraction;
@@ -82,6 +83,7 @@
 @property (nonatomic, copy) NSString *senderEmailHash;
 @property (nonatomic, copy) NSString *senderFirstName;
 @property (nonatomic, copy) NSString *senderID;
+@property (nonatomic) bool senderIsMe;
 @property (nonatomic, copy) NSString *senderLastName;
 @property (nonatomic, readonly, copy) NSString *senderName;
 @property (nonatomic) bool soundPlayed;
@@ -163,6 +165,7 @@
 - (id)senderEmailHash;
 - (id)senderFirstName;
 - (id)senderID;
+- (bool)senderIsMe;
 - (id)senderLastName;
 - (id)senderName;
 - (void)setAlertMessage:(id)arg1;
@@ -188,6 +191,7 @@
 - (void)setSenderEmailHash:(id)arg1;
 - (void)setSenderFirstName:(id)arg1;
 - (void)setSenderID:(id)arg1;
+- (void)setSenderIsMe:(bool)arg1;
 - (void)setSenderLastName:(id)arg1;
 - (void)setSoundPlayed:(bool)arg1;
 - (void)setTimeLastUserInteraction:(id)arg1;

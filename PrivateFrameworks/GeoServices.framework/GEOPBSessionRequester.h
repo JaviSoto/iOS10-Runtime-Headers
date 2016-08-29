@@ -79,6 +79,7 @@
 - (void)_cancelNoNotify;
 - (void)_cancelWithErrorDomain:(id)arg1 errorCode:(long long)arg2 userInfo:(id)arg3;
 - (void)_cleanup;
+- (void)_didSetDelegate:(id)arg1;
 - (void)_failWithError:(id)arg1;
 - (void)_failWithErrorDomain:(id)arg1 errorCode:(long long)arg2 userInfo:(id)arg3;
 - (id)_languageLocale;
@@ -92,7 +93,6 @@
 - (void)_scheduleThrottlingErrorForKey:(id)arg1;
 - (bool)_sendPayload:(id)arg1 error:(id*)arg2;
 - (void)_serializePayload:(id /* block */)arg1;
-- (void)_setDelegate:(id)arg1;
 - (void)_start;
 - (bool)_tryParseData;
 - (void)addInternalRequest:(id)arg1;

@@ -11,6 +11,7 @@
     <_NSExtensionContextVending> * __extensionVendorProxy;
     id  __principalObject;
     id /* block */  __requestCleanUpBlock;
+    NSObject<OS_os_transaction> * __transaction;
     NSArray * _inputItems;
 }
 
@@ -22,6 +23,7 @@
 @property (setter=_setExtensionVendorProxy:, nonatomic, retain) <_NSExtensionContextVending> *_extensionVendorProxy;
 @property (setter=_setPrincipalObject:, nonatomic) id _principalObject;
 @property (setter=_setRequestCleanUpBlock:, nonatomic, copy) id /* block */ _requestCleanUpBlock;
+@property (getter=_transaction, setter=_setTransaction:, retain) NSObject<OS_os_transaction> *_transaction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -34,12 +36,15 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (id)_allowedErrorClasses;
++ (id)_defaultExtensionContextProtocol;
++ (id)_defaultExtensionContextVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionContextForIdentifier:(id)arg1;
-+ (id)_extensionContextHostProtocol;
 + (id)_extensionContextHostProtocolAllowedClassesForItems;
-+ (id)_extensionContextVendorProtocol;
++ (id)_extensionContextHostProtocolWithAllowedErrorClasses:(id)arg1;
++ (id)_extensionContextVendorProtocolWithAllowedErrorClasses:(id)arg1;
 + (void)initialize;
 + (bool)supportsSecureCoding;
 
@@ -66,6 +71,8 @@
 - (void)_setInputItems:(id)arg1;
 - (void)_setPrincipalObject:(id)arg1;
 - (void)_setRequestCleanUpBlock:(id /* block */)arg1;
+- (void)_setTransaction:(id)arg1;
+- (id)_transaction;
 - (void)_willPerformHostCallback:(id /* block */)arg1;
 - (void)cancelRequestWithError:(id)arg1;
 - (void)completeRequestReturningItems:(id)arg1 completionHandler:(id /* block */)arg2;

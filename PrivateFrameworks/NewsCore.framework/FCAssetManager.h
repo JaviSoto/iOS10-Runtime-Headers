@@ -39,7 +39,7 @@
 - (id)cacheCoordinator;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
 - (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
-- (void)enableFlushing;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)fetchFileForAssetHandle:(id)arg1 completion:(id /* block */)arg2;
 - (bool)flushUnusedAssets;
 - (id)init;

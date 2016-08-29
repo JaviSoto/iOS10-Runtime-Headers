@@ -7,6 +7,7 @@
     CCUIControlCenterContainerView * _containerView;
     NSMapTable * _containerViewControllersToWallpaperViews;
     <CCUIControlCenterViewControllerDelegate> * _delegate;
+    UITapGestureRecognizer * _iPadScrollToAdjacentPageGesture;
     bool  _needsViewControllerVisibilityUpdate;
     CCUIControlCenterPageControl * _pageControl;
     CCUIImmediateTouchScrollView * _pagesScrollView;
@@ -39,10 +40,12 @@
 - (void)_addOrRemovePagesBasedOnVisibility;
 - (void)_addPageViewController:(id)arg1;
 - (bool)_contentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forChildViewController:(id)arg2;
+- (id)_contentViewControllerForLocation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
 - (long long)_currentOrientation;
 - (void)_dismissAirDropWithCompletion:(id /* block */)arg1;
 - (void)_dismissButtonActionPlatterWithCompletion:(id /* block */)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildViewController:(id)arg1;
+- (void)_handleAdjacentTap:(id)arg1;
 - (void)_handlePan:(id)arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_invalidateContentLayout;
@@ -59,6 +62,7 @@
 - (double)_scrollviewContentMaxHeight;
 - (id)_selectedContentViewController;
 - (id)_selectedViewController;
+- (void)_sendDidScrollToPageToContentProvidingViewControllers;
 - (void)_setContentViewContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
 - (void)_updatePageControl;
 - (void)_updateScrollViewContentSize;

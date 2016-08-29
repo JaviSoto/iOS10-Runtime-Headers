@@ -16,6 +16,9 @@
     NSObject<OS_dispatch_queue> * _gameControllerInputModeCallbackQueue;
     id /* block */  _gameControllerPropertiesCallback;
     NSObject<OS_dispatch_queue> * _gameControllerPropertiesCallbackQueue;
+    bool  _hiliteMode;
+    id /* block */  _hiliteModeCallback;
+    NSObject<OS_dispatch_queue> * _hiliteModeCallbackQueue;
     bool  _isCallingClientCallback;
     bool  _isCoalescingClientStateUpdatesConfigMessages;
     id /* block */  _nameCallback;
@@ -54,6 +57,9 @@
 @property (nonatomic, copy) id /* block */ gameControllerPropertiesCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *gameControllerPropertiesCallbackQueue;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hiliteMode;
+@property (nonatomic, copy) id /* block */ hiliteModeCallback;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *hiliteModeCallbackQueue;
 @property (nonatomic, readonly) NSString *hostName;
 @property (nonatomic, readonly) NSInputStream *inputStream;
 @property (nonatomic) bool isCallingClientCallback;
@@ -85,6 +91,7 @@
 + (id)_deviceInfoFromTXTRecordData:(id)arg1;
 
 - (void)_addArtwork:(id)arg1 toNowPlayingInfo:(id)arg2;
+- (void)_callCientHiliteModeCallback;
 - (void)_callClientAllowsPairingCallback;
 - (void)_callClientConnectionStateCallback:(id)arg1;
 - (void)_callClientGameControllerInputModeCallback;
@@ -97,6 +104,7 @@
 - (id)_errorForCurrentState;
 - (void)_handleCryptoPairingMessage:(id)arg1;
 - (void)_handleDeviceInfoUpdateMessage:(id)arg1;
+- (void)_handleHiliteModeMessage:(id)arg1;
 - (void)_handleKeyboardMessage:(id)arg1;
 - (void)_handleNotificationMessage:(id)arg1;
 - (void)_handleRemoteCommand:(unsigned int)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
@@ -129,12 +137,16 @@
 - (id)description;
 - (id)deviceInfo;
 - (void)disconnect:(id)arg1;
+- (void)exitHiliteMode;
 - (unsigned int)gameControllerInputMode;
 - (id /* block */)gameControllerInputModeCallback;
 - (id)gameControllerInputModeCallbackQueue;
 - (id /* block */)gameControllerPropertiesCallback;
 - (id)gameControllerPropertiesCallbackQueue;
 - (void)getTextEditingSessionWithReplyQueue:(id)arg1 completion:(id /* block */)arg2;
+- (bool)hiliteMode;
+- (id /* block */)hiliteModeCallback;
+- (id)hiliteModeCallbackQueue;
 - (id)hostName;
 - (id)initWithNetService:(id)arg1;
 - (id)inputStream;
@@ -180,6 +192,10 @@
 - (void)setGameControllerPropertiesCallback:(id /* block */)arg1;
 - (void)setGameControllerPropertiesCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setGameControllerPropertiesCallbackQueue:(id)arg1;
+- (void)setHiliteMode:(bool)arg1;
+- (void)setHiliteModeCallback:(id /* block */)arg1;
+- (void)setHiliteModeCallback:(id /* block */)arg1 withQueue:(id)arg2;
+- (void)setHiliteModeCallbackQueue:(id)arg1;
 - (void)setIsCallingClientCallback:(bool)arg1;
 - (void)setIsCoalescingClientStateUpdatesConfigMessages:(bool)arg1;
 - (void)setNameCallback:(id /* block */)arg1;
@@ -212,6 +228,7 @@
 - (void)unregisterGameController:(unsigned long long)arg1;
 - (void)updateWithService:(id)arg1;
 - (id)volumeControlNotificationObserver;
+- (void)wake;
 - (bool)wantsNowPlayingArtworkNotifications;
 - (bool)wantsNowPlayingNotifications;
 - (bool)wantsVolumeNotifications;

@@ -9,6 +9,7 @@
     NSObject<OS_os_activity> * _transportActivity;
 }
 
+@property (nonatomic, readonly) bool buffersHandshake;
 @property (nonatomic, readonly) bool buffersSessions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -23,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)beginSession;
+- (bool)buffersHandshake;
 - (bool)buffersSessions;
 - (id)cancelMessagesReturningFailures:(id)arg1;
 - (void)endSession;

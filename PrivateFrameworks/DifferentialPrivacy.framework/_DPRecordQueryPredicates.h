@@ -7,12 +7,15 @@
 + (id)entityForKey:(id)arg1;
 + (id)predicateForAllRecords;
 + (id)predicateForKey:(id)arg1;
-+ (id)predicateForKey:(id)arg1 submitted:(bool)arg2;
++ (id)predicateForKey:(id)arg1 beginsWith:(bool)arg2 submitted:(bool)arg3;
++ (id)predicateForKeyBeginsWith:(id)arg1;
 + (id)predicateForRecordsInDateRangeStart:(id)arg1 end:(id)arg2;
 + (id)predicateForRecordsNotSubmitted;
 + (id)predicateForRecordsNotSubmittedForKey:(id)arg1;
++ (id)predicateForRecordsNotSubmittedForKeyBeginsWith:(id)arg1;
 + (id)predicateForRecordsOlderThan:(id)arg1;
 + (id)predicateForRecordsSubmitted;
 + (id)predicateForRecordsSubmittedForKey:(id)arg1;
++ (id)predicateForRecordsSubmittedForKeyBeginsWith:(id)arg1;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface CKAssistantPerson : NSObject {
-    NSURL * _contactID;
+    NSString * _internalGUID;
     NSString * _label;
 }
 
-@property (nonatomic, retain) NSURL *contactID;
+@property (nonatomic, copy) NSString *internalGUID;
 @property (nonatomic, copy) NSString *label;
 
 - (void).cxx_destruct;
-- (id)contactID;
+- (id)internalGUID;
 - (id)label;
-- (void)setContactID:(id)arg1;
+- (void)setInternalGUID:(id)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

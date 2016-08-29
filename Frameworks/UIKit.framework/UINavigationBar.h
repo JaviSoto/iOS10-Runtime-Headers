@@ -145,7 +145,7 @@
 - (id)_backgroundViewForPalette:(id)arg1;
 - (bool)_backgroundViewSuppressesAdaptiveBackdrop;
 - (long long)_barPosition;
-- (void)_barSizeDidChangeAndSoDidHeight:(bool)arg1;
+- (void)_barSizeDidChange;
 - (long long)_barStyle:(bool)arg1;
 - (bool)_barStyleSuppressesAdaptiveBackdrop;
 - (long long)_barTranslucence;
@@ -222,7 +222,6 @@
 - (bool)_isIncomingButtonSameAsOutgoingButtonOnLeft:(bool)arg1;
 - (bool)_isInterruptibleTransition;
 - (long long)_itemStackCount;
-- (void)_layoutBackgroundViewConsideringAdaptiveBackdropAndChangedHeight:(bool)arg1;
 - (bool)_legacyIsTranslucent;
 - (bool)_modernIsTranslucent;
 - (void)_navBarButtonPressed:(id)arg1;
@@ -317,6 +316,7 @@
 - (void)_updateBackIndicatorImage;
 - (void)_updateBackIndicatorViewTintColor;
 - (void)_updateBackgroundView;
+- (void)_updateBackgroundViewIgnoringFlag;
 - (void)_updateInteractiveStatusBarTransitionPercent:(double)arg1 isFinished:(bool)arg2 didComplete:(bool)arg3 completionSpeed:(double)arg4 completionCurve:(long long)arg5;
 - (void)_updateInteractiveTransition:(double)arg1;
 - (void)_updateNavigationBarItem:(id)arg1 forStyle:(long long)arg2;
@@ -450,8 +450,6 @@
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 - (void)_cnui_applyContactStyle;
-- (bool)_cnui_hasInvisibleBackground;
-- (void)_cnui_setHasInvisibleBackground:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

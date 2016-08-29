@@ -221,7 +221,7 @@
 - (void)persistedObjectUUIDMap:(id)arg1 foundDuplicateUUID:(id)arg2 firstObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg3 secondObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg4;
 - (id)persistedObjectUUIDMap:(id)arg1 needsDescriptionForComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3;
 - (id)relativeURLForExternalData;
-- (void)setArchivedObjects:(id)arg1 componentObjectUUIDMap:(id)arg2 objectReferenceMap:(id)arg3 externalStrongReferences:(id)arg4 externalWeakReferences:(id)arg5 readVersion:(unsigned long long)arg6 writeVersion:(unsigned long long)arg7 dataReferences:(id)arg8 forComponent:(id)arg9;
+- (void)setArchivedObjects:(id)arg1 componentObjectUUIDMap:(id)arg2 objectReferenceMap:(id)arg3 externalStrongReferences:(id)arg4 externalWeakReferences:(id)arg5 featureInfos:(id)arg6 dataReferences:(id)arg7 forComponent:(id)arg8;
 - (bool)shouldArchiveComponent:(id)arg1;
 - (bool)shouldArchiveComponent:(id)arg1 checkForceArchive:(bool)arg2;
 - (bool)shouldEnqueueComponent:(id)arg1;

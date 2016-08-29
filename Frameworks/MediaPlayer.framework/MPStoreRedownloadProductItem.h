@@ -4,6 +4,7 @@
 
 @interface MPStoreRedownloadProductItem : NSObject {
     NSDictionary * _responseDictionary;
+    bool  _usesCurrentAccountIfAvailable;
 }
 
 @property (nonatomic, readonly) NSURL *HLSPlaylistURL;
@@ -12,6 +13,7 @@
 @property (nonatomic, readonly, copy) NSString *fileExtension;
 @property (nonatomic, readonly) MPStoreRedownloadProductItemAsset *firstAsset;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
+@property (nonatomic) bool usesCurrentAccountIfAvailable;
 
 - (void).cxx_destruct;
 - (id)HLSPlaylistURL;
@@ -23,5 +25,7 @@
 - (id)fileExtension;
 - (id)firstAsset;
 - (id)responseDictionary;
+- (void)setUsesCurrentAccountIfAvailable:(bool)arg1;
+- (bool)usesCurrentAccountIfAvailable;
 
 @end

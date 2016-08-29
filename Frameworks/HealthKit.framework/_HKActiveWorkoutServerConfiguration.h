@@ -5,7 +5,6 @@
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
     NSUUID * _UUID;
     bool  _indoor;
-    HKLocationSeriesSample * _locationSeriesSample;
     NSDictionary * _resumeDataByType;
     bool  _shouldUseDeviceData;
     NSDate * _startDate;
@@ -16,7 +15,6 @@
 
 @property (nonatomic, retain) NSUUID *UUID;
 @property (getter=isIndoor, nonatomic) bool indoor;
-@property (nonatomic, retain) HKLocationSeriesSample *locationSeriesSample;
 @property (nonatomic, retain) NSDictionary *resumeDataByType;
 @property (nonatomic) bool shouldUseDeviceData;
 @property (nonatomic, retain) NSDate *startDate;
@@ -31,10 +29,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (bool)isIndoor;
-- (id)locationSeriesSample;
 - (id)resumeDataByType;
 - (void)setIndoor:(bool)arg1;
-- (void)setLocationSeriesSample:(id)arg1;
 - (void)setResumeDataByType:(id)arg1;
 - (void)setShouldUseDeviceData:(bool)arg1;
 - (void)setStartDate:(id)arg1;

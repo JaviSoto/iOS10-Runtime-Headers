@@ -5,6 +5,7 @@
 @interface QLWebItemViewController : QLItemViewController <QLScrubViewDataSource, UIScrollViewDelegate, UIWebPDFViewHandlerDelegate, UIWebViewDelegate> {
     id /* block */  _completionBlock;
     double  _defaultZoom;
+    bool  _embeddedPDFWasCopied;
     QLPDFHanderDelegateForwarder * _forwarder;
     bool  _fullScreen;
     NSMutableArray * _htmlSlideNodes;

@@ -49,6 +49,7 @@
 - (void)applyPlayerItemProperties;
 - (id)audioMix;
 - (void)cancelAllUIImageGeneration;
+- (void)clearPlayerItemProperties;
 - (id)composition;
 - (id)compositionLayer;
 - (id)customImageGen;
@@ -77,6 +78,7 @@
 - (void)setSupportArbitraryAspectRatio:(bool)arg1;
 - (struct CGSize { double x1; double x2; })size;
 - (bool)supportArbitraryAspectRatio;
+- (void)tearDownProjectDisplay;
 - (void)updateComposition;
 - (void)updateForProjectTimeInSeconds:(double)arg1 asynchronous:(bool)arg2 allowUnloading:(bool)arg3;
 - (id)videoComposition;

@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (id)defaultQueue;
 - (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
+- (unsigned long long)deleteAllEventsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (bool)deleteObjects:(id)arg1 error:(id*)arg2;
 - (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)executeQuery:(id)arg1 error:(id*)arg2;

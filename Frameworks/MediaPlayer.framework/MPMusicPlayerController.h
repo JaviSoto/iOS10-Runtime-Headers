@@ -58,9 +58,13 @@
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(double)arg1;
 - (void)play;
+- (void)playItem:(id)arg1;
 - (long long)playbackSpeed;
 - (long long)playbackState;
+- (void)prepareQueueForPlayback;
 - (void)prepareToPlay;
+- (id)queueAsQuery;
+- (id)queueAsRadioStation;
 - (long long)repeatMode;
 - (bool)serverIsAlive;
 - (void)setAllowsBackgroundVideo:(bool)arg1;
@@ -82,8 +86,12 @@
 - (void)setUserQueueModificationsDisabled:(bool)arg1;
 - (void)setVolume:(float)arg1;
 - (void)setVolumePrivate:(float)arg1;
+- (void)shuffle;
 - (long long)shuffleMode;
 - (bool)skipInDirection:(long long)arg1 error:(id*)arg2;
+- (void)skipToBeginningOrPreviousItem;
+- (void)skipToNextChapter;
+- (void)skipToPreviousChapter;
 - (void)stop;
 - (unsigned long long)unshuffledIndexOfNowPlayingItem;
 - (bool)userQueueModificationsDisabled;

@@ -7,6 +7,7 @@
     FCCKDatabase * _privateDatabase;
     NSMapTable * _recordZoneObservers;
     NSMutableDictionary * _subscriptionsByID;
+    bool  _syncingEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,25 +18,36 @@
 @property (nonatomic, retain) NSMapTable *recordZoneObservers;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionsByID;
 @property (readonly) Class superclass;
+@property (getter=isSyncingEnabled, nonatomic) bool syncingEnabled;
 
 - (void).cxx_destruct;
-- (id)_handleRecordZoneNotification:(id)arg1;
+- (void)_deleteLocalDataForRecordZoneIDs:(id)arg1;
+- (void)_fetchChangesForRecordZoneIDs:(id)arg1;
+- (void)_handlePrivateDatabaseNotification:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_handleRecordZoneNotification:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_saveDatabaseServerChangeToken:(id)arg1;
 - (void)addObserver:(id)arg1 forChangesToRecordZone:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)deleteSubscriptionWithID:(id)arg1 inDatabase:(id)arg2;
+- (void)disableSyncing;
+- (void)enableSyncing;
 - (void)ensureSubscriptionExistsWithID:(id)arg1 database:(id)arg2 recordZone:(id)arg3 createBlock:(id /* block */)arg4;
 - (void)fetchAllSubscriptionsInDatabase:(id)arg1;
 - (id)fetchQueue;
-- (id)handleRemoteNotification:(id)arg1;
+- (void)handleRemoteNotification:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
-- (id)initWithPrivateDatabase:(id)arg1;
+- (id)initWithPrivateDatabase:(id)arg1 storeDirectory:(id)arg2;
+- (bool)isSyncingEnabled;
+- (void)prepareForUse;
 - (id)privateDatabase;
 - (id)recordZoneObservers;
+- (void)removeAllRecordZoneSubscriptionsInDatabase:(id)arg1;
 - (void)removeRecordZoneObserver:(id)arg1;
-- (void)removeSubscriptionForChangesToRecordZone:(id)arg1;
+- (id)serverChangeTokenKey;
 - (void)setFetchQueue:(id)arg1;
 - (void)setPrivateDatabase:(id)arg1;
 - (void)setRecordZoneObservers:(id)arg1;
 - (void)setSubscriptionsByID:(id)arg1;
+- (void)setSyncingEnabled:(bool)arg1;
 - (id)subscriptionIDForRecordZoneWithName:(id)arg1;
 - (id)subscriptionsByID;
 

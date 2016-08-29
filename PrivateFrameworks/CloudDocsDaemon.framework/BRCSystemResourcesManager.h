@@ -19,6 +19,7 @@
     int  _powerNotifyToken;
     NSHashTable * _powerObservers;
     NSMapTable * _processObservers;
+    unsigned int  _reachabilityFlags;
     BRReachabilityMonitor * _reachabilityMonitor;
     NSHashTable * _reachabilityObservers;
 }
@@ -28,6 +29,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) bool isNetworkReachable;
 @property (readonly) bool isPowerOK;
+@property (readonly) unsigned int reachabilityFlags;
 @property (readonly) Class superclass;
 
 + (id)manager;
@@ -57,6 +59,7 @@
 - (void)_setNetworkReachableWithCoalescing:(bool)arg1;
 - (void)_setPowerLevel:(bool)arg1;
 - (void)_setPowerLevelWithCoalescing:(bool)arg1;
+- (void)_setReachabilityFlags:(unsigned int)arg1;
 - (void)addAppListObserver:(id)arg1;
 - (void)addLowDiskObserver:(id)arg1 forDevice:(int)arg2;
 - (void)addLowMemoryObserver:(id)arg1;
@@ -69,6 +72,8 @@
 - (id)init;
 - (bool)isNetworkReachable;
 - (bool)isPowerOK;
+- (unsigned int)reachabilityFlags;
+- (void)reachabilityMonitor:(id)arg1 didChangeReachabilityFlagsTo:(unsigned int)arg2;
 - (void)reachabilityMonitor:(id)arg1 didChangeReachabilityStatusTo:(bool)arg2;
 - (void)removeAppListObserver:(id)arg1;
 - (void)removeLowDiskObserver:(id)arg1 forDevice:(int)arg2;

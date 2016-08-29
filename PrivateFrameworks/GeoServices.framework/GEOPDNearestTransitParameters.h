@@ -9,15 +9,18 @@
     }  _has;
     bool  _isTransitOnly;
     unsigned long long  _lineMuid;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool hasIsTransitOnly;
 @property (nonatomic) bool hasLineMuid;
 @property (nonatomic) bool isTransitOnly;
 @property (nonatomic) unsigned long long lineMuid;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasIsTransitOnly;
@@ -32,6 +35,7 @@
 - (void)setHasLineMuid:(bool)arg1;
 - (void)setIsTransitOnly:(bool)arg1;
 - (void)setLineMuid:(unsigned long long)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

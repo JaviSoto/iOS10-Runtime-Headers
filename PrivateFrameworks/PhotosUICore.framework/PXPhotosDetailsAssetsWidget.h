@@ -41,6 +41,7 @@
     PXSectionedSelectionManager * _selectionManager;
     PXWidgetSpec * _spec;
     NSMutableSet * _tilesInUse;
+    bool  _userInteractionEnabled;
     <PXWidgetDelegate> * _widgetDelegate;
 }
 
@@ -94,6 +95,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
@@ -107,6 +109,7 @@
 - (id)_currentDataSourceStressTest;
 - (id)_dataSourceManager;
 - (id)_extendedTraitCollection;
+- (void)_fallBackByTogglingCurationIfNeeded;
 - (id)_focusedAssetReference;
 - (void)_handleTapOnAssetReference:(id)arg1 autoPlayVideo:(bool)arg2;
 - (id)_hiddenAssetReferences;
@@ -152,7 +155,6 @@
 - (id)_tilingController;
 - (id)_title;
 - (id)_touchGesture;
-- (void)_transitionToNewLayout;
 - (bool)_transitionWithoutAnimation;
 - (void)_updateDebugBadgeManager;
 - (void)_updateHasLoadedContentData;
@@ -189,6 +191,7 @@
 - (id)init;
 - (bool)isFaceModeEnabled;
 - (bool)isSelecting;
+- (bool)isUserInteractionEnabled;
 - (void)loadContentData;
 - (id)localizedDisclosureTitle;
 - (id)localizedSubtitle;
@@ -215,6 +218,7 @@
 - (void)setOneUpPresentation:(id)arg1;
 - (void)setSelecting:(bool)arg1;
 - (void)setSpec:(id)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (void)setWidgetDelegate:(id)arg1;
 - (id)spec;
 - (bool)supportsFaceMode;

@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/UpNextWidget.framework/UpNextWidget
  */
 
-@interface UpNextWidget.SmallAndNMoreView : UpNextWidget.GutterizedView {
+@interface UpNextWidget.SmallAndNMoreView : UIView {
     void label;
     void numberOfElements;
 }
 
-@property (nonatomic, readonly) UIView *forLastBaselineLayout;
 @property (nonatomic) long long numberOfElements;
 
 - (id /* block */).cxx_destruct;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
+- (void)layoutSubviews;
 - (long long)numberOfElements;
 - (void)setNumberOfElements:(long long)arg1;
-- (id)viewForLastBaselineLayout;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

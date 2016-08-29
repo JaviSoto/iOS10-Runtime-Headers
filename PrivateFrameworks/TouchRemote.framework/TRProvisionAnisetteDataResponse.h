@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRProvisionAnisetteDataResponse : TRNearbyServicesCommunicationAbstractMessage {
+@interface TRProvisionAnisetteDataResponse : TRResponseMessage {
     bool  _didSucceed;
 }
 

@@ -6,12 +6,14 @@
     NSString * _assignedAbBranchId;
     NSMutableArray * _configKeyValues;
     NSMutableArray * _debugExperimentBranchs;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *assignedAbBranchId;
 @property (nonatomic, retain) NSMutableArray *configKeyValues;
 @property (nonatomic, retain) NSMutableArray *debugExperimentBranchs;
 @property (nonatomic, readonly) bool hasAssignedAbBranchId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)configKeyValueType;
 + (Class)debugExperimentBranchType;
@@ -40,6 +42,7 @@
 - (void)setAssignedAbBranchId:(id)arg1;
 - (void)setConfigKeyValues:(id)arg1;
 - (void)setDebugExperimentBranchs:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,7 +11,6 @@
     bool  _canComposeKiss;
     bool  _canComposeTap;
     <ETCanvasViewDelegate> * _canvasDelegate;
-    bool  _clearInProgress;
     ETAngerMessage * _currentAnger;
     ETHeartbeatMessage * _currentHeartbeat;
     ETKissMessage * _currentKissMessage;
@@ -56,7 +55,7 @@
     UIImageView * _photoView;
     NSMutableSet * _playingMessages;
     SKScene * _scene;
-    SKView * _sceneView;
+    DTSSceneView * _sceneView;
     bool  _sendMessageOnTouchesEndedWithoutDelay;
     NSTimer * _sendMessageTimer;
     bool  _setAlwaysPaused;
@@ -140,6 +139,7 @@
 - (bool)canComposeTap;
 - (id)canvasDelegate;
 - (void)clearCanvasAnimated:(bool)arg1;
+- (id)composedSketchMessage;
 - (void)dealloc;
 - (id)drawingColor;
 - (void)endMessageComposition;
@@ -185,6 +185,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)updateCurrentMessageWithHeartRate:(unsigned long long)arg1;
 - (void)updateIgnoredTouchesRectForStatusBarSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)useFastVerticalWisp;
 - (bool)usesMediaAppearance;

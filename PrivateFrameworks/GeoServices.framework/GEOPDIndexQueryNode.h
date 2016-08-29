@@ -6,6 +6,7 @@
     NSString * _field;
     NSMutableArray * _operands;
     int  _type;
+    PBUnknownFields * _unknownFields;
     NSString * _value;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) NSMutableArray *operands;
 @property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *value;
 
 + (Class)operandType;
@@ -42,6 +44,7 @@
 - (void)setValue:(id)arg1;
 - (int)type;
 - (id)typeAsString:(int)arg1;
+- (id)unknownFields;
 - (id)value;
 - (void)writeTo:(id)arg1;
 

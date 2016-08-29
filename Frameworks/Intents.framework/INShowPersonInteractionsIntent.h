@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INShowPersonInteractionsIntent : INIntent {
+@interface INShowPersonInteractionsIntent : INIntent <INShowPersonInteractionsIntentExport> {
     NSString * _focusItemIdentifier;
     INPerson * _person;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *focusItemIdentifier;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) INPerson *person;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

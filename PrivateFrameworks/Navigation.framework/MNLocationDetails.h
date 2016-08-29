@@ -20,10 +20,12 @@
         unsigned int speedLimit : 1; 
         unsigned int stepIndex : 1; 
         unsigned int isGoodMatch : 1; 
+        unsigned int isTunnelProjection : 1; 
         unsigned int speedLimitIsMPH : 1; 
     }  _has;
     double  _horizontalAccuracy;
     bool  _isGoodMatch;
+    bool  _isTunnelProjection;
     GEOLocation * _location;
     unsigned int  _locationState;
     int  _rampType;
@@ -49,6 +51,7 @@
 @property (nonatomic) bool hasDistanceFromRoute;
 @property (nonatomic) bool hasHorizontalAccuracy;
 @property (nonatomic) bool hasIsGoodMatch;
+@property (nonatomic) bool hasIsTunnelProjection;
 @property (nonatomic, readonly) bool hasLocation;
 @property (nonatomic) bool hasLocationState;
 @property (nonatomic) bool hasRampType;
@@ -66,6 +69,7 @@
 @property (nonatomic) bool hasTransitID;
 @property (nonatomic) double horizontalAccuracy;
 @property (nonatomic) bool isGoodMatch;
+@property (nonatomic) bool isTunnelProjection;
 @property (nonatomic, retain) GEOLocation *location;
 @property (nonatomic) unsigned int locationState;
 @property (nonatomic) int rampType;
@@ -87,6 +91,7 @@
 + (id)locationWithLocationDetails:(id)arg1 route:(id)arg2;
 
 - (void).cxx_destruct;
+- (int)StringAsRampType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
@@ -99,6 +104,7 @@
 - (bool)hasDistanceFromRoute;
 - (bool)hasHorizontalAccuracy;
 - (bool)hasIsGoodMatch;
+- (bool)hasIsTunnelProjection;
 - (bool)hasLocation;
 - (bool)hasLocationState;
 - (bool)hasRampType;
@@ -118,10 +124,12 @@
 - (double)horizontalAccuracy;
 - (bool)isEqual:(id)arg1;
 - (bool)isGoodMatch;
+- (bool)isTunnelProjection;
 - (id)location;
 - (unsigned int)locationState;
 - (void)mergeFrom:(id)arg1;
 - (int)rampType;
+- (id)rampTypeAsString:(int)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)roadCoordinate;
 - (unsigned int)roadLineType;
@@ -136,6 +144,7 @@
 - (void)setHasDistanceFromRoute:(bool)arg1;
 - (void)setHasHorizontalAccuracy:(bool)arg1;
 - (void)setHasIsGoodMatch:(bool)arg1;
+- (void)setHasIsTunnelProjection:(bool)arg1;
 - (void)setHasLocationState:(bool)arg1;
 - (void)setHasRampType:(bool)arg1;
 - (void)setHasRoadLineType:(bool)arg1;
@@ -147,6 +156,7 @@
 - (void)setHasTransitID:(bool)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (void)setIsGoodMatch:(bool)arg1;
+- (void)setIsTunnelProjection:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationState:(unsigned int)arg1;
 - (void)setRampType:(int)arg1;

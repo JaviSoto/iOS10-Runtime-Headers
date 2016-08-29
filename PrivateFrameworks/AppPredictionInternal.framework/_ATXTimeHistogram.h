@@ -16,12 +16,13 @@
 
 - (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2;
 - (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2 count:(double)arg3;
-- (unsigned short)circleDifference:(unsigned short)arg1 atTime:(unsigned short)arg2;
 - (void)clear;
 - (double)computeCountWithEventId:(unsigned int)arg1;
 - (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2;
+- (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2 withSpan:(unsigned int)arg3;
 - (void)computeCounts:(double*)arg1 size:(unsigned int)arg2;
 - (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 atLocaltime:(unsigned short)arg3;
+- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 atLocaltime:(unsigned short)arg3 withSpan:(unsigned int)arg4;
 - (unsigned int)count;
 - (void)dealloc;
 - (void)decayByFactor:(double)arg1;
@@ -34,8 +35,8 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned short)pointsPerTimeInterval;
 - (void)removeEventsWithId:(unsigned int)arg1;
-- (void)sortBuckets;
 - (double)totalCounts;
 - (double)totalCountsAtLocaltime:(unsigned short)arg1;
+- (double)totalCountsAtLocaltime:(unsigned short)arg1 withSpan:(unsigned int)arg2;
 
 @end

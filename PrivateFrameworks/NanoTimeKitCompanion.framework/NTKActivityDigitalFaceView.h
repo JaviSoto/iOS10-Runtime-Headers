@@ -3,16 +3,6 @@
  */
 
 @interface NTKActivityDigitalFaceView : NTKFaceView <NTKActivityFaceViewFactoryDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  _auxiliaryLaunchRect;
     double  _blinkerAndSecondsWidth;
     UILabel * _briskMinutesLabel;
     struct RingLayout { 
@@ -62,13 +52,10 @@
 - (void)_applyShowsCanonicalContent;
 - (void)_applyShowsLockedUI;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_auxiliaryLaunchRect;
-- (id)_baseTimeTravelCaptionImageNameForEnglishOnly;
 - (double)_blinkerAndSecondsWidth;
 - (void)_cleanUpAfterDetailEditing;
 - (void)_cleanupAfterEditing;
 - (void)_cleanupAfterZoom;
-- (void)_clearAuxiliaryLaunchRect;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForDetailEditing;
 - (void)_configureForEditMode:(long long)arg1;
@@ -113,6 +100,7 @@
 - (bool)_wantsTimeTravelStatusModule;
 - (void)applyEntryModel:(id)arg1 animated:(bool)arg2;
 - (void)applyEntryModelWithUnfilledRings:(id)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)rightTimeViewInset;
 - (void)setDataMode:(long long)arg1;

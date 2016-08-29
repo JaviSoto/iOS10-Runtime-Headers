@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRequestPaymentIntent : INIntent <INRequestPaymentIntent>
+@interface INRequestPaymentIntent : INIntent <INRequestPaymentIntentExport>
 
 @property (nonatomic, readonly, copy) INCurrencyAmount *currencyAmount;
 @property (readonly, copy) NSString *debugDescription;

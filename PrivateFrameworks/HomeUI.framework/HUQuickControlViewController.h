@@ -76,7 +76,7 @@
 - (id)controlContainerView;
 - (id)controlControllerCoordinator;
 - (id)controlView;
-- (void)controllerCoordinator:(id)arg1 didUpdateIconDescriptor:(id)arg2;
+- (void)controllerCoordinator:(id)arg1 didUpdateIconDescriptor:(id)arg2 showOffState:(bool)arg3;
 - (void)controllerCoordinator:(id)arg1 didUpdateReachability:(bool)arg2;
 - (void)controllerCoordinator:(id)arg1 didUpdateStatusWithPrimaryText:(id)arg2 secondaryText:(id)arg3;
 - (id)delegate;

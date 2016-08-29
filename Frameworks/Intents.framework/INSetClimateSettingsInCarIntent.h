@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetClimateSettingsInCarIntent : INIntent <INSetClimateSettingsInCarIntent>
+@interface INSetClimateSettingsInCarIntent : INIntent <INSetClimateSettingsInCarIntentExport>
 
 @property (nonatomic, readonly) long long airCirculationMode;
 @property (nonatomic, readonly) long long climateZone;
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) long long relativeFanSpeedSetting;
 @property (nonatomic, readonly) long long relativeTemperatureSetting;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) INTemperature *temperature;
+@property (nonatomic, readonly, copy) NSMeasurement *temperature;
 
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;

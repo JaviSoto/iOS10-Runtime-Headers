@@ -4,6 +4,7 @@
 
 @interface IMBalloonPluginDataSource : NSObject {
     NSURL * _URLToOpenOnTapAction;
+    NSString * __imMessageGUID;
     NSArray * _attachmentGUIDs;
     NSString * _bundleID;
     IMChat * _chat;
@@ -13,17 +14,19 @@
     bool  _hasInvalidatedSize;
     bool  _initialMessageIsFromMe;
     bool  _isLast;
+    bool  _isShowingLatestMessageAsBreadcrumb;
     NSString * _messageGUID;
     long long  _messageIDOfLastMessageInSession;
     bool  _payloadInShelf;
     NSArray * _pendingAttachmentData;
     IMPluginPayload * _pluginPayload;
-    IMPluginPayload * _pluginPayloadPendingSend;
+    bool  _showingLatestMessageAsBreadcrumb;
     NSMutableSet * _temporaryAttachmentURLs;
     NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URLToOpenOnTapAction;
+@property (nonatomic, retain) NSString *_imMessageGUID;
 @property (nonatomic, readonly) NSArray *allPayloads;
 @property (nonatomic, retain) NSArray *attachmentGUIDs;
 @property (nonatomic, readonly, retain) NSString *bundleID;
@@ -37,6 +40,7 @@
 @property (nonatomic, readonly) bool isFromMe;
 @property (setter=setLast:, nonatomic) bool isLast;
 @property (nonatomic, readonly) bool isPlayed;
+@property (setter=setShowingLatestMessageAsBreadcrumb:, nonatomic) bool isShowingLatestMessageAsBreadcrumb;
 @property (nonatomic, retain) NSString *messageGUID;
 @property (nonatomic, readonly) long long messageIDOfLastMessageInSession;
 @property (nonatomic, readonly, retain) NSData *messagePayloadDataForSending;
@@ -44,7 +48,8 @@
 @property (nonatomic) bool payloadInShelf;
 @property (nonatomic, retain) NSArray *pendingAttachmentData;
 @property (nonatomic, retain) IMPluginPayload *pluginPayload;
-@property (nonatomic, readonly, retain) IMPluginPayload *pluginPayloadPendingSend;
+@property (getter=isShowingLatestMessageAsBreadcrumb, nonatomic, readonly) bool showingLatestMessageAsBreadcrumb;
+@property (nonatomic, readonly, retain) NSAttributedString *statusAttributedString;
 @property (nonatomic, readonly, retain) NSString *statusString;
 @property (nonatomic, retain) NSMutableSet *temporaryAttachmentURLs;
 @property (nonatomic, retain) NSURL *url;
@@ -60,6 +65,7 @@
 - (void).cxx_destruct;
 - (id)URLToOpenOnTapAction;
 - (id)_handlesByIdentifier;
+- (id)_imMessageGUID;
 - (void)_reloadLatestUnconsumedBreadcrumb;
 - (void)_removeTemporaryAttachmentURLs;
 - (id)_replaceHandleWithContactNameInString:(id)arg1;
@@ -76,7 +82,8 @@
 - (id)dataDetectedResult;
 - (void)datasourceWasMovedToNewGuid:(id)arg1;
 - (id)description;
-- (id)displayNameForHandleIdentifier:(id)arg1;
+- (void)didTapStatusItem;
+- (id)displayNameForHandleIdentifier:(id)arg1 handlesByIdentifier:(id)arg2;
 - (void)endShowingLastConsumedBreadcrumb;
 - (id)guidOfLastMessageInSession;
 - (bool)hasInvalidatedSize;
@@ -89,6 +96,8 @@
 - (bool)isFromMe;
 - (bool)isLast;
 - (bool)isPlayed;
+- (bool)isShowingLatestMessageAsBreadcrumb;
+- (bool)isShowingLatestMessageAsBreadcrumb;
 - (void)markAsPlayed;
 - (id)messageGUID;
 - (long long)messageIDOfLastMessageInSession;
@@ -104,7 +113,6 @@
 - (void)playbackWithCompletionBlock:(id /* block */)arg1;
 - (id)pluginPayload;
 - (void)pluginPayloadDidChange:(unsigned long long)arg1;
-- (id)pluginPayloadPendingSend;
 - (void)sendPayload:(id)arg1;
 - (void)sendPayload:(id)arg1 attachments:(id)arg2;
 - (void)setAttachmentGUIDs:(id)arg1;
@@ -120,9 +128,12 @@
 - (void)setPayloadInShelf:(bool)arg1;
 - (void)setPendingAttachmentData:(id)arg1;
 - (void)setPluginPayload:(id)arg1;
+- (void)setShowingLatestMessageAsBreadcrumb:(bool)arg1;
 - (void)setTemporaryAttachmentURLs:(id)arg1;
 - (void)setUrl:(id)arg1;
+- (void)set_imMessageGUID:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)statusAttributedString;
 - (id)statusString;
 - (void)statusStringNeedsUpdate;
 - (void)stopPlayback;

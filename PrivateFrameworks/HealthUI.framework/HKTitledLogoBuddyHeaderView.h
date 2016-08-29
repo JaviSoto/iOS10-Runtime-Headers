@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (id)initWithTopInset:(double)arg1 linkButtonTitle:(id)arg2;
 - (id)logoImage;
+- (id)logoImageView;
 - (void)setLogoImage:(id)arg1;
 
 @end

@@ -3,17 +3,21 @@
  */
 
 @interface VSViewServiceHostViewController : UIViewController <VSViewServiceRemoteViewControllerDelegate> {
-    bool  _addedRemoteViewController;
+    NSUUID * _currentRequest;
     <VSViewServiceHostViewControllerDelegate> * _delegate;
+    bool  _hasRequestedPresentation;
+    bool  _hasRetriedOnce;
     VSViewServiceRemoteViewController * _remoteViewController;
     NSMutableDictionary * _requestsByID;
     VSViewControllerFactory * _viewControllerFactory;
 }
 
-@property (nonatomic) bool addedRemoteViewController;
+@property (nonatomic, copy) NSUUID *currentRequest;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSViewServiceHostViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasRequestedPresentation;
+@property (nonatomic) bool hasRetriedOnce;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSViewServiceRemoteViewController *remoteViewController;
 @property (nonatomic, retain) NSMutableDictionary *requestsByID;
@@ -29,20 +33,25 @@
 - (void)_didCompleteRequest:(id)arg1;
 - (void)_dismissViewServiceHostViewController;
 - (void)_presentViewServiceHostViewController;
+- (void)_removeRemoteViewControllerAsChildViewController;
 - (void)_request:(id)arg1 didFailWithError:(id)arg2;
 - (void)_request:(id)arg1 didFinishWithResponse:(id)arg2;
 - (id)_requestForID:(id)arg1;
-- (bool)addedRemoteViewController;
+- (id)currentRequest;
 - (id)delegate;
 - (void)dismissViewServiceRemoteViewController:(id)arg1;
 - (void)enqueueViewServiceRequest:(id)arg1 withIdentifier:(id)arg2;
+- (bool)hasRequestedPresentation;
+- (bool)hasRetriedOnce;
 - (id)init;
 - (long long)modalPresentationStyle;
 - (void)presentViewServiceRemoteViewController:(id)arg1;
 - (id)remoteViewController;
 - (id)requestsByID;
-- (void)setAddedRemoteViewController:(bool)arg1;
+- (void)setCurrentRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHasRequestedPresentation:(bool)arg1;
+- (void)setHasRetriedOnce:(bool)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setRequestsByID:(id)arg1;
 - (void)setViewControllerFactory:(id)arg1;

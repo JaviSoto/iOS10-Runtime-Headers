@@ -18,6 +18,9 @@
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
++ (void)_beginConfiguringActiveColorSpaceForDevice:(id)arg1;
++ (void)_finishConfiguringActiveColorSpaceForDevice:(id)arg1;
++ (bool)_isActiveColorSpaceBeingConfiguredForDevice:(id)arg1;
 + (id)allSessionPresets;
 + (bool)automaticallyNotifiesObserversOfMasterClock;
 + (bool)automaticallyNotifiesObserversOfRunning;

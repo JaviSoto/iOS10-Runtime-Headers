@@ -32,6 +32,7 @@
 + (id)_archivedObject:(id)arg1 options:(unsigned long long)arg2;
 + (void*)_copyUnarchived:(id)arg1 length:(unsigned long long*)arg2 options:(unsigned long long)arg3;
 + (id)_unarchivedObject:(id)arg1 ofClass:(Class)arg2 options:(unsigned long long)arg3;
++ (id)directedGraphWithData:(id)arg1 error:(id*)arg2;
 
 - (bool)_adjustAdjacencyMap;
 - (void)_bfsCore:(unsigned int)arg1 colors:(char *)arg2 visitBlock:(id /* block */)arg3 examineBlock:(id /* block */)arg4;

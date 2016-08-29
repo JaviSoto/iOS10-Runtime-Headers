@@ -45,6 +45,7 @@
 - (void)applicationMonitorDidChangeActiveHomeKitAppStatus:(bool)arg1;
 - (void)applicationMonitorDidChangeAppState:(id)arg1;
 - (id)backgroundAppMsgFilter;
+- (void)dealloc;
 - (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
 - (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;

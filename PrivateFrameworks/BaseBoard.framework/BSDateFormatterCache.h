@@ -53,5 +53,6 @@
 - (id)multiLineDayOfWeekMonthDayFormatForLocale:(id)arg1;
 - (void)resetFormatters:(id)arg1;
 - (void)resetFormattersIfNecessary;
+- (bool)supportsMultiLineDayOfWeekMonthDayStyle;
 
 @end

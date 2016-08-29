@@ -6,7 +6,7 @@
     NSString * _assetUUID;
     double  _centerX;
     double  _centerY;
-    long long  _faceAlgorithmVersion;
+    int  _faceAlgorithmVersion;
     bool  _hidden;
     bool  _isHidden;
     bool  _manual;
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *assetUUID;
 @property (nonatomic) double centerX;
 @property (nonatomic) double centerY;
-@property (nonatomic) long long faceAlgorithmVersion;
+@property (nonatomic) int faceAlgorithmVersion;
 @property (getter=isHidden, nonatomic) bool hidden;
 @property (getter=isHidden, nonatomic, readonly) bool isHidden;
 @property (getter=isManual, nonatomic) bool manual;
@@ -37,7 +37,7 @@
 - (double)centerY;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)faceAlgorithmVersion;
+- (int)faceAlgorithmVersion;
 - (id)initWithCoder:(id)arg1;
 - (bool)isHidden;
 - (bool)isHidden;
@@ -47,7 +47,7 @@
 - (void)setAssetUUID:(id)arg1;
 - (void)setCenterX:(double)arg1;
 - (void)setCenterY:(double)arg1;
-- (void)setFaceAlgorithmVersion:(long long)arg1;
+- (void)setFaceAlgorithmVersion:(int)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setManual:(bool)arg1;
 - (void)setNameSourceAuto:(bool)arg1;

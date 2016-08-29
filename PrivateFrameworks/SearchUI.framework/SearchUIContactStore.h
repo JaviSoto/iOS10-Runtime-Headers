@@ -11,7 +11,6 @@
 @property (retain) CNContactStore *contactStore;
 
 + (id)contactForPhoneNumber:(id)arg1;
-+ (id)imageForContact:(id)arg1 style:(unsigned long long)arg2;
 + (id)placeholderContact;
 + (id)sharedStore;
 

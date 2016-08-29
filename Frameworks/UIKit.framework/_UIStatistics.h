@@ -21,17 +21,24 @@
 + (id)feedbackBehaviorActivationDurationWithSuffix:(id)arg1;
 + (id)feedbackBehaviorActivationTimeOutCountWithSuffix:(id)arg1;
 + (id)feedbackBehaviorPlayCountWithSuffix:(id)arg1;
++ (id)feedbackBehaviorPreparationCountWithSuffix:(id)arg1;
 + (id)feedbackEngineActivationCountWithSuffix:(id)arg1;
 + (id)feedbackEngineActivationDurationWithSuffix:(id)arg1;
++ (id)feedbackEngineOutOfChannelsCountWithSuffix:(id)arg1;
 + (id)feedbackEnginePrewarmCountWithSuffix:(id)arg1;
 + (id)feedbackEnginePrewarmDurationWithSuffix:(id)arg1;
++ (id)maxForce;
 + (id)pinchGestureCount;
 + (id)previewInteractionAlertPresentationCount;
 + (id)previewInteractionPeekCount;
 + (id)previewInteractionPeekDuration;
++ (id)previewInteractionPeekForce;
 + (id)previewInteractionPopCount;
++ (id)previewInteractionPopForce;
 + (id)previewInteractionTapCount;
 + (id)scrollBounceCount;
++ (id)scrollViewVerticalVelocityInteractive;
++ (id)scrollViewVerticalVelocityNoninteractive;
 + (id)scrubberUsageCount;
 + (id)scrubberUsageTime;
 + (id)zoomGestureCount;
@@ -52,6 +59,7 @@
 - (id)init;
 - (id)initWithDomain:(id)arg1;
 - (id)initWithDomain:(id)arg1 identifierReporting:(long long)arg2;
+- (void)randomizeSampleValue;
 - (double)sampleRate;
 - (void)setSampleRate:(double)arg1;
 

@@ -2,22 +2,8 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIAdFeedbackElement : SKUIViewElement {
-    NSString * _bodyString;
-    NSString * _title;
-}
-
-@property (nonatomic, readonly) NSString *bodyString;
-@property (nonatomic, readonly) SKUIButtonViewElement *noButton;
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) SKUIButtonViewElement *yesButton;
+@interface SKUIAdFeedbackElement : SKUIViewElement
 
 + (bool)isEnabled;
-
-- (void).cxx_destruct;
-- (id)bodyString;
-- (id)noButton;
-- (id)title;
-- (id)yesButton;
 
 @end

@@ -16,6 +16,7 @@
             int *__first_; 
         } __end_cap_; 
     }  _notifyTokens;
+    bool  _soundCheckEnabled;
     NSObject<OS_dispatch_queue> * _userDefaultsMutationQueue;
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) int musicEQPreset;
 @property (nonatomic) long long musicRepeatType;
 @property (nonatomic) long long musicShuffleType;
+@property (nonatomic, readonly) bool soundCheckEnabled;
 
 + (id)standardUserDefaults;
 
@@ -42,5 +44,6 @@
 - (long long)musicShuffleType;
 - (void)setMusicRepeatType:(long long)arg1;
 - (void)setMusicShuffleType:(long long)arg1;
+- (bool)soundCheckEnabled;
 
 @end

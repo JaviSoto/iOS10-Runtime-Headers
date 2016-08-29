@@ -31,6 +31,8 @@
 - (void).cxx_destruct;
 - (id)_buttonBackgroundImageFromColor:(id)arg1;
 - (id)_buttonWithTitle:(id)arg1 action:(SEL)arg2 andColor:(id)arg3;
+- (void)_disableActionButtonsWithSelectedButton:(id)arg1;
+- (void)_enableActionButtons;
 - (void)_updateUndoButton;
 - (id)buttonSizeConstraint;
 - (id)commonConstraints;

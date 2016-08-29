@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventGameControllerInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
+@interface AXEventGameControllerInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
     double  _directionPadDown;
     double  _directionPadLeft;
     double  _directionPadRight;
@@ -21,6 +21,8 @@
     double  _shoulderButtonR2;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) double directionPadDown;
 @property (nonatomic) double directionPadLeft;
 @property (nonatomic) double directionPadRight;
@@ -29,6 +31,7 @@
 @property (nonatomic) double faceButtonB;
 @property (nonatomic) double faceButtonX;
 @property (nonatomic) double faceButtonY;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool leftJoystickActive;
 @property (nonatomic) double leftJoystickX;
 @property (nonatomic) double leftJoystickY;
@@ -39,10 +42,11 @@
 @property (nonatomic) double shoulderButtonL2;
 @property (nonatomic) double shoulderButtonR1;
 @property (nonatomic) double shoulderButtonR2;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 
-- (id)_tabularDescription;
+- (id)accessibilityEventRepresentationTabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)directionPadDown;
 - (double)directionPadLeft;

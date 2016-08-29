@@ -5,6 +5,7 @@
 @interface MusicStoreBrowseContentItem : MPModelObject {
     MPModelAlbum * _album;
     MPModelArtist * _artist;
+    NSString * _artistUploadedContentType;
     MPModelCurator * _curator;
     long long  _detailedItemType;
     unsigned long long  _itemType;
@@ -15,6 +16,7 @@
 
 @property (nonatomic, retain) MPModelAlbum *album;
 @property (nonatomic, retain) MPModelArtist *artist;
+@property (nonatomic, copy) NSString *artistUploadedContentType;
 @property (nonatomic, retain) MPModelCurator *curator;
 @property (nonatomic) long long detailedItemType;
 @property (nonatomic) unsigned long long itemType;
@@ -22,6 +24,7 @@
 @property (nonatomic, retain) MPModelRadioStation *radioStation;
 @property (nonatomic, retain) MPModelSong *song;
 
++ (id)__MusicStoreBrowseContentItemPropertyArtistUploadedContentType__PROPERTY;
 + (id)__MusicStoreBrowseContentItemPropertyDetailedItemType__PROPERTY;
 + (id)__MusicStoreBrowseContentItemPropertyItemType__PROPERTY;
 + (id)__MusicStoreBrowseContentItemRelationshipAlbum__PROPERTY;
@@ -31,6 +34,7 @@
 + (id)__MusicStoreBrowseContentItemRelationshipRadioStation__PROPERTY;
 + (id)__MusicStoreBrowseContentItemRelationshipSong__PROPERTY;
 + (id)__album__KEY;
++ (id)__artistUploadedContentType__KEY;
 + (id)__artist__KEY;
 + (id)__curator__KEY;
 + (id)__detailedItemType__KEY;
@@ -43,6 +47,7 @@
 - (void).cxx_destruct;
 - (id)album;
 - (id)artist;
+- (id)artistUploadedContentType;
 - (id)curator;
 - (id)descriptionWithType:(long long)arg1;
 - (long long)detailedItemType;
@@ -55,6 +60,7 @@
 - (id)relativeModelObjectForStoreLibraryPersonalization;
 - (void)setAlbum:(id)arg1;
 - (void)setArtist:(id)arg1;
+- (void)setArtistUploadedContentType:(id)arg1;
 - (void)setCurator:(id)arg1;
 - (void)setDetailedItemType:(long long)arg1;
 - (void)setItemType:(unsigned long long)arg1;

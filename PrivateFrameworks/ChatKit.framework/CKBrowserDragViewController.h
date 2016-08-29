@@ -31,6 +31,10 @@
     double  _elasticScaleX;
     double  _elasticScaleY;
     UILongPressGestureRecognizer * _gestureRecognizer;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _initialDragStartPosition;
     double  _initialScale;
     struct CGSize { 
         double width; 
@@ -60,6 +64,7 @@
         double height; 
     }  _rasterizedImageSize;
     double  _rotationAngle;
+    bool  _scaledDown;
     CALayer * _shadowLayer;
     struct CGPoint { 
         double x; 
@@ -110,6 +115,7 @@
 @property (nonatomic) double elasticScaleY;
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) struct CGPoint { double x1; double x2; } initialDragStartPosition;
 @property (nonatomic) double initialScale;
 @property (nonatomic) struct CGSize { double x1; double x2; } initialSize;
 @property (nonatomic) CALayer *meshLayer;
@@ -124,6 +130,7 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } previousPanLocationInView;
 @property (nonatomic) struct CGSize { double x1; double x2; } rasterizedImageSize;
 @property (nonatomic) double rotationAngle;
+@property (getter=isScaledDown, nonatomic) bool scaledDown;
 @property (nonatomic) CALayer *shadowLayer;
 @property (nonatomic) struct CGPoint { double x1; double x2; } shadowLayerStartPosition;
 @property (nonatomic) CALayer *shineLayer;
@@ -145,6 +152,8 @@
 - (struct CGPoint { double x1; double x2; })anchorOffset;
 - (void)animateBackToSourceCompletionBlock:(id /* block */)arg1;
 - (void)animatePeelWithCompletion:(id /* block */)arg1;
+- (void)animatePlacementAtPoint:(struct CGPoint { double x1; double x2; })arg1 completionBlock:(id /* block */)arg2;
+- (void)animateScaleDown;
 - (void)animationTimerFired:(unsigned long long)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applyTransforms;
@@ -175,9 +184,11 @@
 - (void)gestureRecognized:(id)arg1;
 - (id)gestureRecognizer;
 - (id)initWithDragImage:(id)arg1 inSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withSourcePoint:(struct CGPoint { double x1; double x2; })arg3 withGestureRecognizer:(id)arg4;
+- (struct CGPoint { double x1; double x2; })initialDragStartPosition;
 - (double)initialScale;
 - (struct CGSize { double x1; double x2; })initialSize;
 - (bool)isPressed;
+- (bool)isScaledDown;
 - (id)meshLayer;
 - (struct CGPoint { double x1; double x2; })meshLayerStartPosition;
 - (void)panGestureRecognized:(id)arg1;
@@ -190,7 +201,7 @@
 - (id)perspectiveLayer;
 - (struct CGPoint { double x1; double x2; })previousPanLocationInView;
 - (struct CGSize { double x1; double x2; })rasterizedImageSize;
-- (void)reversePeelAnimationFromCurrentStateWithCompletionBlock:(id /* block */)arg1;
+- (void)reversePeelAnimationToPoint:(struct CGPoint { double x1; double x2; })arg1 forPlacement:(bool)arg2 completionBlock:(id /* block */)arg3;
 - (double)rotationAngle;
 - (id)scaleImage:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)setAnchorOffset:(struct CGPoint { double x1; double x2; })arg1;
@@ -215,6 +226,7 @@
 - (void)setElasticScaleX:(double)arg1;
 - (void)setElasticScaleY:(double)arg1;
 - (void)setGestureRecognizer:(id)arg1;
+- (void)setInitialDragStartPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setInitialScale:(double)arg1;
 - (void)setInitialSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMeshLayer:(id)arg1;
@@ -229,6 +241,7 @@
 - (void)setPreviousPanLocationInView:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRasterizedImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRotationAngle:(double)arg1;
+- (void)setScaledDown:(bool)arg1;
 - (void)setShadowLayer:(id)arg1;
 - (void)setShadowLayerStartPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setShineLayer:(id)arg1;

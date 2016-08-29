@@ -23,10 +23,9 @@
 - (id)_analyzePVImage:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
 - (id)_changeAsset:(id)arg1 faceDetectionState:(long long)arg2 error:(id*)arg3;
 - (void)_didPerformFaceClustering;
-- (id)_faceClustSequenceNumbersForFaceLocalIdentifiers:(id)arg1;
 - (id)_faceDescriptionsOfFacesInImageWithSRGBImageData:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 bytesPerRow:(unsigned long long)arg4 bitmapInfo:(unsigned int)arg5 error:(id*)arg6;
 - (id)_faceSuggestionsForFacesWithLocalIdentifiers:(id)arg1 error:(id*)arg2;
-- (id)_faceSuggestionsForPersonWithLocalIdentifiers:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 error:(id*)arg4;
+- (id)_faceSuggestionsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 error:(id*)arg4;
 - (id)_faceSuggestionsFromKeyFaceClustSeqNums:(id)arg1 excludeFaceLocalIdentifers:(id)arg2;
 - (void)_handleNilReplyBlockForSelector:(SEL)arg1;
 - (id)_newFaceGroupsFetchOptions;
@@ -53,13 +52,13 @@
 - (unsigned long long)analyzeAssetResourceFileAtURL:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
 - (unsigned long long)analyzeImageData:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
 - (void)cooldown;
-- (void)didPerformJob:(id)arg1;
 - (void)faceClusteringInformation:(unsigned long long)arg1 withContext:(id)arg2 reply:(id /* block */)arg3;
 - (bool)getLocallyAvailableAssetResource:(id*)arg1 forAnalyzingAsset:(id)arg2 error:(id*)arg3;
 - (void)handlePVNotification:(id)arg1;
 - (bool)hasAdditionalJobsForScenario:(unsigned long long)arg1;
 - (id)initWithPhotoAnalysisManager:(id)arg1 dataLoader:(id)arg2;
 - (bool)isEnabled;
+- (id)newAssetFetchOptions;
 - (id)newPhotoVisionCVMLRequestOptions;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1;
 - (void)performFaceProcessingOnAssetWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
@@ -69,12 +68,12 @@
 - (void)reclusterFacesWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)renderFaceTilesForFaceLocalIdentifiers:(id)arg1 inAssetWithLocalIdentifier:(id)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)resetFaceClusteringStateWithContext:(id)arg1 reply:(id /* block */)arg2;
-- (void)resetFaceDetectionStateWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)scheduleFaceProcessingOnAssetsWithLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)shutdown;
 - (bool)stopAnalysisJob:(id)arg1 error:(id*)arg2;
 - (void)suggestFacesForFacesWithLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)suggestFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 context:(id)arg4 reply:(id /* block */)arg5;
 - (void)suggestPersonForFaceWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
+- (void)willCompleteJob:(id)arg1;
 
 @end

@@ -3,23 +3,12 @@
  */
 
 @interface VCPCNNGazeAnalysis : NSObject {
-    struct CNNData { 
-        float *data_; 
-        struct CNNSize { 
-            int size_[4]; 
-        } size_; 
-    }  _eyeInput;
-    struct CNNData { 
-        float *data_; 
-        struct CNNSize { 
-            int size_[4]; 
-        } size_; 
-    }  _faceInput;
+    VCPCNNData * _eyeInput;
+    VCPCNNData * _faceInput;
     VCPCNNModel * _modelEyeOpenness;
     VCPCNNModel * _modelLandmarks;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (int)cropAndRotateEyeImage:(struct __CVBuffer { }*)arg1 leftCornerX:(int)arg2 leftCornerY:(int)arg3 rightCornerX:(int)arg4 rightCornerY:(int)arg5;
 - (int)detectEyeOpennessForFace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inBuffer:(struct __CVBuffer { }*)arg2 eyeOpenness:(bool*)arg3;

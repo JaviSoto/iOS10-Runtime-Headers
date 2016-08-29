@@ -16,6 +16,7 @@
     NSString * _domainName;
     NSDictionary * _eapClientConfig;
     NSString * _encryptionType;
+    NSNumber * _isFirstAutoJoinRestricted;
     bool  _isHidden;
     NSNumber * _isHiddenNum;
     bool  _isHotspot;
@@ -56,6 +57,7 @@
 @property (nonatomic, retain) NSString *domainName;
 @property (nonatomic, retain) NSDictionary *eapClientConfig;
 @property (nonatomic, retain) NSString *encryptionType;
+@property (nonatomic) NSNumber *isFirstAutoJoinRestricted;
 @property (nonatomic) bool isHidden;
 @property (nonatomic, retain) NSNumber *isHiddenNum;
 @property (nonatomic) bool isHotspot;
@@ -109,6 +111,7 @@
 - (id)encryptionType;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
+- (id)isFirstAutoJoinRestricted;
 - (bool)isHidden;
 - (id)isHiddenNum;
 - (bool)isHotspot;
@@ -143,6 +146,7 @@
 - (void)setEapClientConfig:(id)arg1;
 - (void)setEncryptionType:(id)arg1;
 - (void)setHESSID:(id)arg1;
+- (void)setIsFirstAutoJoinRestricted:(id)arg1;
 - (void)setIsHidden:(bool)arg1;
 - (void)setIsHiddenNum:(id)arg1;
 - (void)setIsHotspot:(bool)arg1;

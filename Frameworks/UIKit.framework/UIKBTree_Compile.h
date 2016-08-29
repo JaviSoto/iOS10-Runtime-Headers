@@ -20,6 +20,7 @@
 - (bool)_needsScaling;
 - (id)attributeSet:(bool)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)geometrySet:(bool)arg1;
 - (int)indexOfSubtreeWithName:(id)arg1 rows:(id)arg2;
 - (int)indexOfSubtreeWithType:(int)arg1;

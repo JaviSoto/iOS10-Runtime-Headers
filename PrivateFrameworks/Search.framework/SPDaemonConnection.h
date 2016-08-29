@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSString *daemonName;
 @property (nonatomic) struct __CFDictionary { }*runningQueries;
 
++ (id)sharedBackgroundConnection;
 + (id)sharedConnection;
 
 - (void).cxx_destruct;

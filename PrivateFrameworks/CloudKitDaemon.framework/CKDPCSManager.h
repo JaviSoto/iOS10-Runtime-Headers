@@ -10,6 +10,7 @@
     struct _PCSIdentityData { } * _debugIdentity;
     NSString * _liverpoolPublicKey;
     NSOperationQueue * _operationQueue;
+    NSObject<OS_dispatch_source> * _pcsUpdateSource;
     NSString * _serviceName;
     NSArray * _sharingIdentityFingerprints;
 }
@@ -24,6 +25,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *liverpoolPublicKey;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *pcsUpdateSource;
 @property (nonatomic, retain) NSString *serviceName;
 @property (nonatomic, retain) NSArray *sharingIdentityFingerprints;
 @property (readonly) Class superclass;
@@ -58,6 +60,7 @@
 - (id)copyPublicIdentityForDSID:(id)arg1 withError:(id*)arg2;
 - (id)copyPublicKeyForService:(unsigned long long)arg1 withError:(id*)arg2;
 - (struct _PCSIdentitySetData { }*)copyServiceIdentityForDSID:(id)arg1 withError:(id*)arg2;
+- (struct _OpaquePCSShareProtection { }*)createChainPCSWithError:(id*)arg1;
 - (struct _PCSIdentityData { }*)createCombinedIdentityWithOutOfNetworkPrivateKey:(id)arg1 publicSharingIdentity:(id)arg2;
 - (struct _OpaquePCSShareProtection { }*)createEmptySharePCSWithError:(id*)arg1;
 - (id)createProtectionInfoFromOONPrivateKey:(id)arg1 privateToken:(id)arg2 OONProtectionInfo:(id)arg3 error:(id*)arg4;
@@ -98,6 +101,7 @@
 - (id)newAssetKeyWithError:(id*)arg1;
 - (id)operationQueue;
 - (id)pcsDataFromFetchedShare:(id)arg1 withServiceType:(unsigned long long)arg2 error:(id*)arg3;
+- (id)pcsUpdateSource;
 - (id)protectionIdentifierFromShareProtection:(struct _OpaquePCSShareProtection { }*)arg1;
 - (id)publicKeyIDFromIdentity:(struct _OpaquePCSShareProtection { }*)arg1;
 - (id)referenceIdentifierStringFromAssetKey:(id)arg1;
@@ -116,6 +120,7 @@
 - (void)setLiverpoolPublicKey:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setPCSIdentityWrappersByServiceName:(id)arg1;
+- (void)setPcsUpdateSource:(id)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setSharingIdentityFingerprints:(id)arg1;
 - (id)sharingIdentityDataFromPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;

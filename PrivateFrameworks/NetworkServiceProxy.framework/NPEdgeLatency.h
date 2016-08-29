@@ -3,18 +3,22 @@
  */
 
 @interface NPEdgeLatency : NSObject <NSSecureCoding> {
+    NSDate * _creationDate;
     unsigned long long  _edgeIndex;
     bool  _needReprobe;
     bool  _passedReprobeThreshold;
+    long long  _probeCount;
     long long  _reprobeCount;
     NPAverage * _roundTripAverage;
     NPAverage * _roundTripAverageObserved;
     unsigned long long  _roundTripTime;
 }
 
+@property (retain) NSDate *creationDate;
 @property unsigned long long edgeIndex;
 @property bool needReprobe;
 @property bool passedReprobeThreshold;
+@property long long probeCount;
 @property long long reprobeCount;
 @property (retain) NPAverage *roundTripAverage;
 @property (retain) NPAverage *roundTripAverageObserved;
@@ -27,6 +31,7 @@
 - (void)addRoundTripSampleObserved:(unsigned long long)arg1;
 - (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creationDate;
 - (id)description;
 - (unsigned long long)edgeIndex;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,13 +39,16 @@
 - (id)initWithRTT:(unsigned long long)arg1 edgeIndex:(unsigned long long)arg2;
 - (bool)needReprobe;
 - (bool)passedReprobeThreshold;
+- (long long)probeCount;
 - (long long)reprobeCount;
 - (id)roundTripAverage;
 - (id)roundTripAverageObserved;
 - (unsigned long long)roundTripTime;
+- (void)setCreationDate:(id)arg1;
 - (void)setEdgeIndex:(unsigned long long)arg1;
 - (void)setNeedReprobe:(bool)arg1;
 - (void)setPassedReprobeThreshold:(bool)arg1;
+- (void)setProbeCount:(long long)arg1;
 - (void)setReprobeCount:(long long)arg1;
 - (void)setRoundTripAverage:(id)arg1;
 - (void)setRoundTripAverageObserved:(id)arg1;

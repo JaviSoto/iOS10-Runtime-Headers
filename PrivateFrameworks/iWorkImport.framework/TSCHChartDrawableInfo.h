@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDMixing, TSDReducableInfo, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
+@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDCompatibilityAwareMediaContainer, TSDMixing, TSDReducibleImageContainer, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
     TSCHChartInfo * mChart;
     TSCHChunkManager * mChunkManager;
     TSPObject<TSCHMediatorProvider> * mMediatorPersistentObject;
@@ -10,6 +10,7 @@
 
 @property (nonatomic, readonly) TSCHChartInfo *chart;
 @property (nonatomic, readonly) TSCHChunkManager *chunkManager;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -34,7 +35,6 @@
 - (id)childInfos;
 - (unsigned long long)chunkCountForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2;
 - (id)chunkManager;
-- (id)commandToReplaceImageData:(id)arg1 withReducedImageData:(id)arg2 associatedHint:(id)arg3;
 - (id)componentRootObject;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -43,7 +43,6 @@
 - (id)geometry;
 - (bool)hasBackgroundLayerForPieChart;
 - (bool)hasReferenceLines;
-- (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
@@ -63,6 +62,7 @@
 - (bool)isVisibleAtBeginningOfMagicChartBuildForDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2;
 - (Class)layoutClass;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned long long)arg3;
+- (long long)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (unsigned long long)multiDataSetIndex;

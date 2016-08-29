@@ -18,6 +18,7 @@
     bool  _onlyKeepVisibleContentInHierarchy;
     NSString * _sectionID;
     bool  _showingAsPressed;
+    NSArray * _viewsToDisappearWhenHighlighted;
 }
 
 @property (nonatomic, readonly) UIInterfaceAction *action;
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (nonatomic, retain) NSString *sectionID;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *viewsToDisappearWhenHighlighted;
 @property (nonatomic, readonly) UIInterfaceActionVisualStyle *visualStyle;
 
 - (void).cxx_destruct;
@@ -103,10 +105,12 @@
 - (void)setHighlighted:(bool)arg1;
 - (void)setOnlyKeepVisibleContentInHierarchy:(bool)arg1;
 - (void)setSectionID:(id)arg1;
+- (void)setViewsToDisappearWhenHighlighted:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 - (void)updateContentsInsertedIntoHierarchy;
+- (id)viewsToDisappearWhenHighlighted;
 - (id)visualStyle;
 
 @end

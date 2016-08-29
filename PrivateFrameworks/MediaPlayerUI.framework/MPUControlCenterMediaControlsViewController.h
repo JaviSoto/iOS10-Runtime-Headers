@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUControlCenterMediaControlsViewController : MPUMediaRemoteViewController <CCUIControlCenterPageContentProviding, MPAVRoutingControllerDelegate, MPUControlCenterMediaControlsViewDelegate> {
+@interface MPUControlCenterMediaControlsViewController : MPUMediaRemoteViewController <CCUIControlCenterPageContentProviding, MPAVRoutingControllerDelegate, MPAVRoutingViewControllerDelegate, MPUControlCenterMediaControlsViewDelegate> {
+    bool  _controlCenterPageIsVisible;
+    MPWeakTimer * _controlCenterPageVisibilityUpdateTimer;
     <CCUIControlCenterPageContentViewControllerDelegate> * _delegate;
     MPAVRoutingController * _routingController;
     MPAVRoutingViewController * _routingViewController;
     bool  _routingViewVisible;
+    bool  _viewHasAppeared;
 }
 
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
@@ -28,7 +31,7 @@
 - (void)_reloadCurrentLayoutStyle;
 - (void)_reloadRoutingControllerDiscoveryMode;
 - (void)_setRoutingViewControllerVisible:(bool)arg1 animated:(bool)arg2;
-- (bool)_viewIsVisible;
+- (void)_setupControlCenterPageVisibilityUpdateTimer;
 - (id)allowedTransportControlTypes;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterDidFinishTransition;
@@ -43,6 +46,7 @@
 - (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
 - (id)remoteControlInterfaceIdentifier;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)transportControlsView:(id)arg1 buttonForControlType:(long long)arg2;
 - (struct CGSize { double x1; double x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { double x1; double x2; })arg2;

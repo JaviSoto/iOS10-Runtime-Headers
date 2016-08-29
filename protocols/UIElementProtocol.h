@@ -7,6 +7,7 @@
 
 + (void)applyElementAttributeCacheScheme:(int)arg1;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
++ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 forApplication:(struct __AXUIElement { }*)arg2 contextId:(unsigned int)arg3;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 hitTestOrientation:(int)arg2;
 
 - (NSArray *)arrayWithAXAttribute:(int)arg1;

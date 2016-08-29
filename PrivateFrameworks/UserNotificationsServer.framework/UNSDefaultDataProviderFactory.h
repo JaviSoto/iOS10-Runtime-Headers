@@ -32,6 +32,7 @@
 - (void)_queue_applicationsDidUninstall:(id)arg1;
 - (void)_queue_createDataProviderWithBundleIdentifier:(id)arg1;
 - (void)_queue_createDataProviderWithBundleIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_queue_createNewDefaultDataProviders;
 - (id)_queue_dataProviderForBundleIdentifier:(id)arg1;
 - (void)_queue_enableNotifications:(bool)arg1 withAuthorizationOptions:(unsigned long long)arg2 forBundleIdentifier:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_queue_getAuthorizedBundleIdentifiersForBundleIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -39,8 +40,6 @@
 - (void)_queue_getSectionInfoForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_queue_hasBundleIdentifierRequestedAuthorization:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_queue_notificationSettingsDidChange:(id)arg1;
-- (void)_queue_reloadDataProviders;
-- (void)_queue_reloadDataProviders:(id)arg1;
 - (void)_queue_removeDataProviderWithBundleIdentifier:(id)arg1;
 - (void)_queue_removeObserver:(id)arg1;
 - (void)_queue_setSectionInfo:(id)arg1 forBundleIdentifier:(id)arg2;

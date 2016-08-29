@@ -9,7 +9,7 @@
     AAGrandSlamSigner * _grandSlamSigner;
     bool  _isShowingSpinner;
     UINavigationItem * _navigationItemShowingSpinner;
-    UIBarButtonItem * _originalRightBarButtonItem;
+    NSArray * _originalRightBarButtonItems;
     RemoteUIController * _remoteUIController;
     UIActivityIndicatorView * _spinnerView;
     NSMutableURLRequest * _startRemoteUIRequest;
@@ -38,7 +38,7 @@
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
 - (id)initWithGrandSlamSigner:(id)arg1 familyEligibilityResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)remoteUIController:(id)arg1 willLoadRequest:(id)arg2;
+- (bool)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(bool)arg3;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
 - (bool)shouldAutorotate;

@@ -22,6 +22,8 @@
 @property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property (nonatomic, retain) NSArray *timeSkews;
 
++ (int)maximumNumberOfConsecutiveDroppedFrames;
+
 - (long long)_offsetIndexFromDiscontinuityForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (bool)containsVideoBufferTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)dealloc;

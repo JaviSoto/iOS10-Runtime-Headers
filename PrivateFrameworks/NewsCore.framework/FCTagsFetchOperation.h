@@ -4,25 +4,40 @@
 
 @interface FCTagsFetchOperation : FCMultiStepFetchOperation {
     FCAssetManager * _assetManager;
+    unsigned long long  _childrenCachePolicy;
+    double  _childrenMaximumCachedAge;
     <FCTagsFetchOperationDelegate> * _delegate;
     FCHeldRecords * _heldChildTagRecords;
     FCHeldRecords * _heldTagRecords;
     bool  _includeChildren;
+    bool  _overrideChildrenCachePolicy;
+    bool  _overrideParentCachePolicy;
+    unsigned long long  _parentCachePolicy;
+    double  _parentMaximumCachedAge;
     NSArray * _tagIDs;
     FCTagRecordSource * _tagRecordSource;
 }
 
 @property (nonatomic, retain) FCAssetManager *assetManager;
+@property unsigned long long childrenCachePolicy;
+@property double childrenMaximumCachedAge;
 @property (nonatomic) <FCTagsFetchOperationDelegate> *delegate;
 @property (nonatomic, retain) FCHeldRecords *heldChildTagRecords;
 @property (nonatomic, retain) FCHeldRecords *heldTagRecords;
 @property (nonatomic) bool includeChildren;
+@property bool overrideChildrenCachePolicy;
+@property bool overrideParentCachePolicy;
+@property unsigned long long parentCachePolicy;
+@property double parentMaximumCachedAge;
 @property (nonatomic, copy) NSArray *tagIDs;
 @property (nonatomic, retain) FCTagRecordSource *tagRecordSource;
 
 - (void).cxx_destruct;
 - (id)assetManager;
+- (unsigned long long)childrenCachePolicy;
+- (double)childrenMaximumCachedAge;
 - (id)completeFetchOperation;
+- (void)customizeChildOperation:(id)arg1 forFetchStep:(SEL)arg2;
 - (id)delegate;
 - (id)fetchChildTagRecordsWithCompletion:(id /* block */)arg1;
 - (id)fetchTagRecordsWithCompletion:(id /* block */)arg1;
@@ -30,11 +45,21 @@
 - (id)heldTagRecords;
 - (bool)includeChildren;
 - (id)initWithTagIDs:(id)arg1 tagRecordSource:(id)arg2 assetManager:(id)arg3 delegate:(id)arg4;
+- (bool)overrideChildrenCachePolicy;
+- (bool)overrideParentCachePolicy;
+- (unsigned long long)parentCachePolicy;
+- (double)parentMaximumCachedAge;
 - (void)setAssetManager:(id)arg1;
+- (void)setChildrenCachePolicy:(unsigned long long)arg1;
+- (void)setChildrenMaximumCachedAge:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeldChildTagRecords:(id)arg1;
 - (void)setHeldTagRecords:(id)arg1;
 - (void)setIncludeChildren:(bool)arg1;
+- (void)setOverrideChildrenCachePolicy:(bool)arg1;
+- (void)setOverrideParentCachePolicy:(bool)arg1;
+- (void)setParentCachePolicy:(unsigned long long)arg1;
+- (void)setParentMaximumCachedAge:(double)arg1;
 - (void)setTagIDs:(id)arg1;
 - (void)setTagRecordSource:(id)arg1;
 - (id)tagIDs;

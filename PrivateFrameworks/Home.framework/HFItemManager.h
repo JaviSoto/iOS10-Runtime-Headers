@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFItemManager : NSObject <HFAccessoryObserver, HFHomeManagerObserver, HFHomeObserver, HFTemperatureUnitObserver> {
+@interface HFItemManager : NSObject <HFAccessoryObserver, HFHomeManagerObserver, HFHomeObserver, HFResidentDeviceObserver, HFTemperatureUnitObserver> {
     <HFItemManagerDelegate> * _delegate;
     NSMutableSet * _disableUpdateReasons;
     NAFuture * _firstFastUpdateFuture;
@@ -51,10 +51,12 @@
 - (void)_didUpdateResultsForItem:(id)arg1;
 - (id)_directItemDependenciesForHomeKitObjects:(id)arg1 class:(Class)arg2;
 - (id)_footerTitleForSectionWithIdentifier:(id)arg1;
+- (void)_handleAssertionFailureForComparatorMovingUnchangedItemsFrom:(id)arg1 to:(id)arg2;
 - (id)_homeFuture;
 - (id)_identifierForSection:(unsigned long long)arg1;
 - (id)_indexPathForItem:(id)arg1 inDisplayedItemsArray:(id)arg2;
 - (id)_internalItems;
+- (id)_itemForSorting;
 - (id)_itemProviders;
 - (id)_itemsOfClass:(Class)arg1 inItems:(id)arg2 allowTransformedItems:(bool)arg3;
 - (id)_itemsToHideInSet:(id)arg1;
@@ -115,8 +117,10 @@
 - (void)_willUpdateSections;
 - (void)accessory:(id)arg1 didUpdateApplicationDataForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateHasAuthorizationDataForCharacteristic:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
 - (void)accessory:(id)arg1 service:(id)arg2 didUpdateValueForCharacteristic:(id)arg3;
+- (void)accessoryDidUpdateAdditionalSetupRequired:(id)arg1;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
 - (void)accessoryDidUpdateName:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
@@ -186,8 +190,10 @@
 - (void)homeManager:(id)arg1 didAddHome:(id)arg2;
 - (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
 - (void)homeManager:(id)arg1 didUpdateStateForIncomingInvitations:(id)arg2;
+- (void)homeManager:(id)arg1 residentProvisioningStatusChanged:(unsigned long long)arg2;
 - (void)homeManagerDidFinishInitialDatabaseLoad:(id)arg1;
 - (void)homeManagerDidFinishUnknownChange:(id)arg1;
+- (void)homeManagerDidUpdateCurrentHome:(id)arg1;
 - (void)homeManagerDidUpdatePrimaryHome:(id)arg1;
 - (id)indexPathForItem:(id)arg1;
 - (id)init;
@@ -200,6 +206,10 @@
 - (void)recalculateVisibilityAndSortAllItems;
 - (id)reloadAndUpdateAllItemsFromSenderSelector:(SEL)arg1;
 - (id)reloadAndUpdateItemsForProviders:(id)arg1 senderSelector:(SEL)arg2;
+- (void)residentDevice:(id)arg1 didUpdateCapabilities:(unsigned long long)arg2;
+- (void)residentDevice:(id)arg1 didUpdateEnabled:(bool)arg2;
+- (void)residentDevice:(id)arg1 didUpdateName:(id)arg2;
+- (void)residentDevice:(id)arg1 didUpdateStatus:(unsigned long long)arg2;
 - (unsigned long long)sectionIndexForDisplayedSectionIdentifier:(id)arg1;
 - (id)sectionInfos;
 - (void)setDelegate:(id)arg1;

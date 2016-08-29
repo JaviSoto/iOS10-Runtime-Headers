@@ -3,22 +3,19 @@
  */
 
 @interface VTLowPowerModeMonitor : VTEventMonitor {
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
+    unsigned char  _powerMode;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
+- (unsigned char)_checkPowerMode;
 - (void)_didReceiveLowPowerModeChanged;
 - (void)_didReceiveLowPowerModeChangedInQueue:(unsigned char)arg1;
-- (void)_startMonitoring;
+- (void)_notifyObserver:(id)arg1 withPowerMode:(unsigned char)arg2;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (bool)isLowPowerMode;
 - (unsigned char)powerMode;
-- (void)removeObserver:(id)arg1;
 
 @end

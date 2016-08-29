@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetAvailableRestaurantReservationBookingsIntentResponse : INIntentResponse {
+@interface INGetAvailableRestaurantReservationBookingsIntentResponse : INIntentResponse <INGetAvailableRestaurantReservationBookingsIntentResponseExport> {
     NSArray * _availableBookings;
     NSString * _localizedBookingAdvisementText;
     NSString * _localizedRestaurantDescriptionText;
@@ -11,8 +11,12 @@
 
 @property (nonatomic, readonly) NSArray *availableBookings;
 @property (nonatomic, readonly) long long code;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *localizedBookingAdvisementText;
 @property (nonatomic, copy) NSString *localizedRestaurantDescriptionText;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) INTermsAndConditions *termsAndConditions;
 
 + (bool)supportsSecureCoding;

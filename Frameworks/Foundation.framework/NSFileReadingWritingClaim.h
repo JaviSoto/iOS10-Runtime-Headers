@@ -32,5 +32,6 @@
 - (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)resolveURLsThenMaybeContinueInvokingClaimer:(id /* block */)arg1;
+- (bool)shouldCancelInsteadOfWaiting;
 
 @end

@@ -19,11 +19,11 @@
     bool  _supportsDisplayingFaceTimeAudioCalls;
     bool  _supportsDisplayingFaceTimeVideoCalls;
     bool  _supportsDisplayingTelephonyCalls;
-    bool  _supportsOutgoingFaceTimeAudioRelayCalling;
-    bool  _supportsOutgoingFaceTimeVideoRelayCalling;
-    bool  _supportsOutgoingTelephonyRelayCalling;
+    bool  _supportsFaceTimeAudioRelayCalling;
+    bool  _supportsFaceTimeVideoRelayCalling;
     bool  _supportsRelayCalling;
     bool  _supportsSimultaneousVoiceAndData;
+    bool  _supportsTelephonyRelayCalling;
     bool  _supportsThumperCalling;
     bool  _telephonyDevice;
     bool  _thumperCallingAllowedForCurrentDevice;
@@ -36,7 +36,8 @@
     bool  _voLTECallingCurrentlyAvailable;
     TUCTCapabilityInfo * _wiFiCallingCapabilityInfo;
     bool  _wiFiCallingCurrentlyAvailable;
-    bool  _wiFiEmergencyCallingAllowed;
+    bool  _wiFiEmergencyCallingAvailable;
+    bool  _wiFiEmergencyCallingSupported;
 }
 
 @property (nonatomic) bool accountsMatchForSecondaryCalling;
@@ -61,11 +62,11 @@
 @property (nonatomic) bool supportsDisplayingFaceTimeAudioCalls;
 @property (nonatomic) bool supportsDisplayingFaceTimeVideoCalls;
 @property (nonatomic) bool supportsDisplayingTelephonyCalls;
-@property (nonatomic) bool supportsOutgoingFaceTimeAudioRelayCalling;
-@property (nonatomic) bool supportsOutgoingFaceTimeVideoRelayCalling;
-@property (nonatomic) bool supportsOutgoingTelephonyRelayCalling;
+@property (nonatomic) bool supportsFaceTimeAudioRelayCalling;
+@property (nonatomic) bool supportsFaceTimeVideoRelayCalling;
 @property (nonatomic) bool supportsRelayCalling;
 @property (nonatomic) bool supportsSimultaneousVoiceAndData;
+@property (nonatomic) bool supportsTelephonyRelayCalling;
 @property (nonatomic) bool supportsThumperCalling;
 @property (getter=isTelephonyDevice, nonatomic) bool telephonyDevice;
 @property (getter=isThumperCallingAllowedForCurrentDevice, nonatomic) bool thumperCallingAllowedForCurrentDevice;
@@ -78,7 +79,8 @@
 @property (getter=isVoLTECallingCurrentlyAvailable, nonatomic) bool voLTECallingCurrentlyAvailable;
 @property (nonatomic, copy) TUCTCapabilityInfo *wiFiCallingCapabilityInfo;
 @property (getter=isWiFiCallingCurrentlyAvailable, nonatomic) bool wiFiCallingCurrentlyAvailable;
-@property (getter=isWiFiEmergencyCallingAllowed, nonatomic) bool wiFiEmergencyCallingAllowed;
+@property (getter=isWiFiEmergencyCallingAvailable, nonatomic) bool wiFiEmergencyCallingAvailable;
+@property (getter=isWiFiEmergencyCallingSupported, nonatomic) bool wiFiEmergencyCallingSupported;
 
 + (id)allowedCapabilityInformationClasses;
 + (bool)supportsSecureCoding;
@@ -105,7 +107,8 @@
 - (bool)isThumperCallingEnabled;
 - (bool)isVoLTECallingCurrentlyAvailable;
 - (bool)isWiFiCallingCurrentlyAvailable;
-- (bool)isWiFiEmergencyCallingAllowed;
+- (bool)isWiFiEmergencyCallingAvailable;
+- (bool)isWiFiEmergencyCallingSupported;
 - (id)outgoingRelayCallerID;
 - (bool)pairedDeviceExists;
 - (id)publiclyAccessibleCopy;
@@ -128,11 +131,11 @@
 - (void)setSupportsDisplayingFaceTimeAudioCalls:(bool)arg1;
 - (void)setSupportsDisplayingFaceTimeVideoCalls:(bool)arg1;
 - (void)setSupportsDisplayingTelephonyCalls:(bool)arg1;
-- (void)setSupportsOutgoingFaceTimeAudioRelayCalling:(bool)arg1;
-- (void)setSupportsOutgoingFaceTimeVideoRelayCalling:(bool)arg1;
-- (void)setSupportsOutgoingTelephonyRelayCalling:(bool)arg1;
+- (void)setSupportsFaceTimeAudioRelayCalling:(bool)arg1;
+- (void)setSupportsFaceTimeVideoRelayCalling:(bool)arg1;
 - (void)setSupportsRelayCalling:(bool)arg1;
 - (void)setSupportsSimultaneousVoiceAndData:(bool)arg1;
+- (void)setSupportsTelephonyRelayCalling:(bool)arg1;
 - (void)setSupportsThumperCalling:(bool)arg1;
 - (void)setTelephonyDevice:(bool)arg1;
 - (void)setThumperCallingAllowedForCurrentDevice:(bool)arg1;
@@ -145,16 +148,17 @@
 - (void)setVoLTECallingCurrentlyAvailable:(bool)arg1;
 - (void)setWiFiCallingCapabilityInfo:(id)arg1;
 - (void)setWiFiCallingCurrentlyAvailable:(bool)arg1;
-- (void)setWiFiEmergencyCallingAllowed:(bool)arg1;
+- (void)setWiFiEmergencyCallingAvailable:(bool)arg1;
+- (void)setWiFiEmergencyCallingSupported:(bool)arg1;
 - (bool)supportsCellularData;
 - (bool)supportsDisplayingFaceTimeAudioCalls;
 - (bool)supportsDisplayingFaceTimeVideoCalls;
 - (bool)supportsDisplayingTelephonyCalls;
-- (bool)supportsOutgoingFaceTimeAudioRelayCalling;
-- (bool)supportsOutgoingFaceTimeVideoRelayCalling;
-- (bool)supportsOutgoingTelephonyRelayCalling;
+- (bool)supportsFaceTimeAudioRelayCalling;
+- (bool)supportsFaceTimeVideoRelayCalling;
 - (bool)supportsRelayCalling;
 - (bool)supportsSimultaneousVoiceAndData;
+- (bool)supportsTelephonyRelayCalling;
 - (bool)supportsThumperCalling;
 - (id)thumperCallingAllowedSecondaryDeviceIDs;
 - (id)thumperCallingCapabilityInfo;

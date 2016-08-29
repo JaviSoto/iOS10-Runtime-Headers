@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> * _harvestQueue;
     SGSqlEntityStore * _harvestStore;
     SGSuggestHistory * _history;
+    NSOperationQueue * _messageHarvestQueue;
     SGQueryPredictions * _queryPredictions;
     bool  _xpcActivity;
 }
@@ -64,6 +65,7 @@
 - (id)cachedResultForKey:(id)arg1 generateResult:(id /* block */)arg2 validateResults:(id /* block */)arg3;
 - (void)clearCachesFully:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)clearContactAggregator;
+- (void)clearContactAggregatorConversation:(id)arg1;
 - (void)cnContactMatchesForRecordId:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)cnContactMatchesForRecordIds:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)confirmContact:(id)arg1 completion:(id /* block */)arg2;
@@ -112,6 +114,7 @@
 - (void)eventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned long long)arg4 options:(unsigned int)arg5 withCompletion:(id /* block */)arg6;
 - (id)fetchEKEventForPseudoEventBySimilarTitleAndStartTime:(id)arg1;
 - (id)fetchEKEventForPseudoNLEvent:(id)arg1 entityTitle:(id)arg2;
+- (id)filterRealtimeEvents:(id)arg1;
 - (void)fullDownloadRequestBatch:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)harvestedSuggestionsFromMessage:(id)arg1 bundleIdentifier:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)harvestedSuggestionsFromMessages:(id)arg1 bundleIdentifier:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
@@ -156,13 +159,14 @@
 - (void)sleepWithCompletion:(id /* block */)arg1;
 - (id)storageContactFromRecordId:(id)arg1;
 - (void)suggestionsFromEmailContent:(id)arg1 headers:(id)arg2 source:(id)arg3 options:(unsigned long long)arg4 withCompletion:(id /* block */)arg5;
+- (void)suggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionDelivery:(unsigned long long)arg3 completionHandler:(id /* block */)arg4 fullCompletionHandler:(id /* block */)arg5;
 - (void)suggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)suggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 fullCompletionHandler:(id /* block */)arg3;
 - (void)suggestionsFromRFC822Data:(id)arg1 source:(id)arg2 options:(unsigned long long)arg3 withCompletion:(id /* block */)arg4;
 - (void)suggestionsFromSearchableItem:(id)arg1 options:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
 - (void)suspendFrontfillForTesting;
 - (void)updateMessages:(id)arg1 state:(unsigned long long)arg2 completion:(id /* block */)arg3;
-- (void)waitForEventWithIdentifier:(id)arg1 toAppearInEventStoreWithCompletion:(id /* block */)arg2;
+- (void)waitForEventWithIdentifier:(id)arg1 toAppearInEventStoreWithLastModificationDate:(id)arg2 completion:(id /* block */)arg3;
 - (void)waitForXpcActivityQueue;
 - (void)waitUntilFrontfillFinishedForTesting;
 - (id)xpcActivity;

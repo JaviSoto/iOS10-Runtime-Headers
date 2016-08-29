@@ -35,8 +35,11 @@
 - (id)_validExperts;
 - (void)addServer:(id)arg1;
 - (void)dealloc;
+- (void)decDeviceIdWithReply:(id /* block */)arg1;
 - (void)didReceiveUserAction:(id)arg1;
+- (bool)feedbackNewerThan:(double)arg1;
 - (id)init;
+- (bool)is2GBOrLargerDevice;
 - (id)predictionFilter;
 - (void)predictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 criteria:(id)arg3 limit:(unsigned long long)arg4 backgroundQuery:(bool)arg5 providesFeedback:(bool)arg6 reply:(id /* block */)arg7;
 - (void)predictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 criteria:(id)arg3 limit:(unsigned long long)arg4 providesFeedback:(bool)arg5 reply:(id /* block */)arg6;

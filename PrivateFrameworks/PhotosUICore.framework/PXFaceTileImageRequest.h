@@ -40,6 +40,7 @@
         } targetSize; 
         unsigned long long cropFactor; 
         bool round; 
+        bool cropBounded; 
     }  _params;
     int  _requestID;
 }
@@ -47,13 +48,13 @@
 @property (nonatomic, retain) PHAsset *assetContainingFace;
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (getter=isCanceled) bool canceled;
-@property (nonatomic, readonly) PHFace *face;
+@property (nonatomic, retain) PHFace *face;
 @property int imageManagerRequestID;
 @property (nonatomic) struct CGSize { double x1; double x2; } lastDeliveredSize;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedActualFaceRect;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedFaceCropRect;
 @property (nonatomic, retain) PHObject *originalRequestObject;
-@property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; } params;
+@property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; } params;
 @property (nonatomic, readonly) int requestID;
 
 - (void).cxx_destruct;
@@ -62,16 +63,17 @@
 - (void)cancel;
 - (id)face;
 - (int)imageManagerRequestID;
-- (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; })arg3;
+- (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; })arg3;
 - (bool)isCanceled;
 - (struct CGSize { double x1; double x2; })lastDeliveredSize;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedActualFaceRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedFaceCropRect;
 - (id)originalRequestObject;
-- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; })params;
+- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; })params;
 - (int)requestID;
 - (void)setAssetContainingFace:(id)arg1;
 - (void)setCanceled:(bool)arg1;
+- (void)setFace:(id)arg1;
 - (void)setImageManagerRequestID:(int)arg1;
 - (void)setLastDeliveredSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setNormalizedActualFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

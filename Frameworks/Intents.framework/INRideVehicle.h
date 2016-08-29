@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideVehicle : NSObject <INCacheableContainer, NSCopying, NSSecureCoding> {
+@interface INRideVehicle : NSObject <INCacheableContainer, INRideVehicleExport, NSCopying, NSSecureCoding> {
     CLLocation * _location;
     NSString * _manufacturer;
     INImage * _mapAnnotationImage;

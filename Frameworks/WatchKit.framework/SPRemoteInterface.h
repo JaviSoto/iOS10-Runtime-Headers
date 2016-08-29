@@ -111,6 +111,7 @@
 - (void)applicationDidFinishConnecting:(id)arg1;
 - (void)applicationDidReceiveNotification:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)applicationDidTerminate:(id)arg1;
+- (void)applicationHandleWatchTaskKeys:(id)arg1 returnToPrimaryUI:(bool)arg2 visibleVCID:(id)arg3 clientIdentifier:(id)arg4;
 - (void)applicationIsStillActive;
 - (void)applicationWillResignActive:(id)arg1;
 - (id /* block */)audioRecorderControllerCompletion;
@@ -155,6 +156,7 @@
 - (bool)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
 - (id)openParentRequests;
 - (void)openSystemURL:(id)arg1;
+- (void)performAfterApplicationDidFinishLaunching:(id /* block */)arg1;
 - (void)preferredContentSizeCategory:(id)arg1;
 - (void)receiveData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveDataFromApplication:(id)arg1 fromIdentifier:(id)arg2;

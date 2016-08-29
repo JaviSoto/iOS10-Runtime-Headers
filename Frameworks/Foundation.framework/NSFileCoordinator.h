@@ -58,7 +58,7 @@
 - (void)__coordinateWritingItemAtURL:(id)arg1 options:(unsigned long long)arg2 purposeID:(id)arg3 byAccessor:(id /* block */)arg4;
 - (void)__coordinateWritingItemAtURL:(id)arg1 options:(unsigned long long)arg2 writingItemAtURL:(id)arg3 options:(unsigned long long)arg4 purposeID:(id)arg5 byAccessor:(id /* block */)arg6;
 - (void)__prepareForReadingItemsAtURLs:(id)arg1 options:(unsigned long long)arg2 writingItemsAtURLs:(id)arg3 options:(unsigned long long)arg4 byAccessor:(id /* block */)arg5;
-- (void)_blockOnAccessClaim:(id)arg1;
+- (void)_blockOnAccessClaim:(id)arg1 withAccessArbiter:(id)arg2;
 - (void)_coordinateAccessWithIntents:(id)arg1 queue:(id)arg2 byAccessor:(id /* block */)arg3;
 - (void)_coordinateReadingItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
 - (void)_coordinateReadingItemAtURL:(id)arg1 options:(unsigned long long)arg2 writingItemAtURL:(id)arg3 options:(unsigned long long)arg4 error:(id*)arg5 byAccessor:(id /* block */)arg6;
@@ -66,7 +66,6 @@
 - (void)_coordinateWritingItemAtURL:(id)arg1 options:(unsigned long long)arg2 writingItemAtURL:(id)arg3 options:(unsigned long long)arg4 error:(id*)arg5 byAccessor:(id /* block */)arg6;
 - (void)_didEndWrite:(id)arg1;
 - (void)_forgetAccessClaimForID:(id)arg1;
-- (void)_invokeAccessor:(id /* block */)arg1 orDont:(bool)arg2 andRelinquishAccessClaim:(id)arg3;
 - (void)_invokeAccessor:(id /* block */)arg1 thenCompletionHandler:(id /* block */)arg2;
 - (void)_itemAtURL:(id)arg1 didMoveToURL:(id)arg2;
 - (void)_itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
@@ -79,6 +78,7 @@
 - (void)_setPurposeIdentifier:(id)arg1;
 - (void)_ubiquityDidChangeForItemAtURL:(id)arg1;
 - (id)_willStartWriteWithIntents:(id)arg1 async:(bool)arg2;
+- (void)_withAccessArbiter:(id)arg1 invokeAccessor:(id /* block */)arg2 orDont:(bool)arg3 andRelinquishAccessClaim:(id)arg4;
 - (void)cancel;
 - (void)coordinateAccessWithIntents:(id)arg1 queue:(id)arg2 byAccessor:(id /* block */)arg3;
 - (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;

@@ -9,6 +9,7 @@
     NSXPCConnection * _esConnection;
     bool  _hasReceivedLocalSpeechRecognized;
     bool  _hasReceivedServerSpeechRecognized;
+    bool  _hasRecognizedAnything;
     NSArray * _localPhrases;
     NSArray * _localUtterances;
     NSObject<OS_dispatch_queue> * _queue;
@@ -17,14 +18,12 @@
     NSString * _refId;
     NSArray * _serverPhrases;
     NSArray * _serverUtterances;
-    NSString * _siriLanguage;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <SiriCoreLocalSpeechRecognizerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, copy) NSString *siriLanguage;
 @property (readonly) Class superclass;
 
 + (id)speechProfileDataLastModifiedDataForLanguage:(id)arg1;
@@ -36,6 +35,7 @@
 - (void)_resetCombiner;
 - (id)_service;
 - (id)_serviceWithFunctionName:(id)arg1 errorHandler:(id /* block */)arg2;
+- (void)_writeDESRecord;
 - (void)addAudioPacket:(id)arg1;
 - (void)combineWithLocalPhrases:(id)arg1 utterances:(id)arg2 completion:(id /* block */)arg3;
 - (void)combineWithServerPhrases:(id)arg1 utterances:(id)arg2 refId:(id)arg3 completion:(id /* block */)arg4;
@@ -49,8 +49,6 @@
 - (id)initWithDelegate:(id)arg1;
 - (void)invalidate;
 - (void)runAdaptationRecipeEvaluation:(id)arg1 localSpeechDESRecord:(id)arg2 completion:(id /* block */)arg3;
-- (void)setSiriLanguage:(id)arg1;
-- (id)siriLanguage;
 - (oneway void)speechServiceDidFinishRecognitionWithError:(id)arg1;
 - (oneway void)speechServiceDidProcessAudioDuration:(double)arg1;
 - (oneway void)speechServiceDidRecognizePhrases:(id)arg1 utterances:(id)arg2;

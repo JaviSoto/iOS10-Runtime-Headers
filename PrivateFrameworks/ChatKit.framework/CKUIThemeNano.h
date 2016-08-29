@@ -20,6 +20,7 @@
 - (id)notificationSubtitleColor;
 - (id)progressBarTrackTintColor;
 - (id)transcriptBackgroundColor;
+- (id)transcriptBigEmojiColor;
 - (id)transcriptDeemphasizedTextColor;
 - (id)transcriptTextColor;
 

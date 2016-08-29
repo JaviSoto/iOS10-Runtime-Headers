@@ -6,7 +6,7 @@
     NSArray * _chromeConstraints;
     UIView * _contentView;
     NSArray * _contentViewConstraints;
-    UIButton * _homeButton;
+    CCUIControlCenterButton * _homeButton;
     long long  _layoutStyle;
     CCUIControlCenterButton * _pageSwitchButton;
     UILabel * _titleLabel;
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSArray *chromeConstraints;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, retain) NSArray *contentViewConstraints;
-@property (nonatomic, readonly) UIButton *homeButton;
+@property (nonatomic, readonly) CCUIControlCenterButton *homeButton;
 @property (nonatomic) long long layoutStyle;
 @property (nonatomic, readonly) CCUIControlCenterButton *pageSwitchButton;
 @property (nonatomic, readonly) UILabel *titleLabel;

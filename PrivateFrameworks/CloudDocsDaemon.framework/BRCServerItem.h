@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) bool isLive;
 @property (nonatomic, readonly) bool isPackage;
 @property (nonatomic, readonly) bool isSymLink;
+@property (nonatomic, readonly) bool isZoneRoot;
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) BRCVersion *latestVersion;
 @property (nonatomic, readonly) NSString *originalName;
@@ -63,6 +64,7 @@
 - (bool)isLive;
 - (bool)isPackage;
 - (bool)isSymLink;
+- (bool)isZoneRoot;
 - (id)itemID;
 - (id)latestVersion;
 - (id)newLocalItemWithServerZone:(id)arg1 dbRowID:(unsigned long long)arg2;

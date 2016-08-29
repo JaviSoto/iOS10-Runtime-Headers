@@ -42,6 +42,7 @@
 + (bool)__shortStyle:(long long)arg1 isRestrictedForLocale:(id)arg2;
 + (bool)__shortStyle:(long long)arg1 isRestrictedForScript:(unsigned long long)arg2;
 + (bool)__shortStyleRestrictionExistsForComponents:(id)arg1 shortStyle:(long long)arg2;
++ (bool)__shouldReturnEmptyString;
 + (id)__stringValueForShortStyle:(long long)arg1;
 + (id)__stringValueForStyle:(long long)arg1;
 + (bool)__style:(long long)arg1 isRestrictedForLocale:(id)arg2;

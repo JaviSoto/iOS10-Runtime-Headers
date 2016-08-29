@@ -4,25 +4,27 @@
 
 @interface UpNextWidget.SmallElementsView : UIView {
     void maximumNumberOfElements;
-    void persistentConstraints;
+    void showUrlHandler;
     void stackedSmallViews;
     void summaryView;
+    void tapAction;
 }
 
-@property (nonatomic, readonly) UIView *forFirstBaselineLayout;
-@property (nonatomic, readonly) UIView *forLastBaselineLayout;
 @property (nonatomic) long long maximumNumberOfElements;
-
-+ (bool)requiresConstraintBasedLayout;
+@property (nonatomic, copy) id /* block */ showUrlHandler;
 
 - (id /* block */).cxx_destruct;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
+- (void)layoutSubviews;
 - (long long)maximumNumberOfElements;
 - (void)refreshWithEvents:(id)arg1 reminders:(id)arg2;
 - (void)setMaximumNumberOfElements:(long long)arg1;
-- (void)updateConstraints;
-- (id)viewForFirstBaselineLayout;
-- (id)viewForLastBaselineLayout;
+- (void)setShowUrlHandler:(id /* block */)arg1;
+- (id /* block */)showUrlHandler;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)tapped;
 
 @end

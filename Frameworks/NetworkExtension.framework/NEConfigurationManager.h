@@ -18,6 +18,7 @@
     bool  _hasVPNAPIEntitlement;
     NEHelper * _helper;
     bool  _isNEHelper;
+    bool  _isVPNPrivateAPI;
     bool  _isVPNPublicAPI;
     NSMutableDictionary * _loadedConfigurations;
     NSMutableDictionary * _loadedIndex;
@@ -41,6 +42,7 @@
 @property (readonly) NEHelper *helper;
 @property (copy) id /* block */ incomingMessageHandler;
 @property bool isNEHelper;
+@property bool isVPNPrivateAPI;
 @property bool isVPNPublicAPI;
 @property (retain) NSMutableDictionary *loadedConfigurations;
 @property (retain) NSMutableDictionary *loadedIndex;
@@ -92,6 +94,7 @@
 - (id)initWithPluginType:(id)arg1;
 - (id)initWithUserUUID:(id)arg1;
 - (bool)isNEHelper;
+- (bool)isVPNPrivateAPI;
 - (bool)isVPNPublicAPI;
 - (void)loadConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (void)loadConfigurations:(id)arg1 withFilter:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -115,8 +118,8 @@
 - (id)removeConfigurationFromDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2;
 - (bool)resetKeychainItemsAfterProtocolChange:(id)arg1 newConfiguration:(id)arg2;
 - (void)saveConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
-- (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (id)saveConfigurationToDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2 currentSignature:(id)arg3 userUUID:(id)arg4 notifyNow:(bool)arg5;
+- (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 isUpgrade:(bool)arg4 completionQueue:(id)arg5 completionHandler:(id /* block */)arg6;
+- (id)saveConfigurationToDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2 currentSignature:(id)arg3 userUUID:(id)arg4 notifyNow:(bool)arg5 isUpgrade:(bool)arg6;
 - (void)sendRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)setChangedHandler:(id /* block */)arg1;
 - (void)setChangedNotifyToken:(int)arg1;
@@ -132,6 +135,7 @@
 - (void)setHasVPNAPIEntitlement:(bool)arg1;
 - (void)setIncomingMessageHandler:(id /* block */)arg1;
 - (void)setIsNEHelper:(bool)arg1;
+- (void)setIsVPNPrivateAPI:(bool)arg1;
 - (void)setIsVPNPublicAPI:(bool)arg1;
 - (void)setLoadedConfigurations:(id)arg1;
 - (void)setLoadedIndex:(id)arg1;

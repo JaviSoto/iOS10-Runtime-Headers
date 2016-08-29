@@ -9,4 +9,8 @@
 - (void)resetTextAttributeUUIDString;
 - (NSString *)textAttributeUUIDString;
 
+@optional
+
+- (bool)supportsDeepCopyForUndo;
+
 @end

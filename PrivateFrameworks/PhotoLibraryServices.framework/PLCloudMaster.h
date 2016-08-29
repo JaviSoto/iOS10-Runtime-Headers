@@ -34,6 +34,7 @@
 - (id)cloudResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
 - (id)cloudResourcesForResourceType:(unsigned long long)arg1;
 - (id)cplResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
+- (void)deleteAllResourcesForAssetUuid:(id)arg1;
 - (id)description;
 - (unsigned long long)sizeOfOriginal;
 

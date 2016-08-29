@@ -5,7 +5,7 @@
 
 @required
 
-+ (MPPropertySet *)playEventRequestedProperties;
++ (MPPropertySet *)playEventRequestedPropertiesWithAdditionalProperties:(MPPropertySet *)arg1;
 
 - (MPModelPlayEvent *)playEvent;
 

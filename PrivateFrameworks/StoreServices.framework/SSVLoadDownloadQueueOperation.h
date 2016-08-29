@@ -14,7 +14,6 @@
     NSString * _requestIdentifier;
     SSURLRequestProperties * _requestProperties;
     NSString * _storeCorrelationID;
-    SSURLBag * _urlBag;
 }
 
 @property (retain) NSNumber *accountIdentifier;

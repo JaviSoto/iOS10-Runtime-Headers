@@ -3,6 +3,7 @@
  */
 
 @interface TPPageLayout : TSWPPageLayout <TPAttachmentLayoutParent, TSWPColumnMetrics, TSWPLayoutParent> {
+    NSMutableSet * _anchoredDrawableLayouts;
     bool  _childLayoutsValid;
     bool  _childTextLayoutsNeedInvalidationForExteriorWrap;
     unsigned int  _contentFlags;
@@ -20,7 +21,7 @@
 @property (nonatomic, readonly) bool allowsBody;
 @property (nonatomic, readonly) bool allowsFootnotes;
 @property (nonatomic, readonly) bool alwaysStartsNewTarget;
-@property (nonatomic, readonly) NSArray *anchoredDrawableLayouts;
+@property (nonatomic, readonly) NSSet *anchoredDrawableLayouts;
 @property (nonatomic, readonly) TPBodyLayout *bodyLayout;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bodyRect;
 @property (nonatomic, readonly) <NSFastEnumeration> *childTextLayoutsForExteriorWrap;
@@ -41,6 +42,7 @@
 - (void)addAttachmentLayout:(id)arg1;
 - (id)additionalDependenciesForChildLayout:(id)arg1;
 - (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (bool)allowIntersectionOfChildLayout:(id)arg1;
 - (bool)allowsBody;
 - (bool)allowsFootnotes;
 - (bool)allowsHeaderFooter;
@@ -71,6 +73,7 @@
 - (bool)headerFooterProviderValid;
 - (double)heightAvailableForFootnotes;
 - (void)inflateFootnotesInFootnoteContainer:(id)arg1;
+- (void)insertChild:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)invalidateBodyAndMarginLayouts;
 - (void)invalidateFootnoteContainers;
 - (void)invalidateFootnoteSeparatorLine;
@@ -94,6 +97,7 @@
 - (struct CGSize { double x1; double x2; })maximumFrameSizeForChild:(id)arg1;
 - (int)naturalAlignmentForTextLayout:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (void)p_addLayoutIfAttached:(id)arg1;
 - (void)p_addLayoutsForInfos:(id)arg1 toArray:(id)arg2;
 - (id)p_childLayoutInParentLayout:(id)arg1 forChildInfo:(id)arg2;
 - (id)p_existingChildLayoutForInfo:(id)arg1;
@@ -125,7 +129,9 @@
 - (bool)providesGuidesForChildLayouts;
 - (void)rebuildChildLayoutsOnNextValidationForcingTextLayout:(bool)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
+- (void)replaceChild:(id)arg1 with:(id)arg2;
 - (void)resetLayoutsForReinflation;
+- (void)setChildren:(id)arg1;
 - (void)setValidating:(bool)arg1;
 - (bool)shouldHeaderFooterBeVisible:(int)arg1;
 - (bool)shouldHeaderFooterBeVisibleForPageIndex:(unsigned long long)arg1;

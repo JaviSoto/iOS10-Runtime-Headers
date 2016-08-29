@@ -28,9 +28,11 @@
 - (id)initWithNavigationController:(id)arg1;
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3 fullyRealizedPreview:(id)arg4 rawPreview:(id)arg5 appendedVideoURL:(id)arg6;
+- (void)insertMessage:(id)arg1 appProxy:(id)arg2;
 - (void)insertRichLinkWithURL:(id)arg1 data:(id)arg2;
 - (bool)mimeType;
 - (void)registerForNotifications;
+- (void)sendComposition:(id)arg1;
 - (void)setCanEditRecipients:(bool)arg1;
 - (void)setForceMMS:(bool)arg1;
 - (void)setMimeType:(bool)arg1;

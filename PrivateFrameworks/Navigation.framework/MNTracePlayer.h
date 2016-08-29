@@ -10,6 +10,7 @@
     bool  _forceDirectionsResponsesFromTrace;
     bool  _isPaused;
     bool  _isPlaying;
+    MNLocation * _lastReportedLocation;
     MNTracePlayerTimelineStream * _locationStream;
     int  _mainTransportType;
     NSHashTable * _observers;

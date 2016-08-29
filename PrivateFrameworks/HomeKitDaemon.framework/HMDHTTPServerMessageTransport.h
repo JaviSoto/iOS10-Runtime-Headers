@@ -34,6 +34,7 @@
 - (void)_stopWithError:(id)arg1;
 - (void)addClientConnection:(id)arg1;
 - (id)clientConnections;
+- (void)confirmDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;

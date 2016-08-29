@@ -4,6 +4,7 @@
 
 @interface PHMemoryChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
     bool  _clientEntitled;
+    bool  _clientEntitledToMemoryMutation;
     NSString * _clientName;
     int  _clientProcessID;
     PHRelationshipChangeRequestHelper * _curatedAssetsHelper;
@@ -16,6 +17,7 @@
 
 @property (nonatomic) long long category;
 @property (getter=isClientEntitled, nonatomic, readonly) bool clientEntitled;
+@property (nonatomic, readonly) bool clientEntitledToMemoryMutation;
 @property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) int clientProcessID;
 @property (nonatomic, retain) NSDate *creationDate;
@@ -50,15 +52,17 @@
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
-+ (id)_preferredAttributesForMemoryCreationFromObject:(id)arg1 withSuccess:(bool)arg2 title:(id)arg3 subtitle:(id)arg4 error:(id)arg5;
++ (id)_preferredAttributesForMemoryCreationFromObject:(id)arg1 withSuccess:(bool)arg2 title:(id)arg3 subtitle:(id)arg4 error:(id)arg5 proposedAttributes:(id)arg6;
++ (bool)_shouldAcceptProposedAttributes:(id)arg1;
++ (long long)_titleFormatForProposedAttributes:(id)arg1;
 + (id)changeRequestForMemory:(id)arg1;
 + (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 assets:(id)arg5 curatedAssets:(id)arg6 keyAsset:(id)arg7;
 + (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 representativeAssets:(id)arg5 curatedAssets:(id)arg6 keyAsset:(id)arg7;
 + (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 subcategory:(long long)arg5 representativeAssets:(id)arg6 curatedAssets:(id)arg7 keyAsset:(id)arg8;
 + (void)deleteMemories:(id)arg1;
-+ (id)preferredAttributesForMemoryCreationFromAssetCollection:(id)arg1;
-+ (id)preferredAttributesForMemoryCreationFromCollectionList:(id)arg1;
-+ (id)preferredAttributesForMemoryCreationFromPeople:(id)arg1;
++ (id)preferredAttributesForMemoryCreationFromAssetCollection:(id)arg1 proposedAttributes:(id)arg2;
++ (id)preferredAttributesForMemoryCreationFromCollectionList:(id)arg1 proposedAttributes:(id)arg2;
++ (id)preferredAttributesForMemoryCreationFromPeople:(id)arg1 proposedAttributes:(id)arg2;
 + (id)validateMemoryTitle:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
@@ -70,6 +74,7 @@
 - (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (bool)canGenerateUUIDLocally;
 - (long long)category;
+- (bool)clientEntitledToMemoryMutation;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
@@ -81,7 +86,7 @@
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (bool)isClientEntitled;
 - (bool)isFavorite;
 - (bool)isMutated;

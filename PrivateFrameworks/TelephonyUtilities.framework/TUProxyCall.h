@@ -14,9 +14,7 @@
     NSString * _callUUID;
     NSString * _callerNameFromNetwork;
     long long  _cameraType;
-    bool  _conferenced;
     NSString * _contactIdentifier;
-    NSString * _destinationID;
     TUCallDisplayContext * _displayContext;
     TUCallProvider * _displayProvider;
     bool  _downlinkMuted;
@@ -24,6 +22,7 @@
     NSString * _endedErrorString;
     NSString * _endedReasonString;
     NSDictionary * _endedReasonUserInfo;
+    TUHandle * _handle;
     bool  _hostedOnCurrentDevice;
     bool  _isSendingAudio;
     bool  _isSendingVideo;
@@ -62,6 +61,7 @@
     }  _remoteVideoContentRect;
     NSMutableDictionary * _remoteVideoModeToLayer;
     double  _startTime;
+    bool  _thirdPartyVideo;
     int  _ttyType;
     bool  _uplinkMuted;
     bool  _usingBaseband;
@@ -82,17 +82,16 @@
 @property (nonatomic, copy) NSString *callUUID;
 @property (nonatomic, copy) NSString *callerNameFromNetwork;
 @property (nonatomic) long long cameraType;
-@property (getter=isConferenced, nonatomic) bool conferenced;
 @property (nonatomic, copy) NSString *contactIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) NSString *destinationID;
 @property (nonatomic, copy) TUCallDisplayContext *displayContext;
 @property (nonatomic, retain) TUCallProvider *displayProvider;
 @property (getter=isEmergencyCall, nonatomic) bool emergencyCall;
 @property (nonatomic, copy) NSString *endedErrorString;
 @property (nonatomic, copy) NSString *endedReasonString;
 @property (nonatomic, copy) NSDictionary *endedReasonUserInfo;
+@property (nonatomic, retain) TUHandle *handle;
 @property (readonly) unsigned long long hash;
 @property (getter=isHostedOnCurrentDevice, nonatomic) bool hostedOnCurrentDevice;
 @property (nonatomic) bool isSendingAudio;
@@ -143,7 +142,6 @@
 - (id)callerNameFromNetwork;
 - (long long)cameraType;
 - (id)contactIdentifier;
-- (id)destinationID;
 - (void)disconnectWithReason:(int)arg1;
 - (id)displayContext;
 - (id)displayProvider;
@@ -151,10 +149,10 @@
 - (id)endedErrorString;
 - (id)endedReasonString;
 - (id)endedReasonUserInfo;
+- (id)handle;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUniqueProxyIdentifier:(id)arg1 endpointOnCurrentDevice:(bool)arg2;
 - (bool)isBlocked;
-- (bool)isConferenced;
 - (bool)isDownlinkMuted;
 - (bool)isEmergencyCall;
 - (bool)isHostedOnCurrentDevice;
@@ -162,6 +160,7 @@
 - (bool)isOutgoing;
 - (bool)isSendingAudio;
 - (bool)isSendingVideo;
+- (bool)isThirdPartyVideo;
 - (bool)isUplinkMuted;
 - (bool)isUsingBaseband;
 - (bool)isVideo;
@@ -202,9 +201,7 @@
 - (void)setCallUUID:(id)arg1;
 - (void)setCallerNameFromNetwork:(id)arg1;
 - (void)setCameraType:(long long)arg1;
-- (void)setConferenced:(bool)arg1;
 - (void)setContactIdentifier:(id)arg1;
-- (void)setDestinationID:(id)arg1;
 - (void)setDisconnectedReason:(int)arg1;
 - (void)setDisplayContext:(id)arg1;
 - (void)setDisplayProvider:(id)arg1;
@@ -214,6 +211,7 @@
 - (void)setEndedReasonString:(id)arg1;
 - (void)setEndedReasonUserInfo:(id)arg1;
 - (void)setEndpointOnCurrentDevice:(bool)arg1;
+- (void)setHandle:(id)arg1;
 - (void)setHostedOnCurrentDevice:(bool)arg1;
 - (void)setIsSendingAudio:(bool)arg1;
 - (void)setIsSendingVideo:(bool)arg1;

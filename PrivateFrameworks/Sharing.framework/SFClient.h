@@ -27,6 +27,7 @@
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
+- (void)retriggerProximityPairing:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;

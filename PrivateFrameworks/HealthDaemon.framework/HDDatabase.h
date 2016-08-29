@@ -3,6 +3,8 @@
  */
 
 @interface HDDatabase : NSObject <HDContentProtectionObserver, HDDiagnosticObject, HDHealthDatabase, HDSQLiteDatabaseDelegate, HDSQLiteDatabasePoolDelegate> {
+    NSMutableSet * _activeDatabases;
+    NSConditionLock * _activeDatabasesLock;
     NSOperationQueue * _asynchronousOperationQueue;
     bool  _checkpointRequired;
     HDContentProtectionManager * _contentProtectionManager;
@@ -36,9 +38,10 @@
     NSLock * _schemaMigrationLock;
     bool  _shouldNotifyFirstUnlockObservers;
     NSString * _threadLocalActiveConnectionKey;
-    NSObject<OS_dispatch_queue> * _transactionQueue;
 }
 
+@property (nonatomic, retain) NSMutableSet *activeDatabases;
+@property (nonatomic, retain) NSConditionLock *activeDatabasesLock;
 @property (nonatomic, retain) NSOperationQueue *asynchronousOperationQueue;
 @property (nonatomic) bool checkpointRequired;
 @property (nonatomic, retain) HDContentProtectionManager *contentProtectionManager;
@@ -74,7 +77,6 @@
 @property (nonatomic) bool shouldNotifyFirstUnlockObservers;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *threadLocalActiveConnectionKey;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *transactionQueue;
 
 + (id)_databaseCorruptionDefaultKeyForDatabaseWithName:(id)arg1;
 + (id)allEntityClasses;
@@ -95,7 +97,6 @@
 - (bool)_applyOffsetTimeInterval:(double)arg1 database:(id)arg2 error:(id*)arg3;
 - (bool)_attachProtectedDatabaseIfNeededToDatabase:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)_canAttachProtectedDatabaseWithOptions:(unsigned long long)arg1 error:(id*)arg2;
-- (void)_clearJournalDirectory;
 - (id)_copyProtectedDataObservers;
 - (bool)_createDataTablesInDatabase:(id)arg1 entityClasses:(id)arg2 error:(id*)arg3;
 - (id)_createDatabaseConnection;
@@ -103,12 +104,12 @@
 - (long long)_createEntitiesInDatabase:(id)arg1 protectedEntities:(bool)arg2 error:(id*)arg3;
 - (id)_databaseForOptions:(unsigned long long)arg1 outerDatabase:(id)arg2 error:(id*)arg3;
 - (id)_databaseNameForProtectedDatabase:(bool)arg1;
-- (id)_destroyAndReopenDatabaseWithReason:(id)arg1;
-- (void)_destroyDatabaseWithReason:(id)arg1;
 - (void)_enableIncrementalAutoVacuumForDatabaseAtURL:(id)arg1;
 - (long long)_fileSizeForURL:(id)arg1 error:(id*)arg2;
-- (struct shared_ptr<health::DataStore> { struct DataStore {} *x1; struct __shared_weak_count {} *x2; })_highFrequencyDataStore;
+- (struct shared_ptr<health::DataStore> { struct DataStore {} *x1; struct __shared_weak_count {} *x2; })_highFrequencyDataStoreWithError:(id*)arg1;
 - (id)_highPriorityReaderDatabaseWithError:(id*)arg1;
+- (void)_invalidateAndWaitWithHandler:(id /* block */)arg1;
+- (bool)_isDatabaseValidWithError:(id*)arg1;
 - (id)_journalDirectoryPath;
 - (bool)_journalQueue_performJournalMergeAndCleanup;
 - (long long)_migrateDatabase:(id)arg1 fromUserVersion:(long long)arg2 protectedDatabase:(bool)arg3 error:(id*)arg4;
@@ -127,9 +128,10 @@
 - (void)_reportDatabaseSizes;
 - (bool)_runPostMigrationUpdatesWithDatabase:(id)arg1 error:(id*)arg2;
 - (void)_setActiveDatabase:(id)arg1;
-- (bool)_transactionQueue_performWithOptions:(unsigned long long)arg1 database:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4 inaccessibilityHandler:(id /* block */)arg5;
 - (id)_writerDatabaseWithError:(id*)arg1;
 - (bool)accessHighFrequencyDataStoreWithError:(id*)arg1 block:(id /* block */)arg2;
+- (id)activeDatabases;
+- (id)activeDatabasesLock;
 - (bool)addJournalEntries:(id)arg1 error:(id*)arg2;
 - (bool)addJournalEntry:(id)arg1 error:(id*)arg2;
 - (void)addProtectedDataObserver:(id)arg1;
@@ -140,10 +142,11 @@
 - (id)contentProtectionManager;
 - (void)contentProtectionStateChanged:(long long)arg1 previousState:(long long)arg2;
 - (id)databasePool;
-- (id)databaseSizeInBytes;
+- (void)databasePool:(id)arg1 didFlushDatabases:(id)arg2;
 - (id)databaseSizeInBytesExcludingHFD;
 - (id)diagnosticDescription;
 - (bool)didRunPostMigrationUpdates;
+- (id)dumpSchemaAndReturnError:(id*)arg1;
 - (id)extendedDatabaseTransactionForIdentifier:(id)arg1;
 - (id)extendedTransactions;
 - (void)finalizeExtendedTransactionForIdentifier:(id)arg1;
@@ -153,7 +156,7 @@
 - (id)homeDirectoryPath;
 - (id)initWithHomeDirectoryPath:(id)arg1 profile:(id)arg2;
 - (bool)integrityCheckInProgress;
-- (void)invalidate;
+- (void)invalidateAndObliterateWithReason:(id)arg1 preserveCopy:(bool)arg2;
 - (void)invalidateAndWait;
 - (int)invalidated;
 - (bool)isDataProtectedByFirstUnlockAvailable;
@@ -183,6 +186,8 @@
 - (id)protectedDatabaseURL;
 - (void)removeProtectedDataObserver:(id)arg1;
 - (id)schemaMigrationLock;
+- (void)setActiveDatabases:(id)arg1;
+- (void)setActiveDatabasesLock:(id)arg1;
 - (void)setAsynchronousOperationQueue:(id)arg1;
 - (void)setCheckpointRequired:(bool)arg1;
 - (void)setContentProtectionManager:(id)arg1;
@@ -210,10 +215,8 @@
 - (void)setSchemaMigrationLock:(id)arg1;
 - (void)setShouldNotifyFirstUnlockObservers:(bool)arg1;
 - (void)setThreadLocalActiveConnectionKey:(id)arg1;
-- (void)setTransactionQueue:(id)arg1;
 - (bool)shouldNotifyFirstUnlockObservers;
 - (id)threadLocalActiveConnectionKey;
-- (id)transactionQueue;
 - (id)virtualFilesystemModuleForDatabase:(id)arg1;
 
 @end

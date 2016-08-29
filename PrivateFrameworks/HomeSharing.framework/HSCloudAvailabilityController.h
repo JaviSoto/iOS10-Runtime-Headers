@@ -59,7 +59,13 @@
 - (bool)hasProperNetworkConditionsToShowCloudMedia;
 - (id)init;
 - (bool)isCellularDataRestricted;
+- (bool)isCellularDataRestrictedForMusic;
+- (bool)isCellularDataRestrictedForStoreApps;
+- (bool)isCellularDataRestrictedForVideos;
 - (bool)isNetworkReachable;
 - (bool)shouldProhibitActionsForCurrentNetworkConditions;
+- (bool)shouldProhibitMusicActionForCurrentNetworkConditions;
+- (bool)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
+- (bool)shouldProhibitVideosActionForCurrentNetworkConditions;
 
 @end

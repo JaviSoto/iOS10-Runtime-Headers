@@ -5,6 +5,7 @@
 @interface VCPMovieAnalyzer : NSObject {
     NSMutableDictionary * _analysis;
     AVAsset * _avAsset;
+    bool  _irisFlash;
     float  _irisPhotoExposureSec;
     float  _irisPhotoOffsetSec;
     bool  _isIris;
@@ -26,7 +27,7 @@
 - (id)createFaceDetector:(id)arg1 cancel:(id /* block */)arg2;
 - (id)createVideoAnalyzer:(id)arg1;
 - (id)initWithAVAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
-- (id)initWithIrisAVAsset:(id)arg1 irisPhotoOffsetSec:(float)arg2 irisPhotoExposureSec:(float)arg3 forAnalysisTypes:(unsigned long long)arg4;
+- (id)initWithIrisAVAsset:(id)arg1 irisPhotoOffsetSec:(float)arg2 irisPhotoExposureSec:(float)arg3 irisFlashFired:(bool)arg4 forAnalysisTypes:(unsigned long long)arg5;
 - (id)initWithPHAsset:(id)arg1 existingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
 - (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
 - (long long)status;

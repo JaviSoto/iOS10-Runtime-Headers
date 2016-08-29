@@ -35,6 +35,7 @@
 - (id)allowExtendingSelections;
 - (double)allowableForceMovement;
 - (double)allowableSeparation;
+- (void)dealloc;
 - (id)enableDeepPress;
 - (double)gain;
 - (double)linear;

@@ -11,7 +11,6 @@
     NSMutableDictionary * _previousAssetsMetadata;
     NSArray * _previousDisplayedClips;
     int  _projectFrameRate;
-    NSMutableSet * _userAddedAssetIDs;
 }
 
 @property (nonatomic, readonly) NSArray *assetsFilteredForSuggestions;
@@ -29,16 +28,14 @@
 @property (nonatomic) int projectFrameRate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSSet *usedAssetIDs;
-@property (nonatomic, retain) NSMutableSet *userAddedAssetIDs;
 
 - (void).cxx_destruct;
 - (void)_addAssetToModifiedAssets:(id)arg1;
-- (id)_computeNewAudioLevelLoudTimeRangesForClip:(id)arg1 audioLevel:(unsigned long long)arg2;
 - (id)_computeNewDislikedRangesWithExistingDislikedRanges:(id)arg1 proposedTrimRanges:(id)arg2 previousClipRanges:(id)arg3 currentClipRanges:(id)arg4;
-- (id)_computeNewMuteTimeRangesForClip:(id)arg1 audioLevel:(unsigned long long)arg2;
 - (id)_computeNewPickedRangesWithPreviousClipRanges:(id)arg1 currentClipRanges:(id)arg2;
-- (id)_currentAssets;
+- (id)_freezeRangeForClip:(id)arg1;
 - (id)_indexesOfClips:(id)arg1;
+- (void)_invalidateGainForClip:(id)arg1;
 - (id)_makeTrimRangesWithClips:(id)arg1;
 - (id)_mergeRanges:(id)arg1 withRanges:(id)arg2;
 - (id)_otherSplitClipsForClip:(id)arg1;
@@ -47,13 +44,12 @@
 - (void)_replaceRangesOnAsset:(id)arg1 trimmed:(id)arg2 disliked:(id)arg3;
 - (id)_replaceRangesThatOverlap:(id)arg1 withOverlappingRanges:(id)arg2 discardedRanges:(id*)arg3;
 - (void)_restoreModifiedAssets;
-- (id)_sortedDisplayedClipsWithAddedClips:(id)arg1;
 - (id)_trimRangesForAssetBeforeEditing:(id)arg1;
 - (void)_updateDisplayedClipsInsertingClip:(id)arg1 afterClip:(id)arg2;
 - (void)_updateDisplayedClipsWithRemovedClips:(id)arg1;
-- (void)_updateMuteRangesOnClip:(id)arg1 withAudioLevel:(unsigned long long)arg2;
 - (void)_updateTrimRangesOnAsset:(id)arg1;
 - (void)addAssets:(id)arg1 removeAssets:(id)arg2;
+- (bool)assetHasUserModifiedAudioLevel:(id)arg1;
 - (bool)assetIsPartOfMultiUp:(id)arg1;
 - (id)assetsFilteredForSuggestions;
 - (unsigned long long)audioLevelForClip:(id)arg1;
@@ -88,14 +84,11 @@
 - (void)setPreviousAssetsMetadata:(id)arg1;
 - (void)setPreviousDisplayedClips:(id)arg1;
 - (void)setProjectFrameRate:(int)arg1;
-- (void)setUserAddedAssetIDs:(id)arg1;
 - (bool)shouldRemoveClip:(id)arg1;
 - (bool)shouldTrimClip:(id)arg1 startTime:(float)arg2 endTime:(float)arg3;
 - (bool)trimClip:(id)arg1 startTime:(float)arg2 endTime:(float)arg3;
 - (void)updateClipsFromSequence:(id)arg1;
 - (id)usedAssetIDs;
 - (id)usedAssetsForMemory;
-- (id)userAddedAssetIDs;
-- (bool)userModifiedAudioLevelForClip:(id)arg1;
 
 @end

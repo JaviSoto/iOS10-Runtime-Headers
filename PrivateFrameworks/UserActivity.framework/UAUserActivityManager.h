@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> * _serverQ;
     bool  _supportsActivityContinuation;
     NSMapTable * _userActivitiesByUUID;
+    NSMutableSet * _userActivityUUIDsSendToServer;
 }
 
 @property (retain) NSMapTable *activeUserActivitiesByUUID;
@@ -30,6 +31,7 @@
 @property (readonly) Class superclass;
 @property (readonly) bool supportsActivityContinuation;
 @property (retain) NSMapTable *userActivitiesByUUID;
+@property (readonly, copy) NSSet *userActivityUUIDsSendToServer;
 
 + (id)_determineMatchingApplicationBundleIdentfierWithOptionsForActivityType:(id)arg1 dynamicType:(id)arg2 kind:(unsigned long long)arg3 teamIdentifier:(id)arg4;
 + (id)defaultManager;
@@ -48,6 +50,7 @@
 - (void)askClientUserActivityToSave:(id)arg1;
 - (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)connection;
+- (void)connectionInterrupted;
 - (id)createByDecodingUserActivity:(id)arg1;
 - (bool)currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
@@ -86,5 +89,6 @@
 - (id)userActivitiesByUUID;
 - (id)userActivityForUUID:(id)arg1;
 - (bool)userActivityIsActive:(id)arg1;
+- (id)userActivityUUIDsSendToServer;
 
 @end

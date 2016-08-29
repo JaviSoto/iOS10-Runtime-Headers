@@ -15,5 +15,6 @@
 - (void)getSafariDataUsageByteCountWithCompletionHandler:(id /* block */)arg1;
 - (void)getSafariWebDataUsageWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (void)scheduleBookmarksDatabaseMaintenance;
 
 @end

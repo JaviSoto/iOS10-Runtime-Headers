@@ -16,7 +16,6 @@
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
 - (void)_createItemProvidersWithHome:(id)arg1;
 - (id)_itemProviders;
-- (id)_styleForItem:(id)arg1;
 - (id)initWithDelegate:(id)arg1 itemProvidersCreator:(id /* block */)arg2;
 - (id)initWithDelegate:(id)arg1 itemStyle:(id)arg2 itemProvidersCreator:(id /* block */)arg3;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2 itemProvidersCreator:(id /* block */)arg3;

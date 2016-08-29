@@ -21,7 +21,7 @@
         unsigned int blocked : 1; 
         unsigned int ttyType : 1; 
         unsigned int mayRequireBreakBeforeMake : 1; 
-        unsigned int video : 1; 
+        unsigned int hasVideo : 1; 
         unsigned int audioCategory : 1; 
         unsigned int audioMode : 1; 
         unsigned int audioInterruptionProvider : 1; 
@@ -40,6 +40,7 @@
         unsigned int handoffContext : 1; 
         unsigned int context : 1; 
     }  _hasSet;
+    bool  _hasVideo;
     long long  _inCallSoundRegion;
     NSString * _localizedCallerName;
     bool  _mayRequireBreakBeforeMake;
@@ -54,7 +55,6 @@
     bool  _supportsUngrouping;
     long long  _ttyType;
     bool  _usingBaseband;
-    bool  _video;
     long long  _videoStreamToken;
 }
 
@@ -64,7 +64,6 @@
 @property (nonatomic) long long audioInterruptionProvider;
 @property (nonatomic, copy) NSString *audioMode;
 @property (getter=isBlocked, nonatomic) bool blocked;
-@property (nonatomic, copy) NSString *callerIdentifier;
 @property (nonatomic, copy) NSString *callerNameFromNetwork;
 @property (nonatomic, copy) NSDictionary *context;
 @property (nonatomic, copy) NSString *crossDeviceIdentifier;
@@ -73,6 +72,7 @@
 @property (getter=isEmergency, nonatomic) bool emergency;
 @property (nonatomic, retain) CXHandoffContext *handoffContext;
 @property (nonatomic) struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; } hasSet;
+@property (nonatomic) bool hasVideo;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long inCallSoundRegion;
 @property (nonatomic, copy) NSString *localizedCallerName;
@@ -89,7 +89,6 @@
 @property (nonatomic) bool supportsUngrouping;
 @property (setter=setTTYType:, nonatomic) long long ttyType;
 @property (getter=isUsingBaseband, nonatomic) bool usingBaseband;
-@property (getter=isVideo, nonatomic) bool video;
 @property (nonatomic) long long videoStreamToken;
 
 + (id)callUpdateWithDefaultValuesSet;
@@ -101,7 +100,6 @@
 - (long long)audioInterruptionOperationMode;
 - (long long)audioInterruptionProvider;
 - (id)audioMode;
-- (id)callerIdentifier;
 - (id)callerNameFromNetwork;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -110,13 +108,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)handoffContext;
 - (struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; })hasSet;
+- (bool)hasVideo;
 - (long long)inCallSoundRegion;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isBlocked;
 - (bool)isEmergency;
 - (bool)isUsingBaseband;
-- (bool)isVideo;
 - (id)localizedCallerName;
 - (bool)mayRequireBreakBeforeMake;
 - (id)remoteHandle;
@@ -128,13 +126,13 @@
 - (void)setAudioInterruptionProvider:(long long)arg1;
 - (void)setAudioMode:(id)arg1;
 - (void)setBlocked:(bool)arg1;
-- (void)setCallerIdentifier:(id)arg1;
 - (void)setCallerNameFromNetwork:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCrossDeviceIdentifier:(id)arg1;
 - (void)setEmergency:(bool)arg1;
 - (void)setHandoffContext:(id)arg1;
 - (void)setHasSet:(struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; })arg1;
+- (void)setHasVideo:(bool)arg1;
 - (void)setInCallSoundRegion:(long long)arg1;
 - (void)setLocalizedCallerName:(id)arg1;
 - (void)setMayRequireBreakBeforeMake:(bool)arg1;
@@ -150,7 +148,6 @@
 - (void)setTTYType:(long long)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setUsingBaseband:(bool)arg1;
-- (void)setVideo:(bool)arg1;
 - (void)setVideoStreamToken:(long long)arg1;
 - (bool)supportsAddCall;
 - (bool)supportsDTMF;

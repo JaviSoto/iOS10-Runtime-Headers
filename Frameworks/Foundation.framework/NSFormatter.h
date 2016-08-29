@@ -48,7 +48,6 @@
 + (id)_hf_temperatureUnitFormatter;
 + (id)_hf_valueFormatterForCharacteristicMetadata:(id)arg1 options:(id)arg2;
 + (id)_hf_valueSetFormatterForCharacteristicType:(id)arg1;
-+ (bool)hf_characteristicMetadataFormatIsNumeric:(id)arg1;
 + (id)hf_controlDescriptionFormatterForCharacteristic:(id)arg1 options:(id)arg2;
 + (id)hf_controlDescriptionFormatterForCharacteristicType:(id)arg1 withMetadata:(id)arg2 options:(id)arg3;
 + (id)hf_valueFormatterForCharacteristic:(id)arg1 options:(id)arg2;

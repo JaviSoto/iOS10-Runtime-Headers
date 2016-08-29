@@ -5,6 +5,7 @@
 @interface FCCKMultiFetchQueryOperation : FCOperation {
     FCCKDatabase * _database;
     NSMutableArray * _fetchedRecords;
+    NSDictionary * _knownRecordIDsToEtags;
     NSMutableSet * _missingRecordIDs;
     id /* block */  _queryCompletionHandler;
     NSArray * _recordIDs;
@@ -14,6 +15,7 @@
 
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, retain) NSMutableArray *fetchedRecords;
+@property (nonatomic, retain) NSDictionary *knownRecordIDsToEtags;
 @property (nonatomic, retain) NSMutableSet *missingRecordIDs;
 @property (nonatomic, copy) id /* block */ queryCompletionHandler;
 @property (nonatomic, retain) NSArray *recordIDs;
@@ -22,9 +24,9 @@
 
 - (void).cxx_destruct;
 - (id)_constructQuery;
-- (void)_temp_fetchMissingRecordIDs;
 - (id)database;
 - (id)fetchedRecords;
+- (id)knownRecordIDsToEtags;
 - (id)missingRecordIDs;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
@@ -35,6 +37,7 @@
 - (id)recordSpecsByType;
 - (void)setDatabase:(id)arg1;
 - (void)setFetchedRecords:(id)arg1;
+- (void)setKnownRecordIDsToEtags:(id)arg1;
 - (void)setMissingRecordIDs:(id)arg1;
 - (void)setQueryCompletionHandler:(id /* block */)arg1;
 - (void)setRecordIDs:(id)arg1;

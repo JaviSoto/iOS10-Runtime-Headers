@@ -54,6 +54,7 @@
 - (double)alightSignalTimeBuffer;
 - (double)backgroundTimeWindow;
 - (bool)beepBeforeInstruction;
+- (id)description;
 - (unsigned long long)distanceUnits;
 - (bool)drivingVoiceGuidance;
 - (void)encodeWithCoder:(id)arg1;

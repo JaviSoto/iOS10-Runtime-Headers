@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) IKViewElementStyle *buttonTitleStyle;
 @property (nonatomic, readonly) long long buttonViewSubType;
 @property (nonatomic, readonly) long long buttonViewType;
-@property (nonatomic, readonly) SKUIBuyButtonDescriptor *buyButtonDescriptor;
+@property (nonatomic, retain) SKUIBuyButtonDescriptor *buyButtonDescriptor;
 @property (nonatomic, readonly) NSString *confirmationText;
 @property (nonatomic, readonly) long long dataPlaybackId;
 @property (getter=isDisabledButSelectable, nonatomic, readonly) bool disabledButSelectable;
@@ -88,6 +88,7 @@
 - (long long)pageComponentType;
 - (id)personalizationLibraryItems;
 - (id)playItemIdentifier;
+- (void)setBuyButtonDescriptor:(id)arg1;
 - (void)setToggled:(bool)arg1;
 - (bool)showOnDemand;
 - (id)sizeVariant;

@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) bool needsQuickLookDocumentView;
 @property (nonatomic, copy) NSString *savedPath;
 @property (nonatomic, copy) NSString *savedPathWithProperExtension;
+@property (nonatomic, readonly) bool shouldUnzipByUIDocumentInteractionController;
 @property (nonatomic, retain) NSURL *sourceURL;
 @property (nonatomic, copy) NSString *uti;
 
@@ -47,6 +48,7 @@
 - (void)setSavedPathWithProperExtension:(id)arg1 shouldDelete:(bool)arg2;
 - (void)setSourceURL:(id)arg1;
 - (void)setUti:(id)arg1;
+- (bool)shouldUnzipByUIDocumentInteractionController;
 - (id)sourceURL;
 - (id)uti;
 

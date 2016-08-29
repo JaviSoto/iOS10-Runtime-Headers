@@ -8,10 +8,10 @@
 
 + (id)_additionAnimationsKeys;
 
+- (void)_adjustColorForLabelsInView:(id)arg1 isInContentView:(bool)arg2;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_setLayerConfig:(id)arg1;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (void)adjustLabelColorForView:(id)arg1 isInContentView:(bool)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
 

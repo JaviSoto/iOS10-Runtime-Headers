@@ -44,7 +44,7 @@
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)handleResponse:(id)arg1;
+- (void)handleResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)initWithObserver:(id)arg1 calloutQueue:(id)arg2;
 - (void)invalidate;
 - (bool)isValid;
@@ -55,6 +55,7 @@
 - (id)queue;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeeds:(unsigned long long)arg3;
 - (void)removeSection:(id)arg1;
+- (void)requestNoticesBulletinsForAllSections;
 - (void)requestNoticesBulletinsForSectionID:(id)arg1;
 - (void)setCalloutQueue:(id)arg1;
 - (void)setConnection:(id)arg1;

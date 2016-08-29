@@ -13,6 +13,7 @@
 + (id)referenceWithColumnIndex:(unsigned char)arg1 trackedReference:(id)arg2;
 
 - (unsigned char)columnIndex;
+- (void)dealloc;
 - (bool)hasTrackedReferenceEqualTo:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithColumnIndex:(unsigned char)arg1 trackedReference:(id)arg2;

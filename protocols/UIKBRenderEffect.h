@@ -6,6 +6,7 @@
 @required
 
 - (struct CGColor { }*)CGColor;
+- (UIKBGradient *)gradient;
 - (bool)isValid;
 - (SEL)renderSelector;
 - (bool)renderUnder;

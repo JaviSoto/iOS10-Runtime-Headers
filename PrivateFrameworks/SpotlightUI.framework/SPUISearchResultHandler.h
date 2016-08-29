@@ -12,6 +12,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (void)requestDeviceUnlockWithSuccessHandler:(id /* block */)arg1;
 + (id)sharedResultHandler;
 
 - (void).cxx_destruct;
@@ -21,11 +22,13 @@
 - (void)handleResultSelected:(id)arg1 withFeedback:(id)arg2 wasPop:(bool)arg3;
 - (void)modalViewControllerClosed;
 - (void)openUserActivityForResult:(id)arg1;
-- (void)presentViewController:(id)arg1;
+- (void)presentViewController:(id)arg1 animated:(bool)arg2;
 - (void)productViewControllerDidFinish:(id)arg1;
-- (void)requestAuthAndPresentViewController:(id)arg1;
-- (void)requestAuthIfNecessaryAndPresentViewController:(id)arg1;
+- (void)requestAuthAndPresentViewController:(id)arg1 animated:(bool)arg2;
+- (void)requestAuthIfNecessaryAndPresentViewController:(id)arg1 animated:(bool)arg2;
 - (void)setDelegate:(id)arg1;
+- (bool)shouldDisplayContactCardForResult:(id)arg1;
+- (void)showViewController:(id)arg1;
 - (id)viewControllerForResult:(id)arg1 preview:(bool)arg2;
 
 @end

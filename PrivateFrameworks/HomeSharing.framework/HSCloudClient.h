@@ -53,6 +53,7 @@
 - (void)enableJaliscoGeniusWithCompletionHandler:(id /* block */)arg1;
 - (void)evaluateKeepLocalRulesWithCompletionHandler:(id /* block */)arg1;
 - (bool)hasProperNetworkConditionsToPlayMedia;
+- (bool)hasProperNetworkConditionsToShowCloudMedia;
 - (void)hideItemsWithPurchaseHistoryIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)importAlbumArtistHeroImageForPersistentID:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)importArtistHeroImageForPersistentID:(long long)arg1 completionHandler:(id /* block */)arg2;
@@ -67,6 +68,9 @@
 - (void)isAuthenticatedWithCompletionHandler:(id /* block */)arg1;
 - (void)isAuthenticatedWithQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)isCellularDataRestricted;
+- (bool)isCellularDataRestrictedForMusic;
+- (bool)isCellularDataRestrictedForStoreApps;
+- (bool)isCellularDataRestrictedForVideos;
 - (void)isExpiredWithCompletionHandler:(id /* block */)arg1;
 - (void)jaliscoAppsImageDataForStoreID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadArtworkInfoForContainerSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -102,6 +106,9 @@
 - (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setUpdateInProgressChangedHandler:(id /* block */)arg1;
 - (bool)shouldProhibitActionsForCurrentNetworkConditions;
+- (bool)shouldProhibitMusicActionForCurrentNetworkConditions;
+- (bool)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
+- (bool)shouldProhibitVideosActionForCurrentNetworkConditions;
 - (void)unhideAllPurchasedApps:(id /* block */)arg1;
 - (void)updateArtistHeroImages;
 - (void)updateGeniusDataWithCompletionHandler:(id /* block */)arg1;

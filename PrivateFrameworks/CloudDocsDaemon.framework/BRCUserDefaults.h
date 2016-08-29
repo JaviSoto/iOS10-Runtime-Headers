@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) double accessTimeDeltaInVeryHighUrgency;
 @property (nonatomic, readonly) double activeDownloadSizeRefreshInterval;
 @property (nonatomic, readonly) unsigned long long aliasDeletionBatchSize;
+@property (nonatomic, readonly) bool allowReadOnlyDBInIPC;
 @property (nonatomic, readonly) NSDictionary *appLibraryAliasRemovalThrottleParams;
 @property (nonatomic, readonly) NSDictionary *appLibraryResetThrottleParams;
 @property (nonatomic, readonly) NSDictionary *appLibraryScanThrottleParams;
@@ -43,6 +44,9 @@
 @property (nonatomic, readonly) unsigned long long downloadBatchRecordsCount;
 @property (nonatomic, readonly) NSDictionary *downloadThrottleParams;
 @property (nonatomic, readonly) unsigned long long downloadWillRetryProgressMaxCount;
+@property (nonatomic, readonly) NSSet *excludedExtensionsWorthPreserving;
+@property (nonatomic, readonly) NSSet *excludedFilenamesWorthPreserving;
+@property (nonatomic, readonly) NSSet *extensionsSkippingBundleBitFixup;
 @property (nonatomic, readonly) bool forceBatchFailureWhenReceivingAssetTokenExpiration;
 @property (nonatomic, readonly) double forceForegroundGracePeriod;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *forcedSyncXPCActivity;
@@ -51,7 +55,7 @@
 @property (nonatomic, readonly) double fseventsResetBackoff;
 @property (nonatomic, readonly) double graveyardAgeDeltaInLowUrgency;
 @property (nonatomic, readonly) double graveyardAgeDeltaInMedUrgency;
-@property (nonatomic, readonly) double inactiveIntervalForGlobalDownloads;
+@property (nonatomic, readonly) unsigned int ignoredQuarantineMask;
 @property (nonatomic, readonly) double intervalToWaitBeforeShowingAdditionalDescription;
 @property (nonatomic, readonly) unsigned int logoutTimeout;
 @property (nonatomic, readonly) NSDictionary *lostItemThrottleParams;
@@ -107,12 +111,14 @@
 @property (nonatomic, readonly) NSString *serverConfigurationURL;
 @property (nonatomic, readonly) bool sessionZombiesEnabled;
 @property (nonatomic, readonly) NSSet *shareableExtensions;
+@property (nonatomic, readonly) NSDictionary *sharedAppLibraryResetThrottleParams;
 @property (nonatomic, readonly) unsigned long long sharedDBSyncDownBatchRecordsCount;
 @property (nonatomic, readonly) unsigned long long sharedDbSyncDownCoalesceNanoseconds;
 @property (nonatomic, readonly) double shortcutServicePacerInterval;
 @property (nonatomic, readonly) bool shouldAppLibraryBeGreedy;
 @property (nonatomic, readonly) bool shouldDisplayUploadNotification;
 @property (nonatomic, readonly) bool shouldFetchAllChanges;
+@property (nonatomic, readonly) bool shouldFixupBundleBitOnPackages;
 @property (nonatomic, readonly) bool shouldPreparePCSMigration;
 @property (nonatomic, readonly) bool skipServerSideThrottling;
 @property (nonatomic, readonly) unsigned long long spotlightIndexerBatchSize;
@@ -127,6 +133,7 @@
 @property (nonatomic, readonly) unsigned short stageInPackageFileUmask;
 @property (nonatomic, readonly) unsigned long long statementCacheMaxCountForClientTruth;
 @property (nonatomic, readonly) unsigned long long statementCacheMaxCountForServerTruth;
+@property (nonatomic, readonly) NSDictionary *syncClientZoneErrorThrottleParams;
 @property (nonatomic, readonly) NSDictionary *syncClientZoneThrottleParams;
 @property (nonatomic, readonly) BRCSyncOperationThrottleParams *syncDownThrottle;
 @property (nonatomic, readonly) NSArray *syncThrottles;
@@ -187,6 +194,7 @@
 - (double)accessTimeDeltaInVeryHighUrgency;
 - (double)activeDownloadSizeRefreshInterval;
 - (unsigned long long)aliasDeletionBatchSize;
+- (bool)allowReadOnlyDBInIPC;
 - (id)appLibraryAliasRemovalThrottleParams;
 - (id)appLibraryResetThrottleParams;
 - (id)appLibraryScanThrottleParams;
@@ -218,6 +226,9 @@
 - (unsigned long long)downloadBatchRecordsCount;
 - (id)downloadThrottleParams;
 - (unsigned long long)downloadWillRetryProgressMaxCount;
+- (id)excludedExtensionsWorthPreserving;
+- (id)excludedFilenamesWorthPreserving;
+- (id)extensionsSkippingBundleBitFixup;
 - (float)floatForKey:(id)arg1 inheritFromGlobal:(bool)arg2 min:(float)arg3 max:(float)arg4 byDefault:(float)arg5;
 - (float)floatForKey:(id)arg1 min:(float)arg2 max:(float)arg3 byDefault:(float)arg4;
 - (bool)forceBatchFailureWhenReceivingAssetTokenExpiration;
@@ -228,7 +239,7 @@
 - (double)fseventsResetBackoff;
 - (double)graveyardAgeDeltaInLowUrgency;
 - (double)graveyardAgeDeltaInMedUrgency;
-- (double)inactiveIntervalForGlobalDownloads;
+- (unsigned int)ignoredQuarantineMask;
 - (id)initAsGlobalWithServerConfiguration:(id)arg1;
 - (id)initWithServerConfiguration:(id)arg1 globalUserDefaults:(id)arg2 clientZoneIdentifier:(id)arg3;
 - (int)intForKey:(id)arg1 min:(int)arg2 max:(int)arg3 byDefault:(int)arg4;
@@ -288,12 +299,14 @@
 - (id)serverConfigurationURL;
 - (bool)sessionZombiesEnabled;
 - (id)shareableExtensions;
+- (id)sharedAppLibraryResetThrottleParams;
 - (unsigned long long)sharedDBSyncDownBatchRecordsCount;
 - (unsigned long long)sharedDbSyncDownCoalesceNanoseconds;
 - (double)shortcutServicePacerInterval;
 - (bool)shouldAppLibraryBeGreedy;
 - (bool)shouldDisplayUploadNotification;
 - (bool)shouldFetchAllChanges;
+- (bool)shouldFixupBundleBitOnPackages;
 - (bool)shouldPreparePCSMigration;
 - (bool)skipServerSideThrottling;
 - (unsigned long long)spotlightIndexerBatchSize;
@@ -308,6 +321,7 @@
 - (unsigned short)stageInPackageFileUmask;
 - (unsigned long long)statementCacheMaxCountForClientTruth;
 - (unsigned long long)statementCacheMaxCountForServerTruth;
+- (id)syncClientZoneErrorThrottleParams;
 - (id)syncClientZoneThrottleParams;
 - (id)syncDownThrottle;
 - (id)syncThrottles;

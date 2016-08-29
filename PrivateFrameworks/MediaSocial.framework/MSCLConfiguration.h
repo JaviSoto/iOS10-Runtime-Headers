@@ -4,6 +4,8 @@
 
 @interface MSCLConfiguration : NSObject <NSCopying> {
     NSArray * _allowedExternalServices;
+    bool  _allowsCamera;
+    bool  _allowsMicrophone;
     NSArray * _audioCategoryNames;
     SKUIMediaSocialAuthor * _authorForActiveAccount;
     NSURL * _baseTagLookupURL;
@@ -15,6 +17,8 @@
 }
 
 @property (nonatomic, copy) NSArray *allowedExternalServices;
+@property (nonatomic) bool allowsCamera;
+@property (nonatomic) bool allowsMicrophone;
 @property (nonatomic, copy) NSArray *audioCategoryNames;
 @property (nonatomic, copy) SKUIMediaSocialAuthor *authorForActiveAccount;
 @property (nonatomic, copy) MSCLStoreItem *item;
@@ -25,6 +29,8 @@
 
 - (void).cxx_destruct;
 - (id)allowedExternalServices;
+- (bool)allowsCamera;
+- (bool)allowsMicrophone;
 - (id)audioCategoryNames;
 - (id)authorForActiveAccount;
 - (id)authorsForSharing;
@@ -35,6 +41,8 @@
 - (double)maximumSoundBiteDuration;
 - (id)potentalAuthors;
 - (void)setAllowedExternalServices:(id)arg1;
+- (void)setAllowsCamera:(bool)arg1;
+- (void)setAllowsMicrophone:(bool)arg1;
 - (void)setAudioCategoryNames:(id)arg1;
 - (void)setAuthorForActiveAccount:(id)arg1;
 - (void)setItem:(id)arg1;

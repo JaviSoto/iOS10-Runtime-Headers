@@ -44,6 +44,7 @@
 - (void)stopAnimations;
 - (void)teardown;
 - (void)teardownTransitionIsExitingShow:(bool)arg1;
+- (void)updateAnimationTestingLog;
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (void)waitUntilAsyncRenderingIsComplete;
 

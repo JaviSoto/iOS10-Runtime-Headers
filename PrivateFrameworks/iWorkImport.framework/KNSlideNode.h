@@ -18,7 +18,7 @@
     bool  mIsCollapsed;
     bool  mIsCollapsedInOutlineView;
     bool  mIsHidden;
-    NSString * mObsoleteUniqueIdentifier;
+    NSString * mPreviousIdentifier;
     NSMutableSet * mRemappedTableNames;
     bool  mSlideNumberVisible;
     TSPLazyReference * mSlideReference;
@@ -51,6 +51,7 @@
 @property (nonatomic, readonly) KNSlideNode *nextSkippingCollapsed;
 @property (nonatomic, readonly) KNSlideNode *nextSkippingHidden;
 @property (nonatomic, readonly) KNSlideNode *previous;
+@property (nonatomic, retain) NSString *previousIdentifier;
 @property (nonatomic, readonly) KNSlideNode *previousSkippingCollapsed;
 @property (nonatomic, readonly) KNSlideNode *previousSkippingHidden;
 @property (nonatomic, retain) KNAbstractSlide *slide;
@@ -65,6 +66,7 @@
 + (bool)needsObjectUUID;
 + (id)parentSlideNodeForInfo:(id)arg1;
 + (id)slideNodeForSelectionPath:(id)arg1;
++ (id)slideNodeUUIDForObsoleteUniqueIDString:(id)arg1 inSlideNodes:(id)arg2;
 
 - (void)addHyperlinkFieldMap:(id)arg1 forStorage:(id)arg2;
 - (void)addHyperlinkForInfo:(id)arg1 toSlideNode:(id)arg2;
@@ -77,6 +79,8 @@
 - (id)children;
 - (id)classicUniqueID;
 - (void)clearRemappedTableNames;
+- (void)clearSlideSpecificLinkMap;
+- (id)commandsToRemoveTableSlideSpecificHyperlinksForSlideNodeUUIDString:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)depth;
 - (id)descendants;
@@ -99,18 +103,24 @@
 - (bool)isCollapsedInOutlineView;
 - (bool)isHidden;
 - (bool)isSlideNumberVisible;
-- (void)loadFromArchive:(const struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::DataReference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::Size> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<std::__1::basic_string<char> > { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; unsigned int x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; bool x18; unsigned int x19; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x20; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x21; unsigned int x22; bool x23; bool x24; bool x25; bool x26; struct RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry> { void **x_27_1_1; int x_27_1_2; int x_27_1_3; int x_27_1_4; } x27; struct Reference {} *x28; struct RepeatedPtrField<TSP::Reference> { void **x_29_1_1; int x_29_1_2; int x_29_1_3; int x_29_1_4; } x29; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::DataReference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::Size> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<std::__1::basic_string<char> > { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; unsigned int x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; bool x18; unsigned int x19; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x20; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x21; unsigned int x22; bool x23; bool x24; bool x25; bool x26; struct RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry> { void **x_27_1_1; int x_27_1_2; int x_27_1_3; int x_27_1_4; } x27; }*)arg1 unarchiver:(id)arg2;
 - (id)next;
 - (id)nextSkippingCollapsed;
 - (id)nextSkippingHidden;
 - (unsigned int)nextUntitledResolverIndex;
-- (void)p_addHyperlinkForObjectReferencedByUUID:(id)arg1 toSlideNode:(id)arg2;
+- (unsigned long long)numberOfLinksToSlideNodeInStorage:(id)arg1 forSlideNodeUUIDString:(id)arg2;
+- (id)p_UUIDStringSetForSlideNodes:(id)arg1;
+- (void)p_addHyperlinkForObjectReferencedByMapping:(id)arg1 toSlideNode:(id)arg2;
 - (void)p_addOldModelDescendantsToSlideTree:(id)arg1 atDepth:(unsigned long long)arg2;
 - (void)p_commonInit;
+- (id)p_createMappingForTableStorage:(id)arg1;
 - (unsigned long long)p_eventCount;
-- (void)p_removeHyperlinkForObjectReferencedByUUID:(id)arg1 toSlideNode:(id)arg2;
+- (id)p_getSlideSpecificMappingForStorage:(id)arg1 forSlideNode:(id)arg2;
+- (id)p_mappingFromString:(id)arg1;
+- (void)p_removeHyperlinkForObjectReferencedByMapping:(id)arg1 toSlideNode:(id)arg2;
 - (void)p_updateHasExplicitBuilds;
 - (id)previous;
+- (id)previousIdentifier;
 - (id)previousSkippingCollapsed;
 - (id)previousSkippingHidden;
 - (void)purgeU15ModelIfNeeded;
@@ -119,6 +129,9 @@
 - (void)removeHyperlinkFieldMap:(id)arg1 forStorage:(id)arg2;
 - (void)removeHyperlinkForInfo:(id)arg1 toSlideNode:(id)arg2;
 - (void)removeHyperlinkForStorage:(id)arg1 toSlideNode:(id)arg2;
+- (void)removeInvalidSlideSpecificHyperlinksForStorage:(id)arg1 withSlideNodeSet:(id)arg2;
+- (void)removeInvalidSlideSpecificHyperlinksWithSlideNodes:(id)arg1;
+- (void)removeObsoleteFieldsFor20Upgrade;
 - (void)removeThumbnailAtSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)resolverMatchingName:(id)arg1;
 - (bool)resolverNameIsUsed:(id)arg1;
@@ -127,7 +140,7 @@
 - (unsigned long long)safeEventCount;
 - (bool)safeHasBuildEvents;
 - (unsigned int)saveNextUntitledResolverIndex;
-- (void)saveToArchive:(struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::DataReference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::Size> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<std::__1::basic_string<char> > { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; unsigned int x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; bool x18; unsigned int x19; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x20; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x21; unsigned int x22; bool x23; bool x24; bool x25; bool x26; struct RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry> { void **x_27_1_1; int x_27_1_2; int x_27_1_3; int x_27_1_4; } x27; struct Reference {} *x28; struct RepeatedPtrField<TSP::Reference> { void **x_29_1_1; int x_29_1_2; int x_29_1_3; int x_29_1_4; } x29; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SlideNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::DataReference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::Size> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<std::__1::basic_string<char> > { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; unsigned int x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; bool x18; unsigned int x19; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x20; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x21; unsigned int x22; bool x23; bool x24; bool x25; bool x26; struct RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry> { void **x_27_1_1; int x_27_1_2; int x_27_1_3; int x_27_1_4; } x27; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setClassicUniqueID:(id)arg1;
 - (void)setCollapsed:(bool)arg1;
@@ -139,6 +152,7 @@
 - (void)setHasTransition:(bool)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setIsSlideNumberVisible:(bool)arg1;
+- (void)setPreviousIdentifier:(id)arg1;
 - (void)setSlide:(id)arg1;
 - (void)setSlideTree:(id)arg1;
 - (void)setThumbnailsAreDirty:(bool)arg1;
@@ -150,6 +164,8 @@
 - (bool)thumbnailsAreDirty;
 - (id)uniqueIdentifier;
 - (void)uniquifyTableNamesForUpgradeOrImport;
+- (void)upgradeSlideSpecificHyperlinksForSlideNodes:(id)arg1;
+- (void)upgradeSlideSpecificStorageHyperlinksForStorage:(id)arg1 withSlideNodes:(id)arg2;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

@@ -4,7 +4,6 @@
 
 @interface _QPParameters : NSObject {
     NSString * _abGroupIdentifier;
-    _DECABHelper * _abHelper;
     _DECAsset * _asset;
     NSDictionary * _defaultValues;
 }

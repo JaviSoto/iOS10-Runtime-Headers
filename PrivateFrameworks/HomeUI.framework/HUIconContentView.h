@@ -3,6 +3,8 @@
  */
 
 @interface HUIconContentView : UIView {
+    double  _aspectRatio;
+    <HUIconContentViewDelegate> * _delegate;
     bool  _disableContinuousAnimation;
     unsigned long long  _displayContext;
     unsigned long long  _displayStyle;
@@ -13,6 +15,8 @@
     UIVisualEffect * _vibrancyEffect;
 }
 
+@property (nonatomic) double aspectRatio;
+@property (nonatomic) <HUIconContentViewDelegate> *delegate;
 @property (nonatomic) bool disableContinuousAnimation;
 @property (nonatomic) unsigned long long displayContext;
 @property (nonatomic, readonly) unsigned long long displayStyle;
@@ -27,16 +31,20 @@
 
 - (void).cxx_destruct;
 - (void)_updateOverrideRenderingModeForSubviewsOfView:(id)arg1;
+- (double)aspectRatio;
+- (id)delegate;
 - (bool)disableContinuousAnimation;
 - (unsigned long long)displayContext;
 - (unsigned long long)displayStyle;
 - (id)iconDescriptor;
 - (unsigned long long)iconSize;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateRenderingMode;
 - (long long)primaryState;
 - (long long)renderingMode;
 - (long long)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(long long)arg2;
+- (void)setAspectRatio:(double)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDisableContinuousAnimation:(bool)arg1;
 - (void)setDisplayContext:(unsigned long long)arg1;
 - (void)setDisplayStyle:(unsigned long long)arg1;

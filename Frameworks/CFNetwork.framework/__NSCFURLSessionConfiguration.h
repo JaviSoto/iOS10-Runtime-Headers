@@ -45,10 +45,13 @@
     NSString * _identifier;
     bool  _infersDiscretionaryFromOriginatingClient;
     NSString * _ledBellyServiceIdentifier;
+    double  _longLivedConnectionCacheCellPurgeTimeout;
+    double  _longLivedConnectionCachePurgeTimeout;
     long long  _minimumFastLanePriority;
     unsigned long long  _networkServiceType;
     long long  _numFastLanes;
     long long  _numPriorityLevels;
+    bool  _onBehalfOfPairedDevice;
     NSDictionary * _overriddenDelegateOptions;
     bool  _overridesBackgroundSessionAutoRedirect;
     bool  _performsEVCertCheck;
@@ -137,6 +140,9 @@
 - (bool)_infersDiscretionaryFromOriginatingClient;
 - (bool)_isProxySession;
 - (id)_ledBellyServiceIdentifier;
+- (double)_longLivedConnectionCacheCellPurgeTimeout;
+- (double)_longLivedConnectionCachePurgeTimeout;
+- (bool)_onBehalfOfPairedDevice;
 - (id)_overriddenDelegateOptions;
 - (bool)_overridesBackgroundSessionAutoRedirect;
 - (bool)_performsEVCertCheck;
@@ -252,6 +258,9 @@
 - (void)set_forcesNewConnections:(bool)arg1;
 - (void)set_infersDiscretionaryFromOriginatingClient:(bool)arg1;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;
+- (void)set_longLivedConnectionCacheCellPurgeTimeout:(double)arg1;
+- (void)set_longLivedConnectionCachePurgeTimeout:(double)arg1;
+- (void)set_onBehalfOfPairedDevice:(bool)arg1;
 - (void)set_overriddenDelegateOptions:(id)arg1;
 - (void)set_overridesBackgroundSessionAutoRedirect:(bool)arg1;
 - (void)set_performsEVCertCheck:(bool)arg1;

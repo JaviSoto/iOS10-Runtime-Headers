@@ -49,6 +49,7 @@
 + (bool)bundleSupported:(id)arg1;
 + (id)dateLocationLastUsedForLocationDictionary:(id)arg1;
 + (bool)deferredLocationUpdatesAvailable;
++ (void)dumpDiagnosticFilesWithHandler:(id /* block */)arg1;
 + (bool)dumpLogsWithMessage:(id)arg1;
 + (unsigned long long)entityAuthorizationForLocationDictionary:(id)arg1;
 + (unsigned long long)entityClassesForLocationDictionary:(id)arg1;

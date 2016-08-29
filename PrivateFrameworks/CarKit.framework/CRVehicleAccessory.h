@@ -36,6 +36,7 @@
 - (id)displayName;
 - (bool)isBluetoothConnected;
 - (void)requestWiFiCredentials;
+- (void)sendDeviceTransportIdentifiers;
 - (void)setAccessory:(id)arg1;
 - (void)setAccessoryProtocols:(id)arg1;
 - (void)setBluetoothAddress:(id)arg1;

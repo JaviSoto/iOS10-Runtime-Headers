@@ -32,6 +32,7 @@
 @property (readonly) long long workoutState;
 
 + (id)_clientInterface;
++ (id)_sanitizeWorkoutEvents:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 + (id)_serverInterface;
 + (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned long long)arg9 goal:(id)arg10 shouldUseDeviceData:(bool)arg11 metadata:(id)arg12;
 + (bool)supportsSecureCoding;
@@ -62,7 +63,6 @@
 - (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalDistance;
 - (void)_propertyQueue_deactivate;
 - (id)_propertyQueue_endDate;
-- (id)_propertyQueue_sanitizedWorkoutEventsWithEndDate:(id)arg1;
 - (bool)_propertyQueue_serverAttached;
 - (id)_propertyQueue_serverConfiguration;
 - (void)_propertyQueue_setEndDate:(id)arg1;
@@ -95,7 +95,6 @@
 - (void)clientRemote_serverPausedWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)clientRemote_serverStoppedWithDate:(id)arg1;
 - (void)clientRemote_updateElevationChange:(id)arg1;
-- (void)clientRemote_updateLocation:(id)arg1;
 - (void)clientRemote_updateLocationSeriesSample:(id)arg1;
 - (void)clientRemote_updateTotalsWithQuantities:(id)arg1 resumeData:(id)arg2 UUIDs:(id)arg3;
 - (id)delegate;
@@ -106,7 +105,6 @@
 - (void)endWorkoutWithDate:(id)arg1 metadata:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)locationSeriesSamples;
-- (id)locations;
 - (id)metadata;
 - (void)pauseWorkoutWithDate:(id)arg1 userInitiated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)resumeDataByType;

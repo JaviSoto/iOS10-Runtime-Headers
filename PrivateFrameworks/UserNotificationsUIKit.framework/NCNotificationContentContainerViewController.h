@@ -9,6 +9,7 @@
     NCNotificationRequest * _notificationRequest;
 }
 
+@property (nonatomic, readonly) NSString *contentExtensionIdentifier;
 @property (nonatomic, retain) UIViewController<NCNotificationCustomContent> *contentViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
@@ -16,6 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NCNotificationTextInputView *inputAccessoryView;
 @property (nonatomic, readonly) NCNotificationRequest *notificationRequest;
+@property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,13 +29,15 @@
 - (bool)_shouldShowTextInputOnAppearance;
 - (id)_textInputActionInNotification:(id)arg1;
 - (bool)allowManualDismiss;
-- (bool)becomeFirstResponder;
 - (bool)canBecomeFirstResponder;
+- (id)contentExtensionIdentifier;
 - (id)contentViewController;
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
+- (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)customContentDidLoadExtension:(id)arg1;
 - (unsigned long long)customContentLocation;
+- (void)customContentRequestsDismiss:(id)arg1;
 - (bool)defaultContentHidden;
 - (id)delegate;
 - (void)didReceiveNotificationRequest:(id)arg1;

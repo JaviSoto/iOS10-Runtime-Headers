@@ -28,6 +28,7 @@
         unsigned int newFavoriteNotificationAlertsFrequency : 1; 
         unsigned int notificationArticleCacheTimeout : 1; 
         unsigned int notificationArticleWithRapidUpdatesCacheTimeout : 1; 
+        unsigned int notificationEnabledChannelsRefreshFrequency : 1; 
         unsigned int numberOfScreenfulsScrolledToBypassWidgetTimeLimit : 1; 
         unsigned int prerollLoadingTimeout : 1; 
         unsigned int shortReminderTime : 1; 
@@ -53,6 +54,7 @@
     bool  _newsletterSubscriptionChecked;
     long long  _notificationArticleCacheTimeout;
     long long  _notificationArticleWithRapidUpdatesCacheTimeout;
+    long long  _notificationEnabledChannelsRefreshFrequency;
     long long  _numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
     NTPBPersonalizationConfig * _personalizationConfig;
     NTPBPrefetchConfig * _prefetchConfig;
@@ -99,6 +101,7 @@
 @property (nonatomic) bool hasNewsletterSubscriptionChecked;
 @property (nonatomic) bool hasNotificationArticleCacheTimeout;
 @property (nonatomic) bool hasNotificationArticleWithRapidUpdatesCacheTimeout;
+@property (nonatomic) bool hasNotificationEnabledChannelsRefreshFrequency;
 @property (nonatomic) bool hasNumberOfScreenfulsScrolledToBypassWidgetTimeLimit;
 @property (nonatomic, readonly) bool hasPersonalizationConfig;
 @property (nonatomic, readonly) bool hasPrefetchConfig;
@@ -125,6 +128,7 @@
 @property (nonatomic) bool newsletterSubscriptionChecked;
 @property (nonatomic) long long notificationArticleCacheTimeout;
 @property (nonatomic) long long notificationArticleWithRapidUpdatesCacheTimeout;
+@property (nonatomic) long long notificationEnabledChannelsRefreshFrequency;
 @property (nonatomic) long long numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
 @property (nonatomic, retain) NTPBPersonalizationConfig *personalizationConfig;
 @property (nonatomic, retain) NTPBPrefetchConfig *prefetchConfig;
@@ -183,6 +187,7 @@
 - (bool)hasNewsletterSubscriptionChecked;
 - (bool)hasNotificationArticleCacheTimeout;
 - (bool)hasNotificationArticleWithRapidUpdatesCacheTimeout;
+- (bool)hasNotificationEnabledChannelsRefreshFrequency;
 - (bool)hasNumberOfScreenfulsScrolledToBypassWidgetTimeLimit;
 - (bool)hasPersonalizationConfig;
 - (bool)hasPrefetchConfig;
@@ -214,6 +219,7 @@
 - (bool)newsletterSubscriptionChecked;
 - (long long)notificationArticleCacheTimeout;
 - (long long)notificationArticleWithRapidUpdatesCacheTimeout;
+- (long long)notificationEnabledChannelsRefreshFrequency;
 - (long long)numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
 - (id)personalizationConfig;
 - (id)prefetchConfig;
@@ -244,6 +250,7 @@
 - (void)setHasNewsletterSubscriptionChecked:(bool)arg1;
 - (void)setHasNotificationArticleCacheTimeout:(bool)arg1;
 - (void)setHasNotificationArticleWithRapidUpdatesCacheTimeout:(bool)arg1;
+- (void)setHasNotificationEnabledChannelsRefreshFrequency:(bool)arg1;
 - (void)setHasNumberOfScreenfulsScrolledToBypassWidgetTimeLimit:(bool)arg1;
 - (void)setHasPrerollLoadingTimeout:(bool)arg1;
 - (void)setHasShortReminderTime:(bool)arg1;
@@ -267,6 +274,7 @@
 - (void)setNewsletterSubscriptionChecked:(bool)arg1;
 - (void)setNotificationArticleCacheTimeout:(long long)arg1;
 - (void)setNotificationArticleWithRapidUpdatesCacheTimeout:(long long)arg1;
+- (void)setNotificationEnabledChannelsRefreshFrequency:(long long)arg1;
 - (void)setNumberOfScreenfulsScrolledToBypassWidgetTimeLimit:(long long)arg1;
 - (void)setPersonalizationConfig:(id)arg1;
 - (void)setPrefetchConfig:(id)arg1;

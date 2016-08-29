@@ -107,10 +107,12 @@
 - (id)MMCSRequestOptions;
 - (unsigned int)QOSClass;
 - (void)_acquirePowerAssertion;
+- (void)_acquirePowerAssertionsForSelfAndParent;
 - (bool)_checkAppVersion;
 - (void)_combineMetricsWithOperation:(id)arg1;
 - (void)_continueOperationStart;
 - (void)_dropPowerAssertion;
+- (void)_dropPowerAssertionsForSelfAndParent;
 - (bool)_errorShouldImpactFlowControl:(id)arg1;
 - (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

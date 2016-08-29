@@ -4,7 +4,9 @@
 
 @interface CKBrowserSwitcherViewController : UIViewController <CKBrowserSelectionControllerDelegate, CKBrowserSwitcherScrollPreventerDelegate, CKBrowserTransitionCoordinatorDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     bool  _allowFooterLabelUpdates;
+    bool  _allowPluginLaunchNotifications;
     IMBalloonPlugin * _balloonPlugin;
+    bool  _browserIsCollapsingFromFullscreen;
     bool  _browserViewReadyForUserInteraction;
     id  _cancelTouchesToken;
     UICollectionView * _collectionView;
@@ -23,16 +25,21 @@
     bool  _insertedViaCollapse;
     bool  _interactiveExpandStarted;
     NSMutableDictionary * _livePluginIdentifierToTimestampMap;
+    id /* block */  _performAfterFirstLayoutBlock;
     CKBrowserSwitcherScrollPreventer * _scrollPreventer;
     IMScheduledUpdater * _scrollUpdater;
     CKBrowserSelectionController * _selectionController;
     bool  _selectionControllerPresented;
+    NSDate * _timeOfLastScrollingDecelerationEnded;
     CKBrowserTransitionCoordinator * _transitionCoordinator;
     bool  _transitioningFromSnapshotToLiveView;
+    bool  _viewHasLaidOutSubviews;
 }
 
 @property (nonatomic) bool allowFooterLabelUpdates;
+@property (nonatomic) bool allowPluginLaunchNotifications;
 @property (nonatomic, retain) IMBalloonPlugin *balloonPlugin;
+@property (nonatomic) bool browserIsCollapsingFromFullscreen;
 @property (getter=isBrowserReadyForUserInteraction, nonatomic) bool browserViewReadyForUserInteraction;
 @property (nonatomic, retain) id cancelTouchesToken;
 @property (nonatomic, retain) UICollectionView *collectionView;
@@ -54,27 +61,35 @@
 @property (nonatomic) bool insertedViaCollapse;
 @property (nonatomic) bool interactiveExpandStarted;
 @property (nonatomic, retain) NSMutableDictionary *livePluginIdentifierToTimestampMap;
+@property (nonatomic, copy) id /* block */ performAfterFirstLayoutBlock;
 @property (nonatomic, retain) CKBrowserSwitcherScrollPreventer *scrollPreventer;
 @property (nonatomic, retain) IMScheduledUpdater *scrollUpdater;
 @property (nonatomic, retain) CKBrowserSelectionController *selectionController;
 @property (nonatomic) bool selectionControllerPresented;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSDate *timeOfLastScrollingDecelerationEnded;
 @property (nonatomic, retain) CKBrowserTransitionCoordinator *transitionCoordinator;
 @property (getter=isTransitioningFromSnapshotToLiveView, nonatomic) bool transitioningFromSnapshotToLiveView;
+@property (nonatomic) bool viewHasLaidOutSubviews;
 
 - (void).cxx_destruct;
 - (void)_beginHoldingScrollUpdatesForKey:(id)arg1;
+- (struct CGSize { double x1; double x2; })_browserSize;
 - (void)_deferredUpdateVisibleBrowserView;
+- (double)_delayWhenScrollingBeforeLoadingNewBrowser;
 - (void)_endHoldingScrollUpdatesForKey:(id)arg1;
 - (void)_expandPanGestureRecognized:(id)arg1;
 - (void)_handleRemoteViewControllerConnectionInterrupted:(id)arg1;
+- (void)_handleVisibleSwitcherPluginsChanged:(id)arg1;
 - (double)_horizontalOffsetForVisibleSwitcherPluginIndex:(unsigned long long)arg1;
 - (void)_insertCurrentBrowserAndRemoveOldBrowsersIfNeeded;
 - (void)_loadBrowserForBalloonPlugin:(id)arg1 datasource:(id)arg2;
 - (void)_moveLiveBrowserViewsToUpdatedVisibleIndices;
+- (void)_performAfterFirstLayout:(id /* block */)arg1;
 - (bool)_pluginHasLiveBrowserViewInSwitcher:(id)arg1;
 - (void)_removeBrowserFromViewHierarchy:(id)arg1;
 - (void)_removeBrowserWithPluginIdentifierFromViewHierarchy:(id)arg1;
+- (bool)_scrollToVisiblePluginWithIdentifier:(id)arg1;
 - (void)_scrollUpdaterFired;
 - (void)_snapshotCurrentViewController;
 - (void)_transitionSnapshotViewToBrowserView;
@@ -92,10 +107,15 @@
 - (unsigned long long)_visibleSwitcherPluginIndexForHorizontalOffset:(double)arg1;
 - (id)activeBrowserView;
 - (bool)allowFooterLabelUpdates;
+- (bool)allowPluginLaunchNotifications;
 - (id)balloonPlugin;
+- (bool)browserIsCollapsingFromFullscreen;
 - (void)browserSelectionControllerSelectedBalloonPlugin:(id)arg1;
 - (void)browserTransitionCoordinator:(id)arg1 browserWillBecomeInactive:(id)arg2;
+- (void)browserTransitionCoordinator:(id)arg1 didTransitionFromOrientation:(long long)arg2 toOrientation:(long long)arg3;
 - (void)browserTransitionCoordinator:(id)arg1 expandedStateDidChange:(bool)arg2 withReason:(long long)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserTransitionCoordinator:(id)arg1 preferredBoundsForBrowser:(id)arg2;
+- (void)browserTransitionCoordinator:(id)arg1 wantsToSwitchToPlugin:(id)arg2;
 - (void)browserTransitionCoordinatorDidCollapseOrDismiss:(id)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorDidTransitionOrPresentToFullscreen:(id)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorWantsPresentationOfAppStore:(id)arg1;
@@ -116,7 +136,6 @@
 - (void)dismissBrowserFullscreenAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)dragManagerDidEndDragging:(id)arg1;
 - (void)dragManagerDidStartDrag:(id)arg1;
-- (id)entryViewSnapshotForBrowserTransitionCoordinator:(id)arg1;
 - (id)expandGestureRecognizer;
 - (id)flowLayout;
 - (id)footerView;
@@ -130,6 +149,7 @@
 - (bool)insertedViaCollapse;
 - (bool)interactiveExpandStarted;
 - (bool)isBrowserReadyForUserInteraction;
+- (bool)isBrowserSwitcherFirstLaunch;
 - (bool)isDragging;
 - (bool)isInDragAndDrop;
 - (bool)isTransitioningFromSnapshotToLiveView;
@@ -138,6 +158,8 @@
 - (void)loadView;
 - (void)pageControlChanged:(id)arg1;
 - (void)pageControlTapped:(id)arg1;
+- (id /* block */)performAfterFirstLayoutBlock;
+- (void)reinsertSwitcherFooterViewForBrowserTransitionCoordinator:(id)arg1;
 - (void)saveSnapshotForCurrentBrowserViewControllerIfPossible;
 - (void)scrollCollectionViewToPlugin:(id)arg1;
 - (id)scrollPreventer;
@@ -153,8 +175,10 @@
 - (id)selectionController;
 - (bool)selectionControllerPresented;
 - (void)setAllowFooterLabelUpdates:(bool)arg1;
+- (void)setAllowPluginLaunchNotifications:(bool)arg1;
 - (void)setAppName:(id)arg1;
 - (void)setBalloonPlugin:(id)arg1;
+- (void)setBrowserIsCollapsingFromFullscreen:(bool)arg1;
 - (void)setBrowserViewReadyForUserInteraction:(bool)arg1;
 - (void)setCancelTouchesToken:(id)arg1;
 - (void)setCollectionView:(id)arg1;
@@ -173,25 +197,33 @@
 - (void)setInsertedViaCollapse:(bool)arg1;
 - (void)setInteractiveExpandStarted:(bool)arg1;
 - (void)setLivePluginIdentifierToTimestampMap:(id)arg1;
+- (void)setPerformAfterFirstLayoutBlock:(id /* block */)arg1;
 - (void)setScrollPreventer:(id)arg1;
 - (void)setScrollUpdater:(id)arg1;
 - (void)setSelectionController:(id)arg1;
 - (void)setSelectionControllerPresented:(bool)arg1;
+- (void)setTimeOfLastScrollingDecelerationEnded:(id)arg1;
 - (void)setTransitionCoordinator:(id)arg1;
 - (void)setTransitioningFromSnapshotToLiveView:(bool)arg1;
+- (void)setViewHasLaidOutSubviews:(bool)arg1;
 - (bool)shouldAutorotate;
 - (void)showAppName:(bool)arg1 animated:(bool)arg2;
 - (void)showBrowserFullscreenForPlugin:(id)arg1 datasource:(id)arg2;
 - (void)showBrowserInSwitcherForPlugin:(id)arg1 datasource:(id)arg2 reloadData:(bool)arg3;
 - (void)showSelectionViewController:(bool)arg1 animated:(bool)arg2;
+- (id)switcherFooterViewForBrowserTransitionCoordinator:(id)arg1;
+- (id)timeOfLastScrollingDecelerationEnded;
+- (id)transcriptEntryViewForBrowserTransitionCoordinator:(id)arg1;
 - (id)transitionCoordinator;
 - (void)transitionToCollapsed;
 - (void)transitionToFullscreen;
 - (void)unloadRemoteViewControllers;
+- (void)updateFooterViewFrame;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (bool)viewHasLaidOutSubviews;
 - (void)viewWillDisappear:(bool)arg1;
 
 @end

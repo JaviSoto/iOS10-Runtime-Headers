@@ -9,6 +9,7 @@
     NSString * _conversationID;
     long long  _currentBrowserConsumer;
     UIView * _dragTargetView;
+    bool  _isTransitioningToExpandedPresentation;
     bool  _isiMessage;
     UIViewController * _presentationViewController;
     NSObject<CKBrowserViewControllerSendDelegate> * _sendDelegate;
@@ -28,6 +29,7 @@
 @property (nonatomic) UIView *dragTargetView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool inExpandedPresentation;
+@property (nonatomic) bool isTransitioningToExpandedPresentation;
 @property (nonatomic) bool isiMessage;
 @property (nonatomic, readonly) bool mayBeKeptInViewHierarchy;
 @property (nonatomic, readonly) long long parentModalPresentationStyle;
@@ -35,6 +37,7 @@
 @property (nonatomic, retain) UIViewController *presentationViewController;
 @property (nonatomic) NSObject<CKBrowserViewControllerSendDelegate> *sendDelegate;
 @property (nonatomic, readonly) bool shouldShowChatChrome;
+@property (nonatomic, retain) NSURL *storeLaunchURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsQuickView;
 @property (nonatomic, readonly) bool wantsDarkUI;
@@ -44,16 +47,20 @@
 + (bool)supportsMessagesAppExtendedLaunchTest;
 
 - (void).cxx_destruct;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (id)balloonPlugin;
 - (id)balloonPluginDataSource;
+- (void)beginDisablingUserInteraction;
 - (id)browserDragManager;
 - (long long)browserPresentationStyle;
 - (id)conversationID;
 - (long long)currentBrowserConsumer;
+- (void)didTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)dismiss;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)dragTargetView;
+- (void)endDisablingUserInteraction;
 - (void)finishedPPTTestNamed:(id)arg1;
 - (void)finishedPPTTestNamed:(id)arg1 isCKLaunchTest:(bool)arg2;
 - (bool)inExpandedPresentation;
@@ -61,6 +68,7 @@
 - (id)initWithBalloonPlugin:(id)arg1 dataSource:(id)arg2;
 - (id)initWithBalloonPlugin:(id)arg1 pluginPayloads:(id)arg2;
 - (bool)isLoaded;
+- (bool)isTransitioningToExpandedPresentation;
 - (bool)isiMessage;
 - (void)loadView;
 - (bool)mayBeKeptInViewHierarchy;
@@ -72,6 +80,7 @@
 - (void)setConversationID:(id)arg1;
 - (void)setCurrentBrowserConsumer:(long long)arg1;
 - (void)setDragTargetView:(id)arg1;
+- (void)setIsTransitioningToExpandedPresentation:(bool)arg1;
 - (void)setIsiMessage:(bool)arg1;
 - (void)setPresentationViewController:(id)arg1;
 - (void)setSendDelegate:(id)arg1;

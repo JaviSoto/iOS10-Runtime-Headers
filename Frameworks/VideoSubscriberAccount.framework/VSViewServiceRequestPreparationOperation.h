@@ -5,25 +5,25 @@
 @interface VSViewServiceRequestPreparationOperation : VSAsyncOperation {
     VSIdentityProviderAvailabilityInfoCenter * _availabilityInfoCenter;
     VSAccount * _currentAccount;
-    NSError * _error;
     struct { 
         unsigned int val[8]; 
     }  _hostAuditToken;
     int  _hostProcessIdentifier;
-    NSArray * _identityProviders;
     NSXPCConnection * _privacyServiceConnection;
     bool  _requestAllowsPrivacyUI;
+    bool  _requestRequiresPrivacyUI;
+    VSFailable * _result;
     NSArray * _supportedIdentityProviderIdentifiers;
 }
 
 @property (nonatomic, retain) VSIdentityProviderAvailabilityInfoCenter *availabilityInfoCenter;
 @property (nonatomic, retain) VSAccount *currentAccount;
-@property (nonatomic, retain) NSError *error;
 @property (nonatomic) struct { unsigned int x1[8]; } hostAuditToken;
 @property (nonatomic) int hostProcessIdentifier;
-@property (nonatomic, copy) NSArray *identityProviders;
 @property (nonatomic, retain) NSXPCConnection *privacyServiceConnection;
 @property (nonatomic) bool requestAllowsPrivacyUI;
+@property (nonatomic) bool requestRequiresPrivacyUI;
+@property (nonatomic, retain) VSFailable *result;
 @property (nonatomic, copy) NSArray *supportedIdentityProviderIdentifiers;
 
 - (void).cxx_destruct;
@@ -31,7 +31,7 @@
 - (void)_checkEntitlement;
 - (void)_checkPrivacy;
 - (void)_checkSupportedProviders;
-- (void)_determineDisplayName;
+- (void)_determineProviderDisplayName;
 - (void)_finishWithError:(id)arg1;
 - (id)_privacyServiceWithErrorHandler:(id /* block */)arg1;
 - (void)_promptForPrivacyWithDisplayName:(id)arg1;
@@ -39,22 +39,22 @@
 - (void)cancel;
 - (id)currentAccount;
 - (void)dealloc;
-- (id)error;
 - (void)executionDidBegin;
 - (struct { unsigned int x1[8]; })hostAuditToken;
 - (int)hostProcessIdentifier;
-- (id)identityProviders;
 - (id)init;
 - (id)privacyServiceConnection;
 - (bool)requestAllowsPrivacyUI;
+- (bool)requestRequiresPrivacyUI;
+- (id)result;
 - (void)setAvailabilityInfoCenter:(id)arg1;
 - (void)setCurrentAccount:(id)arg1;
-- (void)setError:(id)arg1;
 - (void)setHostAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (void)setHostProcessIdentifier:(int)arg1;
-- (void)setIdentityProviders:(id)arg1;
 - (void)setPrivacyServiceConnection:(id)arg1;
 - (void)setRequestAllowsPrivacyUI:(bool)arg1;
+- (void)setRequestRequiresPrivacyUI:(bool)arg1;
+- (void)setResult:(id)arg1;
 - (void)setSupportedIdentityProviderIdentifiers:(id)arg1;
 - (id)supportedIdentityProviderIdentifiers;
 

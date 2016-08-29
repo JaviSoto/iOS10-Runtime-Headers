@@ -2,34 +2,31 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRequestRideIntent : INIntent <INRequestRideIntent>
+@interface INRequestRideIntent : INIntent <INRequestRideIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) CLPlacemark *dropOffLocation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *partySize;
-@property (nonatomic, readonly, copy) INSpeakableString *paymentMethodName;
+@property (nonatomic, readonly, copy) INPaymentMethod *paymentMethod;
 @property (nonatomic, readonly, copy) CLPlacemark *pickupLocation;
 @property (nonatomic, readonly, copy) INSpeakableString *rideOptionName;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) NSNumber *usesApplePayForPayment;
 
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;
 - (id)_typedBackingStore;
 - (id)dropOffLocation;
-- (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2 rideOptionName:(id)arg3 partySize:(id)arg4 paymentMethodName:(id)arg5 usesApplePayForPayment:(id)arg6;
+- (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2 rideOptionName:(id)arg3 partySize:(id)arg4 paymentMethod:(id)arg5;
 - (id)partySize;
-- (id)paymentMethodName;
+- (id)paymentMethod;
 - (id)pickupLocation;
 - (id)rideOptionName;
 - (void)setDropOffLocation:(id)arg1;
 - (void)setPartySize:(id)arg1;
-- (void)setPaymentMethodName:(id)arg1;
+- (void)setPaymentMethod:(id)arg1;
 - (void)setPickupLocation:(id)arg1;
 - (void)setRideOptionName:(id)arg1;
-- (void)setUsesApplePayForPayment:(id)arg1;
-- (id)usesApplePayForPayment;
 
 @end

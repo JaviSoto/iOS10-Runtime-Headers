@@ -38,6 +38,7 @@
 - (void)PDFViewWillClickOnLink:(id)arg1 withURL:(id)arg2;
 - (void)_commonInit;
 - (void)_doNotQueryScaleFactor;
+- (void)_releaseDocument;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromPageToPageView:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromPageViewToPage:(id)arg1;
 - (bool)allowsDragging;
@@ -98,6 +99,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)endEditingAnnotation;
 - (void)findVisiblePages;
+- (void)forceWebKitMainThread:(bool)arg1;
 - (void)gestureInit;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -123,6 +125,9 @@
 - (void)installTileStats:(bool)arg1;
 - (void)internalSetScaleFactor:(double)arg1;
 - (long long)interpolationQuality;
+- (bool)isForcingWebKitMainThread;
+- (bool)isOverLinkAnnotation:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)isRectVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onPage:(id)arg2;
 - (unsigned long long)lastPageIndex;
 - (void)layoutDocumentView;
 - (double)lineWidthThreshold;
@@ -139,6 +144,7 @@
 - (id)panGestureRecognizer;
 - (struct _PDFMargins { double x1; double x2; double x3; double x4; })pdfMargins;
 - (void)performAction:(id)arg1;
+- (void)performBeep;
 - (id)popupManager;
 - (void)positionInternalViews:(id)arg1;
 - (id)previousPage;
@@ -173,8 +179,10 @@
 - (void)setDisplaysSoloPagesCentered:(bool)arg1;
 - (void)setDoPeriodicFlush:(bool)arg1;
 - (void)setDocument:(id)arg1;
+- (void)setDocument:(id)arg1 waitDuration:(double)arg2;
 - (void)setEnableDataDetectors:(bool)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setEnablePageShadows:(bool)arg1;
+- (void)setForcesTopAlignment:(bool)arg1;
 - (void)setGreekingThreshold:(double)arg1;
 - (void)setGutterWidth:(double)arg1;
 - (void)setHighlightedSelections:(id)arg1;

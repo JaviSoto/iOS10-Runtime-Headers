@@ -5,15 +5,24 @@
 @interface VSIdentityProviderResponse : NSObject {
     VSAccount * _account;
     VSAccountMetadata * _accountMetadata;
+    bool  _didCreateAccount;
+    VSImageLoadOperation * _logoLoadOperation;
 }
 
 @property (nonatomic, retain) VSAccount *account;
 @property (nonatomic, copy) VSAccountMetadata *accountMetadata;
+@property (nonatomic) bool didCreateAccount;
+@property (nonatomic, retain) VSImageLoadOperation *logoLoadOperation;
 
 - (void).cxx_destruct;
 - (id)account;
 - (id)accountMetadata;
+- (id)description;
+- (bool)didCreateAccount;
+- (id)logoLoadOperation;
 - (void)setAccount:(id)arg1;
 - (void)setAccountMetadata:(id)arg1;
+- (void)setDidCreateAccount:(bool)arg1;
+- (void)setLogoLoadOperation:(id)arg1;
 
 @end

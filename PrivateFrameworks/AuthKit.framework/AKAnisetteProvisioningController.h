@@ -15,8 +15,10 @@
 - (id)_initForDevice:(id)arg1 daemonXPCEndpoint:(id)arg2;
 - (void)anisetteDataForURLRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)anisetteDataWithCompletion:(id /* block */)arg1;
+- (id)anisetteDataWithError:(id*)arg1;
 - (void)dealloc;
 - (void)eraseWithCompletion:(id /* block */)arg1;
+- (id)fetchAnisetteDataAndProvisionIfNecessary:(bool)arg1 error:(id*)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
 - (id)initForDevice:(id)arg1;

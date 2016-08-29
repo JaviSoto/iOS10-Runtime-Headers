@@ -47,6 +47,7 @@
 + (id)predicateForVisibleFoldersIncludingHiddenNoteContainers:(bool)arg1;
 + (void)purgeFolder:(id)arg1;
 + (id)reservedFolderTitles;
++ (id)shareType;
 + (id)stringByScrubbingStringForFolderName:(id)arg1;
 + (id)visibleFoldersInContext:(id)arg1;
 

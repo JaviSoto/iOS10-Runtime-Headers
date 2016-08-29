@@ -13,7 +13,6 @@
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-+ (id)_videoCompositionProcessorPropertiesByAddingColorProperties:(id)arg1 toVideoCompositionProcessorProperties:(id)arg2;
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 
 - (id)_asset;

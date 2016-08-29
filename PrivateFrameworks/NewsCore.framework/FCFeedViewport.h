@@ -14,14 +14,14 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSArray *internalElements;
 
-+ (id)dataFromViewport:(id)arg1;
++ (id)dataFromViewport:(id)arg1 prune:(bool)arg2 preserveBookmark:(id)arg3;
 + (id)freshlyUnarchivedViewportFromViewport:(id)arg1;
-+ (id)pbViewportFromViewport:(id)arg1;
++ (id)pbViewportFromViewport:(id)arg1 prune:(bool)arg2 preserveBookmark:(id)arg3;
 + (id)viewportFromData:(id)arg1;
 + (id)viewportFromPBViewport:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)archive;
+- (id)archiveWithPruning:(bool)arg1 preserveBookmark:(id)arg2;
 - (id)bookmarkForFirstHeadline;
 - (id)bookmarkForGroup:(id)arg1 headline:(id)arg2;
 - (id)bookmarkForLastHeadline;

@@ -12,6 +12,7 @@
         unsigned int _checkedInvalidHome : 1; 
         unsigned int _lastWriteFailed : 1; 
         unsigned int _observing : 1; 
+        unsigned int _disableBackup : 1; 
     }  _flags;
     struct __CFDictionary { } * _locallySetDict;
     NSObject<OS_dispatch_group> * _synchGroup;
@@ -53,6 +54,7 @@
 - (long long)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)sendRequestNewDataMessage:(id)arg1 toConnection:(id)arg2 retryCount:(int)arg3 error:(bool*)arg4;
 - (void)setAccessRestricted:(bool)arg1;
+- (void)setBackupDisabled:(bool)arg1;
 - (void)setContainer:(struct __CFString { }*)arg1;
 - (void)setDaemonCacheEnabled:(bool)arg1;
 - (void)setDomainIdentifier:(struct __CFString { }*)arg1;

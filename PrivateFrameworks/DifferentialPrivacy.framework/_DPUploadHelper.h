@@ -4,9 +4,10 @@
 
 @interface _DPUploadHelper : NSObject
 
-- (id)init;
-- (id)ipsFilePathForDate:(id)arg1;
-- (id)timestampWithDate:(id)arg1 format:(id)arg2;
-- (id)writeUploadFile:(id)arg1;
++ (id)ipsFilePathForDate:(id)arg1;
++ (id)submissionFilePathInDirectory:(id)arg1 forDate:(id)arg2 suffix:(id)arg3;
++ (id)writeFileForDA:(id)arg1;
++ (id)writeFileForParsec:(id)arg1;
++ (id)writeFileForParsec:(id)arg1 inDirectory:(id)arg2;
 
 @end

@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic) BOOL gradientColor;
-@property (nonatomic, retain) UIView<CKGradientReferenceView> *gradientReferenceView;
+@property (nonatomic) UIView<CKGradientReferenceView> *gradientReferenceView;
 @property (nonatomic) BOOL solidColor;
 
 + (id)_middleBubbleSquareImage;

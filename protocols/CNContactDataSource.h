@@ -24,13 +24,10 @@
 - (CNContactFilter *)filter;
 - (void)invalidate;
 - (bool)isLoading;
-- (CNContact *)meContact;
-- (CNContact *)meContactWithKeysToFetch:(NSArray *)arg1;
 - (void)reload;
 - (void)reset;
 - (void)setContactFormatter:(CNContactFormatter *)arg1;
 - (void)setFilter:(CNContactFilter *)arg1;
-- (bool)setMeContact:(CNContact *)arg1 error:(id*)arg2;
 - (bool)shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
 - (CNContactStore *)store;
 

@@ -31,6 +31,8 @@
 - (id)_matchedLocationForLocation:(id)arg1;
 - (id)_newMapMatcherForRoute:(id)arg1;
 - (id)_overrideLocationForLocation:(id)arg1;
+- (void)_sendRouteHintForLocation:(id)arg1;
+- (void)_updateForArrival;
 - (void)_updateForLocation:(id)arg1;
 - (void)_updateForReroute:(id)arg1;
 - (void)etaManager:(id)arg1 failedToReceiveETAResponse:(id)arg2;
@@ -53,5 +55,6 @@
 - (double)trafficIncidentAlertUpdaterTimeUntilNextAnnouncement:(id)arg1;
 - (int)transportType;
 - (void)tunnelLocationProjector:(id)arg1 didUpdateLocation:(id)arg2;
+- (void)updateForTracePaused;
 
 @end

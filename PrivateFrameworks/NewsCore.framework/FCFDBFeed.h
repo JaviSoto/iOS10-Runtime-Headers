@@ -11,9 +11,14 @@
 @property (nonatomic, retain) NSOrderedSet *segments;
 
 - (void)awakeFromFetch;
+- (id)contiguousRangeInRange:(id)arg1;
 - (id)contiguousSegmentsInFeedRange:(id)arg1;
+- (void)enumerateGapsWithBlock:(id /* block */)arg1;
 - (id)firstSegmentFollowingFeedRange:(id)arg1;
+- (void)insertFeedItems:(id)arg1 ckCursor:(id)arg2 plausibleRange:(id)arg3 segmentEntity:(id)arg4 itemEntity:(id)arg5 itemIndexEntity:(id)arg6 moc:(id)arg7 indexFeatures:(bool)arg8;
 - (void)insertSegment:(id)arg1;
+- (void)prune;
+- (void)willAccessFeedRange:(id)arg1;
 - (void)willTurnIntoFault;
 
 @end

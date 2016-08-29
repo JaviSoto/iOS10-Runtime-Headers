@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSKDocumentObject, TSKSearchable, TSKTransformableObject> {
+@interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSDScrollingAwareChangeSource, TSKDocumentObject, TSKSearchable, TSKTransformableObject> {
     NSString * mAccessibilityDescription;
     bool  mAspectRatioLocked;
     TSSPropertySetChangeDetails * mChanges;
@@ -65,12 +65,12 @@
 - (id)accessibilityDescription;
 - (id)actionBuilds;
 - (id)activeBuildChunks;
-- (id)activeBuildChunksForAnimationType:(long long)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)animationFilters;
 - (bool)aspectRatioLocked;
 - (void)beginCollectingChanges;
 - (id)buildChunks;
+- (id)buildChunksForAnimationType:(long long)arg1;
 - (unsigned long long)buildCount;
 - (id)buildIn;
 - (id)buildOut;
@@ -143,6 +143,7 @@
 - (void)setParentInfo:(id)arg1;
 - (void)setParentInfoDuringUnarchiving:(id)arg1 inDocument:(bool)arg2;
 - (void)setPrimitiveGeometry:(id)arg1;
+- (bool)shouldCancelScrollingToSelectionPath:(id)arg1 forChanges:(id)arg2;
 - (id)slide;
 - (bool)supportsAttachedComments;
 - (bool)supportsHyperlinks;
@@ -153,7 +154,6 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformInRoot;
 - (struct CGPoint { double x1; double x2; })transformableObjectAnchorPoint;
 - (id)transformedGeometryWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (id)uuidPathPrefixComponentsProvider;
 - (id)validBuildsInBuilds:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

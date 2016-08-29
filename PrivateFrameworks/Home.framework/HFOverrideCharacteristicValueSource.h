@@ -7,15 +7,16 @@
     <HFOverrideCharacteristicValueProvider> * _overrideValueProvider;
 }
 
+@property (nonatomic, readonly) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *originalValueSource;
 @property (nonatomic) <HFOverrideCharacteristicValueProvider> *overrideValueProvider;
-@property (nonatomic, readonly) unsigned long long remoteAccessState;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)cachedErrorForWriteToCharacteristic:(id)arg1;
 - (id)cachedValueForCharacteristic:(id)arg1;
 - (id)initWithOriginalValueSource:(id)arg1 overrideValueProvider:(id)arg2;
 - (id)originalValueSource;

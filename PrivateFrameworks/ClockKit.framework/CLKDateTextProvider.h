@@ -8,6 +8,7 @@
     unsigned long long  _calendarUnits;
     NSDate * _date;
     NSDateFormatter * _dateFormatter;
+    long long  _formattingContext;
     bool  _shortUnits;
     NSArray * _templateSeries;
     NSTimeZone * _timeZone;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSString *alternateCalendarLocaleID;
 @property (nonatomic) unsigned long long calendarUnits;
 @property (nonatomic, retain) NSDate *date;
+@property (nonatomic) long long formattingContext;
 @property (nonatomic) bool shortUnits;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
@@ -38,6 +40,7 @@
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (long long)formattingContext;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)setAlternateCalendarLocaleID:(id)arg1;
 - (void)setCalendarUnits:(unsigned long long)arg1;
 - (void)setDate:(id)arg1;
+- (void)setFormattingContext:(long long)arg1;
 - (void)setShortUnits:(bool)arg1;
 - (void)setTimeZone:(id)arg1;
 - (bool)shortUnits;

@@ -10,6 +10,7 @@
     }  _currentTouchPoint;
     BOOL  _currentTouchState;
     double  _currentZGradient;
+    double  _maximumRadius;
     double  _originalTimestamp;
     struct CGPoint { 
         double x; 
@@ -26,6 +27,7 @@
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } currentTouchPoint;
 @property (nonatomic) BOOL currentTouchState;
 @property (nonatomic, readonly) double currentZGradient;
+@property (nonatomic, readonly) double maximumRadius;
 @property (nonatomic, readonly) _UIKBRTTouchInfo *nextTouch;
 @property (nonatomic, readonly) double originalTimestamp;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } originalTouchPoint;
@@ -51,6 +53,7 @@
 - (void)fireTimerNow;
 - (id)initWithTouch:(id)arg1 withIdentifier:(id)arg2 canLogTouch:(bool)arg3;
 - (void)invalidateTimer;
+- (double)maximumRadius;
 - (id)nextTouch;
 - (double)originalTimestamp;
 - (struct CGPoint { double x1; double x2; })originalTouchPoint;

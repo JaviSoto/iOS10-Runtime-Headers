@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INImage : NSObject <INCacheableObject, NSCopying, NSSecureCoding> {
+@interface INImage : NSObject <INCacheableObject, INImageExport, NSCopying, NSSecureCoding> {
     NSString * _bundlePath;
     NSString * _identifier;
     NSData * _imageData;

@@ -8,7 +8,7 @@
     bool  mIsGenerating;
     long long  mReaderCount;
     bool  mReentrant;
-    NSArray * mToDispose;
+    id  mToDispose;
     id  mValue;
 }
 

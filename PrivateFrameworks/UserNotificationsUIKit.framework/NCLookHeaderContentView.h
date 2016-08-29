@@ -5,6 +5,7 @@
 @interface NCLookHeaderContentView : UIView <NCContentSizeCategoryAdjusting, SBDateLabelDelegate> {
     bool  _adjustsFontForContentSizeCategory;
     NSDate * _date;
+    bool  _dateAllDay;
     long long  _dateFormatStyle;
     UILabel<NCNotificationDateLabel> * _dateLabel;
     NCLookViewFontProvider * _fontProvider;
@@ -12,6 +13,7 @@
     UIButton * _iconButton;
     long long  _lookStyle;
     NSString * _preferredContentSizeCategory;
+    NSTimeZone * _timeZone;
     UILabel * _titleLabel;
     UIButton * _utilityButton;
     UIView * _utilityView;
@@ -19,6 +21,7 @@
 
 @property (nonatomic) bool adjustsFontForContentSizeCategory;
 @property (nonatomic, copy) NSDate *date;
+@property (getter=isDateAllDay, nonatomic) bool dateAllDay;
 @property (nonatomic) long long dateFormatStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -29,6 +32,7 @@
 @property (nonatomic, readonly) long long lookStyle;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) UIButton *utilityButton;
 @property (nonatomic, retain) UIView *utilityView;
@@ -79,19 +83,23 @@
 - (id)icon;
 - (id)iconButton;
 - (id)initWithStyle:(long long)arg1;
+- (bool)isDateAllDay;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (long long)lookStyle;
 - (id)preferredContentSizeCategory;
 - (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
 - (void)setDate:(id)arg1;
+- (void)setDateAllDay:(bool)arg1;
 - (void)setDateFormatStyle:(long long)arg1;
 - (void)setHeedsHorizontalLayoutMargins:(bool)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setPreferredContentSizeCategory:(id)arg1;
+- (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUtilityView:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)timeZone;
 - (id)title;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)utilityButton;

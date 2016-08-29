@@ -11,4 +11,9 @@
 - (void)didReceiveButtonPressForApplet:(NSString *)arg1;
 - (void)didStartTransaction:(NFContactlessPaymentStartEvent *)arg1;
 
+@optional
+
+- (void)didPerformValueAddedServiceTransactions:(NSArray *)arg1;
+- (void)didSelectValueAddedService:(bool)arg1;
+
 @end

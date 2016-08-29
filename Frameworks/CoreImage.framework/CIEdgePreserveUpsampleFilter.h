@@ -16,8 +16,11 @@
 
 + (id)customAttributes;
 
-- (id)_kernelGuideCombiner;
+- (id)_kernelGuideCombine;
+- (id)_kernelGuideCombine4;
+- (id)_kernelGuideMono;
 - (id)_kernelJointUpsamp;
+- (id)_kernelJointUpsampRG;
 - (id)inputImage;
 - (id)inputLumaSigma;
 - (id)inputSmallImage;

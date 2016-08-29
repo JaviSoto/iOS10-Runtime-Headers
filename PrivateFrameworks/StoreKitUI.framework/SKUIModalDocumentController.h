@@ -17,6 +17,8 @@
     NSMutableArray * _stackItems;
 }
 
+@property (nonatomic, readonly) UINavigationController *_overlayNavigationController;
+@property (nonatomic, readonly) SKUIOverlayContainerViewController *_overlayViewController;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic) <SKUIModalDocumentDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -35,7 +37,9 @@
 - (void)_garbageCollectActivityViewController:(id)arg1;
 - (id)_imageForImageViewElement:(id)arg1;
 - (void)_overlayControllerBackstopAction:(id)arg1;
+- (id)_overlayNavigationController;
 - (id)_overlayStackItems;
+- (id)_overlayViewController;
 - (void)_popDocument:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_popDocumentSkippingUserInterfaceUpdates;
 - (void)_popOverlayStackItem:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
@@ -65,6 +69,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)documents;
+- (void)ensureOverlayNavigationControllerStackConsistencyForNavigationController:(id)arg1;
 - (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
 - (void)giftViewController:(id)arg1 didFinishWithResult:(bool)arg2;
 - (id)init;

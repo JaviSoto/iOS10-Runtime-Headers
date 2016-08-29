@@ -22,6 +22,7 @@
     CKFullScreenAppViewController * _fullscreenViewController;
     long long  _lastTransitionReason;
     UIViewController * _presentingViewController;
+    UIWindow * _previousKeyWindow;
     <CKBrowserViewControllerSendDelegate> * _sendDelegate;
     bool  _underTest;
 }
@@ -35,11 +36,11 @@
 @property (nonatomic) <CKBrowserTransitionCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=isExpanded, nonatomic) bool expanded;
-@property (nonatomic, readonly) UIView *fullscreenIAVOverride;
 @property (nonatomic, retain) CKFullScreenAppViewController *fullscreenViewController;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long lastTransitionReason;
 @property (nonatomic) UIViewController *presentingViewController;
+@property (nonatomic) UIWindow *previousKeyWindow;
 @property (nonatomic) <CKBrowserViewControllerSendDelegate> *sendDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic) bool underTest;
@@ -53,15 +54,16 @@
 - (id)delegate;
 - (void)dismissCurrentFullscreenBrowserAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)fullscreenAppViewController:(id)arg1 wantsToSwitchToPlugin:(id)arg2;
+- (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppStore:(id)arg1;
 - (void)fullscreenAppViewControllerWantsToCollapse:(id)arg1;
-- (id)fullscreenIAVOverride;
 - (id)fullscreenViewController;
 - (bool)isExpanded;
 - (bool)isHostingRemoteKeyboardView;
 - (long long)lastTransitionReason;
 - (void)presentCurrentBrowserFullscreenAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)presentingViewController;
+- (id)previousKeyWindow;
 - (void)releaseOwnershipOfBrowserForConsumer:(long long)arg1;
 - (id)requestOwnershipOfBrowserForConsumer:(long long)arg1;
 - (id)sendDelegate;
@@ -76,6 +78,7 @@
 - (void)setFullscreenViewController:(id)arg1;
 - (void)setLastTransitionReason:(long long)arg1;
 - (void)setPresentingViewController:(id)arg1;
+- (void)setPreviousKeyWindow:(id)arg1;
 - (void)setSendDelegate:(id)arg1;
 - (void)setUnderTest:(bool)arg1;
 - (void)transitionCurrentBrowserToCollapsedPresentationAnimated:(bool)arg1 completion:(id /* block */)arg2;

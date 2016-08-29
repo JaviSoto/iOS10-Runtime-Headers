@@ -149,6 +149,8 @@
 - (unsigned long long)gracePeriod;
 - (bool)hasAppAnalyticsAllowedBeenSet;
 - (bool)hasDiagnosticSubmissionAllowedBeenSet;
+- (bool)hasHealthDataSubmissionAllowedBeenSet;
+- (bool)hasWheelchairDataSubmissionAllowedBeenSet;
 - (int)hostMayPairWithOptions:(id)arg1 challenge:(id)arg2;
 - (void)installProfileData:(id)arg1 interactionDelegate:(id)arg2;
 - (void)installProfileData:(id)arg1 options:(id)arg2 interactionDelegate:(id)arg3;
@@ -215,6 +217,7 @@
 - (bool)isFingerprintUnlockAllowed;
 - (bool)isGeotagSharingAllowed;
 - (bool)isHashtagImagesAllowed;
+- (bool)isHealthDataSubmissionAllowed;
 - (bool)isHomeAllowed;
 - (bool)isInAppPaymentAllowed;
 - (bool)isInSingleAppMode;
@@ -266,6 +269,7 @@
 - (bool)isWebContentFilteringInEffect;
 - (bool)isWebFilterUIActive;
 - (bool)isWebTextDefineAllowed;
+- (bool)isWheelchairDataSubmissionAllowed;
 - (bool)isiCloudDriveAllowed;
 - (bool)isiTunesAllowed;
 - (id)knownAirPrintIPPURLStrings;
@@ -393,6 +397,7 @@
 - (void)setFindMyCarAllowed:(bool)arg1;
 - (void)setFingerprintUnlockAllowed:(bool)arg1 passcode:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)setGracePeriod:(unsigned long long)arg1 passcode:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)setHealthDataSubmissionAllowed:(bool)arg1;
 - (void)setInteractionDelegate:(id)arg1;
 - (void)setKeyboardShortcutsAllowed:(bool)arg1;
 - (void)setManagedEmailDomains:(id)arg1;
@@ -424,6 +429,7 @@
 - (void)setValues:(id)arg1 forUnionSetting:(id)arg2 toSystem:(bool)arg3 user:(bool)arg4;
 - (void)setWebContentFilterAutoPermittedURLStrings:(id)arg1;
 - (void)setWebContentFilterUserBlacklistedURLStrings:(id)arg1;
+- (void)setWheelchairDataSubmissionAllowed:(bool)arg1;
 - (void)setupAssistantDidFinish;
 - (bool)shouldApplyFilterForBundleID:(id)arg1 sourceAccountManagement:(int)arg2 outAllowManagedAccounts:(bool*)arg3 outAllowUnmanagedAccounts:(bool*)arg4;
 - (bool)shouldDestroyOldKeybag;

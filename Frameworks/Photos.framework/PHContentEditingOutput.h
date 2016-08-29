@@ -37,6 +37,7 @@
 - (void)_commonInit;
 - (id)_renderURLWithExtensionForMediaType:(long long)arg1;
 - (id)adjustmentData;
+- (id)assetAdjustmentsWithEditorBundleID:(id)arg1;
 - (long long)baseVersion;
 - (void)clearRenderedContentURL;
 - (id)description;

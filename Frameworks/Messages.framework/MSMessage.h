@@ -55,6 +55,8 @@
 - (bool)isFromMe;
 - (id)layout;
 - (id)mediaURL;
+- (void)sanitize;
+- (id)sanitizedCopy;
 - (id)senderParticipantIdentifier;
 - (id)session;
 - (void)setAccessibilityLabel:(id)arg1;

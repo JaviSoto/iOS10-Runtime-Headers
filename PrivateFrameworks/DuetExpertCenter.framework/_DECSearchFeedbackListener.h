@@ -3,7 +3,6 @@
  */
 
 @interface _DECSearchFeedbackListener : NSObject <SFFeedbackListener> {
-    NSString * _abGroupIdentifier;
     unsigned char  _consumerSubType;
     NSArray * _currentZKWItems;
     _DECConsumer * _decConsumer;
@@ -16,6 +15,7 @@
     unsigned long long  _lastResultsDidBecomeVisibleTimeStamp;
     bool  _predictedQuerySessionActive;
     bool  _predictedQuerySessionPredictedQueryWasEdited;
+    NSString * _qpAbGroupIdentifier;
     PETDistributionEventTracker * _qpEventDelayTracker;
     PETDistributionEventTracker * _qpEventEngagementByQueryCountTracker;
     PETGoalConversionEventTracker * _qpEventGoalConvTracker;
@@ -23,6 +23,7 @@
     PETDistributionEventTracker * _qpEventQueryShownCountTracker;
     PETScalarEventTracker * _qpEventQueryShownSourceTracker;
     PETDistributionEventTracker * _qpEventSpotlightResultsPerPredictedQueryTracker;
+    PETScalarEventTracker * _qpMMHeroAppTracker;
     PETScalarEventTracker * _qpPredictionQueryDetailTracker;
     PETDistributionEventTracker * _qpQueryLengthTracker;
     PETScalarEventTracker * _qpResultDetailTracker;
@@ -53,7 +54,9 @@
 - (void)_setConsumerSubType:(unsigned char)arg1;
 - (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)_setDECFeedbackState:(unsigned long long)arg1;
+- (void)_setPredictedQuerySessionActive:(bool)arg1;
 - (void)_setPredictedQueryWasEdited;
+- (void)_setQpAbGroupIdentifier:(id)arg1;
 - (void)_setQuery:(id)arg1;
 - (void)_startQueryPredictionSession;
 - (void)dealloc;
@@ -64,6 +67,7 @@
 - (id)getKeyValueDict;
 - (id)getTestingDecFeedback;
 - (id)init;
+- (id)initForUnitTesting;
 - (id)initWithDecConsumer:(id)arg1;
 - (void)resultsDidBecomeVisible:(id)arg1;
 - (void)searchViewDidAppear:(id)arg1;

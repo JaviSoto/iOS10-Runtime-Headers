@@ -7,6 +7,7 @@
     NSString * _assistantIdentifier;
     NSString * _connectionId;
     SAConnectionPolicyRoute * _connectionPolicyRoute;
+    bool  _imposePolicyBan;
     NSString * _languageCode;
     NSString * _peerAssistantIdentifier;
     bool  _prefersWWAN;
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSString *assistantIdentifier;
 @property (nonatomic, copy) NSString *connectionId;
 @property (nonatomic, copy) SAConnectionPolicyRoute *connectionPolicyRoute;
+@property (nonatomic) bool imposePolicyBan;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic, copy) NSString *peerAssistantIdentifier;
 @property (nonatomic) bool prefersWWAN;
@@ -37,6 +39,7 @@
 - (id)connectionId;
 - (id)connectionPolicyRoute;
 - (id)description;
+- (bool)imposePolicyBan;
 - (id)languageCode;
 - (id)peerAssistantIdentifier;
 - (bool)prefersWWAN;
@@ -44,6 +47,7 @@
 - (void)setAssistantIdentifier:(id)arg1;
 - (void)setConnectionId:(id)arg1;
 - (void)setConnectionPolicyRoute:(id)arg1;
+- (void)setImposePolicyBan:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setPeerAssistantIdentifier:(id)arg1;
 - (void)setPrefersWWAN:(bool)arg1;

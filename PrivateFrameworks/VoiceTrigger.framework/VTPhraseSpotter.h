@@ -45,6 +45,7 @@
     int  _languageCodeChangedNotificationToken;
     double  _lastDowntime;
     unsigned int  _lastEventEnd;
+    NSString * _lastImplicitlyTrainedAudioFile;
     double  _lastScore;
     double  _lastSupervecScore;
     unsigned char  _lastTriggerType;
@@ -54,6 +55,7 @@
     bool  _nearMissLogPending;
     int  _nearMissLogPreDelayTimer;
     NSMutableArray * _nonceTriggerEvents;
+    unsigned long long  _numExplicitRetraining;
     int  _numFramesFromPreTrigger;
     bool  _phraseSpotterBypassed;
     bool  _phraseSpotterEnabled;
@@ -147,10 +149,10 @@
 - (void)_notifyAssetChangedCallback;
 - (void)_performReadyCompletion;
 - (void)_phraseSpotterEnabledDidChange;
-- (void)_recordTrainingSamples;
+- (id)_recordTrainingSamples;
 - (bool)_removeInvalidSATModel;
 - (void)_resetCounters;
-- (bool)_retrainingSATModel:(id)arg1 satAudioPath:(id)arg2;
+- (bool)_retrainingSATModel:(id)arg1 satAudioPath:(id)arg2 numExplicitUtt:(unsigned long long)arg3;
 - (void)_safeConfigureWithAnalyzer:(id)arg1 path:(id)arg2 data:(id)arg3 resourcePath:(id)arg4;
 - (void)_safeReconfig;
 - (void)_setDeviceHandHeld;

@@ -176,6 +176,7 @@
 @property (nonatomic, retain) NSUUID *switchControlLaunchRecipeUUID;
 @property (nonatomic) long long switchControlPlatformSwitchedCount;
 @property (nonatomic, retain) NSArray *switchControlRecipes;
+@property (nonatomic) long long switchControlScanAfterTapLocation;
 @property (nonatomic) long long switchControlScanningStyle;
 @property (nonatomic, retain) NSArray *switchControlSettingsMenuItems;
 @property (nonatomic) bool switchControlShouldAlwaysActivateKeyboardKeys;
@@ -231,7 +232,6 @@
 @property (nonatomic, copy) NSArray *voiceOverRotorItems;
 @property bool voiceOverScreenCurtainEnabled;
 @property (nonatomic) bool voiceOverShouldOutputToHearingAid;
-@property (nonatomic) bool voiceOverShouldRouteToSpeakerWithProximity;
 @property (nonatomic) bool voiceOverShowSoftwareKeyboardWithBraille;
 @property (nonatomic) long long voiceOverSoftwareTypingFeedback;
 @property (nonatomic) bool voiceOverSoundEffectsEnabled;
@@ -646,6 +646,7 @@
 - (void)setSwitchControlLaunchRecipeUUID:(id)arg1;
 - (void)setSwitchControlPlatformSwitchedCount:(long long)arg1;
 - (void)setSwitchControlRecipes:(id)arg1;
+- (void)setSwitchControlScanAfterTapLocation:(long long)arg1;
 - (void)setSwitchControlScanningStyle:(long long)arg1;
 - (void)setSwitchControlSettingsMenuItems:(id)arg1;
 - (void)setSwitchControlShouldAlwaysActivateKeyboardKeys:(bool)arg1;
@@ -699,7 +700,6 @@
 - (void)setVoiceOverRotorItems:(id)arg1;
 - (void)setVoiceOverScreenCurtainEnabled:(bool)arg1;
 - (void)setVoiceOverShouldOutputToHearingAid:(bool)arg1;
-- (void)setVoiceOverShouldRouteToSpeakerWithProximity:(bool)arg1;
 - (void)setVoiceOverShowSoftwareKeyboardWithBraille:(bool)arg1;
 - (void)setVoiceOverSoftwareTypingFeedback:(long long)arg1;
 - (void)setVoiceOverSoundEffectsEnabled:(bool)arg1;
@@ -778,6 +778,7 @@
 - (id)switchControlLaunchRecipeUUID;
 - (long long)switchControlPlatformSwitchedCount;
 - (id)switchControlRecipes;
+- (long long)switchControlScanAfterTapLocation;
 - (long long)switchControlScanningStyle;
 - (id)switchControlSettingsMenuItems;
 - (bool)switchControlShouldAlwaysActivateKeyboardKeys;
@@ -837,7 +838,6 @@
 - (id)voiceOverRotorItems;
 - (bool)voiceOverScreenCurtainEnabled;
 - (bool)voiceOverShouldOutputToHearingAid;
-- (bool)voiceOverShouldRouteToSpeakerWithProximity;
 - (bool)voiceOverShowSoftwareKeyboardWithBraille;
 - (long long)voiceOverSoftwareTypingFeedback;
 - (bool)voiceOverSoundEffectsEnabled;

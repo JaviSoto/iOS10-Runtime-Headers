@@ -45,10 +45,12 @@
 
 - (id)_cx_callControllerAllowedClasses;
 - (id)_cx_callDirectoryManagerAllowedClasses;
+- (id)_cx_callDirectoryProviderAllowedClasses;
 - (id)_cx_providerAllowedClasses;
 - (void)_cx_setAllowedClassesForCallControllerHostProtocol;
 - (void)_cx_setAllowedClassesForCallControllerVendorProtocol;
 - (void)_cx_setAllowedClassesForCallDirectoryManagerHostProtocol;
+- (void)_cx_setAllowedClassesForCallDirectoryProviderHostProtocol;
 - (id)cx_allowedClasses;
 - (void)cx_setAllowedClassesForProviderHostProtocol;
 - (void)cx_setAllowedClassesForProviderVendorProtocol;

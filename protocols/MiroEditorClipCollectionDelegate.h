@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)clipCollection:(UICollectionViewController<MiroEditorClipCollection> *)arg1 didBeginDisplayingCell:(MiroEditorClipCell *)arg2 indexPath:(NSIndexPath *)arg3;
 - (void)clipCollection:(UICollectionViewController<MiroEditorClipCollection> *)arg1 didCancelInteractiveMovementForItemAtIndexPath:(NSIndexPath *)arg2;
 - (void)clipCollection:(UICollectionViewController<MiroEditorClipCollection> *)arg1 didEndDisplayingCell:(MiroEditorClipCell *)arg2 indexPath:(NSIndexPath *)arg3;
 - (void)clipCollection:(UICollectionViewController<MiroEditorClipCollection> *)arg1 didEndInteractiveMovementForItemAtIndexPath:(NSIndexPath *)arg2;

@@ -19,6 +19,7 @@
     NSString * _placeNameHint;
     int  _placeTypeHint;
     int  _resultProviderId;
+    PBUnknownFields * _unknownFields;
     NSString * _vendorId;
 }
 
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) NSString *placeNameHint;
 @property (nonatomic) int placeTypeHint;
 @property (nonatomic) int resultProviderId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *vendorId;
 
 + (Class)formattedAddressLineHintType;
@@ -102,6 +104,7 @@
 - (void)setPlaceTypeHint:(int)arg1;
 - (void)setResultProviderId:(int)arg1;
 - (void)setVendorId:(id)arg1;
+- (id)unknownFields;
 - (id)vendorId;
 - (void)writeTo:(id)arg1;
 

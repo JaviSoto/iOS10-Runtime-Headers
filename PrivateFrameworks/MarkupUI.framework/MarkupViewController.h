@@ -5,6 +5,7 @@
 @interface MarkupViewController : UIViewController <AKControllerDelegateProtocol, UINavigationBarDelegate, UIToolbarDelegate> {
     NSUndoManager * _akUndoManager;
     bool  _allowShakeToUndo;
+    bool  _alreadyLoggedSavingForThisDocument;
     AKController * _annotationController;
     UIColor * _backgroundColor;
     UIBarButtonItem * _cancelButton;
@@ -15,12 +16,16 @@
     id  _digestedSourceContent;
     UIBarButtonItem * _doneButton;
     bool  _encryptPrivateMetadata;
+    bool  _forcesPDFViewTopAlignment;
+    NSString * _hostProcessBundleIdentifier;
     double  _initialContentScale;
     bool  _isAnimatingMarkupExtensionTransition;
     UINavigationBar * _navBar;
     UIColor * _navBarTitleColor;
     UINavigationItem * _navItem;
     bool  _navigationModeHorizontal;
+    bool  _needToPerformDocumentClosedTeardown;
+    bool  _needToPerformFullTeardown;
     MUCGPDFReader * _pdfReader;
     bool  _pencilAlwaysDraws;
     NSString * _preferredFileDisplayName;
@@ -46,6 +51,7 @@
 
 @property (nonatomic, retain) NSUndoManager *akUndoManager;
 @property (nonatomic) bool allowShakeToUndo;
+@property (nonatomic) bool alreadyLoggedSavingForThisDocument;
 @property (retain) AKController *annotationController;
 @property (nonatomic) bool annotationEditingEnabled;
 @property (copy) UIColor *backgroundColor;
@@ -60,13 +66,17 @@
 @property (retain) id digestedSourceContent;
 @property (retain) UIBarButtonItem *doneButton;
 @property bool encryptPrivateMetadata;
+@property (nonatomic) bool forcesPDFViewTopAlignment;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *hostProcessBundleIdentifier;
 @property double initialContentScale;
 @property bool isAnimatingMarkupExtensionTransition;
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (copy) UIColor *navBarTitleColor;
 @property (nonatomic, retain) UINavigationItem *navItem;
 @property (getter=isNavigationModeHorizontal, nonatomic) bool navigationModeHorizontal;
+@property bool needToPerformDocumentClosedTeardown;
+@property bool needToPerformFullTeardown;
 @property (nonatomic, readonly) NSString *outputType;
 @property (readonly) PDFDocument *pdfDocument;
 @property (retain) MUCGPDFReader *pdfReader;
@@ -118,7 +128,6 @@
 - (bool)_sourceImageMayContainBaseImageAndModel;
 - (void)_startObservingAnnotationController;
 - (void)_stopObservingAnnotationController;
-- (void)_teardownContentViewController;
 - (void)_updateAndLoadSourceContent:(id)arg1 withArchivedModelData:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_updateAppearanceForTraitCollection:(id)arg1;
 - (void)_updateConstraintsForBarPosition:(long long)arg1;
@@ -127,6 +136,7 @@
 - (void)adjustContentInsetsForBars;
 - (id)akUndoManager;
 - (bool)allowShakeToUndo;
+- (bool)alreadyLoggedSavingForThisDocument;
 - (id)annotationController;
 - (bool)annotationEditingEnabled;
 - (id)backgroundColor;
@@ -153,14 +163,18 @@
 - (id)delegate;
 - (void)delete:(id)arg1;
 - (id)digestedSourceContent;
+- (void)documentDidCloseTeardown;
 - (void)done:(id)arg1;
 - (id)doneButton;
 - (void)duplicate:(id)arg1;
 - (void)editTextAnnotation:(id)arg1;
 - (bool)encryptPrivateMetadata;
 - (id)filteredToolbarItemsForItems:(id)arg1 fromController:(id)arg2;
+- (bool)forcesPDFViewTopAlignment;
+- (void)fullTeardown;
 - (bool)hasHighlightableSelectionForAnnotationController:(id)arg1;
 - (id)highlightableSelectionCharacterIndexesOnPageAtIndex:(unsigned long long)arg1 forAnnotationController:(id)arg2;
+- (id)hostProcessBundleIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (double)initialContentScale;
@@ -176,6 +190,8 @@
 - (id)navBar;
 - (id)navBarTitleColor;
 - (id)navItem;
+- (bool)needToPerformDocumentClosedTeardown;
+- (bool)needToPerformFullTeardown;
 - (id)newContentSnapshotPDFDataIncludingAdornments:(bool)arg1 atScale:(double)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 onOverlayAtPageIndex:(unsigned long long)arg4 forAnnotationController:(id)arg5;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputType;
@@ -192,6 +208,7 @@
 - (void)revert;
 - (void)setAkUndoManager:(id)arg1;
 - (void)setAllowShakeToUndo:(bool)arg1;
+- (void)setAlreadyLoggedSavingForThisDocument:(bool)arg1;
 - (void)setAnnotationController:(id)arg1;
 - (void)setAnnotationEditingEnabled:(bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
@@ -209,6 +226,8 @@
 - (void)setFileURL:(id)arg1;
 - (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2;
 - (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2 placeholderImage:(id)arg3;
+- (void)setForcesPDFViewTopAlignment:(bool)arg1;
+- (void)setHostProcessBundleIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImage:(id)arg1 withArchivedModelData:(id)arg2;
 - (void)setInitialContentScale:(double)arg1;
@@ -217,6 +236,8 @@
 - (void)setNavBarTitleColor:(id)arg1;
 - (void)setNavItem:(id)arg1;
 - (void)setNavigationModeHorizontal:(bool)arg1;
+- (void)setNeedToPerformDocumentClosedTeardown:(bool)arg1;
+- (void)setNeedToPerformFullTeardown:(bool)arg1;
 - (void)setPdfReader:(id)arg1;
 - (void)setPencilAlwaysDraws:(bool)arg1;
 - (void)setPreferredFileDisplayName:(id)arg1;
@@ -265,6 +286,7 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (id)whiteView;
+- (void)willBeginLoadingNewDocument;
 - (bool)writeToURL:(id)arg1 embeddingSourceImageAndEditModel:(bool)arg2 error:(id*)arg3;
 - (bool)writeToURL:(id)arg1 error:(id*)arg2;
 

@@ -12,6 +12,7 @@
     AKFormFeatureDetectorController * _formDetectionController;
     AKIntelligentSketchController * _intelligentSketchController;
     bool  _isTestingInstance;
+    bool  _isTornDown;
     AKPageController * _lastCreationCascadingPageController;
     long long  _lastPasteboardChangeCount;
     AKMainEventHandler * _mainEventHandler;
@@ -40,6 +41,7 @@
 @property (retain) AKFormFeatureDetectorController *formDetectionController;
 @property (retain) AKIntelligentSketchController *intelligentSketchController;
 @property bool isTestingInstance;
+@property bool isTornDown;
 @property AKPageController *lastCreationCascadingPageController;
 @property long long lastPasteboardChangeCount;
 @property (retain) AKMainEventHandler *mainEventHandler;
@@ -91,6 +93,7 @@
 - (id)formDetectionController;
 - (bool)handleEvent:(id)arg1;
 - (void)hideSelectionMenu:(id)arg1;
+- (void)highlightableSelectionChanged;
 - (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;
 - (id)initForTesting;
 - (id)initWithDelegate:(id)arg1;
@@ -98,6 +101,7 @@
 - (bool)isOverlayViewLoadedAtIndex:(unsigned long long)arg1;
 - (bool)isShowingMenu;
 - (bool)isTestingInstance;
+- (bool)isTornDown;
 - (id)lastCreationCascadingPageController;
 - (long long)lastPasteboardChangeCount;
 - (id)mainEventHandler;
@@ -133,6 +137,7 @@
 - (void)setFormDetectionController:(id)arg1;
 - (void)setIntelligentSketchController:(id)arg1;
 - (void)setIsTestingInstance:(bool)arg1;
+- (void)setIsTornDown:(bool)arg1;
 - (void)setLastCreationCascadingPageController:(id)arg1;
 - (void)setLastPasteboardChangeCount:(long long)arg1;
 - (void)setMainEventHandler:(id)arg1;

@@ -4,6 +4,7 @@
 
 @interface MPModelPlaylist : MPModelObject {
     id /* block */  _artworkCatalogBlock;
+    NSString * _cloudVersionHash;
     MPModelCurator * _curator;
     bool  _curatorPlaylist;
     NSString * _descriptionText;
@@ -18,6 +19,7 @@
     bool  _libraryAdded;
     NSDate * _libraryAddedDate;
     NSString * _name;
+    bool  _owner;
     bool  _publicPlaylist;
     NSDateComponents * _releaseDateComponents;
     NSURL * _shareShortURL;
@@ -28,9 +30,11 @@
     unsigned long long  _trackCount;
     long long  _type;
     long long  _userEditableComponents;
+    bool  _visiblePlaylist;
 }
 
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
+@property (nonatomic, copy) NSString *cloudVersionHash;
 @property (nonatomic, copy) MPModelCurator *curator;
 @property (getter=isCuratorPlaylist, nonatomic) bool curatorPlaylist;
 @property (nonatomic, copy) NSString *descriptionText;
@@ -45,6 +49,7 @@
 @property (getter=isLibraryAdded, nonatomic) bool libraryAdded;
 @property (nonatomic, copy) NSDate *libraryAddedDate;
 @property (nonatomic, copy) NSString *name;
+@property (getter=isOwner, nonatomic) bool owner;
 @property (getter=isPublicPlaylist, nonatomic) bool publicPlaylist;
 @property (nonatomic, copy) NSDateComponents *releaseDateComponents;
 @property (nonatomic, copy) NSURL *shareShortURL;
@@ -55,14 +60,17 @@
 @property (nonatomic) unsigned long long trackCount;
 @property (nonatomic) long long type;
 @property (nonatomic) long long userEditableComponents;
+@property (getter=isVisiblePlaylist, nonatomic) bool visiblePlaylist;
 
 + (id)__MPModelPropertyPlaylistArtwork__PROPERTY;
++ (id)__MPModelPropertyPlaylistCloudVersionHash__PROPERTY;
 + (id)__MPModelPropertyPlaylistCuratorPlaylist__PROPERTY;
 + (id)__MPModelPropertyPlaylistDescriptionText__PROPERTY;
 + (id)__MPModelPropertyPlaylistEditorNotes__PROPERTY;
 + (id)__MPModelPropertyPlaylistEditorialArtwork__PROPERTY;
 + (id)__MPModelPropertyPlaylistHasCleanContent__PROPERTY;
 + (id)__MPModelPropertyPlaylistHasExplicitContent__PROPERTY;
++ (id)__MPModelPropertyPlaylistIsOwner__PROPERTY;
 + (id)__MPModelPropertyPlaylistKeepLocalEnableState__PROPERTY;
 + (id)__MPModelPropertyPlaylistKeepLocalManagedStatus__PROPERTY;
 + (id)__MPModelPropertyPlaylistLastDevicePlaybackDate__PROPERTY;
@@ -80,8 +88,10 @@
 + (id)__MPModelPropertyPlaylistTracksTiledArtwork__PROPERTY;
 + (id)__MPModelPropertyPlaylistType__PROPERTY;
 + (id)__MPModelPropertyPlaylistUserEditableComponents__PROPERTY;
++ (id)__MPModelPropertyPlaylistVisiblePlaylist__PROPERTY;
 + (id)__MPModelRelationshipPlaylistCurator__PROPERTY;
 + (id)__artworkCatalogBlock__KEY;
++ (id)__cloudVersionHash__KEY;
 + (id)__curatorPlaylist__KEY;
 + (id)__curator__KEY;
 + (id)__descriptionText__KEY;
@@ -96,6 +106,7 @@
 + (id)__libraryAddedDate__KEY;
 + (id)__libraryAdded__KEY;
 + (id)__name__KEY;
++ (id)__owner__KEY;
 + (id)__publicPlaylist__KEY;
 + (id)__releaseDateComponents__KEY;
 + (id)__shareShortURL__KEY;
@@ -106,6 +117,7 @@
 + (id)__trackCount__KEY;
 + (id)__type__KEY;
 + (id)__userEditableComponents__KEY;
++ (id)__visiblePlaylist__KEY;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (id)requiredLibraryRemovalProperties;
@@ -117,6 +129,7 @@
 - (void).cxx_destruct;
 - (id)artworkCatalog;
 - (id /* block */)artworkCatalogBlock;
+- (id)cloudVersionHash;
 - (id)curator;
 - (id)descriptionText;
 - (id)descriptionWithType:(long long)arg1;
@@ -127,8 +140,10 @@
 - (bool)hasExplicitContent;
 - (bool)isCuratorPlaylist;
 - (bool)isLibraryAdded;
+- (bool)isOwner;
 - (bool)isPublicPlaylist;
 - (bool)isSubscribed;
+- (bool)isVisiblePlaylist;
 - (long long)keepLocalEnableState;
 - (long long)keepLocalManagedStatus;
 - (id)lastDevicePlaybackDate;
@@ -143,6 +158,7 @@
 - (id)relativeModelObjectForStoreLibraryPersonalization;
 - (id)releaseDateComponents;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
+- (void)setCloudVersionHash:(id)arg1;
 - (void)setCurator:(id)arg1;
 - (void)setCuratorPlaylist:(bool)arg1;
 - (void)setDescriptionText:(id)arg1;
@@ -157,6 +173,7 @@
 - (void)setLibraryAdded:(bool)arg1;
 - (void)setLibraryAddedDate:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setOwner:(bool)arg1;
 - (void)setPublicPlaylist:(bool)arg1;
 - (void)setReleaseDateComponents:(id)arg1;
 - (void)setShareShortURL:(id)arg1;
@@ -167,6 +184,7 @@
 - (void)setTrackCount:(unsigned long long)arg1;
 - (void)setType:(long long)arg1;
 - (void)setUserEditableComponents:(long long)arg1;
+- (void)setVisiblePlaylist:(bool)arg1;
 - (id)shareShortURL;
 - (id)shareURL;
 - (id)shortEditorNotes;

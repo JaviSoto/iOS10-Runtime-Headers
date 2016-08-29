@@ -5,6 +5,7 @@
 @interface SFSession : NSObject <NSSecureCoding, SFXPCInterface> {
     bool  _activated;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _errorHandler;
     id /* block */  _eventMessageHandler;
     NSUUID * _identifier;
     id /* block */  _interruptionHandler;
@@ -21,6 +22,7 @@
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) id /* block */ errorHandler;
 @property (nonatomic, copy) id /* block */ eventMessageHandler;
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
@@ -44,6 +46,7 @@
 - (id)description;
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
+- (id /* block */)errorHandler;
 - (id /* block */)eventMessageHandler;
 - (id)identifier;
 - (id)init;
@@ -59,10 +62,12 @@
 - (void)sendResponse:(id)arg1;
 - (id)serviceIdentifier;
 - (id)serviceUUID;
+- (void)sessionError:(id)arg1;
 - (void)sessionReceivedEvent:(id)arg1;
 - (void)sessionReceivedRequest:(id)arg1;
 - (void)sessionReceivedResponse:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setErrorHandler:(id /* block */)arg1;
 - (void)setEventMessageHandler:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;

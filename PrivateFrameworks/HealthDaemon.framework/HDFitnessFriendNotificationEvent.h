@@ -6,7 +6,7 @@
     NSDate * _date;
     NSUUID * _friendUUID;
     long long  _triggerSnapshotIndex;
-    NSString * _triggerUUID;
+    NSUUID * _triggerUUID;
     long long  _type;
 }
 
@@ -17,7 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) long long triggerSnapshotIndex;
-@property (nonatomic, retain) NSString *triggerUUID;
+@property (nonatomic, retain) NSUUID *triggerUUID;
 @property (nonatomic) long long type;
 
 + (id)achievementCompletionEventWithAchievement:(id)arg1;

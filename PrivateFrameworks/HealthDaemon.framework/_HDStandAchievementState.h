@@ -3,33 +3,12 @@
  */
 
 @interface _HDStandAchievementState : _HDAchievementState {
-    long long  _consecutiveGoalsMet;
-    NSDate * _lastPerfectWeekDate;
-    long long  _lastResetSummaryIndexForStreaks;
-    long long  _standGoalJustMetToday;
-    unsigned long long  _standHoursToday;
-    unsigned long long  _standHoursYesterday;
+    unsigned long long  _previousStandHoursToday;
 }
 
-@property (nonatomic) long long consecutiveGoalsMet;
-@property (nonatomic, retain) NSDate *lastPerfectWeekDate;
-@property (nonatomic) long long lastResetSummaryIndexForStreaks;
-@property (nonatomic) long long standGoalJustMetToday;
-@property (nonatomic) unsigned long long standHoursToday;
-@property (nonatomic) unsigned long long standHoursYesterday;
+@property (nonatomic) unsigned long long previousStandHoursToday;
 
-- (void).cxx_destruct;
-- (long long)consecutiveGoalsMet;
-- (id)lastPerfectWeekDate;
-- (long long)lastResetSummaryIndexForStreaks;
-- (void)setConsecutiveGoalsMet:(long long)arg1;
-- (void)setLastPerfectWeekDate:(id)arg1;
-- (void)setLastResetSummaryIndexForStreaks:(long long)arg1;
-- (void)setStandGoalJustMetToday:(long long)arg1;
-- (void)setStandHoursToday:(unsigned long long)arg1;
-- (void)setStandHoursYesterday:(unsigned long long)arg1;
-- (long long)standGoalJustMetToday;
-- (unsigned long long)standHoursToday;
-- (unsigned long long)standHoursYesterday;
+- (unsigned long long)previousStandHoursToday;
+- (void)setPreviousStandHoursToday:(unsigned long long)arg1;
 
 @end

@@ -8,6 +8,7 @@
 + (bool)requiresEventOrReminderAccess;
 + (bool)requiresReminderAccess;
 
+- (void)CADTestingDatabasePath:(id /* block */)arg1;
 - (void)CADTestingSetDatabasePath:(id)arg1 reply:(id /* block */)arg2;
 - (bool)accessGrantedToPerformSelector:(SEL)arg1;
 

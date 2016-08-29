@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)_detailMessageFont;
+- (id)_keyCommandInputForCancelAction;
 - (double)_marginAboveDetailMessageFirstBaseline;
 - (void)_reloadInterfaceActionVisualStyle;
 - (double)_scaledMarginAboveDetailMessageFirstBaseline;

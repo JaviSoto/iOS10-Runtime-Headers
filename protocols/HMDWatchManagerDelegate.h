@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)watchManager:(HMDWatchManager *)arg1 didAddNearbyWatch:(HMDDevice *)arg2;
-- (void)watchManager:(HMDWatchManager *)arg1 didRemoveNearbyWatch:(HMDDevice *)arg2;
+- (void)watchManager:(HMDWatchManager *)arg1 didAddConnectedWatch:(HMDDevice *)arg2;
+- (void)watchManager:(HMDWatchManager *)arg1 didRemoveConnectedWatch:(HMDDevice *)arg2;
 
 @end

@@ -5,9 +5,8 @@
 
 @required
 
-- (NSArray *)allIdentifiersForCollection:(long long)arg1;
+- (NSArray *)allWallpapersForCollection:(long long)arg1;
 - (HFWallpaper *)defaultWallpaperForCollection:(long long)arg1;
-- (UIImage *)thumbnailForIdentifier:(NSString *)arg1;
-- (HFWallpaper *)wallpaperForIdentifier:(NSString *)arg1;
+- (UIImage *)imageForWallpaper:(HFWallpaper *)arg1;
 
 @end

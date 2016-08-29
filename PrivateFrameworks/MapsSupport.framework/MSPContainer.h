@@ -41,7 +41,7 @@
 - (void)_commitPendingCoalescedEditsIfAny;
 - (void)_endCoalescingEditsForContext:(id)arg1;
 - (id)_objectsWithDuplicateStorageIdentifiersFromArray:(id)arg1;
-- (void)_performInitialLoadNotifyingObservers:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_performInitialLoadNotifyingObservers:(bool)arg1 kickOffSynchronously:(bool)arg2 completion:(id /* block */)arg3;
 - (bool)_preventsAssertionsForDuplicateStorageIdentifiers;
 - (void)_processNewEditedContents:(id)arg1;
 - (void)_processNewLoadedContents:(id)arg1;

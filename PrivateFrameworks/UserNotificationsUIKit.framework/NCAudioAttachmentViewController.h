@@ -16,6 +16,5 @@
 - (id)playerViewController;
 - (void)setPlayerViewController:(id)arg1;
 - (void)viewDidLoad;
-- (void)willMoveToParentViewController:(id)arg1;
 
 @end

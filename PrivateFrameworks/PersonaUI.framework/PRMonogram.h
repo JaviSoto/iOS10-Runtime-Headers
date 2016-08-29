@@ -20,6 +20,7 @@
 + (id)monogram;
 + (id)monogramColors;
 + (id)monogramWithData:(id)arg1;
++ (id)plateFlatColor;
 + (id)plateOverlayLayer;
 
 - (void).cxx_destruct;

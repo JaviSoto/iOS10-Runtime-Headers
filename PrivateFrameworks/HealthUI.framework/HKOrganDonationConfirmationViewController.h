@@ -4,6 +4,7 @@
 
 @interface HKOrganDonationConfirmationViewController : HKViewController <HKTitledBuddyHeaderViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIFont * _bodyFont;
+    NSString * _completionButtonTitle;
     HKOrganDonationConnectionManager * _connectionManager;
     NSArray * _dataEntryItems;
     UIVisualEffectView * _footerView;
@@ -16,6 +17,7 @@
     UITableView * _tableView;
 }
 
+@property (nonatomic, retain) NSString *completionButtonTitle;
 @property (nonatomic, retain) NSArray *dataEntryItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -30,12 +32,14 @@
 - (void).cxx_destruct;
 - (id)_createTableFooterView;
 - (id)_createTableHeaderView;
+- (id)completionButtonTitle;
 - (void)confirmSubmissionIfNecessaryWithConfirmHandler:(id /* block */)arg1 andCancelHandler:(id /* block */)arg2;
 - (id)dataEntryItems;
 - (id)initWithRegistrant:(id)arg1 medicalIDData:(id)arg2 connectionManager:(id)arg3;
 - (id)loadingIndicator;
 - (id)medicalIDData;
 - (id /* block */)registrationCompletionHandler;
+- (void)setCompletionButtonTitle:(id)arg1;
 - (void)setDataEntryItems:(id)arg1;
 - (void)setLoadingIndicator:(id)arg1;
 - (void)setMedicalIDData:(id)arg1;

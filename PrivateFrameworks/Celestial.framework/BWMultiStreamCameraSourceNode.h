@@ -98,7 +98,9 @@
         int height; 
     }  _videoCaptureDimensions;
     BWNodeOutput * _videoCaptureOutput;
+    NSDictionary * _videoCaptureOutputColorInfoOverride;
     bool  _videoCaptureOutputEnabled;
+    bool  _videoCaptureOutputPixelBufferAttachmentModificationAllowed;
     unsigned int  _videoPixelFormat;
     bool  _videoStabilizationEnabled;
 }
@@ -113,6 +115,8 @@
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
 @property (readonly) BWNodeOutput *videoCaptureOutput;
+@property (nonatomic, copy) NSDictionary *videoCaptureOutputColorInfoOverride;
+@property (nonatomic) bool videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 
 + (id)cameraSourceNodeWithCaptureDevice:(id)arg1 captureStream:(id)arg2;
 + (void)initialize;
@@ -176,7 +180,7 @@
 - (float)overscanPercentageForZoom;
 - (struct { int x1; int x2; })preferredPreviewDimensions;
 - (void)prepareForCurrentConfigurationToBecomeLive;
-- (int)prepareForStillImageCaptureWithClientBracketCount:(int)arg1 enableSushiRawAttachmentOption:(bool)arg2;
+- (int)prepareForStillImageCaptureWithFirmwareStillImageOutputRetainedBufferCountOverride:(int)arg1 clientBracketCount:(int)arg2 enableSushiRawAttachmentOption:(bool)arg3;
 - (id)previewOutput;
 - (bool)previewOutputEnabled;
 - (id)qHDRSensorDefectivePixelInfo;
@@ -209,12 +213,15 @@
 - (void)setReflectsStillsOnStreamingOutputs:(bool)arg1;
 - (void)setSensorCropDimensions:(struct { int x1; int x2; })arg1;
 - (void)setStillImageOutputEnabled:(bool)arg1;
+- (void)setStillImageOutputSushiRawAttachmentOptionEnabled:(bool)arg1;
 - (void)setTemporalNoiseReductionEnabled:(bool)arg1;
 - (void)setUsesFirmwareStillImageOutput:(bool)arg1;
 - (void)setUsesISPBackEndScalers:(bool)arg1;
 - (void)setUsesIntermediateTapForPreview:(bool)arg1;
 - (void)setVideoCaptureDimensions:(struct { int x1; int x2; })arg1;
+- (void)setVideoCaptureOutputColorInfoOverride:(id)arg1;
 - (void)setVideoCaptureOutputEnabled:(bool)arg1;
+- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (void)setVideoPixelFormat:(unsigned int)arg1;
 - (void)setVideoStabilizationEnabled:(bool)arg1;
 - (bool)start:(id*)arg1;
@@ -223,13 +230,15 @@
 - (bool)stillImageOutputSushiRawAttachmentOptionEnabled;
 - (bool)stop:(id*)arg1;
 - (bool)temporalNoiseReductionEnabled;
-- (void)updateOutputRequirements;
+- (int)updateOutputRequirements;
 - (bool)usesFirmwareStillImageOutput;
 - (bool)usesISPBackEndScalers;
 - (bool)usesIntermediateTapForPreview;
 - (struct { int x1; int x2; })videoCaptureDimensions;
 - (id)videoCaptureOutput;
+- (id)videoCaptureOutputColorInfoOverride;
 - (bool)videoCaptureOutputEnabled;
+- (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (unsigned int)videoPixelFormat;
 - (bool)videoStabilizationEnabled;
 - (void)willStop;

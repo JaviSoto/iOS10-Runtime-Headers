@@ -4,6 +4,7 @@
 
 @interface BWIrisSequenceAdjuster : NSObject {
     bool  _adjustVideoTimesUntilReset;
+    int  _audioOffsetForOriginalStillImageTimeMaximumFrameLatency;
     struct { 
         long long value; 
         int timescale; 
@@ -46,6 +47,7 @@
     NSMutableArray * _timeSkews;
 }
 
+@property (nonatomic) int audioOffsetForOriginalStillImageTimeMaximumFrameLatency;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } masterMovieOriginalEndTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } masterMovieOriginalStartTime;
 
@@ -64,6 +66,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })adjustedTimeForStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })adjustedTimeForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })audioOffsetForOriginalStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (int)audioOffsetForOriginalStillImageTimeMaximumFrameLatency;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })bufferingTime;
 - (void)dealloc;
 - (struct opaqueCMSampleBuffer { }*)dequeueAndRetainAdjustedSampleBufferForMediaTypeWithIndex:(long long)arg1;
@@ -73,6 +76,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })masterMovieOriginalEndTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })masterMovieOriginalStartTime;
 - (void)reset;
+- (void)setAudioOffsetForOriginalStillImageTimeMaximumFrameLatency:(int)arg1;
 - (void)setBufferingTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMasterMovieOriginalEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMasterMovieOriginalStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

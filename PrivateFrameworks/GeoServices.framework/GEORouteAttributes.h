@@ -11,13 +11,16 @@
     GEOAutomobileOptions * _automobileOptions;
     int  _basicPointsToBeIncluded;
     GEODestinationInfo * _destinationInfo;
+    int  _destinationType;
     struct { 
         unsigned int timepoint : 1; 
         unsigned int basicPointsToBeIncluded : 1; 
+        unsigned int destinationType : 1; 
         unsigned int mainTransportType : 1; 
         unsigned int trafficType : 1; 
         unsigned int walkingLimitMeters : 1; 
         unsigned int includeContingencyRoutes : 1; 
+        unsigned int includeCrossLanguagePhonetics : 1; 
         unsigned int includeHistoricTravelTime : 1; 
         unsigned int includeLaneGuidance : 1; 
         unsigned int includeManeuverIcons : 1; 
@@ -29,6 +32,7 @@
         unsigned int useMetricThreshold : 1; 
     }  _has;
     bool  _includeContingencyRoutes;
+    bool  _includeCrossLanguagePhonetics;
     bool  _includeHistoricTravelTime;
     bool  _includeLaneGuidance;
     bool  _includeManeuverIcons;
@@ -64,10 +68,13 @@
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
 @property (nonatomic) int basicPointsToBeIncluded;
 @property (nonatomic, retain) GEODestinationInfo *destinationInfo;
+@property (nonatomic) int destinationType;
 @property (nonatomic, readonly) bool hasAutomobileOptions;
 @property (nonatomic) bool hasBasicPointsToBeIncluded;
 @property (nonatomic, readonly) bool hasDestinationInfo;
+@property (nonatomic) bool hasDestinationType;
 @property (nonatomic) bool hasIncludeContingencyRoutes;
+@property (nonatomic) bool hasIncludeCrossLanguagePhonetics;
 @property (nonatomic) bool hasIncludeHistoricTravelTime;
 @property (nonatomic) bool hasIncludeLaneGuidance;
 @property (nonatomic) bool hasIncludeManeuverIcons;
@@ -85,6 +92,7 @@
 @property (nonatomic) bool hasWalkingLimitMeters;
 @property (nonatomic, readonly) bool hasWalkingOptions;
 @property (nonatomic) bool includeContingencyRoutes;
+@property (nonatomic) bool includeCrossLanguagePhonetics;
 @property (nonatomic) bool includeHistoricTravelTime;
 @property (nonatomic) bool includeLaneGuidance;
 @property (nonatomic) bool includeManeuverIcons;
@@ -108,6 +116,7 @@
 
 - (int)StringAsAdditionalTransportTypes:(id)arg1;
 - (int)StringAsBasicPointsToBeIncluded:(id)arg1;
+- (int)StringAsDestinationType:(id)arg1;
 - (int)StringAsMainTransportType:(id)arg1;
 - (int)StringAsTrafficType:(id)arg1;
 - (int)StringAsUiContexts:(id)arg1;
@@ -127,11 +136,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)destinationInfo;
+- (int)destinationType;
+- (id)destinationTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (bool)hasAutomobileOptions;
 - (bool)hasBasicPointsToBeIncluded;
 - (bool)hasDestinationInfo;
+- (bool)hasDestinationType;
 - (bool)hasIncludeContingencyRoutes;
+- (bool)hasIncludeCrossLanguagePhonetics;
 - (bool)hasIncludeHistoricTravelTime;
 - (bool)hasIncludeLaneGuidance;
 - (bool)hasIncludeManeuverIcons;
@@ -150,6 +163,7 @@
 - (bool)hasWalkingOptions;
 - (unsigned long long)hash;
 - (bool)includeContingencyRoutes;
+- (bool)includeCrossLanguagePhonetics;
 - (bool)includeHistoricTravelTime;
 - (bool)includeLaneGuidance;
 - (bool)includeManeuverIcons;
@@ -168,8 +182,11 @@
 - (void)setAutomobileOptions:(id)arg1;
 - (void)setBasicPointsToBeIncluded:(int)arg1;
 - (void)setDestinationInfo:(id)arg1;
+- (void)setDestinationType:(int)arg1;
 - (void)setHasBasicPointsToBeIncluded:(bool)arg1;
+- (void)setHasDestinationType:(bool)arg1;
 - (void)setHasIncludeContingencyRoutes:(bool)arg1;
+- (void)setHasIncludeCrossLanguagePhonetics:(bool)arg1;
 - (void)setHasIncludeHistoricTravelTime:(bool)arg1;
 - (void)setHasIncludeLaneGuidance:(bool)arg1;
 - (void)setHasIncludeManeuverIcons:(bool)arg1;
@@ -184,6 +201,7 @@
 - (void)setHasUseMetricThreshold:(bool)arg1;
 - (void)setHasWalkingLimitMeters:(bool)arg1;
 - (void)setIncludeContingencyRoutes:(bool)arg1;
+- (void)setIncludeCrossLanguagePhonetics:(bool)arg1;
 - (void)setIncludeHistoricTravelTime:(bool)arg1;
 - (void)setIncludeLaneGuidance:(bool)arg1;
 - (void)setIncludeManeuverIcons:(bool)arg1;

@@ -56,6 +56,7 @@
 - (id)_bookmarkWithSpecialID:(int)arg1;
 - (id)_bookmarksFromStatementSelectingIDs:(const char *)arg1 withQuery:(id)arg2;
 - (id)_changeList;
+- (bool)_checkDatabaseIntegrity;
 - (bool)_childrenOfParentBookmarkAreUnsyncable:(id)arg1;
 - (bool)_clearAllDAVSyncData;
 - (bool)_clearAllSyncKeys;
@@ -83,6 +84,7 @@
 - (id)_errorForMostRecentSQLiteErrorWithErrorCode:(long long)arg1;
 - (int)_executeSQL:(id)arg1;
 - (int)_executeSQLWithCString:(const char *)arg1;
+- (id)_fastFetchBookmarksInBookmarkFolder:(int)arg1;
 - (int)_favoritesFolderIdentifier;
 - (int)_finalizeStatementIfNotNull:(struct sqlite3_stmt { }*)arg1;
 - (id)_firstBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(bool)arg2 inParent:(int)arg3;

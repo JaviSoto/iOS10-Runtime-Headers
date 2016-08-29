@@ -6,12 +6,14 @@
     NSXPCConnection * _connection;
     bool  _interrupted;
     bool  _invalid;
+    int  _listenerResumedToken;
     NSMutableArray * _observers;
 }
 
 @property (retain) NSXPCConnection *connection;
 @property bool interrupted;
 @property (getter=isInvalid) bool invalid;
+@property int listenerResumedToken;
 @property (retain) NSMutableArray *observers;
 
 + (id)advertiserClientInterface;
@@ -29,7 +31,7 @@
 
 - (void).cxx_destruct;
 - (void)activityAdvertiserProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)addAirDropClientToManager:(id)arg1;
+- (void)addAirDropClientToManager:(id)arg1 withFailureHandler:(id /* block */)arg2;
 - (void)airdropTransferDataProviderForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)connection;
 - (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -37,6 +39,7 @@
 - (id)init;
 - (bool)interrupted;
 - (bool)isInvalid;
+- (int)listenerResumedToken;
 - (void)notifyOfInterruption;
 - (void)notifyOfInvalidation;
 - (void)notifyOfResume;
@@ -47,6 +50,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setInterrupted:(bool)arg1;
 - (void)setInvalid:(bool)arg1;
+- (void)setListenerResumedToken:(int)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setupConnection;
 - (void)streamsForMessage:(id)arg1 withCompletionHandler:(id /* block */)arg2;

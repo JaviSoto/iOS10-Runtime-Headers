@@ -25,11 +25,12 @@
 + (id)callProviderManagerAllowedClasses;
 + (id)callProviderManagerClientXPCInterface;
 + (id)callProviderManagerServerXPCInterface;
-+ (id)defaultProviders;
-+ (void)setServer:(id)arg1;
++ (void)setAsynchronousServer:(id)arg1;
++ (void)setSynchronousServer:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_requestInitialState;
+- (void)_updateProvidersByIdentifier:(id)arg1;
 - (void)blockUntilInitialStateReceived;
 - (void)dealloc;
 - (id)delegate;
@@ -41,7 +42,6 @@
 - (id)server;
 - (id)serverWithErrorHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(bool)arg1 forProvider:(id)arg2 completion:(id /* block */)arg3;
 - (void)setProvidersByIdentifier:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRequestedInitialState:(bool)arg1;

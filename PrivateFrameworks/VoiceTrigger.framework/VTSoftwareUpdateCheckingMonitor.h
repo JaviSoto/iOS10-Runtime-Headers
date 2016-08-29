@@ -5,22 +5,18 @@
 @interface VTSoftwareUpdateCheckingMonitor : VTEventMonitor {
     bool  _isSoftwareUpdateCheckingRunning;
     int  _notifyToken;
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
+- (bool)_checkSoftwareUpdateCheckingState;
 - (void)_didReceiveSoftwareUpdateCheckingStateChanged:(bool)arg1;
 - (void)_didReceiveSoftwareUpdateCheckingStateChangedInQueue:(bool)arg1;
-- (void)_startMonitoring;
+- (void)_notifyObserver:(id)arg1 withSoftwareUpdateCheckingRunning:(bool)arg2;
+- (unsigned char)_softwareUpdateCheckingState;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (bool)isSoftwareUpdateCheckingRunning;
-- (void)removeObserver:(id)arg1;
-- (unsigned char)softwareUpdateCheckingState;
 
 @end

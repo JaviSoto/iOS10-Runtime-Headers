@@ -18,7 +18,7 @@
     UIMoreNavigationController * _moreNavigationController;
     UITapGestureRecognizer * _nudgeLeftGestureRecognizer;
     UITapGestureRecognizer * _nudgeRightGestureRecognizer;
-    NSMapTable * _rememberedFocusedViews;
+    NSMapTable * _rememberedFocusedItemsByViewController;
     UITapGestureRecognizer * _selectGestureRecognizer;
     UIViewController * _selectedViewController;
     UIViewController * _selectedViewControllerDuringWillAppear;
@@ -56,6 +56,7 @@
 @property (nonatomic, readonly) UINavigationController *moreNavigationController;
 @property (nonatomic, readonly) bool pu_isTabBarHidden;
 @property (getter=px_isTabBarHidden, nonatomic, readonly) bool px_tabBarHidden;
+@property (getter=_rememberedFocusedItemsByViewController, nonatomic, readonly) NSMapTable *rememberedFocusedItemsByViewController;
 @property (nonatomic) unsigned long long selectedIndex;
 @property (nonatomic) UIViewController *selectedViewController;
 @property (readonly) Class superclass;
@@ -93,7 +94,7 @@
 - (unsigned long long)_effectiveMaxItems;
 - (long long)_effectiveTabBarPosition;
 - (id)_existingMoreNavigationController;
-- (void)_forgetFocusedViewForViewController:(id)arg1;
+- (void)_forgetFocusedItemForViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForWrapperViewForViewController:(id)arg1;
 - (bool)_gestureRecognizerShouldBegin:(id)arg1;
@@ -120,9 +121,10 @@
 - (bool)_reallyWantsFullScreenLayout;
 - (void)_rebuildTabBarItemsAnimated:(bool)arg1;
 - (void)_rebuildTabBarItemsIfNeeded;
-- (id)_recallRememberedFocusedViewForViewController:(id)arg1;
-- (void)_rememberFocusedView:(id)arg1 forViewController:(id)arg2;
-- (void)_rememberPresentingFocusedView:(id)arg1;
+- (id)_recallRememberedFocusedItemForViewController:(id)arg1;
+- (void)_rememberFocusedItem:(id)arg1 forViewController:(id)arg2;
+- (void)_rememberPresentingFocusedItem:(id)arg1;
+- (id)_rememberedFocusedItemsByViewController;
 - (id)_responderSelectionContainerViewForResponder:(id)arg1;
 - (void)_selectDefaultViewControllerIfNecessaryWithAppearanceTransitions:(bool)arg1;
 - (id)_selectedViewControllerInTabBar;

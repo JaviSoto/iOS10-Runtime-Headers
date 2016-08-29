@@ -5,8 +5,11 @@
 @interface AKDevice : NSObject <NSCopying, NSSecureCoding> {
     NSString * _MLBSerialNumber;
     NSString * _ROMAddress;
+    NSNumber * _backingColor;
     NSString * _color;
+    NSNumber * _coverGlassColor;
     NSString * _enclosureColor;
+    NSNumber * _housingColor;
     bool  _isMonitoringUnlockEvents;
     unsigned long long  _linkType;
     NSLocale * _locale;
@@ -20,9 +23,12 @@
 
 @property (copy) NSString *MLBSerialNumber;
 @property (copy) NSString *ROMAddress;
+@property (copy) NSNumber *backingColor;
 @property (copy) NSString *color;
+@property (copy) NSNumber *coverGlassColor;
 @property (copy) NSString *enclosureColor;
 @property bool hasBeenUnlockedSinceLastCheckIn;
+@property (copy) NSNumber *housingColor;
 @property (readonly) NSString *integratedCircuitCardIdentifier;
 @property (readonly) NSString *internationalMobileEquipmentIdentity;
 @property (readonly) bool isAppleIDLoginEnabled;
@@ -46,8 +52,11 @@
 + (id)_generateServerFriendlyDescription;
 + (id)_generateServerFriendlyDescriptionForPairedDevice:(id)arg1;
 + (id)_hardwareModel;
++ (id)_lookUpCurrentBackingColor;
 + (id)_lookUpCurrentColor;
++ (id)_lookUpCurrentCoverGlassColor;
 + (id)_lookUpCurrentEnclosureColor;
++ (id)_lookUpCurrentHousingColor;
 + (id)_lookUpCurrentUniqueDeviceID;
 + (id)_lookupMLBSerialNumber;
 + (id)_lookupModelNumber;
@@ -64,13 +73,16 @@
 - (id)MLBSerialNumber;
 - (id)ROMAddress;
 - (struct __CTServerConnection { }*)_telephonyConnection;
+- (id)backingColor;
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)coverGlassColor;
 - (void)dealloc;
 - (id)description;
 - (id)enclosureColor;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasBeenUnlockedSinceLastCheckIn;
+- (id)housingColor;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)integratedCircuitCardIdentifier;
@@ -89,9 +101,12 @@
 - (id)serialNumber;
 - (id)serializedData;
 - (id)serverFriendlyDescription;
+- (void)setBackingColor:(id)arg1;
 - (void)setColor:(id)arg1;
+- (void)setCoverGlassColor:(id)arg1;
 - (void)setEnclosureColor:(id)arg1;
 - (void)setHasBeenUnlockedSinceLastCheckIn:(bool)arg1;
+- (void)setHousingColor:(id)arg1;
 - (void)setLinkType:(unsigned long long)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMLBSerialNumber:(id)arg1;

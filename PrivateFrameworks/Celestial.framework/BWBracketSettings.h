@@ -27,6 +27,7 @@
 - (id)bracketedCaptureOverrides;
 - (int)bracketingMode;
 - (void)dealloc;
+- (id)description;
 - (id)exposureValues;
 - (id)initWithBracketingMode:(int)arg1;
 - (bool)lensStabilizationEnabledForClientBracket;

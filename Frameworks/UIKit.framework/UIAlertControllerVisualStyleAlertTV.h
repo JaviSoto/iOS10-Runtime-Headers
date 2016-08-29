@@ -5,6 +5,7 @@
 @interface UIAlertControllerVisualStyleAlertTV : UIAlertControllerVisualStyleAlert
 
 - (id)_detailMessageFont;
+- (id)_keyCommandInputForCancelAction;
 - (double)_marginAboveDetailMessageFirstBaseline;
 - (double)_maximumContentWidth;
 - (double)_minimumButtonWidth;

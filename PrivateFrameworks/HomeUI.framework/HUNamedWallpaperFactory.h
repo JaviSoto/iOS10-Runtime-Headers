@@ -11,9 +11,8 @@
 
 + (id)_defaultBlackWallpaperImage;
 
-- (id)allIdentifiersForCollection:(long long)arg1;
+- (id)allWallpapersForCollection:(long long)arg1;
 - (id)defaultWallpaperForCollection:(long long)arg1;
-- (id)thumbnailForIdentifier:(id)arg1;
-- (id)wallpaperForIdentifier:(id)arg1;
+- (id)imageForWallpaper:(id)arg1;
 
 @end

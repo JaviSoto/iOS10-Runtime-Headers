@@ -47,6 +47,7 @@
 - (id)localFileURLForAssetResource:(id)arg1 error:(id*)arg2;
 - (id)newAssetFetchOptions;
 - (id)newCVMLRequestOptions;
+- (id)newObjectFetchOptions;
 - (void)performCVMLForcedCleanup;
 - (void)performCVMLForcedCleanupWithOptions:(id)arg1;
 - (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
@@ -61,6 +62,7 @@
 - (bool)stopAnalysisJob:(id)arg1 error:(id*)arg2;
 - (bool)supportsCoalescingResults;
 - (void)visionServiceAssetsProcessingOperation:(id)arg1 didExecuteToCompletion:(bool)arg2;
+- (void)willCompleteJob:(id)arg1;
 - (void)willPerformJob:(id)arg1;
 
 @end

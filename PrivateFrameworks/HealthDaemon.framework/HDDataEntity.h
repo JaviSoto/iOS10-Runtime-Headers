@@ -13,10 +13,11 @@
 + (struct _HDDeleteObjectDataDefn { bool x1; long long x2; long long x3; long long x4; })_deleteInfoForObjectWithUUID:(id)arg1 database:(id)arg2 error:(id*)arg3;
 + (Class)_deletedEntityClass;
 + (id)_insertBaseDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 error:(id*)arg4;
-+ (bool)_insertDataObject:(id)arg1 provenance:(id)arg2 creationDateSetter:(id /* block */)arg3 profile:(id)arg4 database:(id)arg5 skipInsertionFilter:(bool)arg6 insertionFilters:(id)arg7 insertedEntityID:(id*)arg8 error:(id*)arg9;
++ (bool)_insertDataObject:(id)arg1 provenance:(id)arg2 creationDateSetter:(id /* block */)arg3 profile:(id)arg4 database:(id)arg5 insertedEntityID:(id*)arg6 error:(id*)arg7;
 + (id)_insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 error:(id*)arg4;
 + (id)_primitiveInsertDataObject:(id)arg1 entityClass:(Class)arg2 provenanceEntityID:(long long)arg3 profile:(id)arg4 database:(id)arg5 error:(id*)arg6;
 + (bool)_removeObjectWithPersistentID:(long long)arg1 database:(id)arg2 error:(id*)arg3;
++ (bool)_validateObjectsToInsert:(id)arg1 profile:(id)arg2 skipInsertionFilter:(bool)arg3 error:(id*)arg4;
 + (bool)acceptsObject:(id)arg1;
 + (bool)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2 error:(id*)arg3;

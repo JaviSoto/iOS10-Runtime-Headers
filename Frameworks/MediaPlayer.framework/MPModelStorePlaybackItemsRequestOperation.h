@@ -3,6 +3,7 @@
  */
 
 @interface MPModelStorePlaybackItemsRequestOperation : MPAsyncOperation {
+    NSOperationQueue * _operationQueue;
     MPModelStorePlaybackItemsRequest * _request;
     id /* block */  _responseHandler;
 }

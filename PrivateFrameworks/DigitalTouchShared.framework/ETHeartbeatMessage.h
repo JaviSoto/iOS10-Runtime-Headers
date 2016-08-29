@@ -33,6 +33,7 @@
 @property (nonatomic) float beatsPerMinute;
 @property (getter=isBroken, nonatomic, readonly) bool broken;
 @property (nonatomic) int duration;
+@property (nonatomic, readonly) double heartbreakTime;
 @property (nonatomic) struct CGPoint { double x1; double x2; } normalizedCenter;
 @property (nonatomic) double rotation;
 @property (nonatomic) float scale;
@@ -50,6 +51,7 @@
 - (id)description;
 - (void)displayInScene:(id)arg1;
 - (int)duration;
+- (double)heartbreakTime;
 - (id)initWithArchiveData:(id)arg1;
 - (bool)isBroken;
 - (double)messageDuration;

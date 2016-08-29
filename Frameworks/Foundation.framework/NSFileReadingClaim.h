@@ -29,5 +29,6 @@
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)resolveURLThenMaybeContinueInvokingClaimer:(id /* block */)arg1;
 - (bool)shouldBeRevokedPriorToInvokingAccessor;
+- (bool)shouldCancelInsteadOfWaiting;
 
 @end

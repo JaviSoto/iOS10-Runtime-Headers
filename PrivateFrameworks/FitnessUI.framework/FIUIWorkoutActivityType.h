@@ -19,13 +19,14 @@
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned long long)arg1 isIndoor:(bool)arg2;
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned long long)arg1 isIndoor:(bool)arg2 metadata:(id)arg3;
 + (id)activityTypeWithWorkout:(id)arg1;
-+ (id)possibleActivityTypesForIdentifier:(unsigned long long)arg1 locationType:(long long)arg2;
++ (id)possibleActivityTypesForIdentifier:(unsigned long long)arg1 locationType:(long long)arg2 wheelchairUser:(bool)arg3;
 + (id)supportedActivityTypes;
 + (id)wheelchairActivityTypes;
 
 - (void).cxx_destruct;
 - (id)_defaultEnabledMetricsForActivityType:(unsigned long long)arg1;
 - (id)_indoorDefaultEnabledMetricsForActivityType:(unsigned long long)arg1;
+- (id)activityTypeByAddingLapLength:(double)arg1;
 - (id)allAvailableMetrics;
 - (unsigned long long)auxiliaryTypeIdentifier;
 - (id)defaultEnabledMetrics;

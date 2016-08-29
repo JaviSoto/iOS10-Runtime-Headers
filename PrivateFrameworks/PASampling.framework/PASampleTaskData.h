@@ -31,6 +31,7 @@
 @property (readonly) bool isTerminatedSnapshot;
 @property (readonly) bool isThirdParty;
 @property (readonly) bool isTimerThrottled;
+@property (readonly) bool isTranslocated;
 @property (readonly) bool isUnresponsive;
 @property (readonly) bool isVisible;
 @property (readonly) unsigned int latency_qos;
@@ -91,6 +92,7 @@
 - (bool)isTerminatedSnapshot;
 - (bool)isThirdParty;
 - (bool)isTimerThrottled;
+- (bool)isTranslocated;
 - (bool)isUnresponsive;
 - (bool)isVisible;
 - (unsigned int)latency_qos;

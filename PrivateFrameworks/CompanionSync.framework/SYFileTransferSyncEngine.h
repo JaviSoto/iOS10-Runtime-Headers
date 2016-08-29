@@ -14,6 +14,11 @@
     NSMutableIndexSet * _messageRows;
     NSURL * _outputFileURL;
     _SYOutputStreamer * _outputStream;
+    SYDevice * _responseDevice;
+    NSURL * _responseFileURL;
+    NSMutableIndexSet * _responseMessageRows;
+    _SYOutputStreamer * _responseStream;
+    bool  _responsesCanceled;
     bool  _sessionCanceled;
     SYDevice * _sessionDevice;
     SYStartSyncSession * _sessionStartMessage;
@@ -28,6 +33,7 @@
 
 - (void).cxx_destruct;
 - (id)_assumeOwnershipOfURL:(id)arg1 error:(id*)arg2;
+- (void)_cancelResponses;
 - (void)_cancelSession;
 - (void)_consumeRemainingStreamDataWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)_enqueueSingleMessage:(id)arg1 withMessageID:(unsigned short)arg2 priority:(long long)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
@@ -47,10 +53,14 @@
 - (id)_wrapIncomingResponse:(id)arg1 ofType:(unsigned short)arg2 identifier:(id)arg3;
 - (id)_wrapMessage:(id)arg1 ofType:(unsigned short)arg2 userInfo:(id)arg3;
 - (id)_wrapResponse:(id)arg1 toRequest:(id)arg2 ofType:(unsigned short)arg3;
+- (void)beginResponseSession;
 - (void)beginSession;
+- (bool)buffersHandshake;
 - (bool)buffersSessions;
 - (id)cancelMessagesReturningFailures:(id)arg1;
 - (id)customIDSOptions;
+- (void)endFileTransferForStream:(id)arg1 atURL:(id)arg2 target:(id)arg3 wasCancelled:(bool)arg4 messageRows:(id)arg5;
+- (void)endResponseSession;
 - (void)endSession;
 - (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(long long)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
 - (id)idsOptions:(id)arg1;

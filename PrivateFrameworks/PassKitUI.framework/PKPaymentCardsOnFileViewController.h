@@ -16,6 +16,7 @@
 @property (nonatomic, retain) PKPaymentSetupProduct *product;
 
 - (void).cxx_destruct;
+- (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_presentCardDetailsControllerForCredential:(id)arg1;
 - (void)_presentManualAddController;
 - (bool)allowsManualEntry;

@@ -6,6 +6,7 @@
     UIButton * _actionButton;
     _MKPlaceActionButtonController * _actionButtonController;
     NSLayoutConstraint * _actionButtonHeightConstraint;
+    GEOAutomobileOptions * _automobileOptions;
     NSMutableArray * _bottomContainerConstraints;
     MKPlaceSectionRowView * _bottomContainerView;
     NSLayoutConstraint * _bottomToThirdLineConstraint;
@@ -45,12 +46,15 @@
     NSMutableArray * _topContainerConstraints;
     MKPlaceSectionRowView * _topContainerView;
     MKTransitInfoLabelView * _transitLabel;
+    GEOTransitOptions * _transitOptions;
     MNIdealTransportTypeFinder * _transportTypeFinder;
+    bool  optionForceSmallButtonText;
     bool  optionSmallerScreen;
     bool  optionTitleHasOwnSection;
 }
 
 @property (nonatomic, retain) _MKPlaceActionButtonController *actionButtonController;
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
 @property (nonatomic) double currentMinimalModeInterpolationFactor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKPlaceCardHeaderViewControllerDelegate> *delegate;
@@ -62,26 +66,29 @@
 @property (nonatomic) unsigned long long primaryButtonType;
 @property (nonatomic) bool resizableViewsDisabled;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) GEOTransitOptions *transitOptions;
 
 + (double)minimalModeHeight;
 
 - (void).cxx_destruct;
-- (id)_actionButtonColor;
 - (void)_actionSelected:(id)arg1;
 - (id)_applyButtonDefaultConfiguration:(id)arg1 selector:(SEL)arg2;
 - (bool)_areDistanceAndETAInformationAvailable;
 - (id)_buttonFont;
+- (void)_buttonStateChangedInSiri:(id)arg1;
 - (bool)_buttonsAreFullWidth;
 - (void)_commonInit;
 - (void)_configureETADisplayWithTransportType:(unsigned long long)arg1 travelTime:(double)arg2 distance:(double)arg3;
 - (void)_configureETAForMapItem:(id)arg1;
 - (void)_contentSizeDidChange;
+- (id)_distanceLabelContainerView;
 - (id)_formattedStringForTimeInterval:(double)arg1;
 - (bool)_isSmallerScreen;
 - (id)_primaryButtonColor;
 - (void)_primaryButtonSelected:(id)arg1;
 - (id)_primaryButtonTextColor;
 - (id)_reviewLabelText;
+- (void)_setPrimaryButtonTitle:(id)arg1;
 - (void)_setUpComponents;
 - (void)_setUpPrimaryButton;
 - (bool)_shouldUpdateETAForMapView:(id)arg1;
@@ -94,6 +101,7 @@
 - (void)_updateShareLocationButton;
 - (bool)_willShowDistance;
 - (id)actionButtonController;
+- (id)automobileOptions;
 - (void)configureWithNearbyMapItem:(id)arg1;
 - (double)currentMinimalModeInterpolationFactor;
 - (void)dealloc;
@@ -102,7 +110,6 @@
 - (void)findDirectionsTypeForOriginCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 destinationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 handler:(id /* block */)arg3;
 - (void)hideTitle:(bool)arg1;
 - (id)infoCardChildPossibleActions;
-- (id)infoCardChildUnactionableUIElements;
 - (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithLineItem:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 placeHeaderOptions:(unsigned long long)arg2;
@@ -124,14 +131,17 @@
 - (bool)quickRouteShouldOnlyUseAutomobile;
 - (bool)resizableViewsDisabled;
 - (void)setActionButtonController:(id)arg1;
+- (void)setAutomobileOptions:(id)arg1;
 - (void)setCurrentMinimalModeInterpolationFactor:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPrimaryButtonType:(unsigned long long)arg1;
 - (void)setResizableViewsDisabled:(bool)arg1;
+- (void)setTransitOptions:(id)arg1;
 - (void)setUpBottomContainerConstraints;
 - (void)setUpMiddleContainerConstaints;
 - (void)setUpTopContainerConstraints;
 - (double)stackView:(id)arg1 distanceBetweenUpperView:(id)arg2 andLowerView:(id)arg3;
+- (id)transitOptions;
 - (id)transportTypeFinder;
 - (void)updateActionButton;
 - (void)updateHeaderTitle;

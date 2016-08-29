@@ -20,6 +20,7 @@
 - (void)placeViewController:(void *)arg1 hasFavoriteForPlaceItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 8: _MKPlaceViewController *, <_MKPlaceItem> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)placeViewController:(void *)arg1 removeFavoriteForPlaceItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 9: _MKPlaceViewController *, <_MKPlaceItem> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)placeViewController:(void *)arg1 removeSuggestedFavoriteForPlaceItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 8: _MKPlaceViewController *, <_MKPlaceItem> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)placeViewController:(void *)arg1 requestPasscodeUnlockWithCompletion:(void *)arg2; // needs 2 arg types, found 7: _MKPlaceViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (bool)placeViewController:(_MKPlaceViewController *)arg1 shouldOpenHomePage:(CNLabeledValue *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 showTransitIncidents:(NSArray *)arg2;
 - (void)placeViewControllerDidDismiss:(_MKPlaceViewController *)arg1;

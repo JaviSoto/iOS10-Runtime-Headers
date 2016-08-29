@@ -27,7 +27,6 @@
 - (void)setDateType:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (void)updatedAndEditCellDidTapEditButton:(id)arg1;
 - (id)updatedCell;
 

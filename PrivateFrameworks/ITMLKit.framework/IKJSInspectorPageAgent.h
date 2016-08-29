@@ -30,6 +30,7 @@
 - (void)reloadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 ignoreCache:(bool*)arg3 scriptToEvaluateOnLoad:(id*)arg4;
 - (void)removeScriptToEvaluateOnLoadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 identifier:(id)arg3;
 - (void)searchInResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4 query:(id)arg5 caseSensitive:(bool*)arg6 isRegex:(bool*)arg7;
+- (void)searchInResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4 query:(id)arg5 caseSensitive:(bool*)arg6 isRegex:(bool*)arg7 requestId:(id*)arg8;
 - (void)searchInResourcesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 text:(id)arg3 caseSensitive:(bool*)arg4 isRegex:(bool*)arg5;
 - (void)setCompositingBordersVisibleWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 visible:(bool)arg3;
 - (void)setDocumentContentWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 html:(id)arg4;

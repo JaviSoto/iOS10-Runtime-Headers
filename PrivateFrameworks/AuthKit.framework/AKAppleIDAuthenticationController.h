@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)_authenticationServiceConnection;
+- (id)activeLoginCode:(id*)arg1;
 - (void)authenticateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkInWithAuthenticationServerForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkSecurityUpgradeEligibilityForAppleID:(id)arg1 completion:(id /* block */)arg2;

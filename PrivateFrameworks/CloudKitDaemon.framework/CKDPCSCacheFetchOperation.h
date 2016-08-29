@@ -39,7 +39,6 @@
 - (bool)_savePCSDataToCache;
 - (id)cache;
 - (bool)canBeUsedForOperation:(id)arg1 withOptions:(unsigned long long)arg2;
-- (void)dataWasFetched:(id)arg1 withError:(id)arg2 forItemID:(id)arg3;
 - (bool)didFetchData;
 - (id)fetchError;
 - (id)fetchGroup;

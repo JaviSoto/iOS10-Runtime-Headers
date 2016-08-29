@@ -65,8 +65,8 @@
 - (bool)_prepareAsset:(id)arg1 recordKey:(id)arg2 record:(id)arg3 error:(id*)arg4;
 - (void)_reallyFetchPCSDataWithOptions:(unsigned long long)arg1;
 - (void)_unwrapRecordPCSForParent;
-- (void)_unwrapRecordPCSForShare;
 - (void)_unwrapRecordPCSForZone;
+- (void)_unwrapRecordPCSWithShareID:(id)arg1;
 - (id)_wrapAssetKey:(id)arg1 forRecord:(id)arg2 withError:(id*)arg3;
 - (bool)_wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 forField:(id)arg3;
 - (bool)_wrapEncryptedDataOnRecord:(id)arg1;

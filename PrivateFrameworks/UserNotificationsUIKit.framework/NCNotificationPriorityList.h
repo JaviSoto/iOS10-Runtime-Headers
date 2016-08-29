@@ -10,12 +10,12 @@
 @property (nonatomic, retain) NSMutableOrderedSet *requests;
 
 - (void).cxx_destruct;
-- (void)_clearRequestsWithPersistence:(unsigned long long)arg1;
+- (id)_clearRequestsWithPersistence:(unsigned long long)arg1;
 - (id)_identifierForNotificationRequest:(id)arg1;
 - (unsigned long long)_indexOfRequestMatchingNotificationRequest:(id)arg1;
 - (unsigned long long)_insertionIndexForNotificationRequest:(id)arg1;
-- (void)clearAllRequests;
-- (void)clearNonPersistentRequests;
+- (id)clearAllRequests;
+- (id)clearNonPersistentRequests;
 - (bool)containsNotificationRequestMatchingRequest:(id)arg1;
 - (unsigned long long)count;
 - (unsigned long long)indexOfNotificationRequestMatchingRequest:(id)arg1;

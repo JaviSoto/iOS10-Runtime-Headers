@@ -11,6 +11,7 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 minimumHeightPoints:(double)arg3;
 - (double)minimumHeightPoints;
+- (void)setupConstraints;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

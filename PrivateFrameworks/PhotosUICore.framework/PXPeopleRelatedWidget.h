@@ -25,6 +25,7 @@
     PXWidgetSpec * _spec;
     bool  _startedLoadingDataSource;
     double  _targetPrefetchWidth;
+    bool  _userInteractionEnabled;
     unsigned long long  _viewType;
     <PXWidgetDelegate> * _widgetDelegate;
 }
@@ -64,6 +65,7 @@
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
 @property (nonatomic) double targetPrefetchWidth;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) unsigned long long viewType;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
@@ -100,6 +102,7 @@
 - (bool)hasStartedLoadingDataSource;
 - (id)initWithViewType:(unsigned long long)arg1;
 - (bool)isSummaryMode;
+- (bool)isUserInteractionEnabled;
 - (void)loadContentData;
 - (id)localizedTitle;
 - (void)memberTappedAtIndexPath:(id)arg1 forPeopleStripController:(id)arg2;
@@ -127,6 +130,7 @@
 - (void)setSpec:(id)arg1;
 - (void)setStartedLoadingDataSource:(bool)arg1;
 - (void)setTargetPrefetchWidth:(double)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (void)setViewType:(unsigned long long)arg1;
 - (void)setWidgetDelegate:(id)arg1;
 - (void)set_tapRecognizer:(id)arg1;

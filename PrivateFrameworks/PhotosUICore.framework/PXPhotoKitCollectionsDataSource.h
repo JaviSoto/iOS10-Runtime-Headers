@@ -35,13 +35,13 @@
 - (bool)collectionIsHiddenAlbum:(id)arg1;
 - (bool)collectionIsImports:(id)arg1;
 - (bool)collectionIsPeople:(id)arg1;
+- (bool)collectionIsPlaceholderCollection:(id)arg1;
 - (bool)collectionIsPlaces:(id)arg1;
 - (bool)collectionIsRecentlyDeletedAlbum:(id)arg1;
 - (bool)collectionIsScenes:(id)arg1;
 - (bool)collectionIsSmartFolder:(id)arg1;
 - (bool)collectionIsStandIn:(id)arg1;
 - (bool)collectionIsSynced:(id)arg1;
-- (bool)collectionIsVirtualCollection:(id)arg1;
 - (id)collectionListForSection:(long long)arg1;
 - (void)enumerateCollectionsUsingBlock:(id /* block */)arg1;
 - (id)indexPathForCollection:(id)arg1;

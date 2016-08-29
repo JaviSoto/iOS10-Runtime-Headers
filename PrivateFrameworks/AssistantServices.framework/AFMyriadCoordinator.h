@@ -5,11 +5,15 @@
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol> {
     unsigned long long  _advertisingState;
     bool  _clientIsDirectActivating;
+    bool  _clientLostDueToTrumping;
     bool  _clientRecentlyLostElection;
     bool  _coordinationEnabled;
     _DKKnowledgeStore * _coreDuetStore;
+    NSObject<OS_dispatch_source> * _delayedEndTimer;
     id  _delegate;
     NSUUID * _designatedSelfID;
+    int  _deviceAdjust;
+    NSString * _deviceClass;
     WPHeySiri * _heySiriBTLE;
     NSDate * _lastSiriActivationTime;
     bool  _listenTimerIsRunning;
@@ -32,6 +36,7 @@
 - (void).cxx_destruct;
 - (void)_cancelTimer;
 - (void)_handleRecentClientElectionLoss;
+- (void)_initDeviceClassAndAdjustments;
 - (id)_responseObject:(unsigned short)arg1;
 - (bool)_shouldContinueFor:(id)arg1;
 - (id)_sortedReplies;
@@ -44,6 +49,7 @@
 - (void)dealloc;
 - (id)directTriggerRecord;
 - (void)endAdvertising;
+- (void)endAdvertisingAfterDelay:(float)arg1;
 - (void)endAdvertisingWithDeviceProhibitions:(id)arg1;
 - (void)heySiri:(id)arg1 failedToStartAdvertisingWithError:(id)arg2;
 - (void)heySiri:(id)arg1 failedToStartScanningWithError:(id)arg2;

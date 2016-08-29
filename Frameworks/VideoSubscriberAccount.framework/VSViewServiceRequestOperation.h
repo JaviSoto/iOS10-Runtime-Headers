@@ -4,10 +4,9 @@
 
 @interface VSViewServiceRequestOperation : VSAsyncOperation <VSViewServiceHostViewControllerDelegate> {
     <VSViewServiceRequestOperationDelegate> * _delegate;
-    NSError * _error;
     bool  _isPresentingViewController;
     NSUUID * _requestID;
-    VSViewServiceResponse * _response;
+    VSFailable * _result;
     VSViewServiceHostViewController * _viewServiceHostViewController;
     VSViewServiceRequest * _viewServiceRequest;
 }
@@ -15,10 +14,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSViewServiceRequestOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSError *error;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSUUID *requestID;
-@property (nonatomic, copy) VSViewServiceResponse *response;
+@property (nonatomic, retain) VSFailable *result;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VSViewServiceHostViewController *viewServiceHostViewController;
 @property (nonatomic, readonly, copy) VSViewServiceRequest *viewServiceRequest;
@@ -30,17 +28,15 @@
 - (void)cancel;
 - (id)delegate;
 - (void)dismissViewServiceHostViewController:(id)arg1;
-- (id)error;
 - (void)executionDidBegin;
 - (id)init;
 - (id)initWithViewServiceRequest:(id)arg1;
 - (void)presentViewServiceHostViewController:(id)arg1;
 - (id)requestID;
-- (id)response;
+- (id)result;
 - (void)setDelegate:(id)arg1;
-- (void)setError:(id)arg1;
 - (void)setRequestID:(id)arg1;
-- (void)setResponse:(id)arg1;
+- (void)setResult:(id)arg1;
 - (void)setViewServiceHostViewController:(id)arg1;
 - (id)viewServiceHostViewController;
 - (void)viewServiceHostViewController:(id)arg1 didCancelRequest:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextInteractionAssistant : NSObject <UIGestureRecognizerDelegate, _UIKeyboardTextSelectionGestureControllerDelegate> {
+@interface UITextInteractionAssistant : NSObject <UIGestureRecognizerDelegate, UIResponderStandardEditActions, _UIKeyboardTextSelectionGestureControllerDelegate> {
     struct CGPoint { 
         double x; 
         double y; 
@@ -126,6 +126,7 @@
 - (void)detach:(bool)arg1;
 - (void)didEndGesture;
 - (void)didEndScrollingOverflow;
+- (void)didEndSelectionInteraction;
 - (void)disableClearsOnInsertion;
 - (double)distanceBetweenPoint:(struct CGPoint { double x1; double x2; })arg1 andRange:(id)arg2;
 - (id)doubleTapGesture;
@@ -232,6 +233,7 @@
 - (id)view;
 - (bool)viewCouldBecomeEditable:(id)arg1;
 - (void)willBeginGesture;
+- (void)willBeginSelectionInteraction;
 - (bool)willHandoffLoupeMagnifier;
 - (void)willStartScrollingOverflow;
 

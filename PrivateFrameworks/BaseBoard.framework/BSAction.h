@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSAction : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding, NSSecureCoding> {
+@interface BSAction : NSObject <BSDescriptionProviding, BSInvalidatable, BSSettingDescriptionProvider, BSXPCCoding, NSSecureCoding> {
     bool  _expectsResponse;
     bool  _hasTimeout;
     BSSettings * _info;

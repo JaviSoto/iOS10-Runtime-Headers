@@ -58,14 +58,14 @@
 - (void)_serverCompletePrepareRequest:(id)arg1;
 - (int)_serverHandleCommitRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (int)_serverHandleDecryptedRequest:(id)arg1 responseHandler:(id /* block */)arg2;
-- (void)_serverHandleEncryptedRequest:(id)arg1;
+- (void)_serverHandleEncryptedRequest:(id)arg1 options:(id)arg2;
 - (int)_serverHandlePrepareRequest:(id)arg1 responseHandler:(id /* block */)arg2;
-- (void)_serverPairVerifyExchange:(id)arg1;
+- (void)_serverPairVerifyExchange:(id)arg1 options:(id)arg2;
 - (void)_serverRunStateMachine;
 - (int)_setupEncryption;
 - (void)_start;
 - (void)_stop:(int)arg1;
-- (void)_transportReceivedMessage:(id)arg1;
+- (void)_transportReceivedMessage:(id)arg1 options:(id)arg2;
 - (int)_updateIdleTimer;
 - (void)dealloc;
 - (id)dispatchQueue;
@@ -86,7 +86,7 @@
 - (void)start;
 - (void)stop;
 - (id /* block */)stoppedHandler;
-- (void)transportReceivedMessage:(id)arg1;
+- (void)transportReceivedMessage:(id)arg1 options:(id)arg2;
 - (id /* block */)transportSendMessage;
 
 @end

@@ -6,8 +6,8 @@
     <WGWidgetListFooterViewDelegate> * _delegate;
     WGShortLookStyleButton * _editButton;
     long long  _layoutMode;
-    UIColor * _legibilityTextColor;
-    WGNewWidgetsView * _newWidgetsView;
+    _UILegibilitySettings * _legibilitySettings;
+    WGNewWidgetsButton * _newWidgetsButton;
     UIFont * _referenceFont;
     NSMutableDictionary * _widgetIDsToAttributionViews;
 }
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long layoutMode;
-@property (nonatomic, retain) UIColor *legibilityTextColor;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,11 +33,11 @@
 - (void)invalidateSubviewGeometery;
 - (long long)layoutMode;
 - (void)layoutSubviews;
-- (id)legibilityTextColor;
+- (id)legibilitySettings;
 - (void)setBackgroundView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutMode:(long long)arg1;
-- (void)setLegibilityTextColor:(id)arg1;
+- (void)setLegibilitySettings:(id)arg1;
 - (void)setVisibleWidgetsIDs:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;

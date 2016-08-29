@@ -21,11 +21,10 @@
 @property long long currentOnRampIndex;
 @property bool dayPassPending;
 @property double distance;
-@property (readonly) unsigned long long index;
+@property unsigned long long index;
 @property (readonly) NSString *label;
 @property (readonly) NPLocation *location;
 @property (readonly) NSString *name;
-@property (readonly) NPTuscanyOnRamp *nextOnRamp;
 @property (readonly) long long nextOnRampIndex;
 @property (readonly) NSArray *onRamps;
 @property (copy) id /* block */ probeCompletionHandler;
@@ -44,6 +43,7 @@
 - (id)description;
 - (double)distance;
 - (void)encodeWithCoder:(id)arg1;
+- (id)getOnRamp:(long long)arg1;
 - (unsigned long long)index;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLabel:(id)arg1 name:(id)arg2 index:(unsigned long long)arg3 onRamps:(id)arg4 probeEndpoint:(id)arg5 location:(id)arg6;
@@ -52,7 +52,7 @@
 - (id)location;
 - (void)measureLatency:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)name;
-- (id)nextOnRamp;
+- (long long)nextIndexWithCurrentIndex:(long long)arg1 bound:(long long)arg2;
 - (long long)nextOnRampIndex;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)onRamps;
@@ -65,6 +65,7 @@
 - (void)setCurrentOnRampIndex:(long long)arg1;
 - (void)setDayPassPending:(bool)arg1;
 - (void)setDistance:(double)arg1;
+- (void)setIndex:(unsigned long long)arg1;
 - (void)setProbeCompletionHandler:(id /* block */)arg1;
 - (void)setProbeConnection:(id)arg1;
 - (void)setProbeTimer:(id)arg1;

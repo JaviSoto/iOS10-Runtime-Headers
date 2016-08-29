@@ -120,6 +120,7 @@
 - (double)minimumKeepAliveInterval;
 - (double)pollingInterval;
 - (void)resumeManagerWithAction:(int)arg1;
+- (void)resumeManagerWithAction:(int)arg1 forceGrow:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableEarlyFire:(bool)arg1;
 - (void)setDuetIdentifier:(id)arg1;

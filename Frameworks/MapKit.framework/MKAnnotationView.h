@@ -88,10 +88,10 @@
 @property (nonatomic, readonly) MKUserLocationAnnotationViewProxy *_userLocationProxy;
 @property (nonatomic, readonly) VKAnchorWrapper *anchor;
 @property (nonatomic, retain) <MKAnnotation> *annotation;
-@property (getter=_balloonCalloutShouldOriginateFromSmallSize, nonatomic, readonly) bool balloonCalloutShouldOriginateFromSmallSize;
 @property (getter=_balloonCalloutStyle, nonatomic, readonly) long long balloonCalloutStyle;
 @property (getter=_balloonContentView, nonatomic, readonly) UIView *balloonContentView;
 @property (getter=_balloonImage, nonatomic, readonly) UIImage *balloonImage;
+@property (getter=_balloonInnerStrokeColor, nonatomic, readonly) UIColor *balloonInnerStrokeColor;
 @property (getter=_balloonStrokeColor, nonatomic, readonly) UIColor *balloonStrokeColor;
 @property (getter=_balloonTintColor, nonatomic, readonly) UIColor *balloonTintColor;
 @property (nonatomic) struct CGPoint { double x1; double x2; } calloutOffset;
@@ -133,10 +133,11 @@
 - (void)_addBalloonCalloutView:(id)arg1;
 - (id)_annotationContainer;
 - (id)_annotationManager;
-- (bool)_balloonCalloutShouldOriginateFromSmallSize;
+- (bool)_balloonCalloutShouldOriginateFromSmallSize:(double*)arg1;
 - (long long)_balloonCalloutStyle;
 - (id)_balloonContentView;
 - (id)_balloonImage;
+- (id)_balloonInnerStrokeColor;
 - (id)_balloonStrokeColor;
 - (id)_balloonTintColor;
 - (id /* block */)_calloutHitTest;

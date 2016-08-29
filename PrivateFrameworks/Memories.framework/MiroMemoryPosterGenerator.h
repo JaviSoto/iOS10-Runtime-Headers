@@ -45,6 +45,7 @@
 - (void)memoryWarningNotification:(id)arg1;
 - (void)posterImageForTitle:(id)arg1 subtitle:(id)arg2 effectID:(id)arg3 parametersDictionary:(id)arg4 moodID:(id)arg5 inputImage:(id)arg6 outputSize:(struct CGSize { double x1; double x2; })arg7 withCompletionHandler:(id /* block */)arg8;
 - (void)preloadPooledEffects:(id)arg1;
+- (id)prepPosterInputForKeyAsset:(id)arg1;
 - (void)printStatsAndClear:(bool)arg1;
 - (unsigned long long)requestsCount;
 - (void)resumeBackgroundTasksNotification:(id)arg1;

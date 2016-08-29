@@ -9,4 +9,8 @@
 - (bool)stockChartViewIsCurrentChartView:(StockChartView *)arg1;
 - (void)stockChartViewNeedsLoadingStatusUpdated:(StockChartView *)arg1;
 
+@optional
+
+- (void)stockChartViewFinishedInitialLoad:(StockChartView *)arg1;
+
 @end

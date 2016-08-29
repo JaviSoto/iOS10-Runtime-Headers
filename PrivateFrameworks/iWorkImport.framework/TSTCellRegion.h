@@ -113,9 +113,11 @@
 - (bool)isEmpty;
 - (bool)isRectangle;
 - (bool)isValid;
-- (struct NSObject { Class x1; }*)iterator;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })largestRangeContainingCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })lastCellID;
+- (struct NSObject { Class x1; }*)newIterator;
+- (struct NSObject { Class x1; }*)newRightToLeftIterator;
+- (struct NSObject { Class x1; }*)newTopToBottomIterator;
 - (unsigned short)numberOfIntersectingColumns;
 - (unsigned short)numberOfIntersectingRows;
 - (void)p_calculateAncillaryInformation;
@@ -151,10 +153,8 @@
 - (id)regionUpToColumnIndex:(unsigned char)arg1;
 - (id)regionUpToColumnIndexRtoL:(unsigned char)arg1 maxColumnIndex:(unsigned char)arg2;
 - (id)regionUpToRowIndex:(unsigned short)arg1;
-- (struct NSObject { Class x1; }*)rightToLeftIterator;
 - (void)saveToMessage:(struct CellRegion { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::CellRange> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })suitableAnchor;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })suitableCursor;
-- (struct NSObject { Class x1; }*)topToBottomIterator;
 
 @end

@@ -12,6 +12,7 @@
     NSSet * _supportedPacketizationModes;
     NSSet * _supportedVideoCodecs;
     NSSet * _supportedVideoResolutions;
+    bool  _supportsComfortNoise;
 }
 
 @property (nonatomic) unsigned long long streamingTierType;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) NSSet *supportedPacketizationModes;
 @property (nonatomic, readonly) NSSet *supportedVideoCodecs;
 @property (nonatomic, readonly) NSSet *supportedVideoResolutions;
+@property (nonatomic) bool supportsComfortNoise;
 
 + (bool)is16x9Resolution:(id)arg1;
 + (bool)is4x3Resolution:(id)arg1;
@@ -35,6 +37,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)setStreamingTierType:(unsigned long long)arg1;
+- (void)setSupportsComfortNoise:(bool)arg1;
 - (unsigned long long)streamingTierType;
 - (id)supportedAudioCodecs;
 - (id)supportedAudioSampleRates;
@@ -44,6 +47,7 @@
 - (id)supportedPacketizationModes;
 - (id)supportedVideoCodecs;
 - (id)supportedVideoResolutions;
+- (bool)supportsComfortNoise;
 - (void)updateWithRemoteSettings:(id)arg1;
 
 @end

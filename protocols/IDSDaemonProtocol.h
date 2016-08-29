@@ -36,9 +36,9 @@
 - (void)continuityDisconnectFromPeer:(NSString *)arg1;
 - (void)continuityStartAdvertisingOfType:(long long)arg1 withData:(NSData *)arg2 withOptions:(NSDictionary *)arg3;
 - (void)continuityStartScanningForType:(long long)arg1 withData:(NSData *)arg2 mask:(NSData *)arg3;
-- (void)continuityStartScanningForType:(long long)arg1 withData:(NSData *)arg2 mask:(NSData *)arg3 boostedScan:(bool)arg4;
+- (void)continuityStartScanningForType:(long long)arg1 withData:(NSData *)arg2 mask:(NSData *)arg3 boostedScan:(bool)arg4 duplicates:(bool)arg5;
 - (void)continuityStartScanningForType:(long long)arg1 withData:(NSData *)arg2 mask:(NSData *)arg3 peers:(NSArray *)arg4;
-- (void)continuityStartScanningForType:(long long)arg1 withData:(NSData *)arg2 mask:(NSData *)arg3 peers:(NSArray *)arg4 boostedScan:(bool)arg5;
+- (void)continuityStartScanningForType:(long long)arg1 withData:(NSData *)arg2 mask:(NSData *)arg3 peers:(NSArray *)arg4 boostedScan:(bool)arg5 duplicates:(bool)arg6;
 - (void)continuityStartTrackingPeer:(NSString *)arg1 forType:(long long)arg2;
 - (void)continuityStopAdvertisingOfType:(long long)arg1;
 - (void)continuityStopScanningForType:(long long)arg1;
@@ -66,7 +66,7 @@
 - (void)homeKitGetUserAccessTokensWithServiceUserID:(NSString *)arg1 userID:(NSString *)arg2 userHandle:(NSString *)arg3 accessoryRequests:(NSArray *)arg4;
 - (void)homeKitRefreshUserAccessTokensWithServiceUserID:(NSString *)arg1 userID:(NSString *)arg2 accessoryRequests:(NSArray *)arg3;
 - (void)iCloudSignInHackWithUserName:(NSString *)arg1 password:(NSString *)arg2;
-- (void)iCloudSignInWithUserName:(NSString *)arg1 authToken:(NSString *)arg2 password:(NSString *)arg3 accountInfo:(NSDictionary *)arg4 accountStatus:(NSNumber *)arg5;
+- (void)iCloudSignInWithUserName:(NSString *)arg1 authToken:(NSString *)arg2 password:(NSString *)arg3 accountInfo:(NSDictionary *)arg4 accountStatus:(NSNumber *)arg5 handles:(NSArray *)arg6;
 - (void)iCloudSignOut;
 - (void)iCloudSignOutHack;
 - (void)iCloudUpdateForUserName:(NSString *)arg1 accountInfo:(NSDictionary *)arg2;

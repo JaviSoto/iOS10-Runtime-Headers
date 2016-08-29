@@ -12,6 +12,7 @@
 + (id)defaultLogContext;
 + (id)logContextFromTraits:(id)arg1;
 + (id)logContextWithDefaultTraits;
++ (id)logContextWithDefaultTraitsForCachedContext;
 
 - (void)_initializeDefaultStates;
 - (void)_registerApplicationIdentifierState;
@@ -30,6 +31,7 @@
 - (id)initWithDefaultTraits;
 - (id)initWithTraits:(id)arg1;
 - (id)logContextByMergingLogContext:(id)arg1;
+- (id)logMsgStateOfType:(int)arg1;
 - (id)logMsgStates;
 - (void)mergeLogContext:(id)arg1;
 - (void)registerLogMsgState:(id)arg1;

@@ -26,6 +26,7 @@
     bool  _includeDistance;
     bool  _includeHistoricTravelTime;
     bool  _isFromAPI;
+    GEOLocation * _lastKnownRoadLocation;
     bool  _needServerLatency;
     GEOWaypoint * _origin;
     GEOWaypointTyped * _originWaypointTyped;
@@ -69,6 +70,7 @@
 @property (nonatomic) bool hasIncludeDistance;
 @property (nonatomic) bool hasIncludeHistoricTravelTime;
 @property (nonatomic) bool hasIsFromAPI;
+@property (nonatomic, readonly) bool hasLastKnownRoadLocation;
 @property (nonatomic) bool hasNeedServerLatency;
 @property (nonatomic, readonly) bool hasOrigin;
 @property (nonatomic, readonly) bool hasOriginWaypointTyped;
@@ -86,6 +88,7 @@
 @property (nonatomic) bool includeDistance;
 @property (nonatomic) bool includeHistoricTravelTime;
 @property (nonatomic) bool isFromAPI;
+@property (nonatomic, retain) GEOLocation *lastKnownRoadLocation;
 @property (nonatomic) bool needServerLatency;
 @property (nonatomic, retain) GEOWaypoint *origin;
 @property (nonatomic, retain) GEOWaypointTyped *originWaypointTyped;
@@ -143,6 +146,7 @@
 - (bool)hasIncludeDistance;
 - (bool)hasIncludeHistoricTravelTime;
 - (bool)hasIsFromAPI;
+- (bool)hasLastKnownRoadLocation;
 - (bool)hasNeedServerLatency;
 - (bool)hasOrigin;
 - (bool)hasOriginWaypointTyped;
@@ -163,6 +167,7 @@
 - (id)initWithQuickETARequest:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isFromAPI;
+- (id)lastKnownRoadLocation;
 - (void)mergeFrom:(id)arg1;
 - (bool)needServerLatency;
 - (id)origin;
@@ -198,6 +203,7 @@
 - (void)setIncludeDistance:(bool)arg1;
 - (void)setIncludeHistoricTravelTime:(bool)arg1;
 - (void)setIsFromAPI:(bool)arg1;
+- (void)setLastKnownRoadLocation:(id)arg1;
 - (void)setNeedServerLatency:(bool)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setOriginWaypointTyped:(id)arg1;

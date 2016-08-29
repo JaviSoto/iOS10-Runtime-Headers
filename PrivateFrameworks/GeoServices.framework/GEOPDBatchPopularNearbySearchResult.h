@@ -4,9 +4,11 @@
 
 @interface GEOPDBatchPopularNearbySearchResult : PBCodable <NSCopying> {
     NSMutableArray * _popularNearbyResults;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *popularNearbyResults;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)popularNearbyResultType;
 
@@ -25,6 +27,7 @@
 - (unsigned long long)popularNearbyResultsCount;
 - (bool)readFrom:(id)arg1;
 - (void)setPopularNearbyResults:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

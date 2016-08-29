@@ -16,16 +16,17 @@
 + (id)primaryAccountInStore:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_accountCredentialForAccount:(id)arg1 withError:(id*)arg2;
 - (id)_initWithParentAccount:(id)arg1 inStore:(id)arg2;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)accountStore;
 - (id)ckAccount;
-- (id)cloudKitAuthToken;
+- (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (bool)cloudKitIsEnabled;
 - (bool)cloudPhotosIsEnabled;
 - (id)dsid;
 - (id)fullName;
-- (id)iCloudAuthToken;
+- (id)iCloudAuthTokenWithError:(id*)arg1;
 - (bool)iCloudDriveAllowsCellularAccess;
 - (id)identifier;
 - (bool)isDataclassEnabled:(id)arg1;

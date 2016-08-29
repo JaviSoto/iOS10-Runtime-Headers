@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextInputController : NSObject <UITextInput, UITextInputAdditions, UITextInput_Internal> {
+@interface UITextInputController : NSObject <UIResponderStandardEditActions, UITextInput, UITextInputAdditions, UITextInput_Internal> {
     bool  _allowsEditingTextAttributes;
     bool  _continuousSpellCheckingEnabled;
     _UITextServiceSession * _definitionSession;
@@ -215,6 +215,7 @@
 - (void)_selectionGeometryChanged;
 - (void)_sendDelegateChangeNotificationsForText:(bool)arg1 selection:(bool)arg2;
 - (void)_sendDelegateWillChangeNotificationsForText:(bool)arg1 selection:(bool)arg2;
+- (id)_senderForDelegateNotifications;
 - (void)_setCaretSelectionAtEndOfSelection;
 - (void)_setEmptyStringAttributes:(id)arg1;
 - (void)_setGestureRecognizers;
@@ -222,6 +223,7 @@
 - (void)_setInternalGestureRecognizers;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)_setSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_setSelectedRangeToEndIfNecessary;
 - (void)_setSelectedTextRange:(id)arg1;
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(bool)arg2;
 - (id)_setSelectionRangeWithHistory:(id)arg1;

@@ -9,6 +9,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBluetoothBatteryInsides;
 - (double)edgePadding;
 - (id)makeTextFontForStyle:(long long)arg1;
+- (double)middlePadding;
 - (double)scale;
 - (double)standardPadding;
 - (id)textForNetworkType:(int)arg1;

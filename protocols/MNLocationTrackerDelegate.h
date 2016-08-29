@@ -8,7 +8,7 @@
 - (void)locationTracker:(MNLocationTracker *)arg1 currentStepIndex:(unsigned long long)arg2 distanceUntilSign:(double)arg3 timeUntilManeuver:(double)arg4;
 - (void)locationTracker:(MNLocationTracker *)arg1 didChangeState:(int)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didEnableGuidance:(bool)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 didReroute:(GEOComposedRoute *)arg2 request:(GEODirectionsRequest *)arg3 response:(GEODirectionsResponse *)arg4;
+- (void)locationTracker:(MNLocationTracker *)arg1 didReroute:(GEOComposedRoute *)arg2 rerouteReason:(unsigned long long)arg3 request:(GEODirectionsRequest *)arg4 response:(GEODirectionsResponse *)arg5;
 - (void)locationTracker:(MNLocationTracker *)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(GEOComposedRoute *)arg3 request:(GEODirectionsRequest *)arg4 response:(GEODirectionsResponse *)arg5;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateETA:(GEOETARoute *)arg2 forRoute:(GEOComposedRoute *)arg3;

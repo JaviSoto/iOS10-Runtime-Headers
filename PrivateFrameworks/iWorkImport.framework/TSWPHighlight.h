@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSPObject *hostingModel;
-@property (nonatomic, retain) TSWPStorage *parentStorage;
+@property (nonatomic) TSWPStorage *parentStorage;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *textAttributeUUIDString;

@@ -6,6 +6,7 @@
     bool  _constraintsAdded;
     unsigned long long  _expansionMode;
     UIFont * _font;
+    bool  _isPerformingLayout;
     id /* block */  _labelResizedBlock;
     unsigned long long  _numberOfLinesWhenCollapsed;
     _MKUILabel * _showMoreLabel;

@@ -11,7 +11,6 @@
     bool  mUseTrackedProperties;
 }
 
-- (double)cellWidth;
 - (void)clearProperties;
 - (long long)compareIndex:(id)arg1;
 - (void)dealloc;

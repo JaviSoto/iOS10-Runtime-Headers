@@ -8,7 +8,7 @@
 + (int)populateSearchStrings:(id)arg1 url:(id)arg2 maxStringLength:(unsigned long long)arg3 isCancelledBlock:(id /* block */)arg4;
 
 - (bool)canMarkup;
-- (void)generatePreviews;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id)generateSearchIndexStringsOperation;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;

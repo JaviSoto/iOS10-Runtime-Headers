@@ -41,7 +41,6 @@
 - (void)_processResponseData:(id)arg1;
 - (id)_requestBodyData;
 - (id)_requestHeadersWithBaseURL:(id)arg1;
-- (id)_userAgent;
 - (id)containerName;
 - (id /* block */)criticalNodeFailureTest;
 - (id)generateHTTPRequest;

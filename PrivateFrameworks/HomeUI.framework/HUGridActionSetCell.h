@@ -5,24 +5,24 @@
 @interface HUGridActionSetCell : HUGridCell <HUAccessoryViewCellProtocol> {
     UIView * _accessoryView;
     NSArray * _actionSetCellConstraints;
-    HUPieActivityIndicatorView * _activityIndicator;
     NAFuture * _executeActionSetFuture;
     HUIconView * _iconView;
     NAFuture * _internalExecuteActionSetFuture;
     HFItem * _item;
+    HUPieProgressView * _progressView;
     HUGridSceneCellLayoutOptions * _sceneCellLayoutOptions;
     _HUGridActionSetTitleAndDescriptionView * _titleAndDescriptionView;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;
 @property (nonatomic, retain) NSArray *actionSetCellConstraints;
-@property (nonatomic, retain) HUPieActivityIndicatorView *activityIndicator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NAFuture *executeActionSetFuture;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HUIconView *iconView;
 @property (nonatomic, retain) NAFuture *internalExecuteActionSetFuture;
+@property (nonatomic, retain) HUPieProgressView *progressView;
 @property (nonatomic) HUGridSceneCellLayoutOptions *sceneCellLayoutOptions;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _HUGridActionSetTitleAndDescriptionView *titleAndDescriptionView;
@@ -37,7 +37,6 @@
 - (void)_updateLabelsWithTitle:(id)arg1 description:(id)arg2 primaryState:(long long)arg3;
 - (id)accessoryView;
 - (id)actionSetCellConstraints;
-- (id)activityIndicator;
 - (void)contentEffectDidChange;
 - (id)executeActionSetFuture;
 - (id)iconView;
@@ -47,14 +46,15 @@
 - (id)item;
 - (void)layoutOptionsDidChange;
 - (void)prepareForReuse;
+- (id)progressView;
 - (id)sceneCellLayoutOptions;
 - (void)setAccessoryView:(id)arg1;
 - (void)setActionSetCellConstraints:(id)arg1;
-- (void)setActivityIndicator:(id)arg1;
 - (void)setExecuteActionSetFuture:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setInternalExecuteActionSetFuture:(id)arg1;
 - (void)setItem:(id)arg1;
+- (void)setProgressView:(id)arg1;
 - (void)setSceneCellLayoutOptions:(id)arg1;
 - (void)setTitleAndDescriptionView:(id)arg1;
 - (id)titleAndDescriptionView;

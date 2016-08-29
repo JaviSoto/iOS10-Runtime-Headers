@@ -3,19 +3,14 @@
  */
 
 @interface SBUIPasscodeLockViewInstallTonightLongNumericKeypad : SBUIPasscodeLockViewLongNumericKeypad {
-    SBUIButton * _remindLaterButton;
+    SBUIButton * _remindMeLaterButton;
 }
 
 - (void).cxx_destruct;
-- (double)_distanceFromLastLineBaselineToTextFieldBoundsHeight:(id)arg1;
-- (double)_distanceToFirstLineBaseline:(id)arg1;
-- (double)_expectedDistanceBetweenTitleAndSubtitleBaselines;
-- (double)_expectedYOffsetBetweenTitleAndSubtitleViews;
 - (void)_layoutRemindMeLaterButton;
 - (void)_layoutStatusView;
 - (void)_remindMeLaterButtonHit;
 - (void)_sizeLabel:(id)arg1;
-- (double)_subtitleBaselineYOffsetFromTopOfEntryField;
 - (id)initWithLightStyle:(bool)arg1;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
 

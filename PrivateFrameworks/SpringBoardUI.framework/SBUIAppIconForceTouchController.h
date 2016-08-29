@@ -14,8 +14,6 @@
         unsigned int appIconForceTouchController_willDismissForGestureRecognizer : 1; 
         unsigned int appIconForceTouchController_didDismissForGestureRecognizer : 1; 
         unsigned int appIconForceTouchController_shouldActivateApplicationShortcutItem_atIndex_forGestureRecognizer : 1; 
-        unsigned int appIconForceTouchController_shouldShowShareApplicationShortcutItemForGestureRecognizer : 1; 
-        unsigned int appIconForceTouchController_shareApplicationForGestureRecognizer : 1; 
     }  _delegateRespondsTo;
     SBUIIconForceTouchController * _iconForceTouchController;
     FBSOpenApplicationService * _openApplicationService;
@@ -34,12 +32,10 @@
 + (id)filteredApplicationShortcutItemsWithStaticApplicationShortcutItems:(id)arg1 dynamicApplicationShortcutItems:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)_applicationShortcutItemsForDataProvider:(id)arg1;
 - (void)_dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_peekAnimated:(bool)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(bool)arg3;
 - (void)_presentAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_setupWithGestureRecognizer:(id)arg1;
-- (id)_shareApplicationShortcutItemForDataProvider:(id)arg1;
 - (id)_shortcutViewControllerForDataProvider:(id)arg1;
 - (id)_widgetViewControllerForDataProvider:(id)arg1;
 - (void)appIconForceTouchShortcutViewController:(id)arg1 activateApplicationShortcutItem:(id)arg2;

@@ -14,7 +14,6 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (void)setData:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (void)timeZoneDidChange:(id)arg1;
 
 @end

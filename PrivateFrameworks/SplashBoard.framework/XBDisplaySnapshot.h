@@ -32,7 +32,7 @@
 - (double)_scale;
 - (struct CGSize { double x1; double x2; })_scaledSnapshotSize;
 - (void)_synchronizedCaptureWithCompletion:(id /* block */)arg1;
-- (void)capture;
+- (bool)capture;
 - (void)dealloc;
 - (id)display;
 - (id)initWithDisplay:(id)arg1 layer:(id)arg2;

@@ -18,10 +18,12 @@
         unsigned int maxTrafficSpeedSupported : 1; 
         unsigned int transitMarketSupport : 1; 
         unsigned int clusteredTransitRoutesSupported : 1; 
+        unsigned int includeCrossLanguagePhonetics : 1; 
         unsigned int internalInstall : 1; 
         unsigned int routeOptionsSupported : 1; 
         unsigned int snapToClosestStopSupported : 1; 
     }  _has;
+    bool  _includeCrossLanguagePhonetics;
     bool  _internalInstall;
     int  _maxFormatterSupported;
     int  _maxManeuverTypeSupported;
@@ -30,6 +32,7 @@
     bool  _routeOptionsSupported;
     bool  _snapToClosestStopSupported;
     int  _transitMarketSupport;
+    NSString * _userCurrentTimezone;
 }
 
 @property (nonatomic, retain) NSString *appMajorVersion;
@@ -47,6 +50,7 @@
 @property (nonatomic, readonly) bool hasDisplayRegion;
 @property (nonatomic, readonly) bool hasFormattedStringClientCapabilities;
 @property (nonatomic, readonly) bool hasHardwareModel;
+@property (nonatomic) bool hasIncludeCrossLanguagePhonetics;
 @property (nonatomic) bool hasInternalInstall;
 @property (nonatomic) bool hasMaxFormatterSupported;
 @property (nonatomic) bool hasMaxManeuverTypeSupported;
@@ -55,6 +59,8 @@
 @property (nonatomic) bool hasRouteOptionsSupported;
 @property (nonatomic) bool hasSnapToClosestStopSupported;
 @property (nonatomic) bool hasTransitMarketSupport;
+@property (nonatomic, readonly) bool hasUserCurrentTimezone;
+@property (nonatomic) bool includeCrossLanguagePhonetics;
 @property (nonatomic) bool internalInstall;
 @property (nonatomic) int maxFormatterSupported;
 @property (nonatomic) int maxManeuverTypeSupported;
@@ -63,6 +69,7 @@
 @property (nonatomic) bool routeOptionsSupported;
 @property (nonatomic) bool snapToClosestStopSupported;
 @property (nonatomic) int transitMarketSupport;
+@property (nonatomic, retain) NSString *userCurrentTimezone;
 
 + (Class)displayLanguagesType;
 
@@ -92,6 +99,7 @@
 - (bool)hasDisplayRegion;
 - (bool)hasFormattedStringClientCapabilities;
 - (bool)hasHardwareModel;
+- (bool)hasIncludeCrossLanguagePhonetics;
 - (bool)hasInternalInstall;
 - (bool)hasMaxFormatterSupported;
 - (bool)hasMaxManeuverTypeSupported;
@@ -100,7 +108,9 @@
 - (bool)hasRouteOptionsSupported;
 - (bool)hasSnapToClosestStopSupported;
 - (bool)hasTransitMarketSupport;
+- (bool)hasUserCurrentTimezone;
 - (unsigned long long)hash;
+- (bool)includeCrossLanguagePhonetics;
 - (bool)internalInstall;
 - (bool)isEqual:(id)arg1;
 - (int)maxFormatterSupported;
@@ -120,6 +130,7 @@
 - (void)setFormattedStringClientCapabilities:(id)arg1;
 - (void)setHardwareModel:(id)arg1;
 - (void)setHasClusteredTransitRoutesSupported:(bool)arg1;
+- (void)setHasIncludeCrossLanguagePhonetics:(bool)arg1;
 - (void)setHasInternalInstall:(bool)arg1;
 - (void)setHasMaxFormatterSupported:(bool)arg1;
 - (void)setHasMaxManeuverTypeSupported:(bool)arg1;
@@ -128,6 +139,7 @@
 - (void)setHasRouteOptionsSupported:(bool)arg1;
 - (void)setHasSnapToClosestStopSupported:(bool)arg1;
 - (void)setHasTransitMarketSupport:(bool)arg1;
+- (void)setIncludeCrossLanguagePhonetics:(bool)arg1;
 - (void)setInternalInstall:(bool)arg1;
 - (void)setMaxFormatterSupported:(int)arg1;
 - (void)setMaxManeuverTypeSupported:(int)arg1;
@@ -136,9 +148,11 @@
 - (void)setRouteOptionsSupported:(bool)arg1;
 - (void)setSnapToClosestStopSupported:(bool)arg1;
 - (void)setTransitMarketSupport:(int)arg1;
+- (void)setUserCurrentTimezone:(id)arg1;
 - (bool)snapToClosestStopSupported;
 - (int)transitMarketSupport;
 - (id)transitMarketSupportAsString:(int)arg1;
+- (id)userCurrentTimezone;
 - (void)writeTo:(id)arg1;
 
 @end

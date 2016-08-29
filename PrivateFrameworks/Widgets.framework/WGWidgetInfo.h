@@ -6,13 +6,14 @@
     NSString * _displayName;
     NSExtension * _extension;
     UIImage * _icon;
-    double  _initialHeight;
+    long long  _initialDisplayMode;
     long long  _largestAllowedDisplayMode;
     UIImage * _outlineIcon;
     struct CGSize { 
         double width; 
         double height; 
     }  _preferredContentSize;
+    NSPointerArray * _registeredWidgetHosts;
     NSString * _sdkVersion;
     UIImage * _settingsIcon;
 }
@@ -39,7 +40,6 @@
 - (id)_iconFromWidgetBundle;
 - (id)_iconWithFormat:(int)arg1;
 - (id)_iconWithOutline;
-- (double)_initialHeight;
 - (int)_outlineVariantForScale:(double)arg1;
 - (id)_sdkVersion;
 - (void)_setDisplayName:(id)arg1;
@@ -57,6 +57,7 @@
 - (long long)largestAllowedDisplayMode;
 - (id)outlineIcon;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)registerWidgetHost:(id)arg1;
 - (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)settingsIcon;
 - (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 forWidgetHost:(id)arg2;

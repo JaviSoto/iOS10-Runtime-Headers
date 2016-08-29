@@ -49,12 +49,14 @@
 - (id)_serializeEvent:(id)arg1;
 - (id)_serializeForAdd;
 - (bool)_updateCharacterisiticReferenceInNewEvent:(id)arg1;
+- (void)_updateCharacteristicReference;
 - (void)_updatePredicate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateRecurrences:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateRegion:(id)arg1 forLocationEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updateTriggerValue:(id)arg1 forCharacteristicEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)addEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)currentEvents;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)events;
 - (void)handleEventAddedNotification:(id)arg1;

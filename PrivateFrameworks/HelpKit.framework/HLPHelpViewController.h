@@ -98,6 +98,7 @@
 - (void)showHelpTopicItem:(id)arg1 anchor:(id)arg2 animate:(bool)arg3;
 - (void)showMessageForError:(id)arg1;
 - (bool)showTopicNameAsTitle;
+- (void)showTopicView;
 - (bool)showTopicViewOnLoad;
 - (id)subpath;
 - (id)tableOfContentViewController;
@@ -105,6 +106,7 @@
 - (void)tableOfContentViewControllerShowHelpBookInfo:(id)arg1;
 - (id)topicIDForTopicName:(id)arg1 locale:(id)arg2;
 - (void)updateDoneButton;
+- (void)updateTOCButton;
 - (id)version;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

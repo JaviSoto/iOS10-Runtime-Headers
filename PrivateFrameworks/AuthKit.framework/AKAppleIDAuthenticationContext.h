@@ -21,6 +21,9 @@
     NSString * _displayString;
     NSString * _displayTitle;
     NSString * _generatedCode;
+    NSNumber * _hasEmptyPassword;
+    NSString * _helpAnchor;
+    NSString * _helpBook;
     NSDictionary * _httpHeadersForRemoteUI;
     NSUUID * _identifier;
     NSNumber * _isAppleIDLoginEnabled;
@@ -61,6 +64,7 @@
     bool  _shouldSkipSettingsLaunchAlert;
     bool  _shouldUpdatePersistentServiceTokens;
     bool  _supportsPiggybacking;
+    NSString * _title;
     NSString * _username;
 }
 
@@ -93,7 +97,10 @@
 @property (nonatomic, copy) NSString *displayString;
 @property (nonatomic, copy) NSString *displayTitle;
 @property (nonatomic, copy) NSString *generatedCode;
+@property (setter=setHasEmptyPassword:, nonatomic, copy) NSNumber *hasEmptyPassword;
 @property (readonly) unsigned long long hash;
+@property (copy) NSString *helpAnchor;
+@property (copy) NSString *helpBook;
 @property (nonatomic, copy) NSDictionary *httpHeadersForRemoteUI;
 @property (setter=setAppleIDLoginEnabled:, nonatomic, copy) NSNumber *isAppleIDLoginEnabled;
 @property (nonatomic) bool isEphemeral;
@@ -123,6 +130,7 @@
 @property (nonatomic) bool shouldUpdatePersistentServiceTokens;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsPiggybacking;
+@property (retain) NSString *title;
 @property (copy) NSString *username;
 
 + (bool)supportsSecureCoding;
@@ -174,6 +182,9 @@
 - (id)displayTitle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)generatedCode;
+- (id)hasEmptyPassword;
+- (id)helpAnchor;
+- (id)helpBook;
 - (id)httpHeadersForRemoteUI;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -217,6 +228,9 @@
 - (void)setDisplayTitle:(id)arg1;
 - (void)setFirstTimeLogin:(bool)arg1;
 - (void)setGeneratedCode:(id)arg1;
+- (void)setHasEmptyPassword:(id)arg1;
+- (void)setHelpAnchor:(id)arg1;
+- (void)setHelpBook:(id)arg1;
 - (void)setHttpHeadersForRemoteUI:(id)arg1;
 - (void)setIsEphemeral:(bool)arg1;
 - (void)setIsUsernameEditable:(bool)arg1;
@@ -242,6 +256,7 @@
 - (void)setShouldSkipSettingsLaunchAlert:(bool)arg1;
 - (void)setShouldUpdatePersistentServiceTokens:(bool)arg1;
 - (void)setSupportsPiggybacking:(bool)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setTriggeredByNotification:(bool)arg1;
 - (void)setUsername:(id)arg1;
 - (void)set_isPasswordEditable:(bool)arg1;
@@ -256,6 +271,7 @@
 - (bool)shouldSkipSettingsLaunchAlert;
 - (bool)shouldUpdatePersistentServiceTokens;
 - (bool)supportsPiggybacking;
+- (id)title;
 - (id)username;
 
 @end

@@ -19,11 +19,14 @@
     bool  _useLightStyle;
 }
 
+@property (nonatomic, readonly) SBUIButton *backspaceButton;
 @property (nonatomic, readonly) NSArray *buttons;
+@property (nonatomic, readonly) SBUIButton *cancelButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIPasscodeLockNumberPadDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIControl<SBUIPasscodeNumberPadButton> *downButton;
+@property (nonatomic, readonly) SBUIButton *emergencyCallButton;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool showsBackspaceButton;
 @property (nonatomic) bool showsCancelButton;
@@ -46,9 +49,12 @@
 - (void)_numberPadTouchDrag:(id)arg1 forEvent:(id)arg2;
 - (void)_numberPadTouchUp:(id)arg1 forEvent:(id)arg2;
 - (void)_setLuminosityBoost:(double)arg1;
+- (id)backspaceButton;
 - (id)buttons;
+- (id)cancelButton;
 - (id)delegate;
 - (id)downButton;
+- (id)emergencyCallButton;
 - (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (void)setBackgroundAlpha:(double)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;

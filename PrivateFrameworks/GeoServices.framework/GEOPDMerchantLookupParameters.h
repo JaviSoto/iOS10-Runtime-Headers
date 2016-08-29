@@ -13,6 +13,7 @@
     GEOLocation * _transactionLocation;
     double  _transactionLocationAge;
     double  _transactionTimestamp;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) bool hasMerchantCode;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) GEOLocation *transactionLocation;
 @property (nonatomic) double transactionLocationAge;
 @property (nonatomic) double transactionTimestamp;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -57,6 +59,7 @@
 - (id)transactionLocation;
 - (double)transactionLocationAge;
 - (double)transactionTimestamp;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -7,6 +7,7 @@
     NSArray * _calendars;
     NSCache * _ekEventsCache;
     PEXEventCache * _eventCache;
+    NSObject<OS_dispatch_queue> * _eventLoadingQueue;
     EKEventStore * _eventStore;
     bool  _eventStoreAccessGranted;
 }
@@ -35,6 +36,7 @@
 - (void)preloadEKEvents;
 - (void)registerForCalendarNotifications;
 - (void)requestAccessToEventStore;
+- (void)setEventStoreAccessGranted:(bool)arg1;
 - (id)upcomingCalendarEventsOfInterestFrom:(id)arg1 lookaheadTime:(double)arg2;
 
 @end

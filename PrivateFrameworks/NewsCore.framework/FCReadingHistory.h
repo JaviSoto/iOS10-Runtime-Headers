@@ -30,6 +30,7 @@
 - (void)_modifyHistoryForArticleID:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_readingHistoryItemForArticleID:(id)arg1;
 - (void)_removeHistoryItemWithItemID:(id)arg1 articleID:(id)arg2;
+- (id)_sortedReadingHistoryItemsWithMaxCount:(unsigned long long)arg1;
 - (void)addHeadlineToHistory:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)allReadArticleIDs;
@@ -53,11 +54,13 @@
 - (bool)markArticle:(id)arg1 asArticleSeen:(bool)arg2;
 - (void)markArticle:(id)arg1 asOffensive:(bool)arg2;
 - (bool)markArticle:(id)arg1 withLikingStatus:(unsigned long long)arg2;
+- (id)mostRecentlyReadArticlesWithMaxCount:(unsigned long long)arg1;
+- (void)removeArticleFromHistory:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)setItemsByArticleID:(id)arg1;
 - (void)setItemsByIdentifier:(id)arg1;
 - (void)setItemsLock:(id)arg1;
-- (id)syncReadingHistoryItemRecords:(id)arg1;
+- (id)syncReadingHistoryItemRecords:(id)arg1 didRemoveLastVisitedAt:(out bool*)arg2;
 - (bool)toggleArticleHasBeenConsumed:(id)arg1;
 - (bool)toggleArticleHasBeenMarkedAsOffensive:(id)arg1;
 - (bool)toggleArticleHasBeenRead:(id)arg1;

@@ -15,7 +15,11 @@
 
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)countryCode;
+- (id)geoAddressDictionaryFromContactsAddressDictionary:(id)arg1;
+- (id)geoAddressKeysForContactsAddressKeys;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 addressDictionary:(id)arg2;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 postalAddress:(id)arg2;
 - (id)thoroughfare;
 - (id)title;
 

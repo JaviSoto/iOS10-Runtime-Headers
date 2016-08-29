@@ -60,6 +60,7 @@
 - (id)_dataForPreviewItemController:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 type:(long long*)arg3;
 - (void)_dealloc;
 - (void)_define:(id)arg1;
+- (bool)_freezeTextContainerSize;
 - (bool)_interactionShouldBeginFromPreviewItemController:(id)arg1 forPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_interactionStartedFromPreviewItemController:(id)arg1;
 - (void)_interactionStoppedFromPreviewItemController:(id)arg1;
@@ -74,6 +75,7 @@
 - (bool)_requiresKeyboardWhenFirstResponder;
 - (bool)_restoreFirstResponder;
 - (void)_setDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)_setFreezeTextContainerSize:(bool)arg1;
 - (void)_share:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_transferAttribute:(id)arg1 fromString:(id)arg2 andSetPropertyWith:(SEL)arg3 usingValueClass:(Class)arg4;

@@ -9,7 +9,6 @@
 @property (nonatomic, readonly) NSString *topic;
 
 + (id)incomingCloudPush:(id)arg1;
-+ (void)initialize;
 + (id)uuid;
 
 - (void).cxx_destruct;

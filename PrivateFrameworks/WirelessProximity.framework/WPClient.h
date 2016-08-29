@@ -17,6 +17,7 @@
     long long  _state;
     unsigned char  _type;
     NSXPCConnection * _xpcConnection;
+    NSXPCListener * _xpcListener;
 }
 
 @property long long advertiserState;
@@ -37,6 +38,7 @@
 @property (readonly) Class superclass;
 @property unsigned char type;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
+@property (retain) NSXPCListener *xpcListener;
 
 + (bool)holdVoucherForConnections;
 + (id)stateAsString:(long long)arg1;
@@ -57,6 +59,7 @@
 - (id)debugDescription;
 - (id)description;
 - (void)destroyConnection;
+- (void)disableScanning;
 - (void)disconnectFromPeer:(id)arg1;
 - (void)discoverCharacteristicsAndServices:(id)arg1 forPeripheral:(id)arg2;
 - (void)enableTestMode;
@@ -93,6 +96,7 @@
 - (void)setState:(long long)arg1;
 - (void)setType:(unsigned char)arg1;
 - (void)setXpcConnection:(id)arg1;
+- (void)setXpcListener:(id)arg1;
 - (void)setupMachXPCService;
 - (void)shouldSubscribe:(bool)arg1 toPeer:(id)arg2 withCharacteristic:(id)arg3 inService:(id)arg4;
 - (void)startAdvertising:(id)arg1;
@@ -110,5 +114,6 @@
 - (unsigned char)type;
 - (void)whitelistConnectionMethods:(id)arg1;
 - (id)xpcConnection;
+- (id)xpcListener;
 
 @end

@@ -12,13 +12,19 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_callPageVisibilityDelegateMethod:(int)arg1 forPageView:(id)arg2 atPageIndex:(unsigned long long)arg3;
 - (id)_createPageView:(id)arg1;
+- (void)_shiftPagesAtIndex:(unsigned long long)arg1 downwards:(bool)arg2;
+- (void)_updateVisibilityDelegateForVisiblePageView:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)changedBoundsForBoxNotification:(id)arg1;
 - (void)dealloc;
 - (void)didInsertPage:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)didRemovePage:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)didSwapPage:(id)arg1 atIndex:(unsigned long long)arg2 forPage:(id)arg3 atIndex:(unsigned long long)arg4;
 - (id)document;
 - (struct CGSize { double x1; double x2; })documentViewSize;
+- (void)forceUpdateWithDuration:(double)arg1;
+- (void)forceWebKitMainThread:(bool)arg1;
 - (id)getPDFView;
 - (id)init;
 - (double)lastLayoutDuration;
@@ -31,10 +37,11 @@
 - (void)setDisplayBox:(long long)arg1;
 - (void)setDocument:(id)arg1;
 - (void)setEnablePageShadows:(bool)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPageViewVisibilityDelegate:(id)arg1;
 - (void)setSelection:(id)arg1;
+- (void)setShouldAntiAlias:(bool)arg1;
+- (void)setWillForceUpdateWithDuration;
 - (void)updateVisibility;
+- (void)updateVisibilityWithWaitDuration:(double)arg1;
 
 @end

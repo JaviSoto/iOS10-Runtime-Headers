@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TREraseAnisetteDataRequest : TRNearbyServicesCommunicationAbstractMessage
+@interface TREraseAnisetteDataRequest : TRRequestMessage
 
 @end

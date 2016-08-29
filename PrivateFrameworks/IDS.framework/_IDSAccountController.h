@@ -19,6 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSSet *enabledAccounts;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, retain) NSSet *internalAccounts;
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
 

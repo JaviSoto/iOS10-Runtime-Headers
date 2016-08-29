@@ -266,7 +266,6 @@
 + (id)cnui_templateImageNamed:(id)arg1;
 + (id)cnui_templateImageNamed:(id)arg1 withTint:(id)arg2;
 + (id)cnui_tintedImageNamed:(id)arg1 withTint:(id)arg2;
-+ (id)invisibleImage;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -297,7 +296,6 @@
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (id)pu_PhotosUIImageNamed:(id)arg1;
-+ (id)px_imageWithColor:(id)arg1;
 
 - (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { double x1; double x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 contentMode:(long long)arg3 asynchronously:(bool)arg4 handler:(id /* block */)arg5;
 - (id)pu_overlayedImageWithColor:(id)arg1;
@@ -486,7 +484,7 @@
 
 + (id)newImageForScreenCorner:(unsigned long long)arg1 cornerRadius:(double)arg2;
 
-// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 + (id)UIImageFromCIImage:(id)arg1;
 + (struct UIImage { Class x1; }*)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize { double x1; double x2; })arg2;
@@ -615,6 +613,7 @@
 
 + (id)_px_createOverlayImageWithBackgroundWhite:(double)arg1 backgroundAlpha:(double)arg2 glyphAlpha:(double)arg3;
 + (id)px_PhotosUICoreImageNamed:(id)arg1;
++ (id)px_imageFromSolidColor:(id)arg1;
 + (id)px_playOverlayImage:(unsigned long long)arg1;
 + (void)px_preloadPlayOverlayGlyphsIfNeeded;
 
@@ -676,6 +675,7 @@
 - (long long)sbf_EXIFOrientation;
 - (struct CGColorSpace { }*)sbf_colorSpace;
 - (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { double x1; double x2; })arg2 preservingAspectRatio:(bool)arg3;
 - (id)sbf_imageByManipulatingInDeviceColorSpaceWithBlock:(id /* block */)arg1;
 - (id)sbf_imageMaskedByColor:(id)arg1;
 - (id)sbf_memoryMappedImageWithPool:(id)arg1;
@@ -708,15 +708,12 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
-+ (id)nc_animatedImageWithFileURL:(id)arg1;
 + (id)nc_animatedImageWithImageSource:(struct CGImageSource { }*)arg1;
 + (id)nc_imageFromPDFWithFileURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)nc_imageWithPDDocument:(struct CGPDFDocument { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (struct CGSize { double x1; double x2; })nc_loadAnimatedImageGettingSizeForFileURL:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
-// Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
-
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })vcp_transformUprightAboutBottomLeft;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })vcp_transformUprightAboutTopLeft;
+- (id)nc_alphaOnlyImageForMask;
 
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 

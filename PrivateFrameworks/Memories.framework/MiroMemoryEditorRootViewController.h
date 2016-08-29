@@ -54,7 +54,6 @@
 @property (nonatomic, retain) NSLayoutConstraint *toolbarYOffset;
 
 - (void).cxx_destruct;
-- (void)_applicationDidBecomeActive:(id)arg1;
 - (id)_containerViewForPlayer;
 - (void)_didEndMemoryEditingWithFinalBlueprint:(id)arg1;
 - (void)_showContentEditorViewController;

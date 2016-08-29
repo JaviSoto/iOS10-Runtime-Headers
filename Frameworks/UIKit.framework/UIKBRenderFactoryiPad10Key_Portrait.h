@@ -11,6 +11,7 @@
 - (unsigned long long)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
 - (double)keyCornerRadius;
 - (id)lightKeycapsFontName;
+- (id)messagesWriteboardKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;

@@ -18,6 +18,8 @@
 @property (nonatomic, readonly) bool isCancelled;
 @property (readonly) Class superclass;
 
++ (int)_bestIconVariantForDeviceMainScreen;
+
 - (void).cxx_destruct;
 - (id)_previewImageDataForDocumentAtURL:(id)arg1 dataType:(long long*)arg2;
 - (id)_recentDocumentDescriptors;

@@ -50,7 +50,6 @@
 - (id)scenes;
 - (void)setDelegate:(id)arg1;
 - (void)synchronizeSystemAnimationFencesWithCleanUpBlock:(id /* block */)arg1;
-- (void)synchronizeSystemAnimationFencesWithSpinCleanUpBlock:(id /* block */)arg1;
 - (bool)trackSystemAnimationFence:(id)arg1;
 
 @end

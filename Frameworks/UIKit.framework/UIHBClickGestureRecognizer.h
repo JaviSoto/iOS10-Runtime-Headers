@@ -9,6 +9,7 @@
     UIPressesEvent * _registeredEventForTerminalEvents;
 }
 
+@property (nonatomic, readonly) NSArray *allowedPressTypes;
 @property (nonatomic) unsigned long long clickCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

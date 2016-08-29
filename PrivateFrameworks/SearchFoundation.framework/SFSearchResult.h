@@ -29,6 +29,7 @@
     bool  _isLocalApplicationResult;
     bool  _isQuickGlance;
     bool  _isSecondaryTitleDetached;
+    bool  _isStaticCorrection;
     bool  _isStreaming;
     NSDictionary * _localFeatures;
     NSData * _mapsData;
@@ -48,6 +49,7 @@
     bool  _preventThumbnailImageScaling;
     NSString * _publishDate;
     SFPunchout * _punchout;
+    unsigned long long  _queryId;
     NSNumber * _queryIndependentScore;
     double  _rankingScore;
     bool  _renderHorizontallyWithOtherResultsInCategory;
@@ -104,6 +106,7 @@
 @property (nonatomic) bool isLocalApplicationResult;
 @property (nonatomic) bool isQuickGlance;
 @property (nonatomic) bool isSecondaryTitleDetached;
+@property (nonatomic) bool isStaticCorrection;
 @property (nonatomic) bool isStreaming;
 @property (nonatomic, readonly) NSString *lastSearchQuery;
 @property (nonatomic, copy) NSDictionary *localFeatures;
@@ -125,6 +128,7 @@
 @property (nonatomic) bool preventThumbnailImageScaling;
 @property (nonatomic, copy) NSString *publishDate;
 @property (nonatomic, retain) SFPunchout *punchout;
+@property (nonatomic) unsigned long long queryId;
 @property (nonatomic, retain) NSNumber *queryIndependentScore;
 @property (nonatomic) double rankingScore;
 @property (nonatomic) bool renderHorizontallyWithOtherResultsInCategory;
@@ -186,6 +190,7 @@
 - (bool)isLocalApplicationResult;
 - (bool)isQuickGlance;
 - (bool)isSecondaryTitleDetached;
+- (bool)isStaticCorrection;
 - (bool)isStreaming;
 - (id)localFeatures;
 - (id)mapsData;
@@ -205,6 +210,7 @@
 - (bool)preventThumbnailImageScaling;
 - (id)publishDate;
 - (id)punchout;
+- (unsigned long long)queryId;
 - (id)queryIndependentScore;
 - (double)rankingScore;
 - (bool)renderHorizontallyWithOtherResultsInCategory;
@@ -244,6 +250,7 @@
 - (void)setIsLocalApplicationResult:(bool)arg1;
 - (void)setIsQuickGlance:(bool)arg1;
 - (void)setIsSecondaryTitleDetached:(bool)arg1;
+- (void)setIsStaticCorrection:(bool)arg1;
 - (void)setIsStreaming:(bool)arg1;
 - (void)setLocalFeatures:(id)arg1;
 - (void)setMapsData:(id)arg1;
@@ -263,6 +270,7 @@
 - (void)setPreventThumbnailImageScaling:(bool)arg1;
 - (void)setPublishDate:(id)arg1;
 - (void)setPunchout:(id)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
 - (void)setQueryIndependentScore:(id)arg1;
 - (void)setRankingScore:(double)arg1;
 - (void)setRenderHorizontallyWithOtherResultsInCategory:(bool)arg1;
@@ -312,5 +320,10 @@
 - (unsigned long long)engagementDestination;
 - (id)parsecDomainIdentifier;
 - (id)sfSearchResultValue;
+
+// Image: /System/Library/PrivateFrameworks/Search.framework/Search
+
+- (id)objectForFeedback;
+- (void)setPropertiesOnResultCopy:(id)arg1;
 
 @end

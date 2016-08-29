@@ -4,15 +4,21 @@
 
 @interface MPModelStorePlaybackItemsResponse : MPModelResponse {
     bool  _finalResponse;
+    MPStoreLibraryPersonalizationResponse * _personalizationResponse;
     MPModelStorePlaybackItemsResponse * _updatedResponse;
 }
 
+@property (nonatomic, readonly) MPStoreLibraryPersonalizationResponse *_personalizationResponse;
 @property (getter=_updatedResponse, nonatomic, readonly) MPModelStorePlaybackItemsResponse *_updatedResponse;
 @property (getter=isFinalResponse, nonatomic) bool finalResponse;
 
 - (void).cxx_destruct;
+- (void)_allowsExplicitContentDidChangeNotification:(id)arg1;
 - (void)_invalidateWithUpdatedResponse:(id)arg1;
+- (id)_personalizationResponse;
+- (void)_personalizationResponseDidInvalidateNotification:(id)arg1;
 - (id)_updatedResponse;
+- (id)initWithRequest:(id)arg1 personalizationResponse:(id)arg2;
 - (bool)isFinalResponse;
 - (void)setFinalResponse:(bool)arg1;
 

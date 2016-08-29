@@ -70,6 +70,7 @@
 - (void)_reloadData;
 - (void)_resetScrollingPosition;
 - (bool)_shouldShowCheckmarkOnTrailingEdge;
+- (void)_stopMediaItemPlaybackWithFadeOutDuration:(double)arg1;
 - (void)_togglePlayMediaItemWithIdentifier:(id)arg1;
 - (void)_updateMinimumTextIndentation;
 - (void)_updateStyleOfTableView:(id)arg1 forStyleProvider:(id)arg2;
@@ -154,6 +155,7 @@
 - (void)tonePickerController:(id)arg1 selectedMediaItemWithIdentifier:(id)arg2;
 - (void)tonePickerController:(id)arg1 selectedToneWithIdentifier:(id)arg2;
 - (id)tonePickerController:(id)arg1 titleOfMediaItemAtIndex:(unsigned long long)arg2;
+- (void)tonePickerController:(id)arg1 willBeginPlaybackOfToneWithIdentifier:(id)arg2;
 - (void)tonePickerControllerDidReloadTones:(id)arg1;
 - (void)tonePickerControllerDidStopPlaying:(id)arg1 withFadeOutDuration:(double)arg2;
 - (void)tonePickerControllerRequestsMediaItemsRefresh:(id)arg1;

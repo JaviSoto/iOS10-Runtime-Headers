@@ -19,7 +19,7 @@
 - (id)UIImage;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_baseTransformForSnapshotContext:(id)arg1 rootContext:(id)arg2;
 - (id)_collectLayersToSnapshotFromScene:(id)arg1 withSnapshotContext:(id)arg2 rootContext:(id)arg3;
-- (void)capture;
+- (bool)capture;
 - (id)context;
 - (void)dealloc;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2;

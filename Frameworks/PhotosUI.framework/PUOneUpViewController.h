@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUOneUpViewController : UIViewController <PHAirPlayControllerContentProvider, PUAccessoryTileViewControllerDelegate, PUAccessoryVisibilityInteractionControllerDelegate, PUAssetDisplayDescriptorNavigator, PUBarsControllerDelegate, PUBrowsingViewModelChangeObserver, PUDoubleTapZoomControllerDelegate, PUInteractiveDismissalControllerDelegate, PUIrisImageTileViewControllerDelegate, PUOneUpAccessoryViewControllersManagerDelegate, PUOneUpAssetTransitionViewController, PUOneUpBarsControllerDelegate, PUOneUpGestureRecognizerCoordinatorDelegate, PUOneUpTilingLayoutDelegate, PUOverOneUpPresentationSessionDelegate, PUOverOneUpPresentationSessionViewController, PUPlayButtonTileViewControllerDelegate, PUTilingViewControllerTransitionEndPoint, PUTilingViewScrollDelegate, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewTileUseDelegate, PUUserTransformTileViewControllerDelegate, PUViewControllerSpecChangeObserver, PXDiagnosticsEnvironment, UIScrollViewDelegate, _UISettingsKeyObserver> {
+@interface PUOneUpViewController : UIViewController <PHAirPlayControllerContentProvider, PUAccessoryTileViewControllerDelegate, PUAccessoryVisibilityInteractionControllerDelegate, PUAssetDisplayDescriptorNavigator, PUBarsControllerDelegate, PUBrowsingViewModelChangeObserver, PUDoubleTapZoomControllerDelegate, PUInteractiveDismissalControllerDelegate, PUIrisImageTileViewControllerDelegate, PUOneUpAccessoryViewControllersManagerDelegate, PUOneUpAssetTransitionViewController, PUOneUpBarsControllerDelegate, PUOneUpGestureRecognizerCoordinatorDelegate, PUOneUpTilingLayoutDelegate, PUOverOneUpPresentationSessionDelegate, PUOverOneUpPresentationSessionViewController, PUPlayButtonTileViewControllerDelegate, PUTilingViewControllerTransitionEndPoint, PUTilingViewScrollDelegate, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewTileUseDelegate, PUUserTransformTileViewControllerDelegate, PUViewControllerSpecChangeObserver, PXDiagnosticsEnvironment, PXPurgeableController, UIScrollViewDelegate, _UISettingsKeyObserver> {
     PUOneUpAccessoryViewControllersManager * __accessoryViewControllersManager;
     PUAccessoryVisibilityInteractionController * __accessoryVisibilityInteractionController;
     PUBrowsingBackgroundTileViewController * __backgroundTileViewController;
@@ -265,6 +265,7 @@
 - (struct CGPoint { double x1; double x2; })layout:(id)arg1 contentOffsetForItemAtIndexPath:(id)arg2;
 - (bool)layout:(id)arg1 disableInitialZoomToFillForItemAtIndexPath:(id)arg2;
 - (double)layout:(id)arg1 minimumVisibleAccessoryHeightForItemAtIndexPath:(id)arg2;
+- (double)layout:(id)arg1 minimumVisibleContentHeightForItemAtIndexPath:(id)arg2;
 - (id)layout:(id)arg1 modelTileTransformForItemAtIndexPath:(id)arg2;
 - (bool)layout:(id)arg1 shouldShowAccessoryForItemAtIndexPath:(id)arg2;
 - (bool)layout:(id)arg1 shouldShowBufferingIndicatorForItemAtIndexPath:(id)arg2;
@@ -315,6 +316,7 @@
 - (bool)pu_wantsNavigationBarVisible;
 - (bool)pu_wantsTabBarVisible;
 - (bool)pu_wantsToolbarVisible;
+- (void)purgeIfPossible;
 - (bool)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)px_endPointForTransition:(id)arg1;
@@ -341,6 +343,7 @@
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForLayoutInvalidationContext:(id)arg2;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForReattachedTileControllers:(id)arg2 context:(id)arg3;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForTransitionFromLayout:(id)arg2 toLayout:(id)arg3 withContext:(id)arg4;
+- (bool)tilingViewCanBypass20069585Check:(id)arg1;
 - (void)tilingViewControllerTransition:(id)arg1 abandonTilingView:(id)arg2 toEndPoint:(id)arg3;
 - (void)tilingViewControllerTransition:(id)arg1 adoptTilingView:(id)arg2 fromEndPoint:(id)arg3 isCancelingTransition:(bool)arg4 animationSetupCompletionHandler:(id /* block */)arg5;
 - (id)tilingViewControllerTransition:(id)arg1 tilingViewToTransferToEndPoint:(id)arg2;

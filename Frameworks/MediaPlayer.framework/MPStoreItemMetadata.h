@@ -14,6 +14,7 @@
 @property (nonatomic, readonly, copy) NSURL *URL;
 @property (nonatomic, readonly, copy) NSString *artistName;
 @property (nonatomic, readonly, copy) id artistStoreID;
+@property (nonatomic, readonly, copy) NSString *artistUploadedContentType;
 @property (nonatomic, readonly) MPStoreArtworkRequestToken *artworkRequestToken;
 @property (nonatomic, readonly, copy) NSArray *artworkTrackIDs;
 @property (getter=isBeats1, nonatomic, readonly) bool beats1;
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly, copy) NSString *composerName;
 @property (nonatomic, readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
+@property (nonatomic, readonly, copy) id curatorID;
 @property (nonatomic, readonly, copy) NSString *curatorName;
 @property (nonatomic, readonly, copy) NSString *descriptionText;
 @property (nonatomic, readonly) long long discCount;
@@ -41,19 +43,23 @@
 @property (nonatomic, readonly, copy) NSString *itemKind;
 @property (nonatomic, readonly, copy) NSDate *lastModifiedDate;
 @property (nonatomic, readonly) MPStoreArtworkRequestToken *latestAlbumArtworkRequestToken;
+@property (nonatomic, readonly) long long movementCount;
+@property (nonatomic, readonly, copy) NSString *movementName;
+@property (nonatomic, readonly) long long movementNumber;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *offers;
 @property (nonatomic, readonly, copy) MPStoreItemMetadata *parentStoreItemMetadata;
 @property (nonatomic, readonly, copy) NSArray *playlistIdentifiers;
-@property (nonatomic, readonly) double popularity;
+@property (nonatomic, readonly, copy) NSNumber *popularity;
 @property (nonatomic, readonly, copy) NSDate *releaseDate;
 @property (nonatomic, readonly, copy) NSString *shortEditorNotes;
-@property (nonatomic, readonly) NSString *shortName;
+@property (nonatomic, readonly, copy) NSString *shortName;
 @property (nonatomic, readonly, copy) NSURL *shortURL;
 @property (nonatomic, readonly) bool showComposer;
 @property (nonatomic, readonly, copy) id storeID;
 @property (nonatomic, readonly) long long trackCount;
 @property (nonatomic, readonly) long long trackNumber;
+@property (nonatomic, readonly, copy) NSString *versionHash;
 @property (nonatomic, readonly, copy) NSString *workName;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -64,11 +70,11 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (id)_artworkRequestTokenForStorePlatformDictionary:(id)arg1 artworkKey:(id)arg2;
-- (id)_newLookupItemArtworkWithDictionary:(id)arg1;
 - (id)_storePlatformLastModifiedDateFormatter;
 - (id)_storePlatformReleaseDateFormatter;
 - (id)artistName;
 - (id)artistStoreID;
+- (id)artistUploadedContentType;
 - (id)artworkRequestToken;
 - (id)artworkRequestTokenForEditorialArtworkKind:(id)arg1;
 - (id)artworkRequestTokenForStorePlatformDictionary:(id)arg1;
@@ -84,6 +90,7 @@
 - (id)composerName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyrightText;
+- (id)curatorID;
 - (id)curatorName;
 - (id)description;
 - (id)descriptionText;
@@ -115,11 +122,14 @@
 - (id)metadataByAppendingMetadata:(id)arg1;
 - (id)metadataWithChildStorePlatformDictionaries:(id)arg1;
 - (id)metadataWithParentMetadata:(id)arg1;
+- (long long)movementCount;
+- (id)movementName;
+- (long long)movementNumber;
 - (id)name;
 - (id)offers;
 - (id)parentStoreItemMetadata;
 - (id)playlistIdentifiers;
-- (double)popularity;
+- (id)popularity;
 - (id)releaseDate;
 - (id)shortEditorNotes;
 - (id)shortName;
@@ -128,6 +138,7 @@
 - (id)storeID;
 - (long long)trackCount;
 - (long long)trackNumber;
+- (id)versionHash;
 - (id)workName;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation

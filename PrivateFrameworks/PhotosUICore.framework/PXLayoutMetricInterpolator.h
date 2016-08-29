@@ -17,6 +17,11 @@
 
 + (id)albumsGridEdgeInsetsInterpolator;
 + (id)albumsGridItemWidthInterpolator;
++ (id)memoriesDetailsEdgeInsetsInterpolator;
++ (id)memoriesFeedInteritemSpacingInterpolator;
++ (id)memoriesFeedLandscapeEdgeInsetsInterpolator;
++ (id)memoriesFeedPortraitEdgeInsetsInterpolator;
++ (id)memoriesItemWidthInterpolator;
 
 - (void).cxx_destruct;
 - (double)_cachedMetric;
@@ -29,8 +34,8 @@
 - (void)_setNeedsUpdate;
 - (void)_updateReferenceValuesByMetricsOrderIfNeeded;
 - (id)_valueForMetric:(double)arg1 fromInterpolationBetweenValue:(id)arg2 secondValue:(id)arg3;
-- (void)addReferenceValue:(double)arg1 forMetric:(double)arg2;
 - (id)init;
+- (void)setReferenceValue:(double)arg1 forMetric:(double)arg2;
 - (double)valueForMetric:(double)arg1;
 
 @end

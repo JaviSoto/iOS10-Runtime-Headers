@@ -21,6 +21,7 @@
     SUScriptOperationDelegate * _scriptOperationDelegate;
     SUScriptStoreBagLoader * _scriptStoreBagLoader;
     SUScriptWindowContext * _scriptWindowContext;
+    SUScriptSubscriptionStatusCoordinator * _subscriptionStatusCoordinator;
     id  _threadSafeDelegate;
 }
 
@@ -39,6 +40,8 @@
 @property (readonly) NSString *clientIdentifier;
 @property (retain) SUClientInterface *clientInterface;
 @property (copy) NSString *cookie;
+@property (readonly) NSString *cookieDefaultURL;
+@property (readonly) NSString *cookieForDefaultURL;
 @property (readonly, copy) NSString *debugDescription;
 @property <SUScriptInterfaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -64,6 +67,7 @@
 @property (readonly) SUScriptDictionary *scriptStoreBagDictionary;
 @property (retain) SUScriptWindowContext *scriptWindowContext;
 @property (readonly) SUScriptSectionsController *sectionsController;
+@property (readonly) NSString *storeFrontIdentifier;
 @property (readonly) long long storeSheetType;
 @property (readonly) long long storeSheetTypeAskToBuy;
 @property (readonly) long long storeSheetTypeDefault;
@@ -82,6 +86,7 @@
 - (id)DOMElementWithElement:(id)arg1;
 - (void)_accessibilityPostLayoutChange;
 - (id)_className;
+- (id)_cookieForURL:(id)arg1;
 - (id)_copyDialogWithMessage:(id)arg1 title:(id)arg2 cancelButtonTitle:(id)arg3 okButtonTitle:(id)arg4;
 - (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id /* block */)arg2;
 - (void)_globalEventNotification:(id)arg1;
@@ -107,7 +112,7 @@
 - (id)application;
 - (id)applicationAccessibilityEnabled;
 - (id)applicationLocalStorage;
-- (void)approveInPerson:(id)arg1;
+- (void)approveInPerson:(id)arg1 completionFunction:(id)arg2;
 - (bool)arePodcastsDisabled;
 - (id)askToBuyPrompt;
 - (id)attributeKeys;
@@ -121,12 +126,15 @@
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
 - (void)composeReviewWithURL:(id)arg1 itemIdentifier:(id)arg2 type:(id)arg3;
 - (id)cookie;
+- (id)cookieDefaultURL;
+- (id)cookieForDefaultURL;
 - (struct OpaqueJSContext { }*)copyJavaScriptContext;
 - (void)dealloc;
 - (void)deallocAuthentication;
 - (void)deallocCarrierBundlingController;
 - (void)deallocMediaLibrary;
 - (void)deallocMetricsController;
+- (void)deallocSubscriptionStatusCoordinator;
 - (id)delegate;
 - (id)device;
 - (id)deviceLocalStorage;
@@ -245,6 +253,8 @@
 - (void)setCarrierBundlingController:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (void)setCookie:(id)arg1;
+- (void)setCookieDefaultURL:(id)arg1;
+- (void)setCookieForDefaultURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setGlobalRootObject:(id)arg1;
@@ -259,6 +269,8 @@
 - (void)setReferrerURL:(id)arg1;
 - (void)setReferringUserAgent:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
+- (void)setSubscriptionStatusCoordinator:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)setWindow:(id)arg1;
 - (bool)shouldRestrictContentOfSystem:(id)arg1 level:(id)arg2;
@@ -271,9 +283,11 @@
 - (id)softwareApplicationWithAdamID:(id)arg1;
 - (id)softwareApplicationWithBundleID:(id)arg1;
 - (void)startedTest:(id)arg1;
+- (id)storeFrontIdentifier;
 - (long long)storeSheetType;
 - (long long)storeSheetTypeAskToBuy;
 - (long long)storeSheetTypeDefault;
+- (id)subscriptionStatusCoordinator;
 - (id)systemItemAction;
 - (id)systemItemAdd;
 - (id)systemItemBookmarks;

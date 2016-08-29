@@ -39,7 +39,8 @@
 - (double)_baselineToBottomConstant;
 - (void)_contentSizeDidChange;
 - (id)_icon;
-- (void)_iconTapped:(id)arg1;
+- (id)_iconAccessibilityLabel;
+- (bool)_iconTapped:(id)arg1;
 - (Class)_labeledValueExpectedValueType;
 - (bool)_pointIsInIcon:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_updateGestureRecognizer;

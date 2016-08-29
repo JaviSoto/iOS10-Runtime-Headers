@@ -36,7 +36,6 @@
 - (id)_indexPathsForItemsInSection:(long long)arg1;
 - (id)_layoutAttributesForItemAtIndexPath:(id)arg1 numberOfItemsInSection:(unsigned long long)arg2;
 - (bool)_shouldScrollToContentBeginningInRightToLeft;
-- (bool)_wantsRightToLeftHorizontalMirroringIfNeeded;
 - (void)calculateLayoutValuesForIndexPaths:(id)arg1 containerWidth:(double)arg2;
 - (struct CGSize { double x1; double x2; })collectionViewContentSize;
 - (struct CGSize { double x1; double x2; })evaluatedContentSize;
@@ -46,6 +45,7 @@
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;
 - (struct CGPoint { double x1; double x2; })firstItemCenterForContainerWidth:(double)arg1;
+- (id)init;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (void)invalidateGroupViewLayoutAnimated:(bool)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -61,5 +61,6 @@
 - (void)setPreparedLayoutAttributes:(id)arg1;
 - (void)setPreparedUpdateItems:(id)arg1;
 - (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)shouldReverseLayoutDirection;
 
 @end

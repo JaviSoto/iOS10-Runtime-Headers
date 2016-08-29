@@ -13,6 +13,8 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)initWithBytes:(void*)arg1 length:(unsigned long long)arg2;
 - (id)initWithData:(id)arg1 zone:(struct _NSZone { }*)arg2;
 - (id)initWithLength:(unsigned long long)arg1;
 - (id)map;

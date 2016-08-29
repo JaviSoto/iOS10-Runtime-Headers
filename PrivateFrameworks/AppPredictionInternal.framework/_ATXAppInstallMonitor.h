@@ -22,8 +22,8 @@
 - (void)receivedInstallNotification:(id)arg1;
 - (void)receivedStateChangeNotification:(id)arg1;
 - (void)receivedUninstallNotification:(id)arg1;
-- (bool)recentlyRestoredBackupWithRestoreDate:(id)arg1 andTimeWindow:(unsigned long long)arg2;
 - (id)removeIntersectionBetweenSet:(id)arg1 set:(id)arg2;
+- (bool)restoreInProgress;
 - (void)setUpdateCompletionBlock:(id /* block */)arg1;
 - (void)start;
 - (void)stop;

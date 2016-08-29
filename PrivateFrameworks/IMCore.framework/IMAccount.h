@@ -32,7 +32,7 @@
     bool  _hasPostedOfflineNotification;
     bool  _hasReceivedSync;
     bool  _iconChecked;
-    NSMutableDictionary * _imHandles;
+    NSMapTable * _imHandles;
     bool  _isActive;
     bool  _justLoggedIn;
     NSArray * _lastReceivedGroupState;

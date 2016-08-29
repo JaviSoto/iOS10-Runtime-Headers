@@ -14,7 +14,6 @@
 
 - (void).cxx_destruct;
 - (id)_computeImageprintForAsset:(id)arg1 usingRequestHandler:(id)arg2 error:(id*)arg3;
-- (id)_fetchAssetWithLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (void)_handleNilReplyBlockForSelector:(SEL)arg1;
 - (struct CGImage { }*)_newCGImageRefForAssetResourceFileURL:(id)arg1 orientation:(unsigned long long*)arg2 error:(id*)arg3;
 - (bool)_performAnalysisOnAssetResource:(id)arg1 ofAsset:(id)arg2 error:(id*)arg3;
@@ -40,7 +39,7 @@
 - (bool)processAsset:(id)arg1 error:(id*)arg2;
 - (void)sceneNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (id)sceneTaxonomyHash;
-- (void)scheduleSceneClassificationOnAssetsWithLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
+- (void)searchResultNodesForSceneClassifications:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)searchResultNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)startup;
 - (bool)supportsCoalescingResults;

@@ -3,6 +3,7 @@
  */
 
 @interface MKTransitSectionController : NSObject {
+    MKTransitSectionPagingFilter * __pagingFilter;
     NSDate * _departureCutoffDate;
     NSDate * _expiredHighFrequencyCutoffDate;
     NSSet * _incidentEntitiesToExclude;
@@ -12,10 +13,10 @@
     unsigned long long  _numberOfFilteredLines;
     unsigned long long  _numberOfFilteredRows;
     unsigned long long  _numberOfRows;
-    MKTransitSectionPagingFilter * _pagingFilter;
     <GEOTransitSystem> * _system;
 }
 
+@property (nonatomic, readonly) MKTransitSectionPagingFilter *_pagingFilter;
 @property (nonatomic, retain) NSDate *departureCutoffDate;
 @property (nonatomic, retain) NSDate *expiredHighFrequencyCutoffDate;
 @property (nonatomic, retain) NSSet *incidentEntitiesToExclude;
@@ -25,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)_buildRows;
 - (bool)_needsBuildRows;
+- (id)_pagingFilter;
 - (void)_setNeedsBuildRows;
 - (id)departureCutoffDate;
 - (id)expiredHighFrequencyCutoffDate;

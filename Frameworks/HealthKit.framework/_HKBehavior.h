@@ -5,16 +5,19 @@
 @interface _HKBehavior : NSObject {
     bool  _canCreateSources;
     bool  _hasTelephonyCapability;
+    NSString * _hostReadAuthorizationUsageDescription;
+    NSString * _hostWriteAuthorizationUsageDescription;
     bool  _isAppleInternalInstall;
     bool  _isAppleWatch;
     bool  _isCoachingEventLoggingEnabled;
     bool  _isCompanionCapable;
     bool  _isDeviceSupported;
+    bool  _isTestingDevice;
     bool  _requestsRemoteAuthorization;
     bool  _shouldPruneOldSamples;
 }
 
-@property (nonatomic, readonly) bool canCreateSources;
+@property (nonatomic) bool canCreateSources;
 @property (nonatomic, readonly, copy) NSString *currentDeviceClass;
 @property (nonatomic, readonly, copy) NSString *currentDeviceDisplayName;
 @property (nonatomic, readonly, copy) NSString *currentDeviceManufacturer;
@@ -25,18 +28,18 @@
 @property (nonatomic, readonly, copy) NSString *currentInternalDeviceModel;
 @property (nonatomic, readonly, copy) NSString *currentOSBuild;
 @property (nonatomic, readonly, copy) NSString *currentOSVersion;
-@property (nonatomic, readonly) bool hasTelephonyCapability;
-@property (nonatomic, readonly, copy) NSString *hostReadAuthorizationUsageDescription;
-@property (nonatomic, readonly, copy) NSString *hostWriteAuthorizationUsageDescription;
-@property (nonatomic, readonly) bool isAppleInternalInstall;
-@property (nonatomic, readonly) bool isAppleWatch;
-@property (nonatomic, readonly) bool isCoachingEventLoggingEnabled;
-@property (nonatomic, readonly) bool isCompanionCapable;
-@property (nonatomic, readonly) bool isDeviceSupported;
-@property (nonatomic, readonly) bool isTestingDevice;
+@property (nonatomic) bool hasTelephonyCapability;
+@property (nonatomic, copy) NSString *hostReadAuthorizationUsageDescription;
+@property (nonatomic, copy) NSString *hostWriteAuthorizationUsageDescription;
+@property (nonatomic) bool isAppleInternalInstall;
+@property (nonatomic) bool isAppleWatch;
+@property (nonatomic) bool isCoachingEventLoggingEnabled;
+@property (nonatomic) bool isCompanionCapable;
+@property (nonatomic) bool isDeviceSupported;
+@property (nonatomic) bool isTestingDevice;
 @property (nonatomic, readonly, copy) NSTimeZone *localTimeZone;
-@property (nonatomic, readonly) bool requestsRemoteAuthorization;
-@property (nonatomic, readonly) bool shouldPruneOldSamples;
+@property (nonatomic) bool requestsRemoteAuthorization;
+@property (nonatomic) bool shouldPruneOldSamples;
 @property (nonatomic, readonly) unsigned long long totalDiskCapacity;
 
 + (bool)_hasCompletedBuddy;
@@ -71,6 +74,7 @@
 + (id)sharedBehavior;
 + (bool)shouldShowBuddy;
 
+- (void).cxx_destruct;
 - (bool)canCreateSources;
 - (id)currentDeviceClass;
 - (id)currentDeviceDisplayName;
@@ -94,6 +98,18 @@
 - (bool)isTestingDevice;
 - (id)localTimeZone;
 - (bool)requestsRemoteAuthorization;
+- (void)setCanCreateSources:(bool)arg1;
+- (void)setHasTelephonyCapability:(bool)arg1;
+- (void)setHostReadAuthorizationUsageDescription:(id)arg1;
+- (void)setHostWriteAuthorizationUsageDescription:(id)arg1;
+- (void)setIsAppleInternalInstall:(bool)arg1;
+- (void)setIsAppleWatch:(bool)arg1;
+- (void)setIsCoachingEventLoggingEnabled:(bool)arg1;
+- (void)setIsCompanionCapable:(bool)arg1;
+- (void)setIsDeviceSupported:(bool)arg1;
+- (void)setIsTestingDevice:(bool)arg1;
+- (void)setRequestsRemoteAuthorization:(bool)arg1;
+- (void)setShouldPruneOldSamples:(bool)arg1;
 - (bool)shouldPruneOldSamples;
 - (unsigned long long)totalDiskCapacity;
 

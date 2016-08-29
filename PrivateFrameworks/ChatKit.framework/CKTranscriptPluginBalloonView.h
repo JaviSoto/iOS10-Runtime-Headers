@@ -23,6 +23,7 @@
 @property (nonatomic, retain) CKInteractiveBalloonImageView *tailMask;
 
 - (void).cxx_destruct;
+- (void)_pluginViewReadyForSnapshot:(id)arg1;
 - (void)addFilter:(id)arg1;
 - (void)attachInvisibleInkEffectView;
 - (void)clearFilters;

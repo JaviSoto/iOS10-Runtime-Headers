@@ -4,10 +4,12 @@
 
 @interface GEOPDSearchZeroKeywordCategorySuggestionResult : PBCodable <NSCopying> {
     NSMutableArray * _categorys;
+    PBUnknownFields * _unknownFields;
     NSMutableArray * _zeroKeywordEntrys;
 }
 
 @property (nonatomic, retain) NSMutableArray *categorys;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSMutableArray *zeroKeywordEntrys;
 
 + (Class)categoryType;
@@ -31,6 +33,7 @@
 - (bool)readFrom:(id)arg1;
 - (void)setCategorys:(id)arg1;
 - (void)setZeroKeywordEntrys:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 - (id)zeroKeywordEntryAtIndex:(unsigned long long)arg1;
 - (id)zeroKeywordEntrys;

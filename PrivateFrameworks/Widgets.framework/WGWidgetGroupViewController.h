@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGWidgetGroupViewController : UIViewController <WGWidgetDebugging, WGWidgetDiscoveryObserving, WGWidgetListViewControllerDelegatePrivate> {
+@interface WGWidgetGroupViewController : UIViewController <WGWidgetDebugging, WGWidgetDiscoveryObserving, WGWidgetExtensionVisibilityProviding, WGWidgetListViewControllerDelegatePrivate> {
     <WGWidgetGroupViewControllerDelegate> * _delegate;
     WGWidgetDiscoveryController * _discoveryController;
     unsigned long long  _lastWidgetCount;
@@ -42,7 +42,9 @@
 - (void)editViewWillAppear:(id)arg1;
 - (void)editViewWillDisappear:(id)arg1;
 - (id)initWithWidgetDiscoveryController:(id)arg1;
+- (void)invalidateVisibleWidgets;
 - (void)invalidateWidgetBackgroundViews;
+- (bool)isWidgetExtensionVisible:(id)arg1;
 - (unsigned long long)location;
 - (id)majorScrollView;
 - (void)makeVisibleWidgetWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
@@ -58,7 +60,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setLegibilityTextColor:(id)arg1;
+- (void)setLegibilitySettings:(id)arg1;
 - (void)setLocation:(unsigned long long)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;

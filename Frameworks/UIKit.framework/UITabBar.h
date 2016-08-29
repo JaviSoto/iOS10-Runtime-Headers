@@ -32,6 +32,7 @@
         unsigned int focusedItemHighlightShouldBeVisible : 1; 
         unsigned int hasVibrantLabels : 1; 
         unsigned int blurDisabled : 1; 
+        unsigned int disableBlurTinting : 1; 
         unsigned int pendingFocusAction : 1; 
     }  _tabBarFlags;
     long long  _tabBarSizing;
@@ -109,6 +110,7 @@
 - (void)_customizeWithAvailableItems:(id)arg1;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (bool)_disableBlurTinting;
 - (void)_dismissCustomizeSheet:(bool)arg1;
 - (id)_dividerImageForLeftButtonState:(unsigned long long)arg1 rightButtonState:(unsigned long long)arg2;
 - (void)_doCommonTabBarInit;
@@ -144,6 +146,7 @@
 - (void)_setBarMetrics:(long long)arg1;
 - (void)_setBarOrientation:(long long)arg1;
 - (void)_setBlurEnabled:(bool)arg1;
+- (void)_setDisableBlurTinting:(bool)arg1;
 - (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned long long)arg2 rightButtonState:(unsigned long long)arg3;
 - (void)_setFocusedItemHightlightShouldBeVisible:(bool)arg1;
 - (void)_setHiddenAwaitingFocus:(bool)arg1;

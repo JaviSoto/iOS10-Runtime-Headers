@@ -3,7 +3,6 @@
  */
 
 @interface TSDSwatchRenderingOperation : NSOperation {
-    <TSDSwatchRenderingOperationDelegate> * mDelegate;
     struct CGImage { } * mDeliveredImage;
     TSKDocumentRoot * mDocumentRoot;
     NSString * mIdentifier;
@@ -28,6 +27,7 @@
     }  mSwatchFrame;
     UIView * mView;
     bool  mWaitingToBecomeReady;
+    TSUWeakReference * mWeakDelegateReference;
 }
 
 @property (nonatomic) <TSDSwatchRenderingOperationDelegate> *delegate;

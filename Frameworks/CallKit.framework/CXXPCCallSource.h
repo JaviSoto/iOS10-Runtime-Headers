@@ -36,7 +36,6 @@
 - (void)setCapabilities:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setHasVoIPBackgroundMode:(bool)arg1;
-- (oneway void)updateAuthorization;
 - (id)vendorProtocolDelegate;
 
 @end

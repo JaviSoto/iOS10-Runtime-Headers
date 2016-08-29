@@ -6,9 +6,8 @@
     MKPlaceCardActionItem * _addToFavoriteItem;
     NSMapTable * _additionalViewControllers;
     void * _addressBook;
-    NSMutableArray * _analyticsPCPossibleActions;
-    NSMutableArray * _analyticsPCUnactionableUIElements;
     bool  _attemptedToCreateAddressBook;
+    GEOAutomobileOptions * _automobileOptions;
     struct CGPoint { 
         double x; 
         double y; 
@@ -48,11 +47,13 @@
     GEORouteGenerator * _routeGenerator;
     <UIScrollViewDelegate> * _scrollViewDelegate;
     bool  _showContactActions;
+    GEOTransitOptions * _transitOptions;
     MKPlaceTransitViewController * _transitViewController;
     NSMutableArray * _viewDidAppearBlocks;
     double  headerHeight;
 }
 
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
 @property (nonatomic, readonly) CNContact *contact;
 @property (nonatomic) CNContactNavigationController<ABContactViewControllerDelegate> *contactsNavigationController;
 @property (nonatomic) double currentHeaderMinimalModeInterpolationFactor;
@@ -91,12 +92,15 @@
 @property (nonatomic) bool showSimulateLocation;
 @property (nonatomic) bool showTitleBar;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) GEOTransitOptions *transitOptions;
 @property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 + (double)headerHeightInMinimalMode;
 
 - (void).cxx_destruct;
 - (void*)_addressBook;
+- (bool)_canShowExtensionReservationButton;
+- (void)_checkDeviceLockStatusWithCompletion:(id /* block */)arg1;
 - (void)_checkForDealsIfNecessary;
 - (void)_commonInit;
 - (id)_contactForEditOperations;
@@ -113,20 +117,24 @@
 - (long long)_sectionPositionForMapTableKey:(id)arg1;
 - (void)_setDeal:(id)arg1 forYelpId:(id)arg2;
 - (void)_setDefaultViewControllers:(id)arg1;
+- (bool)_shouldShowSiriReservationController;
 - (void)_showEditSheet:(id)arg1;
 - (bool)_showReportAProblem;
 - (void)_showShareSheet:(id)arg1;
+- (void)_showShareSheetNoDeviceLockCheck:(id)arg1;
 - (void)_updateViewControllerStatesForOffline;
 - (void)_updateViewControllers;
 - (void)addAdditionalViewController:(id)arg1 atPosition:(long long)arg2;
 - (id)additionalViewControllersAtPosition:(long long)arg1;
 - (void)airplaneModeChanged;
 - (bool)allowTransitLineSelection;
+- (id)automobileOptions;
 - (id)contact;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
 - (id)contactsNavigationController;
 - (double)currentHeaderMinimalModeInterpolationFactor;
+- (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 - (void)dealloc;
 - (void)dealsViewController:(id)arg1 didSelectDeal:(id)arg2;
@@ -135,6 +143,7 @@
 - (void)errorLoadingMapItemUpdate:(id)arg1;
 - (id)generateAvailableActionForAnalytics;
 - (id)generateUnactionableUIElementsForAnalytics;
+- (unsigned long long)getPlaceCardAGGDType;
 - (int)getPlaceCardTypeForAnalytics;
 - (bool)hasCheckedDistanceAvailability;
 - (id)headerActionButtonController;
@@ -156,7 +165,7 @@
 - (id)initWithMapItem:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 options:(unsigned long long)arg2;
 - (bool)isMapItemUpdating;
-- (id)logContextForEventType:(int)arg1;
+- (id)logContextForLogMsgEvent:(id)arg1;
 - (id)mapItem;
 - (void)mapItemWillUpdate;
 - (int)mapTypeForPlaceCardHeaderViewController:(id)arg1;
@@ -187,6 +196,7 @@
 - (void)placeCardPhotosController:(id)arg1 didSelectViewPhotoWithID:(id)arg2;
 - (void)placeCardReviewsController:(id)arg1 didSelectViewReview:(id)arg2;
 - (void)placeCardReviewsControllerDidSelectViewAllReviews:(id)arg1;
+- (void)placeCardWillCloseFromClientType:(unsigned long long)arg1;
 - (void)placeCardheaderHeaderViewControllerDidSelectDirectionsButton:(id)arg1 withTransportTypePreference:(id)arg2;
 - (void)placeCardheaderHeaderViewControllerDidSelectRerouteButton:(id)arg1;
 - (void)placeCardheaderHeaderViewControllerDidSelectShareLocationButton:(id)arg1;
@@ -204,6 +214,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setAllowTransitLineSelection:(bool)arg1;
+- (void)setAutomobileOptions:(id)arg1;
 - (void)setContactsNavigationController:(id)arg1;
 - (void)setCurrentHeaderMinimalModeInterpolationFactor:(double)arg1;
 - (void)setDisableReportAProblem:(bool)arg1;
@@ -240,6 +251,7 @@
 - (void)setShowShareActionsButton:(bool)arg1;
 - (void)setShowSimulateLocation:(bool)arg1;
 - (void)setShowTitleBar:(bool)arg1;
+- (void)setTransitOptions:(id)arg1;
 - (void)setUseCompactPhotosView:(bool)arg1;
 - (void)setViewDidAppearBlocks:(id)arg1;
 - (bool)showContactActions;
@@ -261,6 +273,7 @@
 - (void)transitDeparturesViewController:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
 - (void)transitDeparturesViewController:(id)arg1 showIncidents:(id)arg2;
+- (id)transitOptions;
 - (void)updateAirplaneModeNetworkUnreachable;
 - (void)updateHeaderTitle;
 - (bool)useCompactPhotosView;

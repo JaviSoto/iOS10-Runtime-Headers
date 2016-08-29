@@ -14,7 +14,6 @@
 - (void)cleanupClientPort:(unsigned int)arg1;
 - (unsigned int)createClientPort;
 - (void)dataResetWithRequest:(id)arg1 completion:(id /* block */)arg2;
-- (void)dealloc;
 - (void)deleteAllSnapshotsForApplication:(id)arg1;
 - (id)init;
 - (bool)isPasscodeLockedOrBlocked;
@@ -30,6 +29,8 @@
 - (void)shutdown;
 - (id)systemApplicationBundleIdentifier;
 - (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4;
+- (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
 - (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4;
+- (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
 
 @end

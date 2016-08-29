@@ -2,13 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@interface VSMobileAssetsManager : NSObject
+@interface VSMobileAssetsManager : NSObject {
+    NSObject<OS_dispatch_queue> * _cacheConcurrentQueue;
+    NSMutableDictionary * _voiceResourceCache;
+    NSMutableDictionary * _voiceSelectionCache;
+}
+
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *cacheConcurrentQueue;
+@property (nonatomic, retain) NSMutableDictionary *voiceResourceCache;
+@property (nonatomic, retain) NSMutableDictionary *voiceSelectionCache;
 
 + (id)_builtInVoiceForLanguage:(id)arg1;
 + (id)_cachedVoiceAssets;
-+ (id)_cachedVoiceAssetsForLanguage:(id)arg1 type:(long long)arg2 gender:(long long)arg3 footprint:(long long)arg4;
 + (id)_cachedVoiceResourcesAssets;
-+ (id)_cachedVoiceResourcesAssetsForLanguage:(id)arg1;
 + (id)_defaultVoiceSettingsForLanguage:(id)arg1;
 + (id)_nonCacheInstalledAssetsForType:(long long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long long)arg4 footprint:(long long)arg5;
 + (id)_nonCacheInstalledVoiceResources;
@@ -31,9 +37,13 @@
 + (id)voiceResourceFromAsset:(id)arg1;
 + (long long)voiceTypeForBundleIdentifier:(id)arg1;
 
+- (void).cxx_destruct;
+- (id)_cachedVoiceAssetsForLanguage:(id)arg1 type:(long long)arg2 gender:(long long)arg3 footprint:(long long)arg4;
+- (id)_cachedVoiceResourcesAssetsForLanguage:(id)arg1;
 - (void)_downloadAsset:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)_downloadAsset:(id)arg1 withOptions:(id)arg2 progressHandler:(id /* block */)arg3;
 - (bool)_purgeAsset:(id)arg1;
+- (id)cacheConcurrentQueue;
 - (void)cleanOldVoiceResources;
 - (void)cleanUnusedVoiceAssets;
 - (void)downloadVoiceAsset:(id)arg1 useBattery:(bool)arg2 completion:(id /* block */)arg3;
@@ -42,5 +52,10 @@
 - (void)reinstallVoiceData:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeVoiceAsset:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeVoiceResource:(id)arg1 completion:(id /* block */)arg2;
+- (void)setCacheConcurrentQueue:(id)arg1;
+- (void)setVoiceResourceCache:(id)arg1;
+- (void)setVoiceSelectionCache:(id)arg1;
+- (id)voiceResourceCache;
+- (id)voiceSelectionCache;
 
 @end

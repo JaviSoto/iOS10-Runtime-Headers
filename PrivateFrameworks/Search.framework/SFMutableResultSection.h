@@ -3,10 +3,7 @@
  */
 
 @interface SFMutableResultSection : SFResultSection <NSCopying> {
-    NSString * _category;
-    NSString * _displayIdentifier;
     unsigned int  _domain;
-    int  _flags;
     NSArray * _hiddenExtResults;
     bool  _isGlanceCategory;
     NSMutableOrderedSet * _resultSet;
@@ -16,11 +13,7 @@
     NSString * _sourceDomain;
 }
 
-@property (nonatomic, retain) NSString *category;
-@property (nonatomic, retain) NSString *displayIdentifier;
 @property (nonatomic) unsigned int domain;
-@property int flags;
-@property (nonatomic, readonly) bool hasCategory;
 @property (nonatomic, retain) NSArray *hiddenExtResults;
 @property (nonatomic) bool isGlanceCategory;
 @property (nonatomic, retain) NSMutableOrderedSet *resultSet;
@@ -36,22 +29,18 @@
 - (void)addResults:(id)arg1;
 - (void)addResults:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)addResultsFromArray:(id)arg1;
-- (id)category;
 - (void)clearResults;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)displayIdentifier;
 - (unsigned int)domain;
 - (void)encodeWithCoder:(id)arg1;
-- (int)flags;
-- (bool)hasCategory;
-- (bool)hasFlags;
 - (id)hiddenExtResults;
 - (unsigned long long)indexOfResult:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResultSection:(id)arg1;
 - (bool)isGlanceCategory;
+- (id)objectForFeedback;
 - (void)removeResults:(id)arg1;
 - (void)removeResultsAtIndex:(unsigned long long)arg1;
 - (void)removeResultsInArray:(id)arg1;
@@ -62,10 +51,7 @@
 - (id)resultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resultsCount;
 - (bool)serialized;
-- (void)setCategory:(id)arg1;
-- (void)setDisplayIdentifier:(id)arg1;
 - (void)setDomain:(unsigned int)arg1;
-- (void)setFlags:(int)arg1;
 - (void)setHiddenExtResults:(id)arg1;
 - (void)setIsGlanceCategory:(bool)arg1;
 - (void)setResultSet:(id)arg1;

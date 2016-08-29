@@ -8,6 +8,7 @@
     VSApplication * _application;
     JSValue * _applicationReadyCallback;
     <VSApplicationControllerDelegate> * _delegate;
+    bool  _deviceRunningAnInternalBuild;
     VSIdentityProvider * _identityProvider;
     VSJSSAMLRequest * _javascriptRequest;
     NSOperationQueue * _privateQueue;
@@ -22,6 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSApplicationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isDeviceRunningAnInternalBuild, nonatomic) bool deviceRunningAnInternalBuild;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
 @property (nonatomic, retain) VSJSSAMLRequest *javascriptRequest;
@@ -38,7 +40,7 @@
 - (id)_bootURL;
 - (void)_cleanUpStoppedApp;
 - (void)_completeRequestWithJavascriptResponse:(id)arg1 javascriptError:(id)arg2;
-- (void)_completeRequestWithResponse:(id)arg1 error:(id)arg2;
+- (void)_completeRequestWithResult:(id)arg1;
 - (id)_errorForJavascriptError:(id)arg1;
 - (id)_javascriptRequestForRequest:(id)arg1 withVerificationData:(id)arg2;
 - (id)_javascriptShowUserInterfacePurposeForAuthenticationUserInterfacePurpose:(long long)arg1;
@@ -72,6 +74,7 @@
 - (id)identityProvider;
 - (id)init;
 - (id)initWithIdentityProvider:(id)arg1;
+- (bool)isDeviceRunningAnInternalBuild;
 - (id)javascriptRequest;
 - (id)launchParamsForApplication:(id)arg1;
 - (id)privateQueue;
@@ -82,6 +85,7 @@
 - (void)setApplication:(id)arg1;
 - (void)setApplicationReadyCallback:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDeviceRunningAnInternalBuild:(bool)arg1;
 - (void)setIdentityProvider:(id)arg1;
 - (void)setJavascriptRequest:(id)arg1;
 - (void)setPrivateQueue:(id)arg1;

@@ -12,6 +12,7 @@
 - (id)_fitnessFriendsManger;
 - (void)remote_clearFriendListWithCompletion:(id /* block */)arg1;
 - (void)remote_fetchAllDataWithCompletion:(id /* block */)arg1;
+- (void)remote_fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)remote_fitnessFriendsCloudKitAccountStatusWithCompletion:(id /* block */)arg1;
 - (void)remote_ignoreInviteRequestFromFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_pushFakeDataWithCompletion:(id /* block */)arg1;

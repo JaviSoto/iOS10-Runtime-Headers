@@ -48,6 +48,7 @@
 + (Class)layerClass;
 
 - (void).cxx_destruct;
+- (void)__calculateExtendedDistributiontPositionsForViews:(id)arg1 withBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 totalSize:(struct CGSize { double x1; double x2; })arg3 intoRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
 - (void)__calculateIntrinsicSizesForViews:(id)arg1 withAvailableSize:(struct CGSize { double x1; double x2; })arg2 intoRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 totalSize:(struct CGSize { double x1; double x2; }*)arg4;
 - (void)__finalizeSizesForViews:(id)arg1 withIndexesToRemeasure:(id)arg2 availableSize:(struct CGSize { double x1; double x2; })arg3 intoRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4 totalSize:(struct CGSize { double x1; double x2; }*)arg5;
 - (id)__indexesToRemeasureAfterCompressingViews:(id)arg1 ifNeededToFitAvailableSize:(struct CGSize { double x1; double x2; })arg2 intoRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 totalSize:(struct CGSize { double x1; double x2; }*)arg4;

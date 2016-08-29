@@ -8,7 +8,6 @@
 
 @property (nonatomic, readonly) NSString *saveReason;
 
-+ (void)initialize;
 + (id)uploadReason:(id)arg1;
 + (id)uuid;
 

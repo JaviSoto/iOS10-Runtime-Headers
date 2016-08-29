@@ -5,7 +5,6 @@
 @interface PXPhotoKitCollectionsDataSourceManagerConfiguration : NSObject {
     NSPredicate * _assetFilteringPredicate;
     bool  _canShowPeopleAlbum;
-    bool  _canShowPlacesAlbum;
     bool  _canShowScenesAlbum;
     bool  _canShowVirtualCollections;
     PHCollectionList * _collectionList;
@@ -19,7 +18,6 @@
 
 @property (retain) NSPredicate *assetFilteringPredicate;
 @property bool canShowPeopleAlbum;
-@property bool canShowPlacesAlbum;
 @property bool canShowScenesAlbum;
 @property bool canShowVirtualCollections;
 @property (retain) PHCollectionList *collectionList;
@@ -34,7 +32,6 @@
 - (void).cxx_destruct;
 - (id)assetFilteringPredicate;
 - (bool)canShowPeopleAlbum;
-- (bool)canShowPlacesAlbum;
 - (bool)canShowScenesAlbum;
 - (bool)canShowVirtualCollections;
 - (id)collectionList;
@@ -51,7 +48,6 @@
 - (bool)isRootSharedAlbum;
 - (void)setAssetFilteringPredicate:(id)arg1;
 - (void)setCanShowPeopleAlbum:(bool)arg1;
-- (void)setCanShowPlacesAlbum:(bool)arg1;
 - (void)setCanShowScenesAlbum:(bool)arg1;
 - (void)setCanShowVirtualCollections:(bool)arg1;
 - (void)setCollectionList:(id)arg1;

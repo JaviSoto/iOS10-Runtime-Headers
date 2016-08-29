@@ -33,6 +33,7 @@
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _groupIdentifier;
+    bool  _ignoresViewportScaleLimits;
     double  _incrementalRenderingSuppressionTimeout;
     bool  _initialCapitalizationEnabled;
     bool  _inlineMediaPlaybackRequiresPlaysInlineAttribute;
@@ -86,6 +87,7 @@
 @property (setter=_setAllowsMetaRefresh:, nonatomic) bool _allowsMetaRefresh;
 @property (setter=_setAlternateWebViewForNavigationGestures:, nonatomic) WKWebView *_alternateWebViewForNavigationGestures;
 @property (setter=_setAlwaysRunsAtForegroundPriority:, nonatomic) bool _alwaysRunsAtForegroundPriority;
+@property (setter=_setApplePayEnabled:, nonatomic) bool _applePayEnabled;
 @property (setter=_setAttachmentElementEnabled:, nonatomic) bool _attachmentElementEnabled;
 @property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property (setter=_setConvertsPositionStyleOnCopy:, nonatomic) bool _convertsPositionStyleOnCopy;
@@ -110,6 +112,7 @@
 @property (nonatomic) bool allowsPictureInPictureMediaPlayback;
 @property (nonatomic, copy) NSString *applicationNameForUserAgent;
 @property (nonatomic) unsigned long long dataDetectorTypes;
+@property (nonatomic) bool ignoresViewportScaleLimits;
 @property (nonatomic) bool mediaPlaybackAllowsAirPlay;
 @property (nonatomic) bool mediaPlaybackRequiresUserAction;
 @property (nonatomic) unsigned long long mediaTypesRequiringUserActionForPlayback;
@@ -140,7 +143,6 @@
 - (bool)_invisibleAutoplayNotPermitted;
 - (bool)_mainContentUserGestureOverrideEnabled;
 - (bool)_mediaDataLoadsAutomatically;
-- (bool)_paymentsEnabled;
 - (bool)_printsBackgrounds;
 - (id)_relatedWebView;
 - (bool)_requiresUserActionForAudioPlayback;
@@ -163,7 +165,6 @@
 - (void)_setInvisibleAutoplayNotPermitted:(bool)arg1;
 - (void)_setMainContentUserGestureOverrideEnabled:(bool)arg1;
 - (void)_setMediaDataLoadsAutomatically:(bool)arg1;
-- (void)_setPaymentsEnabled:(bool)arg1;
 - (void)_setPrintsBackgrounds:(bool)arg1;
 - (void)_setRelatedWebView:(id)arg1;
 - (void)_setRequiresUserActionForAudioPlayback:(bool)arg1;
@@ -186,6 +187,7 @@
 - (unsigned long long)dataDetectorTypes;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)ignoresViewportScaleLimits;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)mediaPlaybackAllowsAirPlay;
@@ -200,6 +202,7 @@
 - (void)setAllowsPictureInPictureMediaPlayback:(bool)arg1;
 - (void)setApplicationNameForUserAgent:(id)arg1;
 - (void)setDataDetectorTypes:(unsigned long long)arg1;
+- (void)setIgnoresViewportScaleLimits:(bool)arg1;
 - (void)setMediaPlaybackAllowsAirPlay:(bool)arg1;
 - (void)setMediaPlaybackRequiresUserAction:(bool)arg1;
 - (void)setMediaTypesRequiringUserActionForPlayback:(unsigned long long)arg1;

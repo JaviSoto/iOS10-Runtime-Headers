@@ -23,6 +23,7 @@
 - (id)delegate;
 - (id)init;
 - (void)observer:(id)arg1 noteServerConnectionStateChanged:(bool)arg2;
+- (void)observer:(id)arg1 removeSection:(id)arg2;
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;

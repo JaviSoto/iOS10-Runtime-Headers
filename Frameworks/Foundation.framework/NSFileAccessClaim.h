@@ -89,6 +89,7 @@
 - (void)setCameFromSuperarbiter;
 - (void)setClaimerError:(id)arg1;
 - (bool)shouldBeRevokedPriorToInvokingAccessor;
+- (bool)shouldCancelInsteadOfWaiting;
 - (bool)shouldReadingWithOptions:(unsigned long long)arg1 causePresenterToRelinquish:(id)arg2;
 - (void)startObservingClientState;
 - (void)unblock;

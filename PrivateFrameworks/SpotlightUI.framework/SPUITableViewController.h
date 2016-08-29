@@ -3,10 +3,21 @@
  */
 
 @interface SPUITableViewController : SearchUITableViewController <CNAvatarViewDelegate, SPUISearchTableHeaderViewDelegate, UIGestureRecognizerDelegate> {
-    NSMutableIndexSet * _expandableSections;
     NSMutableIndexSet * _expandedSections;
     <SPUITableViewDelegate> * _gestureDelegate;
     bool  _hasAppeared;
+    bool  _hasCardPresented;
+    double  _headerHeight;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _initialKeyboardFrame;
     bool  _isPresenting;
     struct CGRect { 
         struct CGPoint { 
@@ -19,7 +30,6 @@
         } size; 
     }  _keyboardFrame;
     double  _lastScrollOffset;
-    UILongPressGestureRecognizer * _longPressFeedbackRecognizer;
     SPUIPeekDelegate * _peekDelegate;
     <UIViewControllerPreviewing> * _previewingContext;
     NSArray * _resultIdentifiersForRowsInSections;
@@ -27,7 +37,9 @@
     SPUISearchModel * _searchModel;
     NSArray * _sectionIdentifiers;
     NSDictionary * _sectionsForIdentifiers;
+    NSMutableSet * _sectionsThatHaveBeenExpandedBefore;
     NSMutableSet * _seenVisibleResults;
+    NSMutableSet * _seenVisibleSections;
     unsigned long long  _showMoreLessReason;
     UISwipeGestureRecognizer * _swipeDownRecognizer;
     UISwipeGestureRecognizer * _swipeUpRecognizer;
@@ -35,15 +47,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (retain) NSMutableIndexSet *expandableSections;
 @property (retain) NSMutableIndexSet *expandedSections;
 @property <SPUITableViewDelegate> *gestureDelegate;
 @property bool hasAppeared;
+@property bool hasCardPresented;
 @property (readonly) unsigned long long hash;
+@property double headerHeight;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialKeyboardFrame;
 @property bool isPresenting;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } keyboardFrame;
 @property double lastScrollOffset;
-@property (retain) UILongPressGestureRecognizer *longPressFeedbackRecognizer;
 @property (retain) SPUIPeekDelegate *peekDelegate;
 @property (retain) <UIViewControllerPreviewing> *previewingContext;
 @property (retain) NSArray *resultIdentifiersForRowsInSections;
@@ -51,7 +64,9 @@
 @property (retain) SPUISearchModel *searchModel;
 @property (retain) NSArray *sectionIdentifiers;
 @property (retain) NSDictionary *sectionsForIdentifiers;
+@property (retain) NSMutableSet *sectionsThatHaveBeenExpandedBefore;
 @property (retain) NSMutableSet *seenVisibleResults;
+@property (retain) NSMutableSet *seenVisibleSections;
 @property unsigned long long showMoreLessReason;
 @property (readonly) Class superclass;
 @property (retain) UISwipeGestureRecognizer *swipeDownRecognizer;
@@ -61,28 +76,30 @@
 + (unsigned long long)previewStyle;
 
 - (void).cxx_destruct;
-- (void)didLongPressResult:(id)arg1;
+- (void)calculateSectionHeaderHeight;
 - (void)didSwipeUp;
 - (void)didTap;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
-- (id)expandableSections;
 - (bool)expandableSidewaysRowExistsInSection:(long long)arg1;
 - (id)expandedSections;
 - (id)gestureDelegate;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (bool)hasAppeared;
+- (bool)hasCardPresented;
+- (double)headerHeight;
 - (id)identifierForSection:(id)arg1;
 - (unsigned long long)indexOfSection:(id)arg1;
 - (id)initWithSearchModel:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialKeyboardFrame;
 - (bool)isPresenting;
 - (void)isPresenting:(bool)arg1;
 - (bool)isZKWExpanded;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })keyboardFrame;
 - (void)keyboardFrameChanged:(id)arg1;
+- (void)keyboardWillShow:(id)arg1;
 - (double)lastScrollOffset;
 - (void)leavingSpotlight;
-- (id)longPressFeedbackRecognizer;
 - (void)numberOfRowsDidChange:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)peekDelegate;
@@ -96,7 +113,6 @@
 - (void)resultsDidBecomeVisible:(unsigned long long)arg1;
 - (id)resultsForIdentifiers;
 - (id)resultsForIndexPath:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)searchModel;
@@ -105,15 +121,18 @@
 - (bool)sectionIsExpanded:(id)arg1;
 - (bool)sectionIsProactiveSuggestions:(long long)arg1;
 - (id)sectionsForIdentifiers;
+- (id)sectionsThatHaveBeenExpandedBefore;
 - (id)seenVisibleResults;
-- (void)setExpandableSections:(id)arg1;
+- (id)seenVisibleSections;
 - (void)setExpandedSections:(id)arg1;
 - (void)setGestureDelegate:(id)arg1;
 - (void)setHasAppeared:(bool)arg1;
+- (void)setHasCardPresented:(bool)arg1;
+- (void)setHeaderHeight:(double)arg1;
+- (void)setInitialKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setIsPresenting:(bool)arg1;
 - (void)setKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLastScrollOffset:(double)arg1;
-- (void)setLongPressFeedbackRecognizer:(id)arg1;
 - (void)setPeekDelegate:(id)arg1;
 - (void)setPreviewingContext:(id)arg1;
 - (void)setResultIdentifiersForRowsInSections:(id)arg1;
@@ -121,12 +140,14 @@
 - (void)setSearchModel:(id)arg1;
 - (void)setSectionIdentifiers:(id)arg1;
 - (void)setSectionsForIdentifiers:(id)arg1;
+- (void)setSectionsThatHaveBeenExpandedBefore:(id)arg1;
 - (void)setSeenVisibleResults:(id)arg1;
+- (void)setSeenVisibleSections:(id)arg1;
 - (void)setShowMoreLessReason:(unsigned long long)arg1;
 - (void)setSwipeDownRecognizer:(id)arg1;
 - (void)setSwipeUpRecognizer:(id)arg1;
-- (bool)shouldShowMoreButtonForSection:(unsigned long long)arg1;
 - (unsigned long long)showMoreLessReason;
+- (void)showViewController:(id)arg1 sender:(id)arg2;
 - (id)swipeDownRecognizer;
 - (id)swipeUpRecognizer;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -144,7 +165,7 @@
 - (void)updateAnimated:(bool)arg1 whyUpdate:(unsigned long long)arg2;
 - (void)updateDataModel:(unsigned long long)arg1;
 - (void)updateSeparator;
-- (void)viewBecomingVisible;
+- (void)viewBecomingVisible:(unsigned long long)arg1;
 - (id)viewControllerForPresenting;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;

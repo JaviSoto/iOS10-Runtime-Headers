@@ -13,6 +13,7 @@
     bool  _selectsWhenTracking;
 }
 
+@property (nonatomic, readonly) unsigned long long behavior;
 @property (nonatomic, readonly) _MKUserTrackingButtonController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -45,10 +46,10 @@
 - (void)_setInternallyEnabled:(bool)arg1;
 - (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(long long)arg2 controlState:(unsigned long long)arg3;
 - (void)_setSelectsWhenTracking:(bool)arg1;
-- (void)_setSkip:(bool)arg1 forUserTrackingMode:(long long)arg2;
 - (void)_setState:(long long)arg1;
 - (long long)_state;
 - (void)_updateForState:(long long)arg1;
+- (unsigned long long)behavior;
 - (id)controller;
 - (bool)inMiniBar;
 - (id)mapView;

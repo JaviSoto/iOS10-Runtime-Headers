@@ -6,6 +6,7 @@
     NSArray * _feedbackListeners;
     NSObject<OS_dispatch_queue> * _feedbackQueue;
     NSMapTable * _queriesToDictionariesFromSearchTypesToStartSearchFeedbacks;
+    NSObject<OS_dispatch_queue> * _queriesToDictionariesMappingQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_postFeedbackOnFeedbackQueue:(id)arg1;
 - (void)_setStartSearchFeedback:(id)arg1 forSearchOfType:(long long)arg2 withQuery:(id)arg3;
 - (id)_takeStartSearchFeedbackForSearchOfType:(long long)arg1 forQuery:(id)arg2;
 - (void)didBeginSearchOfType:(long long)arg1 withQuery:(id)arg2 endpoint:(unsigned long long)arg3;
@@ -45,5 +47,6 @@
 - (void)userDidCancelSession:(long long)arg1;
 - (void)userDidEngageWithCardShowingResult:(id)arg1 onCardOfType:(id)arg2 actionType:(id)arg3 actionTarget:(id)arg4 destination:(id)arg5;
 - (void)userDidEngageWithCompletionListItem:(id)arg1 onActionButton:(bool)arg2 method:(long long)arg3;
+- (void)userTypedURLDirectly:(id)arg1;
 
 @end

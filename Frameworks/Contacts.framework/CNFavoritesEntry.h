@@ -49,8 +49,12 @@
 + (id)createLabeledValueForFavoritesEntryValue:(id)arg1 label:(id)arg2 iOSLegacyIdentifier:(int)arg3 propertyKey:(id)arg4;
 + (id)descriptorsForRequiredKeysForPropertyKey:(id)arg1;
 + (id)favoritesEntryValueForLabeledValueValue:(id)arg1 propertyKey:(id)arg2;
++ (id)instantMessageAddressForFavoritesEntryValue:(id)arg1;
 + (id)labeledValueValueForFavoritesEntryValue:(id)arg1 propertyKey:(id)arg2;
 + (id)sharedContactStore;
++ (id)socialProfileForFavoritesEntryValue:(id)arg1;
++ (id)valueStringFromInstantMessageAddress:(id)arg1;
++ (id)valueStringFromSocialProfile:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_convertFromEntryType:(long long)arg1 toActionType:(id*)arg2 bundleIdentifier:(id*)arg3;

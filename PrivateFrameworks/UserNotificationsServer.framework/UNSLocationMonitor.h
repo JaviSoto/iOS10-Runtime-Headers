@@ -5,6 +5,7 @@
 @interface UNSLocationMonitor : NSObject <CLLocationManagerDelegate> {
     CLLocationManager * _locationManager;
     UNSKeyedObservable * _observable;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

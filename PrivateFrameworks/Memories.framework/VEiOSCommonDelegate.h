@@ -17,10 +17,12 @@
 + (void)notifyCPVCProjectChanged;
 + (void)nukeCaches;
 + (unsigned long long)playbackFrameRateMode;
++ (long long)playbackPixelCount;
 + (void)setDelegateSubclass:(Class)arg1;
 + (void)setFullScreenPlaybackOnExternalDisplay:(bool)arg1;
 + (void)setVideoScale:(float)arg1;
 + (bool)shouldPlaySlowMoWhenPreviewing;
++ (bool)updateProjectAndCachesOnPhotosLibraryChange;
 + (float)videoScale;
 
 @end

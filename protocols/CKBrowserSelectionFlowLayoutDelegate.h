@@ -7,6 +7,7 @@
 
 - (bool)canDeletePluginAtIndexPath:(NSIndexPath *)arg1;
 - (bool)iconShouldJitterAtIndexPath:(NSIndexPath *)arg1;
+- (bool)shouldHidePluginAtIndexPath:(NSIndexPath *)arg1;
 - (void)updatePageControl;
 
 @end

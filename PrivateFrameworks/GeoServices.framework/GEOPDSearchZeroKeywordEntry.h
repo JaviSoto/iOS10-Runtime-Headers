@@ -14,6 +14,7 @@
         unsigned int hourOfDay : 1; 
     }  _has;
     unsigned int  _hourOfDay;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) unsigned int*categoryIndexs;
@@ -22,6 +23,7 @@
 @property (nonatomic) bool hasDayOfWeek;
 @property (nonatomic) bool hasHourOfDay;
 @property (nonatomic) unsigned int hourOfDay;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)addCategoryIndex:(unsigned int)arg1;
 - (unsigned int)categoryIndexAtIndex:(unsigned long long)arg1;
@@ -46,6 +48,7 @@
 - (void)setHasDayOfWeek:(bool)arg1;
 - (void)setHasHourOfDay:(bool)arg1;
 - (void)setHourOfDay:(unsigned int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

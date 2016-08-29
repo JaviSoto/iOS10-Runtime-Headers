@@ -26,6 +26,8 @@
 - (void)_deleteInvalidSavedData;
 - (id)_emptySentDocument;
 - (id)_initWithVocabularyManager:(id)arg1 syncSlot:(id)arg2 deleteExistingVocabulary:(bool)arg3;
+- (bool)_isMissingLatestFileError:(id)arg1;
+- (void)_saveAndCleanup;
 - (id)calculateDiff;
 - (void)endTransactionWithFinalAnchor:(id)arg1;
 - (bool)fullResetRequired;

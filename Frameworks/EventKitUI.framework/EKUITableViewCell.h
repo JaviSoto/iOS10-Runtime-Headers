@@ -21,6 +21,7 @@
 + (bool)vibrant;
 
 - (void).cxx_destruct;
+- (void)_layoutSeparator;
 - (void)_setMarginExtendsToFullWidth:(bool)arg1;
 - (bool)drawsOwnRowSeparators;
 - (void)layoutSubviews;

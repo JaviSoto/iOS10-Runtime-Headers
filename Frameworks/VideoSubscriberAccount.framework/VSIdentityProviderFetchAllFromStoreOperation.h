@@ -2,16 +2,21 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSIdentityProviderFetchAllFromStoreOperation : VSStoreRequestOperation {
-    NSArray * _identityProviders;
+@interface VSIdentityProviderFetchAllFromStoreOperation : VSAsyncOperation {
+    VSStoreRequestOperation * _requestOperation;
+    VSFailable * _result;
 }
 
-@property (nonatomic, copy) NSArray *identityProviders;
+@property (nonatomic, retain) VSStoreRequestOperation *requestOperation;
+@property (nonatomic, retain) VSFailable *result;
 
 - (void).cxx_destruct;
-- (id)URLBagKey;
-- (void)handleResponseObject:(id)arg1;
-- (id)identityProviders;
-- (void)setIdentityProviders:(id)arg1;
+- (void)_handleResult:(id)arg1;
+- (void)cancel;
+- (void)executionDidBegin;
+- (id)requestOperation;
+- (id)result;
+- (void)setRequestOperation:(id)arg1;
+- (void)setResult:(id)arg1;
 
 @end

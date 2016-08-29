@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
  */
 
-@interface UNSDefaultDataProvider : NSObject <BBRemoteDataProvider, UNNotificationStoreObserver> {
+@interface UNSDefaultDataProvider : NSObject <BBRemoteDataProvider, UNSNotificationRepositoryObserver> {
     BSCFBundle * _appBundle;
     UNSApplicationLauncher * _appLauncher;
     UNSAttachmentsService * _attachmentsService;
@@ -42,9 +42,7 @@
 - (id)_defaultActionWithTitle:(id)arg1;
 - (unsigned long long)_destinationsForNotification:(id)arg1;
 - (id)_dismissActionForCategory:(id)arg1;
-- (void)_handleBulletinActionResponse:(id)arg1;
-- (id)_identifierForNotification:(id)arg1;
-- (id)_identifierForNotificationMissingIdentififier:(id)arg1;
+- (void)_handleBulletinActionResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_isAuthenticationRequiredForUNAction:(id)arg1;
 - (bool)_isDestructiveForUNAction:(id)arg1;
 - (bool)_isPushDataProvider;
@@ -54,7 +52,7 @@
 - (void)_queue_addBulletinForNotification:(id)arg1;
 - (id)_queue_bulletinForNotification:(id)arg1;
 - (void)_queue_modifyBulletinForNotification:(id)arg1;
-- (void)_queue_notificationStoreDidAddNotifications:(id)arg1 replaceNotifications:(id)arg2 removeNotifications:(id)arg3;
+- (void)_queue_notificationRepositoryDidPerformUpdates:(id)arg1;
 - (void)_queue_withdrawBulletinForNotification:(id)arg1;
 - (void)_setBadgeForNotification:(id)arg1;
 - (id)_sortKey;
@@ -67,12 +65,12 @@
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (id)defaultSectionInfo;
-- (void)handleBulletinActionResponse:(id)arg1;
+- (void)handleBulletinActionResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)initWithApplicationDescription:(id)arg1 applicationLauncher:(id)arg2 categoryRepository:(id)arg3 notificationRepository:(id)arg4 attachmentsService:(id)arg5 queue:(id)arg6;
 - (void)invalidate;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (id)notificationRecords;
-- (void)notificationStoreDidAddNotifications:(id)arg1 replaceNotifications:(id)arg2 removeNotifications:(id)arg3 forBundleIdentifier:(id)arg4;
+- (void)notificationRepository:(id)arg1 didPerformUpdates:(id)arg2 forBundleIdentifier:(id)arg3;
 - (id)primaryAttachmentDataForRecordID:(id)arg1;
 - (id)proxy;
 - (id)sectionDisplayName;

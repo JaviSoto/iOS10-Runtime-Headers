@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)_cell;
+- (double)_cellFittedHeightWithWidth:(double)arg1;
 - (void)_configureEditableCell:(id)arg1;
 - (id)_editableCell;
 - (id)_labelCell;
@@ -27,6 +28,7 @@
 - (void)setData:(id)arg1;
 - (void)setRowHeightChangeDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndex:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 
 @end

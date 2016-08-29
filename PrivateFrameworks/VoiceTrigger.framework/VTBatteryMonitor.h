@@ -3,22 +3,19 @@
  */
 
 @interface VTBatteryMonitor : VTEventMonitor {
+    unsigned char  _batteryState;
     int  _notifyToken;
-    NSMutableArray * _observers;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
-- (void)_didBatteryStatusChanged:(unsigned char)arg1;
-- (void)_didBatteryStatusChangedInQueue:(unsigned char)arg1;
-- (void)_startMonitoring;
+- (unsigned char)_checkBatteryState;
+- (void)_didReceiveBatteryStatusChanged:(unsigned char)arg1;
+- (void)_didReceiveBatteryStatusChangedInQueue:(unsigned char)arg1;
+- (void)_notifyObserver:(id)arg1 withBatteryState:(unsigned char)arg2;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
-- (void)addObserver:(id)arg1;
 - (unsigned char)batteryState;
-- (void)dealloc;
 - (id)init;
-- (void)removeObserver:(id)arg1;
 
 @end

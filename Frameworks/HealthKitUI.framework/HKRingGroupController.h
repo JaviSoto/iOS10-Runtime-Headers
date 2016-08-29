@@ -50,7 +50,11 @@
 - (double)_scaledRingIconSize;
 - (double)_scaledRingInterspacing;
 - (double)_scaledRingThickness;
+- (bool)_setCGPointValue:(struct CGPoint { double x1; double x2; })arg1 forIconPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(bool)arg4;
 - (bool)_setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_setFloatValue:(float)arg1 forIconPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(bool)arg4;
+- (void)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(bool)arg4;
+- (bool)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(bool)arg4 duration:(double)arg5 completion:(id /* block */)arg6;
 - (void)_updateRingDiameters;
 - (void)_updateRingIconProperties;
 - (void)_updateRingThicknesses;

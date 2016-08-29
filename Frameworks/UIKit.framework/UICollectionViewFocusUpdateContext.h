@@ -15,9 +15,10 @@
 @property (nonatomic, readonly) NSIndexPath *previouslyFocusedIndexPath;
 
 + (id)_contextWithContext:(id)arg1 collectionView:(id)arg2;
++ (id)_contextWithContext:(id)arg1 collectionView:(id)arg2 cachedPreviouslyFocusedIndexPath:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)_initWithContext:(id)arg1 collectionView:(id)arg2;
+- (id)_initWithContext:(id)arg1 collectionView:(id)arg2 cachedPreviouslyFocusedIndexPath:(id)arg3;
 - (void)_setSourceItemInfo:(id)arg1;
 - (id)collectionView;
 - (id)nextFocusedIndexPath;

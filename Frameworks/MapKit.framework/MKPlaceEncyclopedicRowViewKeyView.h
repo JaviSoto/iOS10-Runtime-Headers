@@ -3,12 +3,15 @@
  */
 
 @interface MKPlaceEncyclopedicRowViewKeyView : MKPlaceSectionRowView {
+    NSLayoutConstraint * _baselineToBottomConstraint;
+    NSLayoutConstraint * _baselineToTopConstraint;
     _MKUILabel * _keyLabel;
 }
 
 @property (nonatomic, retain) _MKUILabel *keyLabel;
 
 - (void).cxx_destruct;
+- (void)_contentSizeDidChange;
 - (id)initWithKeyLabel:(id)arg1;
 - (id)keyLabel;
 - (void)setKeyLabel:(id)arg1;

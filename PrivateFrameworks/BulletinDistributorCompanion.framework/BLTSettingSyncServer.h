@@ -22,6 +22,7 @@
 - (void)clearSectionInfoSentCache;
 - (id)delegate;
 - (void)handleFileURL:(id)arg1 extraMetadata:(id)arg2;
+- (void)handleRemoveSectionRequest:(id)arg1;
 - (void)handleSetSectionInfoRequest:(id)arg1;
 - (void)handleSetSectionInfoResponse:(id)arg1;
 - (void)handleSetSectionSubtypeParametersIconRequest:(id)arg1;
@@ -29,6 +30,7 @@
 - (id)init;
 - (bool)isSectionInfoSentCacheEmpty;
 - (void)registerProtobufHandlers;
+- (void)removeSectionWithSectionID:(id)arg1;
 - (id)sectionInfoPreviouslySentMessageStore;
 - (id)sectionSubtypeParametersIconsPreviouslySentMessageStore;
 - (void)sendSpooledRequestsNowWithSent:(id /* block */)arg1 withAcknowledgement:(id /* block */)arg2;

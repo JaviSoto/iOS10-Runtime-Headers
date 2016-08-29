@@ -24,6 +24,7 @@
 - (bool)enableForeignKeysWithError:(id*)arg1;
 - (bool)executeSQL:(id)arg1 error:(id*)arg2;
 - (bool)executeSQL:(id)arg1 withBindings:(id)arg2 error:(id*)arg3;
+- (bool)executeSQL:(id)arg1 withStatementPreparationBlock:(id /* block */)arg2 error:(id*)arg3;
 - (id)init;
 - (id)initWithURL:(id)arg1 readOnly:(bool)arg2 error:(id*)arg3;
 - (long long)lastInsertedRowID;
@@ -31,6 +32,7 @@
 - (bool)rollbackTransactionWithError:(id*)arg1;
 - (bool)selectSQL:(id)arg1 withBindings:(id)arg2 expectedColumnCount:(long long)arg3 resultRowHandler:(id /* block */)arg4 error:(id*)arg5;
 - (bool)selectSQL:(id)arg1 withBindings:(id)arg2 expectedColumnCount:(long long)arg3 transient:(bool)arg4 resultRowHandler:(id /* block */)arg5 error:(id*)arg6;
+- (bool)setBusyTimeout:(double)arg1 error:(id*)arg2;
 - (void)setDatabase:(struct sqlite3 { }*)arg1;
 - (void)setSqlQueryToStatements:(id)arg1;
 - (void)setUrl:(id)arg1;

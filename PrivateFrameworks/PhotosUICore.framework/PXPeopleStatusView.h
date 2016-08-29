@@ -4,8 +4,6 @@
 
 @interface PXPeopleStatusView : UIView {
     NSArray * _constraints;
-    UIView * _containerView;
-    NSLayoutConstraint * _containerY;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -15,74 +13,45 @@
     UIButton * _continueButton;
     NSLayoutConstraint * _continueButtonBottom;
     UILabel * _countLabel;
-    NSLayoutConstraint * _countTopCnst;
     UILabel * _descriptionLabel;
-    NSLayoutConstraint * _descriptionToProgress;
-    NSLayoutConstraint * _descriptionToTitleCnst;
-    NSLayoutConstraint * _progressCenterX;
-    NSLayoutConstraint * _progressTopCnst;
-    UIProgressView * _progressView;
-    NSLayoutConstraint * _progressWidth;
+    UIStackView * _stackView;
+    NSLayoutConstraint * _stackViewY;
     UILabel * _titleLabel;
-    NSLayoutConstraint * _titleToDescriptionCnst;
     unsigned long long  _viewState;
 }
 
 @property (nonatomic, retain) NSArray *constraints;
-@property (nonatomic, retain) UIView *containerView;
-@property (nonatomic, retain) NSLayoutConstraint *containerY;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (nonatomic, retain) UIButton *continueButton;
 @property (nonatomic, retain) NSLayoutConstraint *continueButtonBottom;
 @property (nonatomic, readonly) UILabel *countLabel;
-@property (nonatomic, retain) NSLayoutConstraint *countTopCnst;
 @property (nonatomic, readonly) UILabel *descriptionLabel;
-@property (nonatomic, retain) NSLayoutConstraint *descriptionToProgress;
-@property (nonatomic, retain) NSLayoutConstraint *descriptionToTitleCnst;
-@property (nonatomic, retain) NSLayoutConstraint *progressCenterX;
-@property (nonatomic, retain) NSLayoutConstraint *progressTopCnst;
-@property (nonatomic, readonly) UIProgressView *progressView;
-@property (nonatomic, retain) NSLayoutConstraint *progressWidth;
+@property (nonatomic, retain) UIStackView *stackView;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewY;
 @property (nonatomic, readonly) UILabel *titleLabel;
-@property (nonatomic, retain) NSLayoutConstraint *titleToDescriptionCnst;
 @property (nonatomic) unsigned long long viewState;
 
 - (void).cxx_destruct;
 - (void)_createViews;
 - (void)commonInit;
 - (id)constraints;
-- (id)containerView;
-- (id)containerY;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)continueButton;
 - (id)continueButtonBottom;
 - (id)countLabel;
-- (id)countTopCnst;
 - (id)descriptionLabel;
-- (id)descriptionToProgress;
-- (id)descriptionToTitleCnst;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)progressCenterX;
-- (id)progressTopCnst;
-- (id)progressView;
-- (id)progressWidth;
 - (void)setConstraints:(id)arg1;
-- (void)setContainerView:(id)arg1;
-- (void)setContainerY:(id)arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setContinueButton:(id)arg1;
 - (void)setContinueButtonBottom:(id)arg1;
-- (void)setCountTopCnst:(id)arg1;
-- (void)setDescriptionToProgress:(id)arg1;
-- (void)setDescriptionToTitleCnst:(id)arg1;
-- (void)setProgressCenterX:(id)arg1;
-- (void)setProgressTopCnst:(id)arg1;
-- (void)setProgressWidth:(id)arg1;
-- (void)setTitleToDescriptionCnst:(id)arg1;
+- (void)setStackView:(id)arg1;
+- (void)setStackViewY:(id)arg1;
 - (void)setViewState:(unsigned long long)arg1;
+- (id)stackView;
+- (id)stackViewY;
 - (id)titleLabel;
-- (id)titleToDescriptionCnst;
 - (void)updateConstraints;
 - (unsigned long long)viewState;
 

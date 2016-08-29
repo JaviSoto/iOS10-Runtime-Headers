@@ -14,8 +14,6 @@
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (retain) NSMutableDictionary *tokens;
 
-+ (id)sharedDriver;
-
 - (void).cxx_destruct;
 - (id)classID;
 - (id)delegate;

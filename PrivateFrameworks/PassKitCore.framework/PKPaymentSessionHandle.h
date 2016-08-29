@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentSessionHandle : NSObject {
+    NSObject<OS_dispatch_queue> * _internalSessionSerialQueue;
     <NFSession> * _sessionHandle;
 }
 

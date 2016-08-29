@@ -5,12 +5,14 @@
 @interface HUQuickControlMultiStateController : HUQuickControlController
 
 @property (nonatomic, readonly) HFMultiStateControlItem *controlItem;
-@property (nonatomic, readonly) HUQuickControlStepperViewProfile *viewProfile;
 
 + (Class)controlItemClass;
 
+- (bool)_useOverrideStatusText;
 - (id)controlToViewValueTransformer;
 - (id)createInteractionCoordinator;
+- (void)modelValueDidChange;
+- (id)overrideStatusText;
 - (id)viewProfile;
 
 @end

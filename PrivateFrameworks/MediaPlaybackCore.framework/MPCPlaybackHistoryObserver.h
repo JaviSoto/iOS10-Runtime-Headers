@@ -3,7 +3,6 @@
  */
 
 @interface MPCPlaybackHistoryObserver : NSObject {
-    MPModelPlayEvent * _currentPlayEvent;
     MPModelPlayEvent * _lastRecordedPlayEvent;
     NSOperationQueue * _operationQueue;
     MPCPlayer * _player;

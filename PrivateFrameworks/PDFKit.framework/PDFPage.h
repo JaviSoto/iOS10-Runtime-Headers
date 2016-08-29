@@ -24,10 +24,11 @@
 - (void).cxx_destruct;
 - (void)_addBox:(int)arg1 toDictionary:(struct __CFDictionary { }*)arg2 offset:(struct CGPoint { double x1; double x2; })arg3;
 - (void)_commonInit;
-- (void)_drawWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2 withRotation:(bool)arg3 withAntialiasing:(bool)arg4 isThumbnail:(bool)arg5;
-- (struct CGImage { }*)_newCGImageWithBox:(long long)arg1 bitmapSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 offset:(struct CGPoint { double x1; double x2; })arg4 fillBackground:(bool)arg5 withRotation:(bool)arg6 withAntialiasing:(bool)arg7;
+- (void)_drawWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2 withRotation:(bool)arg3 withAntialiasing:(bool)arg4 isThumbnail:(bool)arg5 withAnnotations:(bool)arg6 withDelegate:(id)arg7;
+- (struct CGImage { }*)_newCGImageWithBox:(long long)arg1 bitmapSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 offset:(struct CGPoint { double x1; double x2; })arg4 fillBackground:(bool)arg5 withRotation:(bool)arg6 withAntialiasing:(bool)arg7 withAnnotations:(bool)arg8 withDelegate:(id)arg9;
 - (void)addAnnotation:(id)arg1;
 - (void)addScannedAnnotation:(id)arg1;
+- (id)allAnnotations;
 - (id)annotationAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)annotations;
 - (id)attributedString;
@@ -44,6 +45,7 @@
 - (id)document;
 - (void)drawAnnotationsWithBox:(long long)arg1;
 - (void)drawAnnotationsWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawBurnedInAnnotationsWithBox:(long long)arg1;
 - (void)drawWithBox:(long long)arg1;
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2 isThumbnail:(bool)arg3;
@@ -62,6 +64,8 @@
 - (bool)hasTrimBox;
 - (id)image;
 - (id)imageOfSize:(struct CGSize { double x1; double x2; })arg1 forBox:(long long)arg2 withRotation:(bool)arg3 withAntialiasing:(bool)arg4;
+- (id)imageOfSize:(struct CGSize { double x1; double x2; })arg1 forBox:(long long)arg2 withRotation:(bool)arg3 withAntialiasing:(bool)arg4 withAnnotations:(bool)arg5;
+- (id)imageOfSize:(struct CGSize { double x1; double x2; })arg1 forBox:(long long)arg2 withRotation:(bool)arg3 withAntialiasing:(bool)arg4 withAnnotations:(bool)arg5 withDelegate:(id)arg6;
 - (id)init;
 - (id)initWithImage:(id)arg1;
 - (id)initWithPageRef:(struct CGPDFPage { }*)arg1;

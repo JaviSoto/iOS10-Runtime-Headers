@@ -12,7 +12,6 @@
     MCDRadioViewController * _radioViewController;
     RadioRecentStationsController * _recentStationsController;
     <MCDCarDisplayServiceProvider> * _serviceProvider;
-    bool  _showRadioTab;
     UITabBarController * _tabBarController;
     NSArray * _tabIdentifiers;
     bool  _viewHasAppeared;

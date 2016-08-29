@@ -136,6 +136,7 @@
 - (struct { int x1; int x2; })maxH264PhotoDimensions;
 - (struct { int x1; int x2; })maxH264VideoDimensions;
 - (float)maxWhiteBalanceGain;
+- (double)minAvailableVideoZoomFactor;
 - (float)minExposureTargetBias;
 - (int)minMacroblocksForHighProfileAbove30fps;
 - (int)minMacroblocksForHighProfileUpTo30fps;

@@ -5,11 +5,14 @@
 @interface MiroBlueprint : NSObject <MiroBlueprintEditStyleProtocol, MiroBlueprintMusicInfoProtocol, MiroBlueprintProtocol, MiroBlueprintTitleStyleProtocol, NSCoding, NSCopying> {
     NSString * _editStyleID;
     NSString * _flexMusicID;
+    unsigned long long  _iCloudMusicAccountID;
+    unsigned long long  _iCloudMusicMediaID;
     unsigned long long  _iTunesMediaID;
     NSMutableDictionary * _moodDictionary;
     NSArray * _moodIDs;
     NSString * _projectFilterID;
     unsigned int  _randomizerSeed;
+    NSString * _songID;
     bool  _songIsLocked;
     NSString * _titleID;
     bool  _titleIsLocked;
@@ -34,6 +37,8 @@
 @property (nonatomic, readonly) double hardCutPercentage;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *healingEditTransitionDictionary;
+@property (nonatomic) unsigned long long iCloudMusicAccountID;
+@property (nonatomic) unsigned long long iCloudMusicMediaID;
 @property (nonatomic) unsigned long long iTunesMediaID;
 @property (nonatomic, readonly) double irisIdealDuration;
 @property (nonatomic, readonly) double irisMaxDuration;
@@ -55,7 +60,7 @@
 @property (nonatomic) unsigned int randomizerSeed;
 @property (nonatomic, readonly) double sloMoIdealDuration;
 @property (nonatomic, readonly) double sloMoMinDuration;
-@property (nonatomic, readonly) NSString *songID;
+@property (nonatomic, retain) NSString *songID;
 @property (nonatomic) bool songIsLocked;
 @property (nonatomic, readonly) unsigned long long songPace;
 @property (readonly) Class superclass;
@@ -68,6 +73,7 @@
 @property (nonatomic, readonly) double titleMinDuration;
 @property (nonatomic, readonly) bool titleRequestsColorAnalysis;
 @property (nonatomic, readonly) <MiroBlueprintTitleStyleProtocol> *titleStyle;
+@property (nonatomic, readonly) NSDictionary *titleStyleDictionary;
 @property (nonatomic, readonly) unsigned long long toneTreatment;
 @property (nonatomic, readonly) NSArray *transitionsAsDictionaries;
 @property (nonatomic, readonly) double videoIdealDuration;
@@ -80,6 +86,7 @@
 + (id)blueprintWithMood:(id)arg1;
 + (id)emptyBlueprint;
 + (id)keysAffectingAutoEdit;
++ (id)nominalBlueprint;
 
 - (void).cxx_destruct;
 - (id)_moodPaceKey;
@@ -117,6 +124,8 @@
 - (double)hardCutPercentage;
 - (unsigned long long)hash;
 - (id)healingEditTransitionDictionary;
+- (unsigned long long)iCloudMusicAccountID;
+- (unsigned long long)iCloudMusicMediaID;
 - (unsigned long long)iTunesMediaID;
 - (double)idealDurationForAsset:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -146,11 +155,14 @@
 - (double)photoMinDuration;
 - (id)projectFilterID;
 - (unsigned int)randomizerSeed;
+- (void)setICloudMusicAccountID:(unsigned long long)arg1;
+- (void)setICloudMusicMediaID:(unsigned long long)arg1;
 - (void)setITunesMediaID:(unsigned long long)arg1;
 - (void)setMoodDictionary:(id)arg1;
 - (void)setMoodIDs:(id)arg1;
 - (void)setProjectFilterID:(id)arg1;
 - (void)setRandomizerSeed:(unsigned int)arg1;
+- (void)setSongID:(id)arg1;
 - (void)setSongIsLocked:(bool)arg1;
 - (void)setTitleIsLocked:(bool)arg1;
 - (double)sloMoIdealDuration;
@@ -167,6 +179,7 @@
 - (double)titleMinDuration;
 - (bool)titleRequestsColorAnalysis;
 - (id)titleStyle;
+- (id)titleStyleDictionary;
 - (unsigned long long)toneTreatment;
 - (id)transitionsAsDictionaries;
 - (double)videoIdealDuration;

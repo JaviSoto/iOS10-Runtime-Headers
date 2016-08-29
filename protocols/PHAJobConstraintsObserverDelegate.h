@@ -5,6 +5,6 @@
 
 @required
 
-- (void)jobConstraintsObserver:(PHAJobConstraintsObserver *)arg1 constraintsDidChange:(PHAJobConstraints *)arg2;
+- (void)jobConstraintsObserver:(PHAJobConstraintsObserver *)arg1 constraintsDidChange:(PHAJobConstraints *)arg2 mask:(PHAJobConstraints *)arg3;
 
 @end

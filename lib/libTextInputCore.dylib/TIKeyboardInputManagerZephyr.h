@@ -30,9 +30,13 @@
     struct __EmojiLocaleDataWrapper { } * m_emojiDataForSecondaryLocale;
     void * m_emojiGeneratorPrimaryLanguage;
     void * m_emojiGeneratorSecondaryLanguage;
-    struct TIInputManagerZephyr { int (**x1)(); struct vector<KB::Input, std::__1::allocator<KB::Input> > { struct Input {} *x_2_1_1; struct Input {} *x_2_1_2; struct __compressed_pair<KB::Input *, std::__1::allocator<KB::Input> > { struct Input {} *x_3_2_1; } x_2_1_3; } x2; struct String { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned char x_3_1_4; char *x_3_1_5; BOOL x_3_1_6[16]; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned char x_4_1_4; char *x_4_1_5; BOOL x_4_1_6[16]; } x4; unsigned int x5; bool x6; bool x7; struct __CFString {} *x8; struct __CFLocale {} *x9; struct LockedInput { unsigned int x_10_1_1; unsigned int x_10_1_2; } x10; struct RefPtr<KB::DictionaryContainer> { struct DictionaryContainer {} *x_11_1_1; } x11; bool x12; bool x13; struct StrokeBuildManager {} *x14; struct String { unsigned short x_15_1_1; unsigned short x_15_1_2; unsigned short x_15_1_3; unsigned char x_15_1_4; char *x_15_1_5; BOOL x_15_1_6[16]; } x15; bool x16; bool x17; bool x18; bool x19; struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x_20_1_1; struct __shared_weak_count {} *x_20_1_2; } x20; unsigned int x21; struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> { unsigned long long x_22_1_1; struct VectorBuffer<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> { struct RefPtr<TI::Favonius::LayoutKey> {} *x_2_2_1; unsigned long long x_2_2_2; } x_22_1_2; } x22; bool x23; struct RefPtr<TI::Favonius::KeyboardLayout> { struct KeyboardLayout {} *x_24_1_1; } x24; struct String { unsigned short x_25_1_1; unsigned short x_25_1_2; unsigned short x_25_1_3; unsigned char x_25_1_4; char *x_25_1_5; BOOL x_25_1_6[16]; } x25; struct LanguageModelContext { struct vector<TITokenID, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_1_2_1; struct TITokenID {} *x_1_2_2; struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_3_3_1; } x_1_2_3; } x_26_1_1; unsigned long long x_26_1_2; unsigned long long x_26_1_3; } x26; struct shared_ptr<KB::InputManagerSpecialization> { struct InputManagerSpecialization {} *x_27_1_1; struct __shared_weak_count {} *x_27_1_2; } x27; id /* block */ x28; struct shared_ptr<KB::TypologyLogger> { struct TypologyLogger {} *x_29_1_1; struct __shared_weak_count {} *x_29_1_2; } x29; bool x30; } * m_impl;
+    struct TIInputManagerZephyr { int (**x1)(); struct vector<KB::Input, std::__1::allocator<KB::Input> > { struct Input {} *x_2_1_1; struct Input {} *x_2_1_2; struct __compressed_pair<KB::Input *, std::__1::allocator<KB::Input> > { struct Input {} *x_3_2_1; } x_2_1_3; } x2; struct String { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned char x_3_1_4; char *x_3_1_5; BOOL x_3_1_6[16]; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned char x_4_1_4; char *x_4_1_5; BOOL x_4_1_6[16]; } x4; unsigned int x5; bool x6; bool x7; struct __CFString {} *x8; struct __CFLocale {} *x9; struct LockedInput { unsigned int x_10_1_1; unsigned int x_10_1_2; } x10; struct RefPtr<KB::DictionaryContainer> { struct DictionaryContainer {} *x_11_1_1; } x11; bool x12; bool x13; struct StrokeBuildManager {} *x14; struct String { unsigned short x_15_1_1; unsigned short x_15_1_2; unsigned short x_15_1_3; unsigned char x_15_1_4; char *x_15_1_5; BOOL x_15_1_6[16]; } x15; bool x16; bool x17; bool x18; } * m_impl;
     unsigned long long  m_initialSelectedIndex;
     bool  m_isEmojiInputModeEnabled;
+    struct shared_ptr<KB::LanguageModel> { 
+        struct LanguageModel {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  m_lightweight_language_model;
     bool  m_shouldShowEmojis;
     struct shared_ptr<KB::TypologyLogger> { 
         struct TypologyLogger {} *__ptr_; 
@@ -72,9 +76,8 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })acceptableRangeFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inText:(id)arg2 withSelectionLocation:(unsigned long long)arg3;
 - (bool)acceptsCharacter:(unsigned int)arg1;
 - (bool)acceptsRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inString:(id)arg2;
-- (id)addEmojiStringsFrom:(struct __CFArray { }*)arg1 inArray:(id)arg2 forInputString:(id)arg3;
-- (id)addEmojiTokensFrom:(struct __CFArray { }*)arg1 inArray:(id)arg2 forInputString:(id)arg3;
 - (id)addInput:(id)arg1 flags:(unsigned int)arg2 point:(struct CGPoint { double x1; double x2; })arg3 firstDelete:(unsigned long long*)arg4 fromVariantKey:(bool)arg5;
+- (struct TITokenID { unsigned int x1; unsigned int x2; })addWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 surfaceFormPtr:(id*)arg4;
 - (id)allowPredictionCharacterSet;
 - (id)autocorrection;
 - (id)autocorrectionCandidateForInput:(id)arg1 withCandidate:(const struct Candidate { struct Vector<KB::Word, 3> { unsigned long long x_1_1_1; struct VectorBuffer<KB::Word, 3> { struct Word {} *x_2_2_1; unsigned long long x_2_2_2; struct AlignedBuffer<288, 8> { BOOL x_3_3_1[288]; } x_2_2_3; } x_1_1_2; } x1; float x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; unsigned int x4; unsigned int x5; struct LanguageModelContext { struct vector<TITokenID, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_1_2_1; struct TITokenID {} *x_1_2_2; struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_3_3_1; } x_1_2_3; } x_6_1_1; unsigned long long x_6_1_2; unsigned long long x_6_1_3; } x6; struct String { unsigned short x_7_1_1; unsigned short x_7_1_2; unsigned short x_7_1_3; unsigned char x_7_1_4; char *x_7_1_5; BOOL x_7_1_6[16]; } x7; struct ByteString { union { struct { unsigned short x_1_3_1; char *x_1_3_2; } x_1_2_1; struct { unsigned short x_2_3_1; unsigned char x_2_3_2[14]; } x_1_2_2; } x_8_1_1; } x8; bool x9; bool x10; struct __CFDictionary {} *x11; }*)arg2;
@@ -105,6 +108,11 @@
 - (id)completionCandidates;
 - (id)config;
 - (id)configurationPropertyList;
+- (struct __CFArray { }*)copyEmojiTokenRefsFromEmojiStrings:(struct __CFArray { }*)arg1 localeData:(struct __EmojiLocaleDataWrapper { }*)arg2;
+- (struct __EmojiTokenWrapper { }*)copyRecentEmojiTokenForEmoji:(struct __EmojiTokenWrapper { }*)arg1 skinTones:(id)arg2;
+- (struct __CFArray { }*)copySkinToneSensitiveEmojis:(struct __CFArray { }*)arg1;
+- (unsigned long long)countOfWordsIninputStem:(id)arg1;
+- (id)createAndAddEmojiTokensFrom:(struct __CFArray { }*)arg1 inArray:(id)arg2 forInputString:(id)arg3;
 - (id)currentWordStem;
 - (void)dealloc;
 - (void)decrementLanguageModelCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4;
@@ -124,6 +132,7 @@
 - (void)didUpdateInputModes:(id)arg1;
 - (void)displayedCandidateRejected;
 - (bool)doesComposeText;
+- (bool)doesSelectedTextGenerateEmojiCandidates;
 - (void)dropInput;
 - (void)dropInputPrefix:(unsigned int)arg1;
 - (id)dynamicDictionaryPathForInputMode:(id)arg1;
@@ -131,10 +140,15 @@
 - (id)emojiAdornmentCandidates:(id)arg1;
 - (id)emojiAppendCandidates:(id)arg1;
 - (id)emojiReplacementCandidates:(id)arg1;
+- (id)emojiSkinTonePreferences;
+- (id)enumerateForEmojiCandidatesIn:(id)arg1 forEmojiLocaleData:(struct __EmojiLocaleDataWrapper { }*)arg2 asReplacementCandidate:(bool)arg3;
 - (void)enumerateWordSuffixesOfString:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 usingBlock:(id /* block */)arg3;
-- (id)extendedAutocorrection:(id)arg1 spanningInputsForCandidates:(id)arg2;
+- (id)extendedAutocorrection:(id)arg1 spanningInputsForCandidates:(id)arg2 emojis:(id)arg3;
 - (unsigned int)externalIndexToInternal:(unsigned int)arg1;
+- (id)externalStringForDictionaryString:(id)arg1;
 - (id)externalStringToInternal:(id)arg1;
+- (id)extractTokensForEmojiComputation:(id)arg1;
+- (struct TITokenID { unsigned int x1; unsigned int x2; })findTokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 tokenLookupMode:(unsigned int)arg4 surfaceFormPtr:(id*)arg5;
 - (id)generateEmojiAdornmentCandidates:(id)arg1;
 - (bool)hasLegacyInputStem;
 - (bool)hasLegacyInputString;
@@ -144,7 +158,7 @@
 - (void)incrementUnigramCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 usageFlags:(unsigned int)arg3;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
 - (id)indexesOfDuplicatesInCandidates:(id)arg1;
-- (struct TIInputManagerZephyr { int (**x1)(); struct vector<KB::Input, std::__1::allocator<KB::Input> > { struct Input {} *x_2_1_1; struct Input {} *x_2_1_2; struct __compressed_pair<KB::Input *, std::__1::allocator<KB::Input> > { struct Input {} *x_3_2_1; } x_2_1_3; } x2; struct String { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned char x_3_1_4; char *x_3_1_5; BOOL x_3_1_6[16]; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned char x_4_1_4; char *x_4_1_5; BOOL x_4_1_6[16]; } x4; unsigned int x5; bool x6; bool x7; struct __CFString {} *x8; struct __CFLocale {} *x9; struct LockedInput { unsigned int x_10_1_1; unsigned int x_10_1_2; } x10; struct RefPtr<KB::DictionaryContainer> { struct DictionaryContainer {} *x_11_1_1; } x11; bool x12; bool x13; struct StrokeBuildManager {} *x14; struct String { unsigned short x_15_1_1; unsigned short x_15_1_2; unsigned short x_15_1_3; unsigned char x_15_1_4; char *x_15_1_5; BOOL x_15_1_6[16]; } x15; bool x16; bool x17; bool x18; bool x19; struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x_20_1_1; struct __shared_weak_count {} *x_20_1_2; } x20; unsigned int x21; struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> { unsigned long long x_22_1_1; struct VectorBuffer<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> { struct RefPtr<TI::Favonius::LayoutKey> {} *x_2_2_1; unsigned long long x_2_2_2; } x_22_1_2; } x22; bool x23; struct RefPtr<TI::Favonius::KeyboardLayout> { struct KeyboardLayout {} *x_24_1_1; } x24; struct String { unsigned short x_25_1_1; unsigned short x_25_1_2; unsigned short x_25_1_3; unsigned char x_25_1_4; char *x_25_1_5; BOOL x_25_1_6[16]; } x25; struct LanguageModelContext { struct vector<TITokenID, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_1_2_1; struct TITokenID {} *x_1_2_2; struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_3_3_1; } x_1_2_3; } x_26_1_1; unsigned long long x_26_1_2; unsigned long long x_26_1_3; } x26; struct shared_ptr<KB::InputManagerSpecialization> { struct InputManagerSpecialization {} *x_27_1_1; struct __shared_weak_count {} *x_27_1_2; } x27; id /* block */ x28; struct shared_ptr<KB::TypologyLogger> { struct TypologyLogger {} *x_29_1_1; struct __shared_weak_count {} *x_29_1_2; } x29; bool x30; }*)initImplementation;
+- (struct TIInputManagerZephyr { int (**x1)(); struct vector<KB::Input, std::__1::allocator<KB::Input> > { struct Input {} *x_2_1_1; struct Input {} *x_2_1_2; struct __compressed_pair<KB::Input *, std::__1::allocator<KB::Input> > { struct Input {} *x_3_2_1; } x_2_1_3; } x2; struct String { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned char x_3_1_4; char *x_3_1_5; BOOL x_3_1_6[16]; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned char x_4_1_4; char *x_4_1_5; BOOL x_4_1_6[16]; } x4; unsigned int x5; bool x6; bool x7; struct __CFString {} *x8; struct __CFLocale {} *x9; struct LockedInput { unsigned int x_10_1_1; unsigned int x_10_1_2; } x10; struct RefPtr<KB::DictionaryContainer> { struct DictionaryContainer {} *x_11_1_1; } x11; bool x12; bool x13; struct StrokeBuildManager {} *x14; struct String { unsigned short x_15_1_1; unsigned short x_15_1_2; unsigned short x_15_1_3; unsigned char x_15_1_4; char *x_15_1_5; BOOL x_15_1_6[16]; } x15; bool x16; bool x17; bool x18; }*)initImplementation;
 - (id)initWithConfig:(id)arg1;
 - (id)initWithInputMode:(id)arg1;
 - (unsigned long long)initialSelectedIndex;
@@ -174,6 +188,7 @@
 - (unsigned long long)linguisticResourceStatus;
 - (void)loadDictionaries;
 - (void)loadFavoniusLanguageModel;
+- (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })loadedLightweightLanguageModel;
 - (void)logToTypologyRecorderWithString:(id)arg1;
 - (unsigned long long)maxPriorWordTokensAfterTrimming;
 - (unsigned long long)maximumShortcutLengthAllowed;
@@ -252,6 +267,7 @@
 - (bool)shouldUpdateDictionary;
 - (bool)shouldUpdateLanguageModel;
 - (unsigned int)simulateAutoshiftIfNecessaryForFlags:(unsigned int)arg1;
+- (id)skinToneModifiedAdornmentEmojis:(struct __CFArray { }*)arg1 forLocale:(struct __EmojiLocaleDataWrapper { }*)arg2;
 - (bool)spaceAndNextInputWouldStartSentence;
 - (id)staticDictionaryPathForInputMode:(id)arg1;
 - (void)storeLanguageModelDynamicDataIncludingCache;
@@ -265,7 +281,6 @@
 - (id)terminatorsPreventingAutocorrection;
 - (void)textAccepted:(id)arg1 fromPredictiveInputBar:(bool)arg2;
 - (id)textCheckerExemptions;
-- (struct TITokenID { unsigned int x1; unsigned int x2; })tokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 createIfNecessary:(bool)arg4 surfaceFormPtr:(id*)arg5;
 - (struct TITokenID { unsigned int x1; unsigned int x2; })tokenIDForWordSeparator:(unsigned short)arg1;
 - (void)trimInput;
 - (id)trimmedInputStem;
@@ -280,6 +295,8 @@
 - (void)updateInputContext;
 - (bool)updateLanguageModelForKeyboardState;
 - (void)updateResponseModelForKeyboardState:(id)arg1;
+- (unsigned long long)userFrequencyOfWord:(id)arg1;
+- (unsigned long long)userFrequencyOfWord:(id)arg1 lexiconID:(unsigned int)arg2;
 - (long long)userInterfaceIdiom;
 - (bool)usesCandidateSelection;
 - (bool)usesRetrocorrection;

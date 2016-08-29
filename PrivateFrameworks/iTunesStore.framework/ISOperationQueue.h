@@ -10,6 +10,7 @@
 
 + (id)mainQueue;
 
+- (void).cxx_destruct;
 - (void)addOperation:(id)arg1;
 - (void)addOperations:(id)arg1 waitUntilFinished:(bool)arg2;
 - (bool)adjustsMaxConcurrentOperationCount;

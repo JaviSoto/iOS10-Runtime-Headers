@@ -3,16 +3,19 @@
  */
 
 @interface BRCRecentDocumentDescriptor : NSObject {
+    NSURL * _aliasURL;
     NSNumber * _documentID;
     NSURL * _url;
 }
 
+@property (nonatomic, readonly) NSURL *aliasURL;
 @property (nonatomic, readonly) NSNumber *documentID;
 @property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
+- (id)aliasURL;
 - (id)documentID;
-- (id)initWithDocumentID:(id)arg1 URL:(id)arg2;
+- (id)initWithDocumentID:(id)arg1 URL:(id)arg2 aliasURL:(id)arg3;
 - (id)url;
 
 @end

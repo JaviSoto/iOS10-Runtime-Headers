@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSData *clientInfo;
 @property (nonatomic, retain) NSDictionary *responseInfo;
 @property (nonatomic, retain) NSString *serverInfo;
+@property (nonatomic, readonly) NSString *serverMachineId;
 @property (nonatomic, retain) NSString *transactionId;
 
 + (id)payloadWithInfo:(id)arg1;
@@ -36,6 +37,7 @@
 - (id)replyPayload;
 - (id)responseInfo;
 - (id)serverInfo;
+- (id)serverMachineId;
 - (void)setAltDSID:(id)arg1;
 - (void)setCircleStep:(unsigned long long)arg1;
 - (void)setClientErrorCode:(long long)arg1;

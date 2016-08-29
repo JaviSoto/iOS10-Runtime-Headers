@@ -3,10 +3,10 @@
  */
 
 @interface _CNUIUserActionURLItem : CNUIUserActionItem {
-    NSURL * _url;
+    CNFuture * _url;
 }
 
-@property (nonatomic, readonly, copy) NSURL *url;
+@property (nonatomic, readonly) CNFuture *url;
 
 - (void).cxx_destruct;
 - (id)description;

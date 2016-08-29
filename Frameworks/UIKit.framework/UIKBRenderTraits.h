@@ -17,6 +17,7 @@
     UIKBGradient * _layeredForegroundGradient;
     NSMutableArray * _renderEffects;
     NSArray * _renderFlags;
+    long long  _renderFlagsForAboveEffects;
     bool  _renderSecondarySymbolsSeparately;
     NSArray * _secondarySymbolStyles;
     UIKBTextStyle * _symbolStyle;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) UIKBGradient *layeredForegroundGradient;
 @property (nonatomic, readonly) NSArray *renderEffects;
 @property (nonatomic, retain) NSArray *renderFlags;
+@property (nonatomic) long long renderFlagsForAboveEffects;
 @property (nonatomic) bool renderSecondarySymbolsSeparately;
 @property (nonatomic, retain) NSArray *secondarySymbolStyles;
 @property (nonatomic, retain) UIKBTextStyle *symbolStyle;
@@ -69,6 +71,7 @@
 - (void)removeAllRenderEffects;
 - (id)renderEffects;
 - (id)renderFlags;
+- (long long)renderFlagsForAboveEffects;
 - (bool)renderSecondarySymbolsSeparately;
 - (id)secondarySymbolStyles;
 - (void)setBackgroundGradient:(id)arg1;
@@ -82,6 +85,7 @@
 - (void)setLayeredBackgroundGradient:(id)arg1;
 - (void)setLayeredForegroundGradient:(id)arg1;
 - (void)setRenderFlags:(id)arg1;
+- (void)setRenderFlagsForAboveEffects:(long long)arg1;
 - (void)setRenderSecondarySymbolsSeparately:(bool)arg1;
 - (void)setSecondarySymbolStyles:(id)arg1;
 - (void)setSymbolStyle:(id)arg1;

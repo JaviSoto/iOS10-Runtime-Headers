@@ -132,6 +132,7 @@
 - (void)setCancelGestureActivation:(unsigned long long)arg1 cancelEnabled:(bool)arg2;
 - (void)setCurrentAlertHandler:(id /* block */)arg1;
 - (void)setHearingAidControlVisible:(bool)arg1;
+- (void)setLockScreenDimTimerEnabled:(bool)arg1;
 - (void)setOrientationLocked:(bool)arg1;
 - (void)setReachabilityActive:(bool)arg1;
 - (void)setReachabilityHandlers:(id)arg1;
@@ -151,6 +152,7 @@
 - (void)toggleNotificationCenter;
 - (int)topEventPidOverride;
 - (void)unlockDevice;
+- (void)userEventOccurred;
 - (double)volumeLevel;
 - (void)wakeUpDeviceIfNecessary;
 

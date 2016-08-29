@@ -26,11 +26,16 @@
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (unsigned long long)indexOfObjectIdenticalTo:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertObjects:(const id*)arg1 count:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (void)removeAllObjects;
 - (void)removeLastObject;
 - (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)removeObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)replaceObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObjects:(const id*)arg2 count:(unsigned long long)arg3;
 - (void)setObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 
 @end

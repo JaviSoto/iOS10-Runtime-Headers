@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSString *documentTypeDisplayNameForSharingInvitation;
 @property (nonatomic) unsigned long long iWorkAuthorColorIndex;
 @property (nonatomic, copy) NSString *iWorkAuthorName;
+@property (nonatomic, readonly) NSString *iWorkAuthorPrivateID;
 @property (getter=isInBackground, readonly) bool inBackground;
 @property (nonatomic, readonly) bool isCanvasFullScreen;
 @property (nonatomic, readonly) bool performanceModeEnabled;
@@ -32,6 +33,7 @@
 + (void)setDelegate:(id)arg1;
 + (id)sharedDelegate;
 
+- (void).cxx_destruct;
 - (id)appChartPropertyOverrides;
 - (id)applicationLaunchTime;
 - (id)applicationName;
@@ -41,12 +43,14 @@
 - (id)cloudKitContainerIdentifier;
 - (id)compatibilityDelegate;
 - (id)createCompatibilityDelegate;
+- (void)dealloc;
 - (id)defaultHyperlinkURL;
 - (bool)designModeEnabled;
 - (id)documentTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (unsigned long long)iWorkAuthorColorIndex;
 - (id)iWorkAuthorName;
+- (id)iWorkAuthorPrivateID;
 - (id)init;
 - (id)invalidURLSchemes;
 - (bool)isActivating;

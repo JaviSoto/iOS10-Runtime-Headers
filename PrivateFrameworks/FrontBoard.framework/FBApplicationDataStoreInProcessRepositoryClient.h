@@ -18,7 +18,9 @@
 @property (nonatomic, retain) NSMutableDictionary *prefetchedKeyValues;
 @property (readonly) Class superclass;
 
+- (void)_invalidateCacheIfObjectIsNotEqual:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3;
 - (id)_observers;
+- (id)_prefetchQueue_prefetchedKeysForApplication:(id)arg1;
 - (void)_repositoryInvalidated:(id)arg1;
 - (void)_sendAndCachePrefetchedKeysWithCompletion:(id /* block */)arg1;
 - (void)_updateCacheIfNecessaryWithObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3;

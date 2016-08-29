@@ -17,6 +17,7 @@
 + (id)filteredSearchableItemsFromItems:(id)arg1;
 + (void)initialize;
 + (bool)isHarvestingSupported;
++ (void)prepareForQuery;
 + (id)serviceForContacts;
 + (id)serviceForEvents;
 + (id)serviceForInternal;
@@ -169,5 +170,6 @@
 - (bool)updateMessages:(id)arg1 state:(unsigned long long)arg2 error:(id*)arg3;
 - (void)updateMessages:(id)arg1 state:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
 - (void)waitForEventWithIdentifier:(id)arg1 toAppearInEventStoreWithCompletion:(id /* block */)arg2;
+- (void)waitForEventWithIdentifier:(id)arg1 toAppearInEventStoreWithLastModificationDate:(id)arg2 completion:(id /* block */)arg3;
 
 @end

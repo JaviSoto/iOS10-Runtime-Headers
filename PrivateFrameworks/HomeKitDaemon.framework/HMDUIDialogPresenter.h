@@ -27,6 +27,7 @@
 - (bool)_addToPendingContext:(id)arg1;
 - (void)_confirmAddUser:(id)arg1 toHome:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_confirmRemoveUser:(id)arg1 fromHome:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_displayInternalErrorWithContext:(id)arg1 message:(id)arg2;
 - (void)_displayKeychainSyncForHome:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_displayUpgradeNeededWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_displayiCloudSwitchWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -45,6 +46,8 @@
 - (struct __CFUserNotification { }*)currentNotification;
 - (void)dismissPendingDialogDueToPeerDeviceSelection:(bool)arg1 context:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dismissPendingDialogWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)displayExecutionErrorOfTrigger:(id)arg1 context:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)displayInternalErrorWithContext:(id)arg1 message:(id)arg2;
 - (void)displayKeychainSyncForHome:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)displayUpgradeNeededWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)displayiCloudSwitchWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;

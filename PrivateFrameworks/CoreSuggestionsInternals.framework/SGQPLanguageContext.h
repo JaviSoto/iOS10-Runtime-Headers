@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSString *language;
 
 + (id)array:(id)arg1 orderedByPattern:(id)arg2;
-+ (id)languageContextWithMetricsTracker:(id)arg1 asset:(id)arg2;
++ (id)languageContextsWithMetricsTracker:(id)arg1 asset:(id)arg2;
 + (id)orderingPatternFromString:(id)arg1;
 + (id)unsupportedLanguageContextWithMetricsTracker:(id)arg1;
 

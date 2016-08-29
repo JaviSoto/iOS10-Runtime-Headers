@@ -15,6 +15,7 @@
 - (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
 - (bool)isValidValue:(id)arg1;
 - (id)labeledValue;
+- (id)replacementForInvalidValue:(id)arg1;
 - (void)setLabeledValue:(id)arg1;
 
 @end

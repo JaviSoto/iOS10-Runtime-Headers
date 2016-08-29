@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetDefrosterSettingsInCarIntent : INIntent <INSetDefrosterSettingsInCarIntent>
+@interface INSetDefrosterSettingsInCarIntent : INIntent <INSetDefrosterSettingsInCarIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) long long defroster;

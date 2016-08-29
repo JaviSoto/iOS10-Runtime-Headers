@@ -3,16 +3,20 @@
  */
 
 @interface FCArticleList : NSObject {
+    NSArray * _articleIDs;
+    NSString * _identifier;
     FCInterestToken * _interestToken;
     NTPBArticleListRecord * _record;
 }
 
 @property (nonatomic, readonly) NSArray *articleIDs;
+@property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) FCInterestToken *interestToken;
 @property (nonatomic, readonly) NTPBArticleListRecord *record;
 
 - (void).cxx_destruct;
 - (id)articleIDs;
+- (id)identifier;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2;
 - (id)interestToken;
 - (id)record;

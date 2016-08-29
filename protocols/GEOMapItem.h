@@ -101,6 +101,7 @@
 - (GEOMapRegion *)geoFenceMapRegion;
 - (bool)hasExpiredComponents;
 - (bool)isDisputed;
+- (bool)isEqualToMapItem:(id <GEOMapItem>)arg1;
 - (bool)isEventAllDay;
 - (bool)isValid;
 - (NSString *)name;

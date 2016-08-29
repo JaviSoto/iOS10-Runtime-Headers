@@ -5,6 +5,7 @@
 @interface _EARSpeechRecognizer : NSObject {
     bool  _concatenateUtterances;
     NSString * _configPath;
+    _EARSpeechRecognitionAudioBuffer * _currentAudioBuffer;
     bool  _detectUtterances;
     _EARFormatter * _formatter;
     NSObject<OS_dispatch_queue> * _formatterQueue;
@@ -37,6 +38,8 @@
 - (bool)concatenateUtterances;
 - (bool)detectUtterances;
 - (id)initWithConfiguration:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 overrides:(id)arg2;
+- (id)initWithConfiguration:(id)arg1 overrides:(id)arg2 generalVoc:(id)arg3 lexiconEnh:(id)arg4 itnEnh:(id)arg5;
 - (id)initWithConfiguration:(id)arg1 useQuasarFormatter:(bool)arg2;
 - (id)initWithConfiguration:(id)arg1 withGeneralVoc:(id)arg2 withLexiconEnh:(id)arg3 withItnEnh:(id)arg4;
 - (id)initWithConfiguration:(id)arg1 withLanguage:(id)arg2 withSdapiConfig:(id)arg3;
@@ -44,6 +47,7 @@
 - (id)modelInfo;
 - (id)recognitionReplacements;
 - (id)recognitionResultsWithAudioData:(id)arg1 userProfileData:(id)arg2 language:(id)arg3 task:(id)arg4 samplingRate:(unsigned long long)arg5 extraLanguageModel:(id)arg6;
+- (id)recognitionStatistics;
 - (struct shared_ptr<quasar::SpeechRequestData> { struct SpeechRequestData {} *x1; struct __shared_weak_count {} *x2; })requestParametersWithUserProfileData:(id)arg1 task:(id)arg2 samplingRate:(unsigned long long)arg3 resultStream:(struct shared_ptr<quasar::RecogResultStreamBase> { struct RecogResultStreamBase {} *x1; struct __shared_weak_count {} *x2; })arg4 extraLanguageModel:(id)arg5 symbolTableList:(const struct shared_ptr<quasar::SymbolTableList> { struct SymbolTableList {} *x1; struct __shared_weak_count {} *x2; }*)arg6;
 - (id)runRecognitionWithResultStream:(id)arg1;
 - (id)runRecognitionWithResultStream:(id)arg1 language:(id)arg2 task:(id)arg3 samplingRate:(unsigned long long)arg4;

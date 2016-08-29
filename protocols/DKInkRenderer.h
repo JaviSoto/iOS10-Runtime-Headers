@@ -14,6 +14,7 @@
 - (bool)drawingEnabled;
 - (double)drawingScale;
 - (void)endStroke;
+- (void)flush;
 - (void)force;
 - (bool)initialized;
 - (UIColor *)inkColor;

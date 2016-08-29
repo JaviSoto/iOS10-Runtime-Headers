@@ -4,6 +4,8 @@
 
 @interface SUClientInterface : NSObject {
     SUUIAppearance * _appearance;
+    NSString * _applicationIdentifier;
+    NSString * _applicationVersion;
     NSString * _askToBuyApprovalPrompt;
     NSString * _clientIdentifier;
     UIColor * _darkKeyColor;
@@ -24,6 +26,8 @@
 
 @property (getter=_ignoresExpectedClientsProtocol, setter=_setIgnoresExpectedClientsProtocol:) bool _ignoresExpectedClientsProtocol;
 @property (copy) SUUIAppearance *appearance;
+@property (copy) NSString *applicationIdentifier;
+@property (copy) NSString *applicationVersion;
 @property (nonatomic, copy) NSString *askToBuyApprovalPrompt;
 @property (copy) NSString *clientIdentifier;
 @property (nonatomic, copy) UIColor *darkKeyColor;
@@ -38,6 +42,9 @@
 @property (copy) NSString *userAgent;
 @property (retain) SUViewControllerFactory *viewControllerFactory;
 @property bool wasLaunchedFromLibrary;
+
++ (id)_defaultApplicationIdentifier;
++ (id)_defaultApplicationVersion;
 
 - (id)URLBagKeyForIdentifier:(id)arg1;
 - (void)_dismissModalViewControllerFromViewController:(id)arg1 withTransition:(int)arg2;
@@ -57,6 +64,8 @@
 - (void)_setStatusBarStyle:(long long)arg1 animated:(bool)arg2;
 - (void)_showPreviewOverlayAnimated:(bool)arg1;
 - (id)appearance;
+- (id)applicationIdentifier;
+- (id)applicationVersion;
 - (id)askToBuyApprovalPrompt;
 - (id)clientIdentifier;
 - (id)darkKeyColor;
@@ -70,6 +79,8 @@
 - (id)purchaseManager;
 - (id)queueSessionManager;
 - (void)setAppearance:(id)arg1;
+- (void)setApplicationIdentifier:(id)arg1;
+- (void)setApplicationVersion:(id)arg1;
 - (void)setAskToBuyApprovalPrompt:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDarkKeyColor:(id)arg1;

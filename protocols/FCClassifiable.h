@@ -5,6 +5,7 @@
 
 @required
 
+- (NSString *)identifier;
 - (NSArray *)topicIDs;
 
 @end

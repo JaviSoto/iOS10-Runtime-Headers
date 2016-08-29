@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPCloudServiceStatusController : NSObject <SSVPlaybackLeaseDelegate> {
+@interface MPCloudServiceStatusController : NSObject <ISURLBagObserver, SSVPlaybackLeaseDelegate> {
     unsigned long long  _URLBagObservationCount;
     NSObject<OS_dispatch_queue> * _accessQueue;
     unsigned long long  _accountStoreChangeObservationCount;
@@ -61,14 +61,13 @@
 - (void)_fairPlaySubscriptionControllerSubscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_getCurrentFairPlaySubscriptionStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)_networkReachabilityDidChangeNotification:(id)arg1;
-- (void)_reloadURLBag;
 - (void)_setHasSubscriptionLease:(bool)arg1 endReasonType:(unsigned long long)arg2;
-- (void)_storeFrontDidChangeNotification:(id)arg1;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_updateForNetworkReachabilityObserversCountChange;
 - (void)_updateMatchStatus;
 - (void)_updateWithURLBagDictionary:(id)arg1;
 - (void)acquireSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
+- (void)bagDidChange:(id)arg1;
 - (void)beginAutomaticallyRefreshingSubscriptionLease;
 - (void)beginObservingCloudLibraryEnabled;
 - (void)beginObservingFairPlaySubscriptionStatus;

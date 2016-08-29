@@ -86,6 +86,8 @@
 + (void)initialize;
 + (bool)isDocumentScopePublicWithProperties:(id)arg1 containerID:(id)arg2;
 + (id)localizedNameForDefaultCloudDocsContainer;
++ (id)localizedNameForDesktopContainer;
++ (id)localizedNameForDocumentsContainer;
 + (id)ownerNameFromSharedMangledID:(id)arg1;
 + (void)postContainerListUpdateNotification;
 + (void)postContainerStatusChangeNotificationWithID:(id)arg1 key:(id)arg2 value:(id)arg3;
@@ -114,7 +116,7 @@
 - (id)bundleIDVersions;
 - (id)bundleIdentifiers;
 - (id)computedProperties;
-- (bool)containsExcludedDocumentsOnTheFS;
+- (bool)containsExcludedDocumentsOnTheFSWithExcludedButPreservedFilename:(id)arg1 excludedButPreservedExtensions:(id)arg2 andStampUploadedAppWithXattr:(bool)arg3;
 - (id)copyDataRepresentation;
 - (unsigned int)currentStatus;
 - (bool)deleteAllContentsOnClientAndServer:(id*)arg1;

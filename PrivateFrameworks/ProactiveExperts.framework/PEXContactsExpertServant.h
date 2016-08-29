@@ -4,14 +4,15 @@
 
 @interface PEXContactsExpertServant : PEXServant {
     NSCache * _cachedNameLookups;
+    id  _cnObserverRegistrationToken;
     PEXContactScorer * _contactScorer;
     <SGSuggestionsServiceContactsProtocol> * _contactService;
-    id  _contactsObserverRegistrationToken;
     NSObject<OS_dispatch_semaphore> * _initializationComplete;
     PEXContact * _meContact;
     NSCache * _mePredictionCache;
     NSArray * _namesKeysToFetch;
     NSArray * _peopleKeysToFetch;
+    id  _sgObserverRegistrationToken;
     CNContactStore * _store;
     NSString * identifier;
 }
@@ -33,6 +34,10 @@
 - (void)dealloc;
 - (id)init;
 - (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2;
+- (void)setCachedNameLookup:(id)arg1;
+- (void)setContactScorer:(id)arg1;
+- (void)setContactService:(id)arg1;
+- (void)setStore:(id)arg1;
 - (id)uncachedPredictionForNamesCriteria:(id)arg1 limit:(unsigned long long)arg2;
 
 @end

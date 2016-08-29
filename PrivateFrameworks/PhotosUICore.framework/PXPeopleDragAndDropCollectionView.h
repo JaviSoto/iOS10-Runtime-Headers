@@ -28,7 +28,6 @@
 - (void)_animateShelfSlideIn;
 - (void)_animateShelfSlideOutWithDroppedView:(id)arg1 completion:(id /* block */)arg2;
 - (void)_autoscrollForReordering:(id)arg1;
-- (unsigned long long)_favoriteShelfAppearance;
 - (id)_footerAttributes;
 - (double)_highestVisibleCellZOrder;
 - (void)animateDropToFavoriteSection:(id /* block */)arg1;
@@ -43,8 +42,9 @@
 - (id)dragSourceIndexPath;
 - (bool)dropTargetIsFavoriteSection;
 - (bool)dropTargetIsFavoriteShelf;
-- (void)embedFavoriteShelf;
+- (void)embedFavoriteShelfAndInvalidateLayout:(bool)arg1;
 - (void)endInteractiveMovement;
+- (unsigned long long)favoriteShelfAppearance;
 - (id)favoriteShelfView;
 - (bool)interactiveMode;
 - (void)layoutSubviews;

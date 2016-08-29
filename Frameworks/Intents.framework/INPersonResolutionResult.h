@@ -2,7 +2,12 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPersonResolutionResult : INIntentResolutionResult
+@interface INPersonResolutionResult : INIntentResolutionResult <INPersonResolutionResultExport>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (id)confirmationRequiredWithPersonToConfirm:(id)arg1;
 + (id)disambiguationWithPeopleToDisambiguate:(id)arg1;

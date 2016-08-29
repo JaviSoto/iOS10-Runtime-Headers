@@ -35,7 +35,7 @@
 - (void).cxx_destruct;
 - (void)_commonInit;
 - (void)addPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; })arg1;
-- (void)addPointsFromBrushPointQueue;
+- (void)addPointsFromBrushPointQueueWithSegmentLength:(unsigned long long)arg1;
 - (void)beginStroke;
 - (bool)canBecomeFirstResponder;
 - (void)clear;
@@ -48,6 +48,7 @@
 - (bool)drawingEnabled;
 - (double)drawingScale;
 - (void)endStroke;
+- (void)flush;
 - (void)force;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)initialized;
@@ -65,6 +66,7 @@
 - (void)setInkColor:(id)arg1;
 - (void)setMode:(unsigned long long)arg1;
 - (void)setScaleDrawingToFitCanvas:(bool)arg1;
+- (id)snapshot;
 - (bool)supportsBleedAnimation;
 - (void)teardown;
 

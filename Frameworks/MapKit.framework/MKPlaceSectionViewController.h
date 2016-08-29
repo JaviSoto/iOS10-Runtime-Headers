@@ -13,6 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_viewHostsLayoutEngineAllowsTAMIC_NO;
 - (void)dealloc;
 - (void)loadView;
 - (id)sectionView;

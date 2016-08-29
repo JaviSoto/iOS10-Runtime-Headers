@@ -5,9 +5,11 @@
 @interface MPModelAlbum : MPModelObject {
     MPModelArtist * _artist;
     id /* block */  _artworkCatalogBlock;
+    bool  _classical;
     bool  _compilation;
     NSString * _copyrightText;
     long long  _discCount;
+    NSString * _editorNotes;
     MPModelGenre * _genre;
     bool  _hasCleanContent;
     bool  _hasExplicitContent;
@@ -21,16 +23,21 @@
     bool  _preorder;
     NSDateComponents * _releaseDateComponents;
     MPModelSong * _representativeSong;
+    NSString * _shortEditorNotes;
+    id /* block */  _songPopularityBlock;
     NSString * _title;
     long long  _trackCount;
+    float  _volumeNormalization;
     long long  _year;
 }
 
 @property (nonatomic, retain) MPModelArtist *artist;
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
+@property (getter=isClassical, nonatomic) bool classical;
 @property (getter=isCompilation, nonatomic) bool compilation;
 @property (nonatomic, copy) NSString *copyrightText;
 @property (nonatomic) long long discCount;
+@property (nonatomic, copy) NSString *editorNotes;
 @property (nonatomic, retain) MPModelGenre *genre;
 @property (nonatomic) bool hasCleanContent;
 @property (nonatomic) bool hasExplicitContent;
@@ -44,8 +51,11 @@
 @property (getter=isPreorder, nonatomic) bool preorder;
 @property (nonatomic, copy) NSDateComponents *releaseDateComponents;
 @property (nonatomic, retain) MPModelSong *representativeSong;
+@property (nonatomic, copy) NSString *shortEditorNotes;
+@property (nonatomic, copy) id /* block */ songPopularityBlock;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) long long trackCount;
+@property (nonatomic) float volumeNormalization;
 @property (nonatomic) long long year;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -53,9 +63,11 @@
 + (id)__MPModelPropertyAlbumArtwork__PROPERTY;
 + (id)__MPModelPropertyAlbumCopyrightText__PROPERTY;
 + (id)__MPModelPropertyAlbumDiscCount__PROPERTY;
++ (id)__MPModelPropertyAlbumEditorNotes__PROPERTY;
 + (id)__MPModelPropertyAlbumEditorialArtwork__PROPERTY;
 + (id)__MPModelPropertyAlbumHasCleanContent__PROPERTY;
 + (id)__MPModelPropertyAlbumHasExplicitContent__PROPERTY;
++ (id)__MPModelPropertyAlbumIsClassical__PROPERTY;
 + (id)__MPModelPropertyAlbumIsCompilation__PROPERTY;
 + (id)__MPModelPropertyAlbumKeepLocalEnableState__PROPERTY;
 + (id)__MPModelPropertyAlbumKeepLocalManagedStatus__PROPERTY;
@@ -66,17 +78,22 @@
 + (id)__MPModelPropertyAlbumMaximumItemTrackNumber__PROPERTY;
 + (id)__MPModelPropertyAlbumPreorder__PROPERTY;
 + (id)__MPModelPropertyAlbumReleaseDateComponents__PROPERTY;
++ (id)__MPModelPropertyAlbumShortEditorNotes__PROPERTY;
++ (id)__MPModelPropertyAlbumSongPopularity__PROPERTY;
 + (id)__MPModelPropertyAlbumTitle__PROPERTY;
 + (id)__MPModelPropertyAlbumTrackCount__PROPERTY;
++ (id)__MPModelPropertyAlbumVolumeNormalization__PROPERTY;
 + (id)__MPModelPropertyAlbumYear__PROPERTY;
 + (id)__MPModelRelationshipAlbumArtist__PROPERTY;
 + (id)__MPModelRelationshipAlbumGenre__PROPERTY;
 + (id)__MPModelRelationshipAlbumRepresentativeSong__PROPERTY;
 + (id)__artist__KEY;
 + (id)__artworkCatalogBlock__KEY;
++ (id)__classical__KEY;
 + (id)__compilation__KEY;
 + (id)__copyrightText__KEY;
 + (id)__discCount__KEY;
++ (id)__editorNotes__KEY;
 + (id)__editorialArtworkCatalogBlock__KEY;
 + (id)__genre__KEY;
 + (id)__hasCleanContent__KEY;
@@ -91,8 +108,11 @@
 + (id)__preorder__KEY;
 + (id)__releaseDateComponents__KEY;
 + (id)__representativeSong__KEY;
++ (id)__shortEditorNotes__KEY;
++ (id)__songPopularityBlock__KEY;
 + (id)__title__KEY;
 + (id)__trackCount__KEY;
++ (id)__volumeNormalization__KEY;
 + (id)__year__KEY;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
@@ -109,9 +129,11 @@
 - (id)copyrightText;
 - (id)descriptionWithType:(long long)arg1;
 - (long long)discCount;
+- (id)editorNotes;
 - (id)genre;
 - (bool)hasCleanContent;
 - (bool)hasExplicitContent;
+- (bool)isClassical;
 - (bool)isCompilation;
 - (bool)isLibraryAddEligible;
 - (bool)isLibraryAdded;
@@ -131,9 +153,11 @@
 - (id)representativeSong;
 - (void)setArtist:(id)arg1;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
+- (void)setClassical:(bool)arg1;
 - (void)setCompilation:(bool)arg1;
 - (void)setCopyrightText:(id)arg1;
 - (void)setDiscCount:(long long)arg1;
+- (void)setEditorNotes:(id)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setHasCleanContent:(bool)arg1;
 - (void)setHasExplicitContent:(bool)arg1;
@@ -147,11 +171,18 @@
 - (void)setPreorder:(bool)arg1;
 - (void)setReleaseDateComponents:(id)arg1;
 - (void)setRepresentativeSong:(id)arg1;
+- (void)setShortEditorNotes:(id)arg1;
+- (void)setSongPopularityBlock:(id /* block */)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTrackCount:(long long)arg1;
+- (void)setVolumeNormalization:(float)arg1;
 - (void)setYear:(long long)arg1;
+- (id)shortEditorNotes;
+- (id /* block */)songPopularityBlock;
+- (id)songPopularityForIdentifiers:(id)arg1;
 - (id)title;
 - (long long)trackCount;
+- (float)volumeNormalization;
 - (long long)year;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore

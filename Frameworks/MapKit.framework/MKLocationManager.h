@@ -13,6 +13,7 @@
     bool  _hasCustomDesiredAccuracy;
     CLHeading * _heading;
     NSHashTable * _headingObservers;
+    NSTimer * _headingThrottlingTimer;
     double  _headingUpdateTime;
     bool  _isLastLocationStale;
     bool  _isReceivingAccurateLocations;

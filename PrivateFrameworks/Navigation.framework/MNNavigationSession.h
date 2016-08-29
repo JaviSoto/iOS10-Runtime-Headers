@@ -102,7 +102,7 @@
 - (void)locationTracker:(id)arg1 currentStepIndex:(unsigned long long)arg2 distanceUntilSign:(double)arg3 timeUntilManeuver:(double)arg4;
 - (void)locationTracker:(id)arg1 didChangeState:(int)arg2;
 - (void)locationTracker:(id)arg1 didEnableGuidance:(bool)arg2;
-- (void)locationTracker:(id)arg1 didReroute:(id)arg2 request:(id)arg3 response:(id)arg4;
+- (void)locationTracker:(id)arg1 didReroute:(id)arg2 rerouteReason:(unsigned long long)arg3 request:(id)arg4 response:(id)arg5;
 - (void)locationTracker:(id)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
 - (void)locationTracker:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3 request:(id)arg4 response:(id)arg5;
 - (void)locationTracker:(id)arg1 didUpdateETA:(id)arg2 forRoute:(id)arg3;

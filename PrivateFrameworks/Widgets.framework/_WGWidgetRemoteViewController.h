@@ -26,15 +26,14 @@
 - (void)_closeTransactionForPreferredHeightChangeWithIdentifier:(id)arg1;
 - (bool)_isValid;
 - (void)_openTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(id)arg2;
-- (void)_performOutstandingAnimationsWithRequestIdentifier:(id)arg1;
 - (void)_performOutstandingCompletionWithRequestIdentifier:(id)arg1;
 - (void)_performUpdateWithReplyHandler:(id /* block */)arg1;
+- (void)_prepareForAnimationsForRequestWithIdentifier:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)_requestEncodedLayerTreeAtURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (bool)_serviceHasScrollToTopView;
 - (void)_setActiveDisplayMode:(long long)arg1 requestIdentifier:(id)arg2;
 - (void)_setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(long long)arg2;
 - (void)_setValid:(bool)arg1;
-- (void)_setWidgetIdentifier:(id)arg1;
 - (void)_viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 requestIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)disconnect;

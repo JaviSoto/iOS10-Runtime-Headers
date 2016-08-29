@@ -37,6 +37,7 @@
 
 - (void).cxx_destruct;
 - (id)actionSetFromObject:(id)arg1;
+- (void)addActivationCharacteristicsIfNeeded:(id)arg1 forCharacteristic:(id)arg2;
 - (id)adjustGetValue:(id)arg1 type:(id)arg2 units:(id)arg3 attribute:(id)arg4;
 - (id)adjustSetValue:(id)arg1 type:(id)arg2 units:(id)arg3 attribute:(id)arg4;
 - (id)assistantCommandHelper;
@@ -64,7 +65,7 @@
 - (void)handleGetActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleGetColor:(id)arg1 forObjects:(id)arg2 serviceType:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleGetMetadataActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
-- (id)handleReadWriteResponses:(id)arg1 error:(id)arg2 forAction:(id)arg3 inServiceType:(id)arg4 results:(id)arg5;
+- (id)handleReadWriteResponses:(id)arg1 error:(id)arg2 forAction:(id)arg3 inServiceType:(id)arg4 results:(id)arg5 forObjects:(id)arg6;
 - (void)handleSetActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleSetColor:(id)arg1 forObjects:(id)arg2 service:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleUpdateActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -76,9 +77,10 @@
 - (id)objectsWithSearchFilter:(id)arg1 inHome:(id)arg2;
 - (id)parseColorEncoding:(id)arg1;
 - (void)performWithGather:(id)arg1 queue:(id)arg2 msgDispatcher:(id)arg3 completion:(id /* block */)arg4;
-- (bool)populateColorResult:(id)arg1 serviceType:(id)arg2 action:(id)arg3 responses:(id)arg4;
+- (bool)populateColorResult:(id)arg1 serviceType:(id)arg2 service:(id)arg3 action:(id)arg4 responses:(id)arg5 forObjects:(id)arg6;
+- (bool)populateResult:(id)arg1 fromResponse:(id)arg2 forAction:(id)arg3 serviceType:(id)arg4 forObjects:(id)arg5;
 - (bool)populateResult:(id)arg1 withObject:(id)arg2 serviceType:(id)arg3 action:(id)arg4;
-- (bool)populateResult:(id)arg1 withService:(id)arg2 serviceType:(id)arg3 action:(id)arg4;
+- (bool)populateResult:(id)arg1 withService:(id)arg2 serviceType:(id)arg3 characteristic:(id)arg4 action:(id)arg5;
 - (bool)populateResultWithEntity:(id)arg1 action:(id)arg2 entity:(id)arg3;
 - (id)primaryHomeName;
 - (id)primaryHomeUUID;
@@ -101,6 +103,6 @@
 - (void)setQueue:(id)arg1;
 - (id)setValue:(id)arg1 format:(id)arg2 units:(id)arg3;
 - (id)updateValue:(id)arg1 forAction:(id)arg2;
-- (id)updateValueToBoundary:(id)arg1 metadata:(id)arg2;
+- (id)updateValueToBoundary:(id)arg1 valueType:(id)arg2 fudgeMinimum:(bool)arg3 metadata:(id)arg4;
 
 @end

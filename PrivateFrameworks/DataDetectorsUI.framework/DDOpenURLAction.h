@@ -8,10 +8,11 @@
 }
 
 - (id)appLink;
+- (bool)canBePerformedByOpeningURL;
 - (id)companionAction;
 - (void)dealloc;
 - (id)localizedName;
-- (void)perform;
+- (void)performFromView:(id)arg1;
 - (bool)useAppLink;
 
 @end

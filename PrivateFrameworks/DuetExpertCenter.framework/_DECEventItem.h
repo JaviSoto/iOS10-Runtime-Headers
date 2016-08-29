@@ -38,6 +38,7 @@
 - (bool)isAllDay;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (bool)isFreeTime;
 - (id)value;
 

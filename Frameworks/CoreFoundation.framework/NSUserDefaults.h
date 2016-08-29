@@ -148,8 +148,9 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-+ (void)FU_backupStandardUserDefaultsKey:(id)arg1;
 + (id)_npsManager;
++ (void)fu_backupStandardUserDefaultsKey:(id)arg1;
++ (void)fu_synchronizeStandardUserDefaultsKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
 

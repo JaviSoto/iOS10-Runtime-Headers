@@ -12,6 +12,7 @@
     HMFTimer * _devicesChangeBackoffTimer;
     bool  _monitoring;
     NSObject<OS_dispatch_queue> * _propertyQueue;
+    bool  _resolved;
     IDSService * _service;
 }
 
@@ -27,6 +28,7 @@
 @property (readonly) unsigned long long hash;
 @property (getter=isMonitoring, nonatomic) bool monitoring;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (getter=isResolved, nonatomic) bool resolved;
 @property (nonatomic, readonly) IDSService *service;
 @property (readonly) Class superclass;
 
@@ -52,6 +54,7 @@
 - (id)init;
 - (id)initWithIDSService:(id)arg1;
 - (bool)isMonitoring;
+- (bool)isResolved;
 - (void)notifyDelegateAccountAdded:(id)arg1;
 - (void)notifyDelegateAccountRemove:(id)arg1;
 - (void)notifyDelegateCurrentDeviceChanged:(id)arg1;
@@ -65,6 +68,7 @@
 - (void)setCurrentDevice:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMonitoring:(bool)arg1;
+- (void)setResolved:(bool)arg1;
 - (id)shortDescription;
 - (void)startMonitoring;
 - (void)stopMonitoring;

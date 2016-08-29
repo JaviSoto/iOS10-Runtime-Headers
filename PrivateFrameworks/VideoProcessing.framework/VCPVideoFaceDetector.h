@@ -6,6 +6,10 @@
     NSMutableDictionary * _activeFaces;
     int  _angle;
     NSMutableArray * _detections;
+    int  _lastestFaceID;
+    int  _numFacesLastFrame;
+    struct Rotator { struct __CVPixelBufferPool {} *x1; int x2; int x3; int x4; struct OpaqueVTImageRotationSession {} *x5; } * _rotator;
+    VCPCNNSmileDetector * _smileDetector;
     struct { 
         long long value; 
         int timescale; 
@@ -23,12 +27,15 @@
 }
 
 + (id)faceDetectorWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 cancel:(id /* block */)arg2;
++ (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })flipTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rotateRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forAngle:(int)arg2 width:(int)arg3 height:(int)arg4;
 
 - (void).cxx_destruct;
 - (int)analyzeFrame:(struct __CVBuffer { }*)arg1 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 flags:(unsigned long long*)arg4;
+- (void)dealloc;
 - (int)detectFaces:(struct __CVBuffer { }*)arg1 faces:(id)arg2;
 - (int)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (id)init;
+- (id)initWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (float)minProcessTimeIntervalInSecs;
 - (id)results;
 

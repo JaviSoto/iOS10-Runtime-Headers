@@ -3,6 +3,7 @@
  */
 
 @interface _HDSleepReportResult : NSObject {
+    NSCalendar * _calendar;
     NSDateInterval * _dateInterval;
     NSDictionary * _inBedSamplesBySource;
 }
@@ -20,6 +21,8 @@
 @property (nonatomic, readonly) NSArray *sources;
 @property (nonatomic, readonly) bool usedAppleBedtimeAlarm;
 
++ (id)_correctedDateFromDate:(id)arg1 dateInterval:(id)arg2 calendar:(id)arg3;
+
 - (void).cxx_destruct;
 - (id)_firstAppleInBedSample;
 - (id)_lastEndDateInSampleArray:(id)arg1;
@@ -35,7 +38,7 @@
 - (id)dateInterval;
 - (id)deviceForSource:(id)arg1;
 - (id)finalWakeupForSource:(id)arg1;
-- (id)initWithDateInterval:(id)arg1 inBedSamplesBySource:(id)arg2;
+- (id)initWithDateInterval:(id)arg1 inBedSamplesBySource:(id)arg2 calendar:(id)arg3;
 - (id)sleepOnsetForSource:(id)arg1;
 - (id)sources;
 - (bool)usedAppleBedtimeAlarm;

@@ -26,6 +26,7 @@
 - (void)setRubyText:(id)arg1;
 - (int)smartFieldKind;
 - (int)styleAttributeArrayKind;
+- (bool)supportsDeepCopyForUndo;
 - (id)text;
 
 @end

@@ -31,6 +31,7 @@
 + (bool)_deleteAllMemoriesInStore:(id)arg1;
 + (bool)_deleteAllMomentsViaSQLFromStore:(id)arg1;
 + (bool)_deleteCloudSharedAndSyncedAssetReferencesInStore:(id)arg1;
++ (bool)_deleteOrphanedUnverifiedPeople:(id)arg1;
 + (bool)_deletePhotoCloudSharingMetadataInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (bool)_deletePhotoStreamAssetReferencesInStore:(id)arg1;
 + (bool)_disableICloudPhoto;
@@ -46,8 +47,13 @@
 + (bool)_fixFaceGroupUnverifiedPerson:(id)arg1;
 + (bool)_fixIncorrectAddedDateForAssetsInStore:(id)arg1;
 + (bool)_fixIncorrectRejectedFaceGroupType:(id)arg1;
++ (bool)_fixIncorrectThumbnailTables;
 + (bool)_fixItemIdentifierForVideoCmplInStore:(id)arg1;
++ (bool)_fixKeywordsInStagedStore:(id)arg1;
++ (bool)_fixLastPrefetchDateInStore:(id)arg1;
 + (bool)_fixLocalPathForVideoCmplDerivativesInStore:(id)arg1;
++ (bool)_fixLocallyAvailableFlagForThumbnailsInStore:(id)arg1;
++ (bool)_fixMemoriesWithAssetLists:(id)arg1;
 + (bool)_fixNonDuplicatedAssets:(id)arg1 adjusted:(bool)arg2;
 + (void)_fixPathForResource:(id)arg1 withPath:(id)arg2;
 + (bool)_fixPersonAndFaceGroup:(id)arg1;
@@ -56,6 +62,7 @@
 + (bool)_fixVideoDimensionsInStore:(id)arg1;
 + (bool)_fixVideoJPGPath:(id)arg1;
 + (bool)_fixVisibleBurstAsset:(id)arg1;
++ (bool)_fixZeroDurationPhotoIrisWithLocalResourcesInStore:(id)arg1 assumeAdjustedIrisIsVisible:(bool)arg2;
 + (bool)_fixupAlbumOrderInAlbumListInStore:(id)arg1;
 + (bool)_fixupAssetPersistence:(id)arg1;
 + (bool)_fixupAssetSubtypeForPhotosInStore:(id)arg1;
@@ -115,6 +122,7 @@
 + (bool)_populateUnmanagedAdjustmentsFromFileSystemInManagedObjectContext:(id)arg1;
 + (bool)_populateVideoCpFieldsInStagedStore:(id)arg1;
 + (bool)_postProcessFromVersion6006Store:(id)arg1;
++ (bool)_processDeletesForUUIDs:(id)arg1;
 + (bool)_rebuildAllMomentsInStore:(id)arg1;
 + (bool)_recoverSingleBurstPhotos:(id)arg1;
 + (bool)_refreshTriggerValues:(id)arg1;
@@ -122,6 +130,7 @@
 + (bool)_removeCameraRollInStore:(id)arg1;
 + (bool)_removeEvents:(id)arg1;
 + (void)_removeFileAt:(id)arg1 forResource:(id)arg2;
++ (bool)_removeUntrackedCloudResourceImageDerivativesInStore:(id)arg1;
 + (void)_repairCloudPlaceholderKindForVideoAsset:(id)arg1;
 + (void)_repairRootFolderFixedOrderKeysInContext:(id)arg1;
 + (bool)_repairSingletonObjectsInDatabaseForOfflineStore:(id)arg1;
@@ -137,16 +146,22 @@
 + (bool)_resetDupesAnalysisInStore:(id)arg1;
 + (bool)_resetFailedAssets:(id)arg1;
 + (bool)_resetFailedCloudMasters:(id)arg1;
++ (void)_resetICPLPrompt;
++ (bool)_resetThumbnailIndexesAndInitiateRebuildRequestIfSuccessful;
 + (bool)_resetThumbnailsAndInitiateRebuildRequestIfNeeded;
 + (bool)_resetUploadAttempts:(id)arg1;
++ (bool)_saveChangesToPhotoIrisInStore:(id)arg1 matchingPredicate:(id)arg2 countChanged:(unsigned long long*)arg3 error:(id*)arg4 changeBlock:(id /* block */)arg5;
++ (void)_setLastWelcomedDBVersion;
 + (bool)_setUserTypeOnKeyFace:(id)arg1;
 + (bool)_setupRootFolderInStore:(id)arg1;
 + (id)_sharedModelMigratorForImport;
 + (bool)_shouldConvertManagedAdjustmentsForAsset:(id)arg1;
++ (void)_shouldRepromptUserIfNeeded;
 + (id)_stagedManagedObjectModelURLWithStageVersion:(id)arg1;
 + (id)_stagedVersions;
 + (bool)_tagScreenshotsForAssetsInStore:(id)arg1;
 + (bool)_trimInvalidAlbumAssetsMappingRecords;
++ (bool)_updateKeyAssetInMemory:(id)arg1;
 + (bool)_updateKindSubtypeForPanoramaPhotosNeedsReset:(bool)arg1 inStore:(id)arg2;
 + (void)_validateCurrentModelVersionAttempt:(long long)arg1;
 + (void)_validateCurrentModelVersionFailedWithMismatchedVersion:(int)arg1;
@@ -186,7 +201,7 @@
 + (bool)markAllSceneAnalysisStatesDirtyAndClearDistanceIdentitiesInStore:(id)arg1;
 + (bool)migrateToRequiredAnalysisState:(id)arg1;
 + (bool)performFaceAnalysisResetMigrationStepWithResetLevel:(long long)arg1 store:(id)arg2;
-+ (void)postProcessFixesAfterOTARestoreForCompleteAsset:(id)arg1;
++ (void)postProcessFixesAfterOTARestoreForCompleteAsset:(id)arg1 fixAddedDate:(bool)arg2;
 + (bool)postProcessMigratedStore:(id)arg1 fromVersion:(int)arg2;
 + (bool)postProcessThumbnailsOnlyIfVersionMismatchOrMissing:(bool*)arg1;
 + (bool)processWelterweightMigrationStageOnStore:(id)arg1 fromVersion:(int)arg2 toVersion:(int)arg3 migrationContext:(id)arg4;
@@ -209,6 +224,8 @@
 - (id)_importFileSystemImportAssets:(id)arg1 forceUpdate:(bool)arg2;
 - (void)_loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
 - (id)_orderedAssetsToImportCameraRollOnly:(bool)arg1;
+- (void)_removeLegacyMemoryRelatedSnapshotDirectory;
+- (void)_removeLegacyModelInterestDatabase;
 - (id)_syncedPropertiesForAssetUUID:(id)arg1;
 - (void)cleanupModelForDataMigration;
 - (void)collectContentsOfDirectoryURL:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;

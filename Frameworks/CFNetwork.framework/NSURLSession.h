@@ -148,8 +148,6 @@
 
 + (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id /* block */)arg3;
 + (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (void)_geo_sendAttributedAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (id)_geo_sendAttributedSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 + (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared

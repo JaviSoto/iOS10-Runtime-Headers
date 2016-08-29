@@ -16,6 +16,7 @@
     NSString * _languageCodeOverride;
     double  _maximumRecognitionDuration;
     NSString * _microphoneIdentifier;
+    NSString * _offlineLanguage;
     NSString * _orthography;
     NSString * _postfixText;
     NSString * _prefixText;
@@ -45,6 +46,7 @@
 @property (nonatomic, copy) NSString *languageCodeOverride;
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, copy) NSString *microphoneIdentifier;
+@property (nonatomic, copy) NSString *offlineLanguage;
 @property (nonatomic, copy) NSString *orthography;
 @property (nonatomic, copy) NSString *postfixText;
 @property (nonatomic, copy) NSString *prefixText;
@@ -81,6 +83,7 @@
 - (id)languageCodeOverride;
 - (double)maximumRecognitionDuration;
 - (id)microphoneIdentifier;
+- (id)offlineLanguage;
 - (id)orthography;
 - (id)postfixText;
 - (id)prefixText;
@@ -102,6 +105,7 @@
 - (void)setLanguageCodeOverride:(id)arg1;
 - (void)setMaximumRecognitionDuration:(double)arg1;
 - (void)setMicrophoneIdentifier:(id)arg1;
+- (void)setOfflineLanguage:(id)arg1;
 - (void)setOrthography:(id)arg1;
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;

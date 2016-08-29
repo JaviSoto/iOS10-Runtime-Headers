@@ -74,6 +74,7 @@
 - (void)invalidateDecorationIndexPaths:(id)arg1;
 - (void)invalidateItemsAtIndexPaths:(id)arg1;
 - (void)invalidateSupplementaryIndexPaths:(id)arg1;
+- (bool)isGlobalIndexValid:(long long)arg1;
 - (bool)isLayoutLocked;
 - (id)knownDecorationElementKinds;
 - (id)knownSupplementaryElementKinds;

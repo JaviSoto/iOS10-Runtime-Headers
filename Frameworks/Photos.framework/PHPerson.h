@@ -3,6 +3,7 @@
  */
 
 @interface PHPerson : PHObject <PXFaceCollection> {
+    NSString * _displayName;
     long long  _faceCount;
     bool  _inPersonNamingModel;
     long long  _manualOrder;
@@ -14,6 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) long long faceCount;
 @property (readonly) unsigned long long hash;
 @property (getter=isInPersonNamingModel, nonatomic, readonly) bool inPersonNamingModel;
@@ -52,6 +54,7 @@
 - (void).cxx_destruct;
 - (Class)changeRequestClass;
 - (id)description;
+- (id)displayName;
 - (long long)faceCount;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (bool)isInPersonNamingModel;
@@ -62,6 +65,11 @@
 - (bool)verified;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)_px_titleStringForPeople:(id)arg1 singlePersonFallback:(id)arg2 groupFallback:(id)arg3;
++ (id)px_memoryTitleStringFromPeople:(id)arg1;
++ (id)px_slideshowTitleStringForPeople:(id)arg1;
++ (id)px_titleStringForPeople:(id)arg1;
 
 - (unsigned long long)numberOfAssets;
 - (void)requestFaceTileImageWithTargetSize:(struct CGSize { double x1; double x2; })arg1 cropFactor:(unsigned long long)arg2 round:(bool)arg3 cacheResult:(bool)arg4 completionBlock:(id /* block */)arg5;

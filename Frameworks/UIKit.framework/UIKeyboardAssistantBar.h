@@ -27,6 +27,7 @@
             double height; 
         } size; 
     }  m_splitGap;
+    bool  m_suppressAXSHairlineThickening;
     bool  m_useLargeButton;
     int  m_validateGuard;
     UIBarButtonItem * m_writeboardButton;
@@ -39,6 +40,7 @@
 + (id)activeInstance;
 + (double)assistantBarHeight;
 + (id)sharedInstance;
++ (double)sideBarWidthForOrientation:(long long)arg1;
 
 - (id)BIUGenerator;
 - (SEL)action:(int)arg1;
@@ -63,6 +65,7 @@
 - (void)didMoveToWindow;
 - (void)dimKeys:(id)arg1;
 - (bool)disabledByPrediction;
+- (bool)enableInputClicksWhenVisible;
 - (bool)enabled;
 - (void)executeAction:(int)arg1;
 - (bool)hasCustomButtons;

@@ -94,6 +94,7 @@
 - (int)keyForEmailAddress:(id)arg1;
 - (void)launchAssetsd;
 - (id)locationShiftStatus;
+- (void)markPersonAsNeedingKeyFace:(id)arg1 synchronously:(bool)arg2;
 - (bool)markStatesProcessedForWorkerType:(short)arg1 error:(id*)arg2;
 - (long long)migrateCloudFaces;
 - (id)momentAnalysisStatus;
@@ -106,7 +107,7 @@
 - (id)previewRenderedContentURLAtIndex:(unsigned long long)arg1;
 - (unsigned long long)previewRenderedContentURLCount;
 - (void)privateDownloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned long long)arg2 highPriority:(bool)arg3;
-- (void)pruneAssets:(id)arg1;
+- (void)pruneAssets:(id)arg1 resourceTypes:(id)arg2;
 - (void)purgeExpiredOutboundSharingAssets;
 - (unsigned long long)purgeableSharedAssetsSpace;
 - (void)rampingRequestForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 withCompletionHandler:(id /* block */)arg3;
@@ -153,9 +154,10 @@
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)updateLocationDataForAssetUUID:(id)arg1;
 - (void)updateModelAfterOTARestore;
-- (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
+- (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2 fixAddedDate:(bool)arg3;
 - (void)updateSharedAlbumsCachedServerConfigurationLimits;
 - (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(bool)arg2 assignNewIndex:(bool)arg3 forceRefresh:(bool)arg4;
+- (void)userViewedBulletinWithRecordID:(unsigned long long)arg1;
 - (void)waitForSearchIndexExistenceWithCompletion:(id /* block */)arg1;
 - (void)waitUntilConnectionSendsAllMessages;
 

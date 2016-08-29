@@ -20,7 +20,6 @@
 @property (nonatomic, readonly) bool isAutomatchPlayer;
 @property (nonatomic, readonly) bool isFamiliarFriend;
 @property (nonatomic) bool isFriend;
-@property (nonatomic, readonly) bool isFriendRecommendation;
 @property (nonatomic, readonly) bool isLocalPlayer;
 @property (nonatomic, readonly) bool isUnknownPlayer;
 @property (nonatomic, readonly) NSString *lastName;
@@ -56,10 +55,8 @@
 + (id)unknownPlayer;
 
 - (void)_postChangeNotification;
-- (void)acceptFriendRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)cacheKey;
 - (void)dealloc;
-- (void)declineFriendRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)description;
 - (id)displayName;
 - (id)displayNameWithOptions:(unsigned char)arg1;
@@ -77,7 +74,6 @@
 - (id)internal;
 - (bool)isEqual:(id)arg1;
 - (bool)isFamiliarFriend;
-- (bool)isFriendRecommendation;
 - (bool)isFriendablePlayer;
 - (id)lastPlayedGame;
 - (void)loadCommonFriends:(bool)arg1 asPlayersWithCompletionHandler:(id /* block */)arg2;

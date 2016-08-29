@@ -14,6 +14,7 @@
 - (void)tonePickerController:(TKTonePickerController *)arg1 requestsPresentingToneClassicsPickerForItem:(TKTonePickerItem *)arg2;
 - (void)tonePickerController:(TKTonePickerController *)arg1 selectedMediaItemWithIdentifier:(NSNumber *)arg2;
 - (NSString *)tonePickerController:(TKTonePickerController *)arg1 titleOfMediaItemAtIndex:(unsigned long long)arg2;
+- (void)tonePickerController:(TKTonePickerController *)arg1 willBeginPlaybackOfToneWithIdentifier:(NSString *)arg2;
 - (void)tonePickerControllerDidStopPlaying:(TKTonePickerController *)arg1 withFadeOutDuration:(double)arg2;
 - (void)tonePickerControllerRequestsMediaItemsRefresh:(TKTonePickerController *)arg1;
 - (void)tonePickerControllerRequestsPresentingMediaItemPicker:(TKTonePickerController *)arg1;

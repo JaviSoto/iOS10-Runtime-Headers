@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactContentViewController : UIViewController <ABContactViewDataSource, ABContactViewDelegate, CNContactActionDelegate, CNContactContentViewController, CNContactContentViewControllerDelegate, CNContactGroupPickerDelegate, CNContactHeaderViewDelegate, CNPresenterDelegate, CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
+@interface CNContactContentViewController : UIViewController <ABContactViewDataSource, ABContactViewDelegate, CNContactActionDelegate, CNContactContentViewController, CNContactContentViewControllerDelegate, CNContactGroupPickerDelegate, CNContactHeaderViewDelegate, CNContactInlineActionsViewControllerDelegate_Internal, CNPresenterDelegate, CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
     CNUIUserActionListDataSource * _actionsDataSource;
     CNContactInlineActionsViewController * _actionsViewController;
     UIView * _actionsWrapperView;
@@ -76,6 +76,7 @@
     CNUIIDSAvailabilityProvider * _idsAvailabilityProvider;
     bool  _isMailVIP;
     NSMutableArray * _issuedSaveRequestIdentifiers;
+    double  _keyboardVerticalOverlap;
     CNPropertyLinkedCardsAction * _linkedCardsAction;
     NSDictionary * _linkedPoliciesByContactIdentifier;
     CNMedicalIDAction * _medicalIDAction;
@@ -186,6 +187,7 @@
 @property (nonatomic) bool isMailVIP;
 @property (readonly) bool isPresentingModalViewController;
 @property (nonatomic, retain) NSMutableArray *issuedSaveRequestIdentifiers;
+@property (nonatomic) double keyboardVerticalOverlap;
 @property (nonatomic, retain) CNPropertyLinkedCardsAction *linkedCardsAction;
 @property (nonatomic, retain) NSDictionary *linkedPoliciesByContactIdentifier;
 @property (nonatomic, retain) CNMedicalIDAction *medicalIDAction;
@@ -315,6 +317,7 @@
 - (void)addLinkedContact:(id)arg1;
 - (id)addNewFieldAction;
 - (id)addToExistingContactAction;
+- (void)adjustInsetsForKeyboardOverlap:(double)arg1;
 - (void)adjustPreferredContentSize;
 - (bool)allowsActions;
 - (bool)allowsAddToFavorites;
@@ -357,6 +360,7 @@
 - (void)contactGroupPickerDidCancel:(id)arg1;
 - (void)contactGroupPickerDidFinish:(id)arg1 withGroup:(id)arg2;
 - (id)contactHeaderView;
+- (bool)contactInlineActionsViewController:(id)arg1 shouldPerformActionOfType:(id)arg2 withContactProperty:(id)arg3;
 - (id)contactStore;
 - (void)contactStoreDidChangeWithNotification:(id)arg1;
 - (id)contactStoreForHeaderView:(id)arg1;
@@ -374,9 +378,7 @@
 - (id)createNewContactAction;
 - (id)createReminderAction;
 - (void)createdNewContact:(id)arg1;
-- (id)currentNavigationBar;
 - (void)dealloc;
-- (bool)defaultNavigationBarVisibility;
 - (id)defaultValueForPropertyCell:(id)arg1;
 - (id)delegate;
 - (id)deleteContactAction;
@@ -421,13 +423,17 @@
 - (id)initWithContact:(id)arg1 andContactStore:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)initializeTableViewsForHeaderHeight;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForTableView:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForDisplayTableView:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForEditingTableView:(id)arg1;
 - (bool)isMailVIP;
 - (bool)isOutOfProcess;
 - (bool)isPresentingModalViewController;
 - (bool)isScrollViewControllingHeaderResizeAnimation:(id)arg1;
 - (bool)isTableViewHeaderFirstSectionIndexPath:(id)arg1;
 - (id)issuedSaveRequestIdentifiers;
+- (void)keyboardDidShowNotification:(id)arg1;
+- (double)keyboardVerticalOverlap;
+- (void)keyboardWillHideNotification:(id)arg1;
 - (id)linkedCardsAction;
 - (id)linkedPoliciesByContactIdentifier;
 - (void)loadContactViewControllerViews;
@@ -551,6 +557,7 @@
 - (void)setIdsAvailabilityProvider:(id)arg1;
 - (void)setIsMailVIP:(bool)arg1;
 - (void)setIssuedSaveRequestIdentifiers:(id)arg1;
+- (void)setKeyboardVerticalOverlap:(double)arg1;
 - (void)setLinkedCardsAction:(id)arg1;
 - (void)setLinkedPoliciesByContactIdentifier:(id)arg1;
 - (void)setMedicalIDAction:(id)arg1;
@@ -593,7 +600,6 @@
 - (id)sharedActionsDataSource;
 - (void)sharingStatusDidChange;
 - (bool)shouldDisplayAvatarHeaderView;
-- (bool)shouldNavigationBarBeVisible;
 - (bool)shouldShowLinkedContacts;
 - (bool)shouldUseExpandedContentStyle;
 - (bool)showingMeContact;
@@ -629,7 +635,6 @@
 - (unsigned long long)tableViewSectionIndexFromGroupIndex:(unsigned long long)arg1;
 - (void)toggleEditing;
 - (void)toggleEditing:(id)arg1;
-- (void)transitioningIntoNavigationController:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)updateContact:(id)arg1;
 - (void)updateContactsViewWithBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)updateDoneButton;
@@ -637,7 +642,6 @@
 - (id)updateExistingContactAction;
 - (double)updateHeaderConstraintForGlobalHeaderHeight:(double)arg1 direction:(long long)arg2 animated:(bool)arg3;
 - (void)updateHeaderHeightToMatchScrollViewState:(id)arg1 scrollDirection:(long long)arg2 animated:(bool)arg3;
-- (void)updateNavigationBar:(id)arg1 visibility:(bool)arg2 transitionCoordinator:(id)arg3;
 - (void)updateTableView:(id)arg1 insetsTo:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)updateUserActivityState:(id)arg1;
 - (void)updateViewConstraints;

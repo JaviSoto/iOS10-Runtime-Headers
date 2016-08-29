@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (void)_handleMonitorUpdateWithProgress:(double)arg1;
 - (unsigned long long)_homeAndPlusCount:(unsigned long long)arg1;
-- (bool)_homeMeetsThreshold;
+- (bool)_homeMeetsThresholdForProgress:(double)arg1;
 - (bool)_progressComplete:(double)arg1;
 - (void)_updateProgress;
 - (void)_updateStatusForProgress:(double)arg1 processCount:(unsigned long long)arg2;

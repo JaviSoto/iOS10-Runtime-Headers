@@ -8,7 +8,7 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property <SFActivityScannerDelegate> *delegate;
+@property (readonly) <SFActivityScannerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (retain) NSUUID *identifier;
@@ -16,7 +16,6 @@
 
 - (void).cxx_destruct;
 - (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 withCompletionHandler:(id /* block */)arg4;
-- (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)identifier;
@@ -27,8 +26,6 @@
 - (void)scanManager:(id)arg1 lostDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 pairedDevicesChanged:(id)arg2;
 - (void)scanManager:(id)arg1 receivedAdvertisement:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)setForceScanningEnabled:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 
 @end

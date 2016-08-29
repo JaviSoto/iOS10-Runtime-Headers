@@ -13,7 +13,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *knobView;
-@property (nonatomic, readonly) HUQuickControlSwitchViewProfile *profile;
+@property (nonatomic, copy) HUQuickControlSwitchViewProfile *profile;
+@property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;
 @property (nonatomic) double switchValue;
@@ -26,6 +27,7 @@
 - (void)layoutSubviews;
 - (id)profile;
 - (void)setKnobView:(id)arg1;
+- (void)setProfile:(id)arg1;
 - (void)setSwitchValue:(double)arg1;
 - (void)setValue:(id)arg1;
 - (void)setWellView:(id)arg1;

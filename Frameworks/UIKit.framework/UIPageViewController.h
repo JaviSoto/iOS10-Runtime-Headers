@@ -157,7 +157,7 @@
 - (void)_setViewControllersStashedForRotation:(id)arg1;
 - (bool)_shouldBeginNavigationInDirection:(long long*)arg1 inResponseToPanGestureRecognizer:(id)arg2;
 - (bool)_shouldCompleteManualCurlWithSuggestedVelocity:(double*)arg1;
-- (bool)_shouldFlipInRTL;
+- (bool)_shouldFlipInRightToLeft;
 - (bool)_shouldNavigateInDirection:(long long*)arg1 inResponseToTapGestureRecognizer:(id)arg2;
 - (bool)_shouldNavigateInDirection:(long long*)arg1 inResponseToVelocity:(double*)arg2 ofGestureRecognizedByPanGestureRecognizer:(id)arg3;
 - (bool)_shouldPersistViewWhenCoding;

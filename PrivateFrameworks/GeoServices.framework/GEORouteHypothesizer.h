@@ -3,7 +3,6 @@
  */
 
 @interface GEORouteHypothesizer : NSObject {
-    NSString * _activityIdentifier;
     NSError * _currentError;
     GEORouteHypothesis * _currentHypothesis;
     NSObject<OS_dispatch_source> * _delayDispatchTimer;
@@ -29,8 +28,9 @@
 
 - (void)_delayStartingWithXpc;
 - (void)_delayStartingWithoutXpc;
-- (void)_performDelayedStartWithIdentifier:(const char *)arg1;
+- (void)_performDelayedStart;
 - (bool)_wontHypothesizeAgain;
+- (void)cancelDelayDispatchTimer;
 - (id)currentError;
 - (id)currentHypothesis;
 - (void)dealloc;

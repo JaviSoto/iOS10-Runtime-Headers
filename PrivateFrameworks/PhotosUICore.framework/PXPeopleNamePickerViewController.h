@@ -25,6 +25,7 @@
 - (void)_setupNavigationBarForEditing:(bool)arg1 animated:(bool)arg2;
 - (bool)_shouldPresentResultsInPopover;
 - (void)_showResultsView;
+- (double)_titleViewMaxWidthForEditing:(bool)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)appBackgroundedNotificationObserver;
 - (void)dealloc;

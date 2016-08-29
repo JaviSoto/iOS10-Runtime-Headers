@@ -22,6 +22,7 @@
     NSMutableArray * _attributions;
     NSString * _batchReverseGeocoderURL;
     NSString * _businessPortalBaseURL;
+    GEODataSetDescription * _dataSet;
     NSString * _directionsURL;
     NSString * _dispatcherURL;
     NSString * _etaURL;
@@ -83,6 +84,7 @@
 @property (nonatomic, retain) NSMutableArray *attributions;
 @property (nonatomic, retain) NSString *batchReverseGeocoderURL;
 @property (nonatomic, retain) NSString *businessPortalBaseURL;
+@property (nonatomic, retain) GEODataSetDescription *dataSet;
 @property (nonatomic, retain) NSString *directionsURL;
 @property (nonatomic, retain) NSString *dispatcherURL;
 @property (nonatomic, retain) NSString *etaURL;
@@ -94,6 +96,7 @@
 @property (nonatomic, readonly) bool hasAnnouncementsURL;
 @property (nonatomic, readonly) bool hasBatchReverseGeocoderURL;
 @property (nonatomic, readonly) bool hasBusinessPortalBaseURL;
+@property (nonatomic, readonly) bool hasDataSet;
 @property (nonatomic, readonly) bool hasDirectionsURL;
 @property (nonatomic, readonly) bool hasDispatcherURL;
 @property (nonatomic, readonly) bool hasEtaURL;
@@ -252,6 +255,7 @@
 - (void)clearXmls;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dataSet;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -270,6 +274,7 @@
 - (bool)hasAnnouncementsURL;
 - (bool)hasBatchReverseGeocoderURL;
 - (bool)hasBusinessPortalBaseURL;
+- (bool)hasDataSet;
 - (bool)hasDirectionsURL;
 - (bool)hasDispatcherURL;
 - (bool)hasEtaURL;
@@ -357,6 +362,7 @@
 - (void)setAttributions:(id)arg1;
 - (void)setBatchReverseGeocoderURL:(id)arg1;
 - (void)setBusinessPortalBaseURL:(id)arg1;
+- (void)setDataSet:(id)arg1;
 - (void)setDirectionsURL:(id)arg1;
 - (void)setDispatcherURL:(id)arg1;
 - (void)setEtaURL:(id)arg1;

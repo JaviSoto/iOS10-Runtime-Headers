@@ -8,6 +8,7 @@
     double  _duration;
     QLTransitionContext * _quickLookTransitionContext;
     bool  _showing;
+    id /* block */  _startTransitionBlock;
     UIView * _transitionBackgroundView;
     <UIViewControllerContextTransitioning> * _transitionContext;
     id  _transitionDriver;
@@ -29,6 +30,8 @@
 - (void).cxx_destruct;
 - (void)_completeBackgroundTransition:(bool)arg1;
 - (void)_completeOverlayTransition:(bool)arg1;
+- (void)_performStartBlockIfNeeded;
+- (void)_performTransition;
 - (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; })_requiredVisualStateTransitions;
 - (void)_updateBackgroundTransitionWithProgress:(double)arg1;
 - (void)_updateOverlayTransitionWithProgress:(double)arg1;
@@ -45,7 +48,7 @@
 - (void)setQuickLookTransitionContext:(id)arg1;
 - (void)setShowing:(bool)arg1;
 - (void)setTransitionContext:(id)arg1;
-- (void)setUpWithTransitionContext:(id)arg1;
+- (void)setUpWithTransitionContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)showing;
 - (void)tearDownTransition:(bool)arg1;
 - (id)transitionContext;

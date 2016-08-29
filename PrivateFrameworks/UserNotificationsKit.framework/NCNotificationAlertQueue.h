@@ -10,7 +10,7 @@
     NCNotificationStore * _store;
 }
 
-@property (nonatomic) NCNotificationRequest *coalescingRequest;
+@property (nonatomic, retain) NCNotificationRequest *coalescingRequest;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationDestinationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -26,19 +26,25 @@
 - (bool)_performDestinationOperationForRequest:(id)arg1 block:(id /* block */)arg2;
 - (void)_postEnqueuedNotificationRequestsCoalescingWith:(id)arg1;
 - (void)_postNextNotificationRequest;
+- (void)_postNextNotificationRequestPassingTest:(id /* block */)arg1;
 - (bool)_postNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
+- (void)_prepareDestinationsToReceiveCriticalNotificationRequest:(id)arg1;
 - (bool)_readyToReceiveForNotificationRequest:(id)arg1;
 - (bool)canReceiveNotificationRequest:(id)arg1;
 - (id)coalescingRequest;
 - (id)debugInfoPlist;
 - (id)delegate;
 - (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsCoalescedWith:(id)arg2;
+- (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsPassingTest:(id /* block */)arg2;
 - (void)destination:(id)arg1 didDismissNotificationRequest:(id)arg2;
 - (void)destination:(id)arg1 didPresentNotificationRequest:(id)arg2;
-- (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4;
+- (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
+- (void)destination:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
 - (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
+- (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
 - (void)destination:(id)arg1 willDismissNotificationRequest:(id)arg2;
 - (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2 suppressAlerts:(bool)arg3;
 - (void)destinationDidBecomeReadyToReceiveNotifications:(id)arg1;
 - (id)destinationsForRequestDestinations:(id)arg1;
 - (id)destinationsRegistry;
@@ -60,6 +66,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
+- (void)unregisterDestination:(id)arg1;
 - (void)updateNotificationSectionSettings:(id)arg1;
 - (void)withdrawNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 

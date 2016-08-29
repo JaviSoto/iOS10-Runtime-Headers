@@ -26,16 +26,11 @@
 + (unsigned long long)updateMode;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_fittingFrameForHeaderFooterView:(id)arg1;
 - (id)_itemForTextField:(id)arg1;
-- (id)_itemTableFooterMessageView;
-- (id)_itemTableFooterView;
-- (id)_itemTableHeaderMessageView;
-- (id)_itemTableHeaderView;
 - (bool)_shouldHideFooterForSection:(long long)arg1;
 - (bool)_shouldHideHeaderForSection:(long long)arg1;
 - (void)_updateLayoutMarginsForCells:(id)arg1;
-- (void)_updateTableHeaderAndFooters;
+- (void)_updateTableHeaderAndFooter;
 - (void)_updateTitle;
 - (id)_visibleCellForItem:(id)arg1;
 - (id)allCellClasses;
@@ -75,7 +70,8 @@
 - (void)setItemManager:(id)arg1;
 - (void)setWantsPreferredContentSize:(bool)arg1;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
-- (bool)shouldHideHeadersAndFootersAroundSection:(long long)arg1;
+- (bool)shouldHideFooterBelowSection:(long long)arg1;
+- (bool)shouldHideHeaderAboveSection:(long long)arg1;
 - (bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
 - (bool)shouldManageTextFieldForItem:(id)arg1;
 - (id)subclass_preloadContent;
@@ -104,8 +100,10 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (bool)wantsPreferredContentSize;
 

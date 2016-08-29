@@ -5,11 +5,8 @@
 @interface HUWallpaperPhotoCollectionViewController : UICollectionViewController <PHPhotoLibraryChangeObserver> {
     long long  _assetCollectionSubtype;
     PHFetchResult * _assetsFetchResult;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _cellSize;
     <HUWallpaperPhotoCollectionViewControllerDelegate> * _delegate;
+    HUWallpaperPhotoCollectionFlowLayout * _flowLayout;
     NAFuture * _imageDownloadFuture;
     PHCachingImageManager * _imageManager;
     bool  _initialScrollToBottom;
@@ -17,10 +14,10 @@
 
 @property (nonatomic, readonly) long long assetCollectionSubtype;
 @property (nonatomic, retain) PHFetchResult *assetsFetchResult;
-@property (nonatomic) struct CGSize { double x1; double x2; } cellSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HUWallpaperPhotoCollectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) HUWallpaperPhotoCollectionFlowLayout *flowLayout;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NAFuture *imageDownloadFuture;
 @property (nonatomic, retain) PHCachingImageManager *imageManager;
@@ -30,14 +27,13 @@
 - (void).cxx_destruct;
 - (long long)assetCollectionSubtype;
 - (id)assetsFetchResult;
-- (struct CGSize { double x1; double x2; })cellSize;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
-- (id)flowLayoutWithAssetCollectionSubtype:(long long)arg1 fetchResult:(id)arg2;
+- (id)flowLayout;
 - (id)imageDownloadFuture;
 - (id)imageFutureForAsset:(id)arg1 cloudAllowed:(bool)arg2;
 - (id)imageManager;
@@ -45,7 +41,7 @@
 - (bool)initialScrollToBottom;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)setAssetsFetchResult:(id)arg1;
-- (void)setCellSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFlowLayout:(id)arg1;
 - (void)setImageDownloadFuture:(id)arg1;
 - (void)setImageManager:(id)arg1;
 - (void)setInitialScrollToBottom:(bool)arg1;

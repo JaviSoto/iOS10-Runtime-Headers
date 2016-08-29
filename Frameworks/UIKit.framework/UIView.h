@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIView : UIResponder <CALayerDelegate, MKInfoCardThemeListener, MKStackingViewControllerSizableView, NSCoding, NSISEngineDelegate, NSISVariableDelegate, SearchUIAutoLayoutItem, UIAppearance, UIAppearanceContainer, UICoordinateSpace, UIDynamicItem, UIFocusContainer, UIFocusItem, UITextEffectsOrdering, UITraitEnvironment, _UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, _UIFocusRegionContainerInternal, _UIGeometryChangeObserver, _UILayoutItem, _UILegacyFocusRegion, _UIMultilineTextContentSizing, _UIScrollNotification, _UITraitEnvironmentInternal> {
+@interface UIView : UIResponder <CALayerDelegate, MFPopoverPresentationSource, MKInfoCardThemeListener, MKStackingViewControllerSizableView, NSCoding, NSISEngineDelegate, NSISVariableDelegate, SearchUIAutoLayoutItem, UIAppearance, UIAppearanceContainer, UICoordinateSpace, UIDynamicItem, UIFocusContainer, UIFocusItem, UITextEffectsOrdering, UITraitEnvironment, _UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, _UIFocusRegionContainerInternal, _UIGeometryChangeObserver, _UILayoutItem, _UILegacyFocusRegion, _UIMultilineTextContentSizing, _UIScrollNotification, _UITraitEnvironmentInternal> {
     long long  __preferedContentsFormat;
     UIPresentationController * __presentationControllerToNotifyOnLayoutSubviews;
     NSString * _backgroundColorSystemColorName;
@@ -46,7 +46,7 @@
     long long  _retainCount;
     long long  _semanticContentAttribute;
     bool  _shouldArchiveUIAppearanceTags;
-    NSMutableSet * _stashedLayoutVariableObservations;
+    NSMapTable * _stashedLayoutVariableObservations;
     NSArray * _subviewCache;
     long long  _tag;
     UIView * _templateLayoutView;
@@ -111,6 +111,7 @@
         unsigned int isUpdatingConstraints : 1; 
         unsigned int isHostingUpdateConstraintsPassDuringLayout : 1; 
         unsigned int isRunningEngineLevelConstraintsPass : 1; 
+        unsigned int isUpdatingLayoutEngineHostConstraints : 1; 
         unsigned int isUnsatisfiableConstraintsLoggingSuspended : 1; 
         unsigned int isExpectingToFlushPendingLayoutChangeNotifications : 1; 
         unsigned int systemLayoutFittingSizeNeedsUpdate : 1; 
@@ -226,11 +227,11 @@
 @property (setter=_setRawLayoutMargins:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _rawLayoutMargins;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } _sensitivitySize;
 @property (nonatomic, readonly) bool _sf_hasLandscapeAspectRatio;
-@property (nonatomic, readonly) bool _sf_isFullScreenSized;
+@property (nonatomic, readonly) bool _sf_isFullScreenWidth;
 @property (nonatomic, readonly) bool _sf_usesLeftToRightLayout;
 @property (setter=_setShouldArchiveUIAppearanceTags:, nonatomic) bool _shouldArchiveUIAppearanceTags;
 @property (nonatomic, readonly) bool _shouldReverseLayoutDirection;
-@property (nonatomic, readonly) NSMutableSet *_stashedLayoutVariableObservations;
+@property (nonatomic, readonly) NSMapTable *_stashedLayoutVariableObservations;
 @property (setter=_setTemplateLayoutView:, nonatomic, retain) UIView *_templateLayoutView;
 @property (nonatomic, readonly) _UITouchForceObservable *_touchForceObservable;
 @property (setter=_setTracksFocusedAncestors:, nonatomic) bool _tracksFocusedAncestors;
@@ -279,12 +280,14 @@
 @property (setter=music_setLayoutInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } music_layoutInsets;
 @property (setter=naui_setDynamicFontTextStyleDescriptor:, nonatomic, retain) NAUITextStyleDescriptor *naui_dynamicFontTextStyleDescriptor;
 @property (getter=_parentFocusEnvironment, nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
+@property (getter=_parentFocusRegionContainer, nonatomic, readonly) <_UIFocusRegionContainerInternal> *parentFocusRegionContainer;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (getter=_preferredFocusMovementStyle, nonatomic, readonly) long long preferredFocusMovementStyle;
 @property (nonatomic, readonly) <UIFocusContainer> *preferredFocusedItem;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (nonatomic, retain) UIStoryboardPreviewingSegueTemplateStorage *previewingSegueTemplateStorage;
 @property (nonatomic, readonly) bool pu_hasHiddenAncestor;
+@property (nonatomic, readonly) double px_screenScale;
 @property (setter=px_setSpec:, nonatomic, retain) PXViewSpec *px_spec;
 @property (setter=rc_setAutoUpdatingTextStyle:, nonatomic) NSString *rc_autoUpdatingTextStyle;
 @property (setter=rc_setCharge:, nonatomic) float rc_charge;
@@ -398,6 +401,7 @@
 + (bool)_shouldEnableUIKitDefaultParallaxEffects;
 + (id)_startAnimationTracking;
 + (void)_stopAnimationWithUUID:(id)arg1;
++ (void)_testIfFirstView:(id)arg1 secondView:(id)arg2 areDescendantsOfView:(id)arg3 results:(bool)arg4;
 + (id)_tintColorForStyle:(int)arg1;
 + (bool)_tintColorUpdating;
 + (bool)_toolsDebugAlignmentRects;
@@ -470,7 +474,6 @@
 
 - (void).cxx_destruct;
 - (bool)_UIViewDebuggingIsViewClipping;
-- (void)__NUIhack_setHidden:(bool)arg1;
 - (id)__darkSystemColorForColor:(id)arg1;
 - (void)__updateContentsFormatForLayer:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessoryViewFrame;
@@ -493,6 +496,7 @@
 - (id)_allLayoutEngines;
 - (bool)_allowsArchivingAsSubview;
 - (bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
+- (bool)_allowsLinkPreviewInteractionInViewServices;
 - (bool)_alwaysHandleInteractionEvents;
 - (bool)_alwaysHandleScrollerMouseEvent;
 - (bool)_ancestorDefinesTintAdjustmentMode;
@@ -546,7 +550,7 @@
 - (id)_boundsWidthVariable;
 - (bool)_cachedTraitCollectionIsValid;
 - (double)_calculatedIntrinsicHeight;
-- (struct CGSize { double x1; double x2; })_calculatedSystemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(bool*)arg4;
+- (struct CGSize { double x1; double x2; })_calculatedSystemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(bool*)arg4 shouldFlush:(bool)arg5;
 - (bool)_canBeParentTraitEnvironment;
 - (bool)_canBeReusedInPickerView;
 - (bool)_canBecomeFirstResponderWhenPossible;
@@ -563,7 +567,7 @@
 - (void)_clearAnimationFilters;
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (void)_clearBecomeFirstResponderWhenCapableOnSubtree;
-- (void)_clearLayoutVariableObservations;
+- (void)_clearLayoutVariableObservationsOnlyToSupportTAMICChange:(bool)arg1;
 - (int)_clipCorners;
 - (int)_clipCornersOfView:(id)arg1;
 - (id)_clippedViewHierarchyDescription;
@@ -876,6 +880,7 @@
 - (bool)_overridesTraitCollectionDidChange;
 - (id)_parallaxMotionEffect;
 - (id)_parentFocusEnvironment;
+- (id)_parentFocusRegionContainer;
 - (void)_parentalLayoutEngineDidChangeTo:(id)arg1;
 - (long long)_pendingHiddenCount;
 - (void)_performUpdatesForPossibleChangesOfIdiom:(long long)arg1 orScreen:(id)arg2 traverseHierarchy:(bool)arg3;
@@ -916,6 +921,7 @@
 - (id)_recursiveAutolayoutTraceAtLevel:(long long)arg1;
 - (void)_recursiveCollectTemporaryInternalConstraintsWithEngine:(id)arg1 ignoreAutoresizingMaskConstraints:(bool)arg2 returningConstraintsForViewsNeedingSecondPass:(id*)arg3;
 - (id)_recursiveConstraintsTraceAtLevel:(long long)arg1;
+- (void)_recursiveInvalidateDescendantsNeedingDoubleUpdateConstraints;
 - (id)_recursiveLayoutEngineDescription;
 - (void)_recursiveUpdateConstraintsIfNeededCollectingViews:(id)arg1 forSecondPass:(bool)arg2;
 - (void)_recursivelyConsiderResumingMotionEffects;
@@ -1091,11 +1097,13 @@
 - (bool)_shouldUseKeyboardBackground;
 - (unsigned long long)_speedBumpEdges;
 - (void)_startGesture:(int)arg1 event:(struct __GSEvent { }*)arg2;
+- (void)_startObservingVariablesOnlyToSupportTAMICChange:(bool)arg1;
 - (bool)_startRotationFromEvent:(struct __GSEvent { }*)arg1;
 - (bool)_startZoomFromEvent:(struct __GSEvent { }*)arg1;
 - (id)_stashedLayoutVariableObservations;
 - (id)_stashedLayoutVariableObservationsCreateIfNecessary;
 - (void)_stopGesture:(int)arg1 event:(struct __GSEvent { }*)arg2;
+- (void)_stopObservingVariablesOnlyToSupportTAMICChange:(bool)arg1;
 - (void)_stopRotationFromEvent:(struct __GSEvent { }*)arg1;
 - (void)_stopZoomFromEvent:(struct __GSEvent { }*)arg1;
 - (bool)_strictDescendantNeedsDoubleUpdateConstraints;
@@ -1116,7 +1124,6 @@
 - (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(bool*)arg4;
 - (id)_templateLayoutView;
-- (void)_testIsDescendantForFirstView:(id)arg1 secondView:(id)arg2 isDecendantResults:(bool)arg3;
 - (double)_textButtonMargin;
 - (id)_tintColorArchivingKey;
 - (long long)_topToBottomLeftToRightViewCompare:(id)arg1;
@@ -1136,9 +1143,12 @@
 - (id)_uiib_layoutEngineCreatingIfNecessary;
 - (void)_uiib_setHostsLayoutEngine:(bool)arg1;
 - (bool)_uiib_tryToAddConstraint:(id)arg1 roundingAdjustment:(double)arg2 mutuallyExclusiveConstraints:(id*)arg3;
+- (id)_uili_existingBaseFrameVariables;
 - (id)_uili_existingLayoutVariables;
-- (void)_uili_removeLayoutVariableObservations;
-- (void)_uili_stashLayoutVariableObservation:(id)arg1;
+- (id)_uili_observableLayoutEngineForBaseFrameVariables:(bool)arg1;
+- (void)_uili_removeLayoutVariableObservationsOnlyToSupportTAMICChange:(bool)arg1;
+- (bool)_uili_requiresObservationForVariable:(id)arg1;
+- (void)_uili_stashLayoutVariableObservation:(id)arg1 forVariable:(id)arg2;
 - (bool)_unapplyMotionEffect:(id)arg1;
 - (id)_undimmedTintColor;
 - (void)_unregisterAllMotionEffects;
@@ -1152,7 +1162,9 @@
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (void)_updateConstraintsAsNecessaryAndApplyLayoutFromEngine;
 - (void)_updateConstraintsAtEngineLevelIfNeeded;
+- (void)_updateConstraintsAtEngineLevelIfNeededPostponeVariableChangeNotifications:(bool)arg1;
 - (void)_updateConstraintsIfNeededCollectingViews:(id)arg1 forSecondPass:(bool)arg2;
+- (void)_updateConstraintsIfNeededPostponeVariableChangeNotifications:(bool)arg1;
 - (void)_updateContentSizeConstraints;
 - (void)_updateDirectionalConstraintsIfNeeded;
 - (void)_updateInferredLayoutMargins;
@@ -1166,6 +1178,7 @@
 - (bool)_useContentDimensionVariablesForConstraintLowering;
 - (long long)_userInterfaceIdiom;
 - (bool)_usesAutoresizingConstraints;
+- (bool)_usesHostedLayoutEngineForFittingSizeCalculation;
 - (bool)_usesLayoutEngineHostingConstraints;
 - (void)_validateLayoutHashHasChangedWithLayoutTime:(double)arg1;
 - (id)_variantOfColor:(id)arg1 forKey:(const void*)arg2 withCreationBlock:(id /* block */)arg3;
@@ -1487,6 +1500,7 @@
 - (void)setGestureDelegate:(id)arg1;
 - (void)setGestureRecognizers:(id)arg1;
 - (void)setGesturesEnabled:(bool)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setInteractionTintColor:(id)arg1;
 - (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLayoutMarginsFollowReadableWidth:(bool)arg1;
@@ -1590,7 +1604,6 @@
 - (id)visualState;
 - (bool)wantsDeepColorDrawing;
 - (id)widthAnchor;
-- (void)willDrawLayer:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willRemoveSubview:(id)arg1;
@@ -1660,6 +1673,7 @@
 - (double)mf_currentScreenScale;
 - (id)mf_enclosingScrollView;
 - (id)mf_frontSibling;
+- (void)mf_setAsSourceForPopoverPresentationController:(id)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
@@ -1689,6 +1703,7 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pu_convertTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 fromView:(id)arg2;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pu_convertTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 toView:(id)arg2;
 - (bool)pu_hasHiddenAncestor;
+- (void)pu_removeAllGeometryAnimationsRecursively:(bool)arg1;
 - (void)pu_setCenterAndBoundsForFrameRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 // Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
@@ -1705,7 +1720,7 @@
 
 - (double)_sf_convertY:(double)arg1 toCoordinateSpace:(id)arg2;
 - (bool)_sf_hasLandscapeAspectRatio;
-- (bool)_sf_isFullScreenSized;
+- (bool)_sf_isFullScreenWidth;
 - (bool)_sf_usesLeftToRightLayout;
 - (void)ss_setUntransformedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })ss_untransformedFrame;
@@ -1818,6 +1833,10 @@
 - (void)cam_ensureSubview:(id)arg1;
 - (bool)cam_isOnScreen:(id)arg1;
 - (bool)cam_isOnScreen:(id)arg1;
+- (bool)cam_isPoint:(struct CGPoint { double x1; double x2; })arg1 withinBoundsWithPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (bool)cam_isPoint:(struct CGPoint { double x1; double x2; })arg1 withinBoundsWithPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 checkVisibility:(bool)arg3 recursive:(bool)arg4;
+- (void)cam_removeAnimationForKey:(id)arg1 setToCurrentPresentationValue:(bool)arg2;
+- (void)cam_removeAnimationsForKeys:(id)arg1 setToCurrentPresentationValues:(bool)arg2;
 - (void)cam_rotateWithInterfaceOrientation:(long long)arg1 animated:(bool)arg2;
 - (void)cam_setBorder;
 - (void)cam_setBorderColor:(id)arg1;
@@ -1936,6 +1955,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
+- (void)hu_autoSizeByConstrainingWidth:(double)arg1;
 - (struct CGPoint { double x1; double x2; })hu_centerInGlobalCoordinateSpace;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hu_frameInGlobalCoordinateSpace;
 - (void)hu_traverseViewHierarchy:(id /* block */)arg1;
@@ -2087,6 +2107,8 @@
 
 - (void)px_animateAlpha:(bool)arg1 transformType:(long long)arg2 withZoomTransitionContext:(id)arg3;
 - (void)px_animateWithZoomTransitionContext:(id)arg1;
+- (void)px_enumerateDescendantSubviewsWithBlock:(id /* block */)arg1;
+- (double)px_screenScale;
 - (void)px_setSpec:(id)arg1;
 - (id)px_spec;
 - (void)px_transferToSuperview:(id)arg1 forZoomTransitionWithContex:(id)arg2;
@@ -2105,12 +2127,15 @@
 
 // Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
 
++ (bool)isDebugBoundingBoxesEnabled;
 + (void)load;
 
+- (void)_beginObservingSubviewVisibility:(id)arg1;
+- (void)_endObservingSubviewVisibility:(id)arg1;
 - (void)_notifySubviewVisibilityChanged:(id)arg1;
 - (id)containerView;
 - (bool)isContainedByItem:(id)arg1;
-- (void)setHidden:(bool)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)view;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI

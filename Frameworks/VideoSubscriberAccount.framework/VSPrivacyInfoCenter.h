@@ -5,21 +5,27 @@
 @interface VSPrivacyInfoCenter : NSObject {
     unsigned long long  _privacyAccessStatus;
     VSPrivacyFacade * _privacyFacade;
+    int  _registrationToken;
 }
 
 @property (nonatomic, readonly) long long accountAccessStatus;
 @property (nonatomic) unsigned long long privacyAccessStatus;
 @property (nonatomic, retain) VSPrivacyFacade *privacyFacade;
+@property (nonatomic) int registrationToken;
 
 + (id)sharedPrivacyInfoCenter;
 
 - (void).cxx_destruct;
+- (void)_invalidateAccountAccessStatus;
 - (long long)accountAccessStatus;
+- (void)dealloc;
 - (id)init;
 - (unsigned long long)privacyAccessStatus;
 - (id)privacyFacade;
+- (int)registrationToken;
 - (void)setPrivacyAccessStatus:(unsigned long long)arg1;
 - (void)setPrivacyFacade:(id)arg1;
+- (void)setRegistrationToken:(int)arg1;
 - (id)updateAccountAccessStatusWithError:(id)arg1;
 - (void)updateAccountAccessStatusWithResponse:(id)arg1;
 

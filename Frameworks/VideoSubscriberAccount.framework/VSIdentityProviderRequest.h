@@ -30,6 +30,7 @@
 - (id)accountMetadataRequest;
 - (id)accountStore;
 - (bool)allowsUI;
+- (id)description;
 - (bool)forceAuthentication;
 - (id)init;
 - (id)requestingAppDisplayName;

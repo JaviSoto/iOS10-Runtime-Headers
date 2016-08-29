@@ -19,8 +19,13 @@
 - (void)didRerouteWithDetails:(MNActiveRouteDetails *)arg1 withLocationDetails:(MNLocationDetails *)arg2;
 - (void)didSignalAlightForStepAtIndex:(unsigned long long)arg1;
 - (void)didStartSpeakingPrompt:(NSString *)arg1;
+- (void)didStartUsingVoiceLanguage:(NSString *)arg1;
 - (void)didSwitchToNewTransportType:(int)arg1 newRoute:(MNActiveRouteDetails *)arg2;
 - (void)didUpdateActiveRouteDetails:(MNActiveRouteDetails *)arg1;
+- (void)didUpdateAudioOutputCurrentSetting:(MNAudioOutputSetting *)arg1;
+- (void)didUpdateAudioOutputCurrentSettingForVoicePrompt:(MNAudioOutputSetting *)arg1;
+- (void)didUpdateAudioOutputRouteSelection:(unsigned long long)arg1;
+- (void)didUpdateAudioOutputSettings:(NSData *)arg1;
 - (void)didUpdateDistanceUntilManeuver:(double)arg1 timeUntilManeuver:(double)arg2 forStepIndex:(unsigned long long)arg3;
 - (void)didUpdateDistanceUntilSign:(double)arg1 timeUntilSign:(double)arg2 forStepIndex:(unsigned long long)arg3;
 - (void)didUpdateFeedback:(GEOAlightNotificationFeedback *)arg1 forAlightingStepAtIndex:(unsigned long long)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentPassDetailViewController : PKSectionTableViewController <MFMailComposeViewControllerDelegate, PKPassHeaderViewDelegate, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PSStateRestoration, UITableViewDataSource, UITableViewDelegate> {
+@interface PKPaymentPassDetailViewController : PKSectionTableViewController <MFMailComposeViewControllerDelegate, PKPassHeaderViewDelegate, PKPaymentDataProviderDelegate, PKPaymentSetupDelegate, PKPaymentVerificationControllerDelegate, PSStateRestoration, UITableViewDataSource, UITableViewDelegate> {
     PKPaymentPassDetailActivationFooterView * _activationFooter;
     NSArray * _allPaymentApplications;
     PKSettingTableCell * _automaticPresentationSwitch;
@@ -29,7 +29,6 @@
     bool  _navigationControllerHidesShadow;
     NSNumberFormatter * _numberFormatter;
     PKPaymentPass * _pass;
-    bool  _passDeletionInProgress;
     PKPassHeaderView * _passHeaderView;
     <PKPassLibraryDataProvider> * _passLibraryDataProvider;
     NSArray * _paymentApplications;
@@ -75,13 +74,12 @@
 - (id)_createTabBarWithSelectedIndex:(long long)arg1;
 - (id)_defaultCellWithTextColor:(id)arg1 forTableView:(id)arg2;
 - (id)_deleteCardCellForTableView:(id)arg1;
-- (unsigned long long)_deleteSectionCellWithOutput:(id*)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (id)_deviceAccountNumberCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_didSelectBillingAddress;
 - (void)_didSelectContactBankSection;
 - (void)_didSelectDeleteCard;
-- (void)_didSelectDeleteSectionAtRow:(long long)arg1;
+- (void)_didSelectPassOperationsSectionAtIndexPath:(id)arg1;
 - (void)_didSelectPassStateSection;
 - (void)_didSelectPaymentApplicationSectionRowAtIndexPath:(id)arg1;
 - (void)_didSelectPrivacySectionAtRow:(long long)arg1;
@@ -96,7 +94,7 @@
 - (id)_headerTitleForPassStateSection;
 - (double)_heightForPassStateSectionWithTableView:(id)arg1;
 - (id)_infoCellWithDescription:(id)arg1 forTableView:(id)arg2;
-- (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 forTableView:(id)arg3;
+- (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(long long)arg3 forTableView:(id)arg4;
 - (id)_linkCellWithText:(id)arg1 forTableView:(id)arg2;
 - (id)_linkedAppCellForTableView:(id)arg1;
 - (id)_linkedApplicationCellForTableView:(id)arg1;
@@ -104,6 +102,7 @@
 - (void)_messagesSwitchChanged:(id)arg1;
 - (id)_moreTransactionsCellForTableView:(id)arg1;
 - (void)_openIssuerWebsite;
+- (unsigned long long)_passOperationsCellWithOutput:(id*)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (void)_passSettingsChanged:(id)arg1;
 - (unsigned long long)_passStateSectionGenerateCellWithOutput:(id*)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (id)_paymentApplicationsCellForIndexPath:(id)arg1 tableView:(id)arg2;
@@ -128,9 +127,11 @@
 - (id)_transactionsSwitchCellForTableView:(id)arg1;
 - (void)_transactionsSwitchChanged:(id)arg1;
 - (bool)_updateHeaderHeight;
+- (void)_updatePassProperties;
 - (void)_updateTabBar;
 - (void)_updateTabBarWithSegments:(id)arg1;
 - (void)_updateTransactionsWithPendingTransactions;
+- (void)_updateVisibilityAndReloadIfNecessaryForSection:(unsigned long long)arg1;
 - (bool)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (id)deleteOverrider;
@@ -147,6 +148,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
+- (void)paymentSetupDidFinish:(id)arg1;
 - (bool)pkui_prefersNavigationBarShadowHidden;
 - (void)presentVerificationViewController:(id)arg1 animated:(bool)arg2;
 - (id)primaryTextColor;

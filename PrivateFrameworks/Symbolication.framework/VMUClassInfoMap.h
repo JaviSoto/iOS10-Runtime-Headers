@@ -16,6 +16,8 @@
 
 + (void)_claimUnarchivingOfClass:(id)arg1;
 + (void)_destroyRetainedLinearArray:(id*)arg1 withCount:(unsigned int)arg2;
++ (void)disableTestingVersion;
++ (void)enableTestingVersion;
 + (void)initialize;
 + (bool)supportsSecureCoding;
 

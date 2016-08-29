@@ -81,6 +81,7 @@
 - (void)_handleRetryAfterRegisterWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleRetryAfterTSMSyncForPushTopic:(id)arg1 withRequest:(id)arg2 taskIdentifier:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (bool)_hasConfiguration;
+- (bool)_isSandboxAccount;
 - (id)_movePassToDownloadCache:(id)arg1;
 - (unsigned long long)_nextTaskID;
 - (void)_passWithData:(id)arg1 response:(id)arg2 error:(id)arg3 completion:(id /* block */)arg4;
@@ -89,7 +90,7 @@
 - (void)_performRequest:(id)arg1 taskIdentifier:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)_performRequest:(id)arg1 taskIdentifier:(unsigned long long)arg2 retries:(unsigned long long)arg3 authHandling:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (unsigned long long)_performRewrapRequest:(id)arg1 responseHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
-- (void)_performVerificationRequest:(id)arg1 paymentPass:(id)arg2 taskID:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (void)_performVerificationRequest:(id)arg1 selectedChannel:(id)arg2 paymentPass:(id)arg3 taskID:(unsigned long long)arg4 completion:(id /* block */)arg5;
 - (id)_primaryAppleAccount;
 - (id)_reencryptPayload:(id)arg1 forRegion:(id)arg2;
 - (void)_removeVerificationRequestRecord:(id)arg1;
@@ -137,6 +138,7 @@
 - (unsigned long long)networkManifestWithCompletion:(id /* block */)arg1;
 - (unsigned long long)passAtURL:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2 completion:(id /* block */)arg3;
+- (unsigned long long)paymentProvisioningNonceWithCompletion:(id /* block */)arg1;
 - (int)paymentSetupSupportedInRegion;
 - (id)primaryBrokerURL;
 - (unsigned long long)provisionForRequest:(id)arg1 completion:(id /* block */)arg2;

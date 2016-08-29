@@ -13,6 +13,7 @@
             double height; 
         } size; 
     }  _cachedFrame;
+    struct CGPath { } * _cachedPath;
     AXElement * _cachedRemoteParent;
     AXElement * _cachedRemoteParentForContextID;
     struct CGRect { 
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) AXElement *autoscrollTarget;
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cachedFrame;
+@property (nonatomic, retain) struct CGPath { }*cachedPath;
 @property (nonatomic, retain) AXElement *cachedRemoteParent;
 @property (nonatomic, retain) AXElement *cachedRemoteParentForContextID;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cachedVisibleFrame;
@@ -56,6 +58,7 @@
 @property (nonatomic, readonly) AXElement *firstElementInApplication;
 @property (nonatomic, readonly) AXElement *firstElementInApplicationForFocus;
 @property (nonatomic, readonly) AXElement *firstResponder;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } focusableFrameForZoom;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (nonatomic, readonly) bool hasTextEntry;
 @property (nonatomic, readonly) bool hasVariantKeys;
@@ -72,6 +75,7 @@
 @property (nonatomic, readonly) bool isScannerElement;
 @property (nonatomic, readonly) bool isScreenLocked;
 @property (nonatomic, readonly) bool isSpringBoard;
+@property (nonatomic, readonly) bool isSystemApplication;
 @property (nonatomic, readonly) bool isSystemWideElement;
 @property (nonatomic, readonly) bool isTouchContainer;
 @property (nonatomic, readonly) bool isValid;
@@ -89,6 +93,7 @@
 @property (nonatomic, readonly) AXElement *remoteParent;
 @property (nonatomic, readonly) bool representsScannerGroup;
 @property (nonatomic, readonly) int scannerActivateBehavior;
+@property (nonatomic, readonly) int scanningBehaviorTraits;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } selectedTextRange;
 @property (nonatomic, readonly) NSDictionary *semanticContext;
 @property (nonatomic, readonly) NSArray *siriContentElementsWithSemanticContext;
@@ -135,6 +140,7 @@
 - (id)autoscrollTarget;
 - (id)bundleId;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cachedFrame;
+- (struct CGPath { }*)cachedPath;
 - (id)cachedRemoteParent;
 - (id)cachedRemoteParentForContextID;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cachedVisibleFrame;
@@ -148,6 +154,7 @@
 - (id)children;
 - (void)clearCachedFrame:(bool)arg1 cachedVisibleFrame:(bool)arg2;
 - (id)containerTypes;
+- (struct CGPath { }*)convertPath:(struct CGPath { }*)arg1 fromContextId:(unsigned int)arg2;
 - (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromContextId:(unsigned int)arg2;
 - (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toContextId:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromContextId:(unsigned int)arg2;
@@ -171,6 +178,7 @@
 - (id)firstElementInApplicationForFocus;
 - (id)firstResponder;
 - (id)firstResponderForFocus;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })focusableFrameForZoom;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (bool)hasAllTraits:(unsigned long long)arg1;
 - (bool)hasAnyTraits:(unsigned long long)arg1;
@@ -200,6 +208,7 @@
 - (bool)isScannerElement;
 - (bool)isScreenLocked;
 - (bool)isSpringBoard;
+- (bool)isSystemApplication;
 - (bool)isSystemWideElement;
 - (bool)isTouchContainer;
 - (bool)isValid;
@@ -243,6 +252,7 @@
 - (id)remoteParent;
 - (bool)representsScannerGroup;
 - (int)scannerActivateBehavior;
+- (int)scanningBehaviorTraits;
 - (struct __AXUIElement { }*)scrollAncestorForScrollAction:(int)arg1;
 - (void)scrollToBottom;
 - (void)scrollToTop;
@@ -253,6 +263,7 @@
 - (void)setAssistiveTechFocused:(bool)arg1;
 - (void)setAutoscrollTarget:(id)arg1;
 - (void)setCachedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCachedPath:(struct CGPath { }*)arg1;
 - (void)setCachedRemoteParent:(id)arg1;
 - (void)setCachedRemoteParentForContextID:(id)arg1;
 - (void)setCachedVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

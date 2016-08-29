@@ -13,6 +13,7 @@
 + (id)autoCommentPrefix;
 + (id)comment:(id)arg1 withInsertedAutoCommentForDate:(id)arg2;
 + (id)sharedGenerator;
++ (bool)stringHasAutoCommentPrefix:(id)arg1;
 + (id)stringWithAutoCommentRemoved:(id)arg1;
 + (id)stringWithOnlyAutoComment:(id)arg1;
 

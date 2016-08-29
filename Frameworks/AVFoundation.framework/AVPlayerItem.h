@@ -36,11 +36,14 @@
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (struct OpaqueCMTimebase { }*)_copyTimebaseFromFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
++ (int)_createFigPlaybackItemForFigPlayer:(struct OpaqueFigPlayer { }*)arg1 asset:(id)arg2 URL:(id)arg3 flags:(unsigned int)arg4 playbackItem:(struct OpaqueFigPlaybackItem {}**)arg5;
 + (bool)_forNonStreamingURLsFireKVOForAssetWhenReadyForInspection;
 + (bool)_forStreamingItemsVendAssetWithFigPlaybackItem;
 + (bool)_hasOverrideForSelector:(SEL)arg1;
 + (id)_initializeProtectedContentPlaybackSupportSessionAsynchronouslyForProvider:(id)arg1 withOptions:(id)arg2;
 + (void)_uninitializeProtectedContentPlaybackSupportSession:(id)arg1;
++ (bool)automaticallyNotifiesObserversOfAllowProgressiveResume;
++ (bool)automaticallyNotifiesObserversOfAllowProgressiveStartup;
 + (bool)automaticallyNotifiesObserversOfAllowProgressiveSwitchUp;
 + (bool)automaticallyNotifiesObserversOfAsset;
 + (bool)automaticallyNotifiesObserversOfHasEnabledAudio;
@@ -123,6 +126,7 @@
 - (bool)_getCachedPresentationSize:(struct CGSize { double x1; double x2; }*)arg1;
 - (bool)_hasEnabledAudio;
 - (bool)_hasEnabledVideo;
+- (bool)_hasEnqueuedVideoFrame;
 - (bool)_hasSelectionInCachedMediaSelectionGroup:(id)arg1;
 - (void)_informObserversAboutAvailabilityOfDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_informObserversAboutAvailabilityOfPresentationSize;
@@ -267,6 +271,8 @@
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
 - (void)addOutput:(id)arg1;
 - (bool)aggressivelyCachesVideoFrames;
+- (bool)allowProgressiveResume;
+- (bool)allowProgressiveStartup;
 - (bool)allowProgressiveSwitchUp;
 - (bool)allowsExtendedReadAhead;
 - (bool)alwaysMonitorsPlayability;
@@ -320,6 +326,7 @@
 - (bool)isPlaybackBufferFull;
 - (bool)isPlaybackLikelyToKeepUp;
 - (bool)limitReadAhead;
+- (double)liveUpdateInterval;
 - (id)loadedTimeRanges;
 - (float)maximumBitRate;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumForwardBufferDuration;
@@ -359,6 +366,8 @@
 - (id)serviceIdentifier;
 - (void)setAVKitData:(id)arg1;
 - (void)setAggressivelyCachesVideoFrames:(bool)arg1;
+- (void)setAllowProgressiveResume:(bool)arg1;
+- (void)setAllowProgressiveStartup:(bool)arg1;
 - (void)setAllowProgressiveSwitchUp:(bool)arg1;
 - (void)setAllowsExtendedReadAhead:(bool)arg1;
 - (void)setAlwaysMonitorsPlayability:(bool)arg1;

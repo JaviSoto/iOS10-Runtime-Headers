@@ -16,6 +16,8 @@
     NSArray * _endOfArticleTopicIDs;
     NSString * _excerpt;
     bool  _featureCandidate;
+    unsigned long long  _feedOrder;
+    double  _globalUserFeedback;
     bool  _hasThumbnail;
     NSURL * _headlineURL;
     NSArray * _iAdCategories;
@@ -23,7 +25,6 @@
     NSArray * _iAdSectionIDs;
     NSString * _identifier;
     bool  _isDraft;
-    bool  _isPaid;
     struct CGSize { 
         double width; 
         double height; 
@@ -31,9 +32,10 @@
     NSDate * _lastFetchedDate;
     NSDate * _lastModifiedDate;
     NSString * _localDraftPath;
-    NSString * _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSArray * _moreFromPublisherArticleIDs;
     bool  _needsRapidUpdates;
+    bool  _paid;
     double  _personalizedScore;
     NSString * _primaryAudience;
     NSDate * _publishDate;
@@ -84,6 +86,7 @@
 @property (nonatomic, readonly, copy) NSArray *allowedStorefrontIDs;
 @property (nonatomic, readonly) unsigned long long articleContentType;
 @property (nonatomic, copy) NSString *articleID;
+@property (nonatomic, readonly) unsigned long long articleRecordModificationDateMilliseconds;
 @property (nonatomic, readonly) unsigned long long backendArticleVersion;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
 @property (nonatomic, readonly, copy) NSString *clusterID;
@@ -95,9 +98,14 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *endOfArticleTopicIDs;
 @property (nonatomic, copy) NSString *excerpt;
+@property (getter=isExplicitContent, nonatomic, readonly) bool explicitContent;
 @property (getter=isFeatureCandidate, nonatomic, readonly) bool featureCandidate;
 @property (nonatomic, readonly) long long feedElementType;
-@property (nonatomic, readonly) double globalUserFeedback;
+@property (nonatomic, readonly) unsigned long long feedHalfLifeMilliseconds;
+@property (nonatomic, readonly, copy) NSString *feedID;
+@property (nonatomic) unsigned long long feedOrder;
+@property (getter=isFromBlockedStorefront, nonatomic, readonly) bool fromBlockedStorefront;
+@property (nonatomic) double globalUserFeedback;
 @property (nonatomic, readonly) unsigned long long halfLife;
 @property (nonatomic, readonly) bool hasGlobalUserFeedback;
 @property (nonatomic, readonly) bool hasThumbnail;
@@ -109,16 +117,18 @@
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) bool isBlockedExplicitContent;
 @property (nonatomic, readonly) bool isDraft;
-@property (nonatomic, readonly) bool isPaid;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } largestThumbnailSize;
 @property (nonatomic, readonly, copy) NSDate *lastFetchedDate;
 @property (nonatomic, readonly, copy) NSDate *lastModifiedDate;
 @property (nonatomic, readonly, copy) NSString *localDraftPath;
-@property (nonatomic, readonly, copy) NSString *minimumNewsVersion;
+@property (nonatomic, readonly) long long minimumNewsVersion;
 @property (nonatomic, readonly, copy) NSArray *moreFromPublisherArticleIDs;
 @property (nonatomic, readonly) bool needsRapidUpdates;
+@property (nonatomic, readonly) unsigned long long order;
+@property (getter=isPaid, nonatomic, readonly) bool paid;
 @property (nonatomic, readonly, copy) NSString *primaryAudience;
 @property (nonatomic, copy) NSDate *publishDate;
+@property (nonatomic, readonly) unsigned long long publishDateMilliseconds;
 @property (nonatomic, readonly) unsigned long long publisherArticleVersion;
 @property (nonatomic, readonly, copy) NSString *publisherID;
 @property (nonatomic, readonly, copy) NSString *referencedArticleID;
@@ -126,6 +136,7 @@
 @property (nonatomic, copy) NSString *shortExcerpt;
 @property (nonatomic) bool showSubscriptionRequiredText;
 @property (nonatomic, copy) NSObject<FCChannelProviding> *sourceChannel;
+@property (nonatomic, readonly, copy) NSString *sourceChannelID;
 @property (nonatomic, readonly, copy) NSString *sourceFeedID;
 @property (nonatomic, copy) NSString *sourceName;
 @property (getter=isSponsored, nonatomic, readonly) bool sponsored;
@@ -162,6 +173,7 @@
 - (id)allowedStorefrontIDs;
 - (unsigned long long)articleContentType;
 - (id)articleID;
+- (unsigned long long)articleRecordModificationDateMilliseconds;
 - (unsigned long long)backendArticleVersion;
 - (id)blockedStorefrontIDs;
 - (id)clusterID;
@@ -174,6 +186,9 @@
 - (id)endOfArticleTopicIDs;
 - (id)excerpt;
 - (long long)feedElementType;
+- (unsigned long long)feedHalfLifeMilliseconds;
+- (id)feedID;
+- (unsigned long long)feedOrder;
 - (double)globalUserFeedback;
 - (unsigned long long)halfLife;
 - (bool)hasGlobalUserFeedback;
@@ -188,7 +203,9 @@
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isEqual:(id)arg1;
+- (bool)isExplicitContent;
 - (bool)isFeatureCandidate;
+- (bool)isFromBlockedStorefront;
 - (bool)isGap;
 - (bool)isPaid;
 - (bool)isSponsored;
@@ -197,11 +214,13 @@
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
 - (id)localDraftPath;
-- (id)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)moreFromPublisherArticleIDs;
 - (bool)needsRapidUpdates;
+- (unsigned long long)order;
 - (id)primaryAudience;
 - (id)publishDate;
+- (unsigned long long)publishDateMilliseconds;
 - (unsigned long long)publisherArticleVersion;
 - (id)publisherID;
 - (id)referencedArticleID;
@@ -210,6 +229,8 @@
 - (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(bool)arg1;
 - (void)setExcerpt:(id)arg1;
+- (void)setFeedOrder:(unsigned long long)arg1;
+- (void)setGlobalUserFeedback:(double)arg1;
 - (void)setHeadlineURL:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPublishDate:(id)arg1;
@@ -230,6 +251,7 @@
 - (id)shortExcerpt;
 - (bool)showSubscriptionRequiredText;
 - (id)sourceChannel;
+- (id)sourceChannelID;
 - (id)sourceFeedID;
 - (id)sourceName;
 - (id)storyStyle;

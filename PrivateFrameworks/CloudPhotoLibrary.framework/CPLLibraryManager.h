@@ -79,6 +79,7 @@
 - (void)beginInMemoryDownloadOfResource:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)beginPullChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)beginPushChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)checkHasBackgroundDownloadOperationsWithCompletionHandler:(id /* block */)arg1;
 - (id)clientLibraryBaseURL;
 - (void)closeWithCompletionHandler:(id /* block */)arg1;
 - (void)cloudCacheGetDescriptionForRecordWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;

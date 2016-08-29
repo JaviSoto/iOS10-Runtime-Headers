@@ -19,6 +19,7 @@
     id /* block */  _showMoreAlternativeTimesTapped;
     id /* block */  _showPreviewOfEventAtTime;
     id /* block */  _tableViewCellHook;
+    NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, retain) NSArray *alternativeTimes;
@@ -45,6 +46,7 @@
 @property (nonatomic, copy) id /* block */ showPreviewOfEventAtTime;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ tableViewCellHook;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
 - (id)_alternativeTimeAtIndex:(long long)arg1;
@@ -103,9 +105,11 @@
 - (void)setShowMoreAlternativeTimesTapped:(id /* block */)arg1;
 - (void)setShowPreviewOfEventAtTime:(id /* block */)arg1;
 - (void)setTableViewCellHook:(id /* block */)arg1;
+- (void)setTimeZone:(id)arg1;
 - (id /* block */)showMoreAlternativeTimesTapped;
 - (id /* block */)showPreviewOfEventAtTime;
 - (id /* block */)tableViewCellHook;
+- (id)timeZone;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
 
 @end

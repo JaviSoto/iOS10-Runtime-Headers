@@ -19,6 +19,7 @@
     <_UIKeyboardTextSelectionGestureControllerDelegate> * _delegate;
     bool  _didFloatCursor;
     bool  _didSuppressSelectionGrabbers;
+    _UISystemSoundPlayer * _feedbackBehaviour;
     bool  _isLongPressing;
     bool  _isPanning;
     struct CGPoint { 
@@ -46,6 +47,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didFloatCursor;
 @property (nonatomic) bool didSuppressSelectionGrabbers;
+@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehaviour;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isLongPressing;
 @property (nonatomic) bool isPanning;
@@ -74,6 +76,8 @@
 - (void)_granularityExpandingGestureWithTimeInterval:(double)arg1 timeGranularity:(double)arg2 isMidPan:(bool)arg3;
 - (void)_logTapCounts:(id)arg1;
 - (void)_longForcePressDetected:(id)arg1;
+- (void)_prepareForGesture;
+- (void)_tidyUpGesture;
 - (void)_willBeginIndirectSelectionGesture:(id)arg1;
 - (struct CGPoint { double x1; double x2; })acceleratedTranslation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2 final:(bool)arg3;
 - (struct CGPoint { double x1; double x2; })accumulatedAcceleration;
@@ -111,6 +115,7 @@
 - (void)endOneFingerSelectWithExecutionContext:(id)arg1;
 - (void)endTwoFingerLongPressWithExecutionContext:(id)arg1;
 - (void)endTwoFingerPanWithExecutionContext:(id)arg1;
+- (id)feedbackBehaviour;
 - (void)finishTwoFingerLongPressWithExecutionContext:(id)arg1;
 - (bool)forceTouchGestureRecognizerShouldBegin:(id)arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -147,6 +152,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidFloatCursor:(bool)arg1;
 - (void)setDidSuppressSelectionGrabbers:(bool)arg1;
+- (void)setFeedbackBehaviour:(id)arg1;
 - (void)setIsLongPressing:(bool)arg1;
 - (void)setIsPanning:(bool)arg1;
 - (void)setLastPanTranslation:(struct CGPoint { double x1; double x2; })arg1;

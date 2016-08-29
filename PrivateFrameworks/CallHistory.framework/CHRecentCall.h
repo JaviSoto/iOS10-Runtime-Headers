@@ -27,6 +27,7 @@
     NSString * _devicePhoneId;
     NSNumber * _disconnectedCause;
     double  _duration;
+    long long  _handleType;
     NSString * _isoCountryCode;
     long long  _mediaType;
     NSString * _mobileCountryCode;
@@ -65,6 +66,7 @@
 @property (copy) NSString *devicePhoneId;
 @property (copy) NSNumber *disconnectedCause;
 @property double duration;
+@property (nonatomic) long long handleType;
 @property (copy) NSString *isoCountryCode;
 @property (nonatomic) long long mediaType;
 @property (copy) NSString *mobileCountryCode;
@@ -79,6 +81,7 @@
 @property unsigned long long unreadCount;
 
 + (id)callCategoryAsString:(unsigned int)arg1;
++ (id)callHandleTypeAsString:(long long)arg1;
 + (id)callMediaTypeAsString:(long long)arg1;
 + (id)callStatusAsString:(unsigned int)arg1;
 + (id)callTTYTypeAsString:(long long)arg1;
@@ -87,6 +90,7 @@
 + (unsigned int)categoryForMediaType:(long long)arg1 andTTYType:(long long)arg2;
 + (unsigned int)getCallTypeForCategory:(unsigned int)arg1 andServiceProvider:(id)arg2;
 + (id)getLocationForCallerId:(id)arg1 andIsoCountryCode:(id)arg2;
++ (long long)handleTypeForCallerId:(id)arg1;
 + (long long)mediaTypeForCallCategory:(unsigned int)arg1;
 + (id)serviceProviderForCallType:(unsigned int)arg1;
 + (bool)supportsSecureCoding;
@@ -149,6 +153,8 @@
 - (void)fixCallTypeInfo;
 - (id)getLocalizedStringSync:(id)arg1;
 - (void)handleCurrentLocaleDidChangeNotification:(id)arg1;
+- (long long)handleType;
+- (long long)handleTypeSync;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithQueue:(id)arg1;
@@ -192,6 +198,7 @@
 - (void)setDevicePhoneId:(id)arg1;
 - (void)setDisconnectedCause:(id)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setHandleType:(long long)arg1;
 - (void)setIsoCountryCode:(id)arg1;
 - (void)setMediaType:(long long)arg1;
 - (void)setMobileCountryCode:(id)arg1;

@@ -35,6 +35,7 @@
 - (void)clearProtectionDataForRecord;
 - (void)fetchSharePCSData;
 - (bool)haveAddedOwnerToShare;
+- (bool)isCloudDocsContainer;
 - (bool)isShare;
 - (void)noteSideEffectRecordAbsent:(id)arg1;
 - (void)noteSideEffectRecordPendingDelete:(id)arg1;

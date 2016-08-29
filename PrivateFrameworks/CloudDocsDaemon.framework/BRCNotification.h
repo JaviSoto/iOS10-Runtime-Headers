@@ -11,7 +11,6 @@
     bool  _isInTrashScope;
     BRCItemID * _itemID;
     unsigned long long  _oldParentFileID;
-    unsigned long long  _parentFileID;
     BRCItemID * _parentID;
     NSSet * _parentIDs;
     NSString * _unsaltedBookmarkData;
@@ -26,7 +25,6 @@
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) unsigned long long oldParentFileID;
 @property (nonatomic, readonly) BRFileObjectID *oldParentFileObjectID;
-@property (nonatomic, readonly) unsigned long long parentFileID;
 @property (nonatomic, readonly) BRFileObjectID *parentFileObjectID;
 @property (nonatomic, readonly) BRCItemID *parentID;
 @property (nonatomic, retain) NSSet *parentIDs;
@@ -56,7 +54,6 @@
 - (id)notificationByStrippingSharingInfoIfNeeded;
 - (unsigned long long)oldParentFileID;
 - (id)oldParentFileObjectID;
-- (unsigned long long)parentFileID;
 - (id)parentFileObjectID;
 - (id)parentID;
 - (id)parentIDs;

@@ -3,19 +3,13 @@
  */
 
 @interface CKDPCodeFunctionInvokeResponse : PBCodable <NSCopying> {
-    NSMutableArray * _recordResults;
     NSData * _serializedResult;
 }
 
 @property (nonatomic, readonly) bool hasSerializedResult;
-@property (nonatomic, retain) NSMutableArray *recordResults;
 @property (nonatomic, retain) NSData *serializedResult;
 
-+ (Class)recordResultsType;
-
 - (void).cxx_destruct;
-- (void)addRecordResults:(id)arg1;
-- (void)clearRecordResults;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -25,11 +19,7 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (id)recordResults;
-- (id)recordResultsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)recordResultsCount;
 - (id)serializedResult;
-- (void)setRecordResults:(id)arg1;
 - (void)setSerializedResult:(id)arg1;
 - (void)writeTo:(id)arg1;
 

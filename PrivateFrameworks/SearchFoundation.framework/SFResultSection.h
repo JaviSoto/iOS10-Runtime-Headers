@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSArray *results;
 @property (nonatomic, copy) NSString *title;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -41,5 +43,9 @@
 - (void)setResults:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/Search.framework/Search
+
+- (id)objectForFeedback;
 
 @end

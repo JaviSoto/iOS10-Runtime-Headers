@@ -59,6 +59,7 @@
 - (void)_preflightRecordsInFetchOperation:(id)arg1;
 - (void)_preflightRecordsInModifyOperation:(id)arg1;
 - (void)_preflightRecordsInQueryOperation:(id)arg1;
+- (void)_preflightRecordsInRecordZoneChangesOperation:(id)arg1;
 - (id)_serverRecord:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (void)clearCloudKitCaches;
@@ -73,6 +74,9 @@
 - (void)deleteRecordsWithIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteSubscriptionWithID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchAllSubscriptionsWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchChangesForRecordZoneID:(id)arg1 changeToken:(id)arg2 desiredKeys:(id)arg3 fetchAllChanges:(bool)arg4 qualityOfService:(long long)arg5 completionHandler:(id /* block */)arg6;
+- (void)fetchChangesForRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2 fetchAllChanges:(bool)arg3 qualityOfService:(long long)arg4 completionHandler:(id /* block */)arg5;
+- (void)fetchDatabaseChangesWithServerChangeToken:(id)arg1 fetchAllChanges:(bool)arg2 qualityOfService:(long long)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)fetchRecordWithID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchRecordWithID:(id)arg1 desiredKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchRecordZoneWithID:(id)arg1 completionHandler:(id /* block */)arg2;

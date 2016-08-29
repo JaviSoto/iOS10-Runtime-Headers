@@ -23,6 +23,7 @@
     HAPAccessory * _primaryAccessory;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     bool  _reachable;
+    bool  _securitySessionOpen;
 }
 
 @property (nonatomic, copy) NSArray *accessories;
@@ -47,6 +48,7 @@
 @property (nonatomic, retain) HAPAccessory *primaryAccessory;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (getter=isReachable, nonatomic) bool reachable;
+@property (getter=isSecuritySessionOpen) bool securitySessionOpen;
 
 + (bool)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
 
@@ -77,6 +79,7 @@
 - (bool)isIncompatibleUpdate;
 - (bool)isPaired;
 - (bool)isReachable;
+- (bool)isSecuritySessionOpen;
 - (id)keyStore;
 - (long long)linkType;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -106,6 +109,7 @@
 - (void)setPairSetupPassword:(id)arg1;
 - (void)setPrimaryAccessory:(id)arg1;
 - (void)setReachable:(bool)arg1;
+- (void)setSecuritySessionOpen:(bool)arg1;
 - (void)setTheBridgeDelegate:(id)arg1;
 - (void)startPairing;
 - (bool)stopPairingWithError:(id*)arg1;

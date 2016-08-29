@@ -67,6 +67,7 @@
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1 existingFetchResult:(id)arg2;
 - (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3;
 - (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3 existingFetchResults:(id)arg4;
+- (void)setSessionInfo:(id)arg1;
 - (void)setupScrubber;
 - (bool)shouldShowSectionHeaders;
 - (void)updateLayoutMetrics;

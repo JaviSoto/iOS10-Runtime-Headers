@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) unsigned long long paletteColor;
 
++ (id)__orderedValues;
 + (id)_localizedNameForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
 + (id)_orderedValuesRestrictedByCurrentDeviceCollection;

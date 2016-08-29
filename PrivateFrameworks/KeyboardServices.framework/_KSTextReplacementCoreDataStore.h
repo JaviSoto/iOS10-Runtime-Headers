@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)cleanup;
 - (void)dealloc;
-- (void)deleteTextReplacementsFromLocalStoreWithNames:(id)arg1;
+- (void)deleteTextReplacementsFromLocalStoreWithNames:(id)arg1 excludeSavesToCloud:(bool)arg2;
 - (void)deleteTextReplacementsWithPredicate:(id)arg1;
 - (bool)didMakeInitialPull;
 - (id)directoryPath;

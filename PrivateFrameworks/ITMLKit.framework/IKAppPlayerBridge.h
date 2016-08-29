@@ -11,6 +11,9 @@
     NSString * _featureName;
     bool  _interactiveOverlayDismissable;
     IKJSPlayer * _jsPlayer;
+    NSArray * _observedMetadataKeys;
+    NSMutableSet * _observedTimeBoundaries;
+    NSMutableSet * _observedTimeIntervals;
     long long  _state;
 }
 

@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic, readonly) NSString *associatedChatItemGUID;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } associatedMessageRange;
 @property (nonatomic, readonly) bool failed;
 @property (nonatomic, readonly) struct IMAssociatedMessageGeometryDescriptor { unsigned long long x1; unsigned long long x2; float x3; float x4; float x5; float x6; float x7; } geometryDescriptor;
 @property (nonatomic, readonly) NSString *guid;
@@ -19,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)IMAssociatedMessageChatItem;
 - (id)associatedChatItemGUID;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })associatedMessageRange;
 - (bool)failed;
 - (struct IMAssociatedMessageGeometryDescriptor { unsigned long long x1; unsigned long long x2; float x3; float x4; float x5; float x6; float x7; })geometryDescriptor;
 - (id)guid;

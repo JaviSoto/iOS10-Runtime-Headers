@@ -14,8 +14,10 @@
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
++ (id)_newArchiveForScalarObjectIDs:(id)arg1;
 + (bool)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (id)unarchivedScalarObjectIDsFromData:(id)arg1 withCoordinator:(id)arg2;
 + (long long)version;
 
 - (id)URIRepresentation;
@@ -31,6 +33,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
+- (id)entityName;
 - (id)initWithCoder:(id)arg1;
 - (bool)isTemporaryID;
 - (id)persistentStore;

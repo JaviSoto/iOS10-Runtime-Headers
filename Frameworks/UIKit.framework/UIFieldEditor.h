@@ -10,6 +10,12 @@
         double y; 
     }  _autoscrollContentOffset;
     _UIFieldEditorContentView * _contentView;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentViewFontInsets;
     double  _contentWidth;
     struct { 
         unsigned int delegateRespondsToFieldEditorDidChange : 1; 
@@ -88,11 +94,11 @@
 - (void)_deleteBackwardAndNotify:(bool)arg1;
 - (bool)_hasDictationPlaceholder;
 - (id)_inputController;
+- (void)_invalidateAfterObscuredRangeChange;
 - (bool)_isPasscodeStyle;
 - (id)_layoutManager;
 - (void)_obscureAllText;
 - (void)_performWhileSuppressingDelegateNotifications:(id /* block */)arg1;
-- (void)_removeBaselineOffsetFromDefaultAttributes;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_responderExternalTouchRectForWindow:(id)arg1;
 - (id)_responderForBecomeFirstResponder;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 animated:(bool)arg2;

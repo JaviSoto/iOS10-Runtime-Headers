@@ -3,16 +3,20 @@
  */
 
 @interface HMHomeManager : NSObject <HMFMessageReceiver, HMMutableApplicationData> {
+    bool  _accessAllowedWhenLocked;
     HMApplicationData * _applicationData;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMHome * _currentHome;
     HMThreadSafeMutableArrayCollection * _currentHomes;
     bool  _dataSyncInProgress;
+    unsigned long long  _dataSyncState;
     <HMHomeManagerDelegate> * _delegate;
     HMDelegateCaller * _delegateCaller;
     bool  _didUpdateHomes;
     bool  _fetchInProgress;
     unsigned long long  _generationCounter;
+    NSString * _homeCache;
+    NSString * _homeCacheDir;
     HMThreadSafeMutableArrayCollection * _homeInvitations;
     _HMLocationHandler * _locationHandler;
     NSOperationQueue * _mergeOperationQueue;
@@ -22,17 +26,20 @@
     HMHome * _primaryHome;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     bool  _residentEnabledForThisDevice;
+    unsigned long long  _residentProvisioningStatus;
     bool  _thisDeviceResidentCapable;
     NSUUID * _uuid;
     bool  _viewServiceActive;
     HMXpcClient * _xpcClient;
 }
 
+@property (getter=isAccessAllowedWhenLocked) bool accessAllowedWhenLocked;
 @property (nonatomic, readonly) HMApplicationData *applicationData;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic, retain) HMHome *currentHome;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentHomes;
 @property (getter=isDataSyncInProgress, nonatomic) bool dataSyncInProgress;
+@property (nonatomic) unsigned long long dataSyncState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMHomeManagerDelegate> *delegate;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
@@ -41,6 +48,8 @@
 @property (nonatomic) bool fetchInProgress;
 @property (nonatomic) unsigned long long generationCounter;
 @property (readonly) unsigned long long hash;
+@property (retain) NSString *homeCache;
+@property (retain) NSString *homeCacheDir;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *homeInvitations;
 @property (nonatomic, readonly, copy) NSArray *homes;
 @property (nonatomic, readonly) _HMLocationHandler *locationHandler;
@@ -53,6 +62,7 @@
 @property (nonatomic, retain) HMHome *primaryHome;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (getter=isResidentEnabledForThisDevice) bool residentEnabledForThisDevice;
+@property unsigned long long residentProvisioningStatus;
 @property (readonly) Class superclass;
 @property (getter=isThisDeviceResidentCapable) bool thisDeviceResidentCapable;
 @property (nonatomic, retain) NSUUID *uuid;
@@ -61,19 +71,25 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
++ (bool)dataSyncInProgressFromDataSyncState:(unsigned long long)arg1;
+
 - (void).cxx_destruct;
 - (void)_acceptInvitation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_addHomeWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_checkEventValidity:(id)arg1 completion:(id /* block */)arg2;
 - (void)_declineInvitation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_deleteDuetEvents:(id)arg1 completion:(id /* block */)arg2;
+- (void)_determineCacheDirectory;
+- (void)_determineCacheFile;
+- (void)_dumpCache:(id)arg1;
 - (void)_dumpState:(id)arg1 payload:(id)arg2 completion:(id /* block */)arg3;
 - (void)_eraseHomeDataAndDeleteMetadata:(bool)arg1 completionHandler:(id /* block */)arg2;
-- (void)_fetchHomeConfiguration;
-- (void)_fetchHomeConfigurationWithPrivacyCheck;
+- (void)_fetchHomeConfigurationWithCache:(bool)arg1 refreshRequested:(bool)arg2;
+- (void)_fetchHomeConfigurationWithPrivacyCheckWithCache:(bool)arg1 refreshRequested:(bool)arg2;
+- (void)_handleAccessAllowedWhenLockedUpdatedNotification:(id)arg1;
 - (void)_handleAppDataUpdatedNotification:(id)arg1;
 - (void)_handleCurrentHomeChangedNotification:(id)arg1;
-- (void)_handleDataSyncInProgressKeyChangedNotification:(id)arg1;
+- (void)_handleDataStateChangedChangedNotification:(id)arg1;
 - (void)_handleHomeAddedNotification:(id)arg1;
 - (void)_handleHomeRemovedNotification:(id)arg1;
 - (void)_handleHomesDidUpdateNotification:(id)arg1;
@@ -82,30 +98,38 @@
 - (void)_handleQueryHomeKitUsageStateResponse:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleResidentDeviceCapableUpdatedNotification:(id)arg1;
 - (void)_handleResidentEnabledForThisDeviceUpdatedNotification:(id)arg1;
+- (void)_handleResidentProvisioningStatusChanged:(id)arg1;
 - (void)_handleUserInvitationsUpdatedNotification:(id)arg1;
 - (id)_homeWithUUID:(id)arg1;
+- (bool)_isValidCachedHomeConfiguration:(id)arg1;
 - (void)_logAppViewEvent:(id)arg1 name:(id)arg2 uuid:(id)arg3 information:(id)arg4 completion:(id /* block */)arg5;
 - (void)_logControl:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_mergeCurrentAppDataWithNewAppData:(id)arg1 operations:(id)arg2;
 - (void)_mergeCurrentHomeInvitationsWithNewHomeInvitations:(id)arg1 operations:(id)arg2;
-- (void)_mergeCurrentHomesWithNewHomes:(id)arg1 newPrimaryHome:(id)arg2 newCurrentHome:(id)arg3 newInvitations:(id)arg4 newAppData:(id)arg5;
+- (void)_mergeCurrentHomesWithNewHomes:(id)arg1 newPrimaryHome:(id)arg2 newCurrentHome:(id)arg3 newInvitations:(id)arg4 newAppData:(id)arg5 refreshRequested:(bool)arg6;
+- (void)_notifyAccessAllowedWhenLockedUpdated:(bool)arg1;
 - (void)_notifyDelegateOfAppDataUpdate;
-- (void)_primaryAccountDidChange:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_notifyResidentProvisioningStatus:(unsigned long long)arg1;
+- (void)_primaryAccountDidChange:(id)arg1 modified:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_primaryAccountWasDeletedWithCompletionHandler:(id /* block */)arg1;
 - (id)_privateDelegate;
+- (void)_processHomeConfigurationRequest:(id)arg1 refreshRequested:(bool)arg2;
 - (void)_queryHomeKitUsageStateWithCompletionHandler:(id /* block */)arg1;
 - (void)_queryMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_queryVersionWithCompletionHandler:(id /* block */)arg1;
 - (void)_queryiCloudSwitchStateWithCompletionHandler:(id /* block */)arg1;
 - (void)_registerNotificationHandlers;
+- (void)_removeCacheFile;
 - (void)_removeHome:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_setMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_setResidentProvisioningStatus:(unsigned long long)arg1;
 - (void)_shouldDisplayiCloudSwitchWithCompletionHandler:(id /* block */)arg1;
 - (void)_start;
+- (void)_updateAccessAllowedWhenLocked:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateAppData:(id)arg1;
 - (void)_updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateCurrentHome:(id)arg1;
-- (void)_updateDataSyncInProgress:(bool)arg1;
+- (void)_updateDataSyncState:(id)arg1;
 - (void)_updateHomes:(id)arg1;
 - (void)_updateInvitation:(id)arg1 invitationState:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updatePrimaryHome:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -117,6 +141,7 @@
 - (id)clientQueue;
 - (id)currentHome;
 - (id)currentHomes;
+- (unsigned long long)dataSyncState;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateCaller;
@@ -127,11 +152,14 @@
 - (void)eraseHomeDataWithCompletionHandler:(id /* block */)arg1;
 - (bool)fetchInProgress;
 - (unsigned long long)generationCounter;
+- (id)homeCache;
+- (id)homeCacheDir;
 - (id)homeInvitations;
 - (id)homes;
 - (id)incomingHomeInvitations;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (bool)isAccessAllowedWhenLocked;
 - (bool)isDataSyncInProgress;
 - (bool)isResidentEnabledForThisDevice;
 - (bool)isThisDeviceResidentCapable;
@@ -149,6 +177,7 @@
 - (id)pendingRequests;
 - (void)primaryAccountDidChange:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)primaryAccountWasDeletedWithCompletionHandler:(id /* block */)arg1;
+- (void)primaryAccountWasModified:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)primaryHome;
 - (id)propertyQueue;
 - (void)queryHomeKitUsageStateWithCompletionHandler:(id /* block */)arg1;
@@ -157,15 +186,21 @@
 - (void)queryiCloudSwitchStateWithCompletionHandler:(id /* block */)arg1;
 - (void)removeHome:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetConfiguration:(bool)arg1 withoutPopup:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (unsigned long long)residentProvisioningStatus;
+- (void)sendHomeConfigurationFetched;
+- (void)setAccessAllowedWhenLocked:(bool)arg1;
 - (void)setApplicationData:(id)arg1;
 - (void)setCurrentHome:(id)arg1;
 - (void)setCurrentHomes:(id)arg1;
 - (void)setDataSyncInProgress:(bool)arg1;
+- (void)setDataSyncState:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setDidUpdateHomes:(bool)arg1;
 - (void)setFetchInProgress:(bool)arg1;
 - (void)setGenerationCounter:(unsigned long long)arg1;
+- (void)setHomeCache:(id)arg1;
+- (void)setHomeCacheDir:(id)arg1;
 - (void)setHomeInvitations:(id)arg1;
 - (void)setMergeOperationQueue:(id)arg1;
 - (void)setMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -174,11 +209,13 @@
 - (void)setPendingRequests:(id)arg1;
 - (void)setPrimaryHome:(id)arg1;
 - (void)setResidentEnabledForThisDevice:(bool)arg1;
+- (void)setResidentProvisioningStatus:(unsigned long long)arg1;
 - (void)setThisDeviceResidentCapable:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setViewServiceActive:(bool)arg1;
 - (void)setXpcClient:(id)arg1;
 - (void)shouldDisplayiCloudSwitchWithCompletionHandler:(id /* block */)arg1;
+- (void)updateAccessAllowedWhenLocked:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updatePrimaryHome:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateResidentEnabledForThisDevice:(bool)arg1 completionHandler:(id /* block */)arg2;

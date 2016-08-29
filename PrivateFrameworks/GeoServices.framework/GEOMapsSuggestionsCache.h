@@ -4,7 +4,7 @@
 
 @interface GEOMapsSuggestionsCache : NSObject
 
-+ (id)defaultPath;
++ (id)defaultPathForProcessName:(id)arg1;
 + (void)pruneOldCacheAtPath:(id)arg1;
 
 @end

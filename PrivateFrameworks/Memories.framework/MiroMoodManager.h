@@ -28,6 +28,7 @@
 + (bool)_effectIsAFade:(id)arg1;
 + (bool)_effectIsASlide:(id)arg1 organicOnly:(bool)arg2;
 + (id)_fetchMediaItemForMediaID:(unsigned long long)arg1;
++ (id)_fetchStoreItemForMediaID:(unsigned long long)arg1;
 + (id)_moodIDsForProjectFilterID:(id)arg1;
 + (id)_pacingDescriptionForSongDict:(id)arg1;
 + (unsigned long long)_projectFilterCountForMood:(id)arg1;
@@ -36,6 +37,7 @@
 + (id)_projectFiltersForMood:(id)arg1;
 + (id)_randomMoodID;
 + (id)_randomPortraitSafeTitleForBlueprint:(id)arg1;
++ (id)_storeItemFromBlueprint:(id)arg1;
 + (id)allMoodIDs;
 + (id)allMoodIDsSorted;
 + (unsigned long long)allMoodsCount;
@@ -72,6 +74,9 @@
 + (id)displayNamesByTransitionForBlueprint:(id)arg1;
 + (id)editStyleIDsByMoodIDSorted;
 + (id)fontNameFromBlueprint:(id)arg1;
++ (id)fontNameFromTitleDictionary:(id)arg1;
++ (void)incrementAnimationSpecifier:(id*)arg1 forTitleStyleID:(id)arg2 by:(unsigned long long)arg3;
++ (id)incrementAnimationStyleForBlueprint:(id)arg1 by:(unsigned long long)arg2;
 + (void)logMoodPermutationTallies;
 + (double)minimumAllowedDurationForTitle:(id)arg1;
 + (id)multiUpTransitionsForMood:(id)arg1;
@@ -79,6 +84,7 @@
 + (id)projectFilterIDsByMoodIDSorted;
 + (id)randomBlueprint;
 + (id)replaceBlueprint:(id)arg1 usingMoodID:(id)arg2;
++ (id)requestStyleBForBlueprint:(id)arg1;
 + (void)separateAnimationSpecifier:(id*)arg1 fromTitleStyleID:(id*)arg2;
 + (id)sharedMoodManager;
 + (id)songIDsByMoodIDSorted;
@@ -119,6 +125,7 @@
 - (void)_removeObserverForAvalaibleSongChange;
 - (void)_resetSongList;
 - (unsigned long long)_totalTransitionWeightsForEditStyleDict:(id)arg1;
+- (id)_uniqueStringForMoodID:(id)arg1;
 - (id)_updateTransitionDurationsInEditSytleDict:(id)arg1 withPacing:(id)arg2;
 - (id)_updateTransitionDurationsInTransitionDict:(id)arg1 withPacing:(id)arg2 withUsage:(unsigned long long)arg3;
 - (id)_useSet_VtoV:(bool)arg1 PtoP:(bool)arg2 PtoV:(bool)arg3 VtoP:(bool)arg4 MultiUp:(bool)arg5 Pano:(bool)arg6 intoOneUp:(bool)arg7 outOfOneUp:(bool)arg8;

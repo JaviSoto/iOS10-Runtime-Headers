@@ -81,6 +81,7 @@
 - (id)recentInputsAlert;
 - (bool)refreshSelectedCellIfNecessaryForKey:(id)arg1;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
+- (void)returnToKeyplaneAfterDictation;
 - (void)runWithSuppressedActions:(id /* block */)arg1;
 - (void)selectInitialKeyIfNecessary;
 - (long long)selectedKeyBeforeDictation;

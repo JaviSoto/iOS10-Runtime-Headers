@@ -36,6 +36,7 @@
 + (id)_requestFromResumeDataDictionary:(id)arg1 key:(id)arg2;
 
 - (id /* block */)_afterDidReportProgressOnQueue;
+- (struct __CFDictionary { }*)_copySocketStreamProperties;
 - (void)_onqueue_cancelByProducingResumeData:(id /* block */)arg1;
 - (void)_onqueue_completeInitialization;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id /* block */)arg2;

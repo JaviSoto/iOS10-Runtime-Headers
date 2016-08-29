@@ -14,6 +14,7 @@
     unsigned int  _firmwareVersionMajor;
     unsigned int  _firmwareVersionMinor;
     unsigned int  _firmwareVersionRelease;
+    bool  _forceSilentUpdate;
     iAUPServer * _iAUPServer;
     bool  _isExpectingReconnect;
     NSMutableData * _outputData;
@@ -34,6 +35,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *firmwareBundleFilename;
 @property (nonatomic, retain) NSURL *firmwareBundleURL;
+@property (nonatomic) bool forceSilentUpdate;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int productIDCode;
 @property (nonatomic, retain) NSString *protocolString;
@@ -60,6 +62,7 @@
 - (id)firmwareBundleURL;
 - (void)firmwareUpdateComplete:(id)arg1;
 - (id)flushOutput;
+- (bool)forceSilentUpdate;
 - (void)handleInputData;
 - (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2;
 - (void)logStatusString:(id)arg1;
@@ -77,6 +80,7 @@
 - (void)setBootloaderProtocol:(id)arg1;
 - (void)setFirmwareBundleFilename:(id)arg1;
 - (void)setFirmwareBundleURL:(id)arg1;
+- (void)setForceSilentUpdate:(bool)arg1;
 - (void)setProductIDCode:(unsigned int)arg1;
 - (void)setProtocolString:(id)arg1;
 - (void)setServer:(id)arg1;

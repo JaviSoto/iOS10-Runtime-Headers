@@ -18,6 +18,16 @@
     }  _keyboardFrame;
     unsigned int  _loading;
     SULoadingView * _loadingView;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _remoteKeyboardFrame;
     SKUIReviewMetadata * _review;
     UIScrollView * _scrollView;
     long long  _style;
@@ -41,6 +51,7 @@
 - (void)_keyboardVisibilityDidChangeNotification:(id)arg1;
 - (void)_layoutComposeView;
 - (void)_layoutLoadingView;
+- (void)_remoteKeyboardVisibilityDidChangeNotification:(id)arg1;
 - (id)_reviewPlaceholder;
 - (void)_showComposeView;
 - (void)_showLoadingView;

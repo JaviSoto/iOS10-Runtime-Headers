@@ -19,14 +19,15 @@
 @property (nonatomic) long long idiom;
 
 - (void).cxx_destruct;
+- (void)_animateUnlockCompletionBlock:(id /* block */)arg1;
 - (void)_cleanUpAfterDataChange;
 - (void)_cleanUpAfterSimpleReflow;
 - (id)_computeVisibleItemsPreservingHistory:(bool)arg1;
-- (void)_reflowItemViewsCrossfadingCenterWithDuration:(double)arg1;
+- (void)_reflowItemViewsCrossfadingCenterWithDuration:(double)arg1 timeWasEnabled:(bool)arg2;
 - (void)_reflowItemViewsWithDuration:(double)arg1 preserveHistory:(bool)arg2;
 - (void)_setStatusBarData:(id)arg1 actions:(int)arg2 animated:(bool)arg3;
 - (bool)_tryToPlaceItem:(id)arg1 inItemArray:(id)arg2 layoutManager:(id)arg3 roomRemaining:(double*)arg4 allowSwap:(bool)arg5 swappedItem:(id*)arg6;
-- (void)animateUnlockCompletionBlock:(id /* block */)arg1;
+- (void)animateUnlock;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (double)edgePadding;
@@ -37,6 +38,7 @@
 - (bool)isShowingBreadcrumb;
 - (void)jiggleLockIcon;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)rectIntersectsTimeItem:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)reflowItemViews:(bool)arg1;
 - (void)reflowItemViewsCrossfadingCenter:(id)arg1 duration:(double)arg2;
 - (void)reflowItemViewsForgettingEitherSideItemHistory;

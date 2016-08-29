@@ -3,26 +3,26 @@
  */
 
 @interface _HKLocationSeriesStore : NSObject {
-    NSMutableArray * _activeArray;
-    HKLocationSeriesSample * _activeSample;
+    HKHealthStore * _healthStore;
     id /* block */  _loadingCompletionBlock;
     long long  _loadingCount;
     NSObject<OS_dispatch_queue> * _locationQueue;
-    NSMutableDictionary * _restoredLocations;
-    NSMutableDictionary * _restoredSeries;
+    NSMutableDictionary * _locations;
+    NSMutableDictionary * _series;
 }
 
 - (void).cxx_destruct;
+- (void)_fetchAllLocationsFromSeriesSample:(id)arg1;
+- (void)_queue_addLocationSeriesSamples:(id)arg1;
 - (void)_queue_checkAndReturnIfLocationsLoaded;
 - (id)_queue_locations;
-- (void)_restoreLocationSeries:(id)arg1 withHealthStore:(id)arg2;
 - (void)_setLocations:(id)arg1 forUUID:(id)arg2;
-- (void)didUpdateActiveLocationSeries:(id)arg1;
-- (void)didUpdateLocation:(id)arg1;
-- (void)fetchRestoredLocationsWithHealthStore:(id)arg1 completion:(id /* block */)arg2;
+- (void)addLocationSeriesSamples:(id)arg1;
+- (bool)containsSameValuesAs:(id)arg1;
+- (void)fetchAllLocationsWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (id)locations;
+- (id)initWithHealthStore:(id)arg1;
 - (id)samples;
-- (void)setRestoredLocationSeriesSamples:(id)arg1;
+- (void)setLocationSeriesSamples:(id)arg1;
 
 @end

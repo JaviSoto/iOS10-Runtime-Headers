@@ -6,6 +6,7 @@
     NSString * _displayString;
     NSString * _searchBarDisplayToken;
     NSData * _suggestionEntryMetadata;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *displayString;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) bool hasSuggestionEntryMetadata;
 @property (nonatomic, retain) NSString *searchBarDisplayToken;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,6 +35,7 @@
 - (void)setSearchBarDisplayToken:(id)arg1;
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (id)suggestionEntryMetadata;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

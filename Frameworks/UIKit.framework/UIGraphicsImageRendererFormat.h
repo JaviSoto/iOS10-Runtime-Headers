@@ -3,9 +3,7 @@
  */
 
 @interface UIGraphicsImageRendererFormat : UIGraphicsRendererFormat {
-    long long  __overrideComponentCount;
-    bool  _forceFloatPixelFormat;
-    bool  _isUIImageSourcedFormat;
+    bool  _grayscale;
     bool  _opaque;
     long long  _overrideBitsPerComponent;
     struct CGColorSpace { } * _overrideColorSpace;
@@ -14,11 +12,10 @@
     bool  _wantsAlphaMask;
 }
 
-@property (getter=_forceFloatPixelFormat, setter=_setForceFloatPixelFormat:, nonatomic) bool _forceFloatPixelFormat;
-@property (getter=_isUIImageSourcedFormat, setter=_setIsUIImageSourcedFormat:, nonatomic) bool _isUIImageSourcedFormat;
+@property (getter=_contextScale, nonatomic, readonly) double _contextScale;
+@property (getter=_grayscale, setter=_setGrayscale:, nonatomic) bool _grayscale;
 @property (getter=_overrideBitsPerComponent, setter=_setOverrideBitsPerComponent:, nonatomic) long long _overrideBitsPerComponent;
 @property (getter=_overrideColorSpace, setter=_setOverrideColorSpace:, nonatomic) struct CGColorSpace { }*_overrideColorSpace;
-@property (getter=_overrideComponentCount, setter=_setOverrideComponentCount:, nonatomic) long long _overrideComponentCount;
 @property (getter=_wantsAlphaMask, setter=_setWantsAlphaMask:, nonatomic) bool _wantsAlphaMask;
 @property (nonatomic) bool opaque;
 @property (nonatomic) bool prefersExtendedRange;
@@ -26,16 +23,13 @@
 
 + (id)defaultFormat;
 
-- (bool)_forceFloatPixelFormat;
-- (bool)_isUIImageSourcedFormat;
+- (double)_contextScale;
+- (bool)_grayscale;
 - (long long)_overrideBitsPerComponent;
 - (struct CGColorSpace { }*)_overrideColorSpace;
-- (long long)_overrideComponentCount;
-- (void)_setForceFloatPixelFormat:(bool)arg1;
-- (void)_setIsUIImageSourcedFormat:(bool)arg1;
+- (void)_setGrayscale:(bool)arg1;
 - (void)_setOverrideBitsPerComponent:(long long)arg1;
 - (void)_setOverrideColorSpace:(struct CGColorSpace { }*)arg1;
-- (void)_setOverrideComponentCount:(long long)arg1;
 - (void)_setWantsAlphaMask:(bool)arg1;
 - (bool)_wantsAlphaMask;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -7,15 +7,20 @@
     EAGLContext * _context;
     NTKCharacterDisplayLink * _displayLink;
     NTKCharacterFrameBuffer * _framebuffer;
+    bool  _frozen;
     unsigned int  _isAnimating;
+    unsigned int  _isBackgrounded;
     unsigned int  _isRenderOneFrameRequested;
+    unsigned int  _layoutWasIgnored;
     NTKCharacterResourceLoader * _loader;
+    unsigned int  _renderWasIgnored;
     NTKCharacterRenderer * _renderer;
     NTKCharacterRenderer * _renderers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isFrozen, nonatomic) bool frozen;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
@@ -24,17 +29,20 @@
 - (void).cxx_destruct;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
+- (void)_didEnterBackground;
 - (void)_endScrubbing;
 - (void)_render;
 - (void)_renderOneFrame;
 - (void)_startAnimation;
 - (void)_stopAnimation;
+- (void)_willEnterForeground;
 - (void)applyCharacterTransition:(double)arg1 fromCharacter:(unsigned long long)arg2 toCharacter:(unsigned long long)arg3;
 - (void)cleanupAfterZoom;
 - (void)dealloc;
 - (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)enumarateRenderers:(id /* block */)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isFrozen;
 - (void)layoutSubviews;
 - (void)prepareToZoom;
 - (void)renderOneFrame;

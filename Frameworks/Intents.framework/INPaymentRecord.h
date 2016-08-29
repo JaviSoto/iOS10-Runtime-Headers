@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPaymentRecord : NSObject <INCacheableContainer, NSCopying, NSSecureCoding> {
+@interface INPaymentRecord : NSObject <INCacheableContainer, INPaymentRecordExport, NSCopying, NSSecureCoding> {
     INCurrencyAmount * _currencyAmount;
+    INCurrencyAmount * _feeAmount;
     NSString * _note;
     INPerson * _payee;
     INPerson * _payer;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly, copy) INCurrencyAmount *currencyAmount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) INCurrencyAmount *feeAmount;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *note;
 @property (nonatomic, readonly, copy) INPerson *payee;
@@ -29,9 +31,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyAmount;
 - (void)encodeWithCoder:(id)arg1;
+- (id)feeAmount;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPayee:(id)arg1 payer:(id)arg2 currencyAmount:(id)arg3 paymentMethod:(id)arg4 note:(id)arg5 status:(long long)arg6;
+- (id)initWithPayee:(id)arg1 payer:(id)arg2 currencyAmount:(id)arg3 paymentMethod:(id)arg4 note:(id)arg5 status:(long long)arg6 feeAmount:(id)arg7;
 - (bool)isEqual:(id)arg1;
 - (id)note;
 - (id)payee;

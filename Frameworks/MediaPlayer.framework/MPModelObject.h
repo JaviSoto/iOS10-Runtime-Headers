@@ -32,6 +32,7 @@
 - (id)description;
 - (id)descriptionWithType:(long long)arg1;
 - (bool)hasLoadedValueForKey:(id)arg1;
+- (bool)hasLoadedValuesForProperties:(id)arg1;
 - (id)identifiers;
 - (id)initWithIdentifiers:(id)arg1 block:(id /* block */)arg2;
 - (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;

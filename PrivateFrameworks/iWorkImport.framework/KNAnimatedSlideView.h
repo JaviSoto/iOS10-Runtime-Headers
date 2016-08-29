@@ -24,7 +24,8 @@
     id  mEventStartCallbackTarget;
     bool  mEventTriggered;
     TSDTexturedRectangle * mIncomingTexture;
-    bool  mIsInDelayBeforeActiveAnimations;
+    bool  mIsInDelayBeforeActiveBuild;
+    bool  mIsInDelayBeforeActiveTransition;
     int  mIsTexturePreloadingCancelled;
     SEL  mMovieEndCallbackSelector;
     id  mMovieEndCallbackTarget;
@@ -59,6 +60,7 @@
 @property (nonatomic, retain) TSDTexturedRectangle *incomingTexture;
 @property (nonatomic, readonly) bool isAnimating;
 @property (nonatomic, readonly) bool isDoneAnimating;
+@property (nonatomic, readonly) bool isInDelayBeforeActiveTransition;
 @property (nonatomic, readonly) bool isMovieAnimating;
 @property (nonatomic, readonly) bool isNonMovieAnimationActive;
 @property (nonatomic, readonly) bool isNonMovieAnimationAnimating;
@@ -98,6 +100,7 @@
 - (bool)isAtFirstEvent;
 - (bool)isCanvasDrawingIntoPDF:(id)arg1;
 - (bool)isDoneAnimating;
+- (bool)isInDelayBeforeActiveTransition;
 - (bool)isMovieAnimating;
 - (bool)isNonMovieAnimationActive;
 - (bool)isNonMovieAnimationAnimating;

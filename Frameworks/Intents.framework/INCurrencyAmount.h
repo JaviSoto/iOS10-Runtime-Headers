@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INCurrencyAmount : NSObject <NSCopying, NSSecureCoding> {
+@interface INCurrencyAmount : NSObject <INCurrencyAmountExport, NSCopying, NSSecureCoding> {
     NSDecimalNumber * _amount;
     NSString * _currencyCode;
 }
 
 @property (nonatomic, readonly, copy) NSDecimalNumber *amount;
 @property (nonatomic, readonly, copy) NSString *currencyCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;
 

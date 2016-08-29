@@ -12,6 +12,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)decayAllLaunchSequencesWithHalfLife:(double)arg1;
 - (void)deleteAllLaunchesForBundles:(id)arg1;
 - (id)init;
 - (id)initWithDataStore:(id)arg1;

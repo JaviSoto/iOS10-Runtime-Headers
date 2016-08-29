@@ -81,6 +81,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
@@ -156,6 +157,7 @@
 - (id)relatedEntryAtPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
 - (id)relatedEntryForPhotosDataSource:(id)arg1;
 - (id)relatedEntryForTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1 layout:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })relatedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2 forAspectRatio:(double)arg3;
 - (bool)relatedTilingLayout:(id)arg1 isPlaceholderEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
 - (id)relatedTilingLayout:(id)arg1 titleFontNameForEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;

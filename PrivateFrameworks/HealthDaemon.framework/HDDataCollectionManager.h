@@ -3,48 +3,44 @@
  */
 
 @interface HDDataCollectionManager : NSObject <HDDiagnosticObject, HDHealthDaemonReadyObserver, HDHealthDataCollectionManager> {
-    NSMutableDictionary * _activeDataClasses;
-    NSMutableSet * _dataCollectors;
     NSMutableDictionary * _dataCollectorsByType;
     <HDDataCollectionManagerDelegate> * _delegate;
     HDDemoManager * _demoManager;
     NSDate * _lastLaunchUpdate;
+    NSMutableDictionary * _observersByType;
     HDPrimaryProfile * _primaryProfile;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *activeDataClasses;
 @property (nonatomic, retain) NSMutableDictionary *dataCollectorsByType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HDDataCollectionManagerDelegate> *delegate;
 @property (nonatomic, retain) HDDemoManager *demoManager;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSMutableDictionary *observersByType;
 @property (nonatomic) HDPrimaryProfile *primaryProfile;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_activeClassesString;
 - (id)_dataCollectorsDiagnosticDescription;
 - (void)_demoObjectsReceived:(id)arg1 completion:(id /* block */)arg2;
+- (id)_observersDescription;
 - (void)_queue_addDataCollector:(id)arg1;
-- (void)_queue_addObserver:(id)arg1 collectionInterval:(double)arg2 forType:(id)arg3;
-- (void)_queue_alertCollectorsCollectionStartedForType:(id)arg1;
-- (void)_queue_alertCollectorsCollectionStoppedForType:(id)arg1;
+- (void)_queue_adjustDataCollectionForType:(id)arg1 block:(id /* block */)arg2;
 - (void)_queue_alertCollectorsOfTypesWithObservers;
-- (bool)_queue_anyObserversExistForTypes:(id)arg1;
-- (double)_queue_collectionIntervalForType:(id)arg1;
+- (struct { double x1; bool x2; })_queue_collectionStateForType:(id)arg1;
 - (bool)_queue_dataReceived:(id)arg1 provenance:(id)arg2 isDemoData:(bool)arg3 error:(id*)arg4;
 - (double)_queue_defaultCollectionIntervalForType:(id)arg1;
 - (id)_queue_demoManagerCreatingIfNecessary;
-- (bool)_queue_observersExistForType:(id)arg1;
-- (void)_queue_removeObserver:(id)arg1 forType:(id)arg2;
+- (id)_queue_observerMapForType:(id)arg1;
 - (void)_queue_setupUnprotectedDataDependantState;
-- (void)_queue_updateCollectionPeriodForCollectorsOfType:(id)arg1;
 - (void)_updateDataCollectorsWithPrivacySettings;
-- (id)activeDataClasses;
+- (void)addDataCollectionObserver:(id)arg1 type:(id)arg2 collectionInterval:(double)arg3 state:(id)arg4;
+- (void)addDataCollector:(id)arg1;
 - (void)daemonReady:(id)arg1;
+- (void)dataCollectionObserver:(id)arg1 didChangeState:(id)arg2;
 - (id)dataCollectorsByType;
 - (void)dealloc;
 - (double)defaultCollectionIntervalForType:(id)arg1;
@@ -52,16 +48,20 @@
 - (id)demoManager;
 - (id)diagnosticDescription;
 - (void)generateFakeDataForActivityType:(long long)arg1 minutes:(double)arg2 completion:(id /* block */)arg3;
+- (void)immediateUpdateForType:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithPrimaryProfile:(id)arg1 delegate:(id)arg2;
+- (id)observersByType;
 - (void)periodicUpdate;
 - (id)primaryProfile;
 - (id)queue;
+- (void)removeDataCollectionObserver:(id)arg1;
+- (void)removeDataCollectionObserver:(id)arg1 type:(id)arg2;
 - (void)sensorDataArrayReceived:(id)arg1 deviceEntity:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)sensorDataReceived:(id)arg1 deviceEntity:(id)arg2;
-- (void)setActiveDataClasses:(id)arg1;
 - (void)setDataCollectorsByType:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDemoManager:(id)arg1;
+- (void)setObserversByType:(id)arg1;
 - (void)setPrimaryProfile:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startDataCollectionForType:(id)arg1 observer:(id)arg2 collectionInterval:(double)arg3;
@@ -69,5 +69,6 @@
 - (void)startFakingWithHKWorkoutActivityType:(unsigned long long)arg1;
 - (void)stopDataCollectionForType:(id)arg1 observer:(id)arg2;
 - (void)stopFakingData;
+- (void)updateCollectionInterval:(double)arg1 type:(id)arg2 observer:(id)arg3;
 
 @end

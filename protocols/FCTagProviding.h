@@ -12,6 +12,7 @@
 - (NSURL *)authorizationURL;
 - (NSArray *)blockedStorefrontIDs;
 - (long long)contentProvider;
+- (NSString *)coverArticleListID;
 - (FCAssetHandle *)coverImageAssetHandle;
 - (NSString *)feedIDForBin:(long long)arg1;
 - (double)forYouCutoffTime;
@@ -32,9 +33,8 @@
 - (bool)isPurchaseSetup;
 - (bool)isSubscribable;
 - (NSDate *)loadDate;
-- (NSString *)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (NSString *)name;
-- (FCAssetHandle *)nameImageMaskWidgetAssetHandle;
 - (FCAssetHandle *)nameImageMaskWidgetHQAssetHandle;
 - (FCAssetHandle *)nameImageMaskWidgetLQAssetHandle;
 - (NSString *)paidFeedIDForBin:(long long)arg1;

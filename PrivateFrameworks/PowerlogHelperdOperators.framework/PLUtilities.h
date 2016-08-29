@@ -32,6 +32,7 @@
 + (bool)hasSmartConnector;
 + (id)hashString:(id)arg1;
 + (bool)internalBuild;
++ (bool)internalOrSeedBuild;
 + (bool)is64Bit;
 + (bool)isAudioSpeakerClass:(int)arg1;
 + (bool)isBasebandClass:(int)arg1;
@@ -40,9 +41,9 @@
 + (bool)isDeviceClassName:(id)arg1;
 + (bool)isDisplayClass:(int)arg1;
 + (bool)isEduMode;
++ (bool)isGPSClass:(int)arg1;
 + (bool)isHSupported;
 + (bool)isHeySiriEnabled;
-+ (bool)isICE;
 + (bool)isIPod;
 + (bool)isIpad;
 + (bool)isMav1;
@@ -67,6 +68,7 @@
 + (id)kPLDeviceClassName;
 + (id)kPLDeviceMap;
 + (int)kPLDisplayClassOfDevice;
++ (int)kPLGPSClassOfDevice;
 + (id)kPLPlatformAttributes;
 + (int)kPLSoCClassOfDevice;
 + (int)kPLTorchClassOfDevice;

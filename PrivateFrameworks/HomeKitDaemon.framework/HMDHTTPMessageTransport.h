@@ -27,6 +27,7 @@
 @property (readonly) Class superclass;
 
 + (id)logCategory;
++ (unsigned long long)restriction;
 + (id)shortDescription;
 + (bool)shouldHostMessageServer;
 

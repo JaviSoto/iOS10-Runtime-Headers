@@ -4,10 +4,11 @@
 
 @interface NTKVideoFaceView : NTKAVListingFaceBaseView {
     NTKUtilityComplicationFactory * _complicationFactory;
-    bool  _tapToPlayGestureEnabled;
+    unsigned int  _isComplicationColorApplied;
+    unsigned int  _tapToPlayGestureEnabled;
     unsigned long long  _theme;
     NTKComplicationDisplayWrapperView * _touchWrapper;
-    bool  _useDefaultListing;
+    unsigned int  _useDefaultListing;
 }
 
 + (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
@@ -31,6 +32,7 @@
 - (id)_nextListing;
 - (id)_onDeckPosterImageView;
 - (id)_overlayColor;
+- (void)_performPreloadVideoTask;
 - (id)_posterImageView;
 - (id)_posterImageViewWithTheme:(unsigned long long)arg1;
 - (void)_prepareForEditing;

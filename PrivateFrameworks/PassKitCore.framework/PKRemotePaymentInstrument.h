@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKRemotePaymentInstrument : NSObject <NSSecureCoding> {
+@interface PKRemotePaymentInstrument : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _associatedWebDomains;
     NSString * _displayName;
     NSDate * _ingestedDate;
@@ -30,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)associatedWebDomains;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;

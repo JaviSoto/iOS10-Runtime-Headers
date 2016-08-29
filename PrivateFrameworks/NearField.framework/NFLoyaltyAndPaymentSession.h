@@ -2,57 +2,52 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFLoyaltyAndPaymentSession : NFSession <NFContactlessPaymentSessionDelegate, NFValueAddedServiceSessionDelegate> {
+@interface NFLoyaltyAndPaymentSession : NFSession {
+    NFApplet * _activeApplet;
+    NSDictionary * _appletsById;
+    NFApplet * _defaultApplet;
     NFWeakReference * _delegate;
-    bool  _didReceivePaymentStartCallback;
-    bool  _didReceiveVasStartCallback;
     bool  _emulationActive;
     bool  _fieldPresent;
-    NSError * _paymentError;
-    NFContactlessPaymentSession * _paymentSession;
+    unsigned long long  _numActiveSEs;
     NFTechnologyEvent * _technologyEvent;
-    NFValueAddedServiceSession * _valueAddedServiceSession;
-    NSError * _vasError;
     bool  _vasTransactionInProgress;
 }
 
 @property (readonly) NFApplet *activeApplet;
-@property (readonly, copy) NSString *debugDescription;
 @property (readonly) NFApplet *defaultApplet;
 @property <NFLoyaltyAndPaymentSessionDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
 
-- (void)_fireInitialFieldDetectEvent;
+- (bool)_startCardEmulationWithAuthorization:(id)arg1;
+- (bool)_startDeferredCardEmulationWithAuthorization:(id)arg1;
+- (bool)_startHostCardEmulation;
 - (id)activeApplet;
 - (id)allApplets;
 - (id)appletWithIdentifier:(id)arg1;
-- (void)contactlessPaymentSession:(id)arg1 didDetectField:(bool)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didDetectTechnology:(id)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didEndTransaction:(id)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didExpireTransactionForApplet:(id)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didFailDeferredAuthorization:(bool)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didReceiveButtonPressForApplet:(id)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didSelectApplet:(id)arg2;
-- (void)contactlessPaymentSession:(id)arg1 didStartTransaction:(id)arg2;
-- (void)contactlessPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)dealloc;
 - (id)defaultApplet;
 - (id)delegate;
+- (void)didDetectField:(bool)arg1;
+- (void)didDetectTechnology:(id)arg1;
+- (void)didEndTransaction:(id)arg1;
+- (void)didEndUnexpectedly;
+- (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didFailDeferredAuthorization;
+- (void)didPerformValueAddedServiceTransactions:(id)arg1;
+- (void)didReceiveButtonPressForApplet:(id)arg1;
+- (void)didSelectApplet:(id)arg1;
+- (void)didSelectValueAddedService:(bool)arg1;
+- (void)didStartSession:(id)arg1;
+- (void)didStartTransaction:(id)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
 - (bool)setActivePaymentApplet:(id)arg1;
 - (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (bool)setHostCards:(id)arg1;
-- (void)setPaymentSession:(id)arg1;
-- (void)setValueAddedServiceSession:(id)arg1;
 - (bool)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
 - (bool)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
+- (bool)startHostCardEmulation;
 - (bool)stopCardEmulation;
-- (void)valueAddedServiceSession:(id)arg1 didError:(id)arg2;
-- (void)valueAddedServiceSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
-- (void)valueAddedServiceSession:(id)arg1 didSelectValueAddedService:(bool)arg2;
 
 @end

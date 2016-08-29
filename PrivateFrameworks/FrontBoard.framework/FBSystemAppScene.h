@@ -18,7 +18,6 @@
 - (void)attachLayer:(id)arg1;
 - (void)attachSceneContext:(id)arg1;
 - (id)clientSettings;
-- (id)contexts;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -29,6 +28,7 @@
 - (id)fbsDisplay;
 - (id)identifier;
 - (bool)invalidateSnapshotWithContext:(id)arg1;
+- (id)layers;
 - (bool)performSnapshotWithContext:(id)arg1;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateWithDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;

@@ -16,6 +16,7 @@
 
 - (id /* block */).cxx_destruct;
 - (id)alarms;
+- (id)clone;
 - (void)encodeWithCoder:(id)arg1;
 - (id)events;
 - (id)init;

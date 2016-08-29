@@ -24,6 +24,7 @@
 - (id)_createButtonView;
 - (void)_dismissButtonActionPlatterWithCompletion:(id /* block */)arg1;
 - (void)_presentButtonActionPlatterWithCompletion:(id /* block */)arg1;
+- (void)_tappedOrbingButton;
 - (void)_updateButtonProperties;
 - (void)_updateButtonState;
 - (bool)_usesSmallButtons;
@@ -37,6 +38,7 @@
 - (bool)appIconForceTouchController:(id)arg1 isSystemOrInternalApplicationForGestureRecognizer:(id)arg2;
 - (id)appIconForceTouchController:(id)arg1 newIconViewCopyForGestureRecognizer:(id)arg2;
 - (bool)appIconForceTouchController:(id)arg1 shouldUseSecureWindowForGestureRecognizer:(id)arg2;
+- (void)buttonModule:(id)arg1 willExecuteSecondaryActionWithCompletionHandler:(id /* block */)arg2;
 - (void)buttonModulePropertiesDidChange:(id)arg1;
 - (void)buttonModuleStateDidChange:(id)arg1;
 - (void)buttonTapped:(id)arg1;

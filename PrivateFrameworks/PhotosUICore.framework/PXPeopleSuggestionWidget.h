@@ -64,9 +64,11 @@
 @property (nonatomic, readonly) bool supportsFaceMode;
 @property (nonatomic, readonly) bool supportsSelection;
 @property (nonatomic, retain) UIView *topSeparator;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
+- (void)_clearSuggestionState;
 - (long long)_currentSizeClass;
 - (double)_dynamicBaselineForTextStyle:(id)arg1 originalValue:(double)arg2;
 - (double)_dynamicTextBottomBaseline;

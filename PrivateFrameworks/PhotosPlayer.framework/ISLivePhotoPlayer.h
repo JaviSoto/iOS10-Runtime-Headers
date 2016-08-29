@@ -4,6 +4,7 @@
 
 @interface ISLivePhotoPlayer : ISBasePlayer <ISChangeObserver, ISLivePhotoSettleBehaviorDelegate> {
     long long  __playbackIdentifier;
+    bool  __settleAutomaticallyWhenReady;
     bool  __shouldPlayVitalityWhenReady;
     bool  __shouldPrepareForHintWhenReady;
     bool  __shouldPrepareForVitalityWhenReady;
@@ -13,12 +14,13 @@
     bool  _hinting;
     bool  _immediatelyShowsPhotoWhenPlaybackEnds;
     bool  _playbackAllowed;
-    ISLivePhotoPlaybackFilter * _playbackFilter;
+    NSMutableSet * _playbackFilters;
     bool  _playingVitality;
     ISLivePhotoVitalityFilter * _vitalityFilter;
 }
 
 @property (setter=_setPlaybackIdentifier:, nonatomic) long long _playbackIdentifier;
+@property (setter=_setSettleAutomaticallyWhenReady:, nonatomic) bool _settleAutomaticallyWhenReady;
 @property (setter=_setShouldPlayVitalityWhenReady:, nonatomic) bool _shouldPlayVitalityWhenReady;
 @property (setter=_setShouldPrepareForHintWhenReady:, nonatomic) bool _shouldPrepareForHintWhenReady;
 @property (setter=_setShouldPrepareForVitalityWhenReady:, nonatomic) bool _shouldPrepareForVitalityWhenReady;
@@ -31,13 +33,16 @@
 @property (getter=isHinting, setter=_setHinting:, nonatomic) bool hinting;
 @property (nonatomic) bool immediatelyShowsPhotoWhenPlaybackEnds;
 @property (getter=isPlaybackAllowed, nonatomic) bool playbackAllowed;
-@property (nonatomic, retain) ISLivePhotoPlaybackFilter *playbackFilter;
+@property (nonatomic, readonly) NSSet *playbackFilters;
 @property (getter=isPlayingVitality, setter=_setPlayingVitality:, nonatomic) bool playingVitality;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) ISLivePhotoVitalityFilter *vitalityFilter;
 
 - (void).cxx_destruct;
-- (void)_configurePlaybackFilter;
+- (double)_coalescedPlaybackFilterHintProgress;
+- (long long)_coalescedPlaybackFilterState;
+- (void)_configurePlaybackFilter:(id)arg1;
+- (void)_configurePlaybackFilters;
 - (void)_handlePlaybackFilterDidChange;
 - (void)_handleVitalityFilterDidChange:(id)arg1;
 - (long long)_incrementedPlaybackIdentifier;
@@ -45,15 +50,18 @@
 - (void)_playIfNeeded;
 - (long long)_playbackIdentifier;
 - (void)_prepareForVitalityIfNeeded;
+- (void)_resetPlaybackFilters;
 - (void)_setCurrentPlaybackStyle:(long long)arg1;
 - (void)_setHinting:(bool)arg1;
 - (void)_setPlaybackIdentifier:(long long)arg1;
 - (void)_setPlayingVitality:(bool)arg1;
+- (void)_setSettleAutomaticallyWhenReady:(bool)arg1;
 - (void)_setShouldPlayVitalityWhenReady:(bool)arg1;
 - (void)_setShouldPrepareForHintWhenReady:(bool)arg1;
 - (void)_setShouldPrepareForVitalityWhenReady:(bool)arg1;
 - (void)_setStyleToPlayWhenReady:(long long)arg1;
 - (void)_setVitalityTimeoutDate:(id)arg1;
+- (bool)_settleAutomaticallyWhenReady;
 - (bool)_shouldPlayVitalityWhenReady;
 - (bool)_shouldPrepareForHintWhenReady;
 - (bool)_shouldPrepareForVitalityWhenReady;
@@ -61,6 +69,7 @@
 - (void)_updateHintingAndVitality;
 - (id)_vitalityTimeoutDate;
 - (void)activeBehaviorDidChange;
+- (void)addPlaybackFilter:(id)arg1;
 - (long long)currentPlaybackStyle;
 - (bool)immediatelyShowsPhotoWhenPlaybackEnds;
 - (id)init;
@@ -72,17 +81,19 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)playHintWhenReady;
 - (void)playVitality;
-- (id)playbackFilter;
+- (id)playbackFilters;
 - (void)playerItemDidChange;
 - (void)prepareForHintWhenReady;
 - (void)prepareForVitality;
+- (void)removePlaybackFilter:(id)arg1;
 - (void)setImmediatelyShowsPhotoWhenPlaybackEnds:(bool)arg1;
 - (void)setPlaybackAllowed:(bool)arg1;
-- (void)setPlaybackFilter:(id)arg1;
 - (void)setVitalityFilter:(id)arg1;
 - (void)showPlaybackHintWithProgress:(float)arg1;
 - (void)startPlaybackWithStyle:(long long)arg1;
+- (void)startPlaybackWithStyle:(long long)arg1 settleAutomatically:(bool)arg2;
 - (void)startPlaybackWithStyleWhenReady:(long long)arg1;
+- (void)startPlaybackWithStyleWhenReady:(long long)arg1 settleAutomatically:(bool)arg2;
 - (void)statusDidChange;
 - (void)stopPlayback;
 - (void)stopPlaybackAnimated:(bool)arg1;

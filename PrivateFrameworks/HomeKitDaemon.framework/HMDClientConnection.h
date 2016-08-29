@@ -26,6 +26,7 @@
 - (void)_handleSiriSyncDataRequest:(id)arg1;
 - (void)_registerForMessages;
 - (id)commandsBeingExecuted;
+- (void)dealloc;
 - (id)homeManager;
 - (id)initWithHomeManager:(id)arg1 queue:(id)arg2 messageDispatcher:(id)arg3;
 - (id)messageReceiveQueue;

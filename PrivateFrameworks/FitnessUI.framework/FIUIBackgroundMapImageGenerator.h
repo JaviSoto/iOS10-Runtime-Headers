@@ -13,6 +13,8 @@
 @property (nonatomic, retain) NSArray *locationReadings;
 @property (nonatomic, retain) HKWorkout *workout;
 
++ (void)enumerateWorkout:(id)arg1 activeLocations:(id /* block */)arg2 fromSeries:(id)arg3;
+
 - (void).cxx_destruct;
 - (id)_createSnapshotOverlayPolyline:(id)arg1 pinView:(id)arg2 onSnapshot:(id)arg3 mapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (void)_drawLineFromPointA:(struct CGPoint { double x1; double x2; })arg1 toPointB:(struct CGPoint { double x1; double x2; })arg2 atSpeed:(double)arg3 context:(struct CGContext { }*)arg4 drawDashes:(bool)arg5 lineWidth:(double)arg6;

@@ -26,16 +26,16 @@
     NSArray * _iAdSectionIDs;
     NSString * _identifier;
     bool  _isDraft;
-    bool  _isPaid;
     struct CGSize { 
         double width; 
         double height; 
     }  _largestThumbnailSize;
     NSDate * _lastFetchedDate;
     NSDate * _lastModifiedDate;
-    NSString * _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSArray * _moreFromPublisherArticleIDs;
     bool  _needsRapidUpdates;
+    bool  _paid;
     NSString * _primaryAudience;
     NSDate * _publishDate;
     unsigned long long  _publisherArticleVersion;
@@ -101,7 +101,7 @@
 - (id)iAdKeywords;
 - (id)iAdSectionIDs;
 - (id)identifier;
-- (id)initWithArticlePayload:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
+- (id)initWithArticlePayload:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3 rapidUpdatesTimeout:(long long)arg4;
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
@@ -111,7 +111,7 @@
 - (struct CGSize { double x1; double x2; })largestThumbnailSize;
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
-- (id)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)moreFromPublisherArticleIDs;
 - (bool)needsRapidUpdates;
 - (id)primaryAudience;

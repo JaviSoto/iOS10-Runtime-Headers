@@ -14,7 +14,6 @@
 @property (retain) NSData *mapsData;
 @property (retain) NSString *name;
 
-+ (id)directionsImageWithColor:(id)arg1;
 + (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;

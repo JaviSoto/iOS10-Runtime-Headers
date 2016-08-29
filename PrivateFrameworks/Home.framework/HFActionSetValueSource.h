@@ -10,11 +10,11 @@
 
 @property (nonatomic, retain) HMActionSet *actionSet;
 @property (nonatomic, retain) HFItemBuilder<HFActionSetBuilderProtocol> *actionSetBuilder;
+@property (nonatomic, readonly) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HFActionSetValueSourceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) unsigned long long remoteAccessState;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

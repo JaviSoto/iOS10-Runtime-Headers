@@ -16,6 +16,7 @@
 - (bool)insertAttachmentWithURL:(NSURL *)arg1 andDescription:(NSString *)arg2;
 - (bool)insertData:(NSData *)arg1 MIMEType:(NSString *)arg2 exportedFilename:(NSString *)arg3;
 - (bool)insertFilename:(NSString *)arg1 MIMEType:(NSString *)arg2 exportedFilename:(NSString *)arg3 options:(NSDictionary *)arg4;
+- (bool)insertMessage:(MSMessage *)arg1;
 - (bool)insertRichLinkWithURL:(NSURL *)arg1 andData:(NSData *)arg2;
 - (void)setCanEditRecipients:(bool)arg1;
 - (void)setGameCenterModeWithPickerBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*

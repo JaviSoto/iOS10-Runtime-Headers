@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroIOSPlayerViewController : MiroPlayerViewController <MiroEditorViewControllerDelegate, MiroMovieDisplayContainerViewControllerDelegate, MiroSliderViewControllerDataSource, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
+@interface MiroIOSPlayerViewController : MiroPlayerViewController <MiroEditorViewControllerDelegate, MiroMovieDisplayContainerViewControllerDelegate, MiroPreventDismissalDelegate, MiroSliderViewControllerDataSource, PLDismissableViewController, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
     bool  _askedToCreateMemory;
     MiroAutoEditController * _autoEditController;
     NSLayoutConstraint * _bottomBarBottomConstraint;
@@ -22,6 +22,8 @@
     NSString * _initialMood;
     UILabel * _label;
     RoundProgressView * _landscapeProgressView;
+    UIView * _landscapeSnapshotView;
+    UIButton * _loadErrorButton;
     NSLayoutConstraint * _moodHeightConstraint;
     MiroSliderViewController * _moodSlider;
     MiroMovieDisplayContainerViewController * _movieContainerViewController;
@@ -50,6 +52,7 @@
     UILabel * _titleLabel;
     NSLayoutConstraint * _verticalCenteredLabel;
     NSLayoutConstraint * _verticalProgressLabelSpace;
+    bool  preventDismissalByPhotosIfPossible;
 }
 
 @property (nonatomic, readonly) UIBarButtonItem *activityBBItem;
@@ -78,6 +81,8 @@
 @property (nonatomic, retain) NSString *initialMood;
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic, retain) RoundProgressView *landscapeProgressView;
+@property (nonatomic, retain) UIView *landscapeSnapshotView;
+@property (nonatomic, retain) UIButton *loadErrorButton;
 @property (nonatomic, retain) NSLayoutConstraint *moodHeightConstraint;
 @property (nonatomic, retain) MiroSliderViewController *moodSlider;
 @property (nonatomic, retain) MiroMovieDisplayContainerViewController *movieContainerViewController;
@@ -86,6 +91,7 @@
 @property (nonatomic, retain) UIView *placeholderView;
 @property (nonatomic, readonly) UIBarButtonItem *playPauseBBItem;
 @property unsigned long long playerSpinnerState;
+@property (nonatomic) bool preventDismissalByPhotosIfPossible;
 @property (nonatomic, retain) UIView *progressContainerView;
 @property (nonatomic) bool progressIncludesDownload;
 @property (nonatomic, retain) NSLayoutConstraint *progressTopLine;
@@ -110,6 +116,8 @@
 - (void)_addToggleControlsGestureRecognizer;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
+- (void)_atexitInitialize;
+- (void)_atexitUninitialize;
 - (void)_autoEditOnAppear;
 - (void)_cancelProgress:(id)arg1;
 - (unsigned long long)_countForDurationOptions;
@@ -139,7 +147,9 @@
 - (id)bottomBarBottomConstraint;
 - (id)bottomBarHeightConstraint;
 - (id)bottomScrubberHeightConstraint;
+- (void)cancelAutoEditorAndAllPendingPlayback;
 - (id)cancelButton;
+- (void)clearLandscapeSnapshotView;
 - (bool)controlVisibility;
 - (unsigned long long)countForSliderViewController:(id)arg1;
 - (double)currentDuration;
@@ -148,15 +158,19 @@
 - (void)debugPrefsStart:(id)arg1;
 - (bool)didDragSlider;
 - (void)didReceiveMemoryWarning;
+- (void)dismissAllModalViewControllers;
+- (void)displayCloudDownloadErrorCount:(unsigned long long)arg1;
 - (id)displayNameForIndexPath:(id)arg1 forSliderViewController:(id)arg2;
+- (void)downloadErrorButtonTapped:(id)arg1;
 - (id)durationDisplayNames;
 - (id)durationHeightConstraint;
 - (id)durationSlider;
 - (id)editBBItem;
 - (void)editSelector:(id)arg1;
-- (void)editorViewController:(id)arg1 didEditMemory:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)editorViewController:(id)arg1 didEditMemory:(id)arg2;
 - (id)error;
 - (id)flexSpaceBBItem;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)hideProgressScreen;
 - (id)horizontalCenteredLabel;
 - (id)horizontalOffsetLabel;
@@ -166,12 +180,15 @@
 - (id)label;
 - (id)labelText;
 - (id)landscapeProgressView;
+- (id)landscapeSnapshotView;
+- (id)loadErrorButton;
 - (void)memoryDebugViewControllerDidFinish:(id)arg1;
 - (void)memoryDidGetViewed;
 - (id)moodHeightConstraint;
 - (id)moodSlider;
 - (id)movieContainerViewController;
 - (id)navBarShareBBItem;
+- (unsigned long long)nonLocalPickedAssetCount;
 - (id)overlayContainerView;
 - (bool)ph_isTransitionOverlayView:(id)arg1;
 - (void)ph_loadTransitionSourcePlaceholderViewUsingFactory:(id /* block */)arg1;
@@ -192,8 +209,10 @@
 - (void)playerRateChanged;
 - (unsigned long long)playerSpinnerState;
 - (void)playerWillRefreshMovie;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (bool)prepareForDismissingForced:(bool)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
+- (bool)preventDismissalByPhotosIfPossible;
+- (void)processPendingActionState;
 - (float)progress;
 - (id)progressContainerView;
 - (bool)progressIncludesDownload;
@@ -229,6 +248,8 @@
 - (void)setLabel:(id)arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setLandscapeProgressView:(id)arg1;
+- (void)setLandscapeSnapshotView:(id)arg1;
+- (void)setLoadErrorButton:(id)arg1;
 - (void)setMemory:(id)arg1;
 - (void)setMoodHeightConstraint:(id)arg1;
 - (void)setMoodSlider:(id)arg1;
@@ -237,6 +258,7 @@
 - (void)setOverlayContainerView:(id)arg1;
 - (void)setPlaceholderView:(id)arg1;
 - (void)setPlayerSpinnerState:(unsigned long long)arg1;
+- (void)setPreventDismissalByPhotosIfPossible:(bool)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setProgressContainerView:(id)arg1;
 - (void)setProgressIncludesDownload:(bool)arg1;
@@ -255,6 +277,7 @@
 - (void)setTitleLabel:(id)arg1;
 - (void)setVerticalCenteredLabel:(id)arg1;
 - (void)setVerticalProgressLabelSpace:(id)arg1;
+- (void)setupDownloadHandler;
 - (void)share:(id)arg1;
 - (id)shareBBItem;
 - (bool)shouldPlayOnAppearance;
@@ -267,12 +290,14 @@
 - (void)sliderViewControllerDidBeginDragging:(id)arg1;
 - (id)sourcePlaceholderView;
 - (unsigned long long)startTime;
+- (void)takeOwnershipOfMovieContainerViewController;
 - (id)tapGestureRecognizer;
 - (void)teardownMovieController;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })timeAtTeardown;
 - (id)titleLabel;
 - (void)toggleControlVisibility:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)updateDownloadErrorButton;
 - (void)updateProgressLayoutWithTraitCollection:(id)arg1;
 - (void)updateScrubberPlaceholderImage;
 - (id)verticalCenteredLabel;

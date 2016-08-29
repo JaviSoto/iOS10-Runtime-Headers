@@ -29,7 +29,7 @@
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (bool)isAccessory;
-- (bool)isMultiPointSupported;
+- (bool)isAppleAudioDevice;
 - (bool)isServiceSupported:(unsigned int)arg1;
 - (unsigned int)majorClass;
 - (unsigned int)minorClass;

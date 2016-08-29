@@ -7,6 +7,7 @@
     long long  _currentQueryID;
     <WBSParsecSearchSessionDelegate> * _delegate;
     WBSParsecDFeedbackDispatcher * _feedbackDispatcher;
+    GEOUserSessionEntity * _geoUserSessionEntity;
     PARSession * _parsecdSession;
     NSObject<OS_dispatch_queue> * _requestProcessingQueue;
     double  _uiScale;

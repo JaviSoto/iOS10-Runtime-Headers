@@ -4,12 +4,18 @@
 
 @interface AVCaptureFigAudioDevice : AVCaptureDevice {
     NSDictionary * _attributes;
+    struct OpaqueFigSimpleMutex { } * _clockMutex;
+    bool  _decoupledIOActive;
+    struct OpaqueCMClock { } * _decoupledIOClock;
+    struct OpaqueCMClock { } * _defaultClock;
+    struct OpaqueCMClock { } * _deviceClock;
     struct OpaqueFigCaptureSource { } * _fcs;
     NSObject<OS_dispatch_queue> * _fcsQueue;
     bool  _isConnected;
     bool  _levelMeteringEnabled;
     NSString * _localizedName;
     NSObject<OS_dispatch_semaphore> * _serverConnectionDiedSemaphore;
+    bool  _supportsDecoupledIO;
     AVWeakReference * _weakReference;
 }
 
@@ -24,6 +30,7 @@
 - (void)_setFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
 - (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
+- (void)avAudioSessionRouteChangeHandler:(id)arg1;
 - (void)dealloc;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (struct OpaqueFigCaptureSource { }*)figCaptureSource;
@@ -38,5 +45,6 @@
 - (void)stopUsingDevice;
 - (bool)supportsAVCaptureSessionPreset:(id)arg1;
 - (id)uniqueID;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

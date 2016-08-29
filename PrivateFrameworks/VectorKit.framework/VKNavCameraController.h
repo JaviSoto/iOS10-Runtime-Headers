@@ -6,6 +6,7 @@
     unsigned char  _alternateFramingSource;
     float  _animationTime;
     VKAttachedNavGestureCameraBehavior * _attachedGestureBehavior;
+    long long  _baseDisplayRate;
     struct Unit<MeterUnitDescription, double> { 
         double _value; 
     }  _cameraDistanceFromTarget;
@@ -27,6 +28,12 @@
         double _value; 
     }  _cameraPitch;
     unsigned char  _cameraType;
+    struct VKEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _clientFramingInsets;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
         struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
             struct __rep { 
@@ -227,7 +234,9 @@
 }
 
 @property (nonatomic, readonly) double altitude;
+@property (nonatomic) long long baseDisplayRate;
 @property (nonatomic) struct { double x1; double x2; } centerCoordinate;
+@property (nonatomic) struct VKEdgeInsets { double x1; double x2; double x3; double x4; } clientFramingInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double distanceFromCenterCoordinate;
@@ -265,6 +274,7 @@
 - (void)_updateZoomScaleLimts;
 - (double)altitude;
 - (void)animateCameraWithDuration:(float)arg1;
+- (long long)baseDisplayRate;
 - (struct Unit<RadianUnitDescription, double> { double x1; })calculateHeading;
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })calculateViewableScreenRect;
 - (struct CameraFrame<geo::Radians, double> { struct Mercator3<double> { double x_1_1_1[3]; } x1; struct Unit<MeterUnitDescription, double> { double x_2_1_1; } x2; struct Unit<RadianUnitDescription, double> { double x_3_1_1; } x3; struct Unit<RadianUnitDescription, double> { double x_4_1_1; } x4; })cameraFrame;
@@ -273,6 +283,7 @@
 - (bool)canZoomOutForTileSize:(long long)arg1;
 - (void)canvasDidLayout;
 - (struct { double x1; double x2; })centerCoordinate;
+- (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })clientFramingInsets;
 - (struct CameraFrame<geo::Radians, double> { struct Mercator3<double> { double x_1_1_1[3]; } x1; struct Unit<MeterUnitDescription, double> { double x_2_1_1; } x2; struct Unit<RadianUnitDescription, double> { double x_3_1_1; } x3; struct Unit<RadianUnitDescription, double> { double x_4_1_1; } x4; })currentCameraFrame;
 - (double)currentZoomLevel;
 - (void)dealloc;
@@ -309,8 +320,10 @@
 - (void)returnToTrackingWithDelay:(double)arg1 resetZoom:(bool)arg2;
 - (struct Mercator2<double> { double x1[2]; })routeLocationAtDistance:(double)arg1;
 - (struct Mercator2<double> { double x1[2]; })routeLocationAtDistance:(double)arg1 fromManeuver:(unsigned long long)arg2;
+- (void)setBaseDisplayRate:(long long)arg1;
 - (void)setCamera:(id)arg1;
 - (void)setCameraFrame:(struct CameraFrame<geo::Radians, double> { struct Mercator3<double> { double x_1_1_1[3]; } x1; struct Unit<MeterUnitDescription, double> { double x_2_1_1; } x2; struct Unit<RadianUnitDescription, double> { double x_3_1_1; } x3; struct Unit<RadianUnitDescription, double> { double x_4_1_1; } x4; })arg1;
+- (void)setClientFramingInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setMapCanvas:(id)arg1;
 - (void)setMapModel:(id)arg1;
 - (void)setNavContext:(id)arg1;

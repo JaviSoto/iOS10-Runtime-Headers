@@ -18,7 +18,8 @@
 - (void)_issueUpdateAudioStreamSettingRequest:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateAudioStreamSetting:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned long long)audioStreamSetting;
-- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 profileUniqueIdentifier:(id)arg6;
+- (void)dealloc;
+- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 profileUniqueIdentifier:(id)arg6 audioStreamSetting:(unsigned long long)arg7;
 - (void)setAudioStreamSetting:(unsigned long long)arg1;
 - (void)updateAudioStreamSetting:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 

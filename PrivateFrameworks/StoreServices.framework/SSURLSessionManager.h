@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSMapTable *taskDelegates;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *taskDelegatesQueue;
 
++ (id)_DNSServerIPAddresses;
 + (id)_bagPerformanceValues;
 + (id)_bagValueForKey:(id)arg1;
 + (double)_localTimeIntervalToServerTimeInterval:(double)arg1;
@@ -38,6 +39,8 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (int)_PIDFromAuditTokenData:(id)arg1;
+- (id)_URLCacheForDelegate:(id)arg1;
+- (id)_URLCacheIDForDelegate:(id)arg1;
 - (id)_delegateForTask:(id)arg1;
 - (void)_insertEventIntoDatabase:(id)arg1;
 - (void)_removeDelegateForTask:(id)arg1;

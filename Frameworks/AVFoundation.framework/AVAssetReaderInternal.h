@@ -9,6 +9,7 @@
     struct OpaqueFigAssetReader { } * figAssetReader;
     NSMutableSet * outputFinishedCallbackInvokers;
     NSMutableArray * outputs;
+    bool  readSingleSample;
     long long  status;
     NSObject<OS_dispatch_queue> * statusReadWriteQueue;
     struct { 

@@ -7,6 +7,8 @@
     UIButton * _cancelButton;
     id /* block */  _completionHandler;
     UIView * _controlsView;
+    UIButton * _dismissBackgroundButton;
+    UIButton * _dismissControlsViewButton;
     bool  _mirroringOnly;
     UIWindow * _presentationWindow;
     MPAVRoutingViewController * _routingViewController;

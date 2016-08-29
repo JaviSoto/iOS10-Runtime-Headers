@@ -14,6 +14,8 @@
         bool isCapHeightInitialized; 
         double descender; 
         bool isDescenderInitialized; 
+        double lineHeight; 
+        bool isLineHeightInitialized; 
     }  _defaultFontMetrics;
     long long  _leadingAdjustment;
     UIFont * _preferredFont;
@@ -26,6 +28,8 @@
         bool isCapHeightInitialized; 
         double descender; 
         bool isDescenderInitialized; 
+        double lineHeight; 
+        bool isLineHeightInitialized; 
     }  _preferredFontMetrics;
     double  _systemFontSize;
     long long  _textStyle;
@@ -35,12 +39,14 @@
 }
 
 @property (nonatomic, readonly) UIFont *defaultFont;
+@property (nonatomic, readonly) double defaultFontLineHeight;
 @property (nonatomic, readonly) long long leadingAdjustment;
 @property (nonatomic, readonly) UIFont *preferredFont;
 @property (nonatomic, readonly) double preferredFontAscender;
 @property (nonatomic, readonly) double preferredFontBodyLeading;
 @property (nonatomic, readonly) double preferredFontCapHeight;
 @property (nonatomic, readonly) double preferredFontDescender;
+@property (nonatomic, readonly) double preferredFontLineHeight;
 @property (nonatomic, readonly) double systemFontSize;
 @property (nonatomic, readonly) long long textStyle;
 @property (nonatomic, readonly) bool usesItalic;
@@ -80,6 +86,7 @@
 - (double)defaultFontBodyLeading;
 - (double)defaultFontCapHeight;
 - (double)defaultFontDescender;
+- (double)defaultFontLineHeight;
 - (id)description;
 - (unsigned long long)hash;
 - (id)init;
@@ -91,6 +98,7 @@
 - (double)preferredFontBodyLeading;
 - (double)preferredFontCapHeight;
 - (double)preferredFontDescender;
+- (double)preferredFontLineHeight;
 - (double)scaledValueForValue:(double)arg1;
 - (double)systemFontSize;
 - (long long)textStyle;

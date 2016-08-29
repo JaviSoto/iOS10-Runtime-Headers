@@ -45,11 +45,13 @@
 + (long long)maximumNumberOfTracksToFetch;
 + (void)setIgnoresUserDefaultExplicitTracksEnabled:(bool)arg1;
 + (void)setUserDefaultExplicitTracksEnabled:(bool)arg1;
++ (bool)supportsStateRestoration;
 
 - (void).cxx_destruct;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_applicationWillTerminateNotification:(id)arg1;
 - (bool)_canHavePlaceholderTrack;
+- (void)_commonInit;
 - (void)_configurePlaceholderAVItem;
 - (id)_currentTrackPlaybackDescriptorQueueWithCurrentItem:(id)arg1 shouldIncludePlaybackInformation:(bool)arg2 skipDate:(id)arg3;
 - (void)_fetchAdditionalTracksWithBaseIndex:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -78,16 +80,20 @@
 - (bool)canSkipToPreviousItem;
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (bool)hasValidItemAtIndex:(unsigned long long)arg1;
 - (id)identifierAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
+- (unsigned long long)indexOfMediaItem:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
 - (bool)isRadioQueueFeeder;
 - (Class)itemClass;
 - (unsigned long long)itemCount;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
+- (id)mediaItemAtIndex:(unsigned long long)arg1;
 - (id)modelPlayEvent;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
@@ -96,6 +102,7 @@
 - (bool)preventsHardQueueModificationsForItem:(id)arg1;
 - (long long)realRepeatType;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)restoreState:(id /* block */)arg1;
 - (void)setStation:(id)arg1;
 - (void)setTracks:(id)arg1;
 - (bool)shouldContinuePlaybackForNetworkType:(long long)arg1 player:(id)arg2;

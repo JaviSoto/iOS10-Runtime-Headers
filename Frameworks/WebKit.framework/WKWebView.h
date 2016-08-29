@@ -121,7 +121,12 @@
         double m43; 
         double m44; 
     }  _resizeAnimationTransformAdjustments;
-    unsigned long long  _resizeAnimationTransformTransactionID;
+    struct Optional<unsigned long long> { 
+        bool m_isEngaged; 
+        struct type { 
+            unsigned char __lx[8]; 
+        } m_value; 
+    }  _resizeAnimationTransformTransactionID;
     struct RetainPtr<UIView> { 
         void *m_ptr; 
     }  _resizeAnimationView;
@@ -273,12 +278,13 @@
 - (id)_dataDetectionResults;
 - (id)_dataForDisplayedPDF;
 - (id)_diagnosticLoggingDelegate;
-- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct Vector<WebKit::RemoteLayerTreeTransaction::LayerCreationProperties, 0, WTF::CrashOnOverflow, 16> { struct LayerCreationProperties {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; } x6; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_8_1_1; unsigned int x_8_1_2; unsigned int x_8_1_3; } x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; struct IntPoint { int x_10_1_1; int x_10_1_2; } x10; struct Color { unsigned int x_11_1_1; bool x_11_1_2; } x11; double x12; double x13; double x14; double x15; double x16; unsigned long long x17; unsigned long long x18; unsigned int x19; bool x20; bool x21; bool x22; bool x23; }*)arg1;
+- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
 - (void)_didFailLoadForMainFrame;
 - (void)_didFinishLoadForMainFrame;
 - (void)_didFinishLoadingDataForCustomContentProviderWithSuggestedFilename:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 data:(id)arg2;
 - (void)_didFinishScrolling;
+- (void)_didFirstVisuallyNonEmptyLayoutForMainFrame;
 - (void)_didInvokeUIScrollViewDelegateCallback;
 - (void)_didRelaunchProcess;
 - (void)_didSameDocumentNavigationForMainFrame:(int)arg1;
@@ -361,6 +367,7 @@
 - (long long)_selectionGranularity;
 - (id)_sessionState;
 - (id)_sessionStateData;
+- (id)_sessionStateWithFilter:(id /* block */)arg1;
 - (void)_setAddsVisitedLinks:(bool)arg1;
 - (void)_setAllowsMediaDocumentInlinePlayback:(bool)arg1;
 - (void)_setAllowsRemoteInspection:(bool)arg1;
@@ -378,6 +385,7 @@
 - (void)_setHistoryDelegate:(id)arg1;
 - (void)_setInputDelegate:(id)arg1;
 - (void)_setInterfaceOrientationOverride:(long long)arg1;
+- (void)_setIsBlankBeforeFirstNonEmptyLayout:(bool)arg1;
 - (void)_setLayoutMode:(unsigned long long)arg1;
 - (void)_setMaximumUnobscuredSizeOverride:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setMinimumLayoutSizeOverride:(struct CGSize { double x1; double x2; })arg1;
@@ -404,7 +412,6 @@
 - (double)_textZoomFactor;
 - (id)_unreachableURL;
 - (void)_updateContentRectsWithState:(bool)arg1;
-- (void)_updateForceAlwaysUserScalable;
 - (void)_updateScrollViewBackground;
 - (void)_updateVisibleContentRectAfterScrollInView:(id)arg1;
 - (void)_updateVisibleContentRects;
@@ -452,6 +459,7 @@
 - (bool)isLoading;
 - (void)keyboardAccessoryBarNext;
 - (void)keyboardAccessoryBarPrevious;
+- (void)layoutSubviews;
 - (id)loadData:(id)arg1 MIMEType:(id)arg2 characterEncodingName:(id)arg3 baseURL:(id)arg4;
 - (id)loadFileURL:(id)arg1 allowingReadAccessToURL:(id)arg2;
 - (id)loadHTMLString:(id)arg1 baseURL:(id)arg2;

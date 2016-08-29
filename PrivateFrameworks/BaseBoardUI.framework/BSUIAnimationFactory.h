@@ -17,6 +17,7 @@
 @property (nonatomic, readonly, copy) BSAnimationSettings *settings;
 @property (readonly) Class superclass;
 
++ (void)addAlongsideAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
 + (void)animateWithFactory:(id)arg1 actions:(id /* block */)arg2;
 + (void)animateWithFactory:(id)arg1 actions:(id /* block */)arg2 completion:(id /* block */)arg3;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id /* block */)arg3;

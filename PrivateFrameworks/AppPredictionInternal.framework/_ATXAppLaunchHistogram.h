@@ -36,6 +36,7 @@
 - (double)launchPopularityWithBundleId:(id)arg1 date:(id)arg2;
 - (double)overallLaunchPopularityForBundleId:(id)arg1;
 - (double)relativeLaunchPopularityWithBundleId:(id)arg1 date:(id)arg2;
+- (double)relativeLaunchPopularityWithBundleId:(id)arg1 date:(id)arg2 andFilterSpan:(unsigned int)arg3;
 - (int)removeAllHistoryForAllBundleIds:(id)arg1;
 - (bool)removeAllHistoryForBundleId:(id)arg1;
 - (void)removeLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;

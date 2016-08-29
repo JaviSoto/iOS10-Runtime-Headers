@@ -58,6 +58,7 @@
 - (id)sourceForClient:(id)arg1 createIfNecessary:(bool)arg2 error:(id*)arg3;
 - (id)sourceForCodableSource:(id)arg1 provenance:(long long)arg2 createIfNecessary:(bool)arg3 error:(id*)arg4;
 - (id)sourceForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 createIfNecessary:(bool)arg4 error:(id*)arg5;
+- (id)sourceUUIDForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)updateCurrentDeviceNameInDatabase:(id)arg1 error:(id*)arg2;
 - (void)updateOrderedSources:(id)arg1 forObjectType:(id)arg2 completion:(id /* block */)arg3;
 

@@ -191,7 +191,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
-+ (bool)fm_setDataProtectionClass:(int)arg1 forFileURL:(id)arg2 error:(id*)arg3;
++ (bool)fm_setDataProtectionClass:(long long)arg1 forFileURL:(id)arg2 error:(id*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -206,6 +206,12 @@
 - (int)gs_createTemporaryFdInDirectory:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
 - (id)gs_createTemporaryFileInDirectory:(id)arg1 withTemplate:(id)arg2 andExtension:(id)arg3 error:(id*)arg4;
 - (id)gs_createTemporarySubdirectoryOfItem:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (bool)_hd_removeDatabaseFilesAtDatabaseURL:(id)arg1 extensionSuffixes:(id)arg2 preserveCopy:(bool)arg3;
+- (bool)hd_removeHFDDatabaseAtURL:(id)arg1 preserveCopy:(bool)arg2;
+- (bool)hd_removeSQLiteDatabaseAtURL:(id)arg1 preserveCopy:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -347,6 +353,7 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
+- (bool)uns_moveOrDeleteItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (bool)uns_securelyMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos

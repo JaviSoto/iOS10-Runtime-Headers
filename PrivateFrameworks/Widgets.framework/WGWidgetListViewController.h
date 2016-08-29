@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGWidgetListViewController : UIViewController <UIScrollViewDelegate, WGWidgetDebugging, WGWidgetDiscoveryObserving, WGWidgetHostingViewControllerDelegate> {
+@interface WGWidgetListViewController : UIViewController <UIScrollViewDelegate, WGWidgetDebugging, WGWidgetDiscoveryObserving, WGWidgetExtensionVisibilityProviding, WGWidgetHostingViewControllerDelegate> {
     NSMutableDictionary * _cancelTouchesAssertionsByWidgetID;
     <WGWidgetListViewControllerDelegate> * _delegate;
     WGWidgetDiscoveryController * _discoveryController;
@@ -53,13 +53,16 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithWidgetDiscoveryController:(id)arg1;
 - (void)invalidateWidgetBackgroundViews;
+- (bool)isWidgetExtensionVisible:(id)arg1;
 - (void)loadView;
 - (void)makeVisibleWidgetWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsetsForWidget:(id)arg1;
 - (struct CGSize { double x1; double x2; })maxSizeForWidget:(id)arg1 forDisplayMode:(long long)arg2;
 - (void)orderOfVisibleWidgetsDidChange:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)remoteViewControllerDidDisconnectForWidget:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidget:(id)arg1;
+- (void)remoteViewControllerViewDidHideForWidget:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

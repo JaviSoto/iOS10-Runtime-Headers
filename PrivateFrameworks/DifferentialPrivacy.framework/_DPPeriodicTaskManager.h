@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/DifferentialPrivacy
  */
 
-@interface _DPPeriodicTaskManager : NSObject {
-    NSMutableDictionary * _allTasks;
-}
+@interface _DPPeriodicTaskManager : NSObject
 
-@property (nonatomic, retain) NSMutableDictionary *allTasks;
-
-+ (id)sharedInstance;
-
-- (void).cxx_destruct;
-- (id)allTasks;
-- (id)init;
-- (void)registerTask:(id)arg1;
-- (void)setAllTasks:(id)arg1;
-- (void)unregisterTask:(id)arg1;
++ (void)registerTask:(id)arg1;
++ (void)unregisterTask:(id)arg1;
 
 @end

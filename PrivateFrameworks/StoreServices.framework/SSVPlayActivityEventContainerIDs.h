@@ -7,6 +7,7 @@
     NSString * _cloudAlbumID;
     unsigned long long  _cloudPlaylistID;
     NSString * _globalPlaylistID;
+    NSString * _playlistVersionHash;
     NSString * _stationHash;
     long long  _stationID;
     NSString * _stationStringID;
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly, copy) NSString *cloudAlbumID;
 @property (nonatomic, readonly) unsigned long long cloudPlaylistID;
 @property (nonatomic, readonly, copy) NSString *globalPlaylistID;
+@property (nonatomic, readonly, copy) NSString *playlistVersionHash;
 @property (nonatomic, readonly, copy) NSString *stationHash;
 @property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly, copy) NSString *stationStringID;
@@ -33,6 +35,7 @@
 - (id)globalPlaylistID;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)playlistVersionHash;
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationStringID;

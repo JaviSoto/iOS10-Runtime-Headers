@@ -26,6 +26,7 @@
 - (id)init;
 - (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2;
 - (id)notificationsUserID;
+- (bool)refreshNotificationsForChannelIDs:(id)arg1 paidChannelIDs:(id)arg2;
 - (void)registerDeviceToken:(id)arg1;
 - (bool)registerNotificationsForTagID:(id)arg1 isPaid:(bool)arg2;
 - (void)setCommandQueue:(id)arg1;
@@ -34,6 +35,6 @@
 - (void)setUserInfo:(id)arg1;
 - (bool)unregisterNotificationsForTagID:(id)arg1;
 - (id)userInfo;
-- (void)userInfoDidChangeNotificationUserID:(id)arg1;
+- (void)userInfoDidChangeNotificationsUserID:(id)arg1;
 
 @end

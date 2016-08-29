@@ -9,7 +9,6 @@
     CXHandle * _remoteHandle;
 }
 
-@property (nonatomic, copy) NSString *callerIdentifier;
 @property (nonatomic, copy) NSDictionary *context;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly, copy) NSString *handoffIdentifier;
@@ -19,7 +18,6 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)callerIdentifier;
 - (id)context;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -34,7 +32,6 @@
 - (bool)isEqualToHandoffContext:(id)arg1;
 - (bool)isOutgoing;
 - (id)remoteHandle;
-- (void)setCallerIdentifier:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setOutgoing:(bool)arg1;
 - (void)setRemoteHandle:(id)arg1;

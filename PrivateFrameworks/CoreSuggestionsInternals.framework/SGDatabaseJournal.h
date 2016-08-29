@@ -3,7 +3,6 @@
  */
 
 @interface SGDatabaseJournal : NSObject {
-    id  _closeCurrentFilesObserver;
     SGDatabaseJournalFile * _currentFile;
     NSString * _directoryPath;
     bool  _inMemory;
@@ -23,12 +22,10 @@
 - (void)_addCurrentFileToLog;
 - (void)_clearCurrentFile;
 - (void)_closeCurrentFile;
-- (void)_closeCurrentFilesForAllInstances;
 - (bool)_executeFile:(id)arg1 onDb:(id)arg2 becameLocked:(bool*)arg3;
 - (id)_getCurrentFile;
-- (void)dealloc;
 - (bool)deleteAllJournaledQueries;
-- (bool)executeQueriesFromAllJournalFilesOnDatabase:(id)arg1;
+- (bool)executeQueriesOnDatabase:(id)arg1;
 - (bool)journaling;
 - (void)runQuery:(id)arg1 values:(id)arg2 onDb:(id)arg3;
 - (bool)startJournaling;

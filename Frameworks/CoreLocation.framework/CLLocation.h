@@ -14,6 +14,7 @@
 @property (getter=_navigation_courseAccuracy, nonatomic, readonly) double courseAccuracy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=_navigation_detailedMatchInfo, nonatomic, readonly) GEONavigationMatchInfo *detailedMatchInfo;
 @property (nonatomic, readonly, copy) CLFloor *floor;
 @property (getter=_navigation_hasMatch, nonatomic, readonly) bool hasMatch;
 @property (getter=_navigation_hasValidCourse, nonatomic, readonly) bool hasValidCourse;
@@ -30,7 +31,7 @@
 @property (nonatomic) int referenceFrame;
 @property (getter=_navigation_routeMatch, nonatomic, readonly) GEORouteMatch *routeMatch;
 @property (nonatomic, readonly) double speed;
-@property (getter=_navigation_speedAccuracy, nonatomic, readonly) double speedAccuracy;
+@property (nonatomic, readonly) double speedAccuracy;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSDate *timestamp;
 @property (nonatomic, readonly) double trustedTimestamp;
@@ -74,6 +75,7 @@
 - (id)shortDescription;
 - (id)snapToResolution:(double)arg1;
 - (double)speed;
+- (double)speedAccuracy;
 - (id)timestamp;
 - (double)trustedTimestamp;
 - (int)type;
@@ -106,6 +108,7 @@
 
 - (int)_navigation_clLocationTypeForGEOLocationType:(int)arg1;
 - (double)_navigation_courseAccuracy;
+- (id)_navigation_detailedMatchInfo;
 - (bool)_navigation_hasMatch;
 - (bool)_navigation_hasValidCourse;
 - (bool)_navigation_isEqualToLocationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;

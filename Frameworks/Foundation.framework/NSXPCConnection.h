@@ -35,9 +35,9 @@
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
 @property (retain) NSXPCInterface *exportedInterface;
 @property (retain) id exportedObject;
-@property (nonatomic, readonly, copy) NSString *hk_appExtensionIdentifier;
 @property (nonatomic, readonly, copy) NSString *hk_bundleIdentifier;
 @property (nonatomic, readonly) bool hk_isAppExtension;
+@property (nonatomic, readonly, copy) NSString *hk_signingIdentifier;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
 @property (nonatomic, readonly) NSString *processBundleIdentifier;
@@ -139,9 +139,9 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-- (id)hk_appExtensionIdentifier;
 - (id)hk_bundleIdentifier;
 - (bool)hk_isAppExtension;
+- (id)hk_signingIdentifier;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 

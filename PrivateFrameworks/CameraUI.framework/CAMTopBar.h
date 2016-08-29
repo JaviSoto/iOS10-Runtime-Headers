@@ -17,6 +17,7 @@
     CAMElapsedTimeView * _elapsedTimeView;
     CAMFilterButton * _filterButton;
     CAMFlashButton * _flashButton;
+    CAMFlipButton * _flipButton;
     CAMFramerateIndicatorView * _framerateIndicatorView;
     CAMIrisButton * _irisButton;
     long long  _orientation;
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) CAMElapsedTimeView *elapsedTimeView;
 @property (nonatomic, retain) CAMFilterButton *filterButton;
 @property (nonatomic, retain) CAMFlashButton *flashButton;
+@property (nonatomic, retain) CAMFlipButton *flipButton;
 @property (getter=isFloating, nonatomic, readonly) bool floating;
 @property (nonatomic, retain) CAMFramerateIndicatorView *framerateIndicatorView;
 @property (nonatomic, retain) CAMIrisButton *irisButton;
@@ -77,6 +79,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })expandedFrameForMenuButton:(id)arg1;
 - (id)filterButton;
 - (id)flashButton;
+- (id)flipButton;
 - (id)framerateIndicatorView;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -91,6 +94,7 @@
 - (void)setElapsedTimeView:(id)arg1;
 - (void)setFilterButton:(id)arg1;
 - (void)setFlashButton:(id)arg1;
+- (void)setFlipButton:(id)arg1;
 - (void)setFramerateIndicatorView:(id)arg1;
 - (void)setHDRButton:(id)arg1;
 - (void)setIrisButton:(id)arg1;
@@ -102,6 +106,7 @@
 - (bool)shouldHideElapsedTimeViewForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFilterButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFlashButtonForGraphConfiguration:(id)arg1;
+- (bool)shouldHideFlipButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFramerateIndicatorForGraphConfiguration:(id)arg1;
 - (bool)shouldHideHDRButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideIrisButtonForGraphConfiguration:(id)arg1;

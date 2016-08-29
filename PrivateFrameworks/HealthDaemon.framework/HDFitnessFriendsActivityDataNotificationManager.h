@@ -8,9 +8,11 @@
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
     HDFitnessFriendsContactsManager * _contactsManager;
     <HDHealthDataManager> * _dataManager;
+    HDFitnessFriendsFriendListManager * _friendListManager;
     <HDHealthDaemon> * _healthDaemon;
+    bool  _isCloudKitManagerProcessingData;
     NSObject<OS_dispatch_queue> * _queue;
-    bool  _recievedChangesFromCloudKit;
+    bool  _receivedChangesFromCloudKit;
 }
 
 @property (nonatomic, retain) NSNumber *achievementAnchor;
@@ -19,6 +21,7 @@
 @property (nonatomic) HDFitnessFriendsContactsManager *contactsManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) HDFitnessFriendsFriendListManager *friendListManager;
 @property (nonatomic, retain) NSNumber *goalCompletionAnchor;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
@@ -28,9 +31,15 @@
 - (bool)_areAllGoalsMetForSnapshot:(id)arg1;
 - (id)_fetchNewDataForFriends;
 - (id)_higherPriorityAchievementFromAchievement1:(id)arg1 achievement2:(id)arg2;
-- (bool)_isNotificationEventDate:(id)arg1 beforeRelationshipBeganForPersonWithUUID:(id)arg2;
+- (bool)_isEventDate:(id)arg1 inCurrentDateForFriend:(id)arg2;
+- (bool)_isNotificationEventDate:(id)arg1 beforeRelationshipBeganWithFriend:(id)arg2;
+- (id)_localUserDefaultsDomainWithHealthDaemon:(id)arg1;
+- (id)_mostRecentAchievementEarnedDateForFriendWithUUID:(id)arg1;
 - (id)_mostRecentGoalCompletedSnapshotIndexForFriendWithUUID:(id)arg1;
-- (void)_notifyAboutWorkoutDetectionIfRequired:(id)arg1;
+- (id)_mostRecentWorkoutCompletionDateForFriendWithUUID:(id)arg1;
+- (id)_nanoUserDefaultsDomainKeyForFriendWithUUID:(id)arg1 keyTypeString:(id)arg2;
+- (id)_nanoUserDefaultsDomainWithHealthDaemon:(id)arg1;
+- (void)_notifyAboutWorkoutsDetectionIfRequired:(id)arg1;
 - (void)_queue_coalesceAndNotifyFromDict:(id)arg1;
 - (id)_queue_fetchNewDataForFriends;
 - (void)_queue_showFriendNotificationsIfRequired;
@@ -38,9 +47,9 @@
 - (void)_queue_updateFriendsDict:(id)arg1 withGoalCompletionsFromSnapshots:(id)arg2;
 - (void)_queue_updateFriendsDict:(id)arg1 withWorkouts:(id)arg2;
 - (void)_setHealthDaemon:(id)arg1;
+- (void)_setMostRecentAchievementEarnedDate:(id)arg1 forFriendWithUUID:(id)arg2;
 - (void)_setMostRecentGoalCompletedSnapshotIndex:(id)arg1 forFriendWithUUID:(id)arg2;
-- (void)_setupBackgroundTaskToRunAfterDelay;
-- (id)_userDefaultsDomainWithHealthDaemon:(id)arg1;
+- (void)_setMostRecentWorkoutCompletionDate:(id)arg1 forFriendWithUUID:(id)arg2;
 - (id)achievementAnchor;
 - (id)activityDataManager;
 - (void)alertSuppressionInvalidatedForSuppressionId:(id)arg1 reason:(long long)arg2;
@@ -51,6 +60,7 @@
 - (id)contactsManager;
 - (void)dealloc;
 - (void)fitnessFriendsManagerReady:(id)arg1;
+- (id)friendListManager;
 - (id)goalCompletionAnchor;
 - (id)init;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
@@ -58,6 +68,7 @@
 - (void)setActivityDataManager:(id)arg1;
 - (void)setCloudKitManager:(id)arg1;
 - (void)setContactsManager:(id)arg1;
+- (void)setFriendListManager:(id)arg1;
 - (void)setGoalCompletionAnchor:(id)arg1;
 - (void)setWorkoutAnchor:(id)arg1;
 - (void)showFriendNotifications;

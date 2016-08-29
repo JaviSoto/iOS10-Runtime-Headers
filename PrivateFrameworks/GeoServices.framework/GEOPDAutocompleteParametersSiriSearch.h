@@ -13,6 +13,7 @@
     int  _maxResults;
     NSString * _prefix;
     NSString * _query;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -27,6 +28,7 @@
 @property (nonatomic) int maxResults;
 @property (nonatomic, retain) NSString *prefix;
 @property (nonatomic, retain) NSString *query;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (bool)completed;
@@ -58,6 +60,7 @@
 - (void)setPrefix:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

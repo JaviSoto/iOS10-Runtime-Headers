@@ -18,6 +18,7 @@
     int  _minimumNumberOfCategories;
     double  _requestLocalTimestamp;
     int  _suggestionType;
+    PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
@@ -32,6 +33,7 @@
 @property (nonatomic) int minimumNumberOfCategories;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic) int suggestionType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (int)StringAsEngineTypes:(id)arg1;
@@ -71,6 +73,7 @@
 - (void)setViewportInfo:(id)arg1;
 - (int)suggestionType;
 - (id)suggestionTypeAsString:(int)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

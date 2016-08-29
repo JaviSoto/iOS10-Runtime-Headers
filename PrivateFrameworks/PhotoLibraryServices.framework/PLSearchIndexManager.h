@@ -83,6 +83,7 @@
 - (void)_throttleTimerFire:(id)arg1;
 - (id)_updatesAfterConvertingDetectedFacesToAssetsInUpdates:(id)arg1;
 - (id)_updatesAfterConvertingPersonsToAssetsInUpdates:(id)arg1;
+- (id)_uuidsToRemoveFromUUIDsToProcess:(id)arg1;
 - (void)applyUpdates:(id)arg1 completion:(id /* block */)arg2;
 - (void)closeSearchIndexWithCompletion:(id /* block */)arg1;
 - (void)dealloc;

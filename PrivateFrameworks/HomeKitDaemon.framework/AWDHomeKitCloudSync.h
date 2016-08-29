@@ -3,70 +3,103 @@
  */
 
 @interface AWDHomeKitCloudSync : PBCodable <NSCopying> {
+    int  _dataSyncState;
     unsigned int  _fetchCount;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int dataSyncState : 1; 
         unsigned int fetchCount : 1; 
         unsigned int pushCount : 1; 
         unsigned int uploadCount : 1; 
         unsigned int uploadErrorCount : 1; 
+        unsigned int hasDecryptionFailed : 1; 
+        unsigned int lastDecryptionFailed : 1; 
+        unsigned int uploadMaximumDelayReached : 1; 
     }  _has;
+    bool  _hasDecryptionFailed;
+    bool  _lastDecryptionFailed;
     unsigned int  _pushCount;
     unsigned long long  _timestamp;
     NSMutableArray * _topErrors;
     NSMutableArray * _topReasons;
     unsigned int  _uploadCount;
     unsigned int  _uploadErrorCount;
+    bool  _uploadMaximumDelayReached;
 }
 
+@property (nonatomic) int dataSyncState;
 @property (nonatomic) unsigned int fetchCount;
+@property (nonatomic) bool hasDataSyncState;
+@property (nonatomic) bool hasDecryptionFailed;
 @property (nonatomic) bool hasFetchCount;
+@property (nonatomic) bool hasHasDecryptionFailed;
+@property (nonatomic) bool hasLastDecryptionFailed;
 @property (nonatomic) bool hasPushCount;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) bool hasUploadCount;
 @property (nonatomic) bool hasUploadErrorCount;
+@property (nonatomic) bool hasUploadMaximumDelayReached;
+@property (nonatomic) bool lastDecryptionFailed;
 @property (nonatomic) unsigned int pushCount;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSMutableArray *topErrors;
 @property (nonatomic, retain) NSMutableArray *topReasons;
 @property (nonatomic) unsigned int uploadCount;
 @property (nonatomic) unsigned int uploadErrorCount;
+@property (nonatomic) bool uploadMaximumDelayReached;
 
 + (Class)topErrorsType;
 + (Class)topReasonsType;
 
 - (void).cxx_destruct;
+- (int)StringAsDataSyncState:(id)arg1;
 - (void)addTopErrors:(id)arg1;
 - (void)addTopReasons:(id)arg1;
 - (void)clearTopErrors;
 - (void)clearTopReasons;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)dataSyncState;
+- (id)dataSyncStateAsString:(int)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fetchCount;
+- (bool)hasDataSyncState;
+- (bool)hasDecryptionFailed;
 - (bool)hasFetchCount;
+- (bool)hasHasDecryptionFailed;
+- (bool)hasLastDecryptionFailed;
 - (bool)hasPushCount;
 - (bool)hasTimestamp;
 - (bool)hasUploadCount;
 - (bool)hasUploadErrorCount;
+- (bool)hasUploadMaximumDelayReached;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (bool)lastDecryptionFailed;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)pushCount;
 - (bool)readFrom:(id)arg1;
+- (void)setDataSyncState:(int)arg1;
 - (void)setFetchCount:(unsigned int)arg1;
+- (void)setHasDataSyncState:(bool)arg1;
+- (void)setHasDecryptionFailed:(bool)arg1;
 - (void)setHasFetchCount:(bool)arg1;
+- (void)setHasHasDecryptionFailed:(bool)arg1;
+- (void)setHasLastDecryptionFailed:(bool)arg1;
 - (void)setHasPushCount:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasUploadCount:(bool)arg1;
 - (void)setHasUploadErrorCount:(bool)arg1;
+- (void)setHasUploadMaximumDelayReached:(bool)arg1;
+- (void)setLastDecryptionFailed:(bool)arg1;
 - (void)setPushCount:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTopErrors:(id)arg1;
 - (void)setTopReasons:(id)arg1;
 - (void)setUploadCount:(unsigned int)arg1;
 - (void)setUploadErrorCount:(unsigned int)arg1;
+- (void)setUploadMaximumDelayReached:(bool)arg1;
 - (unsigned long long)timestamp;
 - (id)topErrors;
 - (id)topErrorsAtIndex:(unsigned long long)arg1;
@@ -76,6 +109,7 @@
 - (unsigned long long)topReasonsCount;
 - (unsigned int)uploadCount;
 - (unsigned int)uploadErrorCount;
+- (bool)uploadMaximumDelayReached;
 - (void)writeTo:(id)arg1;
 
 @end

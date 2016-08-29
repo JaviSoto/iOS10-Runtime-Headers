@@ -23,6 +23,7 @@
 - (void)discardContents;
 - (id)drawableProperties;
 - (bool)isAsynchronous;
+- (bool)isDrawableAvailable;
 - (void)layerDidBecomeVisible:(bool)arg1;
 - (bool)lowLatency;
 - (struct _EAGLNativeWindowObject { int x1; unsigned int x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); }*)nativeWindow;

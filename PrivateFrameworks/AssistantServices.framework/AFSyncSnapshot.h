@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFSyncSnapshot : NSObject {
+@interface AFSyncSnapshot : NSObject <NSSecureCoding> {
     NSString * _anchor;
     long long  _count;
     NSString * _key;
@@ -14,9 +14,13 @@
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *validity;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)anchor;
 - (long long)count;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)key;
 - (void)setAnchor:(id)arg1;
 - (void)setCount:(long long)arg1;

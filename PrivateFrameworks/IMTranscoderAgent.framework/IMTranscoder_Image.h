@@ -7,6 +7,8 @@
 + (id)supportedUTIs;
 
 - (id)_generateImage:(struct CGImageSource { }*)arg1 target:(long long)arg2 hardwareEncoder:(id)arg3 inFormat:(struct __CFString { }*)arg4 fromFormat:(struct __CFString { }*)arg5 withMaxLength:(unsigned long long)arg6 withMaxCount:(unsigned long long)arg7 enforceMaxes:(bool)arg8 subsampling:(int)arg9;
+- (unsigned long long)_getImageWidth:(struct CGImageSource { }*)arg1;
+- (id)_getScaleFactorArray:(id)arg1 transferURL:(id)arg2 outputURLs:(id)arg3;
 - (bool)_isWideGamutImage:(struct CGImageSource { }*)arg1;
 - (id)_writeImage:(struct CGImageSource { }*)arg1 sourceURL:(id)arg2 target:(long long)arg3 hardwareEncoder:(id)arg4 inFormat:(struct __CFString { }*)arg5 fromFormat:(struct __CFString { }*)arg6 withMaxByteSize:(unsigned long long)arg7 maxDimension:(unsigned long long)arg8 actualSize:(unsigned long long*)arg9 startingLengthIndex:(int)arg10 usedLengthIndex:(int*)arg11;
 - (id)_writeImageData:(id)arg1 inFormat:(struct __CFString { }*)arg2 sourceURL:(id)arg3;

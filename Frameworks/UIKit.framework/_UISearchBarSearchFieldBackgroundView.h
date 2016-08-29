@@ -21,6 +21,7 @@
 - (unsigned long long)searchBarStyle;
 - (void)setBackgroundContainer:(bool)arg1;
 - (void)setBarStyle:(long long)arg1;
+- (void)setCornerRadius:(double)arg1;
 - (void)setSearchBarStyle:(unsigned long long)arg1;
 - (void)updateView;
 

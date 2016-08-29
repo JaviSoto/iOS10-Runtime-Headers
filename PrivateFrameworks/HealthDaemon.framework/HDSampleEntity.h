@@ -13,7 +13,7 @@
 + (id)columnNamesForTimeOffset;
 + (id)columnsDefinition;
 + (long long)countOfSamplesWithType:(id)arg1 profile:(id)arg2 matchingPredicate:(id)arg3 withError:(id*)arg4;
-+ (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned long long)arg2 generateDeletedObjects:(bool)arg3 database:(id)arg4 recursiveDeleteAuthorizationBlock:(id /* block */)arg5 completionHandler:(id /* block */)arg6;
++ (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned long long)arg2 generateDeletedObjects:(bool)arg3 database:(id)arg4 profile:(id)arg5 recursiveDeleteAuthorizationBlock:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 + (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned long long)arg2 generateDeletedObjects:(bool)arg3 profile:(id)arg4 recursiveDeleteAuthorizationBlock:(id /* block */)arg5 completionHandler:(id /* block */)arg6;
 + (void)deleteSamplesWithTypes:(id)arg1 sourceIdentifier:(id)arg2 profile:(id)arg3 recursiveDeleteAuthorizationBlock:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 encodingOptions:(id)arg4 authorizationFilter:(id /* block */)arg5;

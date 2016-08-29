@@ -4,12 +4,12 @@
 
 @interface FCSingleTagFeedDescriptor : FCMultiTagFeedDescriptor {
     long long  _feedType;
+    <FCTagProviding> * _masterTag;
     <FCTagProviding> * _tag;
-    <FCTagProviding> * _tagForSubscriptions;
 }
 
+@property (nonatomic, readonly, copy) <FCTagProviding> *masterTag;
 @property (nonatomic, copy) <FCTagProviding> *tag;
-@property (nonatomic, copy) <FCTagProviding> *tagForSubscriptions;
 
 - (void).cxx_destruct;
 - (id)backingChannelID;
@@ -21,6 +21,7 @@
 - (long long)feedSortMethod;
 - (long long)feedType;
 - (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
+- (bool)hideAccessoryText;
 - (id)iAdCategories;
 - (long long)iAdContentProvider;
 - (id)iAdFeedID;
@@ -31,13 +32,12 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isSubscribable;
 - (bool)isSubscribedToWithSubscriptionController:(id)arg1;
+- (id)masterTag;
 - (id)name;
 - (void)setFeedType:(long long)arg1;
 - (void)setTag:(id)arg1;
-- (void)setTagForSubscriptions:(id)arg1;
 - (bool)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (id)tag;
-- (id)tagForSubscriptions;
 - (id)theme;
 - (void)unsubscribeToWithSubscriptionController:(id)arg1;
 

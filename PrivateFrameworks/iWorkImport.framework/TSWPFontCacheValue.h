@@ -12,6 +12,7 @@
 
 - (struct __CTFont { }*)ctFont;
 - (void)dealloc;
+- (id)description;
 - (id)initWithCTFont:(struct __CTFont { }*)arg1;
 
 @end

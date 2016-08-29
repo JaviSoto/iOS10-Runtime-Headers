@@ -18,6 +18,7 @@
 - (id)_imagePickerControllerHelper;
 - (id)_imagePickerMediaTypes;
 - (void)_setImagePickerMediaTypes:(id)arg1;
+- (bool)allowsPeeking;
 - (bool)canNavigateToPhotoInteractively:(bool)arg1;
 - (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out bool*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;

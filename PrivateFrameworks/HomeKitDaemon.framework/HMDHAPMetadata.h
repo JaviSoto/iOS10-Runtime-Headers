@@ -15,7 +15,9 @@
     NSArray * _hmAccessoryCategories;
     NSArray * _hmBlacklistedCharacteristics;
     NSArray * _hmBlacklistedServices;
+    NSArray * _hmBulletinBoardEnabledTuples;
     NSArray * _hmCharacteristicsBlacklistedFromApp;
+    NSArray * _hmNotificationAutoEnabledTuples;
     NSArray * _hmRequiresDeviceUnlockTuples;
     NSArray * _hmServicesBlacklistedFromApp;
     bool  _incomplete;
@@ -35,7 +37,9 @@
 @property (nonatomic, retain) NSArray *hmAccessoryCategories;
 @property (nonatomic, retain) NSArray *hmBlacklistedCharacteristics;
 @property (nonatomic, retain) NSArray *hmBlacklistedServices;
+@property (nonatomic, retain) NSArray *hmBulletinBoardEnabledTuples;
 @property (nonatomic, retain) NSArray *hmCharacteristicsBlacklistedFromApp;
+@property (nonatomic, retain) NSArray *hmNotificationAutoEnabledTuples;
 @property (nonatomic, retain) NSArray *hmRequiresDeviceUnlockTuples;
 @property (nonatomic, retain) NSArray *hmServicesBlacklistedFromApp;
 @property (nonatomic) bool incomplete;
@@ -56,6 +60,7 @@
 - (id)categoryForIdentifier:(id)arg1;
 - (id)categoryForOther;
 - (bool)checkTuples:(id)arg1 forCharacteristic:(id)arg2 service:(id)arg3;
+- (bool)checkTuples:(id)arg1 forService:(id)arg2;
 - (id)createHAPMetadata:(id)arg1;
 - (void)createHMDContainersForHAPMetadata;
 - (id)descriptionForCharacteristicType:(id)arg1;
@@ -67,6 +72,7 @@
 - (id)generateCategoriesDictionary:(id)arg1;
 - (id)generateDictionary;
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
+- (id)generateHMDHAPMetadataTupleArrayFromDict:(id)arg1;
 - (id)generateHMDictionary;
 - (id)hapCharacteristics;
 - (id)hapMetadata;
@@ -77,7 +83,9 @@
 - (id)hmAccessoryCategories;
 - (id)hmBlacklistedCharacteristics;
 - (id)hmBlacklistedServices;
+- (id)hmBulletinBoardEnabledTuples;
 - (id)hmCharacteristicsBlacklistedFromApp;
+- (id)hmNotificationAutoEnabledTuples;
 - (id)hmRequiresDeviceUnlockTuples;
 - (id)hmServicesBlacklistedFromApp;
 - (bool)incomplete;
@@ -92,6 +100,7 @@
 - (bool)parseCategories:(id)arg1;
 - (id)parseHAPAssistantServices:(id)arg1;
 - (bool)parseHMMetadata:(id)arg1;
+- (bool)parseNotificationMetadata:(id)arg1;
 - (bool)parseRequiresDeviceUnlockMetadata:(id)arg1;
 - (bool)requiresDeviceUnlock:(id)arg1 forService:(id)arg2;
 - (id)schemaVersion;
@@ -107,13 +116,18 @@
 - (void)setHmAccessoryCategories:(id)arg1;
 - (void)setHmBlacklistedCharacteristics:(id)arg1;
 - (void)setHmBlacklistedServices:(id)arg1;
+- (void)setHmBulletinBoardEnabledTuples:(id)arg1;
 - (void)setHmCharacteristicsBlacklistedFromApp:(id)arg1;
+- (void)setHmNotificationAutoEnabledTuples:(id)arg1;
 - (void)setHmRequiresDeviceUnlockTuples:(id)arg1;
 - (void)setHmServicesBlacklistedFromApp:(id)arg1;
 - (void)setIncomplete:(bool)arg1;
 - (void)setSchemaVersion:(id)arg1;
 - (void)setVersion:(id)arg1;
 - (bool)shouldAllowHomeNotificationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
+- (bool)shouldAutoEnableNotificationForCharacteristic:(id)arg1 ofService:(id)arg2;
+- (bool)shouldEnableBulletinBoardForCharacteristic:(id)arg1 ofService:(id)arg2;
+- (bool)shouldEnableBulletinBoardForService:(id)arg1;
 - (bool)shouldFilterCharacteristicOfType:(id)arg1;
 - (bool)shouldFilterCharacteristicOfTypeFromApp:(id)arg1;
 - (bool)shouldFilterServiceOfType:(id)arg1;

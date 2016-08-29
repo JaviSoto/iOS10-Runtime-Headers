@@ -16,6 +16,9 @@
 @property (nonatomic) double fingerPresentTimeout;
 @property (nonatomic, readonly) bool fingerPresentTimeoutExpired;
 @property (nonatomic, readonly) bool fingerPresentTimeoutRequired;
+@property (nonatomic, readonly) bool passcodeActive;
+@property (nonatomic, readonly) bool passcodeWasPresented;
+@property (nonatomic, readonly) bool passphraseActive;
 
 + (unsigned long long)currentStateForPolicy:(long long)arg1;
 + (void)preheatAuthenticator;
@@ -42,6 +45,9 @@
 - (bool)fingerPresentTimeoutRequired;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
+- (bool)passcodeActive;
+- (bool)passcodeWasPresented;
+- (bool)passphraseActive;
 - (void)restartEvaluation;
 - (void)setDelegate:(id)arg1;
 - (void)setFingerPresentTimeout:(double)arg1;

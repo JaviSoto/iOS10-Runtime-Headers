@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentSetupFieldDate : PKPaymentSetupFieldText {
+    NSDateFormatter * _displayDateFormatter;
     bool  _showsDay;
     bool  _showsMonth;
     bool  _showsYear;

@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
  */
 
-@interface MNNavigationServiceLocalProxy : NSObject <MNGuidanceLevelUpdaterDelegate, MNNavigationServiceDaemonInterface, MNNavigationSessionObserver, MNNavigationTraceManagerDelegate> {
+@interface MNNavigationServiceLocalProxy : NSObject <MNAudioOutputSettingsManagerObserver, MNGuidanceLevelUpdaterDelegate, MNNavigationServiceDaemonInterface, MNNavigationSessionObserver, MNNavigationTraceManagerDelegate> {
     id /* block */  _activeNavigationHandler;
+    MNAudioOutputSettingsManager * _audioOutputSettingsManager;
     <MNNavigationServiceClientInterface> * _delegate;
     MNGuidanceLevelUpdater * _guidanceLevelUpdater;
     unsigned long long  _navigationServiceState;
@@ -29,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (void)_endXPCTransaction;
+- (void)_failWithError:(id)arg1;
 - (id)_guidanceLevelUpdater;
 - (id)_routeManager;
 - (void)_setupLocationManager;
@@ -36,6 +38,10 @@
 - (id)_traceManager;
 - (void)_transitionToState:(unsigned long long)arg1 withSuccessHandler:(id /* block */)arg2;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
+- (void)audioOutputSettingsManager:(id)arg1 didUpdateCurrentSetting:(id)arg2;
+- (void)audioOutputSettingsManager:(id)arg1 didUpdateCurrentSettingForVoicePrompt:(id)arg2;
+- (void)audioOutputSettingsManager:(id)arg1 didUpdateRouteSelection:(unsigned long long)arg2;
+- (void)audioOutputSettingsManager:(id)arg1 didUpdateSettings:(id)arg2;
 - (void)changeSettings:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -76,16 +82,21 @@
 - (void)navigationSessionWillResumeFromPause:(id)arg1;
 - (void)navigationTraceManager:(id)arg1 didUpdateTracePlaybackDetails:(id)arg2;
 - (void)navigationTraceManagerDidFailToRecordTrace:(id)arg1;
+- (void)pauseGuidanceLevelUpdates;
 - (void)prepareNavigationWithRouteDetails:(id)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)repeatCurrentGuidanceWithReply:(id /* block */)arg1;
 - (void)repeatCurrentTrafficAlertWithReply:(id /* block */)arg1;
+- (void)resumeGuidanceLevelUpdates;
 - (void)resumeOriginalDestination;
+- (void)setCurrentAudioOutputSetting:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)setGuidancePromptsEnabled:(bool)arg1;
+- (void)setHFPPreference:(bool)arg1 forSetting:(id)arg2;
 - (void)setHeadingOrientation:(int)arg1;
 - (void)setIsConnectedToCarplay:(bool)arg1;
+- (void)setRideIndex:(unsigned long long)arg1 forLegIndex:(unsigned long long)arg2;
 - (void)setTraceIsPlaying:(bool)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 - (void)setTracePosition:(double)arg1;

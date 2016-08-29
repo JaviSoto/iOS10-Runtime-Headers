@@ -67,6 +67,6 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-- (void)tsp_saveDataReferencesToMessage:(struct RepeatedPtrField<TSP::DataInfo> { void **x1; int x2; int x3; int x4; }*)arg1 dataArchiver:(id)arg2;
+- (bool)tsp_saveDataReferencesToMessage:(struct RepeatedPtrField<TSP::DataInfo> { void **x1; int x2; int x3; int x4; }*)arg1 dataArchiver:(id)arg2;
 
 @end

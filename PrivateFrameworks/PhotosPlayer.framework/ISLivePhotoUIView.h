@@ -3,18 +3,15 @@
  */
 
 @interface ISLivePhotoUIView : ISBasePlayerUIView <ISChangeObserver, UIGestureRecognizerDelegate, UIInteractionProgressObserver> {
-    AVAudioSession * __audioSession;
     UIPreviewForceInteractionProgress * __interactionProgress;
     long long  __overlayDismissalID;
     UILabel * __overlayLabel;
     ISLivePhotoPlaybackFilter * __playbackFilter;
     bool  __playingVitality;
     bool  __useForceTouch;
-    NSObject<OS_dispatch_queue> * _audioSessionQueue;
     UIGestureRecognizer * _playbackGestureRecognizer;
 }
 
-@property (setter=_setAudioSession:, nonatomic, retain) AVAudioSession *_audioSession;
 @property (nonatomic, readonly) UIPreviewForceInteractionProgress *_interactionProgress;
 @property (setter=_setOverlayDismissalID:, nonatomic) long long _overlayDismissalID;
 @property (nonatomic, readonly) UILabel *_overlayLabel;
@@ -30,7 +27,6 @@
 
 - (void).cxx_destruct;
 - (void)_ISLivePhotoUIViewCommonInitialization;
-- (id)_audioSession;
 - (void)_dismissOverlayLabel:(long long)arg1;
 - (void)_handlePlaybackRecognizer:(id)arg1;
 - (id)_interactionProgress;
@@ -39,7 +35,6 @@
 - (id)_playbackFilter;
 - (Class)_playbackFilterClass;
 - (bool)_playingVitality;
-- (void)_setAudioSession:(id)arg1;
 - (void)_setOverlayDismissalID:(long long)arg1;
 - (void)_setPlaybackFilter:(id)arg1;
 - (void)_setPlayingVitality:(bool)arg1;
@@ -49,6 +44,7 @@
 - (void)_updatePlaybackFilter;
 - (void)_updatePlaybackFilterInput;
 - (bool)_useForceTouch;
+- (void)audioSessionDidChange;
 - (void)dealloc;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -59,7 +55,6 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)playbackGestureRecognizer;
-- (void)playerDidChange;
 - (void)setPlayer:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 

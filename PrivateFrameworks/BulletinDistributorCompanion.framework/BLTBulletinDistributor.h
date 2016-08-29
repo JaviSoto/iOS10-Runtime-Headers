@@ -21,6 +21,7 @@
     bool  _standaloneTestModeEnabled;
     NSDate * _startupTime;
     BLTBulletinDistributorSubscriberList * _subscribers;
+    NSMutableDictionary * _transcodedAttachmentsForBulletinID;
     BLTUserNotificationList * _userNotificationList;
     BLTWatchKitAppList * _watchKitAppList;
 }
@@ -48,6 +49,7 @@
 @property (nonatomic, retain) NSDate *startupTime;
 @property (nonatomic, retain) BLTBulletinDistributorSubscriberList *subscribers;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *transcodedAttachmentsForBulletinID;
 @property (nonatomic, retain) BLTUserNotificationList *userNotificationList;
 @property (nonatomic, retain) BLTWatchKitAppList *watchKitAppList;
 
@@ -78,6 +80,7 @@
 - (void)_reconnectObserver;
 - (void)_reloadBulletinsWithCompletion:(id /* block */)arg1;
 - (void)_rememberBulletin:(id)arg1 forFeed:(unsigned long long)arg2;
+- (void)_removeTranscodedAttachmentIfNeededForBulletin:(id)arg1;
 - (void)_sendCurrentBulletinIdentifiers;
 - (void)_sendCurrentBulletinList;
 - (void)_sendPBBulletin:(id)arg1 forBulletin:(id)arg2 feed:(unsigned long long)arg3 updateType:(unsigned long long)arg4 playLightsAndSirens:(bool)arg5 shouldSendReplyIfNeeded:(bool)arg6 completion:(id /* block */)arg7;
@@ -112,12 +115,13 @@
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned long long)arg3 playLightsAndSirens:(bool)arg4 attachment:(id)arg5 attachmentType:(long long)arg6 alwaysSend:(bool)arg7 withReply:(id /* block */)arg8;
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned long long)arg3 playLightsAndSirens:(bool)arg4 attachment:(id)arg5 attachmentType:(long long)arg6 withReply:(id /* block */)arg7;
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned long long)arg3 playLightsAndSirens:(bool)arg4 withReply:(id /* block */)arg5;
-- (id)observer:(id)arg1 composedAttachmentImageForType:(long long)arg2 thumbnailData:(id)arg3 key:(id)arg4;
-- (struct CGSize { double x1; double x2; })observer:(id)arg1 composedAttachmentSizeForType:(long long)arg2 thumbnailWidth:(float)arg3 height:(float)arg4 key:(id)arg5;
+- (void)observer:(id)arg1 composedImageFromThumbnailData:(id)arg2 forAttachment:(id)arg3 bulletin:(id)arg4 completionHandler:(id /* block */)arg5;
+- (struct CGSize { double x1; double x2; })observer:(id)arg1 composedImageSizeForAttachment:(id)arg2 bulletin:(id)arg3 thumbnailSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)observer:(id)arg1 modifyBulletin:(id)arg2 forFeed:(unsigned long long)arg3;
 - (void)observer:(id)arg1 noteServerConnectionStateChanged:(bool)arg2;
+- (void)observer:(id)arg1 prepareAttachment:(id)arg2 beforeDeliveringBulletin:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)observer:(id)arg1 removeBulletin:(id)arg2 forFeed:(unsigned long long)arg3;
-- (id)observer:(id)arg1 thumbnailSizeConstraintsForAttachmentType:(long long)arg2;
+- (id)observer:(id)arg1 thumbnailSizeConstraintsForAttachment:(id)arg2 bulletin:(id)arg3;
 - (bool)observerShouldFetchAttachmentImageBeforeBulletinDelivery:(id)arg1;
 - (bool)observerShouldFetchAttachmentSizeBeforeBulletinDelivery:(id)arg1;
 - (id)originalSettings;
@@ -147,6 +151,7 @@
 - (void)setStandaloneTestModeEnabled:(bool)arg1;
 - (void)setStartupTime:(id)arg1;
 - (void)setSubscribers:(id)arg1;
+- (void)setTranscodedAttachmentsForBulletinID:(id)arg1;
 - (void)setUserNotificationList:(id)arg1;
 - (void)setWatchKitAppList:(id)arg1;
 - (id)settingOverrides;
@@ -156,6 +161,7 @@
 - (bool)standaloneTestModeEnabled;
 - (id)startupTime;
 - (id)subscribers;
+- (id)transcodedAttachmentsForBulletinID;
 - (id)userNotificationList;
 - (id)watchKitAppList;
 - (void)willSendLightsAndSirensWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 inPhoneSection:(id)arg3 completion:(id /* block */)arg4;

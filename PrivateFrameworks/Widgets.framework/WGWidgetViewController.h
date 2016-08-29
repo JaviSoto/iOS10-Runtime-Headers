@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGWidgetViewController : UIViewController <WGWidgetHostingViewControllerDelegate, WGWidgetHostingViewControllerHost> {
+@interface WGWidgetViewController : UIViewController <WGWidgetExtensionVisibilityProviding, WGWidgetHostingViewControllerDelegate, WGWidgetHostingViewControllerHost> {
     <WGWidgetViewControllerDelegate> * _delegate;
     WGWidgetHostingViewController * _widgetHost;
 }
@@ -20,6 +20,7 @@
 - (id)_shortLookViewLoadingIfNecessary:(bool)arg1;
 - (id)delegate;
 - (id)initWithWidgetHost:(id)arg1;
+- (bool)isWidgetExtensionVisible:(id)arg1;
 - (long long)largestAvailableDisplayModeForWidget:(id)arg1;
 - (void)loadView;
 - (struct CGSize { double x1; double x2; })maxSizeForWidget:(id)arg1 forDisplayMode:(long long)arg2;

@@ -9,6 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned long long decodedLength;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasDecodedLength;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long preferredBlockSize;
 @property (readonly) Class superclass;

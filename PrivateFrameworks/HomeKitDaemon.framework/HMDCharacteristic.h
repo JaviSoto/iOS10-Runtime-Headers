@@ -69,8 +69,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)instanceID;
 - (bool)isClientNotificationEnabled;
+- (bool)isNonClientNotificationEnabled;
 - (bool)isNotificationEnabled;
 - (bool)isNotificationEnabledForClientIdentifier:(id)arg1;
+- (bool)isNotificationEnabledForClientIdentifierPrefix:(id)arg1;
+- (bool)isValueUpdatedFromHAPCharacteristic:(id)arg1;
 - (id)lastKnownValue;
 - (id)lastKnownValueUpdateTime;
 - (id)metadata;
@@ -97,6 +100,7 @@
 - (void)unconfigureAll;
 - (void)unconfigureForServerIdentifier:(id)arg1 linkType:(long long)arg2;
 - (void)updateLastKnownValue;
+- (void)updateService:(id)arg1 accessory:(id)arg2;
 - (void)updateValue:(id)arg1;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;
 - (id)value;

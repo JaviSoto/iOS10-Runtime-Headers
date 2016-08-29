@@ -3,12 +3,12 @@
  */
 
 @interface MiroActivityItemProvider : UIActivityItemProvider <ExportDelegate> {
-    unsigned long long  _backgroundTask;
     bool  _debugDisableProgressUpdates;
     <MiroActivityItemProviderDelegate> * _delegate;
     ExportController * _exportController;
     bool  _lowBatteryCancelled;
     NSString * _preset;
+    <MiroPreventDismissalDelegate> * _preventDismissalDelegate;
     double  _progress;
     PHActivityProgressViewController * _progressController;
     Project * _project;
@@ -16,7 +16,6 @@
     bool  _userCancelled;
 }
 
-@property (nonatomic) unsigned long long backgroundTask;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MiroActivityItemProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -24,6 +23,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool lowBatteryCancelled;
 @property (nonatomic, retain) NSString *preset;
+@property (nonatomic) <MiroPreventDismissalDelegate> *preventDismissalDelegate;
 @property (nonatomic) double progress;
 @property (nonatomic, retain) PHActivityProgressViewController *progressController;
 @property (nonatomic, retain) Project *project;
@@ -32,9 +32,7 @@
 @property (nonatomic) bool userCancelled;
 
 - (void).cxx_destruct;
-- (unsigned long long)backgroundTask;
 - (void)beginExport;
-- (void)dealloc;
 - (id)delegate;
 - (void)didFinishExport;
 - (id)exportController;
@@ -44,15 +42,16 @@
 - (id)item;
 - (bool)lowBatteryCancelled;
 - (id)preset;
+- (id)preventDismissalDelegate;
 - (double)progress;
 - (id)progressController;
 - (id)project;
 - (id)readyToReturnItem;
-- (void)setBackgroundTask:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExportController:(id)arg1;
 - (void)setLowBatteryCancelled:(bool)arg1;
 - (void)setPreset:(id)arg1;
+- (void)setPreventDismissalDelegate:(id)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setProgressController:(id)arg1;
 - (void)setProject:(id)arg1;

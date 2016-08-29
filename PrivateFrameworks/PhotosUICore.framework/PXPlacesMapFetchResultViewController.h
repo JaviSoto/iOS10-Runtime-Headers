@@ -34,9 +34,9 @@
 
 - (void).cxx_destruct;
 - (void)_commonInit;
+- (id)_fetchHydratedAssetForPlacesAsset:(id)arg1;
 - (void)_placeBarButtonItems:(id)arg1;
 - (void)_reloadContentModeDisplay:(unsigned long long)arg1;
-- (void)_reloadStyle;
 - (void)_selectedGeotaggables:(id)arg1;
 - (id)assetSelectionDelegate;
 - (bool)autoRefocusOnDataChange;
@@ -58,6 +58,7 @@
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)pxOneUpPresentationViewController;
+- (void)reloadStyle;
 - (id)selectedGeotaggable;
 - (void)setAssetSelectionDelegate:(id)arg1;
 - (void)setAutoRefocusOnDataChange:(bool)arg1;

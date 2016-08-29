@@ -5,6 +5,7 @@
 @interface MNNavigationDetails : NSObject {
     MNActiveRouteDetails * _activeRouteDetails;
     unsigned long long  _closestStepIndex;
+    NSString * _currentVoiceLanguage;
     NSString * _displayString;
     double  _distanceUntilManeuver;
     double  _distanceUntilSign;
@@ -35,6 +36,7 @@
 
 @property (nonatomic, retain) MNActiveRouteDetails *activeRouteDetails;
 @property (nonatomic) unsigned long long closestStepIndex;
+@property (nonatomic, retain) NSString *currentVoiceLanguage;
 @property (nonatomic, retain) NSString *displayString;
 @property (nonatomic) double distanceUntilManeuver;
 @property (nonatomic) double distanceUntilSign;
@@ -67,6 +69,7 @@
 - (void).cxx_destruct;
 - (id)activeRouteDetails;
 - (unsigned long long)closestStepIndex;
+- (id)currentVoiceLanguage;
 - (id)displayString;
 - (double)distanceUntilManeuver;
 - (double)distanceUntilSign;
@@ -90,6 +93,7 @@
 - (id)routePlanningDetails;
 - (void)setActiveRouteDetails:(id)arg1;
 - (void)setClosestStepIndex:(unsigned long long)arg1;
+- (void)setCurrentVoiceLanguage:(id)arg1;
 - (void)setDisplayString:(id)arg1;
 - (void)setDistanceUntilManeuver:(double)arg1;
 - (void)setDistanceUntilSign:(double)arg1;

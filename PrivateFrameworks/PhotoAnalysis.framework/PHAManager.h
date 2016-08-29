@@ -4,6 +4,7 @@
 
 @interface PHAManager : NSObject {
     PHALibraryChangeListener * _changeListener;
+    PHAAssetResourceDataLoader * _dataLoader;
     <PHAManagerDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _executiveStateQueue;
     PHAJobCoordinator * _jobCoordinator;
@@ -51,6 +52,8 @@
 - (void)setPhotoLibrary:(id)arg1;
 - (void)shutdown;
 - (id)statusAsDictionary;
+- (void)stopBackgroundActivity;
 - (id)taxonomyServiceWorker;
+- (void)triggerBackgroundActivity;
 
 @end

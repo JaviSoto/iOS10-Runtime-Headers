@@ -16,6 +16,7 @@
     bool  _hasExternalScreenType;
     bool  _hasVolumeControlInfoForPickedRoute;
     NSString * _name;
+    MPAVRoute * _pendingPickedRoute;
     bool  _pickedRouteHasVolumeControl;
     bool  _scheduledSendDelegateRoutesChanged;
 }
@@ -26,6 +27,7 @@
 @property (nonatomic) long long discoveryMode;
 @property (nonatomic, readonly) long long externalScreenType;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) MPAVRoute *pendingPickedRoute;
 @property (nonatomic, readonly) MPAVRoute *pickedRoute;
 @property (nonatomic, readonly) bool volumeControlIsAvailable;
 
@@ -35,6 +37,7 @@
 - (void)_mediaServerDiedNotification:(id)arg1;
 - (id)_parseAVRouteDescriptions:(id)arg1;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
+- (id)_pickedRouteInArray:(id)arg1;
 - (void)_registerNotifications;
 - (void)_routeStatusDidChangeNotification:(id)arg1;
 - (void)_scheduleSendDelegateRoutesChanged;
@@ -56,6 +59,7 @@
 - (id)initWithName:(id)arg1;
 - (void)logCurrentRoutes;
 - (id)name;
+- (id)pendingPickedRoute;
 - (bool)pickBestDeviceRoute;
 - (bool)pickHandsetRoute;
 - (bool)pickRoute:(id)arg1;
@@ -70,6 +74,7 @@
 - (void)setDiscoveryMode:(long long)arg1;
 - (void)setName:(id)arg1;
 - (bool)speakerRouteIsPicked;
+- (void)unpickAirPlayScreenRouteWithCompletion:(id /* block */)arg1;
 - (id)videoRouteForRoute:(id)arg1;
 - (bool)volumeControlIsAvailable;
 - (bool)wirelessDisplayRouteIsPicked;

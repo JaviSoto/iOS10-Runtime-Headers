@@ -33,7 +33,6 @@
 @property (nonatomic, readonly) double energyBurnedGoalPercentage;
 @property (nonatomic, readonly) NSDate *filter_date;
 @property (nonatomic, readonly) NSUUID *filter_friendUUID;
-@property (nonatomic, readonly) bool filter_shouldUseDeviceTimestamp;
 @property (nonatomic, retain) NSUUID *friendUUID;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double pushCount;
@@ -112,7 +111,6 @@
 - (id)codableRepresentationForSync;
 - (id)filter_date;
 - (id)filter_friendUUID;
-- (bool)filter_shouldUseDeviceTimestamp;
 - (id)recordWithZoneID:(id)arg1;
 
 @end

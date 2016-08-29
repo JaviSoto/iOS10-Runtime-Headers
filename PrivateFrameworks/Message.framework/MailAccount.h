@@ -42,11 +42,11 @@
 + (id)_accountWithPath:(id)arg1;
 + (void)_addAccountToSortedPaths:(id)arg1;
 + (id)_defaultMailAccountForDeliveryIncludingRestricted:(bool)arg1;
-+ (void)_invalidateAccounts:(id)arg1 missingFromNewAccounts:(id)arg2;
 + (id)_loadAllAccountsWithOptions:(unsigned long long)arg1 error:(id*)arg2;
 + (id)_loadDataAccessAccountsWithError:(id*)arg1;
 + (void)_removeAccountFromSortedPaths:(id)arg1;
 + (void)_removeLookAsideValuesNotInAccountList:(id)arg1;
++ (void)_setMailAccounts:(id)arg1 saveIfChanged:(bool)arg2 alreadyLocked:(bool)arg3;
 + (void)_setOutboxMailboxUid:(id)arg1;
 + (void)_setupSortedPathsForAccounts:(id)arg1;
 + (id)accountContainingEmailAddress:(id)arg1;
@@ -61,6 +61,7 @@
 + (id)activeAccounts;
 + (id)activeAccountsWithError:(id*)arg1;
 + (id)addressesThatReceivedMessage:(id)arg1;
++ (id)allActivePrimaryMailboxUids;
 + (id)allEmailAddressesIncludingFullUserName:(bool)arg1 includeReceiveAliases:(bool)arg2;
 + (id)allMailboxUids;
 + (bool)canMoveMessagesFromAccount:(id)arg1 toAccount:(id)arg2;
@@ -225,6 +226,7 @@
 - (bool)isHostnameEquivalentTo:(id)arg1;
 - (bool)isMailboxLocalForType:(int)arg1;
 - (bool)isPrimaryDeliveryAccountDisabled;
+- (bool)isSpecialMailbox:(id)arg1;
 - (bool)isUsernameEquivalentTo:(id)arg1;
 - (id)lastEmailAliasesSyncDate;
 - (id)library;
@@ -322,7 +324,6 @@
 - (bool)supportsMailboxEditing;
 - (bool)supportsMessageFlagging;
 - (bool)supportsPurge;
-- (bool)supportsRangeOperations;
 - (bool)supportsRemoteAppend;
 - (bool)supportsSyncingReadState;
 - (bool)supportsThreadOperations;

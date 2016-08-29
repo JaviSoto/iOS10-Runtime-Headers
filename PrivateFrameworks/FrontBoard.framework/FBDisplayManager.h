@@ -23,6 +23,7 @@
 - (id)_fbsDisplayForCADisplay:(id)arg1;
 - (void)_initializeDisplays;
 - (void)addObserver:(id)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)displays;
 - (id)init;

@@ -13,7 +13,6 @@
     HMFExponentialBackoffTimer * _reachabilityProbeTimer;
     NSOperationQueue * _requestOperationQueue;
     HAPSecuritySession * _securitySession;
-    bool  _securitySessionOpen;
     bool  _securitySessionOpening;
     bool  _shouldDiscover;
     HAPRelayStream * _stream;
@@ -32,7 +31,6 @@
 @property (nonatomic, retain) HMFExponentialBackoffTimer *reachabilityProbeTimer;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpen, nonatomic) bool securitySessionOpen;
 @property (getter=isSecuritySessionOpening, nonatomic) bool securitySessionOpening;
 @property (nonatomic) bool shouldDiscover;
 @property (nonatomic, readonly) HAPRelayStream *stream;
@@ -73,7 +71,6 @@
 - (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)initWithStream:(id)arg1 name:(id)arg2 identifier:(id)arg3 keyStore:(id)arg4;
 - (bool)isPaired;
-- (bool)isSecuritySessionOpen;
 - (bool)isSecuritySessionOpening;
 - (long long)linkType;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -98,7 +95,6 @@
 - (void)setDiscovered:(bool)arg1;
 - (void)setReachabilityProbeTimer:(id)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpen:(bool)arg1;
 - (void)setSecuritySessionOpening:(bool)arg1;
 - (void)setShouldDiscover:(bool)arg1;
 - (bool)shouldDiscover;

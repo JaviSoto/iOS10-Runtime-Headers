@@ -7,6 +7,8 @@
 
 - (NWTCPConnection *)tunnel:(NPTunnel *)arg1 openConnectionToEndpoint:(NWEndpoint *)arg2 enableTFO:(bool)arg3 initialData:(NSData *)arg4 enableMultipath:(bool)arg5 enableTLS:(bool)arg6 TLSParameters:(NWTLSParameters *)arg7 TLSDelegate:(id <NWTCPConnectionAuthenticationDelegate>)arg8 URL:(NSURL *)arg9;
 - (NWUDPSession *)tunnel:(NPTunnel *)arg1 openSessionToEndpoint:(NWEndpoint *)arg2 fromEndpoint:(NWHostEndpoint *)arg3;
+- (void)tunnelDidConnect;
+- (void)tunnelDidDisconnect;
 - (long long)tunnelGetCurrentMTU:(NPTunnel *)arg1;
 - (bool)tunnelGetIsNetworkCaptive;
 - (bool)tunnelGetNetworkHasProxy;

@@ -38,10 +38,10 @@
 @property (nonatomic, readonly) NPTOImageView *posterImageView;
 @property (readonly) Class superclass;
 
++ (id)_analysisForPhoto:(id)arg1 dateAlignment:(unsigned long long)arg2;
 + (id)_analyzeSidecarPhoto:(id)arg1 dateAlignment:(unsigned long long)arg2;
-+ (void)_saveSidecarPhotoAnalysis:(id)arg1 fromDirectory:(id)arg2 withCompletionHandler:(id /* block */)arg3;
++ (id)_saveSidecarPhotoAnalysis:(id)arg1;
 + (id)_temporaryDirectory;
-+ (bool)_validateSidecarPhotoAnalysis:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_animateIn;

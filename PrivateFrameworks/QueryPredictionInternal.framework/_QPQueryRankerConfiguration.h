@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (bool)featureDisabled;
 - (id)init;
+- (void)registerHandlerForDatabaseChangeNotification:(id /* block */)arg1;
 - (void)registerHandlerForDeleteDataNotification:(id /* block */)arg1;
 - (void)registerHandlerForFeatureDisabledNotification:(id /* block */)arg1;
 

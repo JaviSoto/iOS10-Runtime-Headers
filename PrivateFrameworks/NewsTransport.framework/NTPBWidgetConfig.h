@@ -7,10 +7,14 @@
     long long  _forYouCutoffTime;
     struct { 
         unsigned int forYouCutoffTime : 1; 
+        unsigned int parsecPopulationCeiling : 1; 
+        unsigned int parsecPopulationFloor : 1; 
         unsigned int topStoriesCutoffTime : 1; 
         unsigned int trendingCutoffTime : 1; 
         unsigned int enabledSections : 1; 
     }  _has;
+    double  _parsecPopulationCeiling;
+    double  _parsecPopulationFloor;
     long long  _topStoriesCutoffTime;
     long long  _trendingCutoffTime;
 }
@@ -19,8 +23,12 @@
 @property (nonatomic) long long forYouCutoffTime;
 @property (nonatomic) bool hasEnabledSections;
 @property (nonatomic) bool hasForYouCutoffTime;
+@property (nonatomic) bool hasParsecPopulationCeiling;
+@property (nonatomic) bool hasParsecPopulationFloor;
 @property (nonatomic) bool hasTopStoriesCutoffTime;
 @property (nonatomic) bool hasTrendingCutoffTime;
+@property (nonatomic) double parsecPopulationCeiling;
+@property (nonatomic) double parsecPopulationFloor;
 @property (nonatomic) long long topStoriesCutoffTime;
 @property (nonatomic) long long trendingCutoffTime;
 
@@ -31,18 +39,26 @@
 - (long long)forYouCutoffTime;
 - (bool)hasEnabledSections;
 - (bool)hasForYouCutoffTime;
+- (bool)hasParsecPopulationCeiling;
+- (bool)hasParsecPopulationFloor;
 - (bool)hasTopStoriesCutoffTime;
 - (bool)hasTrendingCutoffTime;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (double)parsecPopulationCeiling;
+- (double)parsecPopulationFloor;
 - (bool)readFrom:(id)arg1;
 - (void)setEnabledSections:(unsigned int)arg1;
 - (void)setForYouCutoffTime:(long long)arg1;
 - (void)setHasEnabledSections:(bool)arg1;
 - (void)setHasForYouCutoffTime:(bool)arg1;
+- (void)setHasParsecPopulationCeiling:(bool)arg1;
+- (void)setHasParsecPopulationFloor:(bool)arg1;
 - (void)setHasTopStoriesCutoffTime:(bool)arg1;
 - (void)setHasTrendingCutoffTime:(bool)arg1;
+- (void)setParsecPopulationCeiling:(double)arg1;
+- (void)setParsecPopulationFloor:(double)arg1;
 - (void)setTopStoriesCutoffTime:(long long)arg1;
 - (void)setTrendingCutoffTime:(long long)arg1;
 - (long long)topStoriesCutoffTime;

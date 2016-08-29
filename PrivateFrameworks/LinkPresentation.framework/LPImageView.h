@@ -13,7 +13,6 @@
 - (id)_createImageViewWithImage:(id)arg1;
 - (id)_createOverlayViewWithOpacity:(double)arg1;
 - (void)componentViewDidMoveToWindow;
-- (double)contentAspectRatio;
 - (struct CGSize { double x1; double x2; })imageSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)init;
 - (id)initWithImage:(id)arg1 style:(id)arg2;

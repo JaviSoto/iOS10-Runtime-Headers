@@ -41,7 +41,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_gatherServices;
+- (void)_gatherServices:(bool)arg1;
 - (void)_handleBulletinBoardNotificationServiceGroupRequest:(id)arg1;
 - (bool)_isAlarmService:(id)arg1;
 - (bool)_isNotificationGeneratingService:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)_prepareServiceGroupPayload;
 - (void)_registerNotificationHandlers;
 - (void)_sendNotification:(id)arg1;
-- (void)_updateAssociatedService:(id)arg1 associatedCameras:(id)arg2;
+- (void)_updateAssociatedService:(id)arg1 associatedCameras:(id)arg2 forceGather:(bool)arg3;
 - (void)_updateAssociatedServicesTable:(id)arg1;
 - (void)_updateCameraProfilesTable:(id)arg1;
 - (id)actionContext;
@@ -63,8 +63,10 @@
 - (id)cameraProfilesTable;
 - (void)configureBulletinBoardNotification:(id)arg1;
 - (void)configureMsgDispatcher:(id)arg1;
+- (void)dealloc;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
+- (void)gatherServices;
 - (id)init;
 - (id)initWithBulletinBoardNotification:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -8,6 +8,7 @@
 + (id)city;
 + (id)country;
 + (id)displayName;
++ (id)fullyFormattedAddress;
 + (id)latitude;
 + (id)locationName;
 + (id)longitude;

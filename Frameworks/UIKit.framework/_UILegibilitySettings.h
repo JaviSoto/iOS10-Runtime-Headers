@@ -70,6 +70,7 @@
 
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)sb_copy;
 - (id)sb_description;
 - (bool)sb_isEqualToLegibilitySettings:(id)arg1;
 - (id)sb_styleString;

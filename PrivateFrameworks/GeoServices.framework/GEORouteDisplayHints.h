@@ -13,15 +13,18 @@
         unsigned int showTransitSchedules : 1; 
     }  _has;
     bool  _showTransitSchedules;
+    GEORequestOptions * _transitSurchargeOptions;
 }
 
 @property (nonatomic, readonly) int*availablePrioritizations;
 @property (nonatomic, readonly) unsigned long long availablePrioritizationsCount;
 @property (nonatomic, retain) NSMutableArray *availableTransitSurcharges;
 @property (nonatomic) bool hasShowTransitSchedules;
+@property (nonatomic, readonly) bool hasTransitSurchargeOptions;
 @property (nonatomic, readonly) NSArray *prioritizationOptions;
 @property (nonatomic) bool showTransitSchedules;
-@property (nonatomic, readonly) NSArray *surchargeOptions;
+@property (nonatomic, readonly) <GEOSurchargeOption> *surchargeOptions;
+@property (nonatomic, retain) GEORequestOptions *transitSurchargeOptions;
 
 + (Class)availableTransitSurchargeType;
 
@@ -43,6 +46,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasShowTransitSchedules;
+- (bool)hasTransitSurchargeOptions;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -52,8 +56,10 @@
 - (void)setAvailableTransitSurcharges:(id)arg1;
 - (void)setHasShowTransitSchedules:(bool)arg1;
 - (void)setShowTransitSchedules:(bool)arg1;
+- (void)setTransitSurchargeOptions:(id)arg1;
 - (bool)showTransitSchedules;
 - (id)surchargeOptions;
+- (id)transitSurchargeOptions;
 - (void)writeTo:(id)arg1;
 
 @end

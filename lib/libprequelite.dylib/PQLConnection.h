@@ -13,6 +13,7 @@
     NSObject<OS_dispatch_source> * _batchingTimer;
     int  _cacheSize;
     bool  _crashIfUsedAfterClose;
+    unsigned long long  _currentStmtStart;
     struct sqlite3 { } * _db;
     NSMutableArray * _flushNotifications;
     NSString * _label;
@@ -41,6 +42,7 @@
 @property (nonatomic) int batchTransactionType;
 @property (nonatomic, readonly) long long changes;
 @property (nonatomic) bool crashIfUsedAfterClose;
+@property (nonatomic, readonly) double currentOperationDuration;
 @property (nonatomic, readonly) struct sqlite3 { }*dbHandle;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) bool isBatchSuspended;
@@ -85,6 +87,7 @@
 - (long long)changes;
 - (bool)close:(id*)arg1;
 - (bool)crashIfUsedAfterClose;
+- (double)currentOperationDuration;
 - (struct sqlite3 { }*)dbHandle;
 - (void)dealloc;
 - (id)debugDescription;

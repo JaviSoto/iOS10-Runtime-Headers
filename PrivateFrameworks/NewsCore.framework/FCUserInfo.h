@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCUserInfo : FCPrivateZoneController <FCTagSettingsDelegate> {
+@interface FCUserInfo : FCPrivateZoneController <FCAppConfigurationObserving, FCTagSettingsDelegate> {
     NSDate * _dateLastResetMeteredCount;
     bool  _iCloudAccountChanged;
     FCTagSettings * _tagSettings;
     NSNumber * _totalMeteredCount;
+    NTPBWidgetConfig * _widgetConfiguration;
 }
 
 @property (nonatomic, copy) NSDate *dateLastOpened;
@@ -23,7 +24,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagSettings *tagSettings;
 @property (nonatomic, copy) NSNumber *totalMeteredCount;
+@property (nonatomic, readonly) bool useParsecResults;
 @property (nonatomic, copy) NSDate *userStartDate;
+@property (nonatomic, retain) NTPBWidgetConfig *widgetConfiguration;
 
 + (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
@@ -43,6 +46,7 @@
 - (void)accessTokenDidChangeForTagID:(id)arg1;
 - (void)addModifyTagSettingsCommandToCommandQueue:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)appConfigurationDidChange:(id)arg1;
 - (id)dateLastOpened;
 - (id)dateLastResetMeteredCount;
 - (id)feldsparID;
@@ -67,10 +71,13 @@
 - (void)setTagSettings:(id)arg1;
 - (void)setTotalMeteredCount:(id)arg1;
 - (void)setUserStartDate:(id)arg1;
+- (void)setWidgetConfiguration:(id)arg1;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
 - (id)tagSettings;
 - (id)totalMeteredCount;
+- (bool)useParsecResults;
 - (id)userStartDate;
 - (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id /* block */)arg2;
+- (id)widgetConfiguration;
 
 @end

@@ -9,6 +9,7 @@
 @property (nonatomic, retain) NSUUID *objectUUID;
 
 - (void).cxx_destruct;
+- (id)additionalDescription;
 - (id)objectUUID;
 - (void)setObjectUUID:(id)arg1;
 

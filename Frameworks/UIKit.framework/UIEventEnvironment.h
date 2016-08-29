@@ -40,6 +40,7 @@
 - (void)_setPress:(id)arg1 forType:(long long)arg2;
 - (id)application;
 - (id)eventQueue;
+- (bool)eventWantsLowLatency:(id)arg1;
 - (id)initWithApplication:(id)arg1;
 - (void)setApplication:(id)arg1;
 - (void)setEventQueue:(id)arg1;

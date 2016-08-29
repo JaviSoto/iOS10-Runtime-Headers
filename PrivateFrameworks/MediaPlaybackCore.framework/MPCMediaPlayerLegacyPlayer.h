@@ -3,10 +3,13 @@
  */
 
 @interface MPCMediaPlayerLegacyPlayer : MPCPlayer <MPNowPlayingPlaybackQueueDataSource, MPRemoteCommandDelegate_Private> {
+    NSMapTable * _avItemToPlayerItemWeakMap;
     MPCMediaPlayerLegacyItemContainer * _currentContainer;
     MPCMediaPlayerLegacyItem * _currentItem;
     MPCPlaybackIntent * _fallbackPlaybackIntent;
+    bool  _hasReceivedAddPlaybackIntent;
     bool  _iAmTheiPod;
+    bool  _isRestoringPlaybackState;
     bool  _mediaRemoteSync;
     MPCMediaPlayerLegacyAVController * _player;
     MPCMediaPlayerLegacyNowPlayingObserver * _playerObserver;
@@ -18,6 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MPCPlaybackIntent *fallbackPlaybackIntent;
+@property (nonatomic, readonly) unsigned long long hardQueueItemCount;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool iAmTheiPod;
 @property (getter=isMediaRemoteSyncing, nonatomic, readonly) bool mediaRemoteSync;
@@ -46,6 +50,7 @@
 - (void)_reloadPlayerWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_repeatShuffleTypeChangedNotification:(id)arg1;
 - (bool)_shouldVendContentItemForOffset:(long long)arg1;
+- (void)_soundCheckEnabledChangedNotification:(id)arg1;
 - (void)_updateSupportedCommands;
 - (id)activeRouteName;
 - (void)addPlaybackIntent:(id)arg1 withOptions:(unsigned long long)arg2 completion:(id /* block */)arg3;
@@ -57,13 +62,15 @@
 - (id)currentItem;
 - (void)dealloc;
 - (id)fallbackPlaybackIntent;
+- (unsigned long long)hardQueueItemCount;
 - (bool)iAmTheiPod;
 - (id)init;
 - (bool)isMediaRemoteSyncing;
+- (bool)isRestoringPlaybackState;
 - (void)performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (id)player;
-- (id)playerForAVPlayerLayer;
 - (id)playerObserver;
+- (void)preservePlaybackStateImmediately;
 - (id)radioPlaybackCoordinator;
 - (id)recentStationsController;
 - (void)recordLyricsViewEvent:(id)arg1;
@@ -71,6 +78,8 @@
 - (bool)remoteCommand:(id)arg1 isEnabledForContentItemIdentifier:(id)arg2;
 - (bool)remoteCommand:(id)arg1 isSupportedForContentItemIdentifier:(id)arg2;
 - (id)reportingController;
+- (void)restorePlaybackStateCompletionHandler:(id /* block */)arg1;
+- (void)schedulePlaybackStatePreservation;
 - (void)setFallbackPlaybackIntent:(id)arg1;
 - (void)setIAmTheiPod:(bool)arg1;
 - (void)setPlayer:(id)arg1;
@@ -81,5 +90,6 @@
 - (void)startMediaRemoteSync;
 - (long long)state;
 - (void)stopMediaRemoteSync;
+- (id)videoLayer;
 
 @end

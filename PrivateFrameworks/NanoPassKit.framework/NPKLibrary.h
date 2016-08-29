@@ -57,6 +57,7 @@
 - (id)_init;
 - (void)_tearDownConnectionBecauseOfInvalidation;
 - (void)_updatePassDescriptions;
+- (void)_updatePassDescriptionsWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateRelevantPassIDs;
 - (void)addPass:(id)arg1 completion:(id /* block */)arg2;
 - (void)addPassData:(id)arg1 completion:(id /* block */)arg2;

@@ -13,6 +13,7 @@
 - (void)insertSection:(id)arg1 atIndex:(long long)arg2;
 - (void)moveItemFromIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)moveSectionFromIndex:(long long)arg1 toIndex:(long long)arg2;
+- (void)removeAllObjects;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (void)removeSectionAtIndex:(long long)arg1;
 - (void)replaceObjectAtIndexPath:(id)arg1 withObject:(id)arg2;

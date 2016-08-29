@@ -6,13 +6,16 @@
     UIView * _blackView;
     bool  _contentUnloadedForFaceSwiping;
     <NTKAVListing> * _currentListing;
-    bool  _paused;
+    bool  _isPauseLockedout;
+    bool  _isPaused;
+    NTKDelayedBlock * _pauseLockoutBlock;
     NTKDelayedBlock * _playNextVideoDelayBlock;
     NSTimer * _playOnWakeTimeout;
     bool  _preLoadedVideoOnSleep;
     bool  _preLoadingVideoOnSleep;
     long long  _previousDataMode;
     bool  _shouldChangeVariantForScreenWake;
+    bool  _shouldPause;
     bool  _shouldPlayOnWake;
     NTKTaskScheduler * _taskScheduler;
     id /* block */  _unpauseFromSwitcherBlock;
@@ -22,13 +25,16 @@
 @property (nonatomic, retain) <NTKAVListing> *currentListing;
 @property (nonatomic, readonly) bool paused;
 @property (nonatomic) bool shouldChangeVariantForScreenWake;
+@property (nonatomic, readonly) bool shouldPause;
 
 - (void).cxx_destruct;
+- (void)_activatePauseLockout;
 - (void)_addSubviewInOrder:(id)arg1;
 - (void)_applyDataMode;
 - (void)_applyFrozen;
 - (void)_applySlow;
 - (void)_cancelDelayedPlayback;
+- (void)_cancelPauseLockout;
 - (bool)_changeCurrentListing;
 - (void)_cleanupAfterOrb:(bool)arg1;
 - (id)_curtainView;
@@ -46,6 +52,7 @@
 - (id)_nextListing;
 - (id)_onDeckPosterImageView;
 - (void)_pauseImmediately;
+- (void)_performPreloadVideoTask;
 - (void)_playNextVideo;
 - (void)_playNextVideoAfterDelay:(double)arg1;
 - (void)_playQueuedUpVideo;
@@ -75,5 +82,6 @@
 - (void)setCurrentListing:(id)arg1;
 - (void)setShouldChangeVariantForScreenWake:(bool)arg1;
 - (bool)shouldChangeVariantForScreenWake;
+- (bool)shouldPause;
 
 @end

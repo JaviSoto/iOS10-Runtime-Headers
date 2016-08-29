@@ -72,9 +72,9 @@
 - (id)keysToFetch;
 - (id)localizedSectionHeaders;
 - (id)localizedSectionIndices;
+- (id)mainStoreMeContactWithKeysToFetch:(id)arg1;
 - (id)meContact;
 - (id)meContactIdentifier;
-- (id)meContactWithKeysToFetch:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)reload;
 - (void)reloadAsynchronously;

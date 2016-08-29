@@ -12,6 +12,8 @@
     NSURL * URL;
     bool  aggressivelyCachesVideoFrames;
     bool  aggressivelyCachesVideoFramesWasSet;
+    bool  allowProgressiveResume;
+    bool  allowProgressiveStartup;
     bool  allowProgressiveSwitchUp;
     AVAsset * asset;
     AVAsset * assetWithFigPlaybackItem;

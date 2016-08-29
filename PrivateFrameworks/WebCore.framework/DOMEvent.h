@@ -18,6 +18,7 @@
 - (bool)bubbles;
 - (bool)cancelBubble;
 - (bool)cancelable;
+- (bool)composed;
 - (id)currentTarget;
 - (void)dealloc;
 - (bool)defaultPrevented;
@@ -26,9 +27,7 @@
 - (void)initEvent:(id)arg1 canBubbleArg:(bool)arg2 cancelableArg:(bool)arg3;
 - (bool)isTrusted;
 - (void)preventDefault;
-- (bool)relatedTargetScoped;
 - (bool)returnValue;
-- (bool)scoped;
 - (void)setCancelBubble:(bool)arg1;
 - (void)setReturnValue:(bool)arg1;
 - (id)srcElement;

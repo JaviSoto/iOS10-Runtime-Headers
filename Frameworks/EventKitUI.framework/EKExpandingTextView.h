@@ -34,6 +34,5 @@
 - (void)setPlaceholder:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;
-- (void)toggleItalics:(id)arg1;
 
 @end

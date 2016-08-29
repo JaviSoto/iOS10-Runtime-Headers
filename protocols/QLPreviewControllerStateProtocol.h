@@ -14,7 +14,6 @@
 - (void)setAccessoryViewVisible:(bool)arg1;
 - (void)setCanChangeCurrentPage:(bool)arg1;
 - (void)setFullScreen:(bool)arg1;
-- (void)setNavbarHidden:(bool)arg1;
 - (void)setPrinter:(id <QLPrintingProtocol>)arg1;
 - (void)setToolbarCanBeVisible:(bool)arg1;
 - (void)updateKeyCommands;

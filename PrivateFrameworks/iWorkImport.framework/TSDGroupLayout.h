@@ -50,6 +50,7 @@
 - (void)p_invalidateParentForWrap;
 - (void)processChangedProperty:(int)arg1;
 - (bool)providesGuidesForChildLayouts;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForCalculatingActivityLineEndpoint;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (id)reliedOnLayouts;
 - (bool)resizeMayChangeAspectRatio;

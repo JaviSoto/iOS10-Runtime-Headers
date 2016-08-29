@@ -22,6 +22,7 @@
         unsigned int reachabilityStatus : 1; 
         unsigned int textSize : 1; 
         unsigned int utcOffset : 1; 
+        unsigned int widgetModeType : 1; 
         unsigned int iosSettingsNotificationsEnabled : 1; 
         unsigned int isNewUser : 1; 
         unsigned int isPaidSubscriber : 1; 
@@ -61,6 +62,7 @@
     long long  _userStartDate;
     NSString * _userStorefrontId;
     int  _utcOffset;
+    int  _widgetModeType;
 }
 
 @property (nonatomic) long long appBuild;
@@ -108,6 +110,7 @@
 @property (nonatomic) bool hasUserStartDate;
 @property (nonatomic, readonly) bool hasUserStorefrontId;
 @property (nonatomic) bool hasUtcOffset;
+@property (nonatomic) bool hasWidgetModeType;
 @property (nonatomic) bool iosSettingsNotificationsEnabled;
 @property (nonatomic) bool isNewUser;
 @property (nonatomic) bool isPaidSubscriber;
@@ -135,12 +138,14 @@
 @property (nonatomic) long long userStartDate;
 @property (nonatomic, retain) NSString *userStorefrontId;
 @property (nonatomic) int utcOffset;
+@property (nonatomic) int widgetModeType;
 
 - (void).cxx_destruct;
 - (int)StringAsCampaignType:(id)arg1;
 - (int)StringAsCellularRadioAccessTechnology:(id)arg1;
 - (int)StringAsOsInstallVariant:(id)arg1;
 - (int)StringAsReachabilityStatus:(id)arg1;
+- (int)StringAsWidgetModeType:(id)arg1;
 - (long long)appBuild;
 - (id)appVersion;
 - (id)campaignId;
@@ -191,6 +196,7 @@
 - (bool)hasUserStartDate;
 - (bool)hasUserStorefrontId;
 - (bool)hasUtcOffset;
+- (bool)hasWidgetModeType;
 - (unsigned long long)hash;
 - (bool)iosSettingsNotificationsEnabled;
 - (bool)isEqual:(id)arg1;
@@ -246,6 +252,7 @@
 - (void)setHasUpgradedFromObsolete:(bool)arg1;
 - (void)setHasUserStartDate:(bool)arg1;
 - (void)setHasUtcOffset:(bool)arg1;
+- (void)setHasWidgetModeType:(bool)arg1;
 - (void)setIosSettingsNotificationsEnabled:(bool)arg1;
 - (void)setIsNewUser:(bool)arg1;
 - (void)setIsPaidSubscriber:(bool)arg1;
@@ -273,6 +280,7 @@
 - (void)setUserStartDate:(long long)arg1;
 - (void)setUserStorefrontId:(id)arg1;
 - (void)setUtcOffset:(int)arg1;
+- (void)setWidgetModeType:(int)arg1;
 - (bool)signedIntoIcloud;
 - (int)textSize;
 - (bool)upgradedFromObsolete;
@@ -280,6 +288,8 @@
 - (long long)userStartDate;
 - (id)userStorefrontId;
 - (int)utcOffset;
+- (int)widgetModeType;
+- (id)widgetModeTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

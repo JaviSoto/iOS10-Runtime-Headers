@@ -4,7 +4,7 @@
 
 @interface TSDRootLayout : TSDAbstractLayout <TSDAdaptiveLayout> {
     TSDLayoutController * mLayoutController;
-    TSUPointerKeyDictionary * mShiftedObjects;
+    TSURetainedPointerKeyDictionary * mShiftedObjects;
     bool  mSupportsAdaptiveLayout;
 }
 

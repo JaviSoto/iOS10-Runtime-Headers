@@ -7,6 +7,7 @@
     unsigned long long  mDPI;
     struct CGImage { } * mHalfSizeImage;
     struct CGImage { } * mImage;
+    unsigned long long  mImageGamut;
     NSObject<OS_dispatch_semaphore> * mImageLock;
     struct CGImageSource { } * mImageSource;
     bool  mIsOpaque;
@@ -20,6 +21,11 @@
     unsigned long long  mValidationStatus;
 }
 
+@property (nonatomic, readonly) struct CGImageSource { }*CGImageSource;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } dpiAdjustedFillSize;
+@property (nonatomic, readonly) unsigned long long imageDPI;
+@property (nonatomic, readonly) bool isOpaque;
+@property (nonatomic, readonly) long long orientation;
 @property (nonatomic, readonly) unsigned long long validationStatus;
 
 + (struct CGImage { }*)CGImageForImageData:(id)arg1;
@@ -33,7 +39,7 @@
 
 - (struct CGImage { }*)CGImageForNaturalSize;
 - (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1 inContext:(struct CGContext { }*)arg2 orLayer:(id)arg3;
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1 lowQuality:(bool)arg2;
+- (struct CGImage { }*)CGImageResampledToSize:(struct CGSize { double x1; double x2; })arg1 lowQuality:(bool)arg2;
 - (struct CGImageSource { }*)CGImageSource;
 - (void)dealloc;
 - (struct CGSize { double x1; double x2; })dpiAdjustedFillSize;
@@ -43,6 +49,7 @@
 - (bool)hasFlushableContent;
 - (void)i_commonInit;
 - (unsigned long long)imageDPI;
+- (unsigned long long)imageGamut;
 - (bool)isOpaque;
 - (bool)isValid;
 - (struct CGSize { double x1; double x2; })naturalSize;

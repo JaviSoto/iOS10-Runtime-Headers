@@ -3,7 +3,7 @@
  */
 
 @interface CKMessageEntryView : UIView <CKActionMenuControllerDelegate, CKActionMenuGestureRecognizerButtonDelegate, CKAudioRecorderDelegate, CKInlineAudioReplyButtonDelegate, CKMessageEntryContentViewDelegate, CKMessageEntryRecordedAudioViewDelegate, CKMessageEntryViewStyleProtocol, UIGestureRecognizerDelegate, _UIBackdropViewGraphicsQualityChangeDelegate> {
-    UIButton * _arrowButton;
+    CKEntryViewButton * _arrowButton;
     CKActionMenuController * _audioActionMenuController;
     struct CGRect { 
         struct CGPoint { 
@@ -16,12 +16,12 @@
         } size; 
     }  _audioActionMenuFrame;
     CKActionMenuGestureRecognizerButton * _audioActionMenuGestureRecognizerButton;
-    UIButton * _audioButton;
+    CKEntryViewButton * _audioButton;
     CKComposition * _audioComposition;
     CKMessageEntryAudioHintView * _audioHintView;
     CKInlineAudioReplyButtonController * _audioReplyButton;
     _UIBackdropView * _backdropView;
-    UIButton * _browserButton;
+    CKEntryViewButton * _browserButton;
     bool  _characterCountHidden;
     UILabel * _characterCountLabel;
     struct CGSize { 
@@ -40,9 +40,8 @@
         double right; 
     }  _coverInsets;
     <CKMessageEntryViewDelegate><UIPreviewInteractionDelegate> * _delegate;
-    UIButton * _digitalTouchButton;
+    CKEntryViewButton * _digitalTouchButton;
     bool  _disablePluginButtons;
-    bool  _disabledCalloutOnFirstTap;
     unsigned long long  _displayMode;
     CKScheduledUpdater * _entryFieldCollapsedUpdater;
     bool  _entryFieldUpdaterAnimatedValue;
@@ -69,11 +68,11 @@
     }  _panAnimationStartPosition;
     double  _panStartTime;
     bool  _performingActionMenuSend;
-    UIButton * _photoButton;
+    CKEntryViewButton * _photoButton;
     <UIPreviewInteractionDelegate> * _previewInteractionDelegate;
     CKMessageEntryRecordedAudioView * _recordedAudioView;
     CKAudioRecorder * _recorder;
-    UIButton * _sendButton;
+    CKEntryViewButton * _sendButton;
     UILongPressGestureRecognizer * _sendButtonLongPressGestureRecognizer;
     UIPreviewInteraction * _sendButtonPreviewInteraction;
     struct CGSize { 
@@ -100,16 +99,16 @@
     }  _waveformViewSize;
 }
 
-@property (nonatomic, retain) UIButton *arrowButton;
+@property (nonatomic, retain) CKEntryViewButton *arrowButton;
 @property (nonatomic, retain) CKActionMenuController *audioActionMenuController;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } audioActionMenuFrame;
 @property (nonatomic, retain) CKActionMenuGestureRecognizerButton *audioActionMenuGestureRecognizerButton;
-@property (nonatomic, retain) UIButton *audioButton;
+@property (nonatomic, retain) CKEntryViewButton *audioButton;
 @property (nonatomic, retain) CKComposition *audioComposition;
 @property (nonatomic, retain) CKMessageEntryAudioHintView *audioHintView;
 @property (nonatomic, retain) CKInlineAudioReplyButtonController *audioReplyButton;
 @property (nonatomic, retain) _UIBackdropView *backdropView;
-@property (nonatomic, retain) UIButton *browserButton;
+@property (nonatomic, retain) CKEntryViewButton *browserButton;
 @property (getter=isCharacterCountHidden, nonatomic) bool characterCountHidden;
 @property (nonatomic, retain) UILabel *characterCountLabel;
 @property (nonatomic) struct CGSize { double x1; double x2; } characterCountSize;
@@ -124,9 +123,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKMessageEntryViewDelegate><UIPreviewInteractionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) UIButton *digitalTouchButton;
+@property (nonatomic, retain) CKEntryViewButton *digitalTouchButton;
 @property (getter=shouldDisablePluginButtons, nonatomic) bool disablePluginButtons;
-@property (nonatomic) bool disabledCalloutOnFirstTap;
 @property (nonatomic) unsigned long long displayMode;
 @property bool entryFieldCollapsed;
 @property (nonatomic, retain) CKScheduledUpdater *entryFieldCollapsedUpdater;
@@ -146,12 +144,12 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } panAnimationStartPosition;
 @property (nonatomic) double panStartTime;
 @property (getter=isPerformingActionMenuSend, nonatomic) bool performingActionMenuSend;
-@property (nonatomic, retain) UIButton *photoButton;
+@property (nonatomic, retain) CKEntryViewButton *photoButton;
 @property (nonatomic) <UIPreviewInteractionDelegate> *previewInteractionDelegate;
 @property (nonatomic, retain) CKMessageEntryRecordedAudioView *recordedAudioView;
 @property (nonatomic, retain) CKAudioRecorder *recorder;
 @property (getter=isRecording, nonatomic, readonly) bool recording;
-@property (nonatomic, retain) UIButton *sendButton;
+@property (nonatomic, retain) CKEntryViewButton *sendButton;
 @property (nonatomic, retain) UILongPressGestureRecognizer *sendButtonLongPressGestureRecognizer;
 @property (nonatomic, retain) UIPreviewInteraction *sendButtonPreviewInteraction;
 @property (nonatomic) struct CGSize { double x1; double x2; } sendButtonSize;
@@ -240,7 +238,6 @@
 - (id)delegate;
 - (id)digitalTouchButton;
 - (void)digitalTouchButtonTapped:(id)arg1;
-- (bool)disabledCalloutOnFirstTap;
 - (void)dismissAudioActionMenuAnimated:(bool)arg1;
 - (unsigned long long)displayMode;
 - (void)endDeferringEntryFieldCollapsedStateChanges;
@@ -331,7 +328,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDigitalTouchButton:(id)arg1;
 - (void)setDisablePluginButtons:(bool)arg1;
-- (void)setDisabledCalloutOnFirstTap:(bool)arg1;
 - (void)setDisplayMode:(unsigned long long)arg1;
 - (void)setEntryFieldCollapsed:(bool)arg1;
 - (void)setEntryFieldCollapsed:(bool)arg1 animated:(bool)arg2;

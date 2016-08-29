@@ -87,12 +87,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;
-- (void)elevationUpdated:(id)arg1;
+- (void)elevationUpdated:(unsigned long long)arg1;
 - (id)firstPartyWorkoutSnapshot;
 - (id)initWithClientServer:(id)arg1 serverConfiguration:(id)arg2 primaryProfile:(id)arg3 server:(id)arg4 client:(id)arg5 delegate:(id)arg6;
 - (bool)isActivated;
 - (void)locationSeriesSampleUpdated:(id)arg1;
-- (void)locationUpdated:(id)arg1;
 - (id)observedTypes;
 - (bool)observingChanges;
 - (void)pauseClientWithCompletion:(id /* block */)arg1;

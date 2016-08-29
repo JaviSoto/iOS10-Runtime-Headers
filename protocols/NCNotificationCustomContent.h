@@ -16,8 +16,11 @@
 
 @optional
 
+- (NSString *)contentExtensionIdentifier;
 - (void)loadAudioAccessoryView;
 - (void)loadExtension;
 - (void)playAudioMessage;
+- (NCNotificationAction *)presentationSourceAction;
+- (void)setPresentationSourceAction:(NCNotificationAction *)arg1;
 
 @end

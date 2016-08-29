@@ -27,6 +27,7 @@
 - (void)_loadLayoutRules;
 - (void)_loadScene;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
+- (double)_numbersAlphaForEditMode:(long long)arg1;
 - (void)_prepareForStatusChange:(bool)arg1;
 - (void)_prepareTimeViewForReuse:(id)arg1;
 - (double)_secondHandAlphaForDensity:(unsigned long long)arg1 isEditing:(bool)arg2;

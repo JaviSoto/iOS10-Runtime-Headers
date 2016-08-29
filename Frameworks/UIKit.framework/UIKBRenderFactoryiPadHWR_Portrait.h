@@ -14,6 +14,7 @@
 - (double)internationalKeyFontSize;
 - (double)keyCornerRadius;
 - (id)lightKeycapsFontName;
+- (id)messagesWriteboardKeyImageName;
 - (double)moreKeyFontSize;
 - (void)setupLayoutSegments;
 - (double)spaceKeyFontSize;

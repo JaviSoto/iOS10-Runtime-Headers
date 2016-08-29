@@ -15,8 +15,6 @@
 
 @property (nonatomic, retain) EKAlarmsViewModel *alarmsViewModel;
 
-+ (id)_labelTextForIndex:(unsigned long long)arg1;
-
 - (void).cxx_destruct;
 - (bool)_alarmsMatchCalendarItem;
 - (bool)_calendarItemHasLeaveNowAlarm;

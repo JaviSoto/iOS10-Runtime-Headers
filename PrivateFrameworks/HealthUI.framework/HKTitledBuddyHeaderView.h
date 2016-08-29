@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_linkButtonTapped:(id)arg1;
 - (id)bodyText;
+- (id)bodyTextView;
 - (id)delegate;
 - (id)initWithTopInset:(double)arg1 linkButtonTitle:(id)arg2;
 - (void)setBodyText:(id)arg1;

@@ -33,6 +33,7 @@
 - (void)setTabBarBackdropStyle:(long long)arg1;
 - (void)setTransientViewController:(id)arg1 animated:(bool)arg2;
 - (bool)sizeTransitionInProgress;
+- (id)traitCollection;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 

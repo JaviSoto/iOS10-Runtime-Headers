@@ -2,55 +2,36 @@
    Image: /System/Library/Frameworks/CallKit.framework/CallKit
  */
 
-@interface CXCallObserver : NSObject <CXCallControllerVendorProtocol> {
-    NSMutableDictionary * _callUUIDToCallMap;
-    NSXPCConnection * _connection;
+@interface CXCallObserver : NSObject <CXCallObserverDataSourceDelegate> {
+    NSObject<OS_dispatch_queue> * _concurrentQueue;
+    <CXCallObserverDataSource> * _dataSource;
     <CXCallObserverDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    int  _notifyToken;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, copy) NSMutableDictionary *callUUIDToCallMap;
 @property (nonatomic, readonly, copy) NSArray *calls;
-@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *concurrentQueue;
+@property (nonatomic, readonly) <CXCallObserverDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallObserverDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) int notifyToken;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, readonly) <CXCallControllerHostProtocol> *remoteObjectProxy;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addOrUpdateCall:(id)arg1;
-- (void)_markAllCallsAsEnded;
 - (void)_performDelegateCallback:(id /* block */)arg1;
-- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 isSynchronous:(bool)arg2;
-- (void)_removeCall:(id)arg1;
-- (void)_requestCalls;
-- (oneway void)addOrUpdateCall:(id)arg1;
-- (id)callUUIDToCallMap;
 - (id)calls;
-- (id)connection;
+- (id)concurrentQueue;
+- (id)dataSource;
+- (void)dataSource:(id)arg1 callChanged:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
 - (id)init;
-- (int)notifyToken;
-- (void)performDelegateCallback:(id /* block */)arg1;
-- (id)queue;
-- (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (oneway void)removeCall:(id)arg1;
-- (void)setCallUUIDToCallMap:(id)arg1;
-- (void)setConnection:(id)arg1;
+- (id)initWithDataSource:(id)arg1 concurrentQueue:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
-- (void)setNotifyToken:(int)arg1;
-- (void)setQueue:(id)arg1;
 
 @end

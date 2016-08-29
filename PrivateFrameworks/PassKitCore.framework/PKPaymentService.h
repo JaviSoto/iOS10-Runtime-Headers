@@ -28,12 +28,12 @@
 - (void)_sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
 - (id)_synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)archiveMessageWithIdentifier:(id)arg1;
 - (void)consistencyCheck;
 - (id)defaultPaymentApplicationForPassUniqueIdentifier:(id)arg1;
 - (id)defaultPaymentPassUniqueIdentifier;
 - (id)delegate;
 - (void)deleteAllTransactionsForPaymentPassWithUniqueIdentifier:(id)arg1;
-- (void)deleteMessageWithIdentifier:(id)arg1;
 - (void)deleteMessagesForPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)downloadAllPaymentPasses;

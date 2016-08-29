@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSString *symlinkTarget;
 
 - (void).cxx_destruct;
-- (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id*)arg3;
+- (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id*)arg4;
 - (id)_initWithLocalItem:(id)arg1;
 - (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (bool)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;

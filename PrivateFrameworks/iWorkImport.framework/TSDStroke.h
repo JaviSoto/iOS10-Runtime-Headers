@@ -51,10 +51,12 @@
 @property (nonatomic, readonly) double width;
 
 + (bool)canMixWithNilObjects;
++ (id)editedStrokeFromModelStroke:(id)arg1 selectedStroke:(id)arg2;
 + (id)emptyStroke;
 + (id)emptyStrokeWithWidth:(double)arg1;
 + (id)i_newEmptyStroke;
 + (id)i_newStroke;
++ (long long)indexOfStroke:(id)arg1 strokeArray:(id)arg2;
 + (id)instanceWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
 + (id)mergeRangeEmptyStroke;
 + (Class)mutableClass;

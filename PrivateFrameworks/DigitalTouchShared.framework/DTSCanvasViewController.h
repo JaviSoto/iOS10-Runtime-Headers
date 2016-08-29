@@ -52,6 +52,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool ignoreAppearanceCallbacks;
 @property (nonatomic) double mediaMessagePlayTrackerTime;
+@property (nonatomic, retain) ETMessage *messageForReplay;
 @property (nonatomic) bool overrideAudioDefaultToOff;
 @property (getter=isPaused, nonatomic) bool paused;
 @property (getter=isPlaybackEnabled, nonatomic) bool playbackEnabled;
@@ -67,11 +68,12 @@
 + (id)replayButtonFont;
 
 - (void).cxx_destruct;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillEnterBackground;
-- (void)_applicationWillResignActive:(id)arg1;
+- (void)_applicationDidBecomeActive;
+- (void)_applicationDidEnterBackground;
+- (void)_applicationWillResignActive;
 - (id)_audioToggleButton;
 - (void)_audioToggleButtonTapped;
+- (bool)_canComposeAfterMediaPlayback;
 - (bool)_canLoopMessageDuringPlayback:(id)arg1;
 - (bool)_canStartMessagePlaybackLoop;
 - (id)_cancelButton;
@@ -92,6 +94,7 @@
 - (id)_replayButton;
 - (double)_rightButtonInset;
 - (void)_schedulePlaybackOfCompositeMessageContent:(id)arg1;
+- (void)_sendAutosendingComposition;
 - (void)_sendDemoHookMessage;
 - (void)_setAngerUsesForceTouch:(bool)arg1;
 - (void)_setCachedMessageForReplay:(id)arg1;
@@ -102,6 +105,7 @@
 - (bool)_shouldShowCancelButton;
 - (bool)_shouldShowSkipButton;
 - (void)_showDemoHookAlertWithTitle:(id)arg1 message:(id)arg2;
+- (id)_skipButton;
 - (void)_skipButtonTapped;
 - (void)_startComposeSessionEndTimer;
 - (void)_startVideoPlayerWithMessage:(id)arg1;
@@ -113,6 +117,7 @@
 - (void)_updateColorPickerEnabled;
 - (void)_updatePlaybackControls;
 - (void)_updateSendButton;
+- (void)_updateSkipButtonFrame;
 - (void)_updateVideoPlayerUI;
 - (bool)_usingDemoHook;
 - (void)_videoMessageDidFinishPlaying:(id)arg1;
@@ -153,6 +158,7 @@
 - (void)dataSource:(id)arg1 startPlaybackWithCompletion:(id /* block */)arg2;
 - (bool)dataSourceShouldUseDemoHook:(id)arg1;
 - (void)dataSourceStopPlayback:(id)arg1;
+- (bool)dataSourceViewIsMostlyVisible:(id)arg1;
 - (bool)deferMessageSend;
 - (id)deferredMessages;
 - (void)didBeginComposingMessage;
@@ -170,6 +176,7 @@
 - (bool)isPlayingCompositeMessage;
 - (bool)isPlayingMessages;
 - (double)mediaMessagePlayTrackerTime;
+- (id)messageForReplay;
 - (double)minimumBottomMargin;
 - (bool)overrideAudioDefaultToOff;
 - (id)playingMessage;
@@ -188,6 +195,7 @@
 - (void)setDeferMessageSend:(bool)arg1;
 - (void)setIgnoreAppearanceCallbacks:(bool)arg1;
 - (void)setMediaMessagePlayTrackerTime:(double)arg1;
+- (void)setMessageForReplay:(id)arg1;
 - (void)setOverrideAudioDefaultToOff:(bool)arg1;
 - (void)setPaused:(bool)arg1;
 - (void)setPlaybackEnabled:(bool)arg1;
@@ -202,6 +210,7 @@
 - (void)updateVideoUI;
 - (bool)usesCompactKeyboardLayout;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(bool)arg1;

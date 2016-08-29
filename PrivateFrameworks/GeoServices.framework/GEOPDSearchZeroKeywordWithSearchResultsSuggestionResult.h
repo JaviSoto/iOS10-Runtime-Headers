@@ -4,9 +4,11 @@
 
 @interface GEOPDSearchZeroKeywordWithSearchResultsSuggestionResult : PBCodable <NSCopying> {
     NSMutableArray * _searchResultsForCategoryEntrys;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *searchResultsForCategoryEntrys;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)searchResultsForCategoryEntryType;
 
@@ -25,6 +27,7 @@
 - (id)searchResultsForCategoryEntrys;
 - (unsigned long long)searchResultsForCategoryEntrysCount;
 - (void)setSearchResultsForCategoryEntrys:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

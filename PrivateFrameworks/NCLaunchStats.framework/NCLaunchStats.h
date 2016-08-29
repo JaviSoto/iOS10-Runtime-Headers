@@ -3,6 +3,7 @@
  */
 
 @interface NCLaunchStats : NSObject {
+    NSMutableDictionary * appUpdateTimes;
     NSMutableDictionary * appsRequestingRefresh;
     id /* block */  asyncRecommendHandler;
     bool  backgroundAppRefreshSwitchedOn;
@@ -35,10 +36,12 @@
 
 - (void).cxx_destruct;
 - (void)addWidget:(id)arg1 forSlot:(unsigned long long)arg2;
+- (bool)canUpdateWidgetsUnsafe;
 - (void)cancelRequestedRefreshForWidget:(id)arg1;
 - (void)dealloc;
 - (void)endEvent:(id)arg1;
 - (void)getPredictedSlots;
+- (bool)immediateUpdatesAllowedForWidgetUnsafe:(id)arg1;
 - (id)init;
 - (void)initAfterClassCUnlocked;
 - (void)ncTriggerObserver:(id)arg1;

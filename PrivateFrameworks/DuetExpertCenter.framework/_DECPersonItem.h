@@ -34,5 +34,6 @@
 - (id)initWithContactProperty:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSearchCallHistoryIntent : INIntent <INSearchCallHistoryIntent>
+@interface INSearchCallHistoryIntent : INIntent <INSearchCallHistoryIntentExport>
 
 @property (nonatomic, readonly) unsigned long long callCapabilities;
 @property (nonatomic, readonly) long long callType;

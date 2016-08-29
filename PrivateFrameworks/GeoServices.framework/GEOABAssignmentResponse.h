@@ -13,10 +13,14 @@
     }  _has;
     bool  _invalidatePoiCache;
     bool  _invalidateTileCache;
+    GEOABSecondPartyPlaceRequestClientMetaData * _parsecClientMetaData;
+    GEOABSecondPartyPlaceRequestClientMetaData * _rapClientMetaData;
     unsigned long long  _refreshIntervalSeconds;
     NSString * _requestGuid;
+    GEOABSecondPartyPlaceRequestClientMetaData * _siriClientMetaData;
     NSString * _sourceURL;
     double  _timestamp;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *assignments;
@@ -24,16 +28,23 @@
 @property (nonatomic, readonly) bool hasClientConfig;
 @property (nonatomic) bool hasInvalidatePoiCache;
 @property (nonatomic) bool hasInvalidateTileCache;
+@property (nonatomic, readonly) bool hasParsecClientMetaData;
+@property (nonatomic, readonly) bool hasRapClientMetaData;
 @property (nonatomic) bool hasRefreshIntervalSeconds;
 @property (nonatomic, readonly) bool hasRequestGuid;
+@property (nonatomic, readonly) bool hasSiriClientMetaData;
 @property (nonatomic, readonly) bool hasSourceURL;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) bool invalidatePoiCache;
 @property (nonatomic) bool invalidateTileCache;
+@property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *parsecClientMetaData;
+@property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *rapClientMetaData;
 @property (nonatomic) unsigned long long refreshIntervalSeconds;
 @property (nonatomic, retain) NSString *requestGuid;
+@property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *siriClientMetaData;
 @property (nonatomic, retain) NSString *sourceURL;
 @property (nonatomic) double timestamp;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)assignmentType;
 
@@ -54,8 +65,11 @@
 - (bool)hasClientConfig;
 - (bool)hasInvalidatePoiCache;
 - (bool)hasInvalidateTileCache;
+- (bool)hasParsecClientMetaData;
+- (bool)hasRapClientMetaData;
 - (bool)hasRefreshIntervalSeconds;
 - (bool)hasRequestGuid;
+- (bool)hasSiriClientMetaData;
 - (bool)hasSourceURL;
 - (bool)hasTimestamp;
 - (unsigned long long)hash;
@@ -63,6 +77,8 @@
 - (bool)invalidateTileCache;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)parsecClientMetaData;
+- (id)rapClientMetaData;
 - (bool)readFrom:(id)arg1;
 - (unsigned long long)refreshIntervalSeconds;
 - (id)requestGuid;
@@ -74,12 +90,17 @@
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setInvalidatePoiCache:(bool)arg1;
 - (void)setInvalidateTileCache:(bool)arg1;
+- (void)setParsecClientMetaData:(id)arg1;
+- (void)setRapClientMetaData:(id)arg1;
 - (void)setRefreshIntervalSeconds:(unsigned long long)arg1;
 - (void)setRequestGuid:(id)arg1;
+- (void)setSiriClientMetaData:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (id)siriClientMetaData;
 - (id)sourceURL;
 - (double)timestamp;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -9,7 +9,6 @@
 - (NSString *)loadingTextForPreviewItemViewController:(QLItemViewController *)arg1;
 - (void)previewItemViewController:(QLItemViewController *)arg1 didFailWithError:(NSError *)arg2;
 - (void)previewItemViewController:(QLItemViewController *)arg1 wantsFullScreen:(bool)arg2;
-- (void)previewItemViewController:(QLItemViewController *)arg1 wantsNavbarHidden:(bool)arg2;
 - (void)previewItemViewController:(QLItemViewController *)arg1 wantsToOpenURL:(NSURL *)arg2;
 - (void)previewItemViewControllerDidEditPreview:(QLItemViewController *)arg1;
 - (void)previewItemViewControllerEnteredEditMode:(QLItemViewController *)arg1;

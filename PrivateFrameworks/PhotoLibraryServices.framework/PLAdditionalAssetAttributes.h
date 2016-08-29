@@ -43,6 +43,9 @@
 @property (nonatomic, retain) NSNumber *originalOrientation;
 @property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (nonatomic, retain) NSNumber *originalWidth;
+@property (nonatomic) long long pendingPlayCount;
+@property (nonatomic) long long pendingShareCount;
+@property (nonatomic) long long pendingViewCount;
 @property (nonatomic, retain) NSSet *personReferences;
 @property (nonatomic, retain) NSData *placeAnnotationData;
 @property (nonatomic) long long playCount;
@@ -79,6 +82,7 @@
 - (bool)migrateReverseLocationDataFromKeyedArchiverFormat;
 - (void)setLongDescription:(id)arg1;
 - (void)setShiftedLocation:(id)arg1;
+- (void)setShiftedLocationIsValid:(bool)arg1;
 - (id)shiftedLocation;
 - (bool)supportsCloudUpload;
 - (bool)validateForInsert:(id*)arg1;

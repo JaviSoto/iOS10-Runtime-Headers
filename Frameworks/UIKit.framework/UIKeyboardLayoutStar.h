@@ -161,6 +161,7 @@
 - (id)_appendingSecondaryStringToVariantsTop:(id)arg1 secondaryString:(id)arg2 withDirection:(id)arg3;
 - (void)_autoSplit:(id)arg1;
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
+- (bool)_handRestRecognizerCancelShouldBeEnd;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (void)_setReturnKeyEnabled:(bool)arg1 withDisplayName:(id)arg2 withType:(int)arg3;
 - (bool)_stringContainsCurrencyCharacters:(id)arg1;
@@ -261,7 +262,7 @@
 - (id)getSortedKeysForDisplayRowHint:(int)arg1;
 - (bool)globeKeyDisplaysAsEmojiKey;
 - (id)handRestRecognizerGetHomeRowHint;
-- (void)handRestRecognizerNotifyRestForBegin:(bool)arg1 location:(struct CGPoint { double x1; double x2; })arg2 timestamp:(double)arg3 pathIndex:(int)arg4 touchUUID:(id)arg5;
+- (void)handRestRecognizerNotifyRestForBegin:(bool)arg1 location:(struct CGPoint { double x1; double x2; })arg2 timestamp:(double)arg3 pathIndex:(int)arg4 touchUUID:(id)arg5 context:(id)arg6;
 - (bool)handRestRecognizerShouldNeverIgnoreTouchState:(id)arg1 fromPoint:(struct CGPoint { double x1; double x2; })arg2 toPoint:(struct CGPoint { double x1; double x2; })arg3 forRestingState:(unsigned long long)arg4 otherRestedTouchLocations:(id)arg5;
 - (id /* block */)handRestRecognizerSilenceNextTouchDown;
 - (struct CGSize { double x1; double x2; })handRestRecognizerStandardKeyPixelSize;

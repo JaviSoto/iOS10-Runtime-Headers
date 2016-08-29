@@ -31,7 +31,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_callStreamFirstFrameReceived;
+- (void)_callStreamFirstFrameReceived:(unsigned long long)arg1;
 - (void)_callStreamNegotiated:(id)arg1;
 - (void)_callStreamReconfigured;
 - (void)_callStreamRemoteConnectionSetup;

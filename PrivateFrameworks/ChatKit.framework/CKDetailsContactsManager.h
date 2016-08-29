@@ -26,6 +26,7 @@
 - (long long)_facetimeIDStatusForEntity:(id)arg1;
 - (void)_handleAddressBookChange:(id)arg1;
 - (void)_handleConversationRecipientsDidChange:(id)arg1;
+- (void)_handleLocationChanged:(id)arg1;
 - (bool)_hasLinkedTelephoneNumbersForEntity:(id)arg1;
 - (bool)_isFaceTimeAudioAvailable;
 - (bool)_isFaceTimeVideoAvailable;

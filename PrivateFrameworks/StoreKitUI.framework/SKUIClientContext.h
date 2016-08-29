@@ -53,6 +53,7 @@
 @property (nonatomic, retain) SSUpdatableAssetController *updatableAssetController;
 @property (nonatomic) long long userInterfaceIdiomOverride;
 
++ (id)_cachePath;
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
 + (id)_configurationDictionaryWithBagDictionary:(id)arg1;
 + (id)_fallbackConfigurationDictionary;
@@ -86,6 +87,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)documentViewControllerForTemplateViewElement:(id)arg1;
+- (id)existingBagValueForKey:(id)arg1;
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id /* block */)arg1;
 - (id)initWithConfigurationDictionary:(id)arg1;
 - (bool)isBootstrapScriptFallbackDisabled;

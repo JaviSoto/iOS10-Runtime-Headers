@@ -9,10 +9,11 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (bool)canBePerformedByOpeningURL;
 - (int)interactionType;
 - (id)localizedName;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
-- (void)perform;
+- (void)performFromView:(id)arg1;
 - (id)viewController;
 
 @end

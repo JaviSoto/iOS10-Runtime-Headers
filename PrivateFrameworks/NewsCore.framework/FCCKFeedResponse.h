@@ -3,42 +3,38 @@
  */
 
 @interface FCCKFeedResponse : NSObject {
-    unsigned long long  _bottomOrder;
     NSData * _cursor;
+    unsigned long long  _extent;
     NSString * _feedID;
     NSArray * _feedItemAndArticleRecords;
     bool  _reachedEnd;
     bool  _reachedOrderLimit;
-    unsigned long long  _topOrder;
     bool  _wasDropped;
 }
 
-@property (nonatomic) unsigned long long bottomOrder;
 @property (nonatomic, copy) NSData *cursor;
+@property (nonatomic) unsigned long long extent;
 @property (nonatomic, copy) NSString *feedID;
 @property (nonatomic, copy) NSArray *feedItemAndArticleRecords;
 @property (nonatomic) bool reachedEnd;
 @property (nonatomic) bool reachedOrderLimit;
-@property (nonatomic) unsigned long long topOrder;
 @property (nonatomic) bool wasDropped;
 
 - (void).cxx_destruct;
-- (unsigned long long)bottomOrder;
 - (id)cursor;
 - (id)description;
+- (unsigned long long)extent;
 - (id)feedID;
 - (id)feedItemAndArticleRecords;
 - (bool)reachedEnd;
 - (bool)reachedOrderLimit;
-- (void)setBottomOrder:(unsigned long long)arg1;
 - (void)setCursor:(id)arg1;
+- (void)setExtent:(unsigned long long)arg1;
 - (void)setFeedID:(id)arg1;
 - (void)setFeedItemAndArticleRecords:(id)arg1;
 - (void)setReachedEnd:(bool)arg1;
 - (void)setReachedOrderLimit:(bool)arg1;
-- (void)setTopOrder:(unsigned long long)arg1;
 - (void)setWasDropped:(bool)arg1;
-- (unsigned long long)topOrder;
 - (bool)wasDropped;
 
 @end

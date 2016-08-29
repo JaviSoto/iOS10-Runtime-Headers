@@ -15,6 +15,7 @@
 - (bool)isLive;
 - (bool)isPackage;
 - (bool)isSymLink;
+- (bool)isZoneRoot;
 - (BRCItemID *)itemID;
 - (NSNumber *)ownerKey;
 - (BRCServerZone *)serverZone;

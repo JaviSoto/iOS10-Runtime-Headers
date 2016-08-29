@@ -13,6 +13,7 @@
     GEOPDAutocompleteParametersLocalitiesAndLandmarks * _localitiesAndLandmarks;
     int  _requestType;
     GEOPDAutocompleteParametersSiriSearch * _siriSearch;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteParametersAddressOnly *addressOnly;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) GEOPDAutocompleteParametersLocalitiesAndLandmarks *localitiesAndLandmarks;
 @property (nonatomic) int requestType;
 @property (nonatomic, retain) GEOPDAutocompleteParametersSiriSearch *siriSearch;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (int)StringAsRequestType:(id)arg1;
 - (id)addressOnly;
@@ -63,6 +65,7 @@
 - (void)setRequestType:(int)arg1;
 - (void)setSiriSearch:(id)arg1;
 - (id)siriSearch;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

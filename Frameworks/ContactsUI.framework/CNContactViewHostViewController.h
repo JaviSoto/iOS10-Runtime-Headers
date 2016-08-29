@@ -21,7 +21,6 @@
 + (bool)getViewController:(id /* block */)arg1;
 
 - (void).cxx_destruct;
-- (id)currentNavigationBar;
 - (id)currentRequestIdentifier;
 - (id)delegate;
 - (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
@@ -40,7 +39,6 @@
 - (bool)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
 - (void)toggleEditing;
 - (void)updateEditing:(bool)arg1 doneButtonEnabled:(bool)arg2 doneButtonText:(id)arg3;
-- (void)updateNavigationBar:(id)arg1 visibility:(bool)arg2 transitionCoordinator:(id)arg3;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 

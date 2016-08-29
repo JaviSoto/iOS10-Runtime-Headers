@@ -31,7 +31,7 @@
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
-- (void)requestSiriSyncDataWithCompletion:(id /* block */)arg1;
+- (void)requestSiriSyncDataWithValidity:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendSiriCommand:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;

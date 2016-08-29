@@ -9,6 +9,7 @@
         unsigned int requestType : 1; 
     }  _has;
     int  _requestType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDClientMetadata *clientMetadata;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) bool hasGuid;
 @property (nonatomic) bool hasRequestType;
 @property (nonatomic) int requestType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (int)StringAsRequestType:(id)arg1;
 - (id)clientMetadata;
@@ -41,6 +43,7 @@
 - (void)setGuid:(id)arg1;
 - (void)setHasRequestType:(bool)arg1;
 - (void)setRequestType:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

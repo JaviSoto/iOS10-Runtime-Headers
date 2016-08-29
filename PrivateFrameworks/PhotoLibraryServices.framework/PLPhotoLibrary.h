@@ -60,6 +60,7 @@
 + (void)_inq_createPhotoStreamAlbumStreamID:(id)arg1 inLibrary:(id)arg2;
 + (id)_operationQueueForPriority:(long long)arg1;
 + (id)_statusDescriptionForQueue:(id)arg1;
++ (void)_updateAssetCountKeyPath:(id)arg1 withPendingCountKeyPath:(id)arg2 inContext:(id)arg3;
 + (bool)areOpportunisticTasksDisabled;
 + (id)assetsDataDirectory;
 + (bool)canSaveVideoToCameraRoll:(id)arg1;
@@ -181,6 +182,7 @@
 + (id)takingVideoIndicatorFilePath;
 + (unsigned long long)unverifiedFaceCountThreshold;
 + (void)updateAlbumKeyAssetsInContext:(id)arg1 withPredicate:(id)arg2;
++ (void)updateAssetPlayShareViewCountsInContext:(id)arg1;
 + (void)updateICloudPhotosMarkerForEnable:(bool)arg1;
 + (id)videosPath;
 

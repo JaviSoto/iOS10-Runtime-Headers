@@ -13,6 +13,7 @@
     NSMutableSet * _deadBackgroundConnections;
     <SiriCoreSiriConnectionDelegate> * _delegate;
     bool  _deviceIsInWalkaboutExperimentGroup;
+    bool  _imposePolicyBan;
     bool  _isCanceled;
     bool  _isCanceledInternal;
     NSString * _languageCode;
@@ -44,6 +45,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool deviceIsInWalkaboutExperimentGroup;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool imposePolicyBan;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic, copy) NSString *peerAssistantIdentifier;
 @property (nonatomic, retain) Class peerStreamProviderClass;
@@ -76,10 +78,12 @@
 - (void)cancelSynchronously:(bool)arg1 completion:(id /* block */)arg2;
 - (id)connectionId;
 - (id)connectionPolicy;
+- (void)dealloc;
 - (id)delegate;
 - (bool)deviceIsInWalkaboutExperimentGroup;
 - (void)getAnalysisInfo:(id /* block */)arg1;
 - (void)getConnectionMetrics:(id /* block */)arg1;
+- (bool)imposePolicyBan;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)languageCode;
@@ -96,6 +100,7 @@
 - (void)setConnectionPolicy:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceIsInWalkaboutExperimentGroup:(bool)arg1;
+- (void)setImposePolicyBan:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setPeerAssistantIdentifier:(id)arg1;
 - (void)setPeerStreamProviderClass:(Class)arg1;

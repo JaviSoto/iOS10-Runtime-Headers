@@ -3,10 +3,11 @@
  */
 
 @interface BRCSharingAcceptFlowOperation : _BRCOperation <BRCForegroundClient, BRCOperationSubclass> {
-    CKAcceptSharesOperation * _acceptShareOpBlockingSyncDown;
+    BRCAcceptShareOperation * _acceptShareOpBlockingSyncDown;
     NSArray * _acceptationFlow;
     BRCPrivateAppLibrary * _aliasAppLibrary;
     NSURL * _aliasURL;
+    NSString * _documentName;
     BRCAppLibrary * _localAppLibrary;
     NSObject<OS_dispatch_queue> * _queue;
     BRCAccountSession * _session;
@@ -40,12 +41,12 @@
 - (void)_captureOpenInfoFromDocument:(id)arg1;
 - (void)_checkIfShouldWaitUntilDownloadCompletion;
 - (id)_createAcceptShareOperation;
-- (void)_createAliasInZone:(id)arg1 target:(id)arg2;
+- (void)_createAliasInAppLibrary:(id)arg1 target:(id)arg2;
 - (void)_createSideFaultOnDisk;
 - (void)_endAcceptationFlow;
 - (void)_fetchShareMetadata;
+- (void)_isAccountRestricted;
 - (void)_isAppInstalled;
-- (void)_isAppProfileEnabled;
 - (void)_isDocumentSharingSupported;
 - (bool)_isOwner;
 - (bool)_isOwnerOrShareAlreadyAccepted;
@@ -57,15 +58,17 @@
 - (void)_openSharedDownloadedDocumentIfStillNeeded;
 - (void)_openSharedSideFaultFile;
 - (bool)_openiWorkAppPreemptively;
+- (void)_parseShareMetadata;
 - (void)_performNextStep;
 - (void)_performNextStepInQueue;
 - (void)_prepareToDownloadSharedDocument;
 - (void)_showGenericErrorAndFinish:(id)arg1;
 - (void)_showSharingJoinDialog;
 - (id)_stepNameAtIndex:(unsigned long long)arg1 withPrefix:(id)arg2;
-- (void)_waitForFaultToBeOnDisk;
-- (void)_waitForSharedItemToSyncDown;
-- (id)aliasClientZone;
+- (void)_waitForFaultToBeOnDiskOnOwner;
+- (void)_waitForFaultToBeOnDiskOnRecipient;
+- (void)_waitForSharedItemToSyncDownOnOwner;
+- (void)_waitForSharedItemToSyncDownOnRecipient;
 - (id)createActivity;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)identifier;

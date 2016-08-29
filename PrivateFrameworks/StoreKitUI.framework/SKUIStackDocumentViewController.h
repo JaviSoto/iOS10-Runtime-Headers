@@ -60,6 +60,7 @@
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)refresh:(id)arg1 refreshControl:(id)arg2;
 - (void)resourceLoader:(id)arg1 didLoadAllForReason:(long long)arg2;
+- (void)resourceLoaderDidBeginLoading:(id)arg1;
 - (id)sectionsViewController;
 - (void)sectionsViewController:(id)arg1 willScrollToOffset:(struct CGPoint { double x1; double x2; })arg2 visibleRange:(struct SKUIIndexPathRange { long long x1; long long x2; long long x3; long long x4; })arg3;
 - (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;

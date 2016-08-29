@@ -6,6 +6,7 @@
     struct __CFDictionary { } * _cachedInfo;
     bool  _hasCachedInfo;
     id  _identifier;
+    int  _lock;
     NSDictionary * _substitutionVariables;
 }
 

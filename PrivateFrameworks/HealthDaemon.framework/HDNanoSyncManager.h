@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDNanoSyncManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver, HDIDSMessageCenterDelegate, HDNanoSyncStoreDelegate, HDProcessStateObserver, HDSyncSessionDelegate> {
+@interface HDNanoSyncManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDForegroundClientProcessObserver, HDHealthDaemonReadyObserver, HDIDSMessageCenterDelegate, HDNanoSyncStoreDelegate, HDSyncSessionDelegate> {
     HDNanoSyncStore * _activeSyncStore;
     bool  _allPairedDevicesAreCurrentVersion;
     bool  _enablePeriodicSyncTimer;
+    bool  _invalidated;
     bool  _isMaster;
     bool  _isPairingActivated;
     NSDate * _lastPeriodicSyncDate;
@@ -13,6 +14,7 @@
     HDKeyValueDomain * _nanoSyncDomain;
     NSHashTable * _observers;
     NSArray * _pairedDevices;
+    HKNanoSyncPairedDevicesSnapshot * _pairedDevicesSnapshot;
     HDPairedSyncManager * _pairedSyncManager;
     NSSet * _pairedWatchSourceBundleIdentifiers;
     NSObject<OS_dispatch_source> * _periodicSyncTimer;
@@ -37,6 +39,7 @@
 @property (nonatomic, retain) HDKeyValueDomain *nanoSyncDomain;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, retain) NSArray *pairedDevices;
+@property (retain) HKNanoSyncPairedDevicesSnapshot *pairedDevicesSnapshot;
 @property (nonatomic, readonly) HDPairedSyncManager *pairedSyncManager;
 @property (copy) NSSet *pairedWatchSourceBundleIdentifiers;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *periodicSyncTimer;
@@ -56,10 +59,10 @@
 - (void)_deviceDidPair:(id)arg1;
 - (void)_deviceDidUnpair:(id)arg1;
 - (void)_didReceiveChangeRequest;
-- (void)_foregroundStatusForClientChanged:(id)arg1;
 - (void)_handleIncomingRequest:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_handleIncomingResponse:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_handleOutgoingMessageError:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)_invalidate;
 - (void)_logIncomingRequest:(id)arg1;
 - (void)_logIncomingResponse:(id)arg1;
 - (void)_logOutgoingMessageError:(id)arg1;
@@ -140,7 +143,9 @@
 - (void)dealloc;
 - (id)diagnosticDescription;
 - (bool)enablePeriodicSyncTimer;
+- (void)foregroundClientProcessesDidChange:(id)arg1;
 - (id)initWithProfile:(id)arg1 isMaster:(bool)arg2;
+- (void)invalidate;
 - (bool)isMaster;
 - (bool)isPairingActivated;
 - (id)lastPeriodicSyncDate;
@@ -170,14 +175,11 @@
 - (void)nanoSyncStore:(id)arg1 restoreStateDidChange:(long long)arg2;
 - (id)observers;
 - (id)pairedDevices;
+- (id)pairedDevicesSnapshot;
 - (void)pairedSyncDidBeginForDevice:(id)arg1 messagesSentHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)pairedSyncManager;
 - (id)pairedWatchSourceBundleIdentifiers;
 - (id)periodicSyncTimer;
-- (void)processDidEnterBackground:(id)arg1;
-- (void)processDidEnterForeground:(id)arg1;
-- (void)processResumed:(id)arg1;
-- (void)processSuspended:(id)arg1;
 - (id)profile;
 - (id)queue;
 - (void)removeObserver:(id)arg1;
@@ -195,6 +197,7 @@
 - (void)setNanoSyncDomain:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setPairedDevices:(id)arg1;
+- (void)setPairedDevicesSnapshot:(id)arg1;
 - (void)setPairedWatchSourceBundleIdentifiers:(id)arg1;
 - (void)setPeriodicSyncTimer:(id)arg1;
 - (void)setProfile:(id)arg1;

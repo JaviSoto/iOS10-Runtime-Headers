@@ -3,10 +3,10 @@
  */
 
 @interface SGDuetBridge : NSObject {
-    _CDInteractionAdviceEngine * _adviceEngine;
+    <_CDInteractionAdvising> * _adviceEngine;
 }
 
-@property (nonatomic, retain) _CDInteractionAdviceEngine *adviceEngine;
+@property (nonatomic, retain) <_CDInteractionAdvising> *adviceEngine;
 
 - (void).cxx_destruct;
 - (id)adviceEngine;

@@ -11,9 +11,11 @@
 - (struct CGSize { double x1; double x2; })customContentSize;
 - (bool)hidesNotificationContent;
 - (bool)isActionsHidden;
+- (UITapGestureRecognizer *)lookViewTapGestureRecognizer;
 - (void)setActionsHidden:(bool)arg1;
 - (void)setCustomContentLocation:(unsigned long long)arg1;
 - (void)setCustomContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setHidesNotificationContent:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeExcludingActions;
 
 @end

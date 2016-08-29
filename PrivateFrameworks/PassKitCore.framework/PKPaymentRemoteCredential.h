@@ -7,6 +7,7 @@
     NSArray * _metadata;
     NSURL * _passURL;
     long long  _status;
+    NSString * _statusDescription;
     NSArray * _summaryMetadata;
     NSString * _summaryMetadataDescription;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly, copy) NSArray *metadata;
 @property (nonatomic, copy) NSURL *passURL;
 @property (nonatomic) long long status;
+@property (nonatomic, readonly, copy) NSString *statusDescription;
 @property (nonatomic, readonly, copy) NSArray *summaryMetadata;
 @property (nonatomic, readonly, copy) NSString *summaryMetadataDescription;
 
@@ -28,6 +30,7 @@
 - (void)setPassURL:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
+- (id)statusDescription;
 - (id)summaryMetadata;
 - (id)summaryMetadataDescription;
 

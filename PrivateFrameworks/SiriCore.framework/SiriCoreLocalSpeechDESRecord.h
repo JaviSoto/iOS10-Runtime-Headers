@@ -7,7 +7,7 @@
     NSMutableArray * _audioPackets;
     NSArray * _context;
     NSObject<OS_dispatch_group> * _contextualDataGroup;
-    NSArray * _interactionRecords;
+    NSDictionary * _interactionSenderDisplayNames;
     NSDictionary * _keyboardLMDynamicVocabularyItems;
     NSString * _language;
     NSArray * _locationOfInterestNames;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly, copy) NSString *UUIDString;
 @property (nonatomic, readonly, copy) NSMutableArray *audioPackets;
 @property (nonatomic, readonly, copy) NSArray *context;
-@property (nonatomic, readonly, copy) NSArray *interactionRecords;
+@property (nonatomic, readonly, copy) NSDictionary *interactionSenderDisplayNames;
 @property (nonatomic, readonly, copy) NSDictionary *keyboardLMDynamicVocabularyItems;
 @property (nonatomic, readonly, copy) NSString *language;
 @property (nonatomic, readonly, copy) NSArray *locationOfInterestNames;
@@ -48,7 +48,7 @@
 - (void)fetchContextualData;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(bool)arg4;
-- (id)interactionRecords;
+- (id)interactionSenderDisplayNames;
 - (id)keyboardLMDynamicVocabularyItems;
 - (id)language;
 - (id)locationOfInterestNames;

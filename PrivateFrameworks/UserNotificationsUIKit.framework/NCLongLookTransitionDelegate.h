@@ -6,6 +6,7 @@
     bool  _interactive;
     NCLongLookPresentationController * _longLookPresentationController;
     NCNotificationViewController * _sourceShortLookVC;
+    long long  _transitionInitiator;
     <NCLongLookTransitionDelegateObserver> * _transitioningDelegateObserver;
 }
 
@@ -15,6 +16,7 @@
 @property (getter=isInteractive, nonatomic, readonly) bool interactive;
 @property (nonatomic, readonly) <NCLongLookAnimator> *longLookAnimator;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) long long transitionInitiator;
 @property (nonatomic) <NCLongLookTransitionDelegateObserver> *transitioningDelegateObserver;
 
 - (void).cxx_destruct;
@@ -22,7 +24,7 @@
 - (void)_notifyObserverOfTransitionBegin:(bool)arg1 withAnimator:(id)arg2 completed:(bool)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (id)initForInteractiveTransition:(bool)arg1 withSourceShortLookViewController:(id)arg2;
+- (id)initForInteractiveTransition:(bool)arg1 withInitiator:(long long)arg2 andSourceShortLookViewController:(id)arg3;
 - (id)interactionControllerForPresentation:(id)arg1;
 - (bool)isInteractive;
 - (id)longLookAnimator;
@@ -31,6 +33,7 @@
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (void)setTransitioningDelegateObserver:(id)arg1;
 - (void)transitionAnimator:(id)arg1 didCommitToTransitionWithCoordinator:(id)arg2;
+- (long long)transitionInitiator;
 - (id)transitioningDelegateObserver;
 
 @end

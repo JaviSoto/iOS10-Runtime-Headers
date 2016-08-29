@@ -137,6 +137,7 @@
 - (bool)_deviceSupportsFavorites;
 - (void)_didEffectiveSettingsChange:(id)arg1;
 - (bool)_didNotificationCenterSettingsChangeWithSectionInfo:(id)arg1 replacingSectionInfo:(id)arg2;
+- (void)_didReceiveResponseForBulletin:(id)arg1;
 - (bool)_doesAddressBookContainDestinationID:(id)arg1;
 - (bool)_doesAddressBookPersonContainCallIgnoreMuteForDestinationID:(id)arg1;
 - (bool)_doesFavoritesListContainDestinationID:(id)arg1;
@@ -184,6 +185,7 @@
 - (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned long long)arg3;
 - (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned long long)arg3 alwaysToLockScreen:(bool)arg4;
 - (void)_publishBulletinsForAllDataProviders;
+- (void)_queue_setPrivilegedSenderTypes:(unsigned long long)arg1 source:(unsigned long long)arg2;
 - (void)_reloadReloadSectionInfoForSectionID:(id)arg1;
 - (void)_reloadSectionParametersForSectionID:(id)arg1;
 - (void)_removeActiveSectionID:(id)arg1;
@@ -211,6 +213,7 @@
 - (void)_sendAddBulletin:(id)arg1 toFeeds:(unsigned long long)arg2;
 - (void)_sendBulletinUpdate:(id)arg1;
 - (void)_sendModifyBulletin:(id)arg1 toFeeds:(unsigned long long)arg2;
+- (void)_sendObserver:(id)arg1 noticesBulletinsForSectionID:(id)arg2;
 - (void)_sendObseversActiveOverrideTypes:(unsigned long long)arg1 state:(unsigned long long)arg2;
 - (void)_sendPrivilegedSenderAddressBookGroupRecordIDChangedFromSource:(unsigned long long)arg1;
 - (void)_sendPrivilegedSenderTypesChangedFromSource:(unsigned long long)arg1;
@@ -261,7 +264,7 @@
 - (id)dataProviderForSectionID:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)defaultPrivilegedSenderType;
-- (void)deliverResponse:(id)arg1;
+- (void)deliverResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)demo_lockscreen:(unsigned long long)arg1;
 - (void)dpManager:(id)arg1 addDataProvider:(id)arg2 withSectionInfo:(id)arg3;
 - (void)dpManager:(id)arg1 addParentSectionFactory:(id)arg2;
@@ -306,7 +309,7 @@
 - (void)observer:(id)arg1 getSectionInfoForActiveSectionsWithHandler:(id /* block */)arg2;
 - (void)observer:(id)arg1 getSectionInfoForSectionIDs:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)observer:(id)arg1 getSectionInfoWithHandler:(id /* block */)arg2;
-- (void)observer:(id)arg1 handleResponse:(id)arg2;
+- (void)observer:(id)arg1 handleResponse:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)observer:(id)arg1 removeBulletins:(id)arg2 inSection:(id)arg3 fromFeeds:(unsigned long long)arg4;
 - (void)observer:(id)arg1 requestNoticesBulletinsForSectionID:(id)arg2;
 - (void)observer:(id)arg1 setObserverFeed:(unsigned long long)arg2 asLightsAndSirensGateway:(id)arg3 priority:(unsigned long long)arg4;
@@ -320,10 +323,11 @@
 - (void)publishBulletinRequest:(id)arg1 destinations:(unsigned long long)arg2 alwaysToLockScreen:(bool)arg3;
 - (void)removeBulletinID:(id)arg1 fromNoticesSection:(id)arg2;
 - (void)removeBulletinID:(id)arg1 fromSection:(id)arg2 inFeed:(unsigned long long)arg3;
+- (void)requestNoticesBulletinsForAllSections:(id)arg1;
 - (void)requestQuietModeOverrideAssertionWithCompletion:(id /* block */)arg1;
 - (id)sectionIDForUniversalSectionID:(id)arg1;
 - (void)sendMessageToDataProviderSectionID:(id)arg1 name:(id)arg2 userInfo:(id)arg3;
-- (void)setActiveBehaviorOverrideChangeUpdatesEnabled:(bool)arg1 forClient:(id)arg2;
+- (void)setActiveBehaviorOverrideChangeUpdatesEnabled:(bool)arg1;
 - (void)setActiveBehaviorOverrideTypesChangeAssertionCountUpdatesEnabled:(bool)arg1;
 - (void)setActiveBehaviorOverrideTypesChangeUpdatesEnabled:(bool)arg1;
 - (void)setBehaviorOverrideStatus:(long long)arg1 effectiveDate:(id)arg2 source:(unsigned long long)arg3;
@@ -332,7 +336,7 @@
 - (void)setBehaviorOverridesChangeUpdatesEnabled:(bool)arg1;
 - (void)setBehaviorOverridesEffectiveWhileUnlocked:(bool)arg1 source:(unsigned long long)arg2;
 - (void)setBehaviorOverridesEffectiveWhileUnlockedChangeUpdatesEnabled:(bool)arg1;
-- (void)setNotificationPresentationFilteringStateChangeUpdatesEnabled:(bool)arg1 forClient:(id)arg2;
+- (void)setNotificationPresentationFilteringStateChangeUpdatesEnabled:(bool)arg1;
 - (void)setOrderedSectionIDs:(id)arg1;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2 source:(unsigned long long)arg3;
 - (void)setPrivilegedSenderAddressBookGroupRecordIDChangeUpdatesEnabled:(bool)arg1;

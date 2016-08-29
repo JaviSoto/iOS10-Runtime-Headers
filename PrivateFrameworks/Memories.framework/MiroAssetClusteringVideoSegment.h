@@ -23,7 +23,6 @@
 @property (nonatomic) double startTime;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MiroMetadataRange *trimRange;
-@property (nonatomic, readonly) bool trimRangeAndSourceRangeAreDisjunct;
 @property (nonatomic, retain) PHAsset *videoAsset;
 
 + (id)videoSegmentFromAsset:(id)arg1 starting:(double)arg2 duration:(double)arg3;
@@ -49,7 +48,6 @@
 - (id)sourceRange;
 - (double)startTime;
 - (id)trimRange;
-- (bool)trimRangeAndSourceRangeAreDisjunct;
 - (id)videoAsset;
 
 @end

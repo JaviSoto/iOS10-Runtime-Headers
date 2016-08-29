@@ -11,10 +11,11 @@
     LPCSSResolver * _cssResolver;
     <LPLinkHTMLGeneratorDelegate> * _delegate;
     bool  _everBuiltView;
+    bool  _generateEmailCompatibleMarkup;
     LPImage * _image;
     bool  _includeClassNamesWhenUsingInlineStyles;
     bool  _isPreliminary;
-    LPHTMLLinkComponent * _linkComponent;
+    LPHTMLComponent * _linkComponent;
     bool  _mayReceiveAdditionalMetadata;
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
@@ -42,6 +43,7 @@
 @property (nonatomic) <LPLinkHTMLGeneratorDelegate> *delegate;
 @property (nonatomic, readonly) bool delegateRespondsToURLForResource;
 @property (nonatomic, readonly, retain) DOMDocumentFragment *documentFragment;
+@property (nonatomic) bool generateEmailCompatibleMarkup;
 @property (nonatomic, readonly) bool hasPendingMetadataProvider;
 @property (nonatomic, readonly) bool hasTallMedia;
 @property (nonatomic, readonly) bool isPreliminary;
@@ -59,7 +61,6 @@
 - (id)_URLForImage:(id)arg1;
 - (id)_URLForResource:(id)arg1 withMIMEType:(id)arg2;
 - (bool)_allowsTapToLoad;
-- (double)_aspectRatioSnappedToSquareIfNeeded:(struct CGSize { double x1; double x2; })arg1;
 - (bool)_canTapToLoad;
 - (void)_computePresentationPropertiesFromMetadata;
 - (id)_createCaptionBar;
@@ -83,6 +84,7 @@
 - (id)delegate;
 - (bool)delegateRespondsToURLForResource;
 - (id)documentFragment;
+- (bool)generateEmailCompatibleMarkup;
 - (bool)hasPendingMetadataProvider;
 - (bool)hasTallMedia;
 - (id)init;
@@ -96,6 +98,7 @@
 - (id)parentDocument;
 - (void)setApplyCornerRadiusToLink:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setGenerateEmailCompatibleMarkup:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setUseInlineStyles:(bool)arg1;
 - (long long)style;

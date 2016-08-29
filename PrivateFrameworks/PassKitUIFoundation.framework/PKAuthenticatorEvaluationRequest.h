@@ -6,11 +6,17 @@
     NSNumber * _PINLength;
     NSString * _PINTitle;
     long long  _policy;
+    NSNumber * _processIdentifier;
+    NSString * _processName;
+    NSString * _reason;
 }
 
 @property (nonatomic, copy) NSNumber *PINLength;
 @property (nonatomic, copy) NSString *PINTitle;
 @property (nonatomic, readonly) long long policy;
+@property (nonatomic, copy) NSNumber *processIdentifier;
+@property (nonatomic, copy) NSString *processName;
+@property (nonatomic, copy) NSString *reason;
 
 - (void).cxx_destruct;
 - (id)PINLength;
@@ -19,7 +25,13 @@
 - (id)init;
 - (id)initWithPolicy:(long long)arg1;
 - (long long)policy;
+- (id)processIdentifier;
+- (id)processName;
+- (id)reason;
 - (void)setPINLength:(id)arg1;
 - (void)setPINTitle:(id)arg1;
+- (void)setProcessIdentifier:(id)arg1;
+- (void)setProcessName:(id)arg1;
+- (void)setReason:(id)arg1;
 
 @end

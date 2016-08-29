@@ -4,7 +4,7 @@
 
 @interface AKFormTextBoxAnnotation : AKTextBoxAnnotation
 
++ (id)defaultPlaceholderText;
 + (bool)deleteAfterEditingIfEmpty;
-+ (id)placeholderText;
 
 @end

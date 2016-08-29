@@ -52,6 +52,7 @@
 - (void)_registerForNotificationObservation;
 - (void)_sendFeedbackForPostingNotificationForEventWithExternalURL:(id)arg1 feedback:(id /* block */)arg2;
 - (void)_significantTimeChangeNotificationReceived;
+- (void)_stopInternal;
 - (void)_suggestEventLocationsSettingChanged;
 - (void)_trimAgendaEntriesBeforeDate:(id)arg1 andAfterDate:(id)arg2;
 - (void)_uninstallLocationManager;

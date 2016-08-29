@@ -17,6 +17,7 @@
 - (bool)canSelectChildRep:(id)arg1;
 - (bool)childRepIsMasterDrawable:(id)arg1;
 - (bool)childRepIsOnDocSetupCanvas:(id)arg1;
+- (id)colorBehindBodyTextLayer:(id)arg1;
 - (void)dealloc;
 - (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;

@@ -18,7 +18,8 @@
 - (id)initWithInstructionsItem:(id)arg1 contentViewController:(id)arg2;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
 - (id)instructionsItem;
-- (bool)shouldHideHeadersAndFootersAroundSection:(long long)arg1;
+- (bool)shouldHideFooterBelowSection:(long long)arg1;
+- (bool)shouldHideHeaderAboveSection:(long long)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(bool)arg4;
 - (void)viewDidLoad;
 

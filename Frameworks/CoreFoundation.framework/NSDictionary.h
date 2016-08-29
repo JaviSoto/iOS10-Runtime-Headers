@@ -476,7 +476,9 @@
 + (id)fm_dictionaryWithContentsOfURL:(id)arg1 error:(id*)arg2;
 
 - (id)dictionaryWithLowercaseKeys;
+- (id)fm_dictionaryByMappingValues:(id /* block */)arg1;
 - (id)fm_dictionaryWithLowercaseKeys;
+- (id)fm_filter:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
@@ -499,7 +501,7 @@
 
 // Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
 
-- (id)GKSDeepCopy;
+- (id)copyGKSDeep;
 - (id)copyGKSDeepMutable;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
@@ -611,6 +613,11 @@
 
 // Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
 
++ (id)MCShortenedArray:(id)arg1;
++ (id)MCShortenedData:(id)arg1;
++ (id)MCShortenedDictionary:(id)arg1;
++ (id)MCShortenedObject:(id)arg1;
+
 - (id)MCDeepCopy;
 - (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MCMutableDeepCopy;
@@ -624,6 +631,7 @@
 - (bool)MCSCWriteToFile:(id)arg1 atomically:(bool)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
 - (bool)MCSCWriteToURL:(id)arg1 atomically:(bool)arg2 error:(id*)arg3;
 - (bool)MCSCWriteToURL:(id)arg1 atomically:(bool)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
+- (id)MCShortenedPlistDescription;
 
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
 
@@ -690,6 +698,7 @@
 
 - (id)fc_actionTypes;
 - (id)fc_deepCopy;
+- (id)fc_dictionaryByRemovingObjectForKey:(id)arg1;
 - (id)fc_dictionaryBySwappingValuesAndKeys;
 - (id)fc_dictionaryByTransformingKeysWithBlock:(id /* block */)arg1;
 - (id)fc_dictionaryByTransformingKeysWithKeyAndValueBlock:(id /* block */)arg1;
@@ -832,7 +841,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 
-- (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)yql_objectForKey:(id)arg1 ofClass:(Class)arg2;
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
@@ -879,6 +888,7 @@
 - (bool)vcp_degraded;
 - (id)vcp_fingerprint;
 - (unsigned long long)vcp_flags;
+- (bool)vcp_flashFired;
 - (double)vcp_quality;
 - (id)vcp_results;
 - (float)vcp_scaledExposureTime;
@@ -946,7 +956,7 @@
 
 + (id)tsp_decoderDataInfoDictionaryFromMessage:(const struct RepeatedPtrField<TSP::DataInfo> { void **x1; int x2; int x3; int x4; }*)arg1;
 + (id)tsp_identifierToObjectUUIDDictionaryFromMessage:(const struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x1; int x2; int x3; int x4; }*)arg1;
-+ (id)tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:(id)arg1 updatingComponentInfo:(struct ComponentInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned int> { unsigned int *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedPtrField<TSP::ComponentExternalReference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct RepeatedPtrField<TSP::ComponentDataReference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; unsigned long long x15; bool x16; }*)arg2 failIfReferenceIsNotPersisted:(bool)arg3 context:(id)arg4 error:(id*)arg5;
++ (id)tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:(id)arg1 updatingComponentInfo:(struct ComponentInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned int> { unsigned int *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedPtrField<TSP::ComponentExternalReference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct RepeatedPtrField<TSP::ComponentDataReference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<TSP::FeatureInfo> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; }*)arg2 failIfReferenceIsNotPersisted:(bool)arg3 context:(id)arg4 error:(id*)arg5;
 + (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
 
 - (void)sfu_appendJsonStringToString:(id)arg1;

@@ -6,6 +6,7 @@
     PVColorSpace * _workingColorSpace;
     int  bufferFormat;
     bool  concatenationFlag;
+    int  conformColorSpacesToDestinationBufferSpace;
     int  dotGraphLevel;
     bool  dynamicPlayback;
     int  filterMode;
@@ -33,6 +34,7 @@
 
 @property int bufferFormat;
 @property bool concatenationFlag;
+@property (nonatomic) int conformColorSpacesToDestinationBufferSpace;
 @property int dotGraphLevel;
 @property bool dynamicPlayback;
 @property int filterMode;
@@ -68,6 +70,7 @@
 - (void)_setIntermediateBufferFormat;
 - (int)bufferFormat;
 - (bool)concatenationFlag;
+- (int)conformColorSpacesToDestinationBufferSpace;
 - (int)dotGraphLevel;
 - (void)dumpContext;
 - (bool)dynamicPlayback;
@@ -90,6 +93,7 @@
 - (int)renderStatsWarmUp;
 - (void)setBufferFormat:(int)arg1;
 - (void)setConcatenationFlag:(bool)arg1;
+- (void)setConformColorSpacesToDestinationBufferSpace:(int)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDotGraphLevel:(int)arg1;
 - (void)setDynamicPlayback:(bool)arg1;

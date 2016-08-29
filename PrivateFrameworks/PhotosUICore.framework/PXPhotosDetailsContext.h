@@ -13,6 +13,7 @@
     PHFetchResult * _people;
     PXPhotosDataSource * _photosDataSource;
     bool  _shouldShowMovieHeader;
+    bool  _shouldUseKeyFace;
     NSString * _titleFontName;
 }
 
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly) PXPhotosDataSource *photosDataSource;
 @property (nonatomic, readonly) bool shouldShowHeaderTitle;
 @property (nonatomic, readonly) bool shouldShowMovieHeader;
+@property (nonatomic, readonly) bool shouldUseKeyFace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *titleFontName;
 
@@ -60,6 +62,7 @@
 - (void)setTitleFontName:(id)arg1;
 - (bool)shouldShowHeaderTitle;
 - (bool)shouldShowMovieHeader;
+- (bool)shouldUseKeyFace;
 - (id)titleFontName;
 
 @end

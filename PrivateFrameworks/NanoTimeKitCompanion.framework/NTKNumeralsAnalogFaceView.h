@@ -6,6 +6,7 @@
     bool  _areAllComplicationsOff;
     struct NSNumber { Class x1; } * _clockTimerToken;
     NTKUtilityComplicationFactory * _complicationFactory;
+    bool  _complicationPositionNeedsUpdate;
     unsigned long long  _faceColor;
     NTKNumeralsHourViewsManager * _hourViewsManager;
     unsigned long long  _selectedStyle;
@@ -13,7 +14,6 @@
     long long  _utilitySlot;
 }
 
-+ (id)_swatchColorForColorOption:(id)arg1;
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
 + (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 
@@ -27,7 +27,6 @@
 - (void)_applyRubberBandingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_applyStyle:(unsigned long long)arg1;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
-- (bool)_areAllComplicationsOff;
 - (void)_cleanupAfterStyleEditing;
 - (long long)_complicationPlacementForCurrentHour;
 - (long long)_complicationPlacementForHour:(long long)arg1;
@@ -68,6 +67,7 @@
 - (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
 - (bool)_timeViewBehindContentForEditMode:(long long)arg1;
 - (void)_unloadSnapshotContentViews;
+- (void)_updateAreAllComplicationsOffState;
 - (void)_updateComplicationAndHourNodePlacementsWithToHour:(long long)arg1 duration:(double)arg2;
 - (void)_updateComplicationPositionWithAnimationProgress:(double)arg1;
 - (void)dealloc;

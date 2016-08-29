@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *teamIdentifier;
 @property (nonatomic, copy) NSString *username;
 
++ (id)instantMessageAddressWithDictionaryRepresentation:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (id)localizedStringForService:(id)arg1;
 + (bool)supportsSecureCoding;
@@ -26,6 +27,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

@@ -2,7 +2,12 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INSiriAuthorizationManager : NSObject
+@interface _INSiriAuthorizationManager : NSObject <_INSiriAuthorizationManagerExport>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (bool)_isSiriAuthorizationRestricted;
 + (void)_requestSiriAuthorization:(id /* block */)arg1 auditToken:(struct { unsigned int x1[8]; })arg2;

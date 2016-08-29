@@ -8,7 +8,7 @@
     NSSQLCoreDispatchManager * _dispatchManager;
     NSString * _externalDataLinksDirectory;
     NSString * _externalDataReferencesDirectory;
-    NSSQLGenerationalRowCache * _generationalRowCache;
+    NSGenerationalRowCache * _generationalRowCache;
     bool  _metadataIsClean;
     NSSQLModel * _model;
     id  _observer;
@@ -50,6 +50,7 @@
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (Class)migrationManagerClass;
++ (Class)rowCacheClass;
 + (bool)sanityCheckFileAtURL:(id)arg1 error:(id*)arg2;
 + (void)setColoredLoggingDefault:(bool)arg1;
 + (void)setDebugDefault:(int)arg1;
@@ -63,6 +64,7 @@
 - (void)_cacheRows:(id)arg1;
 - (void)_checkAndRepairCorrelationTables:(bool)arg1 storeVersionNumber:(id)arg2 usingConnection:(id)arg3;
 - (bool)_checkAndRepairSchemaUsingConnection:(id)arg1;
+- (bool)_checkAndRepairTriggersUsingConnection:(id)arg1;
 - (id)_collectSkewedComponents:(id*)arg1 usingConnection:(id)arg2;
 - (struct __CFArray { }*)_deleteAllRowsNoRelationshipIntegrityForEntityWithAllSubentities:(id)arg1;
 - (void)_disconnectAllConnections;
@@ -81,15 +83,17 @@
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)_newReservedKeysForEntities:(id)arg1 counts:(id)arg2;
-- (id)_newRowDataForXPCFetch:(id)arg1 error:(id*)arg2;
+- (id)_newRowDataForXPCFetch:(id)arg1 context:(id)arg2 error:(id*)arg3;
 - (id)_newValuesForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (Class)_objectIDClass;
 - (bool)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (void)_purgeRowCache;
+- (bool)_rebuildTriggerSchemaUsingConnection:(id)arg1 recomputeValues:(bool)arg2 error:(id*)arg3;
 - (bool)_refreshTriggerValues:(id*)arg1;
 - (bool)_registerNewQueryGenerationIdentifier:(id)arg1;
 - (void)_repairDatabaseCorrelationTables:(id)arg1 brokenHashModel:(id)arg2 storeVersionNumber:(id)arg3 recurse:(bool)arg4 usingConnection:(id)arg5;
 - (id)_retainedRegisterPrefetchRequest:(id)arg1 forKey:(id)arg2 entityID:(unsigned int)arg3;
+- (id)_runQueryGenerationBarrier;
 - (void)_setMetadata:(id)arg1;
 - (void)_setMetadata:(id)arg1 clean:(bool)arg2;
 - (id)_storeInfoForEntityDescription:(id)arg1;

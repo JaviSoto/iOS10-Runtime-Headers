@@ -5,6 +5,7 @@
 @interface MFMessageInfoOrderedSet : NSObject {
     id /* block */  _comparator;
     NSMutableDictionary * _duplicateMessageInfos;
+    id /* block */  _duplicatePreferenceComparator;
     MFSparseMutable64IndexSet * _knownMessageIDs;
     NSMutableArray * _mutableMessageInfos;
 }
@@ -13,6 +14,7 @@
 @property (nonatomic, copy) id /* block */ comparator;
 @property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) unsigned long long countWithDuplicates;
+@property (nonatomic, copy) id /* block */ duplicatePreferenceComparator;
 @property (nonatomic, readonly) MFMessageInfo *firstMessage;
 @property (nonatomic, readonly) MFMessageInfo *lastMessage;
 @property (nonatomic, readonly) NSArray *uniqueMessageInfos;
@@ -28,12 +30,12 @@
 - (unsigned long long)countWithDuplicates;
 - (void)dealloc;
 - (id)debugDescription;
+- (id /* block */)duplicatePreferenceComparator;
 - (id)duplicatesOfMessageInfo:(id)arg1;
 - (void)enumerateUniqueMessageInfosWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)firstMessage;
 - (unsigned long long)indexOfMessageInfo:(id)arg1;
 - (unsigned long long)indexWhereMessageInfoWouldBeInserted:(id)arg1;
-- (id)init;
 - (id)initWithComparator:(id /* block */)arg1;
 - (id)lastMessage;
 - (id)messageInfoAtIndex:(unsigned long long)arg1;
@@ -43,6 +45,7 @@
 - (unsigned long long)removeMessageInfoAtIndex:(unsigned long long)arg1;
 - (void)removeMessageInfosAtIndexes:(id)arg1;
 - (void)setComparator:(id /* block */)arg1;
+- (void)setDuplicatePreferenceComparator:(id /* block */)arg1;
 - (id)uniqueMessageInfos;
 
 @end

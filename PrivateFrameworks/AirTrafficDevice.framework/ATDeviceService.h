@@ -47,13 +47,13 @@
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)cancelSyncWithCompletion:(id /* block */)arg1;
 - (void)clearSyncDataWithCompletion:(id /* block */)arg1;
-- (void)dataMigrationFinishedWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
 - (void)getAssetMetricswithCompletion:(id /* block */)arg1;
 - (void)getDataRestoreIsCompleteWithCompletion:(id /* block */)arg1;
 - (void)getSyncStateWithCompletion:(id /* block */)arg1;
+- (void)handleDataMigrationFinished;
 - (void)idsServiceDevicesDidChange:(id)arg1;
 - (id)init;
 - (void)initiateAssetDownloadSessionsWithCompletion:(id /* block */)arg1;

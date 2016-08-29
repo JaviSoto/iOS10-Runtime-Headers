@@ -44,6 +44,8 @@
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (void)CKAddPropertySafelyForKey:(id)arg1 value:(id)arg2;
+- (void)CKSynchronizedRemoveObjectForKey:(id)arg1;
+- (bool)CKSynchronizedSetIfAbsentObject:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -130,6 +132,8 @@
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
+- (id)fm_objectForKey:(id)arg1 withDefaultValue:(id /* block */)arg2;
+- (void)fm_safeSetObject:(id)arg1 forKey:(id)arg2;
 - (void)fm_safelyMapKey:(id)arg1 toObject:(id)arg2;
 - (void)fm_safelySetObject:(id)arg1 forKey:(id)arg2;
 - (void)safelyMapKey:(id)arg1 toObject:(id)arg2;

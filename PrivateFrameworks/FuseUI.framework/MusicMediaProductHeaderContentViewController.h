@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductHeaderContentViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicEntityProductHeaderLockupViewDelegate, MusicMediaDetailHeaderContentViewController> {
+@interface MusicMediaProductHeaderContentViewController : UIViewController <MusicClientContextConsuming, MusicEntityProductHeaderLockupViewDelegate, MusicMediaDetailHeaderContentViewController> {
     MusicContextualLibraryUpdateAlertAction * _addRemoveLibraryAlertAction;
     NSArray * _addRemoveNotificationObservers;
     bool  _allowsEditing;
@@ -11,10 +11,6 @@
     MusicEntityValueContext * _containerEntityValueContext;
     <MusicEntityProviding> * _contextualActionsOverrideTracklistEntityProvider;
     <MusicMediaProductHeaderContentViewControllerDelegate> * _delegate;
-    struct MusicEntityDownloadInformation { 
-        long long downloadStatus; 
-        double downloadProgress; 
-    }  _downloadInformation;
     UIImage * _editedContentArtworkImage;
     MusicHairlineView * _hairlineView;
     bool  _hairlineVisible;
@@ -22,7 +18,6 @@
     NSString * _lockupArtworkProperty;
     MusicMediaDetailTintInformation * _mediaDetailTintInformation;
     bool  _needToMakeTitleFirstResponder;
-    MusicEntityPlaybackStatusController * _playbackStatusController;
     MPAVController * _player;
     long long  _presentationSource;
     MusicEntityViewProductHeaderLockupContentDescriptor * _productHeaderLockupContentDecriptor;
@@ -41,7 +36,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicMediaProductHeaderContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct MusicEntityDownloadInformation { long long x1; double x2; } downloadInformation;
 @property (nonatomic, readonly, copy) NSString *editableText;
 @property (nonatomic, retain) UIImage *editedContentArtworkImage;
 @property (getter=isHairlineVisible, nonatomic) bool hairlineVisible;
@@ -71,13 +65,11 @@
 - (id)_productHeaderLockupContentDescriptor;
 - (void)_reloadAddRemoveLibraryAndKeepLocalActions;
 - (void)_reloadContainerEntityValueContextProperties;
-- (void)_reloadDownloadProgressButtonState;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_updateContentTaste;
 - (void)_updateHairline;
 - (void)_updateHairlineLayoutInsets;
 - (void)_updateNavigationTitle;
-- (void)_updatePlaybackStatusForLockupView;
 - (void)_updatePreferredContentSize;
 - (void)_updateProductHeaderLockupProperties;
 - (bool)allowsEditing;
@@ -86,7 +78,6 @@
 - (id)contextualActionsOverrideTracklistEntityProvider;
 - (void)dealloc;
 - (id)delegate;
-- (struct MusicEntityDownloadInformation { long long x1; double x2; })downloadInformation;
 - (id)editableText;
 - (id)editedContentArtworkImage;
 - (id)initWithContainerEntityProvider:(id)arg1 presentationSource:(long long)arg2;
@@ -95,7 +86,6 @@
 - (void)makeEditableTitleBecomeFirstResponder;
 - (id)mediaDetailTintInformation;
 - (void)music_viewInheritedLayoutInsetsDidChange;
-- (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (long long)presentationSource;
 - (void)productHeaderLockupView:(id)arg1 didSelectCameraButton:(id)arg2;
 - (void)productHeaderLockupView:(id)arg1 didSelectPlayButtonAction:(unsigned long long)arg2;
@@ -111,7 +101,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setContextualActionsOverrideTracklistEntityProvider:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setHairlineVisible:(bool)arg1;

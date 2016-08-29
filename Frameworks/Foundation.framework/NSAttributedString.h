@@ -96,7 +96,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
-- (id)FU_uppercaseAttributedString;
+- (id)FU_uppercaseAttributedStringCurrentLocale:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
@@ -104,6 +104,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
+- (id)_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultAttributes:(id)arg2;
 - (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
 - (bool)prefersDynamicString;
 - (id)stringWithAttributes:(id)arg1;

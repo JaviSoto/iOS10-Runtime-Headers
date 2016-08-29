@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSApplicationClient : FBSSystemServiceFacilityClient
+@interface SBSApplicationClient : SBSServiceFacilityClient
 
-+ (void)checkInClient:(id)arg1;
-+ (id)checkOutClient;
++ (id)serviceFacilityIdentifier;
 
 - (void)fetchApplicationShortcutItemsOfTypes:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)fetchCarApplicationInformationForBundleIdentifier:(id)arg1 inVehicle:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)fetchIconStateForVehicleId:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchRemovabilityForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)fetchWhitePointAdaptivityStyleForDisplayId:(unsigned int)arg1 withCompletionHandler:(id /* block */)arg2;
-- (id)initWithCalloutQueue:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
 - (void)resetIconStateForVehicleId:(id)arg1;
 - (void)setIconState:(id)arg1 hiddenIcons:(id)arg2 forVehicleId:(id)arg3;
 - (void)setRemovalAllowed:(bool)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;

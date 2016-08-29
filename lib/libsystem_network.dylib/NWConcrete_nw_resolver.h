@@ -15,7 +15,8 @@
     unsigned char  flags;
     unsigned int  forced_protocol;
     void * internally_retained_object;
-    bool  is_custom_resolver;
+    unsigned int  is_custom_resolver;
+    unsigned int  local_only;
     NSObject<OS_nw_parameters> * parameters;
     NSObject<OS_dispatch_source> * query_timer;
     BOOL  resolver_activity;
@@ -30,6 +31,6 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 dns_service_id:(unsigned int)arg3;
+- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 dns_service_id:(unsigned int)arg3 localOnly:(bool)arg4;
 
 @end

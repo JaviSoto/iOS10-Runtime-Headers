@@ -5,8 +5,8 @@
 @interface BRCPQLConnection : PQLConnection {
     br_pacer * _batchingPacer;
     int  _changeCount;
+    bool  _flushImmediately;
     double  _flushInterval;
-    unsigned int  _retryCount;
 }
 
 @property (nonatomic, copy) id /* block */ lockedHandler;
@@ -22,11 +22,11 @@
 - (bool)executeWithErrorHandler:(id /* block */)arg1 sql:(id)arg2;
 - (bool)executeWithSlowStatementRadar:(id)arg1 sql:(id)arg2;
 - (id)fetchWithSlowStatementRadar:(id)arg1 sql:(id)arg2;
+- (void)flushToMakeEditsVisibleToIPCReaders;
 - (id)init;
 - (id)initWithLabel:(id)arg1 dbCorruptionHandler:(id)arg2;
 - (bool)openAtURL:(id)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (bool)profilingEnabled;
-- (void)setPostFlushHook:(id /* block */)arg1;
 - (void)setProfilingEnabled:(bool)arg1;
 - (void)setProfilingHook:(id /* block */)arg1;
 - (long long)sizeInBytes;

@@ -31,10 +31,11 @@
 
 - (void).cxx_destruct;
 - (id)_databaseWithType:(long long)arg1 error:(id*)arg2;
+- (void)_didFlushDatabases:(id)arg1;
 - (id)_semaphoreForDatabaseType:(long long)arg1 waitCounter:(int**)arg2;
 - (unsigned long long)backgroundReadersWaiting;
 - (unsigned long long)cacheSize;
-- (void)checkInDatabase:(id)arg1 closeImmediately:(bool)arg2;
+- (void)checkInDatabase:(id)arg1 flushImmediately:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;

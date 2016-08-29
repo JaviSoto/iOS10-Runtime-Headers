@@ -7,6 +7,7 @@
     VSAppDeviceConfig * _appDeviceConfig;
     NSURL * _bootURL;
     <VSApplicationDelegate> * _delegate;
+    bool  _shouldAllowRemoteInspection;
 }
 
 @property (nonatomic, retain) IKAppContext *appContext;
@@ -16,6 +17,7 @@
 @property (nonatomic) <VSApplicationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldAllowRemoteInspection;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -52,6 +54,8 @@
 - (void)setAppContext:(id)arg1;
 - (void)setAppDeviceConfig:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setShouldAllowRemoteInspection:(bool)arg1;
+- (bool)shouldAllowRemoteInspection;
 - (bool)shouldIgnoreJSValidation;
 - (void)start;
 - (void)stop;

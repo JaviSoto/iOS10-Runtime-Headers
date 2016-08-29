@@ -5,7 +5,6 @@
 @interface MKCustomSeparatorTableViewCell : MKTableViewCell {
     double  _leftSeparatorInset;
     double  _rightSeparatorInset;
-    bool  _separatorHidden;
 }
 
 @property (nonatomic) double leadingSeparatorInset;

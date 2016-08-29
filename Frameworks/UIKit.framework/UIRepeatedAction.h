@@ -11,7 +11,6 @@
     double  _invocationDelay;
     double  _preInvocationDelay;
     double  _repeatedDelay;
-    bool  _rescheduleAfterNextFire;
     bool  _skipInitialFire;
     NSTimer * _timer;
 }
@@ -40,7 +39,7 @@
 - (id)invocation;
 - (id)invocationArgument;
 - (double)invocationDelay;
-- (void)invoke;
+- (bool)invoke;
 - (double)preInvocationDelay;
 - (double)repeatedDelay;
 - (void)reset;

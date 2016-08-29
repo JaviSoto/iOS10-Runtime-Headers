@@ -27,9 +27,9 @@
 - (bool)_debugDelegateRespondsToSelector:(SEL)arg1;
 - (bool)_delegateRespondsToSelector:(SEL)arg1;
 - (id)_deserializeUAPJSONData:(id)arg1 error:(id*)arg2;
-- (void)_handleHTTPResponseForMessage:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct { /* ? */ } *x13; char *x14; unsigned long long x15; struct iovec { void *x_16_1_1; unsigned long long x_16_1_2; } x16[2]; struct iovec {} *x17; int x18; unsigned long long x19; int x20; int x21; int x22; void *x23; void *x24; void *x25; void *x26; void *x27; void *x28; int (*x29)(); int (*x30)(); id /* block */ x31; int x32; unsigned char x33; long long x34; char *x35; int x36; unsigned long long x37; }*)arg1 completionHandler:(id /* block */)arg2;
+- (void)_handleHTTPResponseForMessage:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; }*)arg1 completionHandler:(id /* block */)arg2;
 - (int)_initializeCoreUtilsHTTPClient;
-- (void)_sendHTTPRequestToURL:(id)arg1 withMethod:(int)arg2 requestObject:(id)arg3 serializationType:(unsigned long long)arg4 completionHandler:(id /* block */)arg5;
+- (void)_sendHTTPRequestToURL:(id)arg1 withMethod:(int)arg2 requestObject:(id)arg3 serializationType:(unsigned long long)arg4 timeout:(double)arg5 completionHandler:(id /* block */)arg6;
 - (id)_serializeUAPJSONObject:(id)arg1 error:(id*)arg2;
 - (id)debugDelegate;
 - (id)debugDelegateQueue;
@@ -43,9 +43,9 @@
 - (unsigned long long)port;
 - (id)queue;
 - (void)sendDELETERequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
-- (void)sendGETRequestToURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)sendGETRequestToURL:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)sendPOSTRequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
-- (void)sendPUTRequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)sendPUTRequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned long long)arg3 timeout:(double)arg4 completionHandler:(id /* block */)arg5;
 - (void)setDebugDelegate:(id)arg1;
 - (void)setDebugDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDebugDelegateQueue:(id)arg1;

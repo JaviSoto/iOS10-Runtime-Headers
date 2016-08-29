@@ -17,5 +17,6 @@
 - (bool)pluginHandleEvent:(long long)arg1;
 - (SBLockScreenPluginAction *)pluginUnlockAction;
 - (void)pluginWillActivateWithContext:(SBLockScreenPluginContext *)arg1;
+- (void)updateForPresentation:(SBLockScreenPluginPresentation *)arg1;
 
 @end

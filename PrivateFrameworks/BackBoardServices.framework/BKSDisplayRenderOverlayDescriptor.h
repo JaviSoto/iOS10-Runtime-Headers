@@ -6,6 +6,7 @@
     CADisplay * _display;
     NSString * _displayUUID;
     long long  _interfaceOrientation;
+    bool  _interstitial;
     bool  _lockBacklight;
     NSString * _name;
     BKSDisplayProgressIndicatorProperties * _progressIndicatorProperties;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSString *displayUUID;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long interfaceOrientation;
+@property (getter=isInterstitial, setter=_setInterstitial:, nonatomic) bool interstitial;
 @property (nonatomic) bool lockBacklight;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, retain) BKSDisplayProgressIndicatorProperties *progressIndicatorProperties;
@@ -27,6 +29,7 @@
 + (bool)supportsSecureCoding;
 
 - (id)_initWithName:(id)arg1 displayUUID:(id)arg2;
+- (void)_setInterstitial:(bool)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -39,6 +42,7 @@
 - (id)initWithName:(id)arg1 display:(id)arg2;
 - (long long)interfaceOrientation;
 - (bool)isEqual:(id)arg1;
+- (bool)isInterstitial;
 - (bool)lockBacklight;
 - (id)name;
 - (id)progressIndicatorProperties;

@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)_buildRows;
+- (id)_pagingFilter;
 - (void)_setNeedsBuildRows;
 - (id)inactiveLines;
 - (id)init;

@@ -12,6 +12,7 @@
     NSMutableArray * _relatedSearchSuggestions;
     NSMutableArray * _resultDetourInfos;
     GEOPDSearchClientBehavior * _searchClientBehavior;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDRelatedSearchSuggestion *defaultRelatedSearchSuggestion;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSMutableArray *relatedSearchSuggestions;
 @property (nonatomic, retain) NSMutableArray *resultDetourInfos;
 @property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)relatedSearchSuggestionType;
 + (Class)resultDetourInfoType;
@@ -62,6 +64,7 @@
 - (void)setRelatedSearchSuggestions:(id)arg1;
 - (void)setResultDetourInfos:(id)arg1;
 - (void)setSearchClientBehavior:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

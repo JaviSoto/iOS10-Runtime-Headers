@@ -12,6 +12,7 @@
     }  _has;
     long long  _intValue;
     NSString * _stringValue;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool boolValue;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) bool hasStringValue;
 @property (nonatomic) long long intValue;
 @property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (bool)boolValue;
 - (void)copyTo:(id)arg1;
@@ -47,6 +49,7 @@
 - (void)setIntValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

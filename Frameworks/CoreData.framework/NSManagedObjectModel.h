@@ -24,8 +24,11 @@
 @property (readonly, copy) NSDictionary *entitiesByName;
 @property (readonly, copy) NSDictionary *entityVersionHashesByName;
 @property (readonly, copy) NSDictionary *fetchRequestTemplatesByName;
+@property (nonatomic, readonly) NSString *ic_versionHash;
 @property (retain) NSDictionary *localizationDictionary;
 @property (copy) NSSet *versionIdentifiers;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
@@ -96,5 +99,14 @@
 - (void)setVersionIdentifiers:(id)arg1;
 - (id)versionHash;
 - (id)versionIdentifiers;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (id)vs_developerModeModelForVersion:(long long)arg1;
++ (id)vs_identityProviderEntityForVersion:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)ic_versionHash;
 
 @end

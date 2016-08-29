@@ -22,7 +22,7 @@
 @property (nonatomic) double pauseDuration;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (getter=isRunning, nonatomic) bool running;
-@property (nonatomic) bool stopped;
+@property (getter=isStopped, nonatomic) bool stopped;
 
 - (void).cxx_destruct;
 - (void)_attemptNextIteration;
@@ -37,6 +37,7 @@
 - (id)init;
 - (bool)isCurrentlyPerformingAction;
 - (bool)isRunning;
+- (bool)isStopped;
 - (unsigned long long)iterationsRemaining;
 - (double)pauseDuration;
 - (id)queue;
@@ -50,6 +51,5 @@
 - (void)setRunning:(bool)arg1;
 - (void)setStopped:(bool)arg1;
 - (void)stop;
-- (bool)stopped;
 
 @end

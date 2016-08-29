@@ -6,8 +6,7 @@
 
 + (bool)_accountSyncItemExistsForServiceName:(id)arg1 hostname:(id)arg2;
 + (bool)_accountSyncItemExistsForServiceName:(id)arg1 username:(id)arg2;
-+ (id)_accountTypeIdentifierFromServiceComponents:(id)arg1;
-+ (id)_clientIdentifierFromServiceComponents:(id)arg1;
++ (void)_accountTypeIdentifierFromComponents:(id)arg1 handler:(id /* block */)arg2;
 + (void)_createNoSyncOAuthTokens:(id)arg1 account:(id)arg2 clientID:(id)arg3;
 + (id)_credentialForAccountWithID:(id)arg1 accountTypeID:(id)arg2 credentialType:(id)arg3 clientID:(id)arg4 options:(id)arg5 error:(id*)arg6;
 + (bool)_dataclassSyncItemExistsForServiceName:(id)arg1 username:(id)arg2;
@@ -52,6 +51,7 @@
 + (void)removeCredentialForAccount:(id)arg1 error:(id*)arg2;
 + (void)removeCredentialForAccount:(id)arg1 key:(id)arg2 error:(id*)arg3;
 + (void)removeDataclassAccountSyncItemForAccount:(id)arg1;
++ (id)removeTombstonesForAccount:(id)arg1 clientID:(id)arg2 error:(id*)arg3;
 + (void)setAccountSynciOSVersion:(id)arg1;
 + (void)setCredentialForAccount:(id)arg1;
 + (void)setCredentialForAccount:(id)arg1 clientID:(id)arg2;

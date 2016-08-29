@@ -47,9 +47,12 @@
     int  _supportsServerSearch;
     MFDAMailbox * _temporaryInbox;
     NSCountedSet * _userFocusMailboxIds;
+    MFMailboxUid * _virtualAllSearchMailbox;
     NSSet * _watchedFolderIds;
     NSLock * _watchedFolderIdsLock;
 }
+
+@property (nonatomic, retain) MFMailboxUid *virtualAllSearchMailbox;
 
 + (id)_URLScheme;
 + (Class)_accountConduitClass;
@@ -89,6 +92,7 @@
 - (void)addRequest:(id)arg1 mailbox:(id)arg2 consumer:(id)arg3;
 - (void)addRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
 - (void)addUserFocusMailbox:(id)arg1;
+- (id)allMailMailboxUid;
 - (id)allMailboxUids;
 - (bool)canGoOffline;
 - (bool)canReceiveNewMailNotifications;
@@ -145,6 +149,7 @@
 - (void)setEncryptionIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (void)setSigningIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2 mailbox:(id*)arg3;
+- (void)setVirtualAllSearchMailbox:(id)arg1;
 - (bool)shouldAppearInMailSettings;
 - (bool)shouldArchiveByDefault;
 - (bool)shouldDisplayHostnameInErrorMessages;
@@ -171,5 +176,6 @@
 - (id)uniqueIdForPersistentConnection;
 - (id)unsupportedContinuationTypes;
 - (id)username;
+- (id)virtualAllSearchMailbox;
 
 @end

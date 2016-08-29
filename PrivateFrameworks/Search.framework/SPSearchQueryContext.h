@@ -9,6 +9,7 @@
     NSString * _keyboardLanguage;
     NSString * _keyboardPrimaryLanguage;
     NSArray * _markedTextArray;
+    unsigned long long  _queryIdent;
     NSArray * _searchDomains;
     NSString * _searchString;
     unsigned long long  _whyClear;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) NSString *keyboardLanguage;
 @property (nonatomic, retain) NSString *keyboardPrimaryLanguage;
 @property (nonatomic, retain) NSArray *markedTextArray;
+@property (nonatomic) unsigned long long queryIdent;
 @property (nonatomic, retain) NSArray *searchDomains;
 @property (nonatomic, retain) NSString *searchString;
 @property (nonatomic) unsigned long long whyClear;
@@ -38,6 +40,7 @@
 - (id)keyboardLanguage;
 - (id)keyboardPrimaryLanguage;
 - (id)markedTextArray;
+- (unsigned long long)queryIdent;
 - (id)searchDomains;
 - (id)searchString;
 - (void)setDisabledBundles:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)setKeyboardLanguage:(id)arg1;
 - (void)setKeyboardPrimaryLanguage:(id)arg1;
 - (void)setMarkedTextArray:(id)arg1;
+- (void)setQueryIdent:(unsigned long long)arg1;
 - (void)setSearchDomains:(id)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setWhyClear:(unsigned long long)arg1;

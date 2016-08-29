@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) Class viewClass;
 
-+ (bool)isItemWithTypeExclusive:(int)arg1 orSuppressingTypes:(id*)arg2;
++ (bool)isItemWithTypeExclusive:(int)arg1 outBlacklistItems:(id*)arg2 outWhitelistItems:(id*)arg3;
 + (bool)itemType:(int)arg1 idiom:(long long)arg2 appearsInRegion:(int)arg3;
 + (bool)itemType:(int)arg1 idiom:(long long)arg2 canBeEnabledForData:(id)arg3 style:(id)arg4;
 + (id)itemWithType:(int)arg1 idiom:(long long)arg2;

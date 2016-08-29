@@ -18,5 +18,6 @@
 - (IKAppDocument *)activeDocument;
 - (bool)appIsTrusted;
 - (NSDictionary *)appLaunchParams;
+- (bool)shouldAllowRemoteInspection;
 
 @end

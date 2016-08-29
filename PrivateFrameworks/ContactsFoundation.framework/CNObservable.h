@@ -19,8 +19,6 @@
 + (id)concatenate:(id)arg1;
 + (id)emptyObservable;
 + (id)forkJoin:(id)arg1 scheduler:(id)arg2;
-+ (id)makeEmptyObservable;
-+ (id)makeNeverObservable;
 + (id)merge:(id)arg1;
 + (id)merge:(id)arg1 schedulerProvider:(id)arg2;
 + (id)neverObservable;
@@ -99,6 +97,8 @@
 - (id)subscribeOn:(id)arg1;
 - (id)switch;
 - (id)switchMap:(id /* block */)arg1;
+- (id)switchMap:(id /* block */)arg1 schedulerProvider:(id)arg2;
+- (id)switchWithSchedulerProvider:(id)arg1;
 - (id)take:(unsigned long long)arg1;
 - (id)takeLast:(unsigned long long)arg1;
 - (id)throttle:(double)arg1 schedulerProvider:(id)arg2;

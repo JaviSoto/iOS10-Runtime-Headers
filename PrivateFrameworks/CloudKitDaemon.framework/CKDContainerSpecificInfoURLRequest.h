@@ -5,11 +5,13 @@
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
     NSString * _containerIdentifier;
     CKDContainerInfo * _containerInfo;
+    NSString * _iCloudAuthToken;
     bool  _needUserID;
 }
 
 @property (nonatomic) NSString *containerIdentifier;
 @property (nonatomic, copy) CKDContainerInfo *containerInfo;
+@property (nonatomic, copy) NSString *iCloudAuthToken;
 @property (nonatomic) bool needUserID;
 
 - (void).cxx_destruct;
@@ -19,9 +21,11 @@
 - (id)containerIdentifier;
 - (id)containerInfo;
 - (bool)hasRequestBody;
+- (id)iCloudAuthToken;
 - (id)initWithContainerIdentifier:(id)arg1;
 - (bool)needUserID;
 - (long long)partitionType;
+- (void)prepareRequestWithCompletion:(id /* block */)arg1;
 - (void)requestDidParseJSONObject:(id)arg1;
 - (bool)requiresConfiguration;
 - (bool)requiresDeviceID;
@@ -29,6 +33,7 @@
 - (long long)serverType;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setContainerInfo:(id)arg1;
+- (void)setICloudAuthToken:(id)arg1;
 - (void)setNeedUserID:(bool)arg1;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;

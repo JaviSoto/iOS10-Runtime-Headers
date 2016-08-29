@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)_addRemoteVCIfNeeded;
 - (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (bool)canInsertMessage;
 - (void)dealloc;
 - (id)delegate;
 - (void)disableCameraAttachments;
@@ -40,6 +41,7 @@
 - (bool)insertAttachmentWithURL:(id)arg1 andDescription:(id)arg2;
 - (bool)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (bool)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (bool)insertMessage:(id)arg1;
 - (bool)insertRichLinkWithURL:(id)arg1 andData:(id)arg2;
 - (id)remoteViewController;
 - (id)remoteViewControllerProxy;

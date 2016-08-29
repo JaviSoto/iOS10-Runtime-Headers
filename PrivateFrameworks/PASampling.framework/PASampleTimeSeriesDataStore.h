@@ -42,6 +42,7 @@
     NSMutableSet * _pidsToTrack;
     unsigned long long  _previousSampleTimestamp;
     unsigned int  _previousStackshotBufferSize;
+    NSString * _reason;
     NSMutableSet * _rootKernelFrames;
     bool  _sampleOnlyMainThreads;
     bool  _sanitizePaths;
@@ -68,9 +69,6 @@
     NSMutableDictionary * _timeInsensitiveTaskDataDict;
     NSMutableArray * _timeSensitiveSampleDataArray;
     double  _timeWhenTransitionedToSamplingAllProcesses;
-    bool  _usingDsymForUUIDForCurrentDispatchQueue;
-    bool  _usingDsymForUUIDForCurrentTask;
-    bool  _usingDsymForUUIDForCurrentThread;
     bool  _usingDsymForUUIDForEverything;
     unsigned int  _wakeupsDuration;
     unsigned int  _wakeupsPerSec;
@@ -92,6 +90,7 @@
 @property double extraDuration;
 @property (readonly) PAGenealogyTracker *genealogyTracker;
 @property (copy) NSString *hardwareModel;
+@property (readonly) PAImageInfo *kernelCache;
 @property (readonly) NSString *kernelVersion;
 @property (readonly, copy) NSString *kextStat;
 @property (copy) NSString *machineArchitecture;
@@ -103,6 +102,7 @@
 @property (copy) NSString *osBuildVersion;
 @property (copy) NSString *osProductName;
 @property (copy) NSString *osProductVersion;
+@property (copy) NSString *reason;
 @property bool sampleOnlyMainThreads;
 @property (readonly) NSArray *samples;
 @property bool sanitizePaths;
@@ -140,7 +140,6 @@
 - (void)_addSampleToSampleArray:(id)arg1;
 - (bool)_addStackshot:(id)arg1;
 - (void)_asynchronouslyCacheSymbolicatorForPid:(int)arg1;
-- (bool)_shouldUseDsymForUUIDForName:(id)arg1 orNum:(id)arg2;
 - (void)addDSCSymFromBuffer:(const void*)arg1 withLength:(unsigned long long)arg2;
 - (void)addDsymPaths:(id)arg1;
 - (unsigned long long)addKCDataStackshotFromBuffer:(const void*)arg1 withLength:(unsigned long long)arg2;
@@ -150,6 +149,7 @@
 - (id)addKernelStack:(id)arg1;
 - (void)addPidToSampledPids:(int)arg1;
 - (void)addPidsWithNameToSampledPids:(id)arg1;
+- (void)addProcessInfoFromTailspin:(id)arg1;
 - (void)addStackshot:(id)arg1;
 - (unsigned long long)addStackshots:(id)arg1;
 - (void)addSymbolsFromTailspin:(id)arg1;
@@ -194,6 +194,7 @@
 - (bool)hasSampleOnOrAfterTime:(double)arg1 returningFirstIndex:(unsigned long long*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)kernelCache;
 - (id)kernelVersion;
 - (id)kextStat;
 - (struct mach_timebase_info { unsigned int x1; unsigned int x2; })machTimebase;
@@ -210,6 +211,7 @@
 - (id)osProductName;
 - (id)osProductVersion;
 - (void)printFrameRateReportWithStartSampleIndex:(unsigned long long)arg1 andEndIndex:(unsigned long long)arg2 andStartDisplayIndex:(unsigned long long)arg3 toStream:(id)arg4;
+- (id)reason;
 - (bool)sampleOnlyMainThreads;
 - (void)sampleTrackedPidsNow;
 - (id)samples;
@@ -233,6 +235,7 @@
 - (void)setOsBuildVersion:(id)arg1;
 - (void)setOsProductName:(id)arg1;
 - (void)setOsProductVersion:(id)arg1;
+- (void)setReason:(id)arg1;
 - (void)setSampleOnlyMainThreads:(bool)arg1;
 - (void)setSanitizePaths:(bool)arg1;
 - (void)setShouldGatherKextStat:(bool)arg1;
@@ -258,9 +261,6 @@
 - (id)symbolHandleForAddress:(unsigned long long)arg1 inLivingPid:(int)arg2;
 - (id)symbolHandleForAddress:(unsigned long long)arg1 inSampleTask:(id)arg2;
 - (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 inSampleTask:(id)arg3;
-- (void)symbolicatingDispatchQueueWithName:(id)arg1 andDqid:(unsigned long long)arg2;
-- (void)symbolicatingProcessWithName:(id)arg1 andPid:(int)arg2;
-- (void)symbolicatingThreadWithName:(id)arg1 andTid:(unsigned long long)arg2;
 - (id)targetProcessAbsolutePath;
 - (id)targetProcessBundleBuildVersion;
 - (id)targetProcessBundleName;

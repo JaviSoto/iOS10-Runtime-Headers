@@ -102,8 +102,10 @@
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeed:(unsigned long long)arg3;
 - (void)removeSection:(id)arg1;
 - (void)requestListBulletinsForSectionID:(id)arg1;
+- (void)requestNoticesBulletinsForAllSections;
 - (void)requestNoticesBulletinsForSectionID:(id)arg1;
 - (void)sendResponse:(id)arg1;
+- (void)sendResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)serverProxy:(id)arg1 connectionStateDidChange:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setObserverFeed:(unsigned long long)arg1;

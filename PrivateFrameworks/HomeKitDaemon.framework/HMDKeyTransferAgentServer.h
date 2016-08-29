@@ -9,7 +9,6 @@
     HMFExponentialBackoffTimer * _broadcastUUIDTimer;
     NSUUID * _currentKeyUUID;
     id /* block */  _finalCompletionHandler;
-    bool  _inProgress;
 }
 
 @property (nonatomic) bool broadcastFailure;
@@ -21,7 +20,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ finalCompletionHandler;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool inProgress;
 @property (getter=isPeerAvailable, readonly) bool peerAvailable;
 @property (readonly) Class superclass;
 
@@ -46,7 +44,6 @@
 - (id)currentKeyUUID;
 - (void)dealloc;
 - (id /* block */)finalCompletionHandler;
-- (bool)inProgress;
 - (id)initWithHomeManager:(id)arg1;
 - (bool)isPeerAvailable;
 - (id)logIdentifier;
@@ -56,7 +53,6 @@
 - (void)setBroadcastUUIDTimer:(id)arg1;
 - (void)setCurrentKeyUUID:(id)arg1;
 - (void)setFinalCompletionHandler:(id /* block */)arg1;
-- (void)setInProgress:(bool)arg1;
 - (void)timerDidFire:(id)arg1;
 
 @end

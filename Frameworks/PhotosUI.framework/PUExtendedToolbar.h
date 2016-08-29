@@ -10,6 +10,7 @@
     UIToolbar * __containedToolbar;
     double  __containedToolbarHeight;
     bool  __isUpdating;
+    double  __minimumBackgroundHeight;
     bool  __needsUpdateAccessoryView;
     bool  __needsUpdateAccessoryViewContainer;
     bool  __needsUpdateAccessoryViewTopOutset;
@@ -27,6 +28,7 @@
 @property (setter=_setContainedToolbar:, nonatomic, retain) UIToolbar *_containedToolbar;
 @property (setter=_setContainedToolbarHeight:, nonatomic) double _containedToolbarHeight;
 @property (setter=_setUpdating:, nonatomic) bool _isUpdating;
+@property (setter=_setMinimumBackgroundHeight:, nonatomic) double _minimumBackgroundHeight;
 @property (setter=_setNeedsUpdateAccessoryView:, nonatomic) bool _needsUpdateAccessoryView;
 @property (setter=_setNeedsUpdateAccessoryViewContainer:, nonatomic) bool _needsUpdateAccessoryViewContainer;
 @property (setter=_setNeedsUpdateAccessoryViewTopOutset:, nonatomic) bool _needsUpdateAccessoryViewTopOutset;
@@ -56,6 +58,7 @@
 - (void)_invalidateContainedToolbar;
 - (void)_invalidateToolbarItems;
 - (bool)_isUpdating;
+- (double)_minimumBackgroundHeight;
 - (bool)_needsUpdate;
 - (bool)_needsUpdateAccessoryView;
 - (bool)_needsUpdateAccessoryViewContainer;
@@ -70,6 +73,7 @@
 - (void)_setAccessoryViewTopOutset:(double)arg1;
 - (void)_setContainedToolbar:(id)arg1;
 - (void)_setContainedToolbarHeight:(double)arg1;
+- (void)_setMinimumBackgroundHeight:(double)arg1;
 - (void)_setNeedsUpdate;
 - (void)_setNeedsUpdateAccessoryView:(bool)arg1;
 - (void)_setNeedsUpdateAccessoryViewContainer:(bool)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIBarButtonItem : UIBarItem <NSCoding> {
+@interface UIBarButtonItem : UIBarItem <MFPopoverPresentationSource, NSCoding> {
     id /* block */  __autoValidationHandler;
     bool  __hidden;
     UIBarButtonItem * __itemVariation;
@@ -77,8 +77,11 @@
 @property (nonatomic) SEL action;
 @property (nonatomic, readonly) UIBarButtonItemGroup *buttonGroup;
 @property (nonatomic, retain) UIView *customView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, readonly) bool groupRepresentative;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isSystemItem;
 @property (getter=_miniImage, setter=_setMiniImage:, nonatomic, retain) UIImage *miniImage;
 @property (getter=_miniImageInsets, setter=_setMiniImageInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } miniImageInsets;
@@ -86,6 +89,7 @@
 @property (nonatomic, copy) NSSet *possibleTitles;
 @property (nonatomic) bool selected;
 @property (nonatomic) long long style;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) long long systemItem;
 @property (nonatomic) id target;
 @property (nonatomic, retain) UIColor *tintColor;
@@ -239,6 +243,7 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
+- (void)mf_setAsSourceForPopoverPresentationController:(id)arg1;
 - (void)mf_setImageOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)mf_setImageVerticalOffset:(double)arg1;
 - (void)mf_setLandscapeImagePhoneOffset:(struct CGPoint { double x1; double x2; })arg1;

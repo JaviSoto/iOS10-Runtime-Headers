@@ -5,15 +5,18 @@
 @interface CKNotificationChatController : CKCoreChatController <CKMessageEntryViewDelegate, CKMessageEntryViewInputDelegate, UIPreviewInteractionDelegate> {
     CKMessageEntryView * _entryView;
     CKRaiseGesture * _raiseGesture;
+    bool  _shouldAllowReplyFromLockScreen;
     CKScheduledUpdater * _typingUpdater;
     NSExtensionContext * _urlOpenContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKNotificationChatControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKMessageEntryView *entryView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKRaiseGesture *raiseGesture;
+@property (nonatomic) bool shouldAllowReplyFromLockScreen;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKScheduledUpdater *typingUpdater;
 @property (nonatomic) NSExtensionContext *urlOpenContext;
@@ -24,6 +27,7 @@
 - (void)_raiseToListenSettingChanged:(id)arg1;
 - (void)_setConversationDeferredSetup;
 - (void)_setEntryViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(bool)arg2;
+- (void)_setupShouldShowReplyFromLockScreen;
 - (void)_updateEntryViewFrameIfNeeded:(bool)arg1;
 - (void)_updateTitleAnimated:(bool)arg1;
 - (double)balloonMaxWidth;
@@ -69,8 +73,10 @@
 - (void)setLocalUserIsComposing:(bool)arg1 withPluginBundleID:(id)arg2 typingIndicatorData:(id)arg3;
 - (void)setRaiseGesture:(id)arg1;
 - (void)setSendingMessage:(bool)arg1;
+- (void)setShouldAllowReplyFromLockScreen:(bool)arg1;
 - (void)setTypingUpdater:(id)arg1;
 - (void)setUrlOpenContext:(id)arg1;
+- (bool)shouldAllowReplyFromLockScreen;
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
 - (id)typingUpdater;
@@ -78,6 +84,7 @@
 - (void)updateTyping;
 - (id)urlOpenContext;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -16,6 +16,7 @@
         unsigned int cancellingAnimation : 1; 
         unsigned int updatingContentInset : 1; 
     }  _pickerTableFlags;
+    bool  _playsFeedback;
     NSMutableArray * _referencingCells;
     struct CGRect { 
         struct CGPoint { 
@@ -48,6 +49,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long lastSelectedRow;
+@property (getter=_playsFeedback, setter=_setPlaysFeedback:) bool playsFeedback;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } selectionBarRect;
 @property (setter=_setSelectionBarRow:, nonatomic) long long selectionBarRow;
 @property (readonly) Class superclass;
@@ -61,13 +63,16 @@
 - (void)_notifyContentOffsetChange;
 - (id)_pickerView;
 - (void)_playClickIfNecessary;
+- (bool)_playsFeedback;
 - (void)_rectChangedWithNewSize:(struct CGSize { double x1; double x2; })arg1 oldSize:(struct CGSize { double x1; double x2; })arg2;
 - (double)_rotationForCellCenterY:(double)arg1;
 - (bool)_scrollRowAtIndexPathToSelectionBar:(id)arg1 animated:(bool)arg2;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(bool)arg2;
+- (void)_scrollViewDidInterruptDecelerating:(id)arg1;
 - (void)_scrollingFinished;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionBarRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 notify:(bool)arg2;
+- (void)_setPlaysFeedback:(bool)arg1;
 - (void)_setSelectionBarRow:(long long)arg1;
 - (void)_setTextColor:(id)arg1;
 - (void)_setUsesModernStyle:(bool)arg1;

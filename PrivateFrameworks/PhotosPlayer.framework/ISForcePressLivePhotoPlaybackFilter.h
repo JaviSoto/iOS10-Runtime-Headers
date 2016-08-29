@@ -12,6 +12,7 @@
         bool respondsToStartPlayback; 
         bool respondsToStopPlayback; 
     }  _delegateFlags;
+    bool  _didReachMaxForce;
     double  _forceProgress;
     bool  _touchActive;
 }
@@ -35,6 +36,7 @@
 - (double)forceProgress;
 - (bool)isTouchActive;
 - (void)setForceProgress:(double)arg1;
+- (void)setState:(long long)arg1;
 - (void)setTouchActive:(bool)arg1;
 
 @end

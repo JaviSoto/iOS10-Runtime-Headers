@@ -100,6 +100,7 @@
     double  _previousHorizontalVelocity;
     double  _previousVerticalVelocity;
     UIRefreshControl * _refreshControl;
+    UIView * _relativePanView;
     struct CGPoint { 
         double x; 
         double y; 
@@ -250,7 +251,6 @@
 @property (getter=_isAnimatingZoom, nonatomic, readonly) bool isAnimatingZoom;
 @property (getter=_isHorizontalBouncing, nonatomic, readonly) bool isHorizontalBouncing;
 @property (getter=_isVerticalBouncing, nonatomic, readonly) bool isVerticalBouncing;
-@property (nonatomic, readonly) <UIScrollViewDelegate> *is_scrollViewDelegate;
 @property (nonatomic, readonly) ISUIScrollViewVitalityController *is_vitalityController;
 @property (nonatomic) long long keyboardDismissMode;
 @property (nonatomic) double maximumZoomScale;
@@ -261,6 +261,7 @@
 @property (getter=isProgrammaticScrollEnabled, nonatomic) bool programmaticScrollEnabled;
 @property (nonatomic, readonly) bool pu_isBouncing;
 @property (nonatomic, readonly) bool pu_isPerformingScrollTest;
+@property (nonatomic, readonly) bool px_isPerformingScrollTest;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (getter=isScrollEnabled, nonatomic) bool scrollEnabled;
 @property (getter=_scrollHysteresis, nonatomic, readonly) double scrollHysteresis;
@@ -300,6 +301,7 @@
 - (struct CGPoint { double x1; double x2; })_adjustFocusContentOffset:(struct CGPoint { double x1; double x2; })arg1 forView:(id)arg2;
 - (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(bool)arg2 lastAdjustment:(double*)arg3;
 - (void)_adjustScrollerIndicators:(bool)arg1 alwaysShowingThem:(bool)arg2;
+- (void)_adjustScrollerIndicatorsIfNeeded;
 - (void)_adjustShadowsIfNecessary;
 - (void)_adjustShadowsIfNecessaryForOffset:(double)arg1;
 - (void)_adjustStartOffsetForGrabbedBouncingScrollView;
@@ -348,6 +350,7 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_didRemoveDependentConstraint:(id)arg1;
 - (bool)_disableUpdateOffsetOnCancelTracking;
+- (long long)_effectiveIndicatorStyle;
 - (void)_enableOnlyGestureRecognizersForCurrentTouchLevel;
 - (void)_endPanNormal:(bool)arg1;
 - (void)_endRefreshingAnimated:(bool)arg1;
@@ -431,6 +434,7 @@
 - (void)_registerAsScrollToTopViewIfPossible;
 - (void)_registerForRotation:(bool)arg1 ofWindow:(id)arg2;
 - (void)_registerForSpringBoardBlankedScreenNotification;
+- (id)_relativePanView;
 - (void)_removeScrollNotificationView:(id)arg1;
 - (bool)_resetScrollingForGestureEvent:(id)arg1;
 - (void)_resetScrollingWithUIEvent:(id)arg1;
@@ -484,6 +488,7 @@
 - (void)_setPagingFriction:(double)arg1;
 - (void)_setPagingOrigin:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setRefreshControl:(id)arg1;
+- (void)_setRelativePanView:(id)arg1;
 - (void)_setShowsBackgroundShadow:(bool)arg1;
 - (void)_setShowsHorizontalScrollIndicator:(bool)arg1;
 - (void)_setShowsVerticalScrollIndicator:(bool)arg1;
@@ -681,6 +686,7 @@
 - (bool)touchesShouldBegin:(id)arg1 withEvent:(id)arg2 inContentView:(id)arg3;
 - (bool)touchesShouldCancelInContentView:(id)arg1;
 - (bool)tracksImmediatelyWhileDecelerating;
+- (void)traitCollectionDidChange:(id)arg1;
 - (bool)updateInsetBottomDuringKeyboardDismiss;
 - (double)verticalScrollDecelerationFactor;
 - (void)willAnimateRotationToInterfaceOrientation:(id)arg1;
@@ -783,8 +789,6 @@
 // Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
 
 - (void)is_didLayoutPlayerViews;
-- (void)is_didLayoutPlayerViews;
-- (id)is_scrollViewDelegate;
 - (id)is_scrollViewDelegate;
 - (id)is_vitalityController;
 - (id)is_vitalityControllerCreateIfNeeded:(bool)arg1;
@@ -792,6 +796,8 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (bool)_px_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
+- (struct CGPoint { double x1; double x2; })px_constrainedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)px_isPerformingScrollTest;
 - (bool)px_isScrolledAtEdge:(unsigned int)arg1;
 - (bool)px_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)px_scrollToContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;

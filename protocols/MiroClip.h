@@ -19,10 +19,8 @@
 - (void)setDuration:(int)arg1;
 - (void)setMaxDuration:(int)arg1;
 - (void)setStartTime:(int)arg1;
-- (void)setUserChangedAudioEnabled:(bool)arg1;
 - (float)sourceDuration;
 - (float)sourceStartTime;
 - (int)startTime;
-- (bool)userChangedAudioEnabled;
 
 @end

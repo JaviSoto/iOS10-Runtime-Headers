@@ -3,6 +3,7 @@
  */
 
 @interface BWFileCoordinatorNode : BWNode {
+    unsigned long long  _coarseAFStatusCounter;
     long long  _currSettingsID;
     struct OpaqueCMBlockBuffer { } * _emptyMetadataSampleData;
     bool  _firstAudioHasBeenProcessed;
@@ -97,6 +98,7 @@
 - (void)_prepareToStartRecordingWithSettings:(id)arg1;
 - (void)_printStagingEvent:(struct opaqueCMSampleBuffer { }*)arg1 forNodeInputIndex:(unsigned long long)arg2;
 - (void)_stopRecordingWithErrorCode:(int)arg1;
+- (void)cancelStartRecordingWithSettings:(id)arg1;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;

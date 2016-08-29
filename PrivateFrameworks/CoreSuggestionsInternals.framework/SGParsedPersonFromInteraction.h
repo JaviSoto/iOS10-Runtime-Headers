@@ -9,7 +9,7 @@
     NSString * _displayName;
     NSString * _email;
     NSString * _groupId;
-    NSString * _handle;
+    INPersonHandle * _handle;
     NSString * _interactionIdentifier;
     NSPersonNameComponents * _nameComponents;
     NSString * _phoneNumber;

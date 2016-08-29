@@ -17,6 +17,7 @@
 @property (nonatomic, readonly, copy) NSString *type;
 
 + (id)attachmentWithIdentifier:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id*)arg4;
++ (unsigned long long)stagingActionForAttachmentURL:(id)arg1 bundleProxy:(id)arg2 error:(id*)arg3;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

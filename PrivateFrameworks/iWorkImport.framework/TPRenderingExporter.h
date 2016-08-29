@@ -17,7 +17,6 @@
 - (id)currentInfos;
 - (void)dealloc;
 - (bool)didLimitPageLayout;
-- (bool)hasMoreThanOnePageToPrint;
 - (bool)incrementPage;
 - (id)initWithDocumentRoot:(id)arg1;
 - (long long)lastPageIndexForLayout;

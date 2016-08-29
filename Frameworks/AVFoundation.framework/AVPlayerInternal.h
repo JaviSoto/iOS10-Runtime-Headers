@@ -5,8 +5,8 @@
 @interface AVPlayerInternal : NSObject {
     void * IAPDCallbackToken;
     bool  IOwnTheFigPlayer;
-    NSString * _ancillaryPerformanceInformationForDisplay;
     bool  allowsOutOfBandTextTrackRendering;
+    NSString * ancillaryPerformanceInformationForDisplay;
     AVAudioSession * audioSession;
     AVAudioSessionMediaPlayerOnly * audioSessionMediaPlayerOnly;
     bool  autoSwitchStreamVariants;
@@ -59,6 +59,7 @@
     long long  status;
     NSMutableArray * subtitleLayers;
     bool  usesDedicatedNotificationQueueForMediaServices;
+    bool  usesLegacyAutomaticWaitingBehavior;
     NSDictionary * vibrationPattern;
     struct __CFDictionary { } * videoLayers;
     AVWeakReference * weakReference;

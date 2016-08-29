@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) NSString *language;
 
 - (void).cxx_destruct;
+- (id)_pathForResourceWithName:(id)arg1 extension:(id)arg2;
+- (id)_readOptionalPlist:(id)arg1 property:(id)arg2;
 - (id)_readPlist:(id)arg1 property:(id)arg2;
 - (id)_readPlistFromPath:(id)arg1 property:(id)arg2;
 - (id)abGroup;

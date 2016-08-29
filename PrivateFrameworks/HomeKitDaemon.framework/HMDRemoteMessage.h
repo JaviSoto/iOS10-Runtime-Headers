@@ -5,13 +5,15 @@
 @interface HMDRemoteMessage : HMFMessage {
     unsigned long long  _restriction;
     bool  _secure;
+    HMDHomeKitVersion * _sourceVersion;
     double  _timeout;
     NSUUID * _transactionIdentifier;
     long long  _type;
 }
 
 @property (nonatomic, readonly) unsigned long long restriction;
-@property (getter=isSecure, nonatomic, readonly) bool secure;
+@property (getter=isSecure, nonatomic) bool secure;
+@property (nonatomic, retain) HMDHomeKitVersion *sourceVersion;
 @property (nonatomic, readonly) double timeout;
 @property (nonatomic, copy) NSUUID *transactionIdentifier;
 @property (nonatomic) long long type;
@@ -20,13 +22,17 @@
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3;
-- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(long long)arg4 timout:(double)arg5 secure:(bool)arg6;
-- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(long long)arg4 timout:(double)arg5 secure:(bool)arg6 restriction:(unsigned long long)arg7;
+- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(long long)arg4 timeout:(double)arg5 secure:(bool)arg6;
+- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(long long)arg4 timeout:(double)arg5 secure:(bool)arg6 restriction:(unsigned long long)arg7;
 - (bool)isRemoteSource;
 - (bool)isSecure;
 - (unsigned long long)restriction;
+- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setSecure:(bool)arg1;
+- (void)setSourceVersion:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (void)setType:(long long)arg1;
+- (id)sourceVersion;
 - (double)timeout;
 - (id)transactionIdentifier;
 - (long long)type;

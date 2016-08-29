@@ -10,16 +10,19 @@
     NSMutableDictionary * _touchDownEvents;
     NSMutableDictionary * _touchUpEvents;
     TIWordSearch * _wordSearch;
+    TIWordSearchCandidateResultSet * _wordSearchCandidateResultSet;
 }
 
 @property (nonatomic, retain) NSArray *clearedGeometryDataArray;
 @property (nonatomic, retain) NSArray *clearedTouchDataArray;
 @property (nonatomic, readonly) NSMutableArray *geometryDataArray;
+@property (nonatomic, readonly) struct __Mecabra { }*mecabra;
 @property (nonatomic, readonly) NSMutableArray *touchDataArray;
 @property (nonatomic, readonly) NSMutableDictionary *touchDownEvents;
 @property (nonatomic, readonly) NSMutableDictionary *touchUpEvents;
 @property (nonatomic, readonly) NSCharacterSet *validCharacterSetForAutocorrection;
 @property (nonatomic, readonly) TIWordSearch *wordSearch;
+@property (nonatomic, retain) TIWordSearchCandidateResultSet *wordSearchCandidateResultSet;
 
 + (id)dummyGeometryData;
 + (id)dummyTouchData;
@@ -29,7 +32,9 @@
 + (id)wordSearchForInputMode:(id)arg1;
 
 - (id)adaptationContextReadingForReanalysisString:(id)arg1 fromRecentlyCommittedCandidates:(id)arg2;
+- (void)addProactiveTriggers:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })analysisStringRange;
+- (id)candidateResultSetFromWordSearchCandidateResultSet:(id)arg1;
 - (void)clearInput;
 - (id)clearedGeometryDataArray;
 - (id)clearedTouchDataArray;
@@ -45,6 +50,8 @@
 - (void)insertDummyTouchDataAtIndex:(unsigned long long)arg1;
 - (long long)keyHitTest:(id)arg1;
 - (void)logCommittedCandidate:(id)arg1 input:(id)arg2 partial:(bool)arg3;
+- (struct __Mecabra { }*)mecabra;
+- (void*)mecabraCandidateRefFromCandidate:(id)arg1;
 - (int)mecabraTextContentTypeFromTITextContentType:(id)arg1;
 - (bool)needsTouchEvents;
 - (void)padGeometryForInput:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -55,6 +62,8 @@
 - (void)saveTouchDataForEvent:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setClearedGeometryDataArray:(id)arg1;
 - (void)setClearedTouchDataArray:(id)arg1;
+- (void)setWordSearchCandidateResultSet:(id)arg1;
+- (bool)shouldUpdateLanguageModel;
 - (void)suspend;
 - (void)syncToKeyboardState:(id)arg1 from:(id)arg2 afterContextChange:(bool)arg3;
 - (id)touchDataArray;
@@ -63,8 +72,10 @@
 - (id)touchUpEvents;
 - (void)updateDocumentContext;
 - (bool)updateLanguageModelForKeyboardState;
+- (void)updateProactiveCandidatesForCandidateResultSet:(id)arg1 withInput:(id)arg2;
 - (id)validCharacterSetForAutocorrection;
 - (id)wordSearch;
+- (id)wordSearchCandidateResultSet;
 - (id)wordSeparator;
 
 @end

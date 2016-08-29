@@ -17,6 +17,7 @@
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NTKDigitalTimeLabel *timeLabel;
 
 - (void).cxx_destruct;
 - (double)_alternateLayoutCityFontSize;
@@ -28,5 +29,6 @@
 - (void)setOverrideDate:(id)arg1;
 - (void)setShortCity:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (id)timeLabel;
 
 @end

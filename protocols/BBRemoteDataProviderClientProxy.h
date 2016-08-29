@@ -10,7 +10,7 @@
 - (void)clearedInfoForClearingAllBulletinsWithLastClearedInfo:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 11: BBSectionInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 - (void)clearedInfoForClearingBulletinsFromDate:(void *)arg1 toDate:(void *)arg2 lastClearedInfo:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 13: NSDate *, NSDate *, BBSectionInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 - (void)dataProviderDidLoad;
-- (void)deliverBulletinActionResponse:(BBActionResponse *)arg1;
+- (void)deliverBulletinActionResponse:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: BBActionResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)deliverMessageWithName:(NSString *)arg1 userInfo:(NSDictionary *)arg2;
 - (void)getAspectRatioForAttachmentUUID:(void *)arg1 recordID:(void *)arg2 isPrimary:(void *)arg3 withHandler:(void *)arg4; // needs 4 arg types, found 10: NSUUID *, NSString *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, float, NSError *, void*
 - (void)getDataForAttachmentUUID:(void *)arg1 recordID:(void *)arg2 isPrimary:(void *)arg3 withHandler:(void *)arg4; // needs 4 arg types, found 10: NSUUID *, NSString *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*

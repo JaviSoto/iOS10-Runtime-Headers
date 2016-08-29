@@ -2,42 +2,36 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIControlCenterPagePlatterView : UIView <_UISettingsKeyObserver> {
+@interface CCUIControlCenterPagePlatterView : UIView {
     NCMaterialView * _baseMaterialView;
     NSLayoutConstraint * _bottomMargin;
     UIView * _contentView;
+    <CCUIControlCenterPagePlatterViewDelegate> * _delegate;
     NSLayoutConstraint * _leadingMargin;
     NSSet * _renderedPunchOutMasks;
-    CCUIControlCenterSettings * _settings;
-    UIImageView * _shadowView;
-    <CCUIControlCenterSystemAgent> * _systemAgent;
     NSLayoutConstraint * _topMargin;
     NSLayoutConstraint * _trailingMargin;
     UIImageView * _whiteLayerView;
 }
 
 @property (nonatomic, retain) UIView *contentView;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addOrRemoveShadow;
-- (void)_layoutShadow;
 - (void)_recursivelyVisitSubviewsOfView:(id)arg1 forPunchedThroughView:(id)arg2 collectingMasksIn:(id)arg3;
 - (void)_reduceTransparencyStatusDidChange;
+- (id)_renderAlphaOnlyPunchThroughMaskForPlatterSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_rerenderPunchThroughMaskIfNecessary;
 - (bool)_searchForUpdatedMask;
+- (bool)_shouldSuppressCachingPunchOutMaskImage;
+- (id)_systemAgent;
 - (id)ccuiPunchOutMaskedContainer;
 - (id)contentView;
 - (void)dealloc;
-- (id)initWithSystemAgent:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (void)setContentView:(id)arg1;
 - (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

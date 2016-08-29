@@ -3,10 +3,12 @@
  */
 
 @interface FCSolConfiguration : NSObject {
+    bool  _filterOverflowedOrphans;
     long long  _heuristicOption;
     unsigned long long  _heuristicSampleSize;
     unsigned long long  _maxArticleCombos;
     double  _moveAboutnessNoiseStd;
+    double  _moveAboutnessWeightRatio;
     double  _moveNewOrphansCoeff;
     double  _moveSizeCoeff;
     double  _searchBranchDecay;
@@ -15,12 +17,16 @@
     double  _tagFavoritedCoeff;
     double  _tagPairsCoeff;
     double  _tagSizeCoeff;
+    double  _utilityWeightAlpha;
+    double  _utilityWeightBeta;
 }
 
+@property (nonatomic, readonly) bool filterOverflowedOrphans;
 @property (nonatomic, readonly) long long heuristicOption;
 @property (nonatomic, readonly) unsigned long long heuristicSampleSize;
 @property (nonatomic, readonly) unsigned long long maxArticleCombos;
 @property (nonatomic, readonly) double moveAboutnessNoiseStd;
+@property (nonatomic, readonly) double moveAboutnessWeightRatio;
 @property (nonatomic, readonly) double moveNewOrphansCoeff;
 @property (nonatomic, readonly) double moveSizeCoeff;
 @property (nonatomic, readonly) double searchBranchDecay;
@@ -29,14 +35,18 @@
 @property (nonatomic, readonly) double tagFavoritedCoeff;
 @property (nonatomic, readonly) double tagPairsCoeff;
 @property (nonatomic, readonly) double tagSizeCoeff;
+@property (nonatomic, readonly) double utilityWeightAlpha;
+@property (nonatomic, readonly) double utilityWeightBeta;
 
 + (id)configurationWithTreatment:(id)arg1;
 
+- (bool)filterOverflowedOrphans;
 - (long long)heuristicOption;
 - (unsigned long long)heuristicSampleSize;
-- (id)initWithMaxArticleCombos:(unsigned long long)arg1 heuristicSampleSize:(unsigned long long)arg2 searchBranchMultiplier:(unsigned long long)arg3 searchBranchDecay:(double)arg4 searchTimeLimit:(double)arg5 tagSizeCoeff:(double)arg6 tagPairsCoeff:(double)arg7 tagFavoritedCoeff:(double)arg8 moveNewOrphansCoeff:(double)arg9 moveSizeCoeff:(double)arg10 moveAboutnessNoiseStd:(double)arg11 heuristicOption:(long long)arg12;
+- (id)initWithMaxArticleCombos:(unsigned long long)arg1 heuristicSampleSize:(unsigned long long)arg2 searchBranchMultiplier:(unsigned long long)arg3 searchBranchDecay:(double)arg4 searchTimeLimit:(double)arg5 tagSizeCoeff:(double)arg6 tagPairsCoeff:(double)arg7 tagFavoritedCoeff:(double)arg8 moveNewOrphansCoeff:(double)arg9 moveSizeCoeff:(double)arg10 moveAboutnessNoiseStd:(double)arg11 moveAboutnessWeightRatio:(double)arg12 utilityWeightAlpha:(double)arg13 utilityWeightBeta:(double)arg14 filterOverflowedOrphans:(bool)arg15 heuristicOption:(long long)arg16;
 - (unsigned long long)maxArticleCombos;
 - (double)moveAboutnessNoiseStd;
+- (double)moveAboutnessWeightRatio;
 - (double)moveNewOrphansCoeff;
 - (double)moveSizeCoeff;
 - (double)searchBranchDecay;
@@ -45,5 +55,7 @@
 - (double)tagFavoritedCoeff;
 - (double)tagPairsCoeff;
 - (double)tagSizeCoeff;
+- (double)utilityWeightAlpha;
+- (double)utilityWeightBeta;
 
 @end

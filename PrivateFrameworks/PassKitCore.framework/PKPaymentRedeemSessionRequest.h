@@ -3,15 +3,15 @@
  */
 
 @interface PKPaymentRedeemSessionRequest : PKPaymentWebServiceRequest {
-    NSString * _sessionIdentifier;
+    NSURL * _redeemURL;
 }
 
-@property (nonatomic, copy) NSString *sessionIdentifier;
+@property (nonatomic, copy) NSURL *redeemURL;
 
 - (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
-- (id)initWithSessionIdentifier:(id)arg1;
-- (id)sessionIdentifier;
-- (void)setSessionIdentifier:(id)arg1;
+- (id)initWithRedeemURL:(id)arg1;
+- (id)redeemURL;
+- (void)setRedeemURL:(id)arg1;
 
 @end

@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface _HMAccessoryProfile : NSObject <HMFMessageReceiver> {
+@interface _HMAccessoryProfile : NSObject <HMFMessageReceiver, NSSecureCoding> {
     HMAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _clientQueue;
+    bool  _configured;
     HMDelegateCaller * _delegateCaller;
     HMHome * _home;
     HMFMessageDispatcher * _msgDispatcher;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, readonly) HMAccessory *accessory;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property bool configured;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
@@ -30,15 +32,21 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_registerNotificationHandlers;
 - (id)accessory;
 - (id)clientQueue;
+- (void)configureWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
+- (bool)configured;
 - (id)delegateCaller;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)home;
-- (id)initUuid:(id)arg1 accessory:(id)arg2 services:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5 msgDispatcher:(id)arg6 home:(id)arg7;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
@@ -47,6 +55,7 @@
 - (id)propertyQueue;
 - (id)services;
 - (void)setClientQueue:(id)arg1;
+- (void)setConfigured:(bool)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;

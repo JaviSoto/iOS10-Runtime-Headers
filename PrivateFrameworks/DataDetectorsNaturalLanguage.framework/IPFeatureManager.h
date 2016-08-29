@@ -21,6 +21,7 @@
 + (id)decoratedTitle:(id)arg1 withSubtitles:(id)arg2;
 + (id)descriptionForScanResultType:(unsigned long long)arg1;
 + (void)enrichEvents:(id)arg1 messageUnits:(id)arg2 dateInSubject:(bool)arg3 features:(id)arg4;
++ (id)entertainmentPOINamesFromFeatures:(id)arg1;
 + (id)featureExtractorsExceptDataDetectorsExtractor;
 + (unsigned long long)featureSentencePolarityForFeatureAtIndex:(unsigned long long)arg1 inFeatures:(id)arg2;
 + (bool)features:(id)arg1 containDateOlderThan:(id)arg2;
@@ -35,6 +36,7 @@
 + (id)normalizedAllDayDateFromDate:(id)arg1;
 + (void)normalizedEvents:(id)arg1;
 + (id)notesStringsFromFeatures:(id)arg1;
++ (id)restaurantAndBarPOINamesFromFeatures:(id)arg1;
 + (void)scanEventsInMessageUnits:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)scanEventsInMessageUnits:(id)arg1 synchronously:(bool)arg2 completionHandler:(id /* block */)arg3;
 + (void)setEventStoreForTesting:(id)arg1;

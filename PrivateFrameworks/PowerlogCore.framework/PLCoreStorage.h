@@ -55,7 +55,7 @@
 - (id)archivesResponder;
 - (id)blPathResponder;
 - (void)blockingFlushCachesWithReason:(id)arg1;
-- (void)blockingFlushQueues:(id)arg1 withCurrQueueLabel:(const char *)arg2;
+- (void)blockingFlushQueues:(id)arg1;
 - (void)blockingUpdateEntry:(id)arg1 withBlock:(id /* block */)arg2;
 - (long long)blockingWriteEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)cacheProcessIDEntry:(id)arg1;

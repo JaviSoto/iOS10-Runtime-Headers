@@ -4,6 +4,7 @@
 
 @interface CVMLError : NSObject
 
++ (id)errorForCancellationOfRequest:(id)arg1;
 + (id)errorWithAlgorithmError:(id)arg1;
 + (id)errorWithCode:(int)arg1 message:(id)arg2;
 + (id)errorWithCode:(int)arg1 message:(id)arg2 underlyingError:(id)arg3;

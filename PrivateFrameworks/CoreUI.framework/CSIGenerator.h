@@ -4,6 +4,7 @@
 
 @interface CSIGenerator : NSObject {
     bool  _allowsMultiPassEncoding;
+    bool  _allowsOptimalPacking;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -71,6 +72,7 @@
 }
 
 @property (nonatomic) bool allowsMultiPassEncoding;
+@property (nonatomic) bool allowsOptimalPacking;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alphaCroppedFrame;
 @property (nonatomic) int blendMode;
 @property (nonatomic) short colorSpaceID;
@@ -114,6 +116,7 @@
 - (void)addMipReference:(id)arg1;
 - (void)addSliceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)allowsMultiPassEncoding;
+- (bool)allowsOptimalPacking;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedFrame;
 - (int)blendMode;
 - (short)colorSpaceID;
@@ -149,6 +152,7 @@
 - (unsigned int)pixelFormat;
 - (unsigned int)scaleFactor;
 - (void)setAllowsMultiPassEncoding:(bool)arg1;
+- (void)setAllowsOptimalPacking:(bool)arg1;
 - (void)setAlphaCroppedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setColorSpaceID:(short)arg1;

@@ -16,6 +16,7 @@
     NSArray * _imageInfos;
     bool  _isDirty;
     bool  _isThirdParty;
+    bool  _isTranslocated;
     bool  _isUnresponsive;
     NSString * _mainBinaryPath;
     double  _mostRecentTimeSamplingOnlyMainThread;
@@ -47,6 +48,7 @@
 @property (readonly) NSArray *imageInfos;
 @property (readonly) bool isDirty;
 @property (readonly) bool isThirdParty;
+@property (readonly) bool isTranslocated;
 @property (readonly) bool isUnresponsive;
 @property (readonly) unsigned long long mainBinaryOffset;
 @property (readonly) NSString *mainBinaryPath;
@@ -71,8 +73,9 @@
 - (void).cxx_destruct;
 - (void)_gatherNonTimeCriticalAuxiliaryInfoFromLiveSystemWithSampleTimeSeriesDataStore:(id)arg1;
 - (void)_gatherTimeCriticalAuxiliaryInfoFromLiveSystem;
-- (id)_initWithSerializedTimeInsensitiveTaskData:(const struct { unsigned long long x1; int x2; int x3; int x4; unsigned int x5; long long x6; long long x7; unsigned long long x8; long long x9; bool x10; bool x11; bool x12; bool x13; double x14; unsigned long long x15; unsigned long long x16; struct _CSArchitecture { int x_17_1_1; int x_17_1_2; } x17; double x18; }*)arg1;
+- (id)_initWithSerializedTimeInsensitiveTaskData:(const struct { unsigned long long x1; int x2; int x3; int x4; unsigned int x5; long long x6; long long x7; unsigned long long x8; long long x9; bool x10; bool x11; bool x12; bool x13; double x14; unsigned long long x15; unsigned long long x16; struct _CSArchitecture { int x_17_1_1; int x_17_1_2; } x17; double x18; bool x19; }*)arg1;
 - (bool)_matchesName:(const char *)arg1;
+- (void)addImageInfos:(id)arg1;
 - (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (id)addUserStack:(id)arg1;
@@ -93,6 +96,7 @@
 - (id)initWithStackshotTask:(id)arg1 andMachineArchitecture:(struct _CSArchitecture { int x1; int x2; })arg2;
 - (bool)isDirty;
 - (bool)isThirdParty;
+- (bool)isTranslocated;
 - (bool)isUnresponsive;
 - (unsigned long long)mainBinaryOffset;
 - (id)mainBinaryPath;

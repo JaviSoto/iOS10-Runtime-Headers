@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccessoryProfile : NSObject <HMFDumpState, HMFLogging, HMFMessageReceiver> {
+@interface HMDAccessoryProfile : NSObject <HMDBulletinIdentifiers, HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
     HMDAccessory * _accessory;
-    NSArray * _encapsulatingServices;
+    NSArray * _exposedServices;
+    NSArray * _filteredServices;
     NSString * _logID;
     HMFMessageDispatcher * _msgDispatcher;
     NSUUID * _uniqueIdentifier;
@@ -12,9 +13,12 @@
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
+@property (nonatomic, readonly, copy) NSString *contextID;
+@property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSArray *encapsulatingServices;
+@property (nonatomic, readonly) NSArray *exposedServices;
+@property (nonatomic, readonly) NSArray *filteredServices;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -25,12 +29,18 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)logCategory;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessory;
+- (id)contextID;
+- (id)contextSPIUniqueIdentifier;
 - (id)dumpState;
-- (id)encapsulatingServices;
-- (id)initWithAccessory:(id)arg1 uuid:(id)arg2 services:(id)arg3 msgDispatcher:(id)arg4;
+- (void)encodeWithCoder:(id)arg1;
+- (id)exposedServices;
+- (id)filteredServices;
+- (id)initWithAccessory:(id)arg1 uuid:(id)arg2 filteredServices:(id)arg3 exposedServices:(id)arg4 msgDispatcher:(id)arg5;
+- (id)initWithCoder:(id)arg1;
 - (id)logID;
 - (id)logIdentifier;
 - (id)messageReceiveQueue;

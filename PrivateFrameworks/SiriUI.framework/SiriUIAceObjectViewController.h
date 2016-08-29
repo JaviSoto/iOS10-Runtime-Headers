@@ -24,6 +24,7 @@
 - (id)_privateDelegate;
 - (long long)_replacementAnimation;
 - (void)_setVirgin:(bool)arg1;
+- (bool)_shouldSkipAnimationsInAlternateSpeeds;
 - (id)aceObject;
 - (id)delegate;
 - (double)desiredHeight;

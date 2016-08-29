@@ -23,6 +23,7 @@
 - (id)addDeviceWithType:(unsigned long long)arg1 matching:(id)arg2 error:(id*)arg3;
 - (id)addDeviceWithType:(unsigned long long)arg1 matching:(id)arg2 learningSession:(id)arg3 error:(id*)arg4;
 - (bool)addMappingsFromRemote:(id)arg1 toLearningSession:(id)arg2;
+- (id)appleIRDeviceWithUID:(unsigned char)arg1 create:(bool)arg2;
 - (Class)classForCoder;
 - (id)copyDevicePrefs:(id*)arg1;
 - (id)copyPrefsPropertyForUUID:(id)arg1 UUIDKey:(id)arg2 key:(id)arg3;
@@ -34,7 +35,6 @@
 - (id)initWithInterface:(id)arg1;
 - (id)interface;
 - (void)interface:(id)arg1 receivedCommand:(id)arg2;
-- (void)interface:(id)arg1 receivedHIDEvent:(id)arg2;
 - (id)localDevice;
 - (bool)mergePersistentMappingsFromSession:(id)arg1 ofDevice:(id)arg2;
 - (void)migrateOldRemotes;
@@ -45,6 +45,7 @@
 - (bool)setPairedAppleRemote:(id)arg1 error:(id*)arg2;
 - (bool)setPrefsPropertyForUUID:(id)arg1 UUIDKey:(id)arg2 object:(id)arg3 key:(id)arg4;
 - (bool)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (id)thirdPartyRemotes;
 - (void)updateAllowHibernation;
 - (bool)updatePersistentValue:(id)arg1 forProperty:(id)arg2 ofDevice:(id)arg3;
 - (void)willAddToManager:(id)arg1;

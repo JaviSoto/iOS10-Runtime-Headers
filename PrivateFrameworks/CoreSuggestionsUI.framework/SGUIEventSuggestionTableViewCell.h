@@ -19,6 +19,7 @@
 @property (nonatomic) <SGUIEventSuggestionTableViewCellDelegate> *delegate;
 @property (nonatomic, retain) SGRealtimeEvent *realtimeEvent;
 
++ (id)actionButtonTitleForEvent:(id)arg1;
 + (double)bottomMarginConstant;
 + (id)buttonTitleFont;
 + (id)descriptionFont;

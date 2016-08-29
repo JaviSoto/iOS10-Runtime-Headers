@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) TUCallProvider *telephonyProvider;
 @property (nonatomic, readonly) TUCallProvider *voicemailProvider;
 
++ (id)defaultProviders;
 + (int)serviceForProvider:(id)arg1 video:(bool)arg2;
 
 - (void).cxx_destruct;
@@ -31,9 +32,7 @@
 - (id)debugDescription;
 - (id)defaultProvider;
 - (id)delegateToQueue;
-- (void)disableProvider:(id)arg1;
 - (id)emergencyProvider;
-- (void)enableProvider:(id)arg1;
 - (id)faceTimeProvider;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 queue:(id)arg2;

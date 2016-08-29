@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSArray *originalLookupInfosToFetch;
 @property (nonatomic, copy) id /* block */ perLookupInfoProgressBlock;
 
++ (void)removeCacheForLookupInfos:(id)arg1 inCache:(id)arg2;
+
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)_generateOONPrivateKeyWithError:(id*)arg1;

@@ -28,8 +28,8 @@
 @property (nonatomic, copy) NSString *localServiceName;
 @property (nonatomic, copy) id /* block */ receiveDataHandler;
 @property (nonatomic, copy) NSString *remoteServiceName;
-@property (nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
-@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (void)checkConstants;
 + (unsigned long long)receiveDataLimit;

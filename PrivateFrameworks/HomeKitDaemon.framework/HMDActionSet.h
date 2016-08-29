@@ -54,13 +54,14 @@
 - (id)appData;
 - (id)assistantObject;
 - (bool)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (bool)containsSecureCharacteristic;
 - (id)currentActions;
 - (void)dealloc;
 - (id)description;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (void)execute:(id)arg1;
-- (void)executeWithTriggerSource:(id)arg1;
+- (void)executeWithTriggerSource:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)executionInProgress;
 - (void)fixupActionsForReplacementAccessory:(id)arg1;
 - (void)handleExecutionCompleted:(id)arg1 startDate:(id)arg2 error:(id)arg3 response:(id)arg4;

@@ -41,6 +41,7 @@
 
 - (void).cxx_destruct;
 - (void)_configureStickerView;
+- (void)_loadAnimatedStickerfIfNecessary;
 - (void)_loadSticker;
 - (void)_prepareForReuse;
 - (void)_resetPeel:(bool)arg1;

@@ -35,8 +35,13 @@
 - (void)didRerouteWithDetails:(id)arg1 withLocationDetails:(id)arg2;
 - (void)didSignalAlightForStepAtIndex:(unsigned long long)arg1;
 - (void)didStartSpeakingPrompt:(id)arg1;
+- (void)didStartUsingVoiceLanguage:(id)arg1;
 - (void)didSwitchToNewTransportType:(int)arg1 newRoute:(id)arg2;
 - (void)didUpdateActiveRouteDetails:(id)arg1;
+- (void)didUpdateAudioOutputCurrentSetting:(id)arg1;
+- (void)didUpdateAudioOutputCurrentSettingForVoicePrompt:(id)arg1;
+- (void)didUpdateAudioOutputRouteSelection:(unsigned long long)arg1;
+- (void)didUpdateAudioOutputSettings:(id)arg1;
 - (void)didUpdateDistanceUntilManeuver:(double)arg1 timeUntilManeuver:(double)arg2 forStepIndex:(unsigned long long)arg3;
 - (void)didUpdateDistanceUntilSign:(double)arg1 timeUntilSign:(double)arg2 forStepIndex:(unsigned long long)arg3;
 - (void)didUpdateFeedback:(id)arg1 forAlightingStepAtIndex:(unsigned long long)arg2;

@@ -76,6 +76,7 @@
 - (double)maximumNonRestMoveDistance;
 - (void)notifyDelegateOfCancelledTouch:(id)arg1;
 - (void)notifyDelegateOfIgnoringTouch:(id)arg1;
+- (void)notifyDelegateOfMovedIgnoredTouch:(id)arg1;
 - (bool)notifyDelegateOfMovedTouch:(id)arg1;
 - (void)notifyDelegateOfRestingTouch:(id)arg1;
 - (void)notifyDelegateOfSuccessfulTouch:(id)arg1;

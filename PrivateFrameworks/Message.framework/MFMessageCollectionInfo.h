@@ -6,7 +6,7 @@
     long long  _conversationID;
     long long  _messageCollectionHash;
     MFMessageInfoOrderedSet * _messageInfoSet;
-    unsigned int  _stickyDateReceivedInterval;
+    MFMessageInfo * _stickyPlaceholder;
 }
 
 @property (nonatomic, readonly) NSArray *allMessageInfos;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) long long messageCollectionHash;
 @property (nonatomic, readonly) unsigned long long messageCountWithDuplicates;
 @property (nonatomic, readonly) unsigned long long messagesCount;
-@property (nonatomic) unsigned int stickyDateReceivedInterval;
+@property (nonatomic, retain) MFMessageInfo *stickyPlaceholder;
 @property (nonatomic, readonly) NSArray *uniqueMessageInfos;
 
 + (unsigned long long)stateForMessages:(id)arg1;
@@ -38,9 +38,9 @@
 - (id)messageInfoEquivalentToMessageInfo:(id)arg1;
 - (unsigned long long)messagesCount;
 - (unsigned long long)removeMessageInfo:(id)arg1;
-- (void)setStickyDateReceivedInterval:(unsigned int)arg1;
+- (void)setStickyPlaceholder:(id)arg1;
 - (unsigned long long)state;
-- (unsigned int)stickyDateReceivedInterval;
+- (id)stickyPlaceholder;
 - (id)uniqueMessageInfos;
 - (id)visibleMessageInfo;
 

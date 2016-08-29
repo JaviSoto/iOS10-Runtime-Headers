@@ -11,11 +11,11 @@
 
 @optional
 
-- (void)addIncompatibleMovieInfo:(TSDMovieInfo *)arg1 withCompatibilityLevel:(long long)arg2;
-- (NSArray *)incompatibleMovieInfosUnplayableOnAllDevices;
-- (NSArray *)incompatibleMovieInfosUnplayableOnThisDevice;
+- (void)addIncompatibleMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg1 incompatibleData:(TSPData *)arg2 compatibilityLevel:(long long)arg3;
+- (NSDictionary *)incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
+- (NSDictionary *)incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
 - (bool)isBrowsingVersions;
-- (void)replaceIncompatibleMovieInfo:(TSDMovieInfo *)arg1 withNewMovieInfo:(TSDMovieInfo *)arg2;
+- (void)replaceIncompatibleMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg1 withNewMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg2;
 - (void)showDownloadPermissionAlertIfNeededForDownloadingAssetsWithEstimatedDownloadSize:(void *)arg1 isPrecise:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: long long, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 
 @end

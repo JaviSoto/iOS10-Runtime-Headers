@@ -24,6 +24,7 @@
         } targetSize; 
         unsigned long long cropFactor; 
         bool round; 
+        bool cropBounded; 
     }  _params;
 }
 
@@ -32,7 +33,7 @@
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) bool isDegraded;
 @property (nonatomic, retain) id originalObjectID;
-@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; } params;
+@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; } params;
 
 - (void).cxx_destruct;
 - (id)assetObjectID;
@@ -42,9 +43,9 @@
 - (id)initWithImage:(id)arg1 faceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isDegraded:(bool)arg3;
 - (bool)isDegraded;
 - (id)originalObjectID;
-- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; })params;
+- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; })params;
 - (void)setAssetObjectID:(id)arg1;
 - (void)setOriginalObjectID:(id)arg1;
-- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; })arg1;
+- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; })arg1;
 
 @end

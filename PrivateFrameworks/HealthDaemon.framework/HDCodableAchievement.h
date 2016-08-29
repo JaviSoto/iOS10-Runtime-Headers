@@ -14,10 +14,12 @@
         unsigned int completedDate : 1; 
         unsigned int doubleValue : 1; 
         unsigned int intValue : 1; 
+        unsigned int workoutActivityType : 1; 
         unsigned int alerted : 1; 
     }  _has;
     long long  _intValue;
     NSData * _uuid;
+    long long  _workoutActivityType;
 }
 
 @property (nonatomic) long long achievementType;
@@ -34,8 +36,10 @@
 @property (nonatomic, readonly) bool hasExtraData;
 @property (nonatomic) bool hasIntValue;
 @property (nonatomic, readonly) bool hasUuid;
+@property (nonatomic) bool hasWorkoutActivityType;
 @property (nonatomic) long long intValue;
 @property (nonatomic, retain) NSData *uuid;
+@property (nonatomic) long long workoutActivityType;
 
 - (void).cxx_destruct;
 - (long long)achievementType;
@@ -60,6 +64,7 @@
 - (bool)hasExtraData;
 - (bool)hasIntValue;
 - (bool)hasUuid;
+- (bool)hasWorkoutActivityType;
 - (unsigned long long)hash;
 - (long long)intValue;
 - (bool)isEqual:(id)arg1;
@@ -76,9 +81,12 @@
 - (void)setHasCompletedDate:(bool)arg1;
 - (void)setHasDoubleValue:(bool)arg1;
 - (void)setHasIntValue:(bool)arg1;
+- (void)setHasWorkoutActivityType:(bool)arg1;
 - (void)setIntValue:(long long)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setWorkoutActivityType:(long long)arg1;
 - (id)uuid;
+- (long long)workoutActivityType;
 - (void)writeTo:(id)arg1;
 
 @end

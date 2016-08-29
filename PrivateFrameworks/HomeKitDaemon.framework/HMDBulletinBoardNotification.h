@@ -27,12 +27,14 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)logCategory;
++ (bool)supportsBulletinNotificationGroup:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleBulletinBoardNotificationCommitRequest:(id)arg1;
 - (void)_registerNotificationHandlers;
 - (void)configureMsgDispatcher:(id)arg1;
+- (void)dealloc;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

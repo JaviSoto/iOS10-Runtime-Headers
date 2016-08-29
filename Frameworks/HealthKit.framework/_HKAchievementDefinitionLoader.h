@@ -18,10 +18,12 @@
 + (id)_loadAchievementDefinitionsFromAsset:(id)arg1;
 + (id)_loadAchievementResourcesPathURLsFromAssets:(id)arg1;
 + (id)_loadAchievementStickersPathURLsFromAssets:(id)arg1;
++ (void)_loadLoadsRemoteDefinitions;
 + (bool)_loadsRemoteDefinitions;
 + (id)_resourcesAssetsGroupedByDefinitionIdentifier:(id)arg1;
-+ (void)_setLoadsRemoteDefinitionsForTesting:(bool)arg1;
++ (void)_setLoadsRemoteDefinitions:(bool)arg1;
 + (id)_stickersAssetsGroupedByDefinitionIdentifier:(id)arg1;
++ (void)initialize;
 + (id)sharedLoader;
 
 - (void).cxx_destruct;
@@ -39,6 +41,7 @@
 - (bool)_queue_isDefinitionWithIdentifierRemotelyDefined:(id)arg1;
 - (void)_stickerAssetsAvailabilityDidChange;
 - (id)achievementDefinitionForIdentifier:(id)arg1;
+- (id)allAchievementDefinitionIdentifiers;
 - (id)allAchievementDefinitions;
 - (id)init;
 - (bool)isDefinitionWithIdentifierLoaded:(id)arg1;

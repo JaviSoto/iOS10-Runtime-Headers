@@ -15,6 +15,7 @@
 - (long long)_blurStyle;
 - (id)_highQualityEffectConfig;
 - (bool)_isATVStyle;
+- (bool)_isAutomaticStyle;
 - (id)_lowQualityEffectConfig;
 - (id)_reduceTransparencyEffectConfig;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

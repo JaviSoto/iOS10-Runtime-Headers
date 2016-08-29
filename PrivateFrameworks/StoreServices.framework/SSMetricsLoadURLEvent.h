@@ -4,6 +4,7 @@
 
 @interface SSMetricsLoadURLEvent : SSMetricsMutableEvent
 
+@property (nonatomic, retain) NSString *DNSServers;
 @property (nonatomic, retain) NSString *clientCorrelationKey;
 @property (nonatomic) double connectionEndTime;
 @property (nonatomic) bool connectionReused;
@@ -40,6 +41,7 @@
 + (bool)shouldLogTimingMetrics;
 + (bool)shouldReportCachedEvent;
 
+- (id)DNSServers;
 - (id)clientCorrelationKey;
 - (double)connectionEndTime;
 - (bool)connectionReused;
@@ -72,6 +74,7 @@
 - (void)setConnectionStopNStatRXBytes:(unsigned long long)arg1;
 - (void)setConnectionStopNStatTXBytes:(unsigned long long)arg1;
 - (void)setConnectionType:(id)arg1;
+- (void)setDNSServers:(id)arg1;
 - (void)setDomainLookupEndTime:(double)arg1;
 - (void)setDomainLookupStartTime:(double)arg1;
 - (void)setFetchStartTime:(double)arg1;

@@ -15,7 +15,7 @@
 @property (getter=isThumbnail, nonatomic, readonly) bool thumbnail;
 @property (getter=isVideo, nonatomic, readonly) bool video;
 
-+ (id)CPLDerivativeAssetResourcesForAsset:(id)arg1 usingLibrary:(id)arg2;
++ (id)CPLDerivativeAssetResourcesForAsset:(id)arg1 managedAsset:(id)arg2;
 + (id)assetResourceForAsset:(id)arg1 qualityClass:(id)arg2;
 + (id)tableThumbnailDataForAsset:(id)arg1 resource:(id)arg2 dataSpecification:(id*)arg3;
 + (id)thumbnailDerivativeAssetResourcesForAsset:(id)arg1;

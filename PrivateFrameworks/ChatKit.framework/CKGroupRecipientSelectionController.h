@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKGroupRecipientSelectionController : CKRecipientSelectionController <CKEditMembersViewControllerDelegate, CKRecipientSelectionControllerDelegate> {
+@interface CKGroupRecipientSelectionController : CKRecipientSelectionController <CKRecipientSelectionControllerDelegate> {
     UIBarButtonItem * _doneButton;
-    CKEditMembersViewController * _editMembersViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *doneButton;
-@property (nonatomic, retain) CKEditMembersViewController *editMembersViewController;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
@@ -18,10 +16,7 @@
 - (void)_frecencySearch;
 - (void)_updateNavigationButton;
 - (bool)alwaysShowSearchResultsTable;
-- (void)dealloc;
 - (id)doneButton;
-- (id)editMembersViewController;
-- (void)editMembersViewControllerWillBeginDragging:(id)arg1;
 - (bool)homogenizePreferredServiceForiMessage;
 - (id)initWithConversation:(id)arg1;
 - (void)loadView;
@@ -36,7 +31,6 @@
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(id)arg1;
 - (void)setDoneButton:(id)arg1;
-- (void)setEditMembersViewController:(id)arg1;
 - (bool)shouldAutorotate;
 - (bool)shouldSuppressSearchResultsTable;
 - (void)viewDidAppearDeferredSetup;

@@ -12,6 +12,7 @@
     NSObject<OS_dispatch_source> * _applicationControllerTimerSource;
     VSApplicationControllerRequest * _currentApplicationControllerRequest;
     <VSIdentityProviderRequestManagerDelegate> * _delegate;
+    bool  _didCreateAccount;
     VSIdentityProvider * _identityProvider;
     NSOperationQueue * _privateQueue;
     double  _requestCompletionDelayAfterShowingUserInterface;
@@ -31,6 +32,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSIdentityProviderRequestManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didCreateAccount;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) VSIdentityProvider *identityProvider;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
@@ -49,7 +51,7 @@
 - (void)_completeCurrentRequestWithApplicationControllerResponse:(id)arg1;
 - (void)_completeCurrentRequestWithApplicationControllerResponse:(id)arg1 verificationData:(id)arg2;
 - (void)_completeCurrentRequestWithError:(id)arg1;
-- (void)_completeCurrentRequestWithResponse:(id)arg1 error:(id)arg2;
+- (void)_completeCurrentRequestWithResult:(id)arg1;
 - (void)_completeDeletingAccountWithError:(id)arg1;
 - (id)_currentRequest;
 - (id)_currentRequestContext;
@@ -63,6 +65,8 @@
 - (void)_processRequestContext:(id)arg1;
 - (double)_requestCompletionDelay;
 - (bool)_requestRequiresApplicationController:(id)arg1;
+- (bool)_requestRequiresApplicationControllerIgnoringAuthentication:(id)arg1;
+- (void)_resetVerificationStateWithCompletionHandler:(id /* block */)arg1;
 - (void)_showAuthenticationUIWithPurpose:(long long)arg1;
 - (void)_startApplicationControllerTimer;
 - (void)_startDeletingAccount;
@@ -88,6 +92,7 @@
 - (id)currentApplicationControllerRequest;
 - (void)dealloc;
 - (id)delegate;
+- (bool)didCreateAccount;
 - (void)enqueueRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)identityProvider;
 - (id)init;
@@ -105,6 +110,7 @@
 - (void)setApplicationControllerTimerSource:(id)arg1;
 - (void)setCurrentApplicationControllerRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDidCreateAccount:(bool)arg1;
 - (void)setPrivateQueue:(id)arg1;
 - (void)setRequestCompletionDelayAfterShowingUserInterface:(double)arg1;
 - (void)setRequestContexts:(id)arg1;

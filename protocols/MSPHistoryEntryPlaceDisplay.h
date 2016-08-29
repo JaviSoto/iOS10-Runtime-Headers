@@ -6,5 +6,6 @@
 @required
 
 - (<GEOMapItem> *)geoMapItem;
+- (NSUUID *)supersededSearchStorageIdentifier;
 
 @end

@@ -14,6 +14,8 @@
     double  _dislikeClickValue;
     double  _dislikeImpressionValue;
     double  _diversificationPenalty;
+    bool  _enableOptimizedLayoutIPad;
+    bool  _enableOptimizedLayoutIPhone;
     double  _existingSubscriptionBaselineClickValue;
     double  _existingSubscriptionBaselineImpressionValue;
     double  _existingSubscriptionClickValue;
@@ -26,6 +28,7 @@
     double  _featureClicksByAction;
     double  _featureImpressionPrior;
     double  _featureImpressionsByAction;
+    bool  _filterOverflowedOrphans;
     long long  _flowRateDampeningSliceCount;
     double  _flowRateMinimumDampeningFactor;
     double  _globalScoreBump;
@@ -71,10 +74,16 @@
     long long  _minIdealClusterSizeIPhone;
     double  _moveAboutnessNoiseStdIPad;
     double  _moveAboutnessNoiseStdIPhone;
+    double  _moveAboutnessWeightRatioIPad;
+    double  _moveAboutnessWeightRatioIPhone;
     double  _moveNewOrphansCoeffIPad;
     double  _moveNewOrphansCoeffIPhone;
     double  _moveSizeCoeffIPad;
     double  _moveSizeCoeffIPhone;
+    unsigned long long  _optimizedLayoutIncrementUnitIPad;
+    unsigned long long  _optimizedLayoutIncrementUnitIPhone;
+    unsigned long long  _optimizedLayoutSizeThresholdIPad;
+    unsigned long long  _optimizedLayoutSizeThresholdIPhone;
     NTPBPersonalizationTreatment * _pbTreatment;
     double  _personalizationCoefficient;
     double  _premiumSubscriptionActivationBaselineClickValue;
@@ -134,6 +143,8 @@
     double  _unsubscribeBaselineImpressionValue;
     double  _unsubscribeClickValue;
     double  _unsubscribeImpressionValue;
+    double  _utilityWeightAlpha;
+    double  _utilityWeightBeta;
     double  _visitBaselineClickValue;
     double  _visitBaselineImpressionValue;
     double  _visitClickValue;
@@ -155,6 +166,8 @@
 @property (nonatomic, readonly) double dislikeClickValue;
 @property (nonatomic, readonly) double dislikeImpressionValue;
 @property (nonatomic, readonly) double diversificationPenalty;
+@property (nonatomic, readonly) bool enableOptimizedLayoutIPad;
+@property (nonatomic, readonly) bool enableOptimizedLayoutIPhone;
 @property (nonatomic, readonly) double existingSubscriptionBaselineClickValue;
 @property (nonatomic, readonly) double existingSubscriptionBaselineImpressionValue;
 @property (nonatomic, readonly) double existingSubscriptionClickValue;
@@ -167,6 +180,7 @@
 @property (nonatomic, readonly) double*featureClicksByAction;
 @property (nonatomic, readonly) double featureImpressionPrior;
 @property (nonatomic, readonly) double*featureImpressionsByAction;
+@property (nonatomic, readonly) bool filterOverflowedOrphans;
 @property (nonatomic, readonly) long long flowRateDampeningSliceCount;
 @property (nonatomic, readonly) double flowRateMinimumDampeningFactor;
 @property (nonatomic, readonly) double globalScoreBump;
@@ -212,10 +226,16 @@
 @property (nonatomic, readonly) long long minIdealClusterSizeIPhone;
 @property (nonatomic, readonly) double moveAboutnessNoiseStdIPad;
 @property (nonatomic, readonly) double moveAboutnessNoiseStdIPhone;
+@property (nonatomic, readonly) double moveAboutnessWeightRatioIPad;
+@property (nonatomic, readonly) double moveAboutnessWeightRatioIPhone;
 @property (nonatomic, readonly) double moveNewOrphansCoeffIPad;
 @property (nonatomic, readonly) double moveNewOrphansCoeffIPhone;
 @property (nonatomic, readonly) double moveSizeCoeffIPad;
 @property (nonatomic, readonly) double moveSizeCoeffIPhone;
+@property (nonatomic, readonly) unsigned long long optimizedLayoutIncrementUnitIPad;
+@property (nonatomic, readonly) unsigned long long optimizedLayoutIncrementUnitIPhone;
+@property (nonatomic, readonly) unsigned long long optimizedLayoutSizeThresholdIPad;
+@property (nonatomic, readonly) unsigned long long optimizedLayoutSizeThresholdIPhone;
 @property (nonatomic, readonly) double personalizationCoefficient;
 @property (nonatomic, readonly) double premiumSubscriptionActivationBaselineClickValue;
 @property (nonatomic, readonly) double premiumSubscriptionActivationBaselineImpressionValue;
@@ -274,6 +294,8 @@
 @property (nonatomic, readonly) double unsubscribeBaselineImpressionValue;
 @property (nonatomic, readonly) double unsubscribeClickValue;
 @property (nonatomic, readonly) double unsubscribeImpressionValue;
+@property (nonatomic, readonly) double utilityWeightAlpha;
+@property (nonatomic, readonly) double utilityWeightBeta;
 @property (nonatomic, readonly) double visitBaselineClickValue;
 @property (nonatomic, readonly) double visitBaselineImpressionValue;
 @property (nonatomic, readonly) double visitClickValue;
@@ -298,6 +320,8 @@
 - (double)dislikeClickValue;
 - (double)dislikeImpressionValue;
 - (double)diversificationPenalty;
+- (bool)enableOptimizedLayoutIPad;
+- (bool)enableOptimizedLayoutIPhone;
 - (void)encodeWithCoder:(id)arg1;
 - (double)existingSubscriptionBaselineClickValue;
 - (double)existingSubscriptionBaselineImpressionValue;
@@ -311,6 +335,7 @@
 - (double*)featureClicksByAction;
 - (double)featureImpressionPrior;
 - (double*)featureImpressionsByAction;
+- (bool)filterOverflowedOrphans;
 - (long long)flowRateDampeningSliceCount;
 - (double)flowRateMinimumDampeningFactor;
 - (double)globalScoreBump;
@@ -359,10 +384,16 @@
 - (long long)minIdealClusterSizeIPhone;
 - (double)moveAboutnessNoiseStdIPad;
 - (double)moveAboutnessNoiseStdIPhone;
+- (double)moveAboutnessWeightRatioIPad;
+- (double)moveAboutnessWeightRatioIPhone;
 - (double)moveNewOrphansCoeffIPad;
 - (double)moveNewOrphansCoeffIPhone;
 - (double)moveSizeCoeffIPad;
 - (double)moveSizeCoeffIPhone;
+- (unsigned long long)optimizedLayoutIncrementUnitIPad;
+- (unsigned long long)optimizedLayoutIncrementUnitIPhone;
+- (unsigned long long)optimizedLayoutSizeThresholdIPad;
+- (unsigned long long)optimizedLayoutSizeThresholdIPhone;
 - (double)personalizationCoefficient;
 - (double)premiumSubscriptionActivationBaselineClickValue;
 - (double)premiumSubscriptionActivationBaselineImpressionValue;
@@ -422,6 +453,8 @@
 - (double)unsubscribeBaselineImpressionValue;
 - (double)unsubscribeClickValue;
 - (double)unsubscribeImpressionValue;
+- (double)utilityWeightAlpha;
+- (double)utilityWeightBeta;
 - (double)visitBaselineClickValue;
 - (double)visitBaselineImpressionValue;
 - (double)visitClickValue;

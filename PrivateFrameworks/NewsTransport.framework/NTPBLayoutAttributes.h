@@ -43,6 +43,7 @@
         unsigned int borderSpecification : 1; 
         unsigned int columnSpan : 1; 
         unsigned int imagePosition : 1; 
+        unsigned int publisherLogoContentMode : 1; 
         unsigned int rowSpan : 1; 
         unsigned int titleTextAlignment : 1; 
         unsigned int accessoryFontLineHeight : 1; 
@@ -118,6 +119,7 @@
     float  _numberedCircleFrameX;
     float  _numberedCircleFrameY;
     NSData * _publisherLogoColor;
+    long long  _publisherLogoContentMode;
     long long  _rowSpan;
     float  _selectionCornerRadius;
     float  _selectionInsetBottom;
@@ -227,6 +229,7 @@
 @property (nonatomic) bool hasNumberedCircleFrameX;
 @property (nonatomic) bool hasNumberedCircleFrameY;
 @property (nonatomic, readonly) bool hasPublisherLogoColor;
+@property (nonatomic) bool hasPublisherLogoContentMode;
 @property (nonatomic) bool hasRowSpan;
 @property (nonatomic) bool hasSelectionCornerRadius;
 @property (nonatomic) bool hasSelectionInsetBottom;
@@ -268,6 +271,7 @@
 @property (nonatomic) float numberedCircleFrameX;
 @property (nonatomic) float numberedCircleFrameY;
 @property (nonatomic, retain) NSData *publisherLogoColor;
+@property (nonatomic) long long publisherLogoContentMode;
 @property (nonatomic) long long rowSpan;
 @property (nonatomic) float selectionCornerRadius;
 @property (nonatomic) float selectionInsetBottom;
@@ -380,6 +384,7 @@
 - (bool)hasNumberedCircleFrameX;
 - (bool)hasNumberedCircleFrameY;
 - (bool)hasPublisherLogoColor;
+- (bool)hasPublisherLogoContentMode;
 - (bool)hasRowSpan;
 - (bool)hasSelectionCornerRadius;
 - (bool)hasSelectionInsetBottom;
@@ -424,6 +429,7 @@
 - (float)numberedCircleFrameX;
 - (float)numberedCircleFrameY;
 - (id)publisherLogoColor;
+- (long long)publisherLogoContentMode;
 - (bool)readFrom:(id)arg1;
 - (long long)rowSpan;
 - (float)selectionCornerRadius;
@@ -505,6 +511,7 @@
 - (void)setHasNumberedCircleFrameWidth:(bool)arg1;
 - (void)setHasNumberedCircleFrameX:(bool)arg1;
 - (void)setHasNumberedCircleFrameY:(bool)arg1;
+- (void)setHasPublisherLogoContentMode:(bool)arg1;
 - (void)setHasRowSpan:(bool)arg1;
 - (void)setHasSelectionCornerRadius:(bool)arg1;
 - (void)setHasSelectionInsetBottom:(bool)arg1;
@@ -544,6 +551,7 @@
 - (void)setNumberedCircleFrameX:(float)arg1;
 - (void)setNumberedCircleFrameY:(float)arg1;
 - (void)setPublisherLogoColor:(id)arg1;
+- (void)setPublisherLogoContentMode:(long long)arg1;
 - (void)setRowSpan:(long long)arg1;
 - (void)setSelectionCornerRadius:(float)arg1;
 - (void)setSelectionInsetBottom:(float)arg1;

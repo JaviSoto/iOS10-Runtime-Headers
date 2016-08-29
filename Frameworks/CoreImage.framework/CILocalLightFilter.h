@@ -6,12 +6,13 @@
     CIImage * inputGuideImage;
     CIImage * inputImage;
     NSData * inputLightMap;
+    NSNumber * inputLightMapHeight;
+    NSNumber * inputLightMapWidth;
     NSNumber * inputLocalLight;
 }
 
 + (id)customAttributes;
 
-- (id)_lightMapImageForLightMap:(id)arg1 guideImage:(id)arg2;
 - (id)_polyKernel;
 - (id)outputImage;
 

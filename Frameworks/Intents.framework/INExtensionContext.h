@@ -2,9 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INExtensionContext : NSExtensionContext <INCacheableObjectManagerObserver, INExtensionContextVending> {
-    NSMutableDictionary * _resolutionContexts;
-}
+@interface INExtensionContext : NSExtensionContext <INCacheableObjectManagerObserver, INExtensionContextVending>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -15,10 +13,8 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 + (void)initialize;
 
-- (void).cxx_destruct;
 - (void)_deliverIntent:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_errorHandlingHostProxy;
-- (void)_generateSerializedCacheItemSetFromIntentResponse:(id)arg1 completion:(id /* block */)arg2;
 - (void)_processIntentResponse:(id)arg1 completion:(id /* block */)arg2;
 - (void)_validateExtension;
 - (void)cacheableObjectManager:(id)arg1 wasToldAboutCacheableObject:(id)arg2;

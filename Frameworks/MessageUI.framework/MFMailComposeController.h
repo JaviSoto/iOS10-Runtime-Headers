@@ -360,6 +360,7 @@
 - (id)initWithCompositionContext:(id)arg1 options:(unsigned long long)arg2;
 - (void)insertPhotoOrVideo;
 - (bool)isDirty;
+- (bool)isManagedAccount;
 - (bool)isModal;
 - (bool)isSavingAsDraft;
 - (bool)isShowingRecentPersonCard;

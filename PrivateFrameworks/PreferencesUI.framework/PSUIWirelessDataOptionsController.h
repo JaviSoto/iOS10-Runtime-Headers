@@ -38,6 +38,7 @@
 - (void)setLoading:(bool)arg1;
 - (void)setWirelessManager:(id)arg1;
 - (void)setWorkspace:(id)arg1;
+- (bool)shouldReloadSpecifiersOnResume;
 - (id)specifierForSpecialCategory:(id)arg1 bytesUsed:(id)arg2;
 - (id)specifierForSystemApp:(id)arg1 bytesUsed:(id)arg2;
 - (id)specifiers;

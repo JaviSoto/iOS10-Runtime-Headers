@@ -10,7 +10,7 @@
     TSUFastReadInvalidatingCache * mMultiDataSetAnalysisCache;
     <TSCHStyleActAlike> * mNonStyle;
     unsigned long long  mNonStyleIndex;
-    TSCHChartAxis * mNonTransientCounterpart;
+    TSUWeakReference * mNonTransientCounterpart;
     <TSCHStyleActAlike> * mStyle;
     unsigned long long  mStyleIndex;
 }
@@ -107,6 +107,7 @@
 - (id)p_genericToDefaultPropertyMap;
 - (id)p_interceptAnalysisFromCurrentModel;
 - (id)p_multiDataAxisAnalysisFromCurrentModel;
+- (id)p_nonTransientCounterpart;
 - (unsigned long long)p_rangeCount;
 - (void)p_setupMultiDataSetAnalysisCacheIfNeeded;
 - (void)propertiesWereMutated:(id)arg1;

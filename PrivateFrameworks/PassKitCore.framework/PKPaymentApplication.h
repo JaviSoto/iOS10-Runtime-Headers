@@ -43,7 +43,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)acceptedForSupportedNetworkIdentifiers:(id)arg1 merchantCapabilities:(unsigned long long)arg2;
+- (bool)acceptedForSupportedNetworkIdentifiers:(id)arg1 merchantCapabilities:(unsigned long long)arg2 webService:(id)arg3;
 - (id)applicationIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -85,6 +85,7 @@
 - (id)stateAsString;
 - (bool)supportsContactlessPayment;
 - (bool)supportsInAppPayment;
+- (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2;
 - (id)suspendedReason;
 
 @end

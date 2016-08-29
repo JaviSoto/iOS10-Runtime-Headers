@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *trackedToDoParagraphs;
 @property bool userChangedWritingDirection;
 
++ (double)extraBulletWidthForNumberedListWithMaxItemNumber:(id)arg1 textFont:(struct UIFont { Class x1; }*)arg2;
 + (double)indentForStyle:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 attributedString:(id)arg3 textView:(struct UITextView { Class x1; }*)arg4;
 + (id)removeBeginningListStyleIfNecessaryForAttributedString:(id)arg1 fromTextStorage:(id)arg2 andRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 + (bool)shouldRetainFirstListStyleForFilteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
@@ -34,6 +35,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })cleanupTextStorage:(id)arg1 afterProcessingEditing:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 changeInLength:(long long)arg4 changeInLengthAfterCleanup:(long long*)arg5;
 - (bool)containsOnlyStyle:(unsigned int)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 inTextStorage:(id)arg3;
 - (void)createToDoItemForCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 paragraphStyle:(id)arg2 textStorage:(id)arg3;
+- (void)dealloc;
 - (bool)deleteBackwardForSpecialCasesInTextView:(struct UITextView { Class x1; }*)arg1;
 - (bool)deleteWordBackwardForSpecialCasesInTextView:(struct UITextView { Class x1; }*)arg1;
 - (bool)disableAddingExtraLinesIfNeeded;
@@ -57,8 +59,10 @@
 - (id)nsParagraphStyleForTTParagraphStyle:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 attributedString:(id)arg3 textView:(struct UITextView { Class x1; }*)arg4;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })numberListsInAttributedString:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (unsigned int)paragraphStyleForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inTextView:(struct UITextView { Class x1; }*)arg2 inTextStorage:(id)arg3;
+- (unsigned int)paragraphStyleForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inTextView:(struct UITextView { Class x1; }*)arg2 inTextStorage:(id)arg3 ignoreTypingAttributes:(bool)arg4;
 - (void)pauseMergeForScrolling;
 - (unsigned long long)pauseMergeForScrollingCounter;
+- (id)rangesWithCutOutAttachmentsFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 textStorage:(id)arg2;
 - (void)refreshTextStylingForTextStorage:(id)arg1 withTextController:(id)arg2;
 - (void)refreshTypingAttributesForAllTextViewsOfTextStorage:(id)arg1;
 - (void)refreshTypingAttributesForTextView:(struct UITextView { Class x1; }*)arg1 textStorage:(id)arg2;
@@ -78,7 +82,9 @@
 - (void)setPauseMergeForScrollingCounter:(unsigned long long)arg1;
 - (void)setShouldMergeNoteAfterScrolling:(bool)arg1;
 - (long long)setTextStyle:(unsigned int)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 inTextStorage:(id)arg3;
+- (long long)setTextStyle:(unsigned int)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 inTextStorage:(id)arg3 inTextView:(struct UITextView { Class x1; }*)arg4;
 - (long long)setTextStyle:(unsigned int)arg1 removeExtraStyling:(bool)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 inTextStorage:(id)arg4;
+- (long long)setTextStyle:(unsigned int)arg1 removeExtraStyling:(bool)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 inTextStorage:(id)arg4 inTextView:(struct UITextView { Class x1; }*)arg5;
 - (void)setTrackAddedExtraNewlineRanges:(bool)arg1;
 - (void)setTrackedRangesForAddedExtraNewlines:(id)arg1;
 - (void)setTypingAttributesForUndo:(id)arg1;
@@ -97,6 +103,7 @@
 - (void)unscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inTextStorage:(id)arg2;
 - (void)updateAttachmentsInNote;
 - (void)updateAttachmentsSelectionStateInTextStorage:(id)arg1 forSelectedRanges:(id)arg2 layoutManager:(id)arg3;
+- (void)updateParagraphWritingDirectionToKeyboardWritingDirectionInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 textStorage:(id)arg2 textView:(struct UITextView { Class x1; }*)arg3;
 - (void)updateTrackedAttributesInTextStorage:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 changeInLength:(long long)arg3;
 - (void)updateTrackedToDoParagraphsAfterIndex:(unsigned long long)arg1 byDelta:(long long)arg2 excludingSeenParagraphs:(id)arg3;
 - (void)updateTrackingInTextStorage:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 changeInLength:(long long)arg3;

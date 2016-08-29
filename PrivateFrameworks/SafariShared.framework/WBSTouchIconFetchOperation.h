@@ -31,8 +31,8 @@
 - (void)didFailFetch;
 - (void)didFetchTouchIconURLs:(id)arg1 andFaviconURLs:(id)arg2 forURL:(id)arg3;
 - (unsigned long long)hash;
-- (id)initWithRequest:(id)arg1 processPool:(id)arg2;
-- (id)initWithRequest:(id)arg1 processPool:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithRequest:(id)arg1;
+- (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)isEqual:(id)arg1;
 - (void)loadRequest;
 - (void)resetState;

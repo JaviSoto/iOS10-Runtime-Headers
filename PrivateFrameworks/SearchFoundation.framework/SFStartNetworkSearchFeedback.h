@@ -20,6 +20,7 @@
 - (id)headers;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInput:(id)arg1 url:(id)arg2 headers:(id)arg3 triggerEvent:(unsigned long long)arg4 endpoint:(unsigned long long)arg5;
+- (id)initWithInput:(id)arg1 url:(id)arg2 headers:(id)arg3 triggerEvent:(unsigned long long)arg4 endpoint:(unsigned long long)arg5 queryId:(unsigned long long)arg6;
 - (void)setEndpoint:(unsigned long long)arg1;
 - (void)setHeaders:(id)arg1;
 - (void)setUrl:(id)arg1;

@@ -20,7 +20,6 @@
 - (void)setMuted:(bool)arg1;
 - (void)setPlaying:(bool)arg1;
 - (bool)shouldAutoPlay;
-- (bool)shouldContinuePlayingAfterResumingApp;
 - (bool)shouldShowMuteButton;
 - (bool)usesSharedAudioSession;
 

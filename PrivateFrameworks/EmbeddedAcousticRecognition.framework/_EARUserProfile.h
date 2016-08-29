@@ -38,6 +38,56 @@
             struct __shared_weak_count {} *__cntrl_; 
         } mCtrlCharsPattern; 
         int state; 
+        struct unordered_map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
+            struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
+                struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> > > { 
+                    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> > > { 
+                        struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> {} **__first_; 
+                        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> > { 
+                            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> > { 
+                                unsigned long long __first_; 
+                            } __data_; 
+                        } __second_; 
+                    } __ptr_; 
+                } __bucket_list_; 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> { 
+                        struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> {} *__next_; 
+                    } __first_; 
+                } __p1_; 
+                struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
+                    unsigned long long __first_; 
+                } __p2_; 
+                struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
+                    float __first_; 
+                } __p3_; 
+            } __table_; 
+        } UTF8_MAP; 
+        struct unordered_map<char32_t, char32_t, std::__1::hash<char32_t>, std::__1::equal_to<char32_t>, std::__1::allocator<std::__1::pair<const char32_t, char32_t> > > { 
+            struct __hash_table<std::__1::__hash_value_type<char32_t, char32_t>, std::__1::__unordered_map_hasher<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::hash<char32_t>, true>, std::__1::__unordered_map_equal<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::equal_to<char32_t>, true>, std::__1::allocator<std::__1::__hash_value_type<char32_t, char32_t> > > { 
+                struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> > > { 
+                    struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> > > { 
+                        struct __hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> {} **__first_; 
+                        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> > { 
+                            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> > { 
+                                unsigned long long __first_; 
+                            } __data_; 
+                        } __second_; 
+                    } __ptr_; 
+                } __bucket_list_; 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> { 
+                        struct __hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> {} *__next_; 
+                    } __first_; 
+                } __p1_; 
+                struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::hash<char32_t>, true> > { 
+                    unsigned long long __first_; 
+                } __p2_; 
+                struct __compressed_pair<float, std::__1::__unordered_map_equal<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::equal_to<char32_t>, true> > { 
+                    float __first_; 
+                } __p3_; 
+            } __table_; 
+        } unicode_map; 
     }  _sanitizer;
     struct shared_ptr<sdapi::SdapiTokenizer> { 
         struct SdapiTokenizer {} *__ptr_; 
@@ -64,6 +114,7 @@
 - (void).cxx_destruct;
 - (void)addWordWithParts:(id)arg1 templateName:(id)arg2;
 - (id)dataProfile;
+- (id)initWithConfiguration:(id)arg1 language:(id)arg2 overrides:(id)arg3 sdapiOverrides:(id)arg4 generalVoc:(id)arg5 emptyVoc:(id)arg6 pgVoc:(id)arg7 lexiconEnh:(id)arg8 tokenEnh:(id)arg9 paramsetHolder:(id)arg10;
 - (id)initWithConfiguration:(id)arg1 language:(id)arg2 sdapiOverrides:(id)arg3 generalVoc:(id)arg4 emptyVoc:(id)arg5 pgVoc:(id)arg6 lexiconEnh:(id)arg7 tokenEnh:(id)arg8 paramsetHolder:(id)arg9;
 - (id)initWithConfiguration:(id)arg1 withLanguage:(id)arg2 withSdapiOverrides:(id)arg3 withSdapiConfig:(id)arg4;
 - (id)pronunciationsForOrthography:(id)arg1;

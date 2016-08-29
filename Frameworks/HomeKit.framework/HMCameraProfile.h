@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)cameraProfile;
-- (id)initWithAccessoryProfile:(id)arg1;
+- (id)initWithCameraProfile:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)microphoneControl;
 - (id)services;

@@ -10,13 +10,15 @@
     bool  _jingleRequest;
     JSManagedValue * _managedSelf;
     NSMutableArray * _onReadyStateChangeMessageQueue;
-    int  _onReadyStateChangeMessageQueueLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _onReadyStateChangeMessageQueueLock;
     NSString * _password;
     NSDictionary * _performanceMetrics;
     bool  _primeEnabled;
     long long  _primeRetryCount;
     unsigned int  _readyState;
-    NSMutableData * _receivedData;
+    NSData * _receivedData;
     long long  _reprimingResponseStatus;
     NSError * _requestError;
     long long  _requestReadyState;
@@ -47,7 +49,7 @@
 @property (nonatomic, readonly) bool primeEnabled;
 @property (nonatomic) long long primeRetryCount;
 @property unsigned int readyState;
-@property (nonatomic, retain) NSMutableData *receivedData;
+@property (retain) NSData *receivedData;
 @property (nonatomic, readonly) long long reprimingResponseStatus;
 @property (nonatomic, retain) NSError *requestError;
 @property (nonatomic) long long requestReadyState;
@@ -118,6 +120,7 @@
 - (unsigned int)requestStatusCode;
 - (id)requestStatusText;
 - (id)response;
+- (id)responseArrayBuffer;
 - (id)responseBlob;
 - (id)responseText;
 - (id)responseType;

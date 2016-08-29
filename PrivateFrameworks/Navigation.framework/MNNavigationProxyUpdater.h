@@ -26,5 +26,7 @@
 - (void)navigationSessionStarted:(id)arg1;
 - (void)navigationSessionStopped:(id)arg1;
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
+- (void)setRideIndex:(unsigned long long)arg1 forLegIndex:(unsigned long long)arg2;
+- (void)updateClusteredSectionSelectedRideForNavigationSession:(id)arg1;
 
 @end

@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) bool isPrivateZone;
 @property (nonatomic, readonly) bool isSharedZone;
 @property (nonatomic, readonly) BRCSyncContext *metadataSyncContext;
+@property (nonatomic, readonly) BRCSyncContext *metadataSyncContextIfExists;
 @property (nonatomic) bool needsSave;
 @property (nonatomic, readonly) NSString *ownerName;
 @property (nonatomic, readonly) NSMutableDictionary *plist;
@@ -35,17 +36,18 @@
 - (void)_collectTombstoneForRank:(unsigned long long)arg1;
 - (struct PQLResultSet { Class x1; }*)_enumeratePendingFetchDeletedNormalRecordIDs;
 - (struct PQLResultSet { Class x1; }*)_enumeratePendingFetchDeletedShareRecordIDs;
-- (bool)_markItemIDDead:(id)arg1 recordID:(id)arg2;
+- (bool)_markItemDeadForRecordID:(id)arg1;
 - (bool)_markShareIDDead:(id)arg1;
+- (bool)_saveDeletedRecordIDs:(id)arg1;
 - (bool)_saveEditedAliasRecord:(id)arg1;
-- (bool)_saveEditedContentRecords:(id)arg1 syncStatus:(long long)arg2;
+- (bool)_saveEditedContentRecords:(id)arg1;
 - (bool)_saveEditedDirOrDocStructureRecord:(id)arg1;
 - (bool)_saveEditedDocumentContentRecord:(id)arg1;
 - (bool)_saveEditedFinderBookmarkRecord:(id)arg1;
-- (bool)_saveEditedRecord:(id)arg1 syncStatus:(long long)arg2;
+- (bool)_saveEditedRecord:(id)arg1;
 - (bool)_saveEditedShareRecord:(id)arg1;
-- (bool)_saveEditedShareRecords:(id)arg1 deletedShareRecordIDs:(id)arg2 syncStatus:(long long)arg3;
-- (bool)_saveEditedStructureRecords:(id)arg1 deletedRecordIDs:(id)arg2 syncStatus:(long long)arg3;
+- (bool)_saveEditedShareRecords:(id)arg1 deletedShareRecordIDs:(id)arg2;
+- (bool)_saveEditedStructureRecords:(id)arg1;
 - (bool)_saveEditedSymlinkRecord:(id)arg1;
 - (bool)_saveItemID:(id)arg1 stat:(id)arg2 record:(id)arg3;
 - (bool)_saveItemID:(id)arg1 stat:(id)arg2 record:(id)arg3 origName:(id)arg4 base:(id)arg5 no:(id)arg6 ext:(id)arg7;
@@ -80,6 +82,7 @@
 - (id)itemByItemID:(id)arg1;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithDB:(id)arg1;
 - (id)metadataSyncContext;
+- (id)metadataSyncContextIfExists;
 - (bool)needsSave;
 - (id)ownerName;
 - (unsigned long long)pendingFetchDeletedRecordsCount;
@@ -89,6 +92,7 @@
 - (void)removeForegroundClient:(id)arg1;
 - (bool)resetServerTruth;
 - (bool)resetServerTruthAndDestroyZone:(bool)arg1;
+- (bool)saveInconsistentEditedRecords:(id)arg1 deletedRecordIDs:(id)arg2 deletedShareRecordIDs:(id)arg3;
 - (void)scheduleMoveToCloudDocs;
 - (bool)serverZoneIsCreated;
 - (id)session;

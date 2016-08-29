@@ -6,8 +6,6 @@
     NSHashTable * _cache;
 }
 
-+ (id)sharedInstance;
-
 - (void).cxx_destruct;
 - (id)cacheObject:(id)arg1;
 - (id)init;

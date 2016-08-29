@@ -10,7 +10,6 @@
 @property (nonatomic, retain) NSArray *calendarUUIDsExcludedFromNotifications;
 @property (nonatomic, retain) NSNumber *dayViewHourScale;
 @property (nonatomic) unsigned long long debugOccurrenceViewIconOverload;
-@property (nonatomic, retain) NSArray *deselectedCalendarIdentifiers;
 @property (nonatomic, retain) NSArray *deselectedCalendarSyncHashes;
 @property (nonatomic) bool disableContinuity;
 @property (nonatomic) bool disableTodayPushes;
@@ -29,7 +28,6 @@
 @property (nonatomic) unsigned long long promptForCommentWhenDeclining;
 @property (nonatomic) bool requestSyncOnApplicationLaunch;
 @property (nonatomic, retain) NSString *searchString;
-@property (nonatomic, retain) NSArray *selectedCalendarIdentifiers;
 @property (getter=isShortResumeToTodayTimeout, nonatomic) bool shortResumeToTodayTimeout;
 @property (nonatomic) bool showDetailedListView;
 @property (nonatomic) bool showEventsInPhoneMonthView;
@@ -50,7 +48,6 @@
 - (id)calendarUUIDsExcludedFromNotifications;
 - (id)dayViewHourScale;
 - (unsigned long long)debugOccurrenceViewIconOverload;
-- (id)deselectedCalendarIdentifiers;
 - (id)deselectedCalendarSyncHashes;
 - (bool)disableContinuity;
 - (bool)disableTodayPushes;
@@ -71,11 +68,9 @@
 - (unsigned long long)promptForCommentWhenDeclining;
 - (bool)requestSyncOnApplicationLaunch;
 - (id)searchString;
-- (id)selectedCalendarIdentifiers;
 - (void)setCalendarUUIDsExcludedFromNotifications:(id)arg1;
 - (void)setDayViewHourScale:(id)arg1;
 - (void)setDebugOccurrenceViewIconOverload:(unsigned long long)arg1;
-- (void)setDeselectedCalendarIdentifiers:(id)arg1;
 - (void)setDeselectedCalendarSyncHashes:(id)arg1;
 - (void)setDisableContinuity:(bool)arg1;
 - (void)setDisableTodayPushes:(bool)arg1;
@@ -94,7 +89,6 @@
 - (void)setPromptForCommentWhenDeclining:(unsigned long long)arg1;
 - (void)setRequestSyncOnApplicationLaunch:(bool)arg1;
 - (void)setSearchString:(id)arg1;
-- (void)setSelectedCalendarIdentifiers:(id)arg1;
 - (void)setShortResumeToTodayTimeout:(bool)arg1;
 - (void)setShowDetailedListView:(bool)arg1;
 - (void)setShowEventsInPhoneMonthView:(bool)arg1;

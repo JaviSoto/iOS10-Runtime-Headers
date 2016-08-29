@@ -58,5 +58,6 @@
 - (bool)isSharingPrivateInterfaceEntitled;
 - (bool)isSharingProxyEntitled;
 - (int)pid;
+- (void)updateCloudEnabledStatus;
 
 @end

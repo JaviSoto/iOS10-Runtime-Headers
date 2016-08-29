@@ -3,7 +3,6 @@
  */
 
 @interface SPUISearchHeader : UIView <UITextFieldDelegate> {
-    UIView * _blurViewMask;
     UIButton * _cancelButton;
     NSLayoutConstraint * _cancelButtonTrailingConstraint;
     <SPUISearchHeaderDelegate> * _delegate;
@@ -11,12 +10,10 @@
     SPUITextField * _searchField;
     NSLayoutConstraint * _searchFieldTrailingConstraint;
     unsigned long long  _suggestionID;
-    UIView * _tintViewMask;
     NSLayoutConstraint * _widthConstraint;
     bool  _willClear;
 }
 
-@property (retain) UIView *blurViewMask;
 @property (retain) UIButton *cancelButton;
 @property (retain) NSLayoutConstraint *cancelButtonTrailingConstraint;
 @property (nonatomic, readonly) NSString *currentQuery;
@@ -30,7 +27,6 @@
 @property (retain) NSLayoutConstraint *searchFieldTrailingConstraint;
 @property unsigned long long suggestionID;
 @property (readonly) Class superclass;
-@property (retain) UIView *tintViewMask;
 @property (retain) NSLayoutConstraint *widthConstraint;
 @property bool willClear;
 
@@ -38,18 +34,15 @@
 
 - (void).cxx_destruct;
 - (void)addInputMethodInformationToQueryContext:(id)arg1;
-- (id)blurViewMask;
+- (id)backdropVisualEffectView;
 - (id)cancelButton;
 - (void)cancelButtonClicked:(id)arg1;
 - (bool)cancelButtonIsVisible;
 - (id)cancelButtonTrailingConstraint;
 - (void)clearSearchFieldWhyQuery:(unsigned long long)arg1 allowZKW:(bool)arg2;
-- (id)createNavBarMaskInView:(id)arg1;
 - (id)currentQuery;
 - (id)currentQueryContext;
-- (void)dealloc;
 - (id)delegate;
-- (void)didMoveToSuperview;
 - (void)enableDictationIfRequired;
 - (void)focusSearchField;
 - (id)init;
@@ -60,7 +53,6 @@
 - (id)searchField;
 - (id)searchFieldTrailingConstraint;
 - (void)searchForSuggestedQuery:(id)arg1;
-- (void)setBlurViewMask:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setCancelButtonTrailingConstraint:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -68,7 +60,6 @@
 - (void)setSearchField:(id)arg1;
 - (void)setSearchFieldTrailingConstraint:(id)arg1;
 - (void)setSuggestionID:(unsigned long long)arg1;
-- (void)setTintViewMask:(id)arg1;
 - (void)setWidthConstraint:(id)arg1;
 - (void)setWillClear:(bool)arg1;
 - (void)showCancelButton:(bool)arg1 animated:(bool)arg2;
@@ -80,13 +71,11 @@
 - (bool)textFieldShouldClear:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (void)textInputModeChanged:(id)arg1;
-- (id)tintViewMask;
 - (double)topPadding;
 - (void)unfocusSearchField;
 - (void)updateBlurProgress:(double)arg1;
 - (void)updateColors;
 - (void)updateKeyboardSuggestions:(id)arg1;
-- (id)visualEffectView;
 - (id)widthConstraint;
 - (bool)willClear;
 

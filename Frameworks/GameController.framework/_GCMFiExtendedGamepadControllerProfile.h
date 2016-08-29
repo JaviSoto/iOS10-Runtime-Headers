@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1;
+- (id)menuButton;
 - (id)motion;
 - (id)name;
 - (void)setPlayerIndex:(long long)arg1;

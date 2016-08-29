@@ -20,15 +20,12 @@
 + (Class)controlsViewClass;
 
 - (void).cxx_destruct;
-- (void)_backlightLevelChangedNotification:(id)arg1;
 - (void)_beginLongPressInteractionEventTimer;
 - (void)_endLongPressInteractionEventTimer;
 - (void)_interactionEventReceivedFromRecognizer:(id)arg1;
 - (id)_mediaControlsView;
 - (void)_reloadAuxiliaryControls;
 - (void)_sendMediaRemoteCommand:(unsigned int)arg1;
-- (void)_setupNotifications;
-- (void)_tearDownNotifications;
 - (id)artworkView;
 - (void)dealloc;
 - (id)delegate;

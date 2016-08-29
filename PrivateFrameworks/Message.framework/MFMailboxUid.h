@@ -21,6 +21,7 @@
     NSString * uniqueId;
 }
 
+@property (nonatomic, readonly) MFInvocationQueue *attachmentDownloadQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *extraAttributes;
@@ -49,6 +50,7 @@
 - (void)addToPostOrderTraversal:(id)arg1;
 - (bool)alwaysWriteFullMessageFile;
 - (id)ancestralAccount;
+- (id)attachmentDownloadQueue;
 - (unsigned int)attributes;
 - (id)childAtIndex:(unsigned long long)arg1;
 - (id)childEnumerator;
@@ -81,8 +83,10 @@
 - (void)invalidate;
 - (bool)isContainer;
 - (bool)isDescendantOfMailbox:(id)arg1;
+- (bool)isNotesMailboxUid;
 - (bool)isOutgoingMailboxUid;
 - (bool)isSelectable;
+- (bool)isSentMailboxUid;
 - (bool)isSpecialMailboxUid;
 - (bool)isStandardizedMailboxUid;
 - (bool)isStore;

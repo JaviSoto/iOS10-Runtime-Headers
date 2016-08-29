@@ -100,17 +100,18 @@
 - (long long)_effectiveTargetDisplayModeForDisplayMode:(long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
 - (id)_fullScreenButtonImage;
+- (long long)_fullScreenStateForOrientation:(long long)arg1 viewWidth:(double)arg2;
 - (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (bool)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (bool)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
+- (bool)_handlesCounterRotationForPresentation;
 - (bool)_hasPreferredInterfaceOrientationForPresentation;
 - (bool)_iPadShouldUseOverlayInCurrentEnvironment;
 - (void)_initWithCoder:(id)arg1;
 - (bool)_isCollapsed;
 - (bool)_isLeadingShown;
 - (bool)_isRotating;
-- (long long)_medusaStateForOrientation:(long long)arg1 viewWidth:(double)arg2;
 - (bool)_optsOutOfPopoverControllerHierarchyCheck;
 - (void)_popoverController:(id)arg1 didChangeFromVisible:(bool)arg2;
 - (void)_popoverController:(id)arg1 willChangeToVisible:(bool)arg2;
@@ -129,6 +130,7 @@
 - (void)_setPrimaryHidingState:(long long)arg1;
 - (bool)_shouldPersistViewWhenCoding;
 - (bool)_shouldSynthesizeSupportedOrientations;
+- (void)_stopTransitionsInViewController:(id)arg1;
 - (void)_triggerDisplayModeAction:(id)arg1;
 - (void)_updateChildContentMargins;
 - (void)_updateDimmingView;
@@ -164,7 +166,7 @@
 - (id)panelController;
 - (void)panelController:(id)arg1 adjustLeadingViewController:(id)arg2 forKeyboardInfo:(id)arg3;
 - (bool)panelController:(id)arg1 collapseOntoPrimaryViewController:(id)arg2;
-- (void)panelController:(id)arg1 collapsePrimaryViewController:(id)arg2 withFallbackSecondaryViewController:(id)arg3;
+- (void)panelController:(id)arg1 collapsePrimaryViewController:(id)arg2 withFallbackSecondaryViewController:(id)arg3 transitionCoordinator:(id)arg4;
 - (void)panelController:(id)arg1 didChangeToState:(id)arg2;
 - (void)panelController:(id)arg1 didEndAnimatedTransitionToStateRequest:(id)arg2;
 - (id)panelController:(id)arg1 separateSecondaryViewControllerFromPrimaryViewController:(id)arg2;

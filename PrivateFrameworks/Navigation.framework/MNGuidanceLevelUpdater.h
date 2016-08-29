@@ -23,6 +23,7 @@
 - (bool)_shouldTrackForLocation;
 - (bool)_shouldTrackForTime;
 - (void)_update;
+- (void)dealloc;
 - (id)delegate;
 - (int)guidanceLevel;
 - (id)initWithRouteManager:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntentSlotDescription : NSObject <NSCopying> {
+@interface INIntentSlotDescription : NSObject <INIntentSlotDescriptionExport, NSCopying> {
     NSString * _dataPropertyName;
     SEL  _deprecatedResolveSelector;
     NSString * _facadePropertyName;
@@ -16,12 +16,16 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *dataPropertyName;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) SEL deprecatedResolveSelector;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *facadePropertyName;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isExtended;
 @property (nonatomic, readonly) bool isPrivate;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) SEL resolveSelector;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long tag;
 @property (nonatomic, readonly) long long valueStyle;
 @property (nonatomic, readonly) long long valueType;

@@ -27,7 +27,7 @@
 - (void)_reconfigureStream:(id)arg1;
 - (void)_reconfigureStreams;
 - (void)_relaySessionStarted:(id)arg1;
-- (void)_remoteSetup;
+- (void)_remoteSetup:(id)arg1;
 - (void)_sendStopMessageToResident;
 - (void)_sendUpdatedConfiguration;
 - (void)_setParametersSelected:(id)arg1;
@@ -44,10 +44,9 @@
 - (void)negotiateStream;
 - (id)profileUniqueIdentifier;
 - (void)reconfigureStream:(id)arg1;
-- (void)remoteSetup;
+- (void)remoteSetup:(id)arg1;
 - (void)sessionReceiver:(id)arg1 didEndSession:(id)arg2;
 - (void)sessionReceiver:(id)arg1 didSetup:(id)arg2;
-- (void)setAudioSetting:(unsigned long long)arg1;
 - (void)setConfigGenerator:(id)arg1;
 - (void)setStreamSession:(id)arg1;
 - (void)startStream:(id)arg1;
@@ -57,8 +56,9 @@
 - (void)streamingManager:(id)arg1 didStartStream:(id)arg2 slotIdentifier:(id)arg3;
 - (void)streamingManagerDidNetworkDeteriorate:(id)arg1;
 - (void)streamingManagerDidNetworkImprove:(id)arg1;
-- (void)streamingManagerDidReceiveFirstFrame:(id)arg1;
+- (void)streamingManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned long long)arg2;
 - (void)streamingManagerDidStopStream:(id)arg1;
 - (void)streamingManagerDidUpdateConfiguration:(id)arg1;
+- (void)updateAudioSetting:(unsigned long long)arg1;
 
 @end

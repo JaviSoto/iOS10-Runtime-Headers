@@ -18,8 +18,6 @@
     bool  cancelled;
     bool  computed;
     NSThread * delegateCallbackThread;
-    NSMutableDictionary * dumpFileHandles;
-    bool  dumpToDisk;
     NSMutableDictionary * encodingsForURLs;
     bool  htmlErrorDisabled;
     NSError * mainError;
@@ -66,7 +64,6 @@
 
 - (void).cxx_destruct;
 - (void)_discardRepresentedObjectSafely;
-- (void)_dumpData:(id)arg1 withURL:(id)arg2 lastChunk:(bool)arg3;
 - (void)_protectRepresentedObjectSafely;
 - (void)_registerURL:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;
 - (id)_requestForURL:(id)arg1;

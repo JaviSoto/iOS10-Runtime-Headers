@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (bool)__hostViewUnderlapsStatusBar;
 - (void)__setHostViewUnderlapsStatusBar:(bool)arg1;
+- (bool)_allowsLinkPreviewInteractionInViewServices;
 - (bool)_canPromoteFromKeyWindowStack;
 - (void)_configureContextOptions:(id)arg1;
 - (long long)_defaultTintAdjustmentMode;

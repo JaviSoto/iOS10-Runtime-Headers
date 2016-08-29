@@ -63,6 +63,7 @@
 - (id)ticketForMapItemToRefine:(id)arg1 traits:(id)arg2;
 - (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5 traits:(id)arg6;
 - (id)ticketForNearestTransitStation:(unsigned long long)arg1 coordinate:(struct { double x1; double x2; })arg2 includeETA:(bool)arg3 traits:(id)arg4;
+- (id)ticketForNonExpiredMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 includeETA:(bool)arg4 traits:(id)arg5;
 - (id)ticketForOptInToProblemSubmissionID:(id)arg1 allowContactBackAtEmailAddress:(id)arg2 traits:(id)arg3;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(bool)arg2 traits:(id)arg3;
 - (id)ticketForPlaceRefinementRequestForContentProvider:(id)arg1 coordinate:(struct { double x1; double x2; }*)arg2 addressLine:(id)arg3 placeName:(id)arg4 traits:(id)arg5;

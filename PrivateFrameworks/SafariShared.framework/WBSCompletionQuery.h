@@ -12,6 +12,7 @@
         long long __rep_; 
     }  _parsecLatency;
     NSURLRequest * _parsecSearchRequest;
+    long long  _queryID;
     NSString * _queryString;
     NSString * _rewrittenQueryStringFromParsec;
     NSString * _searchSuggestionProviderIdentifier;
@@ -33,12 +34,15 @@
 @property (nonatomic, copy) NSString *parsecFeedbackQueryIdentifier;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
 @property (nonatomic, copy) NSURLRequest *parsecSearchRequest;
+@property (nonatomic) long long queryID;
 @property (nonatomic, readonly) NSString *queryString;
 @property (nonatomic, copy) NSString *rewrittenQueryStringFromParsec;
 @property (nonatomic, copy) NSString *searchSuggestionProviderIdentifier;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
 @property (nonatomic) unsigned long long triggerEvent;
+
++ (void)initialize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -51,6 +55,7 @@
 - (id)parsecFeedbackQueryIdentifier;
 - (struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })parsecLatency;
 - (id)parsecSearchRequest;
+- (long long)queryID;
 - (id)queryString;
 - (id)rewrittenQueryStringFromParsec;
 - (id)searchSuggestionProviderIdentifier;
@@ -61,6 +66,7 @@
 - (void)setParsecFeedbackQueryIdentifier:(id)arg1;
 - (void)setParsecLatency:(struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })arg1;
 - (void)setParsecSearchRequest:(id)arg1;
+- (void)setQueryID:(long long)arg1;
 - (void)setRewrittenQueryStringFromParsec:(id)arg1;
 - (void)setSearchSuggestionProviderIdentifier:(id)arg1;
 - (void)setSearchSuggestionProviderLatency:(struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })arg1;

@@ -148,6 +148,7 @@
 - (unsigned long long)hash;
 - (id)instructions;
 - (bool)isEqual:(id)arg1;
+- (long long)legTypeForManuever;
 - (unsigned int)listTransitIncidentMessageIndex;
 - (id)location;
 - (int)maneuverType;

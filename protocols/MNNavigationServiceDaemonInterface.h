@@ -9,15 +9,20 @@
 - (void)changeSettings:(MNSettings *)arg1;
 - (bool)guidancePromptsEnabled;
 - (int)headingOrientation;
+- (void)pauseGuidanceLevelUpdates;
 - (void)prepareNavigationWithRouteDetails:(MNRoutePlanningDetails *)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(NSData *)arg1;
 - (void)repeatCurrentGuidanceWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)repeatCurrentTrafficAlertWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)resumeGuidanceLevelUpdates;
 - (void)resumeOriginalDestination;
+- (void)setCurrentAudioOutputSetting:(MNAudioOutputSetting *)arg1;
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)setGuidancePromptsEnabled:(bool)arg1;
+- (void)setHFPPreference:(bool)arg1 forSetting:(MNAudioOutputSetting *)arg2;
 - (void)setHeadingOrientation:(int)arg1;
 - (void)setIsConnectedToCarplay:(bool)arg1;
+- (void)setRideIndex:(unsigned long long)arg1 forLegIndex:(unsigned long long)arg2;
 - (void)setTraceIsPlaying:(bool)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 - (void)setTracePosition:(double)arg1;

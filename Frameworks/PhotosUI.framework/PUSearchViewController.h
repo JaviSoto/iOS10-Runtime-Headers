@@ -13,6 +13,7 @@
     UIView * _recentHeaderView;
     UISearchBar * _searchBar;
     PSIDatabase * _searchIndex;
+    NSObject<OS_dispatch_semaphore> * _searchIndexReadySemaphore;
     PUSearchResultsDataSource * _searchResultsDataSource;
     PUPingTimer * _searchResultsPingTimer;
     UITableView * _searchResultsTableView;
@@ -52,7 +53,7 @@
 - (void)_pingTimerFire:(id)arg1;
 - (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_pushGridForAlbumWithUUID:(id)arg1;
-- (void)_pushGridForPhotosWithUUIDs:(id)arg1 additionalUUIDs:(id)arg2 title:(id)arg3 animated:(bool)arg4;
+- (void)_pushGridForPhotosWithUUIDs:(id)arg1 additionalUUIDs:(id)arg2 title:(id)arg3 searchCategories:(unsigned long long)arg4 animated:(bool)arg5;
 - (void)_pushViewForMemoryWithUUID:(id)arg1;
 - (void)_resetPreheating;
 - (double)_rowHeightForCurrentFont;

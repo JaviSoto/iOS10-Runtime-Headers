@@ -17,4 +17,9 @@
 - (unsigned long long)totalAssetCount;
 - (unsigned long long)verifiedCount;
 
+@optional
+
+- (unsigned long long)cachedUnlockValue;
+- (void)setCachedUnlockValue:(unsigned long long)arg1;
+
 @end

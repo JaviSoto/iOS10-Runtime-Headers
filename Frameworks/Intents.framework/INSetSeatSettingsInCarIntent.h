@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSetSeatSettingsInCarIntent : INIntent <INSetSeatSettingsInCarIntent>
+@interface INSetSeatSettingsInCarIntent : INIntent <INSetSeatSettingsInCarIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

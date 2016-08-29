@@ -32,7 +32,6 @@
 - (void)drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(bool*)arg2;
 - (bool)exportToURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
 - (bool)exportToURL:(id)arg1 pageNumber:(unsigned long long)arg2 delegate:(id)arg3 error:(id*)arg4;
-- (bool)hasMoreThanOnePageToPrint;
 - (bool)incrementPage;
 - (id)initWithDocumentRoot:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1 imager:(id)arg2;

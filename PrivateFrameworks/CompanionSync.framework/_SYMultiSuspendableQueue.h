@@ -3,6 +3,8 @@
  */
 
 @interface _SYMultiSuspendableQueue : NSObject {
+    NSMutableArray * _latestResumeBacktraces;
+    NSMutableArray * _latestSuspendBacktraces;
     NSObject<OS_dispatch_queue> * _queue;
     int  _resumeCount;
     unsigned long long  _stateHandle;

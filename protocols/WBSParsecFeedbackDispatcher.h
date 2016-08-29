@@ -25,5 +25,6 @@
 - (void)userDidEngageWithCompletionListItem:(id <WBSCompletionListItem>)arg1 withCardActionDictionary:(NSDictionary *)arg2;
 - (void)userDidSelectCompletionListItem:(id <WBSCompletionListItem>)arg1;
 - (void)userDidSelectCompletionListItem:(id <WBSCompletionListItem>)arg1 atPosition:(unsigned long long)arg2;
+- (void)userTypedURLDirectly:(NSString *)arg1;
 
 @end

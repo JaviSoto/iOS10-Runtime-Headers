@@ -11,6 +11,7 @@
     NSString * _name;
     int  _suggestionType;
     int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) int suggestionType;
 @property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)entriesType;
 
@@ -53,6 +55,7 @@
 - (id)suggestionTypeAsString:(int)arg1;
 - (int)type;
 - (id)typeAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -6,6 +6,7 @@
     NSDate * _dateOverride;
     NSMutableArray * _enqueuedSoundDelays;
     NSMutableArray * _enqueuedSounds;
+    bool  _is24Hour;
     NSLocale * _localeOverride;
     id /* block */  _queueCallback;
     NSMutableDictionary * _soundToPatterns;
@@ -29,9 +30,11 @@
 - (void)_enqueueMinutes:(unsigned long long)arg1 encoding:(long long)arg2;
 - (void)_handleTestingQueueCallback;
 - (bool)_is24HourTime;
+- (void)_localeDidChange:(id)arg1;
 - (long long)_numberOfTapHoursForClockTime;
 - (long long)_numberOfTapMinutesForClockTime;
 - (long long)_numberOfTapsForHourNumber:(long long)arg1;
+- (void)_updateIs24HourTime;
 - (id)dateOverride;
 - (void)dealloc;
 - (id)init;

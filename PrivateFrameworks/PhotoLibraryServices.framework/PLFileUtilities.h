@@ -12,8 +12,10 @@
 + (bool)createDirectoryAtPath:(id)arg1 error:(id*)arg2;
 + (bool)createDirectoryAtPath:(id)arg1 error:(id*)arg2 usingFileManager:(id)arg3;
 + (id)fileManager;
++ (bool)filePath:(id)arg1 hasPrefix:(id)arg2;
 + (bool)hasDiskSpaceToCopyFileAtURL:(id)arg1;
 + (bool)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
++ (id)realPathForPath:(id)arg1 error:(id*)arg2;
 + (bool)secureMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 + (bool)stripExtendedAttributesFromFileAtURL:(id)arg1 inDomain:(id)arg2 error:(id*)arg3;
 

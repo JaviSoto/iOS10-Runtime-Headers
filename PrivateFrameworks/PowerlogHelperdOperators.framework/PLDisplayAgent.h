@@ -16,6 +16,9 @@
     PLIOKitOperatorComposition * _iokitBacklightControl;
     PLIOKitOperatorComposition * _iokitDisplay;
     PLIOKitOperatorComposition * _iokitTouch;
+    bool  _isDisplayHighBrightness;
+    bool  _isDisplayOn;
+    bool  _isFirstTimeModeling;
     bool  _isMIEActive;
     bool  _isMultitouchLoggingEnabled;
     double  _lastALSPowerSaved;
@@ -43,6 +46,9 @@
 @property (readonly) PLIOKitOperatorComposition *iokitBacklightControl;
 @property (readonly) PLIOKitOperatorComposition *iokitDisplay;
 @property (readonly) PLIOKitOperatorComposition *iokitTouch;
+@property bool isDisplayHighBrightness;
+@property bool isDisplayOn;
+@property bool isFirstTimeModeling;
 @property bool isMIEActive;
 @property bool isMultitouchLoggingEnabled;
 @property double lastALSPowerSaved;
@@ -96,6 +102,9 @@
 - (id)iokitDisplay;
 - (id)iokitTouch;
 - (bool)isAlsEnabled;
+- (bool)isDisplayHighBrightness;
+- (bool)isDisplayOn;
+- (bool)isFirstTimeModeling;
 - (bool)isMIEActive;
 - (bool)isMultitouchLoggingEnabled;
 - (double)lastALSPowerSaved;
@@ -132,6 +141,9 @@
 - (void)setBrightnessSystemClient:(id)arg1;
 - (void)setColorAdaptationClient:(id)arg1;
 - (void)setFirstEntryOnInit:(bool)arg1;
+- (void)setIsDisplayHighBrightness:(bool)arg1;
+- (void)setIsDisplayOn:(bool)arg1;
+- (void)setIsFirstTimeModeling:(bool)arg1;
 - (void)setIsMIEActive:(bool)arg1;
 - (void)setIsMultitouchLoggingEnabled:(bool)arg1;
 - (void)setLastALSPowerSaved:(double)arg1;

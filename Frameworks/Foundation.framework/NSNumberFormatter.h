@@ -251,6 +251,7 @@
 + (id)FU_localizedDistinguishingShortEnergyStringForEnergyMetricType:(unsigned long long)arg1;
 + (id)FU_localizedLongActiveEnergyUnitString;
 + (id)FU_localizedLongActiveEnergyUnitStringCapitalized:(bool)arg1;
++ (id)FU_localizedLongActiveEnergyUnitStringUppercase:(bool)arg1;
 + (id)FU_localizedLongUnitStringWithDistanceUnit:(long long)arg1 distance:(double)arg2;
 + (id)FU_localizedLongUnitStringWithDistanceUnit:(long long)arg1 distance:(double)arg2 uppercase:(bool)arg3;
 + (id)FU_localizedPaceStringForDuration:(double)arg1 distance:(id)arg2 paceFormatType:(long long)arg3;

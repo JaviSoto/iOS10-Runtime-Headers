@@ -49,7 +49,9 @@
 + (id)monitorWithSource:(id)arg1 toDestination:(id)arg2 transportType:(int)arg3 arrivalDate:(id)arg4 traits:(id)arg5;
 + (id)serverFormattedStringFormatter;
 + (void)setServerFormattedStringFormatter:(id)arg1;
++ (void)setUserPreferencesProvider:(id)arg1;
 + (bool)supportsSecureCoding;
++ (id)userPreferencesProvider;
 
 - (void)_commonInit;
 - (void)_executeBlockAccessingCurrentRequest:(id /* block */)arg1;
@@ -62,6 +64,7 @@
 - (void)_routeRequestFailed:(id)arg1;
 - (void)_showDebugAlert;
 - (void)_updateLocation:(id)arg1 allowServer:(bool)arg2;
+- (void)_updateRouteMatchETAAndTravelState;
 - (void)_updateScoreForLocation:(id)arg1;
 - (id)arrivalDate;
 - (void)callHandlerIvar;
@@ -76,6 +79,7 @@
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;
 - (void)etaUpdater:(id)arg1 willSendETATrafficUpdateRequest:(id)arg2;
 - (void)etaUpdaterReceivedInvalidRoute:(id)arg1 newRoute:(id)arg2 incidentsOnRoute:(id)arg3 incidentsOffRoute:(id)arg4;
+- (void)etaUpdaterRequestCompleted:(id)arg1;
 - (id)etaUpdaterRoutesForETATrafficUpdateRequest:(id)arg1;
 - (void)etaUpdaterUpdatedETA:(id)arg1;
 - (id)feedback;

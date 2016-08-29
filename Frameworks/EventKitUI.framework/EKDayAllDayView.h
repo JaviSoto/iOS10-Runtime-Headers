@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDayAllDayView : UIView <EKDayOccurrenceViewDelegate> {
+@interface EKDayAllDayView : UIView <EKDayOccurrenceViewDelegate, EKUITintColorUpdateDelegate> {
     UILabel * _allDay;
     bool  _allDayLabelHighlighted;
     bool  _allowSelection;
     <EKDayAllDayViewDelegate> * _delegate;
     EKEvent * _dimmedOccurrence;
+    EKUIVisualEffectView * _dividerLineSuperview;
     UIView * _dividerLineViewBottom;
     UIView * _dividerLineViewTop;
+    UIColor * _dividerLineVisualEffectColor;
     double  _fixedHeight;
     bool  _forceSingleColumnLayout;
     bool  _hideOccurrenceBackground;
@@ -77,6 +79,7 @@
 - (void)setBorderColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmedOccurrence:(id)arg1;
+- (void)setDividerLineVisualEffect:(id)arg1;
 - (void)setFixedHeight:(double)arg1;
 - (void)setForceSingleColumnLayout:(bool)arg1;
 - (void)setHideOccurrenceBackground:(bool)arg1;
@@ -94,5 +97,6 @@
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateLabelFont;
+- (void)viewTintColorDidChangeForView:(id)arg1 toColor:(id)arg2;
 
 @end

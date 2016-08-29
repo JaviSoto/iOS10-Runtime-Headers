@@ -3,8 +3,8 @@
  */
 
 @interface HFMultiServiceCharacteristicValueBatchReadResponse : NSObject {
+    <HFCharacteristicOperationContextProviding> * _contextProvider;
     NSMutableSet * _mutableAllCharacteristics;
-    unsigned long long  _remoteAccessState;
     NSMutableDictionary * _serviceUUIDToResponseMap;
     NSMutableDictionary * _servicesByUUID;
 }
@@ -12,8 +12,8 @@
 @property (nonatomic, readonly) NSSet *allCharacteristicTypes;
 @property (nonatomic, readonly) NSSet *allCharacteristics;
 @property (nonatomic, readonly) NSSet *allServices;
+@property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (nonatomic, retain) NSMutableSet *mutableAllCharacteristics;
-@property (nonatomic) unsigned long long remoteAccessState;
 @property (nonatomic, retain) NSMutableDictionary *serviceUUIDToResponseMap;
 @property (nonatomic, retain) NSMutableDictionary *servicesByUUID;
 
@@ -28,6 +28,7 @@
 - (id)allServices;
 - (id)averageValueForCharacteristicType:(id)arg1;
 - (id)batchResponseForService:(id)arg1;
+- (id)contextProvider;
 - (id)firstErrorForCharacteristicType:(id)arg1 inService:(id)arg2;
 - (id)firstValueForCharacteristicType:(id)arg1;
 - (id)firstValueForCharacteristicType:(id)arg1 inService:(id)arg2;
@@ -35,14 +36,13 @@
 - (bool)hasErrorForEveryCharacteristic;
 - (id)init;
 - (id)mutableAllCharacteristics;
-- (unsigned long long)remoteAccessState;
 - (id)serviceUUIDToResponseMap;
 - (id)servicesByUUID;
 - (id)servicesWithErrorForCharacteristicType:(id)arg1;
 - (id)servicesWithValue:(id)arg1 forCharacteristicType:(id)arg2;
 - (id)servicesWithValuesPassingTest:(id /* block */)arg1 forCharacteristicType:(id)arg2;
+- (void)setContextProvider:(id)arg1;
 - (void)setMutableAllCharacteristics:(id)arg1;
-- (void)setRemoteAccessState:(unsigned long long)arg1;
 - (void)setServiceUUIDToResponseMap:(id)arg1;
 - (void)setServicesByUUID:(id)arg1;
 - (id)valuesForCharacteristicType:(id)arg1;

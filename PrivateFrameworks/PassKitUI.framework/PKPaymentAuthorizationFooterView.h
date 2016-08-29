@@ -14,7 +14,6 @@
     NSLayoutConstraint * _separatorLeftConstraint;
     UIView * _separatorView;
     long long  _state;
-    NSString * _title;
 }
 
 @property (nonatomic, retain) PKPaymentAuthorizationLayout *layout;

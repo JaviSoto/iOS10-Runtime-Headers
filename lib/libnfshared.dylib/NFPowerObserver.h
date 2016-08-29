@@ -8,6 +8,7 @@
     unsigned int  _powerNotificationNotifier;
     struct IONotificationPort { } * _powerNotificationPort;
     bool  _willSleep;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly) bool willSleep;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDTrigger : NSObject <HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDTrigger : NSObject <HMDBulletinIdentifiers, HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
     bool  _active;
     bool  _activeOnLocalDevice;
     NSMutableArray * _currentActionSets;
@@ -16,8 +16,12 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, readonly) NSDictionary *actionContext;
 @property (nonatomic) bool active;
 @property (getter=isActiveOnLocalDevice, nonatomic) bool activeOnLocalDevice;
+@property (nonatomic, readonly) NSDictionary *bulletinContext;
+@property (nonatomic, readonly, copy) NSString *contextID;
+@property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (nonatomic, retain) NSMutableArray *currentActionSets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -28,6 +32,7 @@
 @property (nonatomic, copy) NSDate *mostRecentFireDate;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
+@property (getter=isOwnedByThisDevice, nonatomic, readonly) bool ownedByThisDevice;
 @property (nonatomic, retain) HMDUser *owner;
 @property (nonatomic, retain) HMDDevice *owningDevice;
 @property (readonly) Class superclass;
@@ -37,19 +42,24 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_executeActionSets;
+- (void)_directlyExecuteActionSetsWithCompletionHandler:(id /* block */)arg1;
+- (void)_executeActionSetsWithCompletionHandler:(id /* block */)arg1;
 - (void)_handleActivateTriggerRequest:(id)arg1;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_handleUpdateActionSetRequest:(id)arg1;
 - (void)_registerForMessages;
 - (id)_updateActionSet:(id)arg1 add:(bool)arg2;
+- (struct NSDictionary { Class x1; }*)actionContext;
 - (id)actionSetWithUUID:(id)arg1;
 - (id)actionSets;
 - (void)activate:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)activateOnLocalDevice;
 - (bool)active;
+- (struct NSDictionary { Class x1; }*)bulletinContext;
 - (void)checkForNoActions;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (id)contextID;
+- (id)contextSPIUniqueIdentifier;
 - (id)currentActionSets;
 - (void)dealloc;
 - (id)description;
@@ -61,6 +71,7 @@
 - (id)initWithName:(id)arg1;
 - (void)invalidate;
 - (bool)isActiveOnLocalDevice;
+- (bool)isOwnedByThisDevice;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)mostRecentFireDate;
@@ -86,6 +97,7 @@
 - (bool)shouldEncodeLastFireDate:(id)arg1;
 - (void)triggerFired;
 - (unsigned long long)triggerType;
+- (void)userDidConfirmExecute:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
 - (id)workQueue;
 

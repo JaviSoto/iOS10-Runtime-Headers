@@ -26,6 +26,7 @@
 @property (nonatomic, readonly, copy) NSArray *devices;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) IDSAccount *iCloudAccount;
+@property (nonatomic, readonly, copy) NSSet *internalAccounts;
 @property (nonatomic) bool manuallyAckMessages;
 @property (getter=isPretendingToBeFull, nonatomic) bool pretendingToBeFull;
 @property (nonatomic, readonly, copy) NSString *serviceDomain;
@@ -33,11 +34,13 @@
 
 - (void)OTRTestCallback:(id)arg1 time:(double)arg2 error:(id)arg3;
 - (id /* block */)_acknowledgementBlockWithDelegateIdentifier:(id)arg1;
+- (void)_callDelegatesForDevicesChangedWithService:(id)arg1;
 - (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4;
 - (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4 group:(id)arg5;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_callIsActiveChanged;
+- (id)_filteredAccountsFrom:(id)arg1;
 - (void)_handlePretendingToBeFullWithIdentifier:(id*)arg1;
 - (bool)_isDroppingMessages;
 - (void)_logConnectionMap;
@@ -84,6 +87,7 @@
 - (id)iCloudAccount;
 - (id)initWithService:(id)arg1 commands:(id)arg2 delegateContext:(id)arg3;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2 delegateContext:(id)arg3;
+- (id)internalAccounts;
 - (bool)isPretendingToBeFull;
 - (bool)manuallyAckMessages;
 - (SEL)protobufActionForType:(unsigned short)arg1 isResponse:(bool)arg2;

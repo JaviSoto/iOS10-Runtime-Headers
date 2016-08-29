@@ -5,10 +5,13 @@
 @interface UIPreviewInteraction : NSObject <UIGestureRecognizerDelegate> {
     NSHashTable * _activeFailureRequirementGestureRecognizers;
     NSHashTable * _activeSystemAnimators;
+    CADisplayLink * _continuousEvaluationDisplayLink;
     _UIPreviewInteractionStateRecognizer * _currentInteractionStateRecognizer;
     UITouch * _currentTouch;
+    _UIDeepPressAnalyzer * _deepPressAnalyzer;
     <UIPreviewInteractionDelegate> * _delegate;
     _UISystemSoundPlayer * _feedbackBehavior;
+    bool  _feedbackBehaviorTurnedOn;
     _UITouchesObservingGestureRecognizer * _modalTouchObservingGestureRecognizer;
     struct { 
         unsigned int interactive : 1; 
@@ -43,6 +46,7 @@
 - (void)_pauseInteraction;
 - (void)_prepareForInteractionWithGestureRecognizer:(id)arg1;
 - (void)_prepareUsingFeedback;
+- (void)_prepareUsingFeedbackIfNeeded;
 - (void)_resetAfterInteraction;
 - (void)_resumeInteraction;
 - (bool)_shouldCancelTransitionToState:(long long)arg1;
@@ -50,7 +54,9 @@
 - (void)_updateAnimatorsIfNeeded;
 - (void)_updateFailureRequirementGestureRecognizersIfNeeded;
 - (void)_updateFeedbackTowardNextState:(long long)arg1 progress:(double)arg2;
+- (void)_updateForContinuousEvaluation:(id)arg1;
 - (void)_updateInteractionStateRecognizerForTouch:(id)arg1;
+- (void)_updateInteractionStateRecognizerForTouchForce:(double)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
 - (void)cancelInteraction;
 - (id)delegate;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

@@ -9,4 +9,9 @@
 - (MiroAutoEditLogger *)logger;
 - (Project *)project;
 
+@optional
+
+- (bool)titleIsSupported;
+- (MiroMetadataRange *)trimRangeForClip:(KonaClip *)arg1;
+
 @end

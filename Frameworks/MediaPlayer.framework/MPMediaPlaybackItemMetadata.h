@@ -110,7 +110,6 @@
 - (id)contentTitle;
 - (unsigned long long)contentType;
 - (id)copyrightText;
-- (void)dealloc;
 - (long long)downloadIdentifier;
 - (long long)endpointType;
 - (double)expectedDuration;

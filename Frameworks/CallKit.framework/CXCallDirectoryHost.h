@@ -28,6 +28,7 @@
 - (oneway void)getPrioritizedExtensionIdentifiersWithReply:(id /* block */)arg1;
 - (id)init;
 - (void)performDelegateCallback:(id /* block */)arg1;
+- (void)performMigrationsIfNecessary;
 - (id)queue;
 - (oneway void)reloadCallDirectoryExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)removeDataForCallDirectoryExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;

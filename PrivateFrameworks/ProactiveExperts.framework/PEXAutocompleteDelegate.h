@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)autocompleteFetch:(id)arg1 didFailWithError:(id)arg2;
 - (void)autocompleteFetch:(id)arg1 didReceiveResults:(id)arg2;
+- (void)clearCaches;
 - (id)convertAutocompleteResultToContact:(id)arg1;
 - (id)init;
 - (id)lookupCachedContactWithNamePrefix:(id)arg1 recipients:(id)arg2;

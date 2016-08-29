@@ -6,7 +6,9 @@
     unsigned long long  _AVAssetDownloadToken;
     AVURLAsset * _AVURLAsset;
     NSURL * _URL;
+    NSURLSessionTaskMetrics * __backgroundTaskMetrics;
     NSDictionary * __backgroundTaskTimingData;
+    NSDictionary * __backgroundTrailers;
     NSData * _assetArtworkData;
     NSString * _assetTitle;
     long long  _basePriority;
@@ -52,7 +54,9 @@
 @property unsigned long long AVAssetDownloadToken;
 @property (retain) AVURLAsset *AVURLAsset;
 @property (copy) NSURL *URL;
+@property (retain) NSURLSessionTaskMetrics *_backgroundTaskMetrics;
 @property (copy) NSDictionary *_backgroundTaskTimingData;
+@property (retain) NSDictionary *_backgroundTrailers;
 @property (copy) NSData *assetArtworkData;
 @property (copy) NSString *assetTitle;
 @property long long basePriority;
@@ -99,7 +103,9 @@
 - (unsigned long long)AVAssetDownloadToken;
 - (id)AVURLAsset;
 - (id)URL;
+- (id)_backgroundTaskMetrics;
 - (id)_backgroundTaskTimingData;
+- (id)_backgroundTrailers;
 - (id)assetArtworkData;
 - (id)assetTitle;
 - (long long)basePriority;
@@ -183,7 +189,9 @@
 - (void)setTemporaryDestinationURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
+- (void)set_backgroundTaskMetrics:(id)arg1;
 - (void)set_backgroundTaskTimingData:(id)arg1;
+- (void)set_backgroundTrailers:(id)arg1;
 - (bool)shouldCancelOnDisconnect;
 - (long long)state;
 - (id)storagePartitionIdentifier;

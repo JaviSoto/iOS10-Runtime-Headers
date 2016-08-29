@@ -11,6 +11,7 @@
 - (void)_prepareHandleSelection;
 - (void)_updateHandleSelection;
 - (void)_updateWordSelectionForPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)clearSelectionState;
 - (int)didTapSelectionHandlersForGesture:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (bool)isSelectingText;

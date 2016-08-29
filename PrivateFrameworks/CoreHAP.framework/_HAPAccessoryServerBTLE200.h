@@ -24,7 +24,6 @@
     NSMutableArray * _pendingResponses;
     NSOperationQueue * _requestOperationQueue;
     HAPSecuritySession * _securitySession;
-    bool  _securitySessionOpen;
     bool  _securitySessionOpening;
     id /* block */  _setupCodeCompletionHandler;
     bool  _supportsMFiPairSetup;
@@ -55,7 +54,6 @@
 @property (nonatomic, readonly) NSMutableArray *pendingResponses;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpen, nonatomic) bool securitySessionOpen;
 @property (getter=isSecuritySessionOpening, nonatomic) bool securitySessionOpening;
 @property (nonatomic, copy) id /* block */ setupCodeCompletionHandler;
 @property (readonly) Class superclass;
@@ -186,7 +184,6 @@
 - (bool)isBadSetupCode;
 - (bool)isHAPCharacteristic:(id)arg1;
 - (bool)isPairing;
-- (bool)isSecuritySessionOpen;
 - (bool)isSecuritySessionOpening;
 - (bool)isVerified;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -240,7 +237,6 @@
 - (void)setPairingFeaturesCharacteristic:(id)arg1;
 - (void)setPairingsCharacteristic:(id)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpen:(bool)arg1;
 - (void)setSecuritySessionOpening:(bool)arg1;
 - (void)setSetupCodeCompletionHandler:(id /* block */)arg1;
 - (void)setSupportsMFiPairSetup:(bool)arg1;

@@ -10,10 +10,13 @@
 
 - (void).cxx_destruct;
 - (id)account;
+- (void)accountChanged;
 - (id)dataclassProperties;
+- (void)dealloc;
 - (id)firstName;
 - (id)hostNameOfType:(long long)arg1;
 - (id)init;
+- (void)initializeAccount;
 - (id)lastName;
 - (id)personId;
 - (void)setAccount:(id)arg1;

@@ -3,17 +3,22 @@
  */
 
 @interface FCTagRecordSource : FCRecordSource {
+    unsigned long long  _desiredFieldOptions;
     NSArray * _genericKeys;
 }
 
-+ (unsigned long long)dataSizeLimit;
+@property (nonatomic) unsigned long long desiredFieldOptions;
+
 + (unsigned long long)defaultFetchOperationCachePolicy;
 + (double)defaultFetchOperationMaximumCachedAge;
++ (unsigned long long)highThresholdDataSizeLimit;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)recordType;
 + (id)storeFilename;
 + (unsigned long long)storeVersion;
 
 - (void).cxx_destruct;
+- (unsigned long long)desiredFieldOptions;
 - (id)desiredKeys;
 - (id)genericKeys;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2;
@@ -22,5 +27,6 @@
 - (id)localizedKeysByOriginalKey;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
 - (id)saveTagRecords:(id)arg1;
+- (void)setDesiredFieldOptions:(unsigned long long)arg1;
 
 @end

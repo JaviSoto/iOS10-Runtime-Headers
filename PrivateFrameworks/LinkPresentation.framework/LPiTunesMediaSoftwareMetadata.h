@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
  */
 
-@interface LPiTunesMediaSoftwareMetadata : LPSpecializationMetadata <LPLinkMetadataPresentationTransformerAdaptor, LPLinkMetadataPreviewTransformerAdaptor> {
+@interface LPiTunesMediaSoftwareMetadata : LPSpecializationMetadata <LPLinkMetadataPresentationTransformerAdaptor, LPLinkMetadataPreviewTransformerAdaptor, LPLinkMetadataStoreTransformerAdaptor> {
     NSString * _genre;
     LPImage * _icon;
     NSString * _name;
@@ -43,5 +43,6 @@
 - (void)setStoreIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;
 - (id)storeIdentifier;
+- (id)storeIdentifierForTransformer:(id)arg1;
 
 @end

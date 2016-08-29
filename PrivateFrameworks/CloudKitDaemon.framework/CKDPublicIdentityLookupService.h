@@ -16,6 +16,7 @@
 - (void)configureRequest:(id)arg1 parentOperation:(id)arg2;
 - (id)context;
 - (id)initWithClientContext:(id)arg1;
+- (void)removeCacheForLookupInfos:(id)arg1;
 - (void)scheduleRequest:(id)arg1 forOperation:(id)arg2;
 - (void)setCache:(id)arg1;
 - (void)setContext:(id)arg1;

@@ -4,22 +4,22 @@
 
 @interface UIInterfaceActionOverrideVisualStyle : UIInterfaceActionVisualStyle {
     UIInterfaceActionSeparatorAttributes * _customSeparatorAttributes;
-    id /* block */  _customizeAttributesForTitleLabelWithViewStateBlock;
+    id /* block */  _customTitleLabelFontProviderForViewState;
 }
 
 @property (nonatomic, retain) UIInterfaceActionSeparatorAttributes *customSeparatorAttributes;
-@property (nonatomic, copy) id /* block */ customizeAttributesForTitleLabelWithViewStateBlock;
+@property (nonatomic, copy) id /* block */ customTitleLabelFontProviderForViewState;
 
 + (id)styleOverride;
 
 - (void).cxx_destruct;
-- (void)configureAttributesForTitleLabel:(id)arg1 classificationLabel:(id)arg2 actionViewState:(id)arg3;
+- (id)actionTitleLabelFontForViewState:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customSeparatorAttributes;
-- (id /* block */)customizeAttributesForTitleLabelWithViewStateBlock;
+- (id /* block */)customTitleLabelFontProviderForViewState;
 - (bool)isEqual:(id)arg1;
 - (id)newActionSeparatorViewForGroupViewState:(id)arg1;
 - (void)setCustomSeparatorAttributes:(id)arg1;
-- (void)setCustomizeAttributesForTitleLabelWithViewStateBlock:(id /* block */)arg1;
+- (void)setCustomTitleLabelFontProviderForViewState:(id /* block */)arg1;
 
 @end

@@ -2,14 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UITapticEngine : NSObject
+@interface _UITapticEngine : NSObject {
+    bool  _feedbackActivated;
+    _UISystemSoundPlayer * _feedbackBehavior;
+}
 
-- (void)_actuateSystemSoundWithIdentifier:(unsigned int)arg1;
-- (double)_preferredDelayForFeedback:(long long)arg1;
-- (void)_setActivated:(bool)arg1 forFeedback:(long long)arg2;
-- (unsigned int)_systemSoundIdentifierForFeedback:(long long)arg1;
+@property (nonatomic) bool feedbackActivated;
+@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+
+- (void).cxx_destruct;
 - (void)actuateFeedback:(long long)arg1;
 - (void)endUsingFeedback:(long long)arg1;
+- (bool)feedbackActivated;
+- (id)feedbackBehavior;
+- (id)init;
 - (void)prepareUsingFeedback:(long long)arg1;
+- (void)setFeedbackActivated:(bool)arg1;
+- (void)setFeedbackBehavior:(id)arg1;
 
 @end

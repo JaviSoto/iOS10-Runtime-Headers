@@ -63,7 +63,7 @@
 - (id)forcePresentationControllerDelegate;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (id)panningGestureRecognizer;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
 - (id /* block */)presentationPhaseCompletionBlock;
 - (void)presentationTransitionWillBegin;

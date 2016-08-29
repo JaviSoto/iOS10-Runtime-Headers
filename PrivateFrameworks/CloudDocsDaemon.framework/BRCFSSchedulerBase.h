@@ -44,6 +44,7 @@
 - (id)hasWorkGroup;
 - (bool)isCancelled;
 - (bool)isZoneIdle:(id)arg1;
+- (void)moveAppLibraryTransfers:(id)arg1 toAppLibrary:(id)arg2;
 - (void)resetBackoffForThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)resume;
 - (void)schedule;

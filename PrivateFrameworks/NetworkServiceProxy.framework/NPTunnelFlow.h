@@ -46,6 +46,7 @@
 @property bool hasTunnel;
 @property (readonly) unsigned long long hashKey;
 @property unsigned long long identifier;
+@property (readonly) bool isBestEffort;
 @property (readonly) bool isClientFlowClosed;
 @property bool isDirectConnectionViable;
 @property long long latestByteDate;
@@ -92,6 +93,7 @@
 - (unsigned long long)identifier;
 - (void)increaseWindowSize:(unsigned long long)arg1;
 - (id)initWithTunnel:(id)arg1 appRule:(id)arg2 clientFlow:(id)arg3 hashKey:(unsigned long long)arg4 delegate:(id)arg5;
+- (bool)isBestEffort;
 - (bool)isClientFlowClosed;
 - (bool)isDirectConnectionViable;
 - (long long)latestByteDate;

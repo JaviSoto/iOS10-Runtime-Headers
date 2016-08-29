@@ -20,6 +20,8 @@
 @property (nonatomic, readonly) double timeInterval;
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *timer;
 
++ (id)shortDescription;
+
 - (void).cxx_destruct;
 - (void)_fire;
 - (void)_handleExpiration;
@@ -28,7 +30,10 @@
 - (void)_suspend;
 - (id)clientQueue;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)delegate;
+- (id)description;
+- (id)descriptionWithPointer:(bool)arg1;
 - (void)fire;
 - (id)init;
 - (id)initWithTimeInterval:(double)arg1 options:(unsigned long long)arg2;
@@ -39,6 +44,7 @@
 - (void)resume;
 - (void)setDelegate:(id)arg1;
 - (void)setRunning:(bool)arg1;
+- (id)shortDescription;
 - (void)suspend;
 - (double)timeInterval;
 - (id)timer;

@@ -68,12 +68,14 @@
 - (void)_preprocessDeletedObjects:(id)arg1 deletesInfo:(id)arg2 sectionsWithDeletes:(id)arg3;
 - (void)_preprocessInsertedObjects:(id)arg1 insertsInfo:(id)arg2 newSectionNames:(id)arg3;
 - (void)_preprocessUpdatedObjects:(id)arg1 insertsInfo:(id)arg2 deletesInfo:(id)arg3 updatesInfo:(id)arg4 sectionsWithDeletes:(id)arg5 newSectionNames:(id)arg6 treatAsRefreshes:(id)arg7;
+- (void)_recursivePerformBlockAndWait:(id /* block */)arg1 withContext:(id)arg2;
 - (void)_removeObjectInFetchedObjectsAtIndex:(unsigned long long)arg1;
 - (id)_resolveSectionIndexTitleForSectionName:(id)arg1;
 - (bool)_restoreCachedSectionInfo;
 - (id)_sectionCachePath;
 - (id)_sectionNameForObject:(id)arg1;
 - (unsigned long long)_sectionNumberForIndex:(unsigned long long)arg1;
+- (id)_sections;
 - (void)_updateCachedStoreInfo;
 - (bool)_updateFetchedObjectsWithDeleteChange:(id)arg1;
 - (bool)_updateFetchedObjectsWithInsertChange:(id)arg1;

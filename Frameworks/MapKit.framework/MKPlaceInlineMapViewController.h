@@ -17,7 +17,6 @@
 
 - (void).cxx_destruct;
 - (void)_addAnnotationToSnapshot:(id)arg1 mapItem:(id)arg2;
-- (void)_addLabelToSnaphot:(id)arg1 mapItem:(id)arg2;
 - (void)_handleTapOnMap;
 - (void)_launchMaps;
 - (void)_updateInlineMapWithRefinedMapItem:(id)arg1;

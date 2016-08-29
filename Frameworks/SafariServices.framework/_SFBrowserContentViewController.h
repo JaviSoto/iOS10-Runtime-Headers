@@ -9,7 +9,6 @@
     _WKActivatedElementInfo * _activatedElementInfo;
     WebUIAuthenticationManager * _authenticationManager;
     _SFBrowserView * _browserView;
-    SFSafariViewControllerConfiguration * _configuration;
     double  _crashBannerDraggingOffset;
     long long  _customPreferredStatusBarStyle;
     bool  _didNotifyInitialLoadFinish;
@@ -29,6 +28,8 @@
     _SFNavigationBarItem * _navigationBarItem;
     _SFPageLoadErrorController * _pageLoadErrorController;
     bool  _pageScrollsWithBottomBar;
+    UIColor * _preferredBarTintColor;
+    UIColor * _preferredControlTintColor;
     long long  _preferredWhitePointAdaptivityStyle;
     SFReaderViewController * _readerViewController;
     _SFReloadOptionsController * _reloadOptionsController;
@@ -47,7 +48,6 @@
 }
 
 @property (nonatomic, retain) _WKActivatedElementInfo *activatedElementInfo;
-@property (nonatomic, copy) SFSafariViewControllerConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long displayMode;
@@ -55,6 +55,8 @@
 @property (nonatomic, retain) _SFFindOnPageView *findOnPageView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *linkActions;
+@property (nonatomic, retain) UIColor *preferredBarTintColor;
+@property (nonatomic, retain) UIColor *preferredControlTintColor;
 @property (nonatomic) long long preferredWhitePointAdaptivityStyle;
 @property (nonatomic, retain) _SFReloadOptionsController *reloadOptionsController;
 @property (nonatomic) bool remoteSwipeGestureEnabled;
@@ -83,7 +85,7 @@
 - (void)_performSafeBrowsingCheckForURL:(id)arg1;
 - (id)_previewViewControllerForURL:(id)arg1 defaultActions:(id)arg2 elementInfo:(id)arg3;
 - (void)_recordHostAppIdAndURLForTapToRadar:(id)arg1;
-- (void)_redirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 isMainFrame:(bool)arg3 userInitiated:(bool)arg4;
+- (void)_redirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 isMainFrame:(bool)arg3 userAction:(id)arg4;
 - (bool)_redirectToHostAppWithNavigationResult:(id)arg1 options:(id)arg2;
 - (void)_scrollToTopFromScrollToTopView;
 - (void)_setShowingCrashBanner:(bool)arg1 animated:(bool)arg2;
@@ -96,6 +98,7 @@
 - (void)_setUpTopBarAndBottomBar;
 - (void)_setUpWebViewControllerIfNeeded;
 - (void)_setWebView:(id)arg1;
+- (bool)_shouldPromptUserForExternalNavigationResult:(id)arg1 userAction:(id)arg2;
 - (void)_showBarsFromBottomBarTap:(id)arg1;
 - (void)_showGenericDownloadAlert;
 - (bool)_showICSControllerForPath:(id)arg1 sourceURL:(id)arg2;
@@ -108,6 +111,8 @@
 - (void)_updateDynamicBarGeometry;
 - (void)_updateInterfaceFillsScreen;
 - (void)_updateNavigationBar;
+- (void)_updatePreferredBarTintColor;
+- (void)_updatePreferredControlTintColor;
 - (void)_updatePreviewLoadingUI;
 - (void)_updateRemoteSwipeGestureState;
 - (void)_updateScrollToTopView;
@@ -135,7 +140,6 @@
 - (bool)canBecomeFirstResponder;
 - (void)clearFluidProgressState;
 - (void)compressedNavigationBarWasTapped:(id)arg1;
-- (id)configuration;
 - (bool)createFluidProgressState;
 - (id)currentFluidProgressStateSource;
 - (void)dealloc;
@@ -179,6 +183,8 @@
 - (void)pageLoadErrorControllerDidShowAlert:(id)arg1;
 - (bool)pageLoadErrorControllerShouldHandleCertificateError:(id)arg1;
 - (void)pageLoadErrorControllerWillShowPrintingDuringLoadAlert:(id)arg1 action:(int)arg2;
+- (id)preferredBarTintColor;
+- (id)preferredControlTintColor;
 - (long long)preferredStatusBarStyle;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
@@ -202,11 +208,12 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setActivatedElementInfo:(id)arg1;
-- (void)setConfiguration:(id)arg1;
 - (void)setDisplayMode:(long long)arg1;
 - (void)setEntersReaderIfAvailable:(bool)arg1;
 - (void)setFindOnPageView:(id)arg1;
 - (void)setLinkActions:(id)arg1;
+- (void)setPreferredBarTintColor:(id)arg1;
+- (void)setPreferredControlTintColor:(id)arg1;
 - (void)setPreferredWhitePointAdaptivityStyle:(long long)arg1;
 - (void)setReloadOptionsController:(id)arg1;
 - (void)setRemoteSwipeGestureEnabled:(bool)arg1;

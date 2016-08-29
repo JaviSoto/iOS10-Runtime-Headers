@@ -23,8 +23,10 @@
 - (id)getUUIDsOfNMostRecentRecords:(unsigned long long)arg1 fromManagedObjectContext:(id)arg2;
 - (bool)handleBootUpFailure:(id)arg1;
 - (bool)handleDatabaseMigration:(id)arg1 isEncrypted:(bool)arg2 isRetry:(bool)arg3;
+- (void)modifyCallRecordForDBAtLocation:(id)arg1 dbVersion:(long long)arg2 isEncrypted:(bool)arg3 modifyCallRecord:(id /* block */)arg4;
 - (void)moveCallsFromTempDatabase;
 - (id)permDBLocation:(unsigned char*)arg1;
+- (void)populateHandleType:(id)arg1 dbVersion:(long long)arg2 isEncrypted:(bool)arg3;
 - (void)populateServiceProviderAndCallCategory:(id)arg1 dbVersion:(long long)arg2 isEncrypted:(bool)arg3;
 - (void)prepareDatabaseForNextStepInMigration:(id)arg1 dbVersion:(long long)arg2 isEncrypted:(bool)arg3;
 - (void)prepareForMigrationDBAtURL:(id)arg1 withModelAtURL:(id)arg2 andIsEncrypted:(bool)arg3;

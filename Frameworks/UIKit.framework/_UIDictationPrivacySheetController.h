@@ -10,6 +10,7 @@
 
 + (id)controllerWithDismissHandler:(id /* block */)arg1;
 
+- (void)dealloc;
 - (void)dismiss;
 - (id /* block */)dismissHandler;
 - (id)initWithHandler:(id /* block */)arg1;

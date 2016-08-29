@@ -2,17 +2,22 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSearchForMessagesIntentResponse : INIntentResponse {
+@interface INSearchForMessagesIntentResponse : INIntentResponse <INSearchForMessagesIntentResponseExport> {
     _INPBSearchForMessagesIntentResponse * _responseMessagePBRepresentation;
 }
 
 @property (nonatomic, readonly) long long code;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *messages;
 @property (nonatomic, copy) NSArray *searchResults;
+@property (readonly) Class superclass;
 
 + (bool)_appLaunchRequestedFromCode:(long long)arg1;
 + (long long)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(bool)arg3;
 + (int)_errorCodeFromCode:(long long)arg1;
++ (long long)_intentHandlingStatusFromCode:(long long)arg1;
 + (int)_typeFromCode:(long long)arg1;
 + (bool)supportsSecureCoding;
 
@@ -24,7 +29,6 @@
 - (id)initWithBackingStore:(id)arg1;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (long long)intentHandlingStatus;
 - (id)messages;
 - (id)searchResults;
 - (void)setMessages:(id)arg1;

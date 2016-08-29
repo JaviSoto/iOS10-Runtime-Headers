@@ -12,6 +12,7 @@
     CNContactStore * _suggestionsEnabledContactStore;
     UITapGestureRecognizer * _tapGestureRecognizer;
     CKAvatarTitleCollectionReusableView * _titleView;
+    NSMapTable * _visibleTitleViews;
 }
 
 @property (nonatomic) UIViewController *avatarOrbPresentingViewController;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) CKAvatarTitleCollectionReusableView *titleView;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } titleViewFrame;
+@property (nonatomic, retain) NSMapTable *visibleTitleViews;
 
 - (void).cxx_destruct;
 - (void)_animateInTitleView;
@@ -55,6 +57,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)expandToExpandedView;
+- (bool)hasTitle;
 - (id)initWithConversation:(id)arg1;
 - (id)layout;
 - (void)loadView;
@@ -69,11 +72,13 @@
 - (void)setSuggestionsEnabledContactStore:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
 - (void)setTitleView:(id)arg1;
+- (void)setVisibleTitleViews:(id)arg1;
 - (long long)style;
 - (id)suggestionsEnabledContactStore;
 - (id)tapGestureRecognizer;
 - (id)titleView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleViewFrame;
 - (void)viewWillLayoutSubviews;
+- (id)visibleTitleViews;
 
 @end

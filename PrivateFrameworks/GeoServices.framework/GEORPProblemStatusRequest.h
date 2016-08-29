@@ -3,6 +3,7 @@
  */
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
+    GEOABSecondPartyPlaceRequestClientMetaData * _abAssignmentMetadata;
     GEOPDAnalyticMetadata * _analyticMetadata;
     GEORPClientCapabilities * _clientCapabilities;
     NSMutableArray * _problemIds;
@@ -10,8 +11,10 @@
     GEORPUserCredentials * _userCredentials;
 }
 
+@property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *abAssignmentMetadata;
 @property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
 @property (nonatomic, retain) GEORPClientCapabilities *clientCapabilities;
+@property (nonatomic, readonly) bool hasAbAssignmentMetadata;
 @property (nonatomic, readonly) bool hasAnalyticMetadata;
 @property (nonatomic, readonly) bool hasClientCapabilities;
 @property (nonatomic, readonly) bool hasStatusNotificationId;
@@ -22,6 +25,7 @@
 
 + (Class)problemIdType;
 
+- (id)abAssignmentMetadata;
 - (void)addProblemId:(id)arg1;
 - (id)analyticMetadata;
 - (void)clearProblemIds;
@@ -31,6 +35,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasAbAssignmentMetadata;
 - (bool)hasAnalyticMetadata;
 - (bool)hasClientCapabilities;
 - (bool)hasStatusNotificationId;
@@ -45,6 +50,7 @@
 - (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (void)setAbAssignmentMetadata:(id)arg1;
 - (void)setAnalyticMetadata:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setProblemIds:(id)arg1;

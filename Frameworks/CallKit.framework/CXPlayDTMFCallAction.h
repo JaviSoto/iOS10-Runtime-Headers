@@ -16,7 +16,6 @@
 - (id)customDescription;
 - (id)digits;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCallUUID:(id)arg1;
 - (id)initWithCallUUID:(id)arg1 digits:(id)arg2 type:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)setDigits:(id)arg1;

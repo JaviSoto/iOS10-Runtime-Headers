@@ -57,6 +57,10 @@
 - (void)setPlayPauseMediaButtonType:(unsigned long long)arg1;
 - (void)setWantsToBecomeFirstResponder:(bool)arg1;
 - (void)setWantsToReceiveActionResponses:(bool)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (bool)wantsToBecomeFirstResponder;
 - (bool)wantsToReceiveActionResponses;
 

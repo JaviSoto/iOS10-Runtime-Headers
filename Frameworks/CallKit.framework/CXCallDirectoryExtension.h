@@ -23,6 +23,7 @@
 - (id)localizedContainingAppName;
 - (id)localizedName;
 - (id)plugInKitProxy;
+- (void)resetEnabledStatus;
 - (void)setEnabled:(bool)arg1;
 - (void)setExtension:(id)arg1;
 

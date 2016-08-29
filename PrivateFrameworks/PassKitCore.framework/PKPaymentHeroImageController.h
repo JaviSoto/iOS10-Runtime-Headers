@@ -28,6 +28,7 @@
 - (id)featuredNetworksImageData;
 - (struct CGSize { double x1; double x2; })imageSizeForScreenSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2;
+- (id)primaryFeaturedNetwork;
 - (void)setDelegate:(id)arg1;
 - (void)setWatchSize:(long long)arg1;
 - (long long)watchSize;

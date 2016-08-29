@@ -22,6 +22,7 @@
 - (void)applicationDataStoreRespositoryClient:(id)arg1 repositoryInvalidatedForBundleID:(id)arg2;
 - (Class)classForClient:(id)arg1;
 - (id)dataStore;
+- (void)dealloc;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 queue:(id)arg2 clientAuthenticator:(id)arg3;
 - (void)noteClientDidConnect:(id)arg1 withMessage:(id)arg2;

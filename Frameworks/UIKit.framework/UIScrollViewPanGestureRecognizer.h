@@ -32,6 +32,8 @@
 - (bool)_canTransferTrackingFromParentPagingScrollView;
 - (bool)_caughtDeceleratingScrollView;
 - (void)_centroidMovedTo:(struct CGPoint { double x1; double x2; })arg1 atTime:(double)arg2;
+- (struct CGPoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
+- (struct CGPoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
 - (double)_hysteresis;
 - (void)_resetGestureRecognizer;
 - (void)_scrollViewDidEndZooming;

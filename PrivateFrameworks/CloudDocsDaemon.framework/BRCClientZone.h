@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCClientZone : NSObject <BRCZone> {
+@interface BRCClientZone : NSObject <BRCReachabilityDelegate, BRCZone> {
     bool  _activated;
     NSMutableArray * _allItemsDidUploadTrackers;
     NSMutableSet * _appLibraries;
@@ -68,10 +68,13 @@
 @property (nonatomic, readonly) unsigned long long currentRequestID;
 @property (nonatomic, readonly) BRCPQLConnection *db;
 @property (nonatomic, retain) BRCZoneRowID *dbRowID;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) BRCAppLibrary *defaultAppLibrary;
 @property (nonatomic, retain) <BRCClientZoneDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasDefaultAppLibrary;
 @property (nonatomic, readonly) bool hasHighPriorityWatchers;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isCloudDocsZone;
 @property (nonatomic, readonly) bool isForeground;
 @property (nonatomic, readonly) bool isPrivateZone;
@@ -84,6 +87,7 @@
 @property (nonatomic, retain) BRCServerZone *serverZone;
 @property (nonatomic, retain) BRCAccountSession *session;
 @property (nonatomic, readonly) unsigned int state;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) BRCDeadlineSource *syncDeadlineSource;
 @property (readonly) unsigned int syncState;
 @property (nonatomic, readonly) NSArray *syncThrottles;
@@ -91,7 +95,6 @@
 @property (nonatomic, readonly) brc_task_tracker *taskTracker;
 @property (nonatomic, readonly) NSString *zoneID;
 @property (nonatomic, readonly) NSString *zoneName;
-@property (nonatomic, readonly) BRCItemID *zoneRootItemID;
 
 - (void).cxx_destruct;
 - (unsigned int)_activateState:(unsigned int)arg1 origState:(unsigned int)arg2;
@@ -121,8 +124,6 @@
 - (bool)_resetItemsTable;
 - (void)_showiCloudDriveAppInstallationNotificationIfNeeded;
 - (void)_startSync;
-- (void)_syncContextDidBecomeBackground:(id)arg1;
-- (void)_syncContextDidBecomeForeground:(id)arg1;
 - (void)_syncUpOfRecords:(id)arg1 createdAppLibraryNames:(id)arg2 didFinishWithError:(id)arg3;
 - (void)_t_addItemID:(id)arg1 blockedForSyncUpUntilOSName:(id)arg2;
 - (void)_t_flushIdleBlocks;
@@ -162,13 +163,17 @@
 - (void)didGCTombstoneRanks:(id)arg1;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(bool)arg3 syncDownDate:(id)arg4;
 - (id)directoryItemIDByFileID:(unsigned long long)arg1;
+- (id)directoryItemIDByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (void)disconnectNSMDQListenerAsync;
 - (id)documentItemByItemID:(id)arg1;
+- (id)documentItemByItemID:(id)arg1 db:(id)arg2;
 - (struct PQLResultSet { Class x1; }*)documentsNotIdleEnumerator;
 - (bool)dumpActivityToContext:(id)arg1 error:(id*)arg2;
 - (bool)dumpStatusToContext:(id)arg1 error:(id*)arg2;
 - (bool)dumpTablesToContext:(id)arg1 error:(id*)arg2;
 - (bool)existsByItemID:(id)arg1;
+- (bool)existsByItemID:(id)arg1 db:(id)arg2;
+- (struct PQLResultSet { Class x1; }*)faultsEnumerator;
 - (void)handleRootRecordDeletion;
 - (bool)handleZoneLevelErrorIfNeeded:(id)arg1;
 - (bool)hasCompletedInitialSyncDownOnce;
@@ -189,9 +194,13 @@
 - (bool)isSyncBlockedBecauseOSNeedsUpgrade;
 - (bool)isSyncBlockedOrBrokenStructure;
 - (id)itemByDocumentID:(unsigned int)arg1;
+- (id)itemByDocumentID:(unsigned int)arg1 db:(id)arg2;
 - (id)itemByFileID:(unsigned long long)arg1;
+- (id)itemByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemByItemID:(id)arg1;
+- (id)itemByItemID:(id)arg1 db:(id)arg2;
 - (id)itemByRowID:(unsigned long long)arg1;
+- (id)itemByRowID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemCountPendingUploadOrSyncUpAndReturnError:(id*)arg1;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithDB:(id)arg1;
 - (struct PQLResultSet { Class x1; }*)itemsWithInFlightDiffsEnumerator;
@@ -199,6 +208,7 @@
 - (long long)lastInsertedRank;
 - (void)learnCKInfosFromSavedRecords:(id)arg1;
 - (bool)needsSave;
+- (void)networkReachabilityChanged:(bool)arg1;
 - (unsigned long long)nextSyncUpRequestID;
 - (void)notifyClient:(id)arg1 afterNextSyncDown:(id /* block */)arg2;
 - (void)notifyClient:(id)arg1 whenIdle:(id /* block */)arg2;
@@ -225,8 +235,11 @@
 - (void)scheduleSyncDownFirst;
 - (void)scheduleSyncUp;
 - (id)serverItemByItemID:(id)arg1;
+- (id)serverItemByItemID:(id)arg1 db:(id)arg2;
 - (id)serverItemByRowID:(unsigned long long)arg1;
+- (id)serverItemByRowID:(unsigned long long)arg1 db:(id)arg2;
 - (long long)serverRankByItemID:(id)arg1;
+- (long long)serverRankByItemID:(id)arg1 db:(id)arg2;
 - (id)serverZone;
 - (id)session;
 - (void)setDbRowID:(id)arg1;
@@ -256,8 +269,8 @@
 - (bool)validateItemsLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 db:(id)arg2;
 - (bool)validateStructureLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 db:(id)arg2;
 - (id)xattrForSignature:(id)arg1;
+- (id)xattrForSignature:(id)arg1 db:(id)arg2;
 - (id)zoneID;
 - (id)zoneName;
-- (id)zoneRootItemID;
 
 @end

@@ -42,6 +42,7 @@
 - (long long)explicitDisplayMode;
 - (id)indexPathsForSelectedItems;
 - (id)initWithModel:(id)arg1;
+- (void)invalidate;
 - (bool)isEditing;
 - (id)model;
 - (id)resultsController;

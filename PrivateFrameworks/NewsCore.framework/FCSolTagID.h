@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) NSString *identifier;
 
++ (id)discardedOrphanID;
 + (id)orphanID;
 
 - (void).cxx_destruct;

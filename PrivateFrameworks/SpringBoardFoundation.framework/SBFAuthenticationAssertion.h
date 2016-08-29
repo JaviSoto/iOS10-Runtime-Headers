@@ -31,6 +31,7 @@
 - (id)initWithIdentifier:(id)arg1 type:(long long)arg2 withController:(id)arg3;
 - (void)invalidate;
 - (bool)isValid;
+- (id)publicDescription;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (long long)type;

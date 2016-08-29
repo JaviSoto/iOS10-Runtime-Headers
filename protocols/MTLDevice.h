@@ -5,7 +5,6 @@
 
 @required
 
-- (unsigned long long)dedicatedMemorySize;
 - (struct { unsigned long long x1; unsigned long long x2; })heapBufferSizeAndAlignWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (struct { unsigned long long x1; unsigned long long x2; })heapTextureSizeAndAlignWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (bool)isDepth24Stencil8PixelFormatSupported;
@@ -25,6 +24,7 @@
 - (void)newComputePipelineStateWithFunction:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 10: <MTLFunction> *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLComputePipelineState> *, MTLComputePipelineReflection *, NSError *, void*
 - (<MTLComputePipelineState> *)newComputePipelineStateWithFunction:(id <MTLFunction>)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (<MTLLibrary> *)newDefaultLibrary;
+- (<MTLLibrary> *)newDefaultLibraryWithBundle:(NSBundle *)arg1 error:(id*)arg2;
 - (<MTLDepthStencilState> *)newDepthStencilStateWithDescriptor:(MTLDepthStencilDescriptor *)arg1;
 - (<MTLFence> *)newFence;
 - (<MTLHeap> *)newHeapWithDescriptor:(MTLHeapDescriptor *)arg1;
@@ -38,7 +38,7 @@
 - (<MTLRenderPipelineState> *)newRenderPipelineStateWithDescriptor:(MTLRenderPipelineDescriptor *)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (<MTLSamplerState> *)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
-- (unsigned long long)sharedMemorySize;
+- (unsigned long long)recommendedMaxWorkingSetSize;
 - (bool)supportsFeatureSet:(unsigned long long)arg1;
 - (bool)supportsTextureSampleCount:(unsigned long long)arg1;
 

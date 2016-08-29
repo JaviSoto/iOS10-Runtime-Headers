@@ -14,6 +14,7 @@
             double height; 
         } size; 
     }  _faceRect;
+    NSTimer * _imageLoadInvalidationTimer;
     UIImageView * _imageView;
     bool  _needsSpotlightUpdate;
     CAShapeLayer * _spotlightLayer;
@@ -24,6 +25,7 @@
 
 @property (nonatomic, retain) UIView *dimView;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } faceRect;
+@property (retain) NSTimer *imageLoadInvalidationTimer;
 @property (nonatomic, retain) UIImageView *imageView;
 @property bool needsSpotlightUpdate;
 @property (nonatomic, retain) CAShapeLayer *spotlightLayer;
@@ -33,11 +35,14 @@
 
 - (void).cxx_destruct;
 - (double)_faceScale;
+- (void)_fetchImageForSuggestion:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 withCompletion:(id /* block */)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaledFaceRect;
 - (void)_updateSpotlightAnimated:(bool)arg1;
 - (void)commonInit;
+- (void)dealloc;
 - (id)dimView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRect;
+- (id)imageLoadInvalidationTimer;
 - (id)imageView;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -45,16 +50,17 @@
 - (bool)needsSpotlightUpdate;
 - (void)setDimView:(id)arg1;
 - (void)setFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setImageLoadInvalidationTimer:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setNeedsSpotlightUpdate:(bool)arg1;
 - (void)setSpotlightLayer:(id)arg1;
-- (void)setSuggestion:(id)arg1 animated:(bool)arg2;
+- (void)setSuggestion:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)setSuggestionView:(id)arg1;
 - (void)setValidSpotlight:(bool)arg1;
 - (id)spotlightLayer;
 - (id)suggestion;
 - (id)suggestionView;
-- (void)updateSuggestionImageWithAnimatedSpotlight:(bool)arg1;
+- (void)updateSuggestionImageWithAnimatedSpotlight:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (bool)validSpotlight;
 - (void)viewScaleDidChange;
 

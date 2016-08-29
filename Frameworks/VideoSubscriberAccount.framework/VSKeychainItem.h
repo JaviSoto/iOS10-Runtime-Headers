@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)changedValues;
+- (id)committedValueForKey:(id)arg1;
 - (id)committedValues;
 - (id)committedValuesForKeys:(id)arg1;
 - (id)description;

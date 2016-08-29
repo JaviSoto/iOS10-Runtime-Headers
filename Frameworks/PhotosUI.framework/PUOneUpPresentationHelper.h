@@ -93,6 +93,7 @@
 - (void)_didFinishTransitioningToOneUp;
 - (id)_disappearingTilingView;
 - (void)_disappearingTilingView:(id)arg1 animationCompleted:(bool)arg2;
+- (void)_ensureRegistrationWithPresentingViewController;
 - (bool)_handleInteractivePresentationWithBlock:(id /* block */)arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_handleTileControllerAnimationEnd;

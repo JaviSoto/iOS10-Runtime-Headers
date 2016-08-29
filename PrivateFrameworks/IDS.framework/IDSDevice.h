@@ -49,7 +49,6 @@
 - (id)_initWithDictionary:(id)arg1;
 - (id)_internal;
 - (void)_setAccount:(id)arg1;
-- (void)_updateNSUUID:(id)arg1;
 - (void)cleanupStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)closeSocket:(int)arg1;
 - (void)closeSocketForDomain:(id)arg1;

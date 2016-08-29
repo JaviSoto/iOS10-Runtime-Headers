@@ -14,6 +14,7 @@
 
 - (unsigned long long)AVAssetDownloadToken;
 - (id)URL;
+- (void)dealloc;
 - (id)destinationURL;
 
 @end

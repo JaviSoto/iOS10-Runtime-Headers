@@ -5,6 +5,7 @@
 @interface MKTransitLineItemViewController : MKStackingViewController <MKNearestStationViewControllerDelegate, MKPlaceCardActionControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKStackingViewControllerDelegate, MKTransitLineIncidentsViewControllerDelegate, _MKInfoCardAnaylticsDelegate, _MKInfoCardController> {
     MKPlaceCardActionsViewController * _actionsViewController;
     MKPlaceCardActionItem * _addToFavoritesItem;
+    GEOAutomobileOptions * _automobileOptions;
     <MKTransitLineItemViewControllerDelegate> * _delegate;
     NSNumber * _favorited;
     MKPlaceCardHeaderViewController * _headerViewController;
@@ -20,9 +21,11 @@
     MKPlaceCardActionItem * _removeFromFavoritesItem;
     <UIScrollViewDelegate> * _scrollViewDelegate;
     <GEOTransitLineItem> * _transitLineItem;
+    GEOTransitOptions * _transitOptions;
 }
 
 @property (nonatomic, retain) MKPlaceCardActionItem *addToFavoritesItem;
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
 @property (nonatomic) double currentHeaderMinimalModeInterpolationFactor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKTransitLineItemViewControllerDelegate> *delegate;
@@ -34,6 +37,7 @@
 @property (nonatomic) <UIScrollViewDelegate> *scrollViewDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <GEOTransitLineItem> *transitLineItem;
+@property (nonatomic, retain) GEOTransitOptions *transitOptions;
 
 + (double)headerHeightInMinimalMode;
 
@@ -41,6 +45,7 @@
 - (void)_fetchNearestStation;
 - (void)_updateViewControllers;
 - (id)addToFavoritesItem;
+- (id)automobileOptions;
 - (double)currentHeaderMinimalModeInterpolationFactor;
 - (id)delegate;
 - (id)favorited;
@@ -64,11 +69,13 @@
 - (void)placeCardheaderHeaderViewControllerDidSelectRerouteButton:(id)arg1;
 - (void)placeCardheaderHeaderViewControllerDidSelectShareLocationButton:(id)arg1;
 - (id)removeFromFavoritesItem;
+- (void)resetNearestStation;
 - (id)scrollViewDelegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setAddToFavoritesItem:(id)arg1;
+- (void)setAutomobileOptions:(id)arg1;
 - (void)setCurrentHeaderMinimalModeInterpolationFactor:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFavorited:(id)arg1;
@@ -77,13 +84,14 @@
 - (void)setScrollViewDelegate:(id)arg1;
 - (void)setTransitLineItem:(id)arg1;
 - (void)setTransitLineItem:(id)arg1 loading:(bool)arg2;
+- (void)setTransitOptions:(id)arg1;
 - (double)stackingViewController:(id)arg1 heightForSeparatorBetweenUpperViewController:(id)arg2 andLowerViewController:(id)arg3;
 - (void)transitLineIncidentsViewController:(id)arg1 didSelectDetailsForIncidents:(id)arg2;
 - (id)transitLineItem;
+- (id)transitOptions;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
 
 @end

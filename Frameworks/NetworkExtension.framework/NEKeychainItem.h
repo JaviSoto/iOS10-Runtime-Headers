@@ -12,7 +12,7 @@
     NSData * _persistentReference;
 }
 
-@property (readonly) NSString *accessGroup;
+@property (copy) NSString *accessGroup;
 @property long long domain;
 @property (copy) NSString *identifier;
 @property (readonly) bool legacy;
@@ -49,6 +49,7 @@
 - (id)password;
 - (id)persistentReference;
 - (void)remove;
+- (void)setAccessGroup:(id)arg1;
 - (void)setDomain:(long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdentifierInternal:(id)arg1;

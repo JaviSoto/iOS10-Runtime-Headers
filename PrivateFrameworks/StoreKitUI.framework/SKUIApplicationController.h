@@ -65,7 +65,10 @@
 @property (nonatomic, copy) NSArray *tabBarItems;
 
 + (id)applicationOptionsWithLaunchOptions:(id)arg1;
++ (id)configurationPreloader;
++ (void)finishedWithConfigurationPreloader;
 + (void)load;
++ (void)prepareForLaunch;
 
 - (void).cxx_destruct;
 - (void)URLResolver:(id)arg1 didFinishWithResult:(bool)arg2;
@@ -92,6 +95,7 @@
 - (void)_invalidateApplication;
 - (bool)_isDisplayingAccountViewController;
 - (bool)_isStoreFront:(id)arg1 equalToStoreFront:(id)arg2;
+- (void)_jsLaunchFinishedWithLaunchMetrics:(id)arg1;
 - (id)_launchOptionsWithURL:(id)arg1;
 - (void)_legacyResolveExternalURL:(id)arg1;
 - (void)_loadApplicationFromUpdatableAssetsCache:(id)arg1;
@@ -123,7 +127,6 @@
 - (void)_sendClientContextDidChange;
 - (void)_sendDidDisplayFirstPageIfNecessary;
 - (bool)_sendNativeBackButtonMetricEvents;
-- (void)_sendWindowSizeChangedWithActiveViewController:(id)arg1;
 - (void)_setClientContextWithDictionary:(id)arg1;
 - (void)_setHidesTabBar:(bool)arg1;
 - (void)_setManifestURLOnUpdatableAssetController:(id)arg1 completion:(id /* block */)arg2;
@@ -141,6 +144,7 @@
 - (void)_tintTabBarWithViewController:(id)arg1;
 - (id)_transientNavigationController;
 - (id)_transientNavigationDocument;
+- (void)_updateOverlayNavigationController:(id)arg1;
 - (bool)_usesFloatingStatusOverlayForWidth:(double)arg1;
 - (id)activeDocument;
 - (void)appContext:(id)arg1 didCompletePurchase:(id)arg2;
@@ -206,6 +210,7 @@
 - (void)showExternalURL:(id)arg1;
 - (void)showStatusOverlayUsingProvider:(id)arg1 animated:(bool)arg2;
 - (void)showTransientViewController:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeForNavigationDocument:(id)arg1;
 - (void)suspendApplicationWithOptions:(id)arg1;
 - (id)tabBarController;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(bool)arg3;

@@ -8,7 +8,6 @@
 
 @property (nonatomic) double availabilityFreshnessWindow;
 @property (nonatomic) bool forceDisplayOfNewTravelAdvisoryHypotheses;
-@property (nonatomic, retain) NSDate *lastTTLFeedbackSurveyDate;
 @property (nonatomic) double overriddenTravelAdvisoryHypothesisAggressiveTravelTime;
 @property (nonatomic) double overriddenTravelAdvisoryHypothesisConservativeTravelTime;
 @property (nonatomic, retain) NSString *overriddenTravelAdvisoryHypothesisCurrentTrafficDensity;
@@ -24,7 +23,6 @@
 @property (nonatomic) bool shouldBypassTravelEngineThrottle;
 @property (nonatomic) bool showDepartureDateForTransitTimeToLeave;
 @property (nonatomic) bool showVerboseMessagesForTimeToLeave;
-@property (nonatomic) long long ttlFeedbackSurveySamplingPercentage;
 @property (nonatomic) bool useAverageETAForTimeToLeave;
 @property (nonatomic) bool verifyIntegrityOfAvailabilityTimeSearchTimelines;
 
@@ -34,7 +32,6 @@
 - (double)availabilityFreshnessWindow;
 - (bool)forceDisplayOfNewTravelAdvisoryHypotheses;
 - (id)init;
-- (id)lastTTLFeedbackSurveyDate;
 - (double)overriddenTravelAdvisoryHypothesisAggressiveTravelTime;
 - (double)overriddenTravelAdvisoryHypothesisConservativeTravelTime;
 - (id)overriddenTravelAdvisoryHypothesisCurrentTrafficDensity;
@@ -49,7 +46,6 @@
 - (bool)saveGeocodedLocationsInTravelEngine;
 - (void)setAvailabilityFreshnessWindow:(double)arg1;
 - (void)setForceDisplayOfNewTravelAdvisoryHypotheses:(bool)arg1;
-- (void)setLastTTLFeedbackSurveyDate:(id)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisAggressiveTravelTime:(double)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisConservativeTravelTime:(double)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisCurrentTrafficDensity:(id)arg1;
@@ -65,13 +61,11 @@
 - (void)setShouldBypassTravelEngineThrottle:(bool)arg1;
 - (void)setShowDepartureDateForTransitTimeToLeave:(bool)arg1;
 - (void)setShowVerboseMessagesForTimeToLeave:(bool)arg1;
-- (void)setTtlFeedbackSurveySamplingPercentage:(long long)arg1;
 - (void)setUseAverageETAForTimeToLeave:(bool)arg1;
 - (void)setVerifyIntegrityOfAvailabilityTimeSearchTimelines:(bool)arg1;
 - (bool)shouldBypassTravelEngineThrottle;
 - (bool)showDepartureDateForTransitTimeToLeave;
 - (bool)showVerboseMessagesForTimeToLeave;
-- (long long)ttlFeedbackSurveySamplingPercentage;
 - (bool)useAverageETAForTimeToLeave;
 - (bool)verifyIntegrityOfAvailabilityTimeSearchTimelines;
 

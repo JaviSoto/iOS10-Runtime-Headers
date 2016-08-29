@@ -27,6 +27,7 @@
 - (void)configureView:(id)arg1;
 - (void)dealloc;
 - (bool)enabled;
+- (bool)hasImage;
 - (id)identifier;
 - (void)imageLoaded:(id)arg1;
 - (id)init;

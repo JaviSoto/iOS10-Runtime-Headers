@@ -3,6 +3,7 @@
  */
 
 @interface SKUIViewElementSlideshowController : NSObject <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate> {
+    NSMutableArray * _dataConsumers;
     <SKUIViewElementSlideshowDelegate> * _delegate;
     SKUIViewElementLayoutContext * _layoutContext;
     NSMutableArray * _lockups;
@@ -12,6 +13,7 @@
     NSString * _title;
 }
 
+@property (nonatomic, retain) NSMutableArray *dataConsumers;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIViewElementSlideshowDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -21,6 +23,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)dataConsumers;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithShelf:(id)arg1 selectedLockup:(id)arg2;
@@ -28,10 +31,12 @@
 - (long long)numberOfItemsInSlideshowViewController:(id)arg1;
 - (long long)numberOfSlideshowItems;
 - (void)presentFromParentViewController:(id)arg1;
+- (void)setDataConsumers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutContext:(id)arg1;
-- (id)slideshowViewController:(id)arg1 imageAtIndex:(long long)arg2;
-- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2 size:(struct CGSize { double x1; double x2; }*)arg3;
+- (id)slideshowViewController:(id)arg1 dataConsumerAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 placeholderImageAtIndex:(long long)arg2;
 - (void)slideshowViewControllerDidFinish:(id)arg1;
 
 @end

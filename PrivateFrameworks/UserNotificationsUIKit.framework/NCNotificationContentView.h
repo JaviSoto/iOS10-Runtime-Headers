@@ -36,9 +36,15 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *hintText;
 @property (nonatomic) unsigned long long messageNumberOfLines;
+@property (getter=_outgoingPrimaryLabel, setter=_setOutgoingPrimaryLabel:, nonatomic, retain) UILabel *outgoingPrimaryLabel;
+@property (getter=_outgoingPrimarySubtitleLabel, setter=_setOutgoingPrimarySubtitleLabel:, nonatomic, retain) UILabel *outgoingPrimarySubtitleLabel;
+@property (getter=_outgoingSecondaryLabel, setter=_setOutgoingSecondaryLabel:, nonatomic, retain) UILabel *outgoingSecondaryLabel;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
+@property (getter=_primaryLabel, setter=_setPrimaryLabel:, nonatomic, retain) UILabel *primaryLabel;
+@property (getter=_primarySubtitleLabel, setter=_setPrimarySubtitleLabel:, nonatomic, retain) UILabel *primarySubtitleLabel;
 @property (nonatomic, retain) NSString *primarySubtitleText;
 @property (nonatomic, retain) NSString *primaryText;
+@property (getter=_secondaryLabel, setter=_setSecondaryLabel:, nonatomic, retain) UILabel *secondaryLabel;
 @property (nonatomic, retain) NSString *secondaryText;
 @property (nonatomic) bool showAdditionalMessageLines;
 @property (readonly) Class superclass;
@@ -46,6 +52,7 @@
 @property (nonatomic) long long thumbnailViewContentMode;
 
 - (void).cxx_destruct;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForLongLook;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForShortLook;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForStyle:(long long)arg1;
@@ -66,6 +73,9 @@
 - (id)_newSecondaryLabel;
 - (long long)_numberOfLinesForLabel:(id)arg1 inRectWithSize:(struct CGSize { double x1; double x2; })arg2;
 - (long long)_numberOfLinesInSecondaryLabelInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_outgoingPrimaryLabel;
+- (id)_outgoingPrimarySubtitleLabel;
+- (id)_outgoingSecondaryLabel;
 - (id)_primaryLabel;
 - (id)_primarySubtitleLabel;
 - (double)_primarySubtitleTextBaselineOffsetForCurrentStyle;
@@ -75,7 +85,13 @@
 - (double)_secondaryTextBaselineOffsetFromBottomWithBaseValue:(double)arg1;
 - (double)_secondaryTextBaselineOffsetWithBaseValue:(double)arg1;
 - (void)_setFontProvider:(id)arg1;
-- (void)_setText:(id)arg1 replacingExistingText:(id)arg2 incomingGetter:(id /* block */)arg3 outgoingGetter:(id /* block */)arg4;
+- (void)_setOutgoingPrimaryLabel:(id)arg1;
+- (void)_setOutgoingPrimarySubtitleLabel:(id)arg1;
+- (void)_setOutgoingSecondaryLabel:(id)arg1;
+- (void)_setPrimaryLabel:(id)arg1;
+- (void)_setPrimarySubtitleLabel:(id)arg1;
+- (void)_setSecondaryLabel:(id)arg1;
+- (void)_setText:(id)arg1 withFinalLabel:(id)arg2 setter:(id /* block */)arg3 andTransitionLabel:(id)arg4 setter:(id /* block */)arg5;
 - (struct CGSize { double x1; double x2; })_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)_tearDownSecondaryLabel;
 - (void)_updateFontForHintTextLabel:(id)arg1 withStyle:(long long)arg2;
