@@ -451,6 +451,7 @@
 + (int)maxEndTimeRespectingTrimmingForClip:(id)arg1 projectFrameRate:(int)arg2;
 + (bool)mirobackend_isCloudPhotosEnabled;
 + (id)newRangeFromRange:(id)arg1 excludingRange:(id)arg2;
++ (id)printDerivativeSizes;
 + (bool)range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 containsRange2:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 + (id)rangeConformingToVoiceRangesSurroundingTime:(int)arg1 forDuration:(int)arg2 inRanges:(id)arg3;
 + (id)rangeIn:(id)arg1 correspondingToRange:(id)arg2;
@@ -554,11 +555,6 @@
 - (void)setMiro_desirableRanges:(id)arg1;
 - (id)simplerSceneRangesRemovingLowQualityRanges;
 - (id)userSetSloMoRange;
-
-// Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
-
-- (void)fetchIrisForWatchToPath:(id)arg1 completion:(id /* block */)arg2;
-- (void)fetchJPEGForWatchWithCompletion:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 

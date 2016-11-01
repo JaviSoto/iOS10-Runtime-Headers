@@ -9,6 +9,7 @@
     bool  __interacting;
     double  __previousOffset;
     bool  __previousOffsetInvalid;
+    _UIFeedbackRetargetBehavior * __retargetBehavior;
     bool  _accumulateOffsetWhileSnapped;
     double  _attractionOffsetThreshold;
     double  _attractionVelocityThreshold;
@@ -24,6 +25,7 @@
 @property (getter=_isInteracting, setter=_setInteracting:, nonatomic) bool _interacting;
 @property (setter=_setPreviousOffset:, nonatomic) double _previousOffset;
 @property (getter=_isPreviousOffsetInvalid, setter=_setPreviousOffsetInvalid:, nonatomic) bool _previousOffsetInvalid;
+@property (setter=_setRetargetBehavior:, nonatomic, retain) _UIFeedbackRetargetBehavior *_retargetBehavior;
 @property (nonatomic) bool accumulateOffsetWhileSnapped;
 @property (nonatomic) double attractionOffsetThreshold;
 @property (nonatomic) double attractionVelocityThreshold;
@@ -41,6 +43,7 @@
 - (bool)_isPreviousOffsetInvalid;
 - (double)_previousOffset;
 - (void)_reset;
+- (id)_retargetBehavior;
 - (void)_setAccumulatedOffset:(double)arg1;
 - (void)_setBoolPointer:(inout bool*)arg1 toValue:(bool)arg2;
 - (void)_setHasEnteredAttractionThreshold:(bool)arg1;
@@ -48,6 +51,7 @@
 - (void)_setInteracting:(bool)arg1;
 - (void)_setPreviousOffset:(double)arg1;
 - (void)_setPreviousOffsetInvalid:(bool)arg1;
+- (void)_setRetargetBehavior:(id)arg1;
 - (bool)accumulateOffsetWhileSnapped;
 - (double)attractionOffsetThreshold;
 - (double)attractionVelocityThreshold;

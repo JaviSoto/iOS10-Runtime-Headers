@@ -53,6 +53,7 @@
 - (id)protectedContentSupportStorageURL;
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned long long)arg2 assetQuality:(unsigned long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setMediaItem:(id)arg1;
+- (bool)shouldRememberBookmarkTime;
 - (bool)shouldReportPlayEventsToStore;
 - (bool)showComposer;
 - (unsigned long long)storeAccountID;

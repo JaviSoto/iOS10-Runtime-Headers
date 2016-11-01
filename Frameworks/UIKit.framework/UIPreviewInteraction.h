@@ -10,7 +10,7 @@
     UITouch * _currentTouch;
     _UIDeepPressAnalyzer * _deepPressAnalyzer;
     <UIPreviewInteractionDelegate> * _delegate;
-    _UISystemSoundPlayer * _feedbackBehavior;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     bool  _feedbackBehaviorTurnedOn;
     _UITouchesObservingGestureRecognizer * _modalTouchObservingGestureRecognizer;
     struct { 
@@ -51,6 +51,8 @@
 - (void)_resumeInteraction;
 - (bool)_shouldCancelTransitionToState:(long long)arg1;
 - (id)_touchObservingGestureRecognizerForView:(id)arg1;
+- (void)_turnOffFeedbackBehavior;
+- (void)_turnOnFeedbackBehavior;
 - (void)_updateAnimatorsIfNeeded;
 - (void)_updateFailureRequirementGestureRecognizersIfNeeded;
 - (void)_updateFeedbackTowardNextState:(long long)arg1 progress:(double)arg2;

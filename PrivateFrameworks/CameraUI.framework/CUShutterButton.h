@@ -60,6 +60,7 @@
 - (void)_performModeSwitchAnimationFromMode:(long long)arg1 toMode:(long long)arg2 animated:(bool)arg3;
 - (id)_progressActivityIndicatorView;
 - (bool)_shouldShowContrastBorderForMode:(long long)arg1 layoutStyle:(long long)arg2;
+- (bool)_shouldShowSpinningAnimations;
 - (bool)_shouldUseImageViewForMode:(long long)arg1;
 - (bool)_shouldUseTimelapseOuterViewForMode:(long long)arg1;
 - (struct CGSize { double x1; double x2; })_sizeForMode:(long long)arg1;

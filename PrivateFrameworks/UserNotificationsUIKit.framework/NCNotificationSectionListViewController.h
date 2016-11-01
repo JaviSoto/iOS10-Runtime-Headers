@@ -30,8 +30,8 @@
 - (id)headerViewInForceTouchState;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (id)init;
-- (void)insertNotificationRequest:(id)arg1;
-- (void)modifyNotificationRequest:(id)arg1;
+- (bool)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
+- (bool)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (id)notificationRequestAtIndexPath:(id)arg1;
 - (void)notificationSectionList:(id)arg1 didInsertNotificationRequest:(id)arg2 atIndexPath:(id)arg3;
 - (void)notificationSectionList:(id)arg1 didInsertSectionAtIndex:(unsigned long long)arg2;
@@ -45,7 +45,7 @@
 - (bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(id)arg1;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)reloadRequestsWithSuppressedContent;
-- (void)removeNotificationRequest:(id)arg1;
+- (void)removeNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (void)sectionHeaderView:(id)arg1 didReceiveClearActionForSectionIdentifier:(id)arg2;
 - (void)sectionHeaderViewDidDismissForceTouchView:(id)arg1;
 - (void)sectionHeaderViewDidPresentForceTouchView:(id)arg1;

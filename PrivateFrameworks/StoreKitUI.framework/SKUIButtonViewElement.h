@@ -23,6 +23,7 @@
     bool  _showOnDemand;
     NSString * _sizeVariant;
     SKUIStoreIdentifier * _storeIdentifier;
+    bool  _suppressCloudRestore;
     NSString * _toggleItemIdentfier;
     NSString * _toggleItemIdentifier;
     bool  _toggled;
@@ -53,6 +54,7 @@
 @property (nonatomic, readonly) bool showOnDemand;
 @property (nonatomic, readonly) NSString *sizeVariant;
 @property (nonatomic, readonly) SKUIStoreIdentifier *storeIdentifier;
+@property (nonatomic, readonly) bool suppressCloudRestore;
 @property (nonatomic, readonly) NSString *toggleItemIdentifier;
 @property (getter=isToggled, nonatomic) bool toggled;
 @property (nonatomic, readonly) NSString *toggledText;
@@ -93,6 +95,7 @@
 - (bool)showOnDemand;
 - (id)sizeVariant;
 - (id)storeIdentifier;
+- (bool)suppressCloudRestore;
 - (id)toggleItemIdentifier;
 - (id)toggledText;
 - (id)variantIdentifier;

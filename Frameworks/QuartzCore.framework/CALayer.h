@@ -66,8 +66,6 @@
 @property bool hitTestsAsOpaque;
 @property bool invertsShadow;
 @property (setter=is_setBlurRadius:, nonatomic) double is_blurRadius;
-@property (nonatomic) struct CGPoint { double x1; double x2; } lastPosition;
-@property (nonatomic) double lastScale;
 @property bool literalContentsCenter;
 @property (copy) NSString *magnificationFilter;
 @property (retain) CALayer *mask;
@@ -84,7 +82,6 @@
 @property bool needsLayoutOnGeometryChange;
 @property float opacity;
 @property (getter=isOpaque) bool opaque;
-@property (nonatomic) double originalOpacity;
 @property struct CGPoint { double x1; double x2; } position;
 @property bool preloadsCache;
 @property bool rasterizationPrefersDisplayCompositing;

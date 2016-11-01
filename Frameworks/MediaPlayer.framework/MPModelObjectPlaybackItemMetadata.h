@@ -56,6 +56,7 @@
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned long long)arg2 assetQuality:(unsigned long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setModelObject:(id)arg1;
 - (void)setModelObjectDelegate:(id)arg1;
+- (bool)shouldRememberBookmarkTime;
 - (bool)shouldReportPlayEventsToStore;
 - (bool)showComposer;
 - (unsigned long long)storeAccountID;

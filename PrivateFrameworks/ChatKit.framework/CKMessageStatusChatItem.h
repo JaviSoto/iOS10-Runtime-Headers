@@ -34,6 +34,7 @@
 - (Class)cellClass;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (unsigned long long)count;
+- (id)effectsControlStatusTextForEffectStyleID:(id)arg1;
 - (long long)expireStatusType;
 - (bool)isButtonSizeLoaded;
 - (bool)isFromMe;

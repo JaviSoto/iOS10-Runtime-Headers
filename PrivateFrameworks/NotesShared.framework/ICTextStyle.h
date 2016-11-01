@@ -15,6 +15,7 @@
 
 + (bool)autoListInsertionEnabled;
 + (id)defaultTextStyles;
++ (id)icaxStyleDescriptionForNamedStyle:(unsigned int)arg1;
 + (unsigned int)noteDefaultNamedStyle;
 + (void)setAutoListInsertionEnabled:(bool)arg1;
 + (void)setNoteDefaultNamedStyle:(unsigned int)arg1;

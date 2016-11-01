@@ -4,6 +4,7 @@
 
 @interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton, PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
     CLInUseAssertion * _CLInUse;
+    _UIFeedbackEventBehavior * _cardAddedBehavior;
     PKPaymentSetupCardDetailsFooterView * _cardDetailsFooterView;
     bool  _hideSetupLaterButton;
     PKPaymentProvisioningController * _paymentProvisioningController;

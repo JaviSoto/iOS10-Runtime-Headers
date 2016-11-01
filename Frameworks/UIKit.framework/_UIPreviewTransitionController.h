@@ -4,7 +4,7 @@
 
 @interface _UIPreviewTransitionController : UIPercentDrivenInteractiveTransition <UIForceInteractionController, UIInteractionProgressObserver, UIViewControllerAnimatedTransitioning> {
     NSMutableDictionary * _animationsByPresentationPhase;
-    _UISystemSoundPlayer * _feedbackBehavior;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     UIInteractionProgress * _interactionProgress;
     unsigned long long  _targetPresentationPhase;
     <UIViewControllerContextTransitioning> * _transitionContext;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) double completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgress;
 @property (readonly) Class superclass;

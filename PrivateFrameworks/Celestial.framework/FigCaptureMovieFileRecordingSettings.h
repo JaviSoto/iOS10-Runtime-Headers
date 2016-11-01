@@ -4,6 +4,7 @@
 
 @interface FigCaptureMovieFileRecordingSettings : FigCaptureRecordingSettings {
     NSDictionary * _audioSettings;
+    int  _bravoCameraSelectionBehavior;
     bool  _irisRecording;
     struct { 
         long long value; 
@@ -20,6 +21,7 @@
 }
 
 @property (nonatomic, copy) NSDictionary *audioSettings;
+@property (nonatomic) int bravoCameraSelectionBehavior;
 @property (getter=isIrisRecording, nonatomic) bool irisRecording;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property (nonatomic, copy) NSArray *movieLevelMetadata;
@@ -32,6 +34,7 @@
 + (bool)supportsSecureCoding;
 
 - (id)audioSettings;
+- (int)bravoCameraSelectionBehavior;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -44,6 +47,7 @@
 - (bool)recordVideoOrientationAndMirroringChanges;
 - (bool)sendPreviewIOSurface;
 - (void)setAudioSettings:(id)arg1;
+- (void)setBravoCameraSelectionBehavior:(int)arg1;
 - (void)setIrisRecording:(bool)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieLevelMetadata:(id)arg1;

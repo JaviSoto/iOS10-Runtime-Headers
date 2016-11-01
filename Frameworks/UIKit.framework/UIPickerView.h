@@ -34,7 +34,7 @@
         unsigned int skipsBackground : 1; 
         unsigned int isInLayoutSubviews : 1; 
     }  _pickerViewFlags;
-    _UISystemSoundPlayer * _retargetBehavior;
+    _UIFeedbackRetargetBehavior * _retargetBehavior;
     NSMutableArray * _selectionBars;
     NSMutableArray * _tables;
     UIColor * _textColor;
@@ -55,7 +55,7 @@
 @property (getter=_highlightColor, setter=_setHighlightColor:, nonatomic, retain) UIColor *highlightColor;
 @property (getter=_magnifierLineColor, setter=_setMagnifierLineColor:, nonatomic, retain) UIColor *magnifierLineColor;
 @property (nonatomic, readonly) long long numberOfComponents;
-@property (getter=_retargetBehavior, setter=_setRetargetBehavior:, nonatomic, retain) _UISystemSoundPlayer *retargetBehavior;
+@property (getter=_retargetBehavior, setter=_setRetargetBehavior:, nonatomic, retain) _UIFeedbackRetargetBehavior *retargetBehavior;
 @property (nonatomic) bool showsSelectionIndicator;
 @property (readonly) Class superclass;
 @property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *textColor;

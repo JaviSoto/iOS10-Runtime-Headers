@@ -3,11 +3,13 @@
  */
 
 @interface PKAuthenticator : NSObject {
+    bool  _acquiringHintSupressionAssertion;
     unsigned long long  _authenticationIdentifier;
     PKAuthenticatorEvaluationContext * _context;
     NSObject<OS_dispatch_queue> * _contextMutationQueue;
     <PKAuthenticatorDelegate> * _delegate;
     double  _fingerPresentTimeout;
+    <BSInvalidatable> * _hintSupressionAssertion;
 }
 
 @property (nonatomic, readonly) unsigned long long authenticationIdentifier;
@@ -32,6 +34,7 @@
 - (bool)_delegateSupportsPasscodePresentation;
 - (bool)_delegateSupportsPassphrasePresentation;
 - (id)_swapContext:(id)arg1;
+- (void)accessExternalizedContextWithCompletion:(id /* block */)arg1;
 - (unsigned long long)authenticationIdentifier;
 - (void)cancelEvaluation;
 - (void)dealloc;

@@ -125,7 +125,9 @@
 - (bool)unregisterApplication:(id)arg1;
 - (bool)unregisterPlugin:(id)arg1;
 - (id)unrestrictedApplications;
+- (bool)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 error:(id*)arg4;
 - (bool)updateSINFWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
+- (bool)updateiTunesMetadataWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 

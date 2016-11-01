@@ -36,14 +36,15 @@
 + (id)valueOfControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 
 - (void).cxx_destruct;
-- (unsigned long long)_addMatchesForControl:(id)arg1 startingAtIndex:(unsigned long long)arg2 formMetadata:(id)arg3 fromExistingMatches:(id)arg4 fromAllMatchesIfNecessary:(id)arg5 addToFoundMatches:(id)arg6 addToAutoFillValues:(id)arg7 multiRoundAutoFillManager:(id)arg8 propertyToIdentifierMapForFoundMatches:(id)arg9 shouldUseEachExistingMatchOnce:(bool)arg10;
+- (unsigned long long)_addMatchesForControl:(id)arg1 startingAtIndex:(unsigned long long)arg2 formMetadata:(id)arg3 fromExistingMatches:(id)arg4 fromAllMatchesIfNecessary:(id)arg5 addToFoundMatches:(id)arg6 addToAutoFillValues:(id)arg7 multiRoundAutoFillManager:(id)arg8 propertyToIdentifierMapForFoundMatches:(id)arg9 shouldUseExistingMatchesToFillFocusedField:(bool)arg10;
 - (void)_fillPhoneNumber:(id)arg1 intoValues:(id)arg2 controls:(id)arg3 formTextSample:(id)arg4 multiRoundAutoFillManager:(id)arg5;
 - (id)_lastUsedUsernameForDomain:(id)arg1 protectionSpace:(id*)arg2;
 - (bool)_matchHasPreferredIdentifierOrShouldBeFilledInMultiRoundAutoFill:(id)arg1 specifier:(id)arg2 multiRoundAutoFillManager:(id)arg3 contact:(id)arg4;
 - (id)_phoneNumberCandidates:(id)arg1 fillingMultipleFields:(bool)arg2;
 - (void)_setLastUsedUsername:(id)arg1 andProtectionSpace:(id)arg2 forDomain:(id)arg3;
 - (id)_singleFieldPhoneNumberCandidates:(id)arg1;
-- (id)_valuesForStandardForm:(id)arg1 inDomain:(id)arg2 usingOnlyAddressBookData:(bool)arg3 matches:(id*)arg4 preferredLabel:(id)arg5 multiRoundAutoFillManager:(id)arg6 wantAllMatches:(bool)arg7 contact:(id)arg8 shouldRemoveCompanyFromAutoFillMatchesIfHomeAddressFound:(bool)arg9 existingMatches:(id)arg10 shouldUseEachExistingMatchOnce:(bool)arg11 allowingIdentifiedAddressBookLabelToOverridePreferredIdentifier:(bool)arg12;
+- (id)_valuesForStandardForm:(id)arg1 inDomain:(id)arg2 usingOnlyAddressBookData:(bool)arg3 matches:(id*)arg4 preferredLabel:(id)arg5 multiRoundAutoFillManager:(id)arg6 wantAllMatches:(bool)arg7 contact:(id)arg8 shouldRemoveCompanyFromAutoFillMatchesIfHomeAddressFound:(bool)arg9 existingMatches:(id)arg10 shouldUseExistingMatchesToFillFocusedField:(bool)arg11 allowingIdentifiedAddressBookLabelToOverridePreferredIdentifier:(bool)arg12;
+- (id)activeElementMetadataInForm:(id)arg1;
 - (id)activeOrFirstAutoFillableFormFromProvider:(id)arg1 frame:(struct OpaqueFormAutoFillFrame {}**)arg2 forPrefillingCredentials:(bool)arg3;
 - (void)addABMatchesForValueSpecifier:(id)arg1 matchingPartialString:(id)arg2 toArray:(id)arg3 preferredLabel:(id)arg4 contact:(id)arg5 allowingIdentifiedAddressBookLabelToOverridePreferredIdentifier:(bool)arg6;
 - (void)addAllAddressDataIfNecessary:(id)arg1 contactLabel:(id)arg2;
@@ -106,7 +107,7 @@
 - (id)valuesForContactFormWithMetadata:(id)arg1 inDomain:(id)arg2 matches:(id*)arg3 multiRoundAutoFillManager:(id)arg4;
 - (id)valuesForContactFormWithMetadata:(id)arg1 inDomain:(id)arg2 matches:(id*)arg3 multiRoundAutoFillManager:(id)arg4 contact:(id)arg5;
 - (id)valuesForContactFormWithMetadata:(id)arg1 matches:(id*)arg2 multiRoundAutoFillManager:(id)arg3 existingMatches:(id)arg4 contact:(id)arg5;
-- (id)valuesForContactFormWithMetadata:(id)arg1 matches:(id*)arg2 multiRoundAutoFillManager:(id)arg3 existingMatches:(id)arg4 shouldUseEachExistingMatchOnce:(bool)arg5 contact:(id)arg6;
+- (id)valuesForContactFormWithMetadata:(id)arg1 matches:(id*)arg2 multiRoundAutoFillManager:(id)arg3 existingMatches:(id)arg4 shouldUseExistingMatchesToFillFocusedField:(bool)arg5 contact:(id)arg6;
 - (id)valuesForCreditCardForm:(id)arg1 fromCreditCardData:(id)arg2;
 - (id)valuesForLoginOrChangePasswordForm:(id)arg1 atURL:(id)arg2;
 - (id)valuesForLoginOrChangePasswordForm:(id)arg1 atURL:(id)arg2 potentialMatches:(id*)arg3;

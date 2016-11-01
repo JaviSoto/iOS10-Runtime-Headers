@@ -3,13 +3,13 @@
  */
 
 @interface _UIPreviewTransitionDelegate : NSObject <UIForceTransitioningDelegate> {
-    _UISystemSoundPlayer * _feedbackBehavior;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     UIInteractionProgress * interactionProgressForPresentation;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForPresentation;
 @property (readonly) Class superclass;

@@ -22,6 +22,7 @@
 @property (getter=isBatteryMonitoringEnabled, nonatomic) bool batteryMonitoringEnabled;
 @property (nonatomic, readonly) long long batteryState;
 @property (nonatomic, readonly, retain) NSString *buildVersion;
+@property (getter=_feedbackSupportLevel, nonatomic, readonly) long long feedbackSupportLevel;
 @property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) bool generatesDeviceOrientationNotifications;
 @property (nonatomic, readonly) NSUUID *identifierForVendor;
 @property (nonatomic, readonly) NSString *localizedModel;
@@ -49,6 +50,7 @@
 - (void)_clearGraphicsQualityOverride;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)_enableDeviceOrientationEvents:(bool)arg1;
+- (long long)_feedbackSupportLevel;
 - (long long)_graphicsQuality;
 - (bool)_hasGraphicsQualityOverride;
 - (bool)_hasTouchPad;

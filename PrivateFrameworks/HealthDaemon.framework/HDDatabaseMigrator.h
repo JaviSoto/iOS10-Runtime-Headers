@@ -52,6 +52,10 @@
 - (long long)_clearMenstrualFlowAndSexualActivitySamples:(id*)arg1;
 - (long long)_clearSamplesWithoutSourcesWithError:(id*)arg1;
 - (long long)_clearSourceOrderingWithError:(id*)arg1;
+- (long long)_corry_fixHFDProtectionClassWithError:(id*)arg1;
+- (long long)_corry_rewriteHFDStep1WithError:(id*)arg1;
+- (long long)_corry_rewriteHFDStep2WithError:(id*)arg1;
+- (id)_corry_temporaryHFDURL;
 - (long long)_createAchievementsAndActivityCachesTablesWithError:(id*)arg1;
 - (long long)_createActivityCachesTableWithError:(id*)arg1;
 - (long long)_createCorrelationsObjectIdIndexWithError:(id*)arg1;
@@ -101,6 +105,7 @@
 - (long long)_removeAchievementsAndActivityCachesFromUnprotectedDatabaseWithError:(id*)arg1;
 - (long long)_removeActivitySharingDataWithError:(id*)arg1;
 - (long long)_removeOrphanedDeletedObjectsWithError:(id*)arg1;
+- (long long)_removeOrphanedLocationSeriesWithError:(id*)arg1;
 - (long long)_removeStandHourWriteAuthorizationWithError:(id*)arg1;
 - (long long)_renameCDATableWithError:(id*)arg1;
 - (long long)_renameKeyValueSyncStoreColumnInProtectedDabase:(bool)arg1 error:(id*)arg2;
@@ -116,6 +121,10 @@
 - (long long)_updateKeyValueEntityUniquenessWithProtectedDatabase:(bool)arg1 error:(id*)arg2;
 - (id)boulderProtectedMigrationSteps;
 - (id)boulderUnprotectedMigrationSteps;
+- (id)butlerProtectedMigrationSteps;
+- (id)butlerUnprotectedMigrationSteps;
+- (id)corryProtectedMigrationSteps;
+- (id)corryUnprotectedMigrationSteps;
 - (id)database;
 - (id)eagleProtectedMigrationSteps;
 - (id)eagleUnprotectedMigrationSteps;

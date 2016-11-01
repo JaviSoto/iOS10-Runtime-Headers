@@ -6,6 +6,7 @@
     NSMutableData * _associatedObjectUUIDData;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <_HKActiveWorkoutDelegate> * _delegate;
+    HKQuantity * _lapLength;
     NSDate * _lastObservedDate;
     <_HKActiveWorkoutLifecycleDelegate> * _lifecycleDelegate;
     _HKLocationSeriesStore * _locationStore;
@@ -15,6 +16,7 @@
     <NSXPCProxyCreating> * _serverProxy;
     long long  _serverState;
     bool  _shouldUseDeviceData;
+    long long  _swimmingLocation;
     long long  _workoutState;
 }
 
@@ -23,12 +25,14 @@
 @property <_HKActiveWorkoutDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HKQuantity *lapLength;
 @property (getter=_lifecycleDelegate, setter=_setLifecycleDelegate:) <_HKActiveWorkoutLifecycleDelegate> *lifecycleDelegate;
 @property (readonly) NSDictionary *resumeDataByType;
 @property (getter=_resumeDelegate, setter=_setResumeDelegate:, nonatomic) <_HKActiveWorkoutResumeDelegate> *resumeDelegate;
 @property (readonly) long long serverState;
 @property (getter=_shouldUseDeviceData, readonly) bool shouldUseDeviceData;
 @property (readonly) Class superclass;
+@property (nonatomic) long long swimmingLocation;
 @property (readonly) long long workoutState;
 
 + (id)_clientInterface;
@@ -55,12 +59,14 @@
 - (id)_propertyQueue_addAssociatedObjectUUIDs:(id)arg1;
 - (void)_propertyQueue_addBasalEnergyBurned:(id)arg1;
 - (void)_propertyQueue_addDistance:(id)arg1;
+- (void)_propertyQueue_addSwimmingStrokeCount:(id)arg1;
 - (void)_propertyQueue_alertDelegateDidEncounterError:(id)arg1;
 - (void)_propertyQueue_alertDelegateDidReceiveWorkoutEvent:(id)arg1;
 - (void)_propertyQueue_alertDelegateDidUpdateState:(long long)arg1 date:(id)arg2;
 - (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalActiveEnergyBurned;
 - (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalBasalEnergyBurned;
 - (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalDistance;
+- (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalSwimmingStrokeCount;
 - (void)_propertyQueue_deactivate;
 - (id)_propertyQueue_endDate;
 - (bool)_propertyQueue_serverAttached;
@@ -76,6 +82,7 @@
 - (void)_restoreResumeData:(id)arg1;
 - (void)_restoreSampleUUIDs:(id)arg1;
 - (void)_restoreState:(long long)arg1;
+- (void)_restoreSwimmingStrokeCount:(id)arg1;
 - (id)_resumeDataByQuantityType;
 - (id)_resumeDelegate;
 - (bool)_serverAttached;
@@ -104,6 +111,7 @@
 - (void)endWorkoutWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)endWorkoutWithDate:(id)arg1 metadata:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithCoder:(id)arg1;
+- (id)lapLength;
 - (id)locationSeriesSamples;
 - (id)metadata;
 - (void)pauseWorkoutWithDate:(id)arg1 userInitiated:(bool)arg2 completion:(id /* block */)arg3;
@@ -111,6 +119,9 @@
 - (void)resumeWorkoutFromDate:(id)arg1 userInitiated:(bool)arg2 completion:(id /* block */)arg3;
 - (long long)serverState;
 - (void)setDelegate:(id)arg1;
+- (void)setLapLength:(id)arg1;
+- (void)setSwimmingLocation:(long long)arg1;
+- (long long)swimmingLocation;
 - (id)totalDistance;
 - (id)totalEnergyBurned;
 - (long long)workoutState;

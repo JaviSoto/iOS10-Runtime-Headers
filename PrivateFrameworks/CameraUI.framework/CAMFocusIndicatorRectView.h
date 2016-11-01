@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMFocusIndicatorRectView : UIImageView {
-    long long  _size;
+@interface CAMFocusIndicatorRectView : UIView {
+    UIImageView * __imageView;
+    long long  _style;
 }
 
-@property (getter=isPulsing, nonatomic, readonly) bool pulsing;
-@property (nonatomic, readonly) long long size;
+@property (nonatomic, readonly) UIImageView *_imageView;
+@property (getter=isInactive, nonatomic) bool inactive;
+@property (getter=isPulsing, nonatomic) bool pulsing;
+@property (nonatomic, readonly) long long style;
 
-- (void)_commonCAMFocusIndicatorRectViewInitialization;
-- (id)_crosshairImageForSize:(long long)arg1;
-- (void)_generateImagePairFromCurrentTintColor;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithImage:(id)arg1;
-- (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
-- (id)initWithSize:(long long)arg1;
+- (void).cxx_destruct;
+- (id)_imageView;
+- (id)initWithStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isInactive;
 - (bool)isPulsing;
-- (long long)size;
-- (void)startPulsing;
-- (void)stopPulsing;
-- (void)tintColorDidChange;
+- (void)layoutSubviews;
+- (void)setInactive:(bool)arg1;
+- (void)setPulsing:(bool)arg1;
+- (long long)style;
 
 @end

@@ -50,7 +50,6 @@
 @property (nonatomic, readonly) PKImage *frontFaceImage;
 @property (nonatomic, readonly) NSArray *frontFieldBuckets;
 @property (nonatomic, copy) NSString *groupingID;
-@property (readonly) bool hasLogoImageSet;
 @property (nonatomic) bool hasStoredValue;
 @property (setter=setiAdReportingIdentifier:, nonatomic, copy) NSString *iAdReportingIdentifier;
 @property (nonatomic, readonly, copy) UIImage *icon;
@@ -66,12 +65,8 @@
 @property (nonatomic, retain) NSDate *modifiedDate;
 @property (setter=setNFCPayload:, nonatomic, copy) PKNFCPayload *nfcPayload;
 @property (getter=isNFCPayloadEncrypted, nonatomic, readonly) bool nfcPayloadEncrypted;
+@property (readonly) NSString *notificationCenterTitle;
 @property (nonatomic, readonly) PKImage *notificationIconImage;
-@property (readonly) NSData *npkCompleteHash;
-@property (readonly) bool npkExpired;
-@property (readonly) bool npkHasBarcode;
-@property (readonly) bool npkSupportsHidingBarcode;
-@property (readonly) PKBarcode *npkWatchBarcode;
 @property (nonatomic, copy) NSString *organizationName;
 @property (nonatomic, readonly) PKImage *partialFrontFaceImage;
 @property (nonatomic, readonly) PKImage *partialFrontFaceImagePlaceholder;
@@ -164,6 +159,7 @@
 - (id)lowercaseLocalizedName;
 - (id)modifiedDate;
 - (id)nfcPayload;
+- (id)notificationCenterTitle;
 - (id)notificationIconImage;
 - (id)organizationName;
 - (id)partialFrontFaceImage;
@@ -222,17 +218,6 @@
 - (long long)transitType;
 - (id)userInfo;
 - (id)webLocationsURL;
-
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (bool)hasLogoImageSet;
-- (id)npkArchiveData;
-- (id)npkCompleteHash;
-- (id)npkCompleteHashForWatchOSVersion:(unsigned long long)arg1;
-- (bool)npkExpired;
-- (bool)npkHasBarcode;
-- (bool)npkSupportsHidingBarcode;
-- (id)npkWatchBarcode;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 

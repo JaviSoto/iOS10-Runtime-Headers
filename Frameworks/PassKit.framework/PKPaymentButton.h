@@ -14,7 +14,6 @@
     bool  _highlighted;
     CAShapeLayer * _layer;
     PKShapeView * _maskView;
-    PKPDFView * _pdfView;
     long long  _style;
     long long  _type;
 }
@@ -24,10 +23,8 @@
 
 - (void).cxx_destruct;
 - (void)_createHighlightFilterIfNecessary;
-- (double)_labelHeightForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_sharedInit;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (void)dealloc;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

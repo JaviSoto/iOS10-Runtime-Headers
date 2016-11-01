@@ -17,6 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (getter=_impactFeedbackBehavior, setter=_setImpactFeedbackBehavior:, nonatomic, retain) _UIFeedbackImpactBehavior *impactFeedbackBehavior;
 @property (nonatomic, retain) UIImage *offImage;
 @property (getter=isOn, nonatomic) bool on;
 @property (nonatomic, retain) UIImage *onImage;
@@ -36,12 +37,14 @@
 - (bool)_contentHuggingDefault_isUsuallyFixedWidth;
 - (unsigned long long)_controlEventsForActionTriggered;
 - (void)_encodeFrameWithCoder:(id)arg1;
+- (id)_impactFeedbackBehavior;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_refreshVisualElement;
 - (void)_refreshVisualElementForTraitCollection:(id)arg1;
 - (void)_refreshVisualElementForTraitCollection:(id)arg1 populatingAPIProperties:(bool)arg2;
 - (void)_setAlwaysShowsOnOffLabel:(bool)arg1;
+- (void)_setImpactFeedbackBehavior:(id)arg1;
 - (bool)_shouldAlterCodedFrame;
 - (bool)_shouldShowOnOffLabels;
 - (void)_showingOnOffLabelChanged;

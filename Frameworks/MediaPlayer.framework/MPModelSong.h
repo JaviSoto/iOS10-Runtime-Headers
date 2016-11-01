@@ -31,6 +31,7 @@
     MPModelLyrics * _lyrics;
     long long  _playbackEndpointType;
     NSString * _protectedContentSupportStorageFilePath;
+    bool  _shouldRememberBookmarkTime;
     bool  _shouldReportPlayEventsToStore;
     bool  _shouldShowComposer;
     unsigned long long  _storeAccountIdentifier;
@@ -69,6 +70,7 @@
 @property (nonatomic, retain) MPModelLyrics *lyrics;
 @property (nonatomic) long long playbackEndpointType;
 @property (nonatomic, copy) NSString *protectedContentSupportStorageFilePath;
+@property (nonatomic) bool shouldRememberBookmarkTime;
 @property (nonatomic) bool shouldReportPlayEventsToStore;
 @property (nonatomic) bool shouldShowComposer;
 @property (nonatomic) unsigned long long storeAccountIdentifier;
@@ -102,6 +104,7 @@
 + (id)__MPModelPropertySongLocalNetworkFileURL__PROPERTY;
 + (id)__MPModelPropertySongPlaybackEndpointType__PROPERTY;
 + (id)__MPModelPropertySongProtectedContentSupportStorageFilePath__PROPERTY;
++ (id)__MPModelPropertySongShouldRememberBookmarkTime__PROPERTY;
 + (id)__MPModelPropertySongShouldReportPlayEventsToStore__PROPERTY;
 + (id)__MPModelPropertySongShouldShowComposer__PROPERTY;
 + (id)__MPModelPropertySongStoreAccountIdentifier__PROPERTY;
@@ -144,6 +147,7 @@
 + (id)__lyrics__KEY;
 + (id)__playbackEndpointType__KEY;
 + (id)__protectedContentSupportStorageFilePath__KEY;
++ (id)__shouldRememberBookmarkTime__KEY;
 + (id)__shouldReportPlayEventsToStore__KEY;
 + (id)__shouldShowComposer__KEY;
 + (id)__storeAccountIdentifier__KEY;
@@ -227,6 +231,7 @@
 - (void)setLyrics:(id)arg1;
 - (void)setPlaybackEndpointType:(long long)arg1;
 - (void)setProtectedContentSupportStorageFilePath:(id)arg1;
+- (void)setShouldRememberBookmarkTime:(bool)arg1;
 - (void)setShouldReportPlayEventsToStore:(bool)arg1;
 - (void)setShouldShowComposer:(bool)arg1;
 - (void)setStoreAccountIdentifier:(unsigned long long)arg1;
@@ -235,6 +240,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setTrackNumber:(long long)arg1;
 - (void)setVolumeNormalization:(float)arg1;
+- (bool)shouldRememberBookmarkTime;
 - (bool)shouldReportPlayEventsToStore;
 - (bool)shouldShowComposer;
 - (unsigned long long)storeAccountIdentifier;

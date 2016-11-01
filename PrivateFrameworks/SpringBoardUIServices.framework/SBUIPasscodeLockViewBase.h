@@ -4,7 +4,7 @@
 
 @interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIBiometricResourceObserver, SBUIPasscodeLockView, SBUIPasscodeLockView_Internal> {
     bool  _allowsStatusTextUpdatingOnResignFirstResponder;
-    _UISystemSoundPlayer * _authenticationFeedbackBehavior;
+    _UIFeedbackEventBehavior * _authenticationFeedbackBehavior;
     double  _backgroundAlpha;
     <SBFLegibilitySettingsProvider> * _backgroundLegibilitySettingsProvider;
     bool  _becameVisible;
@@ -20,7 +20,7 @@
     bool  _deviceHasBeenUnlockedOnceSinceBoot;
     SBUIPasscodeEntryField * _entryField;
     bool  _isBiometricAuthenticationAllowed;
-    _UISystemSoundPlayer * _keyboardFeedbackBehavior;
+    _UIFeedbackKeyboardBehavior * _keyboardFeedbackBehavior;
     _UILegibilitySettings * _legibilitySettings;
     double  _luminanceBoost;
     bool  _mesaLockedOut;
@@ -39,7 +39,7 @@
 }
 
 @property (getter=_entryField, setter=_setEntryField:, nonatomic, retain) SBUIPasscodeEntryField *_entryField;
-@property (nonatomic, retain) _UISystemSoundPlayer *authenticationFeedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackEventBehavior *authenticationFeedbackBehavior;
 @property (nonatomic) double backgroundAlpha;
 @property (nonatomic, retain) <SBFLegibilitySettingsProvider> *backgroundLegibilitySettingsProvider;
 @property (getter=isBiometricAuthenticationAllowed, nonatomic) bool biometricAuthenticationAllowed;
@@ -50,7 +50,7 @@
 @property (nonatomic) <SBUIPasscodeLockViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) _UISystemSoundPlayer *keyboardFeedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackKeyboardBehavior *keyboardFeedbackBehavior;
 @property (getter=_luminosityBoost, setter=_setLuminosityBoost:, nonatomic) double luminosityBoost;
 @property (nonatomic, readonly) NSString *passcode;
 @property (nonatomic) bool playsKeypadSounds;

@@ -28,6 +28,7 @@
 - (void)setPlayKeyboardSound:(id)arg1 specifier:(id)arg2;
 - (void)setPlayLockSound:(id)arg1 specifier:(id)arg2;
 - (void)setSoundEffects:(id)arg1 specifier:(id)arg2;
+- (void)setSystemHapticsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setVibrate:(id)arg1 specifier:(id)arg2;
 - (void)setVolume:(id)arg1 specifier:(id)arg2;
 - (void)setVolumeAfterRateLimiting;
@@ -36,6 +37,7 @@
 - (void)showController:(id)arg1 animate:(bool)arg2;
 - (id)soundEffects:(id)arg1;
 - (id)specifiers;
+- (id)systemHapticsEnabled:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)updateVoiceMailVisibility;

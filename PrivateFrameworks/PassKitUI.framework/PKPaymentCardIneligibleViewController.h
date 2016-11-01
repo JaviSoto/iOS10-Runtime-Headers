@@ -4,6 +4,7 @@
 
 @interface PKPaymentCardIneligibleViewController : UIViewController <UIWebViewDelegate> {
     long long  _context;
+    id /* block */  _continueActionHandler;
     id /* block */  _learnMorePresentationHandler;
     NSURL * _learnMoreURL;
     id /* block */  _preflightCompletion;
@@ -14,6 +15,7 @@
 }
 
 @property (nonatomic) long long context;
+@property (nonatomic, copy) id /* block */ continueActionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -28,6 +30,7 @@
 - (id)_alertWithReason:(long long)arg1 learnMoreURL:(id)arg2 isPreloaded:(bool)arg3;
 - (void)_webViewDidLoad:(bool)arg1 withError:(id)arg2;
 - (long long)context;
+- (id /* block */)continueActionHandler;
 - (void)dealloc;
 - (void)handleDone:(id)arg1;
 - (id)initWithReason:(long long)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
@@ -37,6 +40,7 @@
 - (bool)preloadLearnMoreWebView;
 - (long long)reason;
 - (void)setContext:(long long)arg1;
+- (void)setContinueActionHandler:(id /* block */)arg1;
 - (void)setLearnMorePresentationHandler:(id /* block */)arg1;
 - (void)setLearnMoreURL:(id)arg1;
 - (void)setPreloadLearnMoreWebView:(bool)arg1;

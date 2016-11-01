@@ -39,6 +39,7 @@
     UIInputSwitcherSelectionExtraView * m_selExtraView;
     UIInputSwitcherShadowView * m_shadowView;
     bool  m_shouldFade;
+    _UIFeedbackRetargetBehavior * m_slideBehavior;
     bool  m_startAutoscroll;
     UIInputSwitcherTableView * m_table;
     double  m_timeDismissed;

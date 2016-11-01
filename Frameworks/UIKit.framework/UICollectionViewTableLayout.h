@@ -57,6 +57,7 @@
     }  _separatorInset;
     long long  _separatorStyle;
     bool  _showingIndex;
+    _UIFeedbackStatesBehavior * _swipeActionFeedbackBehavior;
     UIPanGestureRecognizer * _swipeActionPanRecognizer;
     UIGobblerGestureRecognizer * _swipeActionsGobblerGestureRecognizer;
     UICollectionViewTableCell * _swipeToDeleteCell;
@@ -138,6 +139,7 @@
 @property (getter=_sidePadding, nonatomic, readonly) double sidePadding;
 @property (getter=_style, nonatomic, readonly) long long style;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *swipeActionFeedbackBehavior;
 @property (nonatomic, retain) UIPanGestureRecognizer *swipeActionPanRecognizer;
 @property (getter=_swipeToDeleteCell, setter=_setSwipeToDeleteCell:, nonatomic, retain) UICollectionViewTableCell *swipeToDeleteCell;
 @property (nonatomic, retain) NSIndexPath *swipedIndexPath;
@@ -330,9 +332,11 @@
 - (void)setSeparatorEffect:(id)arg1;
 - (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSeparatorStyle:(long long)arg1;
+- (void)setSwipeActionFeedbackBehavior:(id)arg1;
 - (void)setSwipeActionPanRecognizer:(id)arg1;
 - (void)setSwipedIndexPath:(id)arg1;
 - (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)swipeActionFeedbackBehavior;
 - (id)swipeActionPanRecognizer;
 - (void)swipeActionPullView:(id)arg1 tappedAction:(id)arg2 view:(id)arg3;
 - (void)swipeRecognizerDidRecognize:(id)arg1;

@@ -9,12 +9,14 @@
 }
 
 @property (getter=isActive, nonatomic, readonly) bool active;
+@property (nonatomic, readonly) long long behaviorType;
 @property (nonatomic) <ISBehaviorDelegate> *delegate;
 @property (nonatomic, readonly) ISPlayerState *initialLayoutInfo;
 
 - (void).cxx_destruct;
 - (void)activeDidChange;
 - (void)becomeActive;
+- (long long)behaviorType;
 - (id)delegate;
 - (id)initWithInitialLayoutInfo:(id)arg1;
 - (id)initialLayoutInfo;

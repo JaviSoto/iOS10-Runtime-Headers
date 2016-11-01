@@ -8,6 +8,7 @@
     double  _maxAspectRatio;
     double  _minAspectRatio;
     double  _outputBorderTrim;
+    double  _outputCornerRadius;
     bool  _outputMirrored;
     double  _outputScale;
     bool  _respectAspectRatioRange;
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic) double outputBorderTrim;
+@property (nonatomic) double outputCornerRadius;
 @property (nonatomic) bool outputMirrored;
 @property (nonatomic) double outputScale;
 
@@ -37,10 +39,12 @@
 - (bool)getPixelCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 pixelOutputSize:(struct CGSize { double x1; double x2; }*)arg2 forImage:(id)arg3;
 - (id)init;
 - (double)outputBorderTrim;
+- (double)outputCornerRadius;
 - (bool)outputMirrored;
 - (double)outputScale;
 - (id)resizedImage:(id)arg1;
 - (void)setOutputBorderTrim:(double)arg1;
+- (void)setOutputCornerRadius:(double)arg1;
 - (void)setOutputMirrored:(bool)arg1;
 - (void)setOutputScale:(double)arg1;
 

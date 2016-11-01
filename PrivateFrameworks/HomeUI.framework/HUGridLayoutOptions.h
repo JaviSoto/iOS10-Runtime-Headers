@@ -114,7 +114,6 @@
 - (long long)numberOfColumns;
 - (id)overrideNumberOfColumns;
 - (id)overrideViewSizeSubclass;
-- (double)pointWidthForCameraCell;
 - (double)pointWidthForFullWidthCell;
 - (double)pointWidthForNumberOfColumns:(long long)arg1;
 - (double)rowSpacing;

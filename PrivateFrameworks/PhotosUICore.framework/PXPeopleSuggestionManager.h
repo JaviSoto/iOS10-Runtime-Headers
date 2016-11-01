@@ -10,11 +10,12 @@
     NSMutableArray * _confirmedSuggestions;
     <PXPeopleSuggestionManagerDataSource> * _dataSource;
     <PXPeopleSuggestionManagerDelegate> * _delegate;
-    <PXFaceCollection> * _faceCollection;
     bool  _mute;
+    <PXPerson> * _person;
     NSMutableArray * _rejectedSuggestions;
     NSMutableArray * _skippedSuggestions;
     NSIndexPath * _suggestionIndexPath;
+    long long  _suggestionToken;
     unsigned long long  _userConfirmationsCount;
 }
 
@@ -24,18 +25,23 @@
 @property (nonatomic) unsigned int confirmNoSoundID;
 @property (nonatomic) unsigned int confirmYesSoundID;
 @property (nonatomic, retain) NSMutableArray *confirmedSuggestions;
-@property (readonly) <PXFaceCollection> *currentSuggestion;
+@property (readonly) <PXPerson> *currentSuggestion;
 @property (nonatomic, retain) <PXPeopleSuggestionManagerDataSource> *dataSource;
 @property <PXPeopleSuggestionManagerDelegate> *delegate;
-@property (nonatomic, retain) <PXFaceCollection> *faceCollection;
 @property bool mute;
+@property (nonatomic, retain) <PXPerson> *person;
 @property (nonatomic, retain) NSMutableArray *rejectedSuggestions;
 @property (nonatomic, retain) NSMutableArray *skippedSuggestions;
 @property (retain) NSIndexPath *suggestionIndexPath;
+@property (nonatomic) long long suggestionToken;
 @property (nonatomic) unsigned long long userConfirmationsCount;
 
 - (void).cxx_destruct;
-- (bool)_loadMoreSuggestions;
+- (void)_cancelCurrentSuggestion;
+- (bool)_fetchingSuggestions;
+- (void)_loadMoreSuggestionsWithCompletion:(id /* block */)arg1;
+- (id)_nonSkippedSuggestionsForSuggestions:(id)arg1;
+- (void)_notifyDelegateWeHaveMoreSuggestions:(bool)arg1;
 - (void)_playConfirmNoSound;
 - (void)_playConfirmYesSound;
 - (unsigned int)_soundIdWithFilename:(id)arg1;
@@ -50,12 +56,12 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
-- (id)faceCollection;
 - (id)init;
-- (id)initWithFaceCollection:(id)arg1;
+- (id)initWithPerson:(id)arg1;
 - (void)markCurrentSuggestionAsConfirmed:(bool)arg1;
 - (void)markCurrentSuggestionAsSkipped;
 - (bool)mute;
+- (id)person;
 - (void)preloadSounds;
 - (id)rejectedSuggestions;
 - (void)setAllSuggestions:(id)arg1;
@@ -65,14 +71,16 @@
 - (void)setConfirmedSuggestions:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFaceCollection:(id)arg1;
 - (void)setMute:(bool)arg1;
+- (void)setPerson:(id)arg1;
 - (void)setRejectedSuggestions:(id)arg1;
 - (void)setSkippedSuggestions:(id)arg1;
 - (void)setSuggestionIndexPath:(id)arg1;
+- (void)setSuggestionToken:(long long)arg1;
 - (void)setUserConfirmationsCount:(unsigned long long)arg1;
 - (id)skippedSuggestions;
 - (id)suggestionIndexPath;
+- (long long)suggestionToken;
 - (void)undo;
 - (unsigned long long)userConfirmationsCount;
 

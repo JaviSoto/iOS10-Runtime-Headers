@@ -10,4 +10,8 @@
 - (void)didSelectApplet:(NSString *)arg1;
 - (void)didStartSession:(NSError *)arg1;
 
+@optional
+
+- (void)didFelicaStateChange:(NSDictionary *)arg1;
+
 @end

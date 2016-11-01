@@ -38,9 +38,12 @@
 - (unsigned long long)UVIndex;
 - (long long)conditionCode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (float)dewPoint;
 - (id)feelsLike;
+- (unsigned long long)hash;
 - (float)humidity;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)observationTime;
 - (float)precipitationPast24Hours;
 - (float)pressure;

@@ -52,7 +52,6 @@
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (id)_cachedScriptProperties;
 - (bool)_canReloadView;
-- (void)_dialogFinishedNotification:(id)arg1;
 - (void)_dismissFooterAnimationDidStop:(id)arg1;
 - (id)_existingNavigationItem;
 - (void)_exitStoreButtonAction:(id)arg1;
@@ -89,7 +88,6 @@
 - (id)defaultPNGName;
 - (void)didReceiveMemoryWarning;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
-- (void)dismissAfterDialogs;
 - (void)dismissFooterViewControllerAnimated:(bool)arg1;
 - (void)enqueueOperation:(id)arg1 cancelOnDealloc:(bool)arg2;
 - (id)footerViewController;

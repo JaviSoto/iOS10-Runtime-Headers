@@ -21,14 +21,18 @@
 + (id)fakeRemoteCredentials;
 
 - (void).cxx_destruct;
+- (id)contactlessProductCredential;
 - (long long)credentialType;
 - (id)eligibilityResponse;
 - (id)expiration;
+- (bool)isContactlessProductCredential;
 - (bool)isLocalPassCredential;
 - (bool)isRemoteCredential;
+- (bool)isRemotePassCredential;
 - (id)localPassCredential;
 - (id)longDescription;
 - (id)remoteCredential;
+- (id)remotePassCredential;
 - (id)requirementsResponse;
 - (id)sanitizedPrimaryAccountNumber;
 - (void)setCredentialType:(long long)arg1;

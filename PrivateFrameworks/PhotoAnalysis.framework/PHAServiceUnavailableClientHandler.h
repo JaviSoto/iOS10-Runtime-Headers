@@ -4,6 +4,7 @@
 
 @interface PHAServiceUnavailableClientHandler : NSObject <PLPhotoAnalysisServiceProtocol>
 
+- (void)cancelOperationsWithIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (id)error;
 - (void)faceClusteringInformation:(unsigned long long)arg1 withContext:(id)arg2 reply:(id /* block */)arg3;

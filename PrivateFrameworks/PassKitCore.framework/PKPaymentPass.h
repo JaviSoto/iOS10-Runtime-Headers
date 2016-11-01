@@ -6,6 +6,7 @@
     NSString * _appURLScheme;
     NSSet * _associatedApplicationIdentifiers;
     NSSet * _associatedWebDomains;
+    NSArray * _availableActions;
     NSString * _cobrandName;
     bool  _cobranded;
     NSSet * _devicePaymentApplications;
@@ -19,6 +20,7 @@
     bool  _paymentOptionSelectable;
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
+    bool  _requiresTransferSerialNumberBasedProvisioning;
     NSString * _sanitizedPrimaryAccountNumber;
     bool  _supportsDPANNotifications;
     bool  _supportsDefaultCardSelection;
@@ -32,6 +34,7 @@
 @property (nonatomic, copy) NSString *appURLScheme;
 @property (nonatomic, copy) NSSet *associatedApplicationIdentifiers;
 @property (nonatomic, copy) NSSet *associatedWebDomains;
+@property (nonatomic, copy) NSArray *availableActions;
 @property (nonatomic, copy) NSString *cobrandName;
 @property (getter=isCobranded, nonatomic) bool cobranded;
 @property (readonly) NSString *deviceAccountIdentifier;
@@ -40,15 +43,16 @@
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryContactlessPaymentApplication;
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryInAppPaymentApplication;
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryPaymentApplication;
+@property (nonatomic, readonly, copy) PKFelicaPassProperties *felicaProperties;
 @property (nonatomic, copy) NSString *localizedSuspendedReason;
 @property (nonatomic, copy) NSString *messagePushTopic;
 @property (nonatomic, copy) NSURL *messageServiceURL;
-@property (nonatomic, retain) PKPaymentApplication *npkSelectedPaymentApplication;
 @property (nonatomic, copy) NSSet *paymentApplications;
 @property (getter=isPaymentOptionSelectable, nonatomic) bool paymentOptionSelectable;
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountNumberSuffix;
 @property (getter=isPrivateLabel, nonatomic, readonly) bool privateLabel;
+@property (nonatomic) bool requiresTransferSerialNumberBasedProvisioning;
 @property (nonatomic, copy) NSString *sanitizedPrimaryAccountNumber;
 @property (nonatomic) bool supportsDPANNotifications;
 @property (nonatomic) bool supportsDefaultCardSelection;
@@ -57,20 +61,22 @@
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
 
-// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
-
 + (unsigned long long)defaultSettings;
++ (id)displayableErrorForAction:(id)arg1 andReason:(unsigned long long)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)_activationStateForApplicationState:(long long)arg1;
 - (id)_localizedSuspendedReasonForAID:(id)arg1;
 - (unsigned long long)activationState;
+- (id)addValueURL;
 - (id)appURLScheme;
 - (id)associatedApplicationIdentifiers;
 - (id)associatedWebDomains;
+- (id)availableActions;
 - (bool)availableForAutomaticPresentationUsingBeaconContext;
 - (bool)availableForAutomaticPresentationUsingVASContext;
+- (bool)canPerformAction:(id)arg1 unableReason:(unsigned long long*)arg2 displayableError:(id*)arg3;
 - (id)cobrandName;
 - (unsigned long long)contactlessActivationState;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -82,6 +88,7 @@
 - (id)devicePrimaryPaymentApplication;
 - (long long)effectiveContactlessPaymentApplicationState;
 - (void)encodeWithCoder:(id)arg1;
+- (id)felicaProperties;
 - (bool)hasContactlessDevicePaymentApplicationsAvailable;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
@@ -92,18 +99,21 @@
 - (id)localizedSuspendedReason;
 - (id)messagePushTopic;
 - (id)messageServiceURL;
+- (id)notificationCenterTitle;
 - (id)paymentApplicationForAID:(id)arg1;
 - (id)paymentApplications;
 - (id)paymentApplicationsForSecureElementIdentifiers:(id)arg1;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountNumberSuffix;
 - (id)primaryPaymentApplicationForSecureElementIdentifiers:(id)arg1;
+- (bool)requiresTransferSerialNumberBasedProvisioning;
 - (void)sanitizePaymentApplications;
 - (id)sanitizedDeviceAccountNumber;
 - (id)sanitizedPrimaryAccountNumber;
 - (void)setAppURLScheme:(id)arg1;
 - (void)setAssociatedApplicationIdentifiers:(id)arg1;
 - (void)setAssociatedWebDomains:(id)arg1;
+- (void)setAvailableActions:(id)arg1;
 - (void)setCobrandName:(id)arg1;
 - (void)setCobranded:(bool)arg1;
 - (void)setDevicePaymentApplications:(id)arg1;
@@ -117,6 +127,7 @@
 - (void)setPaymentOptionSelectable:(bool)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
+- (void)setRequiresTransferSerialNumberBasedProvisioning:(bool)arg1;
 - (void)setSanitizedPrimaryAccountNumber:(id)arg1;
 - (void)setSupportsDPANNotifications:(bool)arg1;
 - (void)setSupportsDefaultCardSelection:(bool)arg1;
@@ -131,12 +142,5 @@
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
 - (void)updateDevicePaymentApplicationsWithSecureElementIdentifiers:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (bool)npkHasUserSelectablePaymentApplications;
-- (id)npkSelectedPaymentApplication;
-- (id)npkSortedDevicePaymentApplications;
-- (void)setNpkSelectedPaymentApplication:(id)arg1;
 
 @end

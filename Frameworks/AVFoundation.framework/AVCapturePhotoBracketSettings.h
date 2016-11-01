@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (id)description;
 - (bool)isLensStabilizationEnabled;
+- (void)setAutoBravoImageFusionEnabled:(bool)arg1;
 - (void)setAutoStillImageStabilizationEnabled:(bool)arg1;
 - (void)setFlashMode:(long long)arg1;
 - (void)setHDRMode:(long long)arg1;

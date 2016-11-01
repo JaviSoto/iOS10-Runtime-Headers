@@ -6,7 +6,7 @@
 
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) PLDetectedFace *face;
-@property (nonatomic) long long faceprintVersion;
+@property (nonatomic) int faceprintVersion;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

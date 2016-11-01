@@ -4,7 +4,6 @@
 
 @interface HMAccessoryProfile : NSObject <HFPrettyDescription, HMObjectMerge> {
     _HMAccessoryProfile * _accessoryProfile;
-    NSArray * _services;
 }
 
 @property (nonatomic, readonly) HMAccessory *accessory;
@@ -23,7 +22,6 @@
 - (id)accessory;
 - (id)accessoryProfile;
 - (id)description;
-- (id)encapsulatingServices;
 - (unsigned long long)hash;
 - (id)initWithAccessoryProfile:(id)arg1;
 - (bool)isEqual:(id)arg1;

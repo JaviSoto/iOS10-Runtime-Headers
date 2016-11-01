@@ -5,11 +5,11 @@
 @interface PLDetectedFaceGroup : PLManagedObject
 
 @property (nonatomic, retain) PLPerson *associatedPerson;
-@property (nonatomic) long long faceGroupType;
+@property (nonatomic) int faceGroupType;
 @property (nonatomic, retain) NSSet *faces;
 @property (nonatomic) PLDetectedFace *keyFace;
 @property (nonatomic, retain) PLPerson *rejectedFacesPerson;
-@property (nonatomic) long long*unnamedFaceCount;
+@property (nonatomic) int unnamedFaceCount;
 @property (nonatomic, retain) NSString *uuid;
 
 + (id)entityInManagedObjectContext:(id)arg1;

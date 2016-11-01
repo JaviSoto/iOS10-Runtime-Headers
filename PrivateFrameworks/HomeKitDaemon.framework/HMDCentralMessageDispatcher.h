@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (bool)_checkAuthorizationForMessage:(id)arg1 errorReason:(id*)arg2;
-- (void)_handleLocalMessage:(id)arg1 targetUUID:(id)arg2 sourceIsIDS:(bool)arg3;
+- (void)_handleLocalMessage:(id)arg1 targetUUID:(id)arg2;
 - (void)_handleRelayedIDSMessage:(id)arg1 handledLocally:(bool)arg2;
 - (void)_setRemoteAccessDevice:(id)arg1 forHome:(id)arg2 sendNotification:(bool)arg3;
 - (id)adminMsgFilter;

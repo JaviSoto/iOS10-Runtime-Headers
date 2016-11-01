@@ -26,10 +26,12 @@
 - (id)consumers;
 - (id)description;
 - (unsigned long long)eventMask;
+- (void)fetchHapticTypeForButtonKind:(long long)arg1 completion:(id /* block */)arg2;
 - (void)handleButtonPressMessage:(long long)arg1 forButtonKind:(long long)arg2 priority:(long long)arg3;
 - (long long)maximumPriority;
 - (void)setConsumers:(id)arg1;
 - (void)setEventMask:(unsigned long long)arg1;
+- (void)setHapticType:(long long)arg1 forButtonKind:(long long)arg2;
 - (void)setMaximumPriority:(long long)arg1;
 
 @end

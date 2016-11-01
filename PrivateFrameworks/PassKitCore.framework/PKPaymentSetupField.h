@@ -49,6 +49,7 @@
 - (id)displayFormat;
 - (id)displayString;
 - (unsigned long long)fieldType;
+- (id)footerFieldObject;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
@@ -57,6 +58,7 @@
 - (bool)isBuiltIn;
 - (bool)isCurrentValueFromCameraCapture;
 - (bool)isFieldTypeDate;
+- (bool)isFieldTypeFooter;
 - (bool)isFieldTypeLabel;
 - (bool)isFieldTypeText;
 - (bool)isOptional;

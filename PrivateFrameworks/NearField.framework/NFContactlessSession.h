@@ -23,6 +23,7 @@
 - (void)didDetectField:(bool)arg1;
 - (void)didDetectTechnology:(id)arg1;
 - (void)didEndUnexpectedly;
+- (void)didFelicaStateChange:(id)arg1;
 - (void)didSelectApplet:(id)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)endSession;

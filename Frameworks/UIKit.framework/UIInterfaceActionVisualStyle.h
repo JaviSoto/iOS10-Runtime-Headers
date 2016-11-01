@@ -67,6 +67,7 @@
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;
 - (id)newSectionSeparatorViewForGroupViewState:(id)arg1;
 - (bool)selectByPressGestureRequired;
+- (bool)selectionFeedbackEnabled;
 - (void)setConcreteVisualStyle:(id)arg1;
 - (void)setFontForViewStateBlock:(id /* block */)arg1;
 - (void)setVisualStyleOverride:(id)arg1;

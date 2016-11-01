@@ -36,6 +36,7 @@
 - (id)_tapToRadarMemory;
 - (id)_tapToRadarPicklist;
 - (id)_tapToRadarRanges;
+- (void)_testPregenerateWithCompletion:(id /* block */)arg1;
 - (bool)allowNonPHMemoryForUnitTesting;
 - (id)autoEditor;
 - (void)cancelPregenerateMovie;

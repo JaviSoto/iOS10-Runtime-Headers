@@ -6,6 +6,7 @@
 @required
 
 - (bool)areAssetsNeededForAchievementDefinition:(_HKAchievementDefinition *)arg1;
+- (bool)areStickersEarnedForAchievementDefinition:(_HKAchievementDefinition *)arg1;
 - (bool)areStickersNeededAtAll;
 - (bool)areStickersNeededForAchievementDefinition:(_HKAchievementDefinition *)arg1;
 

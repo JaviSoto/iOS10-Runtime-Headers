@@ -4,6 +4,7 @@
 
 @interface AVCaptureResolvedPhotoSettingsInternal : NSObject {
     bool  HDREnabled;
+    bool  bravoImageFusionEnabled;
     bool  flashEnabled;
     struct { 
         int width; 
@@ -23,6 +24,7 @@
         int width; 
         int height; 
     }  rawPhotoDimensions;
+    bool  shallowDepthOfFieldEffectEnabled;
     bool  squareCropEnabled;
     bool  stillImageStabilizationEnabled;
     bool  turboModeEnabled;

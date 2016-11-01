@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIGeneralController : PSListController <CRCarPlayPreferencesDelegate, DevicePINControllerDelegate> {
+@interface PSUIGeneralController : PSListController <CRCarPlayPreferencesDelegate, DevicePINControllerDelegate, PSUIHomeButtonCustomizeControllerDelegate> {
     CRCarPlayPreferences * _carPreferences;
     PSUITVOutManager * _tvOutManager;
     PSSpecifier * _tvOutSpecifier;
@@ -27,7 +27,9 @@
 - (void)handleCarPlayAllowedDidChange;
 - (void)handleTVOutChange;
 - (void)handleURL:(id)arg1;
+- (void)homeButtonCustomizeControllerDidFinish:(id)arg1;
 - (id)init;
+- (void)loadHomeButtonSettings:(id)arg1;
 - (id)parentalControlsEnabled:(id)arg1;
 - (void)profileNotification:(id)arg1;
 - (void)setCarPreferences:(id)arg1;

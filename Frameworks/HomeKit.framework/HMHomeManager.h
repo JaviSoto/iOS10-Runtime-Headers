@@ -110,6 +110,7 @@
 - (void)_notifyAccessAllowedWhenLockedUpdated:(bool)arg1;
 - (void)_notifyDelegateOfAppDataUpdate;
 - (void)_notifyResidentProvisioningStatus:(unsigned long long)arg1;
+- (void)_pingDeviceWithUUID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_primaryAccountDidChange:(id)arg1 modified:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_primaryAccountWasDeletedWithCompletionHandler:(id /* block */)arg1;
 - (id)_privateDelegate;
@@ -187,7 +188,6 @@
 - (void)removeHome:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetConfiguration:(bool)arg1 withoutPopup:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (unsigned long long)residentProvisioningStatus;
-- (void)sendHomeConfigurationFetched;
 - (void)setAccessAllowedWhenLocked:(bool)arg1;
 - (void)setApplicationData:(id)arg1;
 - (void)setCurrentHome:(id)arg1;

@@ -11,6 +11,7 @@
     UIView * _indentationHelperView;
     NSArray * _indentedConstraints;
     _UIDocumentPickerContainerItem * _item;
+    UILongPressGestureRecognizer * _pickableDiagnosticGestureRecognizer;
     UIProgressView * _progressView;
     UIImageView * _selectionView;
     UILabel * _subtitle2Label;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) UIView *indentationHelperView;
 @property (nonatomic, retain) NSArray *indentedConstraints;
 @property (nonatomic, retain) _UIDocumentPickerContainerItem *item;
+@property (nonatomic, retain) UILongPressGestureRecognizer *pickableDiagnosticGestureRecognizer;
 @property (nonatomic, retain) UIProgressView *progressView;
 @property (nonatomic, retain) UIImageView *selectionView;
 @property (nonatomic, retain) UILabel *subtitle2Label;
@@ -58,6 +60,7 @@
 - (void)_moveAction:(id)arg1;
 - (void)_renameAction:(id)arg1;
 - (void)_showActions:(id)arg1;
+- (void)_showPickableDiagnostic;
 - (void)_udpateLabelAlpha;
 - (void)_updateAccessoryType;
 - (void)_updateConstraintsForCellStyle;
@@ -79,6 +82,7 @@
 - (id)indentedConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)item;
+- (id)pickableDiagnosticGestureRecognizer;
 - (void)prepareForReuse;
 - (id)progressView;
 - (void)reloadItem:(bool)arg1;
@@ -93,6 +97,7 @@
 - (void)setIndentationHelperView:(id)arg1;
 - (void)setIndentedConstraints:(id)arg1;
 - (void)setItem:(id)arg1;
+- (void)setPickableDiagnosticGestureRecognizer:(id)arg1;
 - (void)setProgressView:(id)arg1;
 - (void)setSelected:(bool)arg1;
 - (void)setSelectionView:(id)arg1;

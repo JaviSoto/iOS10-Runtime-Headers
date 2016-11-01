@@ -8,6 +8,7 @@
 + (long long)captureFlashModeForFlashMode:(long long)arg1;
 + (long long)captureFocusModeForFocusMode:(long long)arg1;
 + (long long)captureHDRModeForHDRMode:(long long)arg1;
++ (long long)captureShallowDepthOfFieldStatusForStatus:(long long)arg1;
 + (long long)captureTorchModeForTorchMode:(long long)arg1;
 + (long long)captureWhiteBalanceModeForWhiteBalanceMode:(long long)arg1;
 + (long long)exposureModeForCaptureExposureMode:(long long)arg1;

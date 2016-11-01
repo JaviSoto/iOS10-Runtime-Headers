@@ -21,7 +21,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly, copy) NSString *domain;
-@property (getter=isFromRequest, nonatomic, readonly) bool fromRequest;
 @property (readonly) unsigned long long hash;
 @property (getter=hd_isFromRequest, nonatomic, readonly) bool hd_fromRequest;
 @property (nonatomic, readonly) unsigned short hd_messageID;
@@ -30,17 +29,14 @@
 @property (nonatomic, readonly) NSDate *hd_messageSent;
 @property (nonatomic, readonly) NSDictionary *hd_persistentUserInfo;
 @property (readonly, copy) NSString *helpAnchor;
+@property (nonatomic, readonly) bool hf_isHomeKitNamingError;
 @property (getter=isHMError, nonatomic, readonly) bool hmError;
 @property (getter=isHMFError, nonatomic, readonly) bool hmfError;
-@property (nonatomic, readonly) NSString *idsIdentifier;
 @property (nonatomic, readonly) bool isAuthenticationError;
 @property (readonly, copy) NSString *localizedDescription;
 @property (readonly, copy) NSString *localizedFailureReason;
 @property (readonly, copy) NSArray *localizedRecoveryOptions;
 @property (readonly, copy) NSString *localizedRecoverySuggestion;
-@property (nonatomic, readonly) unsigned short messageID;
-@property (nonatomic, readonly) NSDate *messageSent;
-@property (nonatomic, readonly) NSDictionary *persistentUserInfo;
 @property (readonly) id recoveryAttempter;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool tsp_isDocumentTooNewError;
@@ -382,18 +378,6 @@
 - (bool)isCPLErrorWithCode:(long long)arg1;
 - (bool)isCPLOperationCancelledError;
 
-// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
-
-+ (id)errorFromSYErrorInfo:(id)arg1;
-+ (id)errorWithSYError:(long long)arg1 userInfo:(id)arg2;
-
-- (id)idsIdentifier;
-- (id)initWithSYError:(long long)arg1 userInfo:(id)arg2;
-- (bool)isFromRequest;
-- (unsigned short)messageID;
-- (id)messageSent;
-- (id)persistentUserInfo;
-
 // Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
 
 - (bool)shouldDisplayToUser;
@@ -540,6 +524,7 @@
 
 - (id)hf_errorWithOperationType:(id)arg1 failedItemName:(id)arg2;
 - (id)hf_errorWithOperationType:(id)arg1 options:(id)arg2;
+- (bool)hf_isHomeKitNamingError;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
@@ -653,6 +638,7 @@
 - (bool)fc_isCKUnknownItemError;
 - (bool)fc_isCancellationError;
 - (bool)fc_isNetworkUnavailableError;
+- (bool)fc_isServiceUnavailableError;
 - (bool)fc_shouldRetry;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport

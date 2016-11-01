@@ -68,6 +68,7 @@
 - (id)ticketForCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForCategoryListWithTraits:(id)arg1;
 - (id)ticketForExternalBusinessID:(id)arg1 contentProvider:(id)arg2 includeETA:(bool)arg3 traits:(id)arg4;
+- (id)ticketForExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4 traits:(id)arg5;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeAddressDictionary:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeString:(id)arg1 traits:(id)arg2;

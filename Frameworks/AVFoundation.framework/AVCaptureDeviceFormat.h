@@ -47,6 +47,7 @@
 - (bool)isIrisVideoStabilizationSupported;
 - (bool)isPhotoFormat;
 - (bool)isSISSupported;
+- (bool)isShallowDepthOfFieldEffectSupported;
 - (bool)isVideoBinned;
 - (bool)isVideoHDRSupported;
 - (bool)isVideoStabilizationModeSupported:(long long)arg1;

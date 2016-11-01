@@ -10,6 +10,7 @@
     double  _impactIntensity;
     UIView * _replicatorContainer;
     _UIRefreshControlModernReplicatorView * _replicatorView;
+    bool  _scrollViewVerticalFeedbackBehaviorEnabled;
     UIView * _seed;
     UILabel * _textLabel;
 }

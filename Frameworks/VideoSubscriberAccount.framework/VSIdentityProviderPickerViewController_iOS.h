@@ -38,6 +38,7 @@
 - (id)_titleForRowAtIndexPath:(id)arg1;
 - (unsigned long long)additionalProvidersMode;
 - (id)delegate;
+- (void)deselectSelectedProviderAnimated:(bool)arg1;
 - (void)didInvalidateIntrinsicContentSizeForTableHeaderFooterView:(id)arg1;
 - (id)identityProviders;
 - (id)initWithStyle:(long long)arg1;

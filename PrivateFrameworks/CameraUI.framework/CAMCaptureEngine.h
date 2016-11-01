@@ -167,6 +167,8 @@
 - (id)audioCaptureDevice;
 - (id)audioCaptureDeviceInput;
 - (id)backCameraDevice;
+- (id)backDuoCameraDevice;
+- (id)backTelephotoCameraDevice;
 - (id)cameraDevice;
 - (void)captureOutput:(id)arg1 didCapturePhotoForResolvedSettings:(id)arg2;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;

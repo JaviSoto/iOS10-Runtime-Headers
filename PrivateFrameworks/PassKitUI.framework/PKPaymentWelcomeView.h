@@ -5,6 +5,7 @@
 @interface PKPaymentWelcomeView : PKWelcomeView
 
 + (bool)isAvailable;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
 
 - (void)_addCardPressed;
 - (id)init;

@@ -38,6 +38,7 @@
 - (void).cxx_destruct;
 - (void)_autoEditMemory:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_cancel;
+- (void)_logMemoryStuff:(id)arg1;
 - (id)_printDataForAssetAsString:(id)arg1 andPickInfo:(id)arg2;
 - (id)_returnTextDebugAsString;
 - (id)assetMediaType:(id)arg1 itemStart:(double)arg2 itemDuration:(double)arg3;
@@ -51,6 +52,7 @@
 - (id)initForPregenerate;
 - (id)initWithMemory:(id)arg1 shouldBuildMovieController:(bool)arg2;
 - (bool)isBusy;
+- (void)logFreeze:(id)arg1 message:(id)arg2;
 - (id)memory;
 - (id)movieController;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

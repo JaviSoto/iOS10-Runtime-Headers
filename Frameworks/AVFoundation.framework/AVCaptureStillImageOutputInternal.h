@@ -8,6 +8,7 @@
     bool  SISActive;
     bool  SISEnabled;
     bool  SISSupported;
+    bool  bravoImageFusionSupported;
     bool  highResStillEnabled;
     unsigned int  imageDataFormatType;
     bool  isCapturingPhoto;

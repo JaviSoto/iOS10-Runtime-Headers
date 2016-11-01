@@ -13,10 +13,12 @@
     bool  _isCompanionCapable;
     bool  _isDeviceSupported;
     bool  _isTestingDevice;
+    NSNumber * _overridenAreSwimmingSessionsAvailable;
     bool  _requestsRemoteAuthorization;
     bool  _shouldPruneOldSamples;
 }
 
+@property (nonatomic) bool areSwimmingSessionsAvailable;
 @property (nonatomic) bool canCreateSources;
 @property (nonatomic, readonly, copy) NSString *currentDeviceClass;
 @property (nonatomic, readonly, copy) NSString *currentDeviceDisplayName;
@@ -75,6 +77,7 @@
 + (bool)shouldShowBuddy;
 
 - (void).cxx_destruct;
+- (bool)areSwimmingSessionsAvailable;
 - (bool)canCreateSources;
 - (id)currentDeviceClass;
 - (id)currentDeviceDisplayName;
@@ -98,6 +101,7 @@
 - (bool)isTestingDevice;
 - (id)localTimeZone;
 - (bool)requestsRemoteAuthorization;
+- (void)setAreSwimmingSessionsAvailable:(bool)arg1;
 - (void)setCanCreateSources:(bool)arg1;
 - (void)setHasTelephonyCapability:(bool)arg1;
 - (void)setHostReadAuthorizationUsageDescription:(id)arg1;

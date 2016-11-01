@@ -14,6 +14,7 @@
     NSString * _lastReleaseType;
     SUDescriptor * _lastScannedDescriptor;
     NSDate * _lastScannedDescriptorTime;
+    bool  _manifestSubmitted;
     NSDate * _scheduledAutodownloadPolicyChangeTime;
     NSDate * _scheduledAutodownloadWifiPeriodEndTime;
     NSDate * _scheduledManualDownloadWifiPeriodEndTime;
@@ -35,6 +36,7 @@
 @property (nonatomic, retain) NSString *lastReleaseType;
 @property (nonatomic, copy) SUDescriptor *lastScannedDescriptor;
 @property (nonatomic, retain) NSDate *lastScannedDescriptorTime;
+@property (nonatomic) bool manifestSubmitted;
 @property (nonatomic, retain) NSDate *scheduledAutodownloadPolicyChangeTime;
 @property (nonatomic, retain) NSDate *scheduledAutodownloadWifiPeriodEndTime;
 @property (nonatomic, retain) NSDate *scheduledManualDownloadWifiPeriodEndTime;
@@ -61,6 +63,7 @@
 - (id)lastScannedDescriptor;
 - (id)lastScannedDescriptorTime;
 - (void)load;
+- (bool)manifestSubmitted;
 - (void)resetAllHistory;
 - (void)resetDownloadAndScanHistory;
 - (void)save;
@@ -78,6 +81,7 @@
 - (void)setLastReleaseType:(id)arg1;
 - (void)setLastScannedDescriptor:(id)arg1;
 - (void)setLastScannedDescriptorTime:(id)arg1;
+- (void)setManifestSubmitted:(bool)arg1;
 - (void)setScheduledAutodownloadPolicyChangeTime:(id)arg1;
 - (void)setScheduledAutodownloadWifiPeriodEndTime:(id)arg1;
 - (void)setScheduledManualDownloadWifiPeriodEndTime:(id)arg1;

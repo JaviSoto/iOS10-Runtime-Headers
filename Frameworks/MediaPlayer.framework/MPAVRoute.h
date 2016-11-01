@@ -19,8 +19,11 @@
     MPAVRoute * _wirelessDisplayRoute;
 }
 
+@property (getter=isAirpodsRoute, nonatomic, readonly) bool airpodsRoute;
 @property (nonatomic, readonly) NSArray *auxiliaryDevices;
 @property (nonatomic, readonly) MPAVBatteryLevel *batteryLevel;
+@property (getter=isBeatsSoloRoute, nonatomic, readonly) bool beatsSoloRoute;
+@property (getter=isBeatsXRoute, nonatomic, readonly) bool beatsXRoute;
 @property (nonatomic, readonly) bool displayIsPicked;
 @property (nonatomic, readonly) long long displayRouteType;
 @property (nonatomic, readonly) bool isDeviceRoute;
@@ -29,6 +32,7 @@
 @property (getter=isPicked, nonatomic, readonly) bool picked;
 @property (getter=isPickedOnPairedDevice, nonatomic, readonly) bool pickedOnPairedDevice;
 @property (getter=isPlayingOnPairedDevice, nonatomic, readonly) bool playingOnPairedDevice;
+@property (getter=isPowerbeatsRoute, nonatomic, readonly) bool powerbeatsRoute;
 @property (nonatomic, readonly) bool requiresPassword;
 @property (nonatomic, readonly) NSString *routeName;
 @property (nonatomic, readonly) long long routeSubtype;
@@ -50,11 +54,15 @@
 - (bool)displayIsPicked;
 - (long long)displayRouteType;
 - (unsigned long long)hash;
+- (bool)isAirpodsRoute;
+- (bool)isBeatsSoloRoute;
+- (bool)isBeatsXRoute;
 - (bool)isDeviceRoute;
 - (bool)isEqual:(id)arg1;
 - (bool)isPicked;
 - (bool)isPickedOnPairedDevice;
 - (bool)isPlayingOnPairedDevice;
+- (bool)isPowerbeatsRoute;
 - (long long)passwordType;
 - (long long)pickableRouteType;
 - (bool)requiresPassword;

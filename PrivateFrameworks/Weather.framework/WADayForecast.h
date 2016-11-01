@@ -24,8 +24,10 @@
 - (unsigned long long)dayNumber;
 - (unsigned long long)dayOfWeek;
 - (id)description;
+- (unsigned long long)hash;
 - (id)high;
 - (unsigned long long)icon;
+- (bool)isEqual:(id)arg1;
 - (id)low;
 - (void)setDayNumber:(unsigned long long)arg1;
 - (void)setDayOfWeek:(unsigned long long)arg1;

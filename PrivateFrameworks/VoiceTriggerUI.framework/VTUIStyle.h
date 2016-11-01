@@ -10,6 +10,7 @@
     bool  _isBuddy;
     bool  _isHeySiriAlwaysOn;
     bool  _isIpad;
+    bool  _isLargeIpad;
     bool  _needMoreLineSpacing;
 }
 
@@ -32,14 +33,15 @@
 - (id)deviceSetupImage;
 - (long long)enrollmentMode;
 - (double)flamesHeight;
-- (double)footerButtonBaselineFromFooterTop;
 - (id)footerButtonFont;
+- (double)footerContinueButtonMinBaselineFromText;
 - (double)footerHorizontalPadding;
 - (id)footerLabelFont;
 - (double)footerLabelLineHeight;
 - (bool)footerShouldPinToImage;
-- (double)footerTextBaselineFromBottom;
-- (double)footerTextBaselineOffsetFromButton;
+- (double)footerSkipButtonBaselineFromBottom;
+- (double)footerSkipButtonBaselineFromContinueButton;
+- (double)footerTextBaselineFromTop;
 - (id)footerTextColor;
 - (id)headerTitleFont;
 - (double)headerTitleLinespacing;

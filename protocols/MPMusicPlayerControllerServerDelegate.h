@@ -15,10 +15,13 @@
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 prepareQueueWithStoreIDs:(NSArray *)arg2;
 - (void)musicPlayerServer:(void *)arg1 registerForRepeatModeChangesWithChangeHandler:(void *)arg2; // needs 2 arg types, found 7: MPMusicPlayerControllerServer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
 - (void)musicPlayerServer:(void *)arg1 registerForShuffleModeChangesWithChangeHandler:(void *)arg2; // needs 2 arg types, found 7: MPMusicPlayerControllerServer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setAssetStoreFrontOverrides:(NSDictionary *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setFirstItem:(MPMediaItem *)arg2;
+- (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setFirstItemIdentifier:(NSString *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setNowPlayingItem:(MPMediaItem *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setPlaybackSpeed:(long long)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setShuffleMode:(long long)arg2;
+- (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setTimeModifications:(NSDictionary *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setUserQueueModificationsDisabled:(bool)arg2;
 - (MPMediaItem *)nowPlayingItemForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1;
 - (long long)playbackSpeedForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1;

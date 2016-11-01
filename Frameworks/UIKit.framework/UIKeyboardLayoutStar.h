@@ -105,6 +105,7 @@
     int  _shiftTrackingChangeCount;
     bool  _showDictationKey;
     bool  _showIntlKey;
+    _UIFeedbackRetargetBehavior * _slideBehaviour;
     SEL  _spaceAction;
     SEL  _spaceLongAction;
     id  _spaceTarget;
@@ -149,6 +150,7 @@
 @property (nonatomic) bool shift;
 @property (nonatomic, readonly) bool showsDictationKey;
 @property (nonatomic, readonly) bool showsInternationalKey;
+@property (nonatomic, retain) _UIFeedbackRetargetBehavior *slideBehaviour;
 @property (readonly) Class superclass;
 
 + (Class)_subclassForScreenTraits:(id)arg1;
@@ -171,6 +173,7 @@
 - (id)activeKey;
 - (id)activeMultitapCompleteKey;
 - (id)activeTouchInfoForShift;
+- (void)annotateKeysForGestures;
 - (void)annotateKeysWithDeveloperPunctuation;
 - (void)annotateWriteboardDisplayTypeHintForKeyIfNeeded;
 - (struct CGPoint { double x1; double x2; })applyError:(struct CGPoint { double x1; double x2; })arg1 toKey:(id)arg2;
@@ -398,6 +401,7 @@
 - (void)setReturnKeyEnabled:(bool)arg1 withDisplayName:(id)arg2 withType:(int)arg3;
 - (void)setRightSwipeFunction:(int)arg1;
 - (void)setShift:(bool)arg1;
+- (void)setSlideBehaviour:(id)arg1;
 - (void)setSplit:(bool)arg1 animated:(bool)arg2;
 - (void)setSplitProgress:(double)arg1;
 - (void)setState:(int)arg1 forKey:(id)arg2;
@@ -433,6 +437,7 @@
 - (bool)showsInternationalKey;
 - (id)simulateTouch:(struct CGPoint { double x1; double x2; })arg1;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { double x1; double x2; })arg2 shouldTypeVariants:(bool)arg3 baseKeyForVariants:(bool)arg4;
+- (id)slideBehaviour;
 - (id)splitNameForKeyplane:(id)arg1;
 - (id)splitNameForKeyplaneName:(id)arg1;
 - (int)stateForCandidateListKey:(id)arg1;

@@ -35,11 +35,6 @@
 - (bool)isCompatibleWithUnit:(id)arg1;
 - (bool)isEqual:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (double)fiui_doubleValueByDividingByQuantity:(id)arg1;
-- (bool)fiui_isNonzero;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;

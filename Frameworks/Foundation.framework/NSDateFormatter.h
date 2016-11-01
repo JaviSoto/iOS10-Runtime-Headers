@@ -174,10 +174,6 @@
 
 + (id)CalSharedDateFormatter;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (void)fu_observeTimeZoneAndLocaleChanges;
-
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (id)hk_stringWithAMPMSpaceRemovedFromDate:(id)arg1;

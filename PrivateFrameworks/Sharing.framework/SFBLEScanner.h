@@ -41,6 +41,7 @@
     WPAWDL * _wpAirDrop;
     WPNearby * _wpNearby;
     long long  _wpNearbyType;
+    WPPairing * _wpPairing;
 }
 
 @property (nonatomic, copy) id /* block */ bluetoothStateChangedHandler;
@@ -108,6 +109,12 @@
 - (void)nearby:(id)arg1 didLosePeer:(id)arg2 type:(long long)arg3;
 - (void)nearby:(id)arg1 didStartScanningForType:(long long)arg2;
 - (void)nearbyDidUpdateState:(id)arg1;
+- (void)pairing:(id)arg1 failedToStartScanningWithError:(id)arg2;
+- (void)pairing:(id)arg1 foundDevice:(id)arg2 payload:(id)arg3 rssi:(id)arg4 peerInfo:(id)arg5;
+- (void)pairingDidUpdateState:(id)arg1;
+- (id)pairingParsePayload:(id)arg1 identifier:(id)arg2 bleDevice:(id)arg3;
+- (void)pairingStartedScanning:(id)arg1;
+- (bool)pairingUpdatePairedInfo:(id)arg1 fields:(id)arg2 bleDevice:(id)arg3;
 - (id)payloadCoder;
 - (double)rescanInterval;
 - (bool)rssiLog;
@@ -135,6 +142,7 @@
 - (void)setScanWindow:(long long)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setTimeoutHandler:(id /* block */)arg1;
+- (unsigned int)statusToHeadsetStatus:(unsigned char)arg1;
 - (double)timeout;
 - (id /* block */)timeoutHandler;
 

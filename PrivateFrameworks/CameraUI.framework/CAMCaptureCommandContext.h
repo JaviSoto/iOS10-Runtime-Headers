@@ -41,7 +41,7 @@
 
 - (void).cxx_destruct;
 - (id)_captureEngine;
-- (id)_captureEngineDeviceForDevice:(long long)arg1;
+- (id)_captureEngineDeviceForMode:(long long)arg1 desiredDevice:(long long)arg2 videoConfiguration:(long long)arg3 resolvedDevice:(long long*)arg4;
 - (id)audioDeviceInput;
 - (void)clear;
 - (id)currentAudioDevice;
@@ -85,6 +85,6 @@
 - (void)setCurrentVideoPreviewLayer:(id)arg1;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
 - (void)stopPanoramaCapture;
-- (id)videoDeviceForDevice:(long long)arg1;
+- (id)videoDeviceForMode:(long long)arg1 desiredDevice:(long long)arg2 videoConfiguration:(long long)arg3 resolvedDevice:(long long*)arg4;
 
 @end

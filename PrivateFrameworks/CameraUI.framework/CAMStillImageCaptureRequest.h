@@ -24,7 +24,9 @@
     bool  _usesStillImageStabilization;
     NSString * _videoPersistenceUUID;
     bool  _wantsAudioForCapture;
+    bool  _wantsAutoDuoImageFusion;
     bool  _wantsHighResolutionStills;
+    bool  _wantsPortraitEffect;
     bool  _wantsSquareCrop;
 }
 
@@ -50,7 +52,9 @@
 @property (nonatomic, readonly) bool usesStillImageStabilization;
 @property (nonatomic, readonly, copy) NSString *videoPersistenceUUID;
 @property (nonatomic, readonly) bool wantsAudioForCapture;
+@property (nonatomic, readonly) bool wantsAutoDuoImageFusion;
 @property (nonatomic, readonly) bool wantsHighResolutionStills;
+@property (nonatomic, readonly) bool wantsPortraitEffect;
 @property (nonatomic, readonly) bool wantsSquareCrop;
 
 - (void).cxx_destruct;
@@ -83,7 +87,9 @@
 - (bool)usesStillImageStabilization;
 - (id)videoPersistenceUUID;
 - (bool)wantsAudioForCapture;
+- (bool)wantsAutoDuoImageFusion;
 - (bool)wantsHighResolutionStills;
+- (bool)wantsPortraitEffect;
 - (bool)wantsSquareCrop;
 
 @end

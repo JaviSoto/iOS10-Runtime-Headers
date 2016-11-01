@@ -18,6 +18,7 @@
         unsigned int userStartDate : 1; 
         unsigned int campaignType : 1; 
         unsigned int cellularRadioAccessTechnology : 1; 
+        unsigned int newsWidgetModeGroup : 1; 
         unsigned int osInstallVariant : 1; 
         unsigned int reachabilityStatus : 1; 
         unsigned int textSize : 1; 
@@ -29,6 +30,7 @@
         unsigned int isPaidSubscriberFromAppStore : 1; 
         unsigned int isPaidSubscriberFromNews : 1; 
         unsigned int isPaidSubscriberFromThirdParty : 1; 
+        unsigned int locationPermissionGranted : 1; 
         unsigned int notificationsEnabled : 1; 
         unsigned int privateDataSyncOn : 1; 
         unsigned int runningObsolete : 1; 
@@ -43,6 +45,8 @@
     bool  _isPaidSubscriberFromThirdParty;
     NSString * _languageCode;
     long long  _lastAppOpenDate;
+    bool  _locationPermissionGranted;
+    int  _newsWidgetModeGroup;
     bool  _notificationsEnabled;
     NSString * _originatingCampaignId;
     NSString * _originatingCampaignType;
@@ -91,6 +95,8 @@
 @property (nonatomic) bool hasIsPaidSubscriberFromThirdParty;
 @property (nonatomic, readonly) bool hasLanguageCode;
 @property (nonatomic) bool hasLastAppOpenDate;
+@property (nonatomic) bool hasLocationPermissionGranted;
+@property (nonatomic) bool hasNewsWidgetModeGroup;
 @property (nonatomic) bool hasNotificationsEnabled;
 @property (nonatomic, readonly) bool hasOriginatingCampaignId;
 @property (nonatomic, readonly) bool hasOriginatingCampaignType;
@@ -119,6 +125,8 @@
 @property (nonatomic) bool isPaidSubscriberFromThirdParty;
 @property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic) long long lastAppOpenDate;
+@property (nonatomic) bool locationPermissionGranted;
+@property (nonatomic) int newsWidgetModeGroup;
 @property (nonatomic) bool notificationsEnabled;
 @property (nonatomic, retain) NSString *originatingCampaignId;
 @property (nonatomic, retain) NSString *originatingCampaignType;
@@ -143,6 +151,7 @@
 - (void).cxx_destruct;
 - (int)StringAsCampaignType:(id)arg1;
 - (int)StringAsCellularRadioAccessTechnology:(id)arg1;
+- (int)StringAsNewsWidgetModeGroup:(id)arg1;
 - (int)StringAsOsInstallVariant:(id)arg1;
 - (int)StringAsReachabilityStatus:(id)arg1;
 - (int)StringAsWidgetModeType:(id)arg1;
@@ -177,6 +186,8 @@
 - (bool)hasIsPaidSubscriberFromThirdParty;
 - (bool)hasLanguageCode;
 - (bool)hasLastAppOpenDate;
+- (bool)hasLocationPermissionGranted;
+- (bool)hasNewsWidgetModeGroup;
 - (bool)hasNotificationsEnabled;
 - (bool)hasOriginatingCampaignId;
 - (bool)hasOriginatingCampaignType;
@@ -207,7 +218,10 @@
 - (bool)isPaidSubscriberFromThirdParty;
 - (id)languageCode;
 - (long long)lastAppOpenDate;
+- (bool)locationPermissionGranted;
 - (void)mergeFrom:(id)arg1;
+- (int)newsWidgetModeGroup;
+- (id)newsWidgetModeGroupAsString:(int)arg1;
 - (bool)notificationsEnabled;
 - (id)originatingCampaignId;
 - (id)originatingCampaignType;
@@ -242,6 +256,8 @@
 - (void)setHasIsPaidSubscriberFromNews:(bool)arg1;
 - (void)setHasIsPaidSubscriberFromThirdParty:(bool)arg1;
 - (void)setHasLastAppOpenDate:(bool)arg1;
+- (void)setHasLocationPermissionGranted:(bool)arg1;
+- (void)setHasNewsWidgetModeGroup:(bool)arg1;
 - (void)setHasNotificationsEnabled:(bool)arg1;
 - (void)setHasOsInstallVariant:(bool)arg1;
 - (void)setHasPrivateDataSyncOn:(bool)arg1;
@@ -261,6 +277,8 @@
 - (void)setIsPaidSubscriberFromThirdParty:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLastAppOpenDate:(long long)arg1;
+- (void)setLocationPermissionGranted:(bool)arg1;
+- (void)setNewsWidgetModeGroup:(int)arg1;
 - (void)setNotificationsEnabled:(bool)arg1;
 - (void)setOriginatingCampaignId:(id)arg1;
 - (void)setOriginatingCampaignType:(id)arg1;

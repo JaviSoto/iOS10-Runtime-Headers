@@ -143,6 +143,7 @@
     double  _lastTimestampWhenFirstTouchCameDown;
     NSString * _mainStoryboardName;
     UIEvent * _motionEvent;
+    _UIFeedbackEventBehavior * _motionEventBehavior;
     UIMoveEvent * _moveEvent;
     long long  _networkResourcesCurrentlyLoadingCount;
     long long  _normativeWhitePointAdaptivityStyle;
@@ -574,6 +575,7 @@
 - (void)_setUserDefaultsSyncEnabled:(bool)arg1;
 - (void)_setVirtualWindowSizeInSceneReferenceSpace:(struct CGSize { double x1; double x2; })arg1 virtualHorizontalSizeClass:(long long)arg2 virtualVerticalSizeClass:(long long)arg3;
 - (void)_setWatchSystemAppHIDEventFilter:(id /* block */)arg1;
+- (void)_setupMotionEventBehavior;
 - (bool)_shakeToUndoEnabled;
 - (void)_sheetWithRemoteIdentifierDidDismiss:(id)arg1;
 - (bool)_shouldAllowKeyboardArbiter;
@@ -609,6 +611,7 @@
 - (id)_targetInChainForAction:(SEL)arg1 sender:(id)arg2;
 - (id)_targetResponderForKeyCommandsForResponder:(id)arg1;
 - (bool)_taskSuspendingUnsupported;
+- (void)_teardownMotionEventBehavior;
 - (void)_terminateWithStatus:(int)arg1;
 - (long long)_testOrientation:(id)arg1 options:(id)arg2;
 - (id)_touchesEvent;
@@ -797,6 +800,8 @@
 - (void)mediaKeyUp:(struct __GSEvent { }*)arg1;
 - (void)menuButtonDown:(struct __GSEvent { }*)arg1;
 - (void)menuButtonUp:(struct __GSEvent { }*)arg1;
+- (void)motionBegan:(long long)arg1 withEvent:(id)arg2;
+- (void)motionCancelled:(long long)arg1 withEvent:(id)arg2;
 - (void)motionEnded:(long long)arg1 withEvent:(id)arg2;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
 - (id)nextResponder;

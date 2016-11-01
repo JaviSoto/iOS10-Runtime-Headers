@@ -4,6 +4,9 @@
 
 @interface _UISwitchSettings : NSObject
 
+@property (nonatomic, readonly) bool feedbackEnabled;
+@property (nonatomic, readonly) double hapticDelay;
+@property (nonatomic, readonly) double impactIntensity;
 @property (nonatomic, readonly) double knobSpringDampingAnimationTouchDown;
 @property (nonatomic, readonly) double knobSpringDampingAnimationTouchUp;
 @property (nonatomic, readonly) double knobSpringDurationAnimationTouchDown;
@@ -19,6 +22,9 @@
 
 + (id)sharedSettings;
 
+- (bool)feedbackEnabled;
+- (double)hapticDelay;
+- (double)impactIntensity;
 - (double)knobSpringDampingAnimationTouchDown;
 - (double)knobSpringDampingAnimationTouchUp;
 - (double)knobSpringDurationAnimationTouchDown;

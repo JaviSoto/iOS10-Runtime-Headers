@@ -8,6 +8,7 @@
     GEOMapItemDetourInfo * _detourInfo;
     GEOPDMultiLocalizedString * _disambiguationLabel;
     _GEOEncyclopedicInfo * _encyclopedicInfo;
+    NSData * _externalTransitStationCode;
     NSString * _name;
     GEOPlace * _place;
     GEOPDPlace * _placeData;
@@ -42,6 +43,7 @@
 @property (getter=_encyclopedicInfo, nonatomic, readonly) <GEOEncyclopedicInfo> *encyclopedicInfo;
 @property (nonatomic, readonly) NSDate *eventDate;
 @property (nonatomic, readonly) NSString *eventName;
+@property (nonatomic, readonly) NSData *externalTransitStationCode;
 @property (getter=_featureLink, nonatomic, readonly) GEORestaurantFeaturesLink *featureLink;
 @property (getter=_flyover, nonatomic, readonly) GEOPDFlyover *flyover;
 @property (getter=_flyoverAnnouncementMessage, nonatomic, readonly) NSString *flyoverAnnouncementMessage;
@@ -210,11 +212,12 @@
 - (id)encodedData;
 - (id)eventDate;
 - (id)eventName;
+- (id)externalTransitStationCode;
 - (id)geoAddress;
 - (id)geoFenceMapRegion;
 - (bool)hasExpiredComponents;
 - (id)initWithPlaceData:(id)arg1;
-- (id)initWithPlaceData:(id)arg1 attributionMap:(id)arg2 disambiguationLabel:(id)arg3 detourInfo:(id)arg4;
+- (id)initWithPlaceData:(id)arg1 attributionMap:(id)arg2 disambiguationLabel:(id)arg3 detourInfo:(id)arg4 externalTransitStationCode:(id)arg5;
 - (id)initWithPlaceData:(id)arg1 detourInfo:(id)arg2;
 - (bool)isDisputed;
 - (bool)isEqualToMapItem:(id)arg1;

@@ -21,9 +21,12 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)defaultExpressFelicaTransitPassIdentifier;
 - (id)defaultPaymentApplicationForPassUniqueIdentifier:(id)arg1;
 - (id)defaultPaymentPassIdentifier;
 - (id)delegate;
+- (void)deletePaymentTransactionWithIdentifier:(id)arg1 forPassWithUniqueIdentifier:(id)arg2;
+- (void)felicaStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (bool)isDeviceInRestrictedMode;
 - (bool)isPaymentHandoffDisabled;
@@ -31,8 +34,10 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
 - (id)secureElementIdentifier;
 - (bool)secureElementIsProductionSigned;
+- (void)setDefaultExpressFelicaTransitPassIdentifier:(id)arg1 withCredential:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassUniqueIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultPaymentPassIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;

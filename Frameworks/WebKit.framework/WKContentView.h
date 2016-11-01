@@ -480,8 +480,6 @@
 @property (nonatomic) bool useInterfaceLanguageForLocalization;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } validTextRange;
 
-// Image: /System/Library/Frameworks/WebKit.framework/WebKit
-
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_accessibilityRegisterUIProcessTokens;
@@ -805,18 +803,5 @@
 - (void)willStartZoomOrScroll;
 - (id)wordContainingCaretSelection;
 - (id)wordRangeContainingCaretSelection;
-
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
-- (id)_accessibilityQuickSpeakContent;
-- (bool)_accessibilityShouldShowSpeakBubble;
-- (bool)_accessibilityShouldShowSpeakLanguageBubble;
-- (bool)_accessibilityShouldShowSpeakSpellOut;
-- (bool)_accessibilityShouldUpdateQuickSpeakContent;
-- (bool)_accessibilitySystemShouldShowSpeakBubble;
-- (void)_axWaitForSpeakSelectionContentResults;
-- (void)accessibilitySpeakSelectionSetContent:(id)arg1;
 
 @end

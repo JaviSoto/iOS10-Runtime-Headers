@@ -242,6 +242,7 @@
 @property (readonly) NSLayoutYAxisAnchor *bottomAnchor;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } boundsCenter;
+@property (nonatomic, readonly) bool cam_isHidden;
 @property (nonatomic, readonly) bool canBecomeFocused;
 @property (nonatomic) struct CGPoint { double x1; double x2; } center;
 @property (readonly) NSLayoutXAxisAnchor *centerXAnchor;
@@ -1831,6 +1832,7 @@
 + (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })cam_transformForInterfaceOrientation:(long long)arg1;
 
 - (void)cam_ensureSubview:(id)arg1;
+- (bool)cam_isHidden;
 - (bool)cam_isOnScreen:(id)arg1;
 - (bool)cam_isOnScreen:(id)arg1;
 - (bool)cam_isPoint:(struct CGPoint { double x1; double x2; })arg1 withinBoundsWithPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
@@ -1844,6 +1846,7 @@
 - (void)cam_setHidden:(bool)arg1 animated:(bool)arg2;
 - (void)cam_setHidden:(bool)arg1 animationDuration:(double)arg2;
 - (void)cam_setHidden:(bool)arg1 animationDuration:(double)arg2 delay:(double)arg3;
+- (void)cam_setHidden:(bool)arg1 animationDuration:(double)arg2 delay:(double)arg3 completion:(id /* block */)arg4;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
@@ -1893,10 +1896,6 @@
 
 - (void)centerHorizontalInView:(id)arg1;
 - (void)centerVerticalInView:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (void)fiui_animateIfNeededWithDuration:(double)arg1 animations:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
@@ -1989,10 +1988,6 @@
 - (struct CGPoint { double x1; double x2; })boundsCenter;
 - (void)mt_concatPixelAlignedTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)mt_setPixelAlignedCenter:(struct CGPoint { double x1; double x2; })arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
-
-- (void)ntk_setBoundsAndPositionFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
 

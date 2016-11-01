@@ -26,8 +26,6 @@
 @property (nonatomic, retain) PKImage *stripImage;
 @property (nonatomic, retain) PKImage *thumbnailImage;
 
-// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
-
 + (long long)imageSetType;
 + (bool)shouldCache;
 + (bool)supportsSecureCoding;
@@ -59,10 +57,5 @@
 - (void)setThumbnailImage:(id)arg1;
 - (id)stripImage;
 - (id)thumbnailImage;
-
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (void)loadPDFArtFromBundle:(id)arg1;
-- (void)resizeWithScreenSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

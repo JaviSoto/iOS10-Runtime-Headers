@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFBLEClient : NSObject <WPAWDLDelegate, WPNearbyDelegate> {
+@interface SFBLEClient : NSObject <WPAWDLDelegate, WPNearbyDelegate, WPPairingDelegate> {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     WPAWDL * _wpAirDrop;
     NSMutableSet * _wpAirDropDelegates;
     WPNearby * _wpNearby;
     NSMutableSet * _wpNearbyDelegates;
+    WPPairing * _wpPairing;
+    NSMutableSet * _wpPairingDelegates;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)addAirDropDelegate:(id)arg1;
 - (id)addNearbyDelegate:(id)arg1;
+- (id)addPairingDelegate:(id)arg1;
 - (void)awdl:(id)arg1 failedToStartAdvertisingWithError:(id)arg2;
 - (void)awdl:(id)arg1 failedToStartScanningWithError:(id)arg2;
 - (void)awdl:(id)arg1 foundDevice:(id)arg2 rssi:(id)arg3;
@@ -41,7 +44,13 @@
 - (void)nearby:(id)arg1 didStartScanningForType:(long long)arg2;
 - (void)nearbyDidChangeBluetoothBandwidthState:(id)arg1;
 - (void)nearbyDidUpdateState:(id)arg1;
+- (void)pairing:(id)arg1 failedToStartScanningWithError:(id)arg2;
+- (void)pairing:(id)arg1 foundDevice:(id)arg2 payload:(id)arg3 rssi:(id)arg4 peerInfo:(id)arg5;
+- (void)pairingDidUpdateState:(id)arg1;
+- (void)pairingStartedScanning:(id)arg1;
+- (void)pairingStoppedScanning:(id)arg1;
 - (void)removeAirDropDelegate:(id)arg1;
 - (void)removeNearbyDelegate:(id)arg1;
+- (void)removePairingDelegate:(id)arg1;
 
 @end

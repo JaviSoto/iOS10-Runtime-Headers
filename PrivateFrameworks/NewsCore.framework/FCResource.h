@@ -9,6 +9,7 @@
 }
 
 @property (nonatomic, readonly) FCAssetHandle *assetHandle;
+@property (nonatomic, readonly) NSString *changeTag;
 @property (nonatomic, readonly) NSDate *fetchedDate;
 @property (nonatomic, readonly) NSURL *fileURL;
 @property (nonatomic, retain) FCInterestToken *interestToken;
@@ -19,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)assetHandle;
+- (id)changeTag;
 - (id)fetchedDate;
 - (id)fileURL;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2 assetManager:(id)arg3;

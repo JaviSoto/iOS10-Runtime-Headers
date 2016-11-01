@@ -9,6 +9,7 @@
     GEOPDSearchBrowseCategorySuggestionResult * _browseCategorySuggestionResult;
     GEOPDCanonicalLocationSearchResult * _canonicalSearchResult;
     GEOPDCategorySearchResult * _categorySearchResult;
+    GEOPDExternalTransitLookupResult * _externalTransitLookupResult;
     GEOPDFeatureIdGeocodingResult * _featureIdGeocodingResult;
     GEOPDGeocodingResult * _geocodingResult;
     GEOPDLocationDirectedSearchResult * _locationDirectedSearchResult;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) GEOPDSearchBrowseCategorySuggestionResult *browseCategorySuggestionResult;
 @property (nonatomic, retain) GEOPDCanonicalLocationSearchResult *canonicalSearchResult;
 @property (nonatomic, retain) GEOPDCategorySearchResult *categorySearchResult;
+@property (nonatomic, retain) GEOPDExternalTransitLookupResult *externalTransitLookupResult;
 @property (nonatomic, retain) GEOPDFeatureIdGeocodingResult *featureIdGeocodingResult;
 @property (nonatomic, retain) GEOPDGeocodingResult *geocodingResult;
 @property (nonatomic, readonly) bool hasAddressObjectGeocodingResult;
@@ -41,6 +43,7 @@
 @property (nonatomic, readonly) bool hasBrowseCategorySuggestionResult;
 @property (nonatomic, readonly) bool hasCanonicalSearchResult;
 @property (nonatomic, readonly) bool hasCategorySearchResult;
+@property (nonatomic, readonly) bool hasExternalTransitLookupResult;
 @property (nonatomic, readonly) bool hasFeatureIdGeocodingResult;
 @property (nonatomic, readonly) bool hasGeocodingResult;
 @property (nonatomic, readonly) bool hasLocationDirectedSearchResult;
@@ -82,6 +85,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)externalTransitLookupResult;
 - (id)featureIdGeocodingResult;
 - (id)geocodingResult;
 - (bool)hasAddressObjectGeocodingResult;
@@ -90,6 +94,7 @@
 - (bool)hasBrowseCategorySuggestionResult;
 - (bool)hasCanonicalSearchResult;
 - (bool)hasCategorySearchResult;
+- (bool)hasExternalTransitLookupResult;
 - (bool)hasFeatureIdGeocodingResult;
 - (bool)hasGeocodingResult;
 - (bool)hasLocationDirectedSearchResult;
@@ -126,6 +131,7 @@
 - (void)setBrowseCategorySuggestionResult:(id)arg1;
 - (void)setCanonicalSearchResult:(id)arg1;
 - (void)setCategorySearchResult:(id)arg1;
+- (void)setExternalTransitLookupResult:(id)arg1;
 - (void)setFeatureIdGeocodingResult:(id)arg1;
 - (void)setGeocodingResult:(id)arg1;
 - (void)setLocationDirectedSearchResult:(id)arg1;

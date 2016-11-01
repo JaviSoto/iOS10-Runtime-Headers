@@ -67,6 +67,7 @@
 + (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 duration:(double)arg2;
 + (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 totalDistance:(id)arg2;
 + (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 totalEnergyBurned:(id)arg2;
++ (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 totalSwimmingStrokeCount:(id)arg2;
 + (id)predicateForWorkoutsWithWorkoutActivityType:(unsigned long long)arg1;
 + (id)serverInterface;
 + (bool)shouldApplyPredicateForObjectType:(id)arg1;
@@ -133,10 +134,6 @@
 - (void)setClientQueue:(id)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setServerProxy:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)FU_predicateForWorkoutsWithMetadataIndoor:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

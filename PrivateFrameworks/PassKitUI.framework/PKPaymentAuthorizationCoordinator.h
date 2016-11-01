@@ -35,8 +35,8 @@
 @property (nonatomic, retain) NSTimer *timer;
 
 + (bool)canMakePayments;
-+ (bool)canMakePaymentsUsingNetworks:(id)arg1;
-+ (bool)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
++ (bool)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned long long)arg2 isWebPayment:(bool)arg3;
++ (bool)canMakePaymentsUsingNetworks:(id)arg1 isWebPayment:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)_invokeCallbackWithSuccess:(bool)arg1;

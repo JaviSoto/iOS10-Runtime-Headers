@@ -14,6 +14,7 @@
     bool  _detailedScrubbingEnabled;
     bool  _didBeginTracking;
     double  _duration;
+    _UIFeedbackRetargetBehavior * _feedbackBehavior;
     bool  _isTracking;
     struct CGPoint { 
         double x; 

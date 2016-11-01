@@ -64,7 +64,7 @@
     bool  m_doubleSpacePeriodPreference;
     bool  m_doubleSpacePeriodWasAppliedInCurrentContext;
     id /* block */  m_externalTask;
-    _UISystemSoundPlayer * m_feedbackBehavior;
+    _UIFeedbackKeyboardBehavior * m_feedbackBehavior;
     <UIKeyboardImplGeometryDelegate> * m_geometryDelegate;
     bool  m_hardwareKeyboardAttached;
     UIPhysicalKeyboardEvent * m_hardwareRepeatEvent;
@@ -164,7 +164,7 @@
 @property (nonatomic, readonly) UIResponder *delegateAsResponder;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ externalTask;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackKeyboardBehavior *feedbackBehavior;
 @property (nonatomic) bool forceEnablePredictionView;
 @property (nonatomic) <UIKeyboardImplGeometryDelegate> *geometryDelegate;
 @property (nonatomic) bool geometryIsChanging;

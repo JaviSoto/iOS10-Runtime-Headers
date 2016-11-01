@@ -60,6 +60,7 @@
 - (id)decodedTotalBasalEnergyBurned;
 - (id)decodedTotalDistance;
 - (id)decodedTotalEnergyBurned;
+- (id)decodedTotalSwimmingStrokeCount;
 - (id)decodedWorkoutEvents;
 - (id)description;
 - (id)dictionaryRepresentation;

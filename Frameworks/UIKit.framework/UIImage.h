@@ -341,12 +341,6 @@
 - (id)ckImageWithTintColor:(id)arg1;
 - (void)decode;
 
-// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
-
-+ (id)imageWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
-
-- (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
 - (id)_cnui_pngData;
@@ -368,11 +362,6 @@
 - (id)imagesWithSpriteSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)tintedImageWithColor:(id)arg1;
 - (id)tintedImageWithColor:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)fiui_imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-+ (id)fiui_pixelImageWithColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
@@ -470,19 +459,6 @@
 
 - (id)MCD_identifier;
 - (void)setMCD_identifier:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
-
-+ (id)_npto_eagerlyDecodedImageWithData:(id)arg1 orientation:(long long)arg2;
-
-- (void)_npto_drawWithAspectFillInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_npto_drawWithAspectFillInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 biasTowardsFaces:(id)arg2;
-- (void)_npto_drawWithSrcRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 intoDstRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (id)_npto_subImageFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
-
-+ (id)newImageForScreenCorner:(unsigned long long)arg1 cornerRadius:(double)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -633,10 +609,6 @@
 
 - (id)imageResizedTo:(struct CGSize { double x1; double x2; })arg1;
 - (id)imageResizedTo:(struct CGSize { double x1; double x2; })arg1 preserveAspectRatio:(bool)arg2;
-
-// Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
-
-- (id)rms_jpegDataScaledToSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(float)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

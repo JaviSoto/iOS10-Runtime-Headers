@@ -68,6 +68,7 @@
 @property (setter=_setCurrentOrientedAcceleration:, nonatomic) double currentOrientedAcceleration;
 @property (nonatomic) <CAMPanoramaViewDelegate> *delegate;
 @property (nonatomic) long long direction;
+@property (nonatomic, readonly) UIView *instructionView;
 @property (nonatomic) long long layoutStyle;
 @property (getter=isPainting, setter=_setPainting:, nonatomic) bool painting;
 @property (nonatomic, readonly) CAMPanoramaPreviewView *previewView;
@@ -127,6 +128,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithPanoramaPreviewView:(id)arg1 layoutStyle:(long long)arg2;
+- (id)instructionView;
 - (bool)isPainting;
 - (long long)layoutStyle;
 - (void)layoutSubviews;

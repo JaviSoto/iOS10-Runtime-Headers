@@ -33,11 +33,12 @@
 + (bool)isPersonMetadataPath:(id)arg1;
 + (bool)isValidPath:(id)arg1;
 + (id)rejectedFacesToArchiveWithPerson:(id)arg1;
++ (unsigned long long)writeMetadataForVerifiedPeopleOnAssetObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addAssetUUIDsFromFaces:(id)arg1 toMutableSet:(id)arg2;
-- (bool)_insertDetectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2;
-- (bool)_insertRejectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2;
+- (bool)_insertDetectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(bool)arg3;
+- (bool)_insertRejectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(bool)arg3;
 - (id)_metadataData;
 - (void)_readMetadata;
 - (void)_saveMetadata;
@@ -69,7 +70,7 @@
 - (void)setRejectedFaces:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
-- (bool)updateFacesInPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2;
+- (bool)updateFacesInPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(bool)arg3;
 - (void)writePersistedData;
 
 @end

@@ -8,6 +8,7 @@
     bool  _isBackgrounded;
     PKPassView * _passView;
     long long  _paymentApplicationState;
+    NSObject<OS_dispatch_group> * _sessionDelayGroup;
     PKPaymentSessionHandle * _sessionHandle;
     NSObject<OS_dispatch_source> * _sessionStartTimer;
     unsigned long long  _sessionToken;
@@ -45,11 +46,12 @@
 - (void)dealloc;
 - (void)didBecomeHiddenAnimated:(bool)arg1;
 - (void)didBecomeVisibleAnimated:(bool)arg1;
-- (id)initWithPassView:(id)arg1 context:(id)arg2;
+- (id)initWithPassView:(id)arg1 state:(long long)arg2 context:(id)arg3;
 - (bool)isPassAuthorized;
 - (void)layoutSubviews;
 - (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
 - (void)passFooterContentViewDidEndAuthenticating:(id)arg1;
+- (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;
 - (id)passView;
 - (void)setPassView:(id)arg1;
 - (long long)state;

@@ -19,6 +19,7 @@
 @property (nonatomic, retain) CAMediaTimingFunction *timing;
 @property (nonatomic) double velocity;
 
++ (double)defaultDuration;
 + (id)defaultTimingFunction;
 + (id)springAnimationWithKeyPath:(id)arg1;
 + (id)springAnimationWithKeyPath:(id)arg1 velocity:(double)arg2;

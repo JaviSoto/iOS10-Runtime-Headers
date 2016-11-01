@@ -7,7 +7,7 @@
     bool  __shouldRespectNearestCurrentContextPresenter;
     bool  _chromeHidden;
     UIView * _dimmingView;
-    _UISystemSoundPlayer * _feedbackBehavior;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     <_UIForcePresentationControllerDelegate> * _forcePresentationControllerDelegate;
     UIGestureRecognizer * _panningGestureRecognizer;
     id /* block */  _presentationPhaseCompletionBlock;
@@ -26,7 +26,7 @@
 @property (nonatomic) bool _sourceViewSnapshotAndScaleTransformSuppressed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (nonatomic) <_UIForcePresentationControllerDelegate> *forcePresentationControllerDelegate;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIGestureRecognizer *panningGestureRecognizer;

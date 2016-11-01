@@ -94,13 +94,6 @@
 - (double)walkingAndRunningDistance;
 - (long long)wheelchairUse;
 
-// Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
-
-- (id)_workoutCountStringForWorkouts:(id)arg1;
-- (id)ff_workoutCaloriesWithContext:(id)arg1 forWorkouts:(id)arg2;
-- (id)ff_workoutCountWithContext:(id)arg1 forWorkouts:(id)arg2;
-- (id)ff_workoutNameStringWithContext:(id)arg1 forWorkouts:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;

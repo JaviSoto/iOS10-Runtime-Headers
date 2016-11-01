@@ -8,6 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SAUITemplateEdgeInsets *fullScreenPaddingDelta;
+@property (nonatomic) bool hasPriorityLayout;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUITemplateEdgeInsets *padding;
 @property (nonatomic, copy) NSArray *presentationOptions;

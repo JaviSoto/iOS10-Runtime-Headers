@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCameraProfile : HMAccessoryProfile {
+@interface HMCameraProfile : HMAccessoryProfile <HFFavoritable> {
     HMCameraAudioControl * _microphoneControl;
     HMCameraSettingsControl * _settingsControl;
     HMCameraSnapshotControl * _snapshotControl;
@@ -11,17 +11,25 @@
 }
 
 @property (nonatomic, readonly) _HMCameraProfile *cameraProfile;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HFCameraManager *hf_cameraManager;
+@property (nonatomic, readonly) bool hf_hasSetFavorite;
+@property (nonatomic, readonly) bool hf_isFavorite;
 @property (nonatomic, retain) HMCameraAudioControl *microphoneControl;
 @property (nonatomic, retain) HMCameraSettingsControl *settingsControl;
 @property (nonatomic, retain) HMCameraSnapshotControl *snapshotControl;
 @property (nonatomic, retain) HMCameraAudioControl *speakerControl;
 @property (nonatomic, retain) HMCameraStreamControl *streamControl;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (void).cxx_destruct;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)cameraProfile;
 - (id)initWithCameraProfile:(id)arg1;
-- (bool)isEqual:(id)arg1;
 - (id)microphoneControl;
 - (id)services;
 - (void)setMicrophoneControl:(id)arg1;
@@ -33,5 +41,12 @@
 - (id)snapshotControl;
 - (id)speakerControl;
 - (id)streamControl;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_cameraManager;
+- (bool)hf_hasSetFavorite;
+- (bool)hf_isFavorite;
+- (id)hf_updateIsFavorite:(bool)arg1;
 
 @end

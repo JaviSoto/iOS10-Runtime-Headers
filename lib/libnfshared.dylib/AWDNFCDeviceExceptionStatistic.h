@@ -9,6 +9,9 @@
         unsigned int mwCount : 1; 
         unsigned int pllUnlock : 1; 
         unsigned int pllUnlockDuringPMICPowerCycle : 1; 
+        unsigned int readerModeConnectErrorCount : 1; 
+        unsigned int readerModeDisconnectErrorCount : 1; 
+        unsigned int readerModeTransceiveErrorCount : 1; 
         unsigned int restrictedModeCount : 1; 
         unsigned int seRemovedEvt0Count : 1; 
         unsigned int seRemovedEvt1Count : 1; 
@@ -16,11 +19,16 @@
         unsigned int seRemovedEvt3Count : 1; 
         unsigned int seRemovedEvt4Count : 1; 
         unsigned int seRemovedEvt5Count : 1; 
+        unsigned int seosRemovedCount : 1; 
+        unsigned int seosRestrictedModeCount : 1; 
     }  _has;
     unsigned int  _hwCount;
     unsigned int  _mwCount;
     unsigned int  _pllUnlock;
     unsigned int  _pllUnlockDuringPMICPowerCycle;
+    unsigned int  _readerModeConnectErrorCount;
+    unsigned int  _readerModeDisconnectErrorCount;
+    unsigned int  _readerModeTransceiveErrorCount;
     unsigned int  _restrictedModeCount;
     unsigned int  _seRemovedEvt0Count;
     unsigned int  _seRemovedEvt1Count;
@@ -28,6 +36,8 @@
     unsigned int  _seRemovedEvt3Count;
     unsigned int  _seRemovedEvt4Count;
     unsigned int  _seRemovedEvt5Count;
+    unsigned int  _seosRemovedCount;
+    unsigned int  _seosRestrictedModeCount;
     unsigned long long  _timestamp;
     NSData * _uuidReference;
 }
@@ -36,6 +46,9 @@
 @property (nonatomic) bool hasMwCount;
 @property (nonatomic) bool hasPllUnlock;
 @property (nonatomic) bool hasPllUnlockDuringPMICPowerCycle;
+@property (nonatomic) bool hasReaderModeConnectErrorCount;
+@property (nonatomic) bool hasReaderModeDisconnectErrorCount;
+@property (nonatomic) bool hasReaderModeTransceiveErrorCount;
 @property (nonatomic) bool hasRestrictedModeCount;
 @property (nonatomic) bool hasSeRemovedEvt0Count;
 @property (nonatomic) bool hasSeRemovedEvt1Count;
@@ -43,12 +56,17 @@
 @property (nonatomic) bool hasSeRemovedEvt3Count;
 @property (nonatomic) bool hasSeRemovedEvt4Count;
 @property (nonatomic) bool hasSeRemovedEvt5Count;
+@property (nonatomic) bool hasSeosRemovedCount;
+@property (nonatomic) bool hasSeosRestrictedModeCount;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic, readonly) bool hasUuidReference;
 @property (nonatomic) unsigned int hwCount;
 @property (nonatomic) unsigned int mwCount;
 @property (nonatomic) unsigned int pllUnlock;
 @property (nonatomic) unsigned int pllUnlockDuringPMICPowerCycle;
+@property (nonatomic) unsigned int readerModeConnectErrorCount;
+@property (nonatomic) unsigned int readerModeDisconnectErrorCount;
+@property (nonatomic) unsigned int readerModeTransceiveErrorCount;
 @property (nonatomic) unsigned int restrictedModeCount;
 @property (nonatomic) unsigned int seRemovedEvt0Count;
 @property (nonatomic) unsigned int seRemovedEvt1Count;
@@ -56,6 +74,8 @@
 @property (nonatomic) unsigned int seRemovedEvt3Count;
 @property (nonatomic) unsigned int seRemovedEvt4Count;
 @property (nonatomic) unsigned int seRemovedEvt5Count;
+@property (nonatomic) unsigned int seosRemovedCount;
+@property (nonatomic) unsigned int seosRestrictedModeCount;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSData *uuidReference;
 
@@ -68,6 +88,9 @@
 - (bool)hasMwCount;
 - (bool)hasPllUnlock;
 - (bool)hasPllUnlockDuringPMICPowerCycle;
+- (bool)hasReaderModeConnectErrorCount;
+- (bool)hasReaderModeDisconnectErrorCount;
+- (bool)hasReaderModeTransceiveErrorCount;
 - (bool)hasRestrictedModeCount;
 - (bool)hasSeRemovedEvt0Count;
 - (bool)hasSeRemovedEvt1Count;
@@ -75,6 +98,8 @@
 - (bool)hasSeRemovedEvt3Count;
 - (bool)hasSeRemovedEvt4Count;
 - (bool)hasSeRemovedEvt5Count;
+- (bool)hasSeosRemovedCount;
+- (bool)hasSeosRestrictedModeCount;
 - (bool)hasTimestamp;
 - (bool)hasUuidReference;
 - (unsigned long long)hash;
@@ -85,6 +110,9 @@
 - (unsigned int)pllUnlock;
 - (unsigned int)pllUnlockDuringPMICPowerCycle;
 - (bool)readFrom:(id)arg1;
+- (unsigned int)readerModeConnectErrorCount;
+- (unsigned int)readerModeDisconnectErrorCount;
+- (unsigned int)readerModeTransceiveErrorCount;
 - (unsigned int)restrictedModeCount;
 - (unsigned int)seRemovedEvt0Count;
 - (unsigned int)seRemovedEvt1Count;
@@ -92,10 +120,15 @@
 - (unsigned int)seRemovedEvt3Count;
 - (unsigned int)seRemovedEvt4Count;
 - (unsigned int)seRemovedEvt5Count;
+- (unsigned int)seosRemovedCount;
+- (unsigned int)seosRestrictedModeCount;
 - (void)setHasHwCount:(bool)arg1;
 - (void)setHasMwCount:(bool)arg1;
 - (void)setHasPllUnlock:(bool)arg1;
 - (void)setHasPllUnlockDuringPMICPowerCycle:(bool)arg1;
+- (void)setHasReaderModeConnectErrorCount:(bool)arg1;
+- (void)setHasReaderModeDisconnectErrorCount:(bool)arg1;
+- (void)setHasReaderModeTransceiveErrorCount:(bool)arg1;
 - (void)setHasRestrictedModeCount:(bool)arg1;
 - (void)setHasSeRemovedEvt0Count:(bool)arg1;
 - (void)setHasSeRemovedEvt1Count:(bool)arg1;
@@ -103,11 +136,16 @@
 - (void)setHasSeRemovedEvt3Count:(bool)arg1;
 - (void)setHasSeRemovedEvt4Count:(bool)arg1;
 - (void)setHasSeRemovedEvt5Count:(bool)arg1;
+- (void)setHasSeosRemovedCount:(bool)arg1;
+- (void)setHasSeosRestrictedModeCount:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHwCount:(unsigned int)arg1;
 - (void)setMwCount:(unsigned int)arg1;
 - (void)setPllUnlock:(unsigned int)arg1;
 - (void)setPllUnlockDuringPMICPowerCycle:(unsigned int)arg1;
+- (void)setReaderModeConnectErrorCount:(unsigned int)arg1;
+- (void)setReaderModeDisconnectErrorCount:(unsigned int)arg1;
+- (void)setReaderModeTransceiveErrorCount:(unsigned int)arg1;
 - (void)setRestrictedModeCount:(unsigned int)arg1;
 - (void)setSeRemovedEvt0Count:(unsigned int)arg1;
 - (void)setSeRemovedEvt1Count:(unsigned int)arg1;
@@ -115,6 +153,8 @@
 - (void)setSeRemovedEvt3Count:(unsigned int)arg1;
 - (void)setSeRemovedEvt4Count:(unsigned int)arg1;
 - (void)setSeRemovedEvt5Count:(unsigned int)arg1;
+- (void)setSeosRemovedCount:(unsigned int)arg1;
+- (void)setSeosRestrictedModeCount:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUuidReference:(id)arg1;
 - (unsigned long long)timestamp;

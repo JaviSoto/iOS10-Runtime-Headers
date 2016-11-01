@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) long long type;
 
 + (id)nullAsset;
++ (id)withType:(long long)arg1 andParameters:(id)arg2;
 
 - (void)dealloc;
 - (id)description;

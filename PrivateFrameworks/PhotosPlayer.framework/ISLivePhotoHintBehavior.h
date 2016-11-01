@@ -36,6 +36,7 @@
 - (void)_setLastProgress:(double)arg1;
 - (void)_setPreparing:(bool)arg1;
 - (void)activeDidChange;
+- (long long)behaviorType;
 - (void)hintWithProgress:(float)arg1;
 - (id)initWithInitialLayoutInfo:(id)arg1 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 prerollRate:(float)arg3 playDuringHint:(bool)arg4;
 - (bool)playDuringHint;

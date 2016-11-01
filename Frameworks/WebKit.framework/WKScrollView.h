@@ -14,8 +14,6 @@
 @property (nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate;
 @property (nonatomic, readonly) double preferredScrollDecelerationFactor;
 
-// Image: /System/Library/Frameworks/WebKit.framework/WebKit
-
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })_currentTopLeftRubberbandAmount;
@@ -32,11 +30,5 @@
 - (void)setDecelerationRate:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalDelegate:(id)arg1;
-
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
-- (id)_accessibilitySpeakSelectionTextInputResponder;
 
 @end

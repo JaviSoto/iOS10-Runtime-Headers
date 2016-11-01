@@ -7,6 +7,7 @@
     bool  _iCloudAccountChanged;
     FCTagSettings * _tagSettings;
     NSNumber * _totalMeteredCount;
+    bool  _useParsecResults;
     NTPBWidgetConfig * _widgetConfiguration;
 }
 

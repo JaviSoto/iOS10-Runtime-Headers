@@ -10,7 +10,7 @@
         long long epoch; 
     }  _HDRStillCaptureReferenceFramePTS;
     long long  _activeFormatIndex;
-    bool  _activeStillImageCaptureIsSingleFrameCapture;
+    bool  _activeStillImageCaptureIsMultiCameraCaptureAndFusion;
     int  _activeStillImageCaptureType;
     int  _activeStillImagePrimaryCaptureType;
     NSDictionary * _attributes;
@@ -29,6 +29,7 @@
     bool  _flashEnabled;
     NSDictionary * _geometricDistortionCoefficients;
     bool  _grabNextFrame;
+    float  _gravityFactor;
     bool  _hasSphere;
     int  _lastStillImageCaptureType;
     struct { 
@@ -37,6 +38,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _lastStillImagePTS;
+    int  _masterToSlaveFrameRateRatio;
     float  _maximumFrameRate;
     float  _minimumFrameRate;
     NSDictionary * _moduleInfo;
@@ -47,7 +49,6 @@
     NSString * _portType;
     bool  _providesPreBracketedEV0;
     int  _receivedImagesOrErrorsForCaptureStillImageNow;
-    bool  _sensorFormat;
     NSDictionary * _sensorIDDictionary;
     int  _skippedFramesCountForAF;
     bool  _sphereEnabled;
@@ -62,11 +63,11 @@
     int  _stillImageCaptureStateLock;
     struct OpaqueFigCaptureStream { } * _stream;
     NSObject<OS_dispatch_queue> * _streamNotificationDispatchQueue;
-    int  _streamRatioAsConfigured;
     bool  _streaming;
-    bool  _streamingEnabledAsConfigured;
+    bool  _streamingEnabledWhenConfiguredAsSlave;
     NSArray * _supportedFormats;
     NSDictionary * _supportedProperties;
+    bool  _synchronizedStreamsEnabled;
     BWStillImageTimeMachine * _timeMachine;
     int  _timeMachineCapacity;
     bool  _timeMachineEnabled;
@@ -81,6 +82,7 @@
 @property (nonatomic) <BWFigVideoCaptureStreamDelegate> *delegate;
 @property (nonatomic) bool enablesSphereWhenAvailable;
 @property (readonly) NSDictionary *geometricDistortionCoefficients;
+@property (readonly) float gravityFactor;
 @property (readonly) bool hasSphere;
 @property (nonatomic, readonly) int lastStillImageCaptureType;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } lastStillImagePTS;
@@ -95,7 +97,6 @@
 @property (readonly) float pixelSize;
 @property (readonly) NSString *portType;
 @property (nonatomic, readonly) bool providesPreBracketedEV0;
-@property (readonly) bool sensorFormat;
 @property (readonly) NSDictionary *sensorIDDictionary;
 @property (readonly) NSString *sensorIDString;
 @property (readonly) bool sphereEnabled;
@@ -107,6 +108,7 @@
 @property (readonly) struct OpaqueFigCaptureStream { }*stream;
 @property (nonatomic, readonly) bool streaming;
 @property (readonly) NSArray *supportedFormats;
+@property (readonly) bool synchronizedStreamsEnabled;
 @property (readonly) int timeMachineCapacity;
 @property (nonatomic) bool timeMachineEnabled;
 @property (nonatomic) bool usesStillFusionReferenceFramePTSForDidCaptureCallback;
@@ -138,8 +140,9 @@
 - (bool)enablesSphereWhenAvailable;
 - (void)failedToCaptureStillImageFromFirmwareWithError:(int)arg1;
 - (id)geometricDistortionCoefficients;
+- (float)gravityFactor;
 - (bool)hasSphere;
-- (id)initWithFigCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 attributes:(id)arg2 sensorIDDictionary:(id)arg3 sensorFormat:(bool)arg4;
+- (id)initWithFigCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 attributes:(id)arg2 sensorIDDictionary:(id)arg3 synchronizedStreamsEnabled:(bool)arg4;
 - (int)lastStillImageCaptureType;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })lastStillImagePTS;
 - (float)maximumAllowedFrameRate;
@@ -155,7 +158,6 @@
 - (void)prepareForStillImageCaptureFromFirmwareWithStillImageSettings:(id)arg1;
 - (bool)providesPreBracketedEV0;
 - (void)registerForFaceDetectionMetadata;
-- (bool)sensorFormat;
 - (id)sensorIDDictionary;
 - (id)sensorIDString;
 - (int)setActiveFormatIndex:(long long)arg1;
@@ -171,6 +173,7 @@
 - (void)setStillImageBufferTimeMachineHandler:(id /* block */)arg1;
 - (void)setStillImageCaptureDelegate:(id)arg1;
 - (void)setStillImageCaptureEnabled:(bool)arg1;
+- (void)setStreamingEnabledWhenConfiguredAsSlave:(bool)arg1 masterToSlaveFrameRateRatio:(int)arg2;
 - (void)setTimeMachineEnabled:(bool)arg1;
 - (void)setUsesStillFusionReferenceFramePTSForDidCaptureCallback:(bool)arg1;
 - (void)sourceNodeDidStartStreaming;
@@ -194,6 +197,7 @@
 - (bool)streaming;
 - (id)supportedFormats;
 - (bool)supportsProperty:(struct __CFString { }*)arg1;
+- (bool)synchronizedStreamsEnabled;
 - (int)timeMachineCapacity;
 - (bool)timeMachineEnabled;
 - (void)unregisterForFaceDetectionMetadata;

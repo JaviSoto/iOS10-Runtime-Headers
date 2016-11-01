@@ -253,11 +253,6 @@
 
 - (void)shuffle;
 
-// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
-
-- (id)dequeueAtom;
-- (void)enqueueAtom:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
 - (void)na_safeAddObject:(id)arg1;

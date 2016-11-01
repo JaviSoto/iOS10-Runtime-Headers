@@ -55,6 +55,7 @@
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)suspendTrackFadeOut;
 - (double)thumbMaxExtension;
+- (void)tintColorDidChange;
 - (void)updateLastInteractionTime;
 
 @end

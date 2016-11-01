@@ -128,11 +128,6 @@
 + (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
 + (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
-
-+ (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
-+ (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
 
 + (id)secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;

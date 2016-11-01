@@ -25,6 +25,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)_usesSections;
+- (bool)hasSameContentAsDataSource:(id)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)identifiersForSectionAtIndex:(long long)arg1;
 - (long long)indexOfSectionForSectionIndexTitleAtIndex:(long long)arg1;

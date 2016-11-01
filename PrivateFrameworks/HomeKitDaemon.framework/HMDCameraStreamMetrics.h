@@ -3,6 +3,7 @@
  */
 
 @interface HMDCameraStreamMetrics : HMDLogEvent <HMDAWDLogEvent> {
+    HMDAccessory * _accessory;
     bool  _isLocal;
     NSMutableArray * _resolutionTypes;
     NSString * _sessionID;
@@ -10,6 +11,7 @@
     double  _timeStreamStarted;
 }
 
+@property (nonatomic, readonly) HMDAccessory *accessory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -20,13 +22,14 @@
 @property (readonly) Class superclass;
 @property (nonatomic) double timeStreamStarted;
 
-+ (id)cameraStreamMetricWithID:(id)arg1 isLocal:(bool)arg2;
++ (id)cameraStreamMetricWithID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(bool)arg3;
 + (void)initialize;
 + (id)uuid;
 
 - (void).cxx_destruct;
 - (unsigned int)AWDMessageType;
-- (id)initWithID:(id)arg1 isLocal:(bool)arg2;
+- (id)accessory;
+- (id)initWithID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(bool)arg3;
 - (bool)isLocal;
 - (bool)isStreamStarted;
 - (id)metricForAWD;

@@ -12,6 +12,7 @@
     double  _dateAtFirstTouchPoint;
     <EKEventGestureControllerDelegate> * _delegate;
     bool  _dragLockDisabled;
+    _UIFeedbackDragSnappingBehavior * _dragSnappingFeedback;
     UILongPressGestureRecognizer * _draggingGestureRecognizer;
     EKDayOccurrenceView * _draggingView;
     EKDayOccurrenceView * _draggingViewSource;
@@ -100,6 +101,7 @@
 - (bool)_isPointInCancelRegion:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_longPress:(id)arg1;
 - (void)_manageDraggingViewInteractivityForStateChangeFrom:(int)arg1 to:(int)arg2;
+- (void)_manageFeedbackForStateChangeFrom:(int)arg1 to:(int)arg2;
 - (double)_minimumDuration;
 - (void)_removeScrollTimer;
 - (void)_resumePreviousDrag;

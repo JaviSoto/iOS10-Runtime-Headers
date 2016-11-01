@@ -10,7 +10,7 @@
     <UIForceTransitioningDelegate> * _currentTransitionDelegate;
     _UIDeepPressAnalyzer * _deepPressAnalyzer;
     <UIPreviewInteractionControllerDelegate> * _delegate;
-    _UISystemSoundPlayer * _feedbackBehavior;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     UIInteractionProgress * _interactionProgressForCommit;
     UIInteractionProgress * _interactionProgressForPresentation;
     bool  _isCommitting;
@@ -38,7 +38,7 @@
 @property (nonatomic, retain) _UIDeepPressAnalyzer *deepPressAnalyzer;
 @property (nonatomic) <UIPreviewInteractionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (nonatomic, readonly) NSArray *gestureRecognizers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForCommit;
@@ -71,6 +71,8 @@
 - (void)_setCalloutBarHidden:(bool)arg1;
 - (void)_setStatusBarHidden:(bool)arg1;
 - (id)_transitionDelegateForPreviewViewController:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3;
+- (void)_turnOffFeedbackBehavior;
+- (void)_turnOnFeedbackBehavior;
 - (bool)_usesPreviewInteraction;
 - (bool)_usesPreviewPresentationController;
 - (bool)_viewControllerIsChildOfExpandedSplitViewController:(id)arg1;

@@ -1,7 +1,7 @@
-iOS 10 Beta 8 Runtime Headers
+iOS 10.1 Runtime Headers
 ====================
 
-iOS 10 Beta 8 Runtime Headers
+iOS 10.1 Runtime Headers
 
 ### How to export
 

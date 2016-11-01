@@ -4,6 +4,7 @@
 
 @interface AVScrubber : UISlider {
     double  _beginTouchLocationInViewY;
+    _UIFeedbackRetargetBehavior * _feedbackBehavior;
     NSArray * _loadedTimeRanges;
     AVLoadedTimeRangesView * _loadedTimeRangesMaxTrackView;
     float  _rate;
@@ -25,6 +26,7 @@
 + (id)keyPathsForValuesAffectingPreciseScrubbingFeasible;
 
 - (void).cxx_destruct;
+- (id)_feedbackBehavior;
 - (void)_initSubviews;
 - (void)_layoutSubviewsForBoundsChange:(bool)arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

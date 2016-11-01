@@ -115,18 +115,6 @@
 - (void)setStepCount:(id)arg1;
 - (id)stepCount;
 
-// Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
-
-- (id)_activeEnergyStringWithFont:(id)arg1 smallCapsFont:(id)arg2 color:(id)arg3;
-- (id)ff_activeEnergyProgressStringWithContext:(id)arg1;
-- (id)ff_activeEnergyStringWithContext:(id)arg1;
-- (id)ff_distanceStringWithContext:(id)arg1;
-- (id)ff_exerciseDurationStringWithContext:(id)arg1;
-- (id)ff_exerciseProgressStringWithContext:(id)arg1;
-- (id)ff_movePercentStringWithContext:(id)arg1;
-- (id)ff_pushesStringWithContext:(id)arg1;
-- (id)ff_stepsStringWithContext:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (bool)hd_isEnergyBurnedGoalSet;

@@ -180,6 +180,8 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)_UIAppearance_setBackgroundColor:(id)arg1;
+- (void)_UIAppearance_setSeparatorDrawsInVibrantLightModeUIAppearance:(id)arg1;
 - (SEL)_accessoryAction;
 - (id)_accessoryTintColor;
 - (id)_accessoryView:(bool)arg1;

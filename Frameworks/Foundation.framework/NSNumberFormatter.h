@@ -238,56 +238,6 @@
 
 - (id)stringFromInteger:(long long)arg1;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 distanceType:(long long)arg2 unitStyle:(long long)arg3 usedUnit:(long long*)arg4;
-+ (double)FU_caloriesForEnergyBurnedInUserUnit:(double)arg1;
-+ (id)FU_decimalSeparator;
-+ (double)FU_distanceInDistanceUnit:(long long)arg1 forDistanceInMeters:(double)arg2;
-+ (double)FU_distanceInMetersForDistanceInUserUnit:(double)arg1 distanceType:(long long)arg2;
-+ (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(long long)arg2;
-+ (double)FU_energyBurnedInUserUnitForCalories:(double)arg1;
-+ (bool)FU_localeUsesMetricForPersonHeight;
-+ (id)FU_localizedDistinguishingShortEnergyStringForEnergyMetricType:(unsigned long long)arg1;
-+ (id)FU_localizedLongActiveEnergyUnitString;
-+ (id)FU_localizedLongActiveEnergyUnitStringCapitalized:(bool)arg1;
-+ (id)FU_localizedLongActiveEnergyUnitStringUppercase:(bool)arg1;
-+ (id)FU_localizedLongUnitStringWithDistanceUnit:(long long)arg1 distance:(double)arg2;
-+ (id)FU_localizedLongUnitStringWithDistanceUnit:(long long)arg1 distance:(double)arg2 uppercase:(bool)arg3;
-+ (id)FU_localizedPaceStringForDuration:(double)arg1 distance:(id)arg2 paceFormatType:(long long)arg3;
-+ (id)FU_localizedShortActiveEnergyUnitString;
-+ (id)FU_localizedShortUnitStringWithDistanceUnit:(long long)arg1;
-+ (id)FU_localizedShortUnitStringWithDistanceUnit:(long long)arg1 uppercase:(bool)arg2;
-+ (id)FU_localizedSpeedValueForDistance:(id)arg1 overTime:(double)arg2;
-+ (id)FU_localizedStringForPaceAsTimeInterval:(double)arg1 gateInvalidPaceValues:(bool)arg2;
-+ (id)FU_localizedStringWithActiveEnergy:(id)arg1;
-+ (id)FU_localizedStringWithActiveEnergy:(id)arg1 unitStyle:(long long)arg2;
-+ (id)FU_localizedStringWithDistance:(double)arg1 distanceType:(long long)arg2 unitStyle:(long long)arg3;
-+ (id)FU_localizedStringWithDistance:(double)arg1 distanceUnit:(long long)arg2 unitStyle:(long long)arg3 decimalPrecision:(long long)arg4;
-+ (id)FU_localizedStringWithEnergy:(id)arg1 energyType:(long long)arg2 unitStyle:(long long)arg3;
-+ (id)FU_localizedStringWithEnergyInCalories:(double)arg1 energyType:(long long)arg2 unitStyle:(long long)arg3;
-+ (id)FU_localizedWorkoutCount:(long long)arg1;
-+ (id)FU_percentStringWithNumber:(id)arg1;
-+ (double)FU_roundCaloriesForDailyGoal:(double)arg1;
-+ (id)FU_stringForHeight:(long long)arg1 withUnitString:(id)arg2;
-+ (id)FU_stringForHeightInInches:(long long)arg1;
-+ (id)FU_stringWithNumber:(id)arg1 decimalPrecision:(long long)arg2;
-+ (id)FU_stringWithTimeInterval:(double)arg1 formatType:(unsigned long long)arg2;
-+ (long long)FU_userDistanceUnitForLapLength;
-+ (id)_FU_doubleFractionNumberFormatter;
-+ (id)_FU_energyFormatter;
-+ (id)_FU_integerNumberFormatter;
-+ (id)_FU_integerPercentNumberFormatter;
-+ (id)_FU_lengthFormatterWithDecimalPrecision:(long long)arg1 unitStyle:(long long)arg2;
-+ (id)_FU_roundedDoubleFractionNumberFormatter;
-+ (id)_FU_roundedIntegerNumberFormatter;
-+ (id)_FU_roundedSingleFractionNumberFormatter;
-+ (id)_FU_singleFractionNumberFormatter;
-+ (id)_FU_zeroPaddedIntegerNumberFormatter;
-+ (id)_durationSeperator;
-+ (id)_energyBurnedUnitStringForUnit:(id)arg1 useShortString:(bool)arg2;
-+ (id)_localizedStringWithDistanceUnit:(long long)arg1 distanceInDistanceUnit:(double)arg2 unitStyle:(long long)arg3 withDecimalPrecision:(long long)arg4;
-
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)gkRankFormatter;

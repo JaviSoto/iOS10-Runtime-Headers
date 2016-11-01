@@ -44,6 +44,7 @@
 - (void)loadReasonsSaved:(id)arg1;
 - (id)pendingReasonsSaved;
 - (id)pendingTransactionDictionary;
+- (unsigned long long)preservableTransactionsForHome:(id)arg1;
 - (id)reasonsSaved;
 - (void)removePendingTransactionsForHome:(id)arg1;
 - (void)reset;

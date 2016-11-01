@@ -93,6 +93,7 @@
 @property (nonatomic, retain) NSError *assetError;
 @property (nonatomic, readonly, copy) NSString *assetFlavor;
 @property (nonatomic, readonly) RadioAudioClip *audioClip;
+@property (nonatomic, readonly, copy) NSNumber *bookmarkTime;
 @property (nonatomic, readonly, copy) NSArray *buyOffers;
 @property (nonatomic, readonly) bool canReusePlayerItem;
 @property (nonatomic, readonly) bool canSeedGenius;
@@ -124,6 +125,7 @@
 @property (nonatomic) bool hasPlayedThisSession;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long indexInQueueFeeder;
+@property (nonatomic, readonly, copy) NSNumber *initialPlaybackStartTime;
 @property (nonatomic, readonly) bool isAd;
 @property (nonatomic, readonly) bool isAlwaysLive;
 @property bool isAssetLoaded;
@@ -140,9 +142,12 @@
 @property (nonatomic, readonly, retain) MPMediaItem *mediaItem;
 @property (nonatomic, readonly) MPModelObject *modelObject;
 @property (nonatomic, readonly) MPModelSong *modelSong;
+@property (nonatomic, readonly) long long mpcReporting_equivalencySourceAdamID;
 @property (nonatomic, readonly) bool mpcReporting_isValidReportingItem;
 @property (nonatomic, readonly) unsigned long long mpcReporting_itemType;
 @property (nonatomic, readonly, copy) NSData *mpcReporting_jingleTimedMetadata;
+@property (nonatomic, readonly, copy) NSString *mpcReporting_requestingBundleIdentifier;
+@property (nonatomic, readonly, copy) NSString *mpcReporting_requestingBundleVersion;
 @property (nonatomic, readonly) bool mpcReporting_shouldReportPlayEventsToStore;
 @property (nonatomic, readonly) bool mpcReporting_shouldUseRelativeTimePositions;
 @property (nonatomic, readonly, copy) NSData *mpcReporting_trackInfo;
@@ -150,7 +155,7 @@
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) double playableDuration;
 @property (nonatomic, readonly) double playableDurationIfAvailable;
-@property (nonatomic) double playbackCheckpointCurrentTime;
+@property (nonatomic, readonly, copy) NSDictionary *playbackInfo;
 @property (nonatomic, readonly) long long playbackMode;
 @property (nonatomic) MPAVController *player;
 @property (nonatomic, retain) AVPlayerItem *playerItem;
@@ -209,6 +214,7 @@
 - (long long)_expectedPlaybackMode;
 - (void)_handleUpdatedLikedState:(long long)arg1 completion:(id /* block */)arg2;
 - (id)_imageChapterTrackIDsForAsset:(id)arg1;
+- (id)_initialPlaybackStartTimeForPlaybackInfo:(id)arg1;
 - (void)_internalLikedStateDidChangeNotification:(id)arg1;
 - (void)_itemAttributeAvailableKey:(id)arg1;
 - (void)_likedStateDidChange;
@@ -254,6 +260,7 @@
 - (id)asset;
 - (id)assetError;
 - (id /* block */)blockForDirectAVControllerNotificationReferencingItem:(id)arg1;
+- (id)bookmarkTime;
 - (id)buyOffers;
 - (bool)canReusePlayerItem;
 - (bool)canSeedGenius;
@@ -293,6 +300,7 @@
 - (id)initWithPlayerItem:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
+- (id)initialPlaybackStartTime;
 - (bool)isAd;
 - (bool)isAlwaysLive;
 - (bool)isAssetLoaded;
@@ -323,7 +331,7 @@
 - (unsigned long long)persistentID;
 - (double)playableDuration;
 - (double)playableDurationIfAvailable;
-- (double)playbackCheckpointCurrentTime;
+- (id)playbackInfo;
 - (long long)playbackMode;
 - (float)playbackRateForLevel:(unsigned long long)arg1 direction:(long long)arg2 paused:(bool)arg3;
 - (id)player;
@@ -429,9 +437,12 @@
 - (id)audioClip;
 - (id)effectiveArtworkCollection;
 - (bool)isRadioItem;
+- (long long)mpcReporting_equivalencySourceAdamID;
 - (bool)mpcReporting_isValidReportingItem;
 - (unsigned long long)mpcReporting_itemType;
 - (id)mpcReporting_jingleTimedMetadata;
+- (id)mpcReporting_requestingBundleIdentifier;
+- (id)mpcReporting_requestingBundleVersion;
 - (bool)mpcReporting_shouldReportPlayEventsToStore;
 - (bool)mpcReporting_shouldUseRelativeTimePositions;
 - (id)mpcReporting_trackInfo;

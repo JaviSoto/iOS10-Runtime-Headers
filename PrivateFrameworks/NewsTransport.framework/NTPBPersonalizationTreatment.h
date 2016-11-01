@@ -229,6 +229,7 @@
         unsigned int groupingBoolParam1 : 1; 
         unsigned int groupingBoolParam2 : 1; 
         unsigned int hardAgeBeforePublisherDiversification : 1; 
+        unsigned int replaceAboutness : 1; 
     }  _has;
     double  _heavyClickClickValue;
     double  _heavyClickClickValueBaseline;
@@ -302,6 +303,7 @@
     double  _recommendationPresentationFeedClickValueBaseline;
     double  _recommendationPresentationFeedImpressionValue;
     double  _recommendationPresentationFeedImpressionValueBaseline;
+    bool  _replaceAboutness;
     double  _saturatedSubscriptionCountFactor;
     double  _savedClickValue;
     double  _savedClickValueBaseline;
@@ -529,6 +531,7 @@
 @property (nonatomic) bool hasRecommendationPresentationFeedClickValueBaseline;
 @property (nonatomic) bool hasRecommendationPresentationFeedImpressionValue;
 @property (nonatomic) bool hasRecommendationPresentationFeedImpressionValueBaseline;
+@property (nonatomic) bool hasReplaceAboutness;
 @property (nonatomic) bool hasSaturatedSubscriptionCountFactor;
 @property (nonatomic) bool hasSavedClickValue;
 @property (nonatomic) bool hasSavedClickValueBaseline;
@@ -652,6 +655,7 @@
 @property (nonatomic) double recommendationPresentationFeedClickValueBaseline;
 @property (nonatomic) double recommendationPresentationFeedImpressionValue;
 @property (nonatomic) double recommendationPresentationFeedImpressionValueBaseline;
+@property (nonatomic) bool replaceAboutness;
 @property (nonatomic) double saturatedSubscriptionCountFactor;
 @property (nonatomic) double savedClickValue;
 @property (nonatomic) double savedClickValueBaseline;
@@ -881,6 +885,7 @@
 - (bool)hasRecommendationPresentationFeedClickValueBaseline;
 - (bool)hasRecommendationPresentationFeedImpressionValue;
 - (bool)hasRecommendationPresentationFeedImpressionValueBaseline;
+- (bool)hasReplaceAboutness;
 - (bool)hasSaturatedSubscriptionCountFactor;
 - (bool)hasSavedClickValue;
 - (bool)hasSavedClickValueBaseline;
@@ -1008,6 +1013,7 @@
 - (double)recommendationPresentationFeedClickValueBaseline;
 - (double)recommendationPresentationFeedImpressionValue;
 - (double)recommendationPresentationFeedImpressionValueBaseline;
+- (bool)replaceAboutness;
 - (double)saturatedSubscriptionCountFactor;
 - (double)savedClickValue;
 - (double)savedClickValueBaseline;
@@ -1194,6 +1200,7 @@
 - (void)setHasRecommendationPresentationFeedClickValueBaseline:(bool)arg1;
 - (void)setHasRecommendationPresentationFeedImpressionValue:(bool)arg1;
 - (void)setHasRecommendationPresentationFeedImpressionValueBaseline:(bool)arg1;
+- (void)setHasReplaceAboutness:(bool)arg1;
 - (void)setHasSaturatedSubscriptionCountFactor:(bool)arg1;
 - (void)setHasSavedClickValue:(bool)arg1;
 - (void)setHasSavedClickValueBaseline:(bool)arg1;
@@ -1317,6 +1324,7 @@
 - (void)setRecommendationPresentationFeedClickValueBaseline:(double)arg1;
 - (void)setRecommendationPresentationFeedImpressionValue:(double)arg1;
 - (void)setRecommendationPresentationFeedImpressionValueBaseline:(double)arg1;
+- (void)setReplaceAboutness:(bool)arg1;
 - (void)setSaturatedSubscriptionCountFactor:(double)arg1;
 - (void)setSavedClickValue:(double)arg1;
 - (void)setSavedClickValueBaseline:(double)arg1;

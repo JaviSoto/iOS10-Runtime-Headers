@@ -65,6 +65,7 @@
 - (int)asyncWiFiScan:(id)arg1 wifiType:(int)arg2 merge:(bool)arg3 maxAge:(unsigned long long)arg4;
 - (void)asyncWiFiScanThread:(id)arg1;
 - (void)cancelAsync;
+- (void)clearScanCache;
 - (int)clearScanCacheSync;
 - (int)closeWiFi;
 - (void)dealloc;

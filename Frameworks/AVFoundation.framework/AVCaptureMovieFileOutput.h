@@ -24,6 +24,7 @@
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)availableVideoCodecTypes;
+- (id)bravoCameraSelectionBehaviorForRecording;
 - (bool)canAddConnectionForMediaType:(id)arg1;
 - (id)connectionMediaTypes;
 - (void)dealloc;
@@ -44,6 +45,7 @@
 - (void)resumeRecording;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (bool)sendsLastVideoPreviewFrame;
+- (void)setBravoCameraSelectionBehaviorForRecording:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setOutputSettings:(id)arg1 forConnection:(id)arg2;

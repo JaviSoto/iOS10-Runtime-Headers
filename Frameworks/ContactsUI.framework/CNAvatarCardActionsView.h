@@ -27,6 +27,7 @@
         double x; 
         double y; 
     }  _initialLocation;
+    _UIFeedbackRetargetBehavior * _retargetBehavior;
     UIGestureRecognizer * _rolloverGestureRecognizer;
     UIGestureRecognizer * _selectionGestureRecognizer;
     CNAvatarCardActionsTableView * _tableView;
@@ -48,6 +49,7 @@
 @property (nonatomic, retain) NSIndexPath *highlightedIndexPath;
 @property (nonatomic) struct CGPoint { double x1; double x2; } initialLocation;
 @property (getter=isPerformingAction, nonatomic, readonly) bool performingAction;
+@property (nonatomic, retain) _UIFeedbackRetargetBehavior *retargetBehavior;
 @property (nonatomic, retain) UIGestureRecognizer *rolloverGestureRecognizer;
 @property (nonatomic, retain) UIGestureRecognizer *selectionGestureRecognizer;
 @property (readonly) Class superclass;
@@ -96,6 +98,7 @@
 - (void)reloadDataWithBlock:(id /* block */)arg1;
 - (void)reset;
 - (void)resetWithBlock:(id /* block */)arg1;
+- (id)retargetBehavior;
 - (id)rolloverGestureRecognizer;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
@@ -113,6 +116,7 @@
 - (void)setExpanded:(bool)arg1;
 - (void)setHighlightedIndexPath:(id)arg1;
 - (void)setInitialLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRetargetBehavior:(id)arg1;
 - (void)setRolloverGestureRecognizer:(id)arg1;
 - (void)setSelectionGestureRecognizer:(id)arg1;
 - (void)setTableView:(id)arg1;

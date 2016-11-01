@@ -6,6 +6,7 @@
     double  _alpha;
     bool  _animatingWithDynamics;
     struct __CFDictionary { } * _contentLookup;
+    _UIFeedbackEdgeBehavior * _edgeFeedbackBehavior;
     double  _hitOffset;
     UIImageView * _innerThumbView;
     bool  _maxColorIsValid;
@@ -18,6 +19,7 @@
     UIImageView * _minTrackView;
     float  _minValue;
     UIImageView * _minValueImageView;
+    _UIFeedbackModulationBehavior * _modulationFeedbackBehavior;
     struct { 
         unsigned int continuous : 1; 
         unsigned int animating : 1; 
@@ -45,12 +47,14 @@
 @property (nonatomic, readonly) UIImage *currentMaximumTrackImage;
 @property (nonatomic, readonly) UIImage *currentMinimumTrackImage;
 @property (nonatomic, readonly) UIImage *currentThumbImage;
+@property (getter=_edgeFeedbackBehavior, setter=_setEdgeFeedbackBehavior:, nonatomic, retain) _UIFeedbackEdgeBehavior *edgeFeedbackBehavior;
 @property (nonatomic, retain) UIColor *maximumTrackTintColor;
 @property (nonatomic) float maximumValue;
 @property (nonatomic, retain) UIImage *maximumValueImage;
 @property (nonatomic, retain) UIColor *minimumTrackTintColor;
 @property (nonatomic) float minimumValue;
 @property (nonatomic, retain) UIImage *minimumValueImage;
+@property (getter=_modulationFeedbackBehavior, setter=_setModulationFeedbackBehavior:, nonatomic, retain) _UIFeedbackModulationBehavior *modulationFeedbackBehavior;
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic) float value;
 
@@ -69,6 +73,7 @@
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (double)_cornerRadiusForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_edgeFeedbackBehavior;
 - (void)_initImages;
 - (void)_initSubviews;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
@@ -80,13 +85,16 @@
 - (id)_minTrackView;
 - (id)_minValueView;
 - (id)_minimumTrackImageForState:(unsigned long long)arg1;
+- (id)_modulationFeedbackBehavior;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildControlThumb:(bool)arg1 track:(bool)arg2;
 - (void)_sendDelayedActions;
 - (void)_setContent:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setEdgeFeedbackBehavior:(id)arg1;
 - (void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setMinimumTrackVisible:(bool)arg1 withDuration:(double)arg2;
+- (void)_setModulationFeedbackBehavior:(id)arg1;
 - (void)_setThumbEnabled:(bool)arg1;
 - (void)_setThumbImage:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)_setThumbTintColor:(id)arg1 forStates:(unsigned long long)arg2;
@@ -94,6 +102,7 @@
 - (void)_setUseLookNeue:(bool)arg1;
 - (void)_setValue:(float)arg1 andSendAction:(bool)arg2;
 - (void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(bool)arg4;
+- (void)_setupFeedback;
 - (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_thumbHitEdgeInsets;

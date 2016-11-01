@@ -6,6 +6,7 @@
     _UIDocumentPickerURLContainerModel * _model;
     long long  _modelDisplayCount;
     _UIDocumentPickerContainerModel * _parentModel;
+    NSString * _pickabilityReason;
     bool  _pickable;
     id  _resourceIdentifier;
     NSOperation * _thumbnailLoadOperation;
@@ -19,6 +20,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) _UIDocumentPickerContainerModel *model;
 @property (nonatomic) _UIDocumentPickerContainerModel *parentModel;
+@property (nonatomic, copy) NSString *pickabilityReason;
 @property (nonatomic) bool pickable;
 @property (nonatomic, readonly) bool renameable;
 @property (nonatomic, readonly) NSDate *sortDate;
@@ -63,9 +65,11 @@
 - (void)modelChanged;
 - (id)modificationDate;
 - (id)parentModel;
+- (id)pickabilityReason;
 - (bool)pickable;
 - (bool)renameable;
 - (void)setParentModel:(id)arg1;
+- (void)setPickabilityReason:(id)arg1;
 - (void)setPickable:(bool)arg1;
 - (void)setThumbnailsBySize:(id)arg1;
 - (id)sortDate;

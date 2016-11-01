@@ -7,6 +7,7 @@
     long long  _advertiseRate;
     bool  _autoUnlockEnabled;
     bool  _autoUnlockWatch;
+    unsigned char  _deviceActionType;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _errorHandler;
     id /* block */  _eventMessageHandler;
@@ -31,6 +32,7 @@
 @property (nonatomic) long long advertiseRate;
 @property (nonatomic) bool autoUnlockEnabled;
 @property (nonatomic) bool autoUnlockWatch;
+@property (nonatomic) unsigned char deviceActionType;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ errorHandler;
 @property (nonatomic, copy) id /* block */ eventMessageHandler;
@@ -62,6 +64,7 @@
 - (bool)autoUnlockWatch;
 - (void)dealloc;
 - (id)description;
+- (unsigned char)deviceActionType;
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
 - (id /* block */)errorHandler;
@@ -88,6 +91,7 @@
 - (void)setAdvertiseRate:(long long)arg1;
 - (void)setAutoUnlockEnabled:(bool)arg1;
 - (void)setAutoUnlockWatch:(bool)arg1;
+- (void)setDeviceActionType:(unsigned char)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setErrorHandler:(id /* block */)arg1;
 - (void)setEventMessageHandler:(id /* block */)arg1;

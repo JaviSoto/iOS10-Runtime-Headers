@@ -5,6 +5,8 @@
 @interface HMDCameraProfile : HMDAccessoryProfile <HMDCameraSettingProactiveReaderDelegate> {
     NSSet * _cameraStreamManagers;
     bool  _microphonePresent;
+    HMFNetMonitor * _networkMonitor;
+    HMDCameraResidentMessageHandler * _residentMessageHandler;
     NSMutableArray * _settingProactiveReaders;
     HMDCameraSnapshotManager * _snapshotManager;
     bool  _speakerPresent;
@@ -16,6 +18,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=isMicrophonePresent, nonatomic, readonly) bool microphonePresent;
+@property (nonatomic, retain) HMFNetMonitor *networkMonitor;
+@property (nonatomic, readonly) HMDCameraResidentMessageHandler *residentMessageHandler;
 @property (nonatomic, readonly) NSMutableArray *settingProactiveReaders;
 @property (nonatomic, readonly) HMDCameraSnapshotManager *snapshotManager;
 @property (getter=isSpeakerPresent, nonatomic, readonly) bool speakerPresent;
@@ -23,6 +27,7 @@
 @property (readonly) Class superclass;
 
 + (id)logCategory;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_createCameraManagers:(id)arg1;
@@ -34,14 +39,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dumpState;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithAccessory:(id)arg1 uuid:(id)arg2 services:(id)arg3 msgDispatcher:(id)arg4;
+- (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isMicrophonePresent;
 - (bool)isSpeakerPresent;
 - (id)logIdentifier;
 - (void)monitorForEventsForServices:(id)arg1;
+- (id)networkMonitor;
 - (void)registerForMessages;
+- (id)residentMessageHandler;
+- (void)setNetworkMonitor:(id)arg1;
 - (id)settingProactiveReaders;
 - (id)snapshotManager;
 - (id)streamSnapshotHandler;

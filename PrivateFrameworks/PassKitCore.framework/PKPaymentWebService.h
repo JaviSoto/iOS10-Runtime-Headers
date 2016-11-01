@@ -92,13 +92,12 @@
 - (unsigned long long)_performRewrapRequest:(id)arg1 responseHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)_performVerificationRequest:(id)arg1 selectedChannel:(id)arg2 paymentPass:(id)arg3 taskID:(unsigned long long)arg4 completion:(id /* block */)arg5;
 - (id)_primaryAppleAccount;
-- (id)_reencryptPayload:(id)arg1 forRegion:(id)arg2;
+- (void)_processRetryRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(id /* block */)arg4;
 - (void)_removeVerificationRequestRecord:(id)arg1;
 - (int)_resultForResponse:(id)arg1 error:(id)arg2 successHandler:(id /* block */)arg3;
 - (int)_resultForUnexpectedStatusCode:(long long)arg1;
 - (void)_startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3 completion:(id /* block */)arg4;
 - (bool)_trustPassesExtendedValidation:(struct __SecTrust { }*)arg1;
-- (void)_updateRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(id /* block */)arg4;
 - (void)_updateRequestWithCurrentTargetDevice:(id)arg1;
 - (id)_urlRequestTaggedWithDiagnosticReasonHeader:(id)arg1 forTaskID:(unsigned long long)arg2;
 - (id)_urlRequestTaggedWithWebServiceSessionMarkerHeader:(id)arg1;
@@ -106,7 +105,7 @@
 - (void)addDelegate:(id)arg1;
 - (id)archiver;
 - (unsigned long long)availableDevicesWithCompletion:(id /* block */)arg1;
-- (unsigned long long)availableProductsOfType:(id)arg1 withCompletion:(id /* block */)arg2;
+- (unsigned long long)availableProductsWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)backgroundContext;
 - (id)backgroundDelegate;
 - (void)backgroundDownloadPassAtURL:(id)arg1;
@@ -115,7 +114,6 @@
 - (void)backgroundDownloadRemotePassAssets:(id)arg1;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
 - (void)backgroundDownloadWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
-- (void)calculateDeviceScoreForRequest:(id)arg1 deviceData:(id)arg2 cryptogram:(id)arg3 challengeResponse:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned long long)checkMerchantStatus:(id)arg1 forDomain:(id)arg2 withCompletion:(id /* block */)arg3;
 - (unsigned long long)completeSession:(id)arg1 wrappedPayment:(id)arg2 pass:(id)arg3 applicationData:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned long long)configurePaymentServiceWithCompletion:(id /* block */)arg1;
@@ -133,13 +131,18 @@
 - (void)invalidate;
 - (void)invalidateBackgroundSession;
 - (unsigned long long)issuerProvisioningCertificatesForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
+- (unsigned long long)moreInfoItemAtURL:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;
 - (bool)needsConfiguration;
 - (bool)needsRegistration;
 - (unsigned long long)networkManifestWithCompletion:(id /* block */)arg1;
+- (unsigned long long)passActionWithRemoteContentPassAction:(id)arg1 forPass:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)passAtURL:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)paymentProvisioningNonceWithCompletion:(id /* block */)arg1;
+- (unsigned long long)paymentServiceLightweightRegistrationRequestWithCompletion:(id /* block */)arg1;
 - (int)paymentSetupSupportedInRegion;
+- (unsigned long long)performAction:(id)arg1 onServiceProviderPurchase:(id)arg2 completion:(id /* block */)arg3;
+- (unsigned long long)performServiceProviderPayment:(id)arg1 completion:(id /* block */)arg2;
 - (id)primaryBrokerURL;
 - (unsigned long long)provisionForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)provisionRequest:(id)arg1 completion:(id /* block */)arg2;
@@ -148,6 +151,7 @@
 - (unsigned long long)registerDeviceWithCompletion:(id /* block */)arg1;
 - (unsigned long long)registerDeviceWithConsistencyData:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)remotePaymentCredentialsForRequest:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)remotePreferencesWithCompletion:(id /* block */)arg1;
 - (void)removeDelegate:(id)arg1;
 - (unsigned long long)requestVerificationCodeForPass:(id)arg1 usingChannel:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)requirementsForRequest:(id)arg1 completion:(id /* block */)arg2;
@@ -155,6 +159,8 @@
 - (unsigned long long)retainSession:(id)arg1 wrappedPayment:(id)arg2 pass:(id)arg3 applicationData:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned long long)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 hostApplicationIdentifier:(id)arg3 applicationData:(id)arg4 pass:(id)arg5 completion:(id /* block */)arg6;
 - (unsigned long long)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 merchantSession:(id)arg3 hostApplicationIdentifier:(id)arg4 applicationData:(id)arg5 pass:(id)arg6 completion:(id /* block */)arg7;
+- (unsigned long long)serviceProviderPurchaseWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)serviceProviderPurchasesWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)sessionConfiguration;
 - (void)setArchiver:(id)arg1;
 - (void)setBackgroundContext:(id)arg1;
@@ -163,7 +169,6 @@
 - (void)setSharedService:(bool)arg1;
 - (void)sharedPaymentServiceChanged:(id)arg1;
 - (bool)sharedService;
-- (void)sharedServiceDidRegister;
 - (void)signNonce:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3;
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3 completion:(id /* block */)arg4;
@@ -171,7 +176,9 @@
 - (id)targetDevice;
 - (unsigned long long)unregisterDeviceWithCompanionSerialNumber:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)unregisterDeviceWithCompletion:(id /* block */)arg1;
+- (unsigned long long)updateRemotePreferences:(id)arg1 withCompletion:(id /* block */)arg2;
 - (unsigned long long)updateVerification:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)userPaymentPassesWithCompletion:(id /* block */)arg1;
 - (unsigned long long)verificationChannelsForPass:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)verificationOptionsForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)verificationRecordForPass:(id)arg1;

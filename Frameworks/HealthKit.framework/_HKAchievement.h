@@ -76,20 +76,6 @@
 - (id)value;
 - (unsigned long long)workoutActivityType;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (id)_fiui_badgeAssetNameSuffix;
-- (id)_fiui_badgeContainerPath;
-- (id)_fiui_pathForAssetNamed:(id)arg1 ofType:(id)arg2;
-- (id)fiui_badgeModelFilename;
-- (id)fiui_badgePlistPath;
-- (id)fiui_badgeTexturePath;
-- (id)fiui_compressedBadgeModelPath;
-- (id)fiui_imageForSizeClass:(long long)arg1;
-- (id)fiui_stickerBundle;
-- (id)fiui_stickerURLs;
-- (id)fiui_uniqueBadgeModelIdentifier;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;

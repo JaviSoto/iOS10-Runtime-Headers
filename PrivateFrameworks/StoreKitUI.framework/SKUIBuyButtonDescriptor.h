@@ -10,6 +10,7 @@
     bool  _highlighted;
     long long  _itemIdentifier;
     long long  _progressType;
+    bool  _shouldSuppressCloudRestore;
     bool  _shouldSuppressEnabled;
     bool  _showingConfirmation;
     bool  _showsUniversal;
@@ -24,6 +25,7 @@
 @property (nonatomic) bool highlighted;
 @property (nonatomic) long long itemIdentifier;
 @property (nonatomic) long long progressType;
+@property (nonatomic) bool shouldSuppressCloudRestore;
 @property (nonatomic) bool shouldSuppressEnabled;
 @property (nonatomic) bool showingConfirmation;
 @property (nonatomic) bool showsUniversal;
@@ -47,11 +49,13 @@
 - (void)setHighlighted:(bool)arg1;
 - (void)setItemIdentifier:(long long)arg1;
 - (void)setProgressType:(long long)arg1;
+- (void)setShouldSuppressCloudRestore:(bool)arg1;
 - (void)setShouldSuppressEnabled:(bool)arg1;
 - (void)setShowingConfirmation:(bool)arg1;
 - (void)setShowsUniversal:(bool)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (void)setVariantIdentifier:(id)arg1;
+- (bool)shouldSuppressCloudRestore;
 - (bool)shouldSuppressEnabled;
 - (bool)showingConfirmation;
 - (bool)showsUniversal;

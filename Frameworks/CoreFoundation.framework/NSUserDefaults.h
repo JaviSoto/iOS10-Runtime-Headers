@@ -146,12 +146,6 @@
 - (const char *)utf8ValueSafeForKey:(id)arg1;
 - (const char *)utf8ValueSafeForKey:(id)arg1 status:(int*)arg2;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)_npsManager;
-+ (void)fu_backupStandardUserDefaultsKey:(id)arg1;
-+ (void)fu_synchronizeStandardUserDefaultsKey:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
 
 - (bool)delayedSynchronize;

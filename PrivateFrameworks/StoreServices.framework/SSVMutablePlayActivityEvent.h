@@ -27,6 +27,8 @@
 @property (nonatomic, copy) NSString *personalizedContainerID;
 @property (nonatomic) unsigned long long reasonHintType;
 @property (nonatomic, copy) NSData *recommendationData;
+@property (nonatomic, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic) unsigned long long sourceType;
 @property (nonatomic) unsigned long long storeAccountID;
 @property (nonatomic, copy) NSString *storeFrontID;
@@ -59,6 +61,8 @@
 - (void)setPersonalizedContainerID:(id)arg1;
 - (void)setReasonHintType:(unsigned long long)arg1;
 - (void)setRecommendationData:(id)arg1;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 - (void)setSBEnabled:(bool)arg1;
 - (void)setSourceType:(unsigned long long)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;

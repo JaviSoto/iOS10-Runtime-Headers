@@ -10,6 +10,7 @@
     double  _confirmationThreshold;
     double  _currentOffset;
     <UICollectionViewTableLayoutSwipeActionPullViewDelegate> * _delegate;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     double  _openThreshold;
     double  _progressToConfirm;
     unsigned long long  _state;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) double confirmationThreshold;
 @property (nonatomic, readonly) double currentOffset;
 @property (nonatomic) <UICollectionViewTableLayoutSwipeActionPullViewDelegate> *delegate;
+@property (nonatomic) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (nonatomic, readonly) bool hasActions;
 @property (nonatomic, readonly) double openThreshold;
 @property (nonatomic, readonly) UIColor *primaryActionColor;
@@ -43,6 +45,7 @@
 - (double)currentOffset;
 - (id)delegate;
 - (id)description;
+- (id)feedbackBehavior;
 - (bool)hasActions;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)init;
@@ -59,6 +62,7 @@
 - (double)progressToConfirm;
 - (void)resetView;
 - (void)setDelegate:(id)arg1;
+- (void)setFeedbackBehavior:(id)arg1;
 - (void)setProgressToConfirm:(double)arg1;
 - (void)setState:(unsigned long long)arg1;
 - (unsigned long long)state;

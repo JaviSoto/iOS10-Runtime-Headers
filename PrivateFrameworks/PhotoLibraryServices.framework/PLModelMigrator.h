@@ -27,6 +27,7 @@
 + (void)_createPhotoDataDirectoryFailedWithNoPermission:(id)arg1;
 + (bool)_createPhotoDataDirectoryIfNecessary;
 + (id)_dateForFirstCRVSPhoto;
++ (id)_dateForWideGamutCapture;
 + (id)_dateWithiTunesTimeInterval:(double)arg1;
 + (bool)_deleteAllMemoriesInStore:(id)arg1;
 + (bool)_deleteAllMomentsViaSQLFromStore:(id)arg1;
@@ -57,6 +58,7 @@
 + (bool)_fixNonDuplicatedAssets:(id)arg1 adjusted:(bool)arg2;
 + (void)_fixPathForResource:(id)arg1 withPath:(id)arg2;
 + (bool)_fixPersonAndFaceGroup:(id)arg1;
++ (bool)_fixRejectedKeyFace:(id)arg1;
 + (bool)_fixSingletonFaceFaceGroup:(id)arg1;
 + (bool)_fixVideoDimensionsForAsset:(id)arg1;
 + (bool)_fixVideoDimensionsInStore:(id)arg1;
@@ -124,12 +126,14 @@
 + (bool)_postProcessFromVersion6006Store:(id)arg1;
 + (bool)_processDeletesForUUIDs:(id)arg1;
 + (bool)_rebuildAllMomentsInStore:(id)arg1;
++ (bool)_rebuildWideCaptureThumbsInStore:(id)arg1;
 + (bool)_recoverSingleBurstPhotos:(id)arg1;
 + (bool)_refreshTriggerValues:(id)arg1;
 + (bool)_removeAllWallpaperAssetsInStore:(id)arg1;
 + (bool)_removeCameraRollInStore:(id)arg1;
 + (bool)_removeEvents:(id)arg1;
 + (void)_removeFileAt:(id)arg1 forResource:(id)arg2;
++ (bool)_removeOldPersonMetadataInStore:(id)arg1;
 + (bool)_removeUntrackedCloudResourceImageDerivativesInStore:(id)arg1;
 + (void)_repairCloudPlaceholderKindForVideoAsset:(id)arg1;
 + (void)_repairRootFolderFixedOrderKeysInContext:(id)arg1;
@@ -177,6 +181,7 @@
 + (bool)attemptLightweightMigrationFromVersion:(id)arg1 onStore:(id)arg2 withMetadata:(id)arg3 orStoreURL:(id)arg4 options:(id)arg5 coordinator:(id)arg6;
 + (int)checkForceMigrationTypeRequestedAndGetOptionalSourceModelVersion:(id*)arg1;
 + (void)cleanupModelForDataMigration;
++ (bool)clearVisionWorkerCache;
 + (void)createDatabase;
 + (int)currentModelVersion;
 + (bool)debug_resetThumbnailsAndInitiateRebuildRequest;
@@ -196,7 +201,9 @@
 + (void)forceImportFileSystemDataIntoDatabase;
 + (id)generatePathToAssetUUIDRecoveryMapping;
 + (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
++ (bool)isLoadingFacesFromFileSystem;
 + (bool)isPostProcessingLightweightMigration;
++ (void)loadFacesFileSystemDataIntoDatabase;
 + (void)loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
 + (bool)markAllSceneAnalysisStatesDirtyAndClearDistanceIdentitiesInStore:(id)arg1;
 + (bool)migrateToRequiredAnalysisState:(id)arg1;
@@ -213,6 +220,7 @@
 + (bool)restartingAfterRestoreFromBackup;
 + (bool)sceneStepRequiredForPreviousStoreVersion:(unsigned long long)arg1;
 + (void)setDidImportFileSystemAssets:(bool)arg1;
++ (void)setLoadingFacesFromFileSystem:(bool)arg1;
 + (bool)shouldRebuildDCIMSubDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 assetsKind:(int*)arg3;
 + (bool)skipDataProtectionForFilePath:(id)arg1;
 + (bool)touchAnalysisStateSortTokensInStoreInStore:(id)arg1;
@@ -222,6 +230,7 @@
 - (void)_collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4 testCreationDates:(bool)arg5;
 - (void)_importAllDCIMAssets;
 - (id)_importFileSystemImportAssets:(id)arg1 forceUpdate:(bool)arg2;
+- (void)_loadFacesFileSystemDataIntoDatabase;
 - (void)_loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
 - (id)_orderedAssetsToImportCameraRollOnly:(bool)arg1;
 - (void)_removeLegacyMemoryRelatedSnapshotDirectory;

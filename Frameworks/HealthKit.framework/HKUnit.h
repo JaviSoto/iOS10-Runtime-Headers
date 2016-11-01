@@ -17,8 +17,6 @@
 @property (nonatomic, readonly) double scaleOffset;
 @property (readonly) NSString *unitString;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
 + (id)_distanceUnitForLocale:(id)arg1;
 + (id)_foodEnergyUnitForLocale:(id)arg1;
 + (id)_heightUnitForLocale:(id)arg1;
@@ -110,9 +108,5 @@
 - (id)unitMultipliedByUnit:(id)arg1;
 - (id)unitRaisedToPower:(long long)arg1;
 - (id)unitString;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)fiui_bpmUnit;
 
 @end

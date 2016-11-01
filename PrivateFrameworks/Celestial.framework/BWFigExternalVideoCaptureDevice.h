@@ -57,7 +57,7 @@
 - (id)activePortTypes;
 - (int)autoImageControlMode;
 - (id)bufferServicingQueue;
-- (id)cameraInfo;
+- (id)cameraAlignmentInfo;
 - (id)cameraInfoByPortTypeForSBPs;
 - (id)cameraTuningParametersDictionary;
 - (int)captureStillImageNowWithSettings:(id)arg1;
@@ -72,7 +72,7 @@
 - (struct { float x1; float x2; float x3; })grayWorldDeviceWhiteBalanceGains;
 - (void)handleIncomingIAPOverEAPacket:(struct _IAPPacket { unsigned char x1; unsigned short x2; unsigned short x3; unsigned short x4; void *x5; }*)arg1;
 - (void)handleIncomingVideoBufferPacket:(id)arg1 msgID:(unsigned short)arg2;
-- (id)initWithAttributes:(id)arg1 streamAttributes:(id)arg2 forPID:(int)arg3 clientIDOut:(int*)arg4 deviceAvailabilityChangedHandler:(id /* block */)arg5;
+- (id)initWithAttributes:(id)arg1 synchronizedStreamsAttributes:(id)arg2 forPID:(int)arg3 clientIDOut:(int*)arg4 deviceAvailabilityChangedHandler:(id /* block */)arg5;
 - (bool)isPropertyObserved:(id)arg1;
 - (float)lensPosition;
 - (float)maximumFrameRate;
@@ -82,7 +82,7 @@
 - (void)rampToVideoZoomFactor:(float)arg1 withRampType:(int)arg2 rate:(float)arg3 duration:(double)arg4 commandID:(int)arg5;
 - (void)registerForAEMatrixMetadata;
 - (bool)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
-- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 clientBracketMode:(int)arg5;
+- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; int x26; float x27; int x28; int x29; int x30; int x31; long long x32; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 autoShallowDepthOfFieldEffectEnabled:(bool)arg5 clientBracketMode:(int)arg6;
 - (id)sensorIDDictionaryByPortType;
 - (void)setActiveFormatIndex:(long long)arg1;
 - (bool)setAutoFlashEnabled:(bool)arg1 error:(id*)arg2;
@@ -118,7 +118,7 @@
 - (bool)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)startupFaceDetectionIfNeeded;
 - (bool)stillImageCaptureEnabled;
-- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
+- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; int x26; float x27; int x28; int x29; int x30; int x31; long long x32; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6 stereoFusionMode:(int)arg7;
 - (void)stopCameraInfo;
 - (bool)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)streamsReady;

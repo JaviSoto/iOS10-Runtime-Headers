@@ -8,9 +8,11 @@
     NSDate * _availableEndDateUTC;
     NSDate * _availableStartDateUTC;
     NSString * _badgeShapeName;
+    NSPredicate * _baseAlertabilityPredicate;
     NSPredicate * _basePredicate;
     NSPredicate * _baseUnearnedVisibilityPredicate;
     unsigned long long  _calendarUnitForEqualityCheck;
+    NSPredicate * _compiledAlertabilityPredicate;
     NSPredicate * _compiledPredicate;
     NSPredicate * _compiledUnearnedVisibilityPredicate;
     unsigned long long  _deduplicationStrategy;
@@ -28,10 +30,12 @@
 }
 
 @property (nonatomic, retain) NSDate *alertDateUTC;
+@property (nonatomic, readonly) NSPredicate *alertabilityPredicate;
 @property (nonatomic, retain) NSArray *availableCountryCodes;
 @property (nonatomic, retain) NSDate *availableEndDateUTC;
 @property (nonatomic, retain) NSDate *availableStartDateUTC;
 @property (nonatomic, retain) NSString *badgeShapeName;
+@property (nonatomic, retain) NSPredicate *baseAlertabilityPredicate;
 @property (nonatomic) unsigned long long calendarUnitForEqualityCheck;
 @property (nonatomic) unsigned long long deduplicationStrategy;
 @property (nonatomic) long long displayOrder;
@@ -49,16 +53,18 @@
 @property (nonatomic) unsigned long long triggers;
 @property (nonatomic, retain) NSPredicate *unearnedVisibilityPredicate;
 
-+ (id)_compilePredicateFromBasePredicate:(id)arg1 availableCountryCodes:(id)arg2 availableStartDateUTC:(id)arg3 availableEndDateUTC:(id)arg4 earnableOnlyOnce:(bool)arg5;
++ (id)_compilePredicateFromBasePredicate:(id)arg1 availableCountryCodes:(id)arg2 availableStartDateUTC:(id)arg3 availableEndDateUTC:(id)arg4 earnableOnlyOnce:(bool)arg5 workoutAchievement:(bool)arg6;
 + (id)definitionWithDictionaryRepresentation:(id)arg1;
 + (id)definitionWithPlistRepresentation:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)alertDateUTC;
+- (id)alertabilityPredicate;
 - (id)availableCountryCodes;
 - (id)availableEndDateUTC;
 - (id)availableStartDateUTC;
 - (id)badgeShapeName;
+- (id)baseAlertabilityPredicate;
 - (unsigned long long)calendarUnitForEqualityCheck;
 - (long long)compareDisplayOrderOfDefinition:(id)arg1;
 - (id)debugDescription;
@@ -76,10 +82,12 @@
 - (id)predicate;
 - (bool)requiresValue;
 - (void)setAlertDateUTC:(id)arg1;
+- (void)setAlertabilityPredicate:(id)arg1;
 - (void)setAvailableCountryCodes:(id)arg1;
 - (void)setAvailableEndDateUTC:(id)arg1;
 - (void)setAvailableStartDateUTC:(id)arg1;
 - (void)setBadgeShapeName:(id)arg1;
+- (void)setBaseAlertabilityPredicate:(id)arg1;
 - (void)setCalendarUnitForEqualityCheck:(unsigned long long)arg1;
 - (void)setDeduplicationStrategy:(unsigned long long)arg1;
 - (void)setDisplayOrder:(long long)arg1;

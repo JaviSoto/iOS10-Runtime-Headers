@@ -7,6 +7,7 @@
     NSString * _canonicalSearchString;
     NSString * _contactsDataString;
     CLLocation * _deviceLocation;
+    _MKLocalSearchExternalTransitLookupParameters * _externalTransitLookupParameters;
     <GEOCompletionItem> * _geoCompletionItem;
     bool  _hasRegion;
     bool  _hasSentFeedbackForCompletion;
@@ -32,6 +33,7 @@
 @property (getter=_canonicalSearchString, setter=_setCanonicalSearchString:, nonatomic, retain) NSString *canonicalSearchString;
 @property (getter=_contactsDataString, setter=_setContactsDataString:, nonatomic, retain) NSString *contactsDataString;
 @property (getter=_deviceLocation, setter=_setDeviceLocation:, nonatomic, retain) CLLocation *deviceLocation;
+@property (getter=_externalTransitLookupParameters, setter=_setExternalTransitLookupParameters:, nonatomic, retain) _MKLocalSearchExternalTransitLookupParameters *externalTransitLookupParameters;
 @property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
 @property (nonatomic) bool hasSentFeedbackForCompletion;
 @property (getter=_merchantParameters, setter=_setMerchantParameters:, nonatomic, retain) _MKLocalSearchMerchantParameters *merchantParameters;
@@ -49,6 +51,7 @@
 - (id)_contactsDataString;
 - (id)_deviceLocation;
 - (id)_dictionaryRepresentation;
+- (id)_externalTransitLookupParameters;
 - (bool)_hasRegion;
 - (id)_merchantParameters;
 - (id)_muids;
@@ -58,6 +61,7 @@
 - (void)_setCanonicalSearchString:(id)arg1;
 - (void)_setContactsDataString:(id)arg1;
 - (void)_setDeviceLocation:(id)arg1;
+- (void)_setExternalTransitLookupParameters:(id)arg1;
 - (void)_setMerchantParameters:(id)arg1;
 - (void)_setMuids:(id)arg1;
 - (void)_setPhoneNumbers:(id)arg1;

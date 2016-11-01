@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMPreviewViewController : UIViewController <CAMEffectsPreviewSampleBufferDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMFocusIndicatorViewDelegate, UIGestureRecognizerDelegate> {
+@interface CAMPreviewViewController : UIViewController <CAMEffectsPreviewSampleBufferDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMFocusIndicatorViewDelegate, CAMPreviewViewSubjectIndicatorDelegate, UIGestureRecognizerDelegate> {
     UITapGestureRecognizer * __aspectRatioToggleDoubleTapGestureRecognizer;
     CAMBurstIndicatorView * __burstIndicator;
     float  __cachedExposureTargetBias;
@@ -24,6 +24,7 @@
     long long  __mode;
     CAMMotionController * __motionController;
     CAMFocusIndicatorView * __pointIndicator;
+    CAMSubjectIndicatorView * __portraitModeCenteredIndicatorView;
     UITapGestureRecognizer * __tapToFocusAndExposeGestureRecognizer;
     CAMTimelapseController * __timelapseController;
     bool  __updateFaceIndicators;
@@ -31,6 +32,7 @@
     <CAMPreviewViewControllerDelegate> * _delegate;
     CAMEffectsRenderer * _effectsRenderer;
     long long  _layoutStyle;
+    long long  _shallowDepthOfFieldStatus;
     bool  _showingStandardControls;
 }
 
@@ -55,6 +57,7 @@
 @property (nonatomic, readonly) long long _mode;
 @property (nonatomic, readonly) CAMMotionController *_motionController;
 @property (nonatomic, readonly) CAMFocusIndicatorView *_pointIndicator;
+@property (nonatomic, readonly) CAMSubjectIndicatorView *_portraitModeCenteredIndicatorView;
 @property (nonatomic, readonly) UITapGestureRecognizer *_tapToFocusAndExposeGestureRecognizer;
 @property (nonatomic, readonly) CAMTimelapseController *_timelapseController;
 @property (nonatomic, readonly) bool _updateFaceIndicators;
@@ -69,6 +72,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long layoutStyle;
 @property (nonatomic, readonly) CAMPreviewView *previewView;
+@property (nonatomic) long long shallowDepthOfFieldStatus;
 @property (getter=isShowingStandardControls, nonatomic) bool showingStandardControls;
 @property (readonly) Class superclass;
 
@@ -97,6 +101,7 @@
 - (void)_createExposureBiasPanGestureRecognizerIfNecessary;
 - (void)_createLongPressToLockGestureRecognizersIfNecessary;
 - (void)_createPointIndicatorIfNecessary;
+- (void)_createPortraitModeCenteredIndicatorViewIfNecessary;
 - (void)_createTapToFocusAndExposeGestureRecognizerIfNecessary;
 - (unsigned long long)_currentFacesCount;
 - (void)_deactivateFocusIndicator:(id)arg1;
@@ -127,14 +132,18 @@
 - (void)_hideFocusIndicator:(id)arg1;
 - (void)_hideFocusIndicator:(id)arg1 afterDelay:(double)arg2;
 - (void)_hideFocusIndicator:(id)arg1 animated:(bool)arg2;
+- (void)_hidePortaitModeTrackedSubjectIndicatorsAnimated:(bool)arg1;
 - (void)_initializeExposureBiasParametersForFocusIndicatorView:(id)arg1;
 - (void)_initializeExposureBiasSliderParameters;
 - (long long)_interfaceOrientationForExposureBiasUI;
 - (bool)_isChangingModeOrDevice;
+- (bool)_isFocusLockAllowed;
 - (bool)_isFullyAutomaticFocus:(id)arg1 andExposure:(id)arg2;
 - (bool)_isFullyAutomaticFocusAndExposure;
 - (bool)_isPanningExposureBias;
+- (bool)_isPortraitEffectActive;
 - (bool)_isShowingFaces;
+- (long long)_largeStyleForPointIndicator;
 - (id)_lastExposureBiasModificationTime;
 - (id)_lastExposureResult;
 - (id)_lastFocusIndictorStartTime;
@@ -146,14 +155,17 @@
 - (long long)_mode;
 - (id)_motionController;
 - (id)_pointIndicator;
+- (id)_portraitModeCenteredIndicatorView;
 - (void)_resetCachedTimes;
 - (void)_resetFaceTracking;
 - (void)_scaleDownLockedPointOfInterest;
+- (void)_scalePortraitModeFocusIndicators;
 - (void)_setCachedExposureTargetBias:(float)arg1;
 - (void)_setChangingModeOrDevice:(bool)arg1;
 - (void)_setExposureBiasVirtualSliderExponent:(double)arg1;
 - (void)_setExposureBiasVirtualSliderPointsForFirstStop:(double)arg1;
 - (void)_setFocusIndicatorsHidden:(bool)arg1 animated:(bool)arg2;
+- (void)_setFocusIndicatorsPulsing:(bool)arg1;
 - (void)_setLastExposureBiasModifiedTime:(id)arg1;
 - (void)_setLastExposureResult:(id)arg1;
 - (void)_setLastFocusIndictorStartTime:(id)arg1;
@@ -168,12 +180,16 @@
 - (bool)_shouldHideFocusIndicators;
 - (bool)_shouldResetFocusAndExposureForSubjectAreaDidChange;
 - (bool)_shouldShowContinuousIndicator;
+- (bool)_shouldShowIndicatorsAsInactive;
+- (bool)_shouldShowPortraitModeIndicatorViews;
 - (bool)_shouldSuppressNewFaces;
-- (void)_showContinuousAutomaticFocusAndExposureIndicator;
+- (bool)_shouldSuppressNewPortraitModeTrackedSubjectIndicators;
+- (bool)_shouldUpdateIndicatorSizeFrom:(struct CGSize { double x1; double x2; })arg1 to:(struct CGSize { double x1; double x2; })arg2 minimumAreaChangeThreshold:(double)arg3 minimumAreaFractionChangeThreshold:(double)arg4;
 - (bool)_showExposureBiasSliderForPointView;
 - (void)_showIndicatorAtPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_showLockedAtPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_stopPulsingContinuousIndicatorAndHideIfShownLongEnough;
+- (void)_showUIForResetFocusAndExposure;
+- (long long)_styleForPointIndicator;
 - (id)_tapToFocusAndExposeGestureRecognizer;
 - (id)_timelapseController;
 - (void)_updateExposureBiasPanGestureRecognizerForOrientation;
@@ -184,7 +200,11 @@
 - (void)_updateFaceIndicatorsForFaceResults:(id)arg1;
 - (void)_updateFaceIndicatorsWithResults:(id)arg1;
 - (void)_updateGestureRecognizersForOrientation;
+- (void)_updatePortraitModeTrackedSubjectIndicatorsWithFaceResults:(id)arg1;
+- (void)_updatePortraitModeViewsAnimated:(bool)arg1;
+- (void)_updatePortraitModeViewsForFaceResults:(id)arg1;
 - (void)_updatePreviewViewAspectMode;
+- (void)_updateUIForCenteredContrastBasedFocusDidEnd;
 - (void)_updateVideoPreviewViewOrientationAnimated:(bool)arg1;
 - (bool)_userLockedFocusAndExposure;
 - (void)_validateExposureTargetBiasFromExposureResult:(id)arg1;
@@ -225,9 +245,13 @@
 - (void)notifyShutterButtonPressed;
 - (void)notifyWillStartCapturing;
 - (id)previewView;
+- (void)previewViewDidAddFirstTrackedSubjectIndicator:(id)arg1;
+- (void)previewViewDidRemoveLastTrackedSubjectIndicator:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutStyle:(long long)arg1;
+- (void)setShallowDepthOfFieldStatus:(long long)arg1;
 - (void)setShowingStandardControls:(bool)arg1;
+- (long long)shallowDepthOfFieldStatus;
 - (void)updateIndicatorVisibilityAnimated:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

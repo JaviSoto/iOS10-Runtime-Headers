@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) NSString *serviceType;
 
 + (id)_extensionIdentifierForServiceType:(id)arg1;
++ (bool)_isAvailableForMediaShareExtension:(id)arg1;
 + (bool)_isAvailableForService:(id)arg1;
 + (bool)_isMultiUserDevice;
 + (bool)_isServiceType:(id)arg1;

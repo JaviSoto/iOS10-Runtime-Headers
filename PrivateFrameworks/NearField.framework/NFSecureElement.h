@@ -18,6 +18,7 @@
 @property (readonly) unsigned int supportedTechnologies;
 
 + (id)embeddedSecureElement;
++ (id)icefallSecureElement;
 + (unsigned int)supportedTechnologies;
 
 - (unsigned long long)OSVersion;

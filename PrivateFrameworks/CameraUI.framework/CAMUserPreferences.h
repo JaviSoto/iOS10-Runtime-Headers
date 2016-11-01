@@ -5,6 +5,7 @@
 @interface CAMUserPreferences : NSObject {
     CAMCaptureConfiguration * _captureConfiguration;
     CAMConflictingControlConfiguration * _conflictingControlConfiguration;
+    bool  _didAcknowledgePortraitModeDescription;
     bool  _didResetTorchMode;
     bool  _lockAsShutterEnabled;
     long long  _overriddenBackCaptureInterval;
@@ -12,7 +13,9 @@
     long long  _previewViewAspectMode;
     NSDate * _resetTimeoutDate;
     bool  _shouldCaptureHDREV0;
+    bool  _shouldCaptureOriginalForPortraitEffect;
     bool  _shouldDelayRemotePersistence;
+    bool  _shouldDisableCameraSwitchingDuringVideoRecording;
     bool  _shouldShowGridView;
     long long  _slomoConfiguration;
     NSUserDefaults * _underlyingUserDefaults;
@@ -21,6 +24,7 @@
 
 @property (nonatomic, retain) CAMCaptureConfiguration *captureConfiguration;
 @property (nonatomic, retain) CAMConflictingControlConfiguration *conflictingControlConfiguration;
+@property (nonatomic) bool didAcknowledgePortraitModeDescription;
 @property (setter=_setDidResetTorchMode:, nonatomic) bool didResetTorchMode;
 @property (getter=isLockAsShutterEnabled, nonatomic, readonly) bool lockAsShutterEnabled;
 @property (nonatomic, readonly) long long overriddenBackCaptureInterval;
@@ -28,7 +32,9 @@
 @property (nonatomic) long long previewViewAspectMode;
 @property (setter=_setResetTimeoutDate:, nonatomic, retain) NSDate *resetTimeoutDate;
 @property (nonatomic, readonly) bool shouldCaptureHDREV0;
+@property (nonatomic, readonly) bool shouldCaptureOriginalForPortraitEffect;
 @property (nonatomic, readonly) bool shouldDelayRemotePersistence;
+@property (nonatomic, readonly) bool shouldDisableCameraSwitchingDuringVideoRecording;
 @property (nonatomic, readonly) bool shouldShowGridView;
 @property (nonatomic, readonly) long long slomoConfiguration;
 @property (getter=_underlyingUserDefaults, setter=_setUnderlyingUserDefaults:, nonatomic, retain) NSUserDefaults *underlyingUserDefaults;
@@ -44,6 +50,7 @@
 - (id)_underlyingUserDefaults;
 - (id)captureConfiguration;
 - (id)conflictingControlConfiguration;
+- (bool)didAcknowledgePortraitModeDescription;
 - (bool)didResetTorchMode;
 - (bool)isLockAsShutterEnabled;
 - (long long)overriddenBackCaptureInterval;
@@ -54,9 +61,12 @@
 - (id)resetTimeoutDate;
 - (void)setCaptureConfiguration:(id)arg1;
 - (void)setConflictingControlConfiguration:(id)arg1;
+- (void)setDidAcknowledgePortraitModeDescription:(bool)arg1;
 - (void)setPreviewViewAspectMode:(long long)arg1;
 - (bool)shouldCaptureHDREV0;
+- (bool)shouldCaptureOriginalForPortraitEffect;
 - (bool)shouldDelayRemotePersistence;
+- (bool)shouldDisableCameraSwitchingDuringVideoRecording;
 - (bool)shouldResetCaptureConfiguration;
 - (bool)shouldShowGridView;
 - (long long)slomoConfiguration;

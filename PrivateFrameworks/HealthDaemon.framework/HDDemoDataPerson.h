@@ -100,6 +100,7 @@
     double  _stepsSampleFrequency;
     double  _stepsSampleFrequencyDuringExercise;
     double  _sunsetTime;
+    double  _swimmingStrokesPerYard;
     double  _timeIncrement;
     double  _timeIncrementDuringExercise;
     bool  _useContinuousGlucoseMonitoring;
@@ -223,6 +224,7 @@
 @property (nonatomic) double stepsSampleFrequency;
 @property (nonatomic) double stepsSampleFrequencyDuringExercise;
 @property (nonatomic) double sunsetTime;
+@property (nonatomic) double swimmingStrokesPerYard;
 @property (nonatomic) double timeIncrement;
 @property (nonatomic) double timeIncrementDuringExercise;
 @property (nonatomic) bool useContinuousGlucoseMonitoring;
@@ -437,6 +439,7 @@
 - (void)setStepsSampleFrequency:(double)arg1;
 - (void)setStepsSampleFrequencyDuringExercise:(double)arg1;
 - (void)setSunsetTime:(double)arg1;
+- (void)setSwimmingStrokesPerYard:(double)arg1;
 - (void)setTimeIncrement:(double)arg1;
 - (void)setTimeIncrementDuringExercise:(double)arg1;
 - (void)setUseContinuousGlucoseMonitoring:(bool)arg1;
@@ -471,6 +474,7 @@
 - (double)stepsSampleFrequency;
 - (double)stepsSampleFrequencyDuringExercise;
 - (double)sunsetTime;
+- (double)swimmingStrokesPerYard;
 - (double)timeIncrement;
 - (double)timeIncrementDuringExercise;
 - (void)updateMedicalIDData;

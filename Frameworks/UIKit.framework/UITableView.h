@@ -49,6 +49,7 @@
     NSTimer * _indexOverlayTimer;
     NSIndexPath * _indexPathBeingCreated;
     NSIndexPath * _indexPathToFocus;
+    _UIFeedbackRetargetBehavior * _indexRetargetFeedbackBehavior;
     UIColor * _indexTrackingBackgroundColor;
     NSMutableArray * _insertItems;
     long long  _lastFloatingSection;
@@ -74,6 +75,7 @@
     _UITableViewPrefetchContext * _prefetchContext;
     <UITableViewDataSourcePrefetching> * _prefetchDataSource;
     NSMutableArray * _reloadItems;
+    _UIFeedbackDragSnappingBehavior * _reorderFeedbackBehavior;
     _UITableViewReorderingSupport * _reorderingSupport;
     NSMutableDictionary * _reusableHeaderFooterViews;
     NSMutableDictionary * _reusableTableCells;
@@ -81,6 +83,7 @@
     double  _rowHeight;
     UIColor * _sectionBorderColor;
     double  _sectionBorderWidth;
+    _UIFeedbackImpactBehavior * _sectionChangeFeedbackBehavior;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -433,6 +436,7 @@
 - (void)_UIAppearance_setBackgroundColor:(id)arg1;
 - (void)_UIAppearance_setSeparatorColor:(id)arg1;
 - (void)_UIAppearance_setSeparatorStyle:(long long)arg1;
+- (void)_UIAppearance_setSeparatorsDrawInVibrantLightModeUIAppearance:(id)arg1;
 - (id)_accessoryBaseColor;
 - (void)_accessoryButtonAction:(id)arg1;
 - (long long)_accessoryTypeForCell:(id)arg1 forRowAtIndexPath:(id)arg2;
@@ -628,6 +632,7 @@
 - (bool)_indexPathIsValid:(id)arg1;
 - (id)_indexPathToFocus;
 - (id)_indexPathsForHighlightedRows;
+- (id)_indexRetargetFeedbackBehavior;
 - (void)_initializeTentativeViewContainers;
 - (void)_installSwipeToDeleteGobbler;
 - (void)_installTableViewGestureRecognizers;
@@ -688,6 +693,7 @@
 - (void)_removeIndex;
 - (void)_removeTableViewGestureRecognizers;
 - (void)_removeWasCanceledForCell:(id)arg1;
+- (id)_reorderFeedbackBehavior;
 - (void)_reorderPositionChangedForCell:(id)arg1;
 - (void)_reorderPositionChangedForCell:(id)arg1 withScrollFactorPercentage:(float)arg2;
 - (id)_reorderingCell;
@@ -718,6 +724,7 @@
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg1 targetContentOffset:(struct CGPoint { double x1; double x2; }*)arg2;
 - (bool)_scrollsToMakeFirstResponderVisible;
 - (double)_sectionBorderWidth;
+- (id)_sectionChangeFeedbackBehavior;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sectionContentInset;
 - (bool)_sectionContentInsetFollowsLayoutMargins;
 - (double)_sectionCornerRadius;
@@ -762,6 +769,7 @@
 - (void)_setHeightForTableHeaderViewHiding:(double)arg1;
 - (void)_setIgnorePinnedTableHeaderUpdates:(bool)arg1;
 - (void)_setIndexPathToFocus:(id)arg1;
+- (void)_setIndexRetargetFeedbackBehavior:(id)arg1;
 - (void)_setIsAncestorOfFirstResponder:(bool)arg1;
 - (void)_setKeepsFirstResponderVisibleOnBoundsChange:(bool)arg1;
 - (void)_setManuallyManagesSwipeUI:(bool)arg1;
@@ -769,8 +777,10 @@
 - (void)_setNeedsVisibleCellsUpdate:(bool)arg1 withFrames:(bool)arg2;
 - (void)_setPinsTableHeaderView:(bool)arg1;
 - (void)_setRemembersPreviouslyFocusedItem:(bool)arg1;
+- (void)_setReorderFeedbackBehavior:(id)arg1;
 - (void)_setRowCount:(unsigned long long)arg1;
 - (void)_setSectionBorderWidth:(double)arg1;
+- (void)_setSectionChangeFeedbackBehavior:(id)arg1;
 - (void)_setSectionContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setSectionContentInsetFollowsLayoutMargins:(bool)arg1;
 - (void)_setSectionCornerRadius:(double)arg1;

@@ -38,6 +38,7 @@
 @property (getter=isResidentSupported, nonatomic) bool residentSupported;
 @property (readonly) Class superclass;
 
++ (long long)compareElectionVersions:(id)arg1 otherVersion:(id)arg2;
 + (id)logCategory;
 + (id)shortDescription;
 + (bool)supportsSecureCoding;
@@ -94,6 +95,7 @@
 - (void)notifyClientsOfRemovedResidentDevice:(id)arg1;
 - (void)notifyClientsOfUpdatedResidentDevice:(id)arg1;
 - (void)notifyResidentAvailable:(bool)arg1;
+- (void)notifyUpdatedPrimaryResident:(id)arg1;
 - (id)ourSelf;
 - (id)primaryResidentDevice;
 - (id)propertyQueue;

@@ -30,14 +30,14 @@
     bool  _receivedPreBracketFrame;
     int  _receivedReferenceFrameBracketedCaptureSequenceNumber;
     struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
-    NSString * _sensorConfig;
     NSString * _sensorID;
     NSDictionary * _sensorIDDictionary;
-    NSString * _sensorSettings;
     int  _sisBracketCount;
     bool  _sisEnabled;
     NSArray * _sisExposureValues;
-    NSDictionary * _streamConfigurationDictionary;
+    NSString * _telephotoPortType;
+    NSString * _telephotoSensorID;
+    NSDictionary * _telephotoSensorIDDictionary;
     bool  _usesHDRPreBracketFrameForErrorRecoveryDownstream;
 }
 
@@ -50,10 +50,10 @@
 
 - (void)_clearCaptureRequestState;
 - (void)_detectMissingPreBracketedFrameAndEmitBWNodeError;
-- (int)_gnrProcessingTypeWithStillImageStreamCaptureType:(int)arg1 doesHDR:(bool)arg2;
-- (id)_hdrBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 stillImageSettings:(id)arg2;
-- (id)_initWithSISEnabled:(bool)arg1 OISEnabled:(bool)arg2 HDREnabled:(bool)arg3 portType:(id)arg4 sensorID:(id)arg5 sensorIDDictionary:(id)arg6 sensorConfig:(id)arg7 sensorSettings:(id)arg8 streamConfigurationDictionary:(id)arg9 sbpCreationFunction:(int (*)arg10 treatSoftErrorsAsHardErrors:(bool)arg11;
-- (id)_oisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 stillImageSettings:(id)arg2;
+- (int)_gnrProcessingTypeWithStillImageStreamCaptureType:(int)arg1 stereoFusionCapture:(bool)arg2;
+- (id)_hdrBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; int x26; float x27; int x28; int x29; int x30; int x31; long long x32; }*)arg1 stillImageSettings:(id)arg2;
+- (id)_initWithSISEnabled:(bool)arg1 OISEnabled:(bool)arg2 HDREnabled:(bool)arg3 portType:(id)arg4 sensorID:(id)arg5 sensorIDDictionary:(id)arg6 telephotoPortType:(id)arg7 telephotoSensorID:(id)arg8 telephotoSensorIDDictionary:(id)arg9 sbpCreationFunction:(int (*)arg10 treatSoftErrorsAsHardErrors:(bool)arg11;
+- (id)_oisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; int x26; float x27; int x28; int x29; int x30; int x31; long long x32; }*)arg1 stillImageSettings:(id)arg2;
 - (void)_processSequenceInSampleBufferProcessor;
 - (bool)_receivedExpectedAmountOfFrames;
 - (void)_sampleBufferProcessorOutputReady:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
@@ -61,7 +61,7 @@
 - (int)_setPropertyOnSampleBufferProcessorWithKey:(struct __CFString { }*)arg1 value:(void*)arg2;
 - (void)_setReferenceFrameBracketedCaptureSequenceNumberOnSampleBufferProcessor:(int)arg1;
 - (int)_setupSampleBufferProcessor;
-- (id)_sisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg1 stillImageSettings:(id)arg2;
+- (id)_sisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; int x26; float x27; int x28; int x29; int x30; int x31; long long x32; }*)arg1 stillImageSettings:(id)arg2;
 - (id)_tuningDictionaryWithOnlyGNRParameters;
 - (int)_unpackOptions;
 - (unsigned int)_worstCaseFrameRetainCount;
@@ -69,12 +69,12 @@
 - (bool)alwaysRequestsPreBracketedEV0;
 - (bool)alwaysRequestsPreBracketedEV0ForOIS;
 - (bool)attachesInputBracketToOutputSampleBuffer;
-- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; int x12; int x13; unsigned int x14; float x15; long long x16; }*)arg2 stillImageSettings:(id)arg3;
+- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; int x26; float x27; int x28; int x29; int x30; int x31; long long x32; }*)arg2 stillImageSettings:(id)arg3;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
 - (void)handleStillImageReferenceFrameBracketedCaptureSequenceNumber:(int)arg1 forInput:(id)arg2;
-- (id)initWithSISEnabled:(bool)arg1 OISEnabled:(bool)arg2 HDREnabled:(bool)arg3 portType:(id)arg4 sensorID:(id)arg5 sensorIDDictionary:(id)arg6 sensorConfig:(id)arg7 sensorSettings:(id)arg8 streamConfigurationDictionary:(id)arg9;
+- (id)initWithSISEnabled:(bool)arg1 OISEnabled:(bool)arg2 HDREnabled:(bool)arg3 portType:(id)arg4 sensorID:(id)arg5 sensorIDDictionary:(id)arg6 telephotoPortType:(id)arg7 telephotoSensorID:(id)arg8 telephotoSensorIDDictionary:(id)arg9;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;

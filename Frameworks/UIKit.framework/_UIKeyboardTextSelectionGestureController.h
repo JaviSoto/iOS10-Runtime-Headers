@@ -19,7 +19,7 @@
     <_UIKeyboardTextSelectionGestureControllerDelegate> * _delegate;
     bool  _didFloatCursor;
     bool  _didSuppressSelectionGrabbers;
-    _UISystemSoundPlayer * _feedbackBehaviour;
+    _UIFeedbackStatesBehavior * _feedbackBehaviour;
     bool  _isLongPressing;
     bool  _isPanning;
     struct CGPoint { 
@@ -47,7 +47,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didFloatCursor;
 @property (nonatomic) bool didSuppressSelectionGrabbers;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehaviour;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehaviour;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isLongPressing;
 @property (nonatomic) bool isPanning;

@@ -43,10 +43,11 @@
 - (void)homeButtonPressed;
 - (id)identities:(id)arg1;
 - (id)init;
-- (void)initializeConnection;
+- (int)initializeConnection;
 - (id /* block */)interruptionHandler;
 - (bool)isAriadneSignpostsEnabled;
 - (bool)isFingerOn;
+- (bool)isXARTAvailable;
 - (int)match:(id)arg1 withOptions:(id)arg2;
 - (void)matchResult:(id)arg1 withDictionary:(id)arg2;
 - (void)notifyAppIsBackground:(bool)arg1;

@@ -9,7 +9,7 @@
 - (double)centerX;
 - (double)centerY;
 - (short)cloudLocalState;
-- (long long)faceAlgorithmVersion;
+- (int)faceAlgorithmVersion;
 - (bool)hidden;
 - (bool)manual;
 - (bool)nameSourceAuto;
@@ -20,7 +20,7 @@
 - (void)setCenterX:(double)arg1;
 - (void)setCenterY:(double)arg1;
 - (void)setCloudLocalState:(short)arg1;
-- (void)setFaceAlgorithmVersion:(long long)arg1;
+- (void)setFaceAlgorithmVersion:(int)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setManual:(bool)arg1;
 - (void)setNameSourceAuto:(bool)arg1;
@@ -28,10 +28,10 @@
 - (void)setPersonBeingKeyFace:(id <PLSyncablePerson>)arg1;
 - (void)setRejectedPeople:(NSSet *)arg1;
 - (void)setSize:(double)arg1;
-- (void)setSourceHeight:(long long)arg1;
-- (void)setSourceWidth:(long long)arg1;
+- (void)setSourceHeight:(int)arg1;
+- (void)setSourceWidth:(int)arg1;
 - (double)size;
-- (long long)sourceHeight;
-- (long long)sourceWidth;
+- (int)sourceHeight;
+- (int)sourceWidth;
 
 @end

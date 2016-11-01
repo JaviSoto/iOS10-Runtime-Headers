@@ -76,11 +76,6 @@
 - (bool)isEquivalentTo:(id)arg1;
 - (bool)isUTC;
 
-// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
-
-- (id)JSONObjectRepresentation;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 - (bool)_navigation_hasSameOffsetFromGMTAsTimeZone:(id)arg1;

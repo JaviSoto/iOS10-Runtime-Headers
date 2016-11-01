@@ -16,6 +16,7 @@
     _UIInterfaceActionSelectByPressGestureRecognizer * _selectByPressGestureRecognizer;
     bool  _selectionFeedbackEnabled;
     UILongPressGestureRecognizer * _selectionGestureRecognizer;
+    _UIFeedbackRetargetBehavior * _selectionRetargetFeedbackBehavior;
     UIGestureRecognizer * _systemProvidedGestureRecognizer;
     UIView * _trackableContainerView;
     NSMutableSet * _viewsRequiringSelectionGestureDisabling;
@@ -35,6 +36,7 @@
 @property (nonatomic, retain) _UIInterfaceActionSelectByPressGestureRecognizer *selectByPressGestureRecognizer;
 @property (nonatomic) bool selectionFeedbackEnabled;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *selectionGestureRecognizer;
+@property (nonatomic, retain) _UIFeedbackRetargetBehavior *selectionRetargetFeedbackBehavior;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIGestureRecognizer *systemProvidedGestureRecognizer;
 @property (nonatomic) UIView *trackableContainerView;
@@ -77,6 +79,7 @@
 - (id)selectByPressGestureRecognizer;
 - (bool)selectionFeedbackEnabled;
 - (id)selectionGestureRecognizer;
+- (id)selectionRetargetFeedbackBehavior;
 - (void)setActionsScrollView:(id)arg1;
 - (void)setCooperatingSelectionTrackingControllers:(id)arg1;
 - (void)setRepresentationViews:(id)arg1;
@@ -86,6 +89,7 @@
 - (void)setSelectByPressGestureEnabled:(bool)arg1;
 - (void)setSelectByPressGestureRecognizer:(id)arg1;
 - (void)setSelectionFeedbackEnabled:(bool)arg1;
+- (void)setSelectionRetargetFeedbackBehavior:(id)arg1;
 - (void)setTrackableContainerView:(id)arg1;
 - (void)setWeakCooperatingSelectionTrackingControllers:(id)arg1;
 - (id)systemProvidedGestureRecognizer;

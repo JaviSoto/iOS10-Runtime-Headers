@@ -251,11 +251,6 @@
 
 - (id)cat_internetTimeString;
 
-// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
-
-- (id)JSONObjectRepresentation;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 + (id)CKSharedCalendar;

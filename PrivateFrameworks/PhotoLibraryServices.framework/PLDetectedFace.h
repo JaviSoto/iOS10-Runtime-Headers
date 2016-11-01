@@ -21,7 +21,6 @@
 @property (nonatomic) int expressionType1;
 @property (nonatomic) int expressionType2;
 @property (nonatomic) int expressionType3;
-@property (nonatomic) long long faceAlgorithmVersion;
 @property (nonatomic) int faceAlgorithmVersion;
 @property (nonatomic, retain) PLDetectedFaceGroup *faceGroupBeingKeyFace;
 @property (nonatomic, retain) NSSet *faceGroups;
@@ -52,19 +51,19 @@
 @property (nonatomic) double rightEyeX;
 @property (nonatomic) double rightEyeY;
 @property (nonatomic) double size;
-@property (nonatomic) long long sourceHeight;
 @property (nonatomic) int sourceHeight;
-@property (nonatomic) long long sourceWidth;
 @property (nonatomic) int sourceWidth;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *uuid;
 
 + (id)_allSyncableFacesInManagedObjectContext:(id)arg1;
 + (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
++ (unsigned long long)countOfHiddenFacesOnAssetsWithObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)detectedFaceWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
++ (id)findExistingFaceMatchingDimension:(struct PLFaceDimension { double x1; double x2; double x3; long long x4; long long x5; })arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)findExistingFaceMatchingRef:(id)arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)predicatesToExcludeNonVisibleFaces;

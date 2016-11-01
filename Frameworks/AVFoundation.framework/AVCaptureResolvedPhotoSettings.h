@@ -17,14 +17,16 @@
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-+ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 originalPhotoDeliveryEnabled:(bool)arg10 stillImageStabilizationEnabled:(bool)arg11 squareCropEnabled:(bool)arg12;
++ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 shallowDepthOfFieldEffectEnabled:(bool)arg10 originalPhotoDeliveryEnabled:(bool)arg11 stillImageStabilizationEnabled:(bool)arg12 bravoImageFusionEnabled:(bool)arg13 squareCropEnabled:(bool)arg14;
 
-- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 originalPhotoDeliveryEnabled:(bool)arg10 stillImageStabilizationEnabled:(bool)arg11 squareCropEnabled:(bool)arg12;
+- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 shallowDepthOfFieldEffectEnabled:(bool)arg10 originalPhotoDeliveryEnabled:(bool)arg11 stillImageStabilizationEnabled:(bool)arg12 bravoImageFusionEnabled:(bool)arg13 squareCropEnabled:(bool)arg14;
 - (void)dealloc;
 - (id)description;
+- (bool)isBravoImageFusionEnabled;
 - (bool)isFlashEnabled;
 - (bool)isHDREnabled;
 - (bool)isOriginalPhotoDeliveryEnabled;
+- (bool)isShallowDepthOfFieldEffectEnabled;
 - (bool)isSquareCropEnabled;
 - (bool)isStillImageStabilizationEnabled;
 - (bool)isTurboModeEnabled;

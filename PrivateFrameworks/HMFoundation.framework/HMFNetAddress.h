@@ -3,7 +3,6 @@
  */
 
 @interface HMFNetAddress : NSObject {
-    unsigned long long  _addressFamily;
     HMFNetAddressInternal * _internal;
 }
 

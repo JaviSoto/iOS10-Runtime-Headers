@@ -20,10 +20,17 @@
 - (bool)deleteAllApplets:(bool)arg1;
 - (bool)deleteApplets:(id)arg1 queueServerConnection:(bool)arg2;
 - (void)didExitRestrictedMode:(id)arg1;
+- (bool)disableAuthorizationForApplet:(id)arg1 authorization:(id)arg2;
+- (bool)expressModesEnabled;
+- (id)expressTransitIdentifier;
+- (id)felicaAppletState:(id)arg1;
 - (bool)getCryptogram:(id*)arg1 challengeResponse:(id*)arg2;
 - (id)init;
 - (bool)refreshSecureElement:(id)arg1;
+- (bool)requireAuthorizationForAllAppletsExcept:(id)arg1;
 - (bool)runScript:(id)arg1 forSEID:(id)arg2 results:(id*)arg3 lastStatus:(unsigned long long*)arg4;
+- (bool)setExpressModesEnabled:(bool)arg1;
+- (bool)setExpressTransitApplet:(id)arg1 authorization:(id)arg2;
 - (id)signChallenge:(id)arg1 certs:(id*)arg2;
 - (id)signChallenge:(id)arg1 forAID:(id)arg2 certs:(id*)arg3;
 - (id)signChallenge:(id)arg1 useOSVersion:(bool)arg2 signatureInfo:(id*)arg3;

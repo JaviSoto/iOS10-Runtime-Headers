@@ -10,6 +10,7 @@
     bool  _emulationActive;
     bool  _fieldPresent;
     unsigned long long  _numActiveSEs;
+    bool  _pendingServerRequest;
     NFTechnologyEvent * _technologyEvent;
     bool  _vasTransactionInProgress;
 }
@@ -17,6 +18,7 @@
 @property (readonly) NFApplet *activeApplet;
 @property (readonly) NFApplet *defaultApplet;
 @property <NFLoyaltyAndPaymentSessionDelegate> *delegate;
+@property (readonly) unsigned long long numberOfActiveSecureElements;
 
 - (bool)_startCardEmulationWithAuthorization:(id)arg1;
 - (bool)_startDeferredCardEmulationWithAuthorization:(id)arg1;
@@ -32,15 +34,22 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1;
 - (void)didFailDeferredAuthorization;
+- (void)didFelicaStateChange:(id)arg1;
 - (void)didPerformValueAddedServiceTransactions:(id)arg1;
+- (void)didReceiveActivityTimeout;
 - (void)didReceiveButtonPressForApplet:(id)arg1;
+- (void)didReceivePendingServerRequest;
 - (void)didSelectApplet:(id)arg1;
 - (void)didSelectValueAddedService:(bool)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
+- (bool)enablePlasticCardMode:(bool)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
+- (id)felicaAppletState:(id)arg1;
+- (unsigned long long)numberOfActiveSecureElements;
 - (bool)setActivePaymentApplet:(id)arg1;
 - (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2;
 - (void)setDelegate:(id)arg1;

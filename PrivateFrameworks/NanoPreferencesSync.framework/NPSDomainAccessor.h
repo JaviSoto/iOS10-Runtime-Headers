@@ -14,8 +14,6 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *invalidationQueue;
 @property (nonatomic, readonly) NSUUID *pairingID;
 
-// Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
-
 + (id)copyDomainList;
 + (id)copyDomainListForPairingID:(id)arg1 pairingDataStore:(id)arg2;
 + (void)initialize;
@@ -69,9 +67,5 @@
 - (id)stringForKey:(id)arg1;
 - (id)synchronize;
 - (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
-
-+ (id)_npto_sharedDomain;
 
 @end

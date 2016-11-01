@@ -63,6 +63,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
+@property (nonatomic, readonly) bool hf_shouldNewCameraBeFavoritedByDefault;
+@property (nonatomic, readonly) bool hf_shouldNewServiceBeFavoritedByDefault;
 @property (nonatomic, readonly) UIImage *hf_wallpaperImage;
 @property (nonatomic, retain) HMRoom *homeAsRoom;
 @property (nonatomic, retain) CLLocation *homeLocation;
@@ -371,6 +373,7 @@
 - (id)hf_allNonEmptyActionSets;
 - (id)hf_allRooms;
 - (id)hf_allServices;
+- (id)hf_cameraProfileWithIdentifier:(id)arg1;
 - (id)hf_characteristicValueManager;
 - (id)hf_colorPalette;
 - (bool)hf_currentUserIsAdministrator;
@@ -390,6 +393,8 @@
 - (id)hf_serviceWithIdentifier:(id)arg1;
 - (id)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:(bool)arg1;
 - (id)hf_setNotesApplicationData:(id)arg1;
+- (bool)hf_shouldNewCameraBeFavoritedByDefault;
+- (bool)hf_shouldNewServiceBeFavoritedByDefault;
 - (bool)hf_supportsPerUserRemoteAccess;
 - (bool)hf_supportsRemoteAccessRestrictions;
 - (id)hf_updateColorPalette:(id)arg1;

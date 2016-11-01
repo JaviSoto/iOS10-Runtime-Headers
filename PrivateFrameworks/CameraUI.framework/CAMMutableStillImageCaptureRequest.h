@@ -42,7 +42,9 @@
 @property (nonatomic) bool usesStillImageStabilization;
 @property (nonatomic, copy) NSString *videoPersistenceUUID;
 @property (nonatomic) bool wantsAudioForCapture;
+@property (nonatomic) bool wantsAutoDuoImageFusion;
 @property (nonatomic) bool wantsHighResolutionStills;
+@property (nonatomic) bool wantsPortraitEffect;
 @property (nonatomic) bool wantsSquareCrop;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -83,7 +85,9 @@
 - (void)setUsesStillImageStabilization:(bool)arg1;
 - (void)setVideoPersistenceUUID:(id)arg1;
 - (void)setWantsAudioForCapture:(bool)arg1;
+- (void)setWantsAutoDuoImageFusion:(bool)arg1;
 - (void)setWantsHighResolutionStills:(bool)arg1;
+- (void)setWantsPortraitEffect:(bool)arg1;
 - (void)setWantsSquareCrop:(bool)arg1;
 
 @end

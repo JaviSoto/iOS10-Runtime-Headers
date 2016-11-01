@@ -29,8 +29,4 @@
 
 + (void)createBoundInputStream:(id*)arg1 outputStream:(id*)arg2 bufferSize:(unsigned long long)arg3;
 
-// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
-
-- (void)_SY_notifyOnQueue:(id)arg1 handler:(id /* block */)arg2;
-
 @end

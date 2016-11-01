@@ -7,6 +7,11 @@
         int *list; 
         unsigned long long count; 
         unsigned long long size; 
+    }  _availablePaymentTypes;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _availablePrioritizations;
     NSMutableArray * _availableTransitSurcharges;
     struct { 
@@ -16,6 +21,8 @@
     GEORequestOptions * _transitSurchargeOptions;
 }
 
+@property (nonatomic, readonly) int*availablePaymentTypes;
+@property (nonatomic, readonly) unsigned long long availablePaymentTypesCount;
 @property (nonatomic, readonly) int*availablePrioritizations;
 @property (nonatomic, readonly) unsigned long long availablePrioritizationsCount;
 @property (nonatomic, retain) NSMutableArray *availableTransitSurcharges;
@@ -28,9 +35,15 @@
 
 + (Class)availableTransitSurchargeType;
 
+- (int)StringAsAvailablePaymentTypes:(id)arg1;
 - (int)StringAsAvailablePrioritizations:(id)arg1;
+- (void)addAvailablePaymentType:(int)arg1;
 - (void)addAvailablePrioritization:(int)arg1;
 - (void)addAvailableTransitSurcharge:(id)arg1;
+- (int)availablePaymentTypeAtIndex:(unsigned long long)arg1;
+- (int*)availablePaymentTypes;
+- (id)availablePaymentTypesAsString:(int)arg1;
+- (unsigned long long)availablePaymentTypesCount;
 - (int)availablePrioritizationAtIndex:(unsigned long long)arg1;
 - (int*)availablePrioritizations;
 - (id)availablePrioritizationsAsString:(int)arg1;
@@ -38,6 +51,7 @@
 - (id)availableTransitSurchargeAtIndex:(unsigned long long)arg1;
 - (id)availableTransitSurcharges;
 - (unsigned long long)availableTransitSurchargesCount;
+- (void)clearAvailablePaymentTypes;
 - (void)clearAvailablePrioritizations;
 - (void)clearAvailableTransitSurcharges;
 - (void)copyTo:(id)arg1;
@@ -52,6 +66,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)prioritizationOptions;
 - (bool)readFrom:(id)arg1;
+- (void)setAvailablePaymentTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setAvailablePrioritizations:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setAvailableTransitSurcharges:(id)arg1;
 - (void)setHasShowTransitSchedules:(bool)arg1;

@@ -70,6 +70,7 @@
 - (id)initWithDictionary:(id)arg1 error:(id*)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToPaymentRequest:(id)arg1;
+- (bool)isServiceProviderPaymentRequest;
 - (bool)isShippingEditable;
 - (unsigned long long)merchantCapabilities;
 - (id)merchantIdentifier;
@@ -80,6 +81,7 @@
 - (unsigned long long)requiredBillingAddressFields;
 - (unsigned long long)requiredShippingAddressFields;
 - (bool)requiresAddressPrecision;
+- (id)serviceProviderPaymentRequest;
 - (void)setApplicationData:(id)arg1;
 - (void)setBillingAddress:(void*)arg1;
 - (void)setBillingContact:(id)arg1;

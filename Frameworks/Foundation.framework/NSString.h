@@ -12,10 +12,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasMobileMeSuffix;
 @property (readonly) unsigned long long hash;
-@property (readonly) bool isAllCaps;
 @property (readonly) unsigned long long length;
 @property (nonatomic, readonly) NSString *mobileMeDomain;
-@property (readonly) bool npkHasContent;
 @property (nonatomic, readonly) long long px_platformAgnosticHash;
 @property (nonatomic, readonly) NSString *px_stringByIndentingNewLines;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
@@ -700,11 +698,6 @@
 - (bool)isAddressBookLabel;
 - (id)unformattedPhoneNumber;
 
-// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
-
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_clkBlinkerRange;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_clkBlinkerRangeByBackwardsSearch;
-
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
 + (id)br_emptyFilenameAlternativeName;
@@ -1363,19 +1356,6 @@
 - (id)ml_stringValueForSQL;
 - (id)sanitizedString;
 
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (bool)isAllCaps;
-- (bool)npkHasContent;
-
-// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
-
-- (id)imageWithFont:(id)arg1;
-- (id)imageWithFont:(id)arg1 border:(unsigned long long)arg2 color:(id)arg3 cropped:(bool)arg4;
-- (id)imageWithFont:(id)arg1 border:(unsigned long long)arg2 cropped:(bool)arg3;
-- (bool)ntk_containsOnlyValidMonogramCharacters;
-- (bool)ntk_isValidMonogram;
-
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 + (bool)_componentsWillUseShortFormat:(id)arg1;
@@ -1442,9 +1422,11 @@
 - (id)_FCCKPIdentifierWithType:(int)arg1;
 - (id)fc_lowerCaseStringByTrimmingWhiteSpace;
 - (id)fc_lowercaseTokensWithMinimumLength:(unsigned long long)arg1;
+- (id)fc_sanitizeWithOffendingCharacterSet:(id)arg1;
 - (id)fc_stringByMultiplyingStringByCount:(unsigned long long)arg1;
 - (id)fc_stringByPrefixingLinesWithString:(id)arg1;
 - (id)fc_stringByRemovingPunctuation;
+- (bool)fc_validateWithRegexPattern:(id)arg1;
 - (id)fr_readingHistoryItemID;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (id)stringByRemovingCharactersInSet:(id)arg1;
@@ -1987,10 +1969,6 @@
 - (id)uncommentedAddress;
 - (id)uncommentedAddressRespectingGroups;
 - (id)unescapeXML;
-
-// Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
-
-- (id)nph_localizedUppercaseString;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 

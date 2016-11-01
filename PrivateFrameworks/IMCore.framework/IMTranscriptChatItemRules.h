@@ -32,6 +32,7 @@
 - (bool)_shouldRegenerateChatItemsForItem:(id)arg1 previousItem:(id)arg2 oldPreviousItem:(id)arg3;
 - (bool)_shouldReloadChatItem:(id)arg1 oldChatItem:(id)arg2;
 - (bool)_shouldReloadChatItemWithAssociatedChatItems:(id)arg1 oldAssociatedChatItems:(id)arg2;
+- (bool)_shouldShowEffectPlayButtonForMessage:(id)arg1;
 - (id)chatItemForIMChatItem:(id)arg1;
 - (bool)shouldShowExpressiveMessageTextAsText:(id)arg1;
 - (bool)shouldShowRaiseMessageStatus;

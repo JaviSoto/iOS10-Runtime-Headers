@@ -11,7 +11,7 @@
     }  _loadDelegate;
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
-            unsigned char __lx[2264]; 
+            unsigned char __lx[2272]; 
         } data; 
     }  _page;
     struct RetainPtr<_WKRemoteObjectRegistry> { 

@@ -72,6 +72,7 @@
 - (void)_automaticSRGBGenerationFromP3;
 - (void)_backwardsCompatibilityPatchForLayoutDirection;
 - (id)_cachedConstantsForEntity:(id)arg1;
+- (bool)_canremoveKeyAttribte:(unsigned short)arg1;
 - (id)_catalogGlobals;
 - (long long)_compareFlattenedKeySpec1:(id)arg1 toKeySpec2:(id)arg2;
 - (void)_configureAfterFirstSave;

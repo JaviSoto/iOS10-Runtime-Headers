@@ -54,6 +54,7 @@
 
 @property (nonatomic, readonly) NSArray *advisoryNotices;
 @property (nonatomic, readonly) bool allowsNetworkTileLoad;
+@property (nonatomic, readonly) NSArray *baseTransitFares;
 @property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;
 @property (nonatomic, readonly) void*controlPoints;
 @property (nonatomic) unsigned long long currentDisplayStep;
@@ -139,6 +140,7 @@
 - (id)advisoryNotices;
 - (bool)allowsNetworkTileLoad;
 - (double)approximateRoadWidthAtPointIndex:(unsigned int)arg1;
+- (id)baseTransitFares;
 - (id)boardStepForSection:(id)arg1;
 - (id)boundingMapRegion;
 - (bool)checkDrivingArrivalForCoordinate:(struct { double x1; double x2; })arg1 coordinateOnRoute:(struct { double x1; double x2; })arg2 routePointIndex:(unsigned int)arg3 distanceFromRoute:(double)arg4 arrivalMapRegion:(id)arg5 checkArrivalRadius:(bool)arg6 checkDistanceAlongRoute:(bool)arg7 checkRoadAccessPoints:(bool)arg8 isOnRoute:(bool)arg9;

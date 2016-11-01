@@ -26,11 +26,13 @@
 
 - (void).cxx_destruct;
 - (bool)attachRawAPIData;
+- (void)cleanup;
 - (id /* block */)completionHandler;
 - (id)date;
 - (id)description;
 - (id)editLinksForForecast:(id)arg1;
 - (unsigned long long)forecastType;
+- (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
 - (id)initWithLocation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithLocation:(id)arg1 date:(id)arg2 completionHandler:(id /* block */)arg3;

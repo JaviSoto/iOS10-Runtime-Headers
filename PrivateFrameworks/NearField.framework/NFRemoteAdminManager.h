@@ -16,17 +16,23 @@
 + (id)sharedRemoteAdminManager;
 
 - (void)_connectIfNeeded;
+- (bool)cancelCardIngestion;
 - (void)connectToServer:(id)arg1 callback:(id /* block */)arg2;
 - (void)dealloc;
 - (void)didInterruptXPCConnection:(id)arg1;
 - (void)didInvalidateXPCConnection:(id)arg1;
 - (id)getAPNPublicToken;
 - (void)getSELDInfoForBroker:(id /* block */)arg1;
+- (bool)ingestCard:(id)arg1 uri:(id)arg2 cardSessionToken:(id)arg3;
+- (void)ingestCard:(id)arg1 uri:(id)arg2 cardSessionToken:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)ingestCard:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)nextRequestForServer:(id)arg1;
 - (id)primaryRegionTopic;
 - (bool)queueServerConnection:(id)arg1;
 - (bool)queueServerConnectionForApplets:(id)arg1;
+- (void)readerModeCardIngestionStatus:(unsigned long long)arg1;
+- (void)readerModeCardSessionToken:(id)arg1;
 - (void)registerEventListener:(id)arg1;
 - (id)registrationInfo;
 - (void)remoteAdminCleanupProgress:(double)arg1;

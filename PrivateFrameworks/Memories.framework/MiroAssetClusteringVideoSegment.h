@@ -39,6 +39,7 @@
 - (bool)isEqual:(id)arg1;
 - (id)localIdentifier;
 - (double)rangeScore;
+- (id)rangeScoreExplination;
 - (void)setDuration:(double)arg1;
 - (void)setFrameRate:(float)arg1;
 - (void)setSourceRange:(id)arg1;

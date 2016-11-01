@@ -52,6 +52,7 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_forceTouchAvailabilityDidChange:(id)arg1;
+- (bool)_forwardRequestToLongLookIfPresented:(id)arg1 forCoalescedNotification:(id)arg2;
 - (void)_handleEatenTouch:(id)arg1;
 - (void)_installTouchEater;
 - (bool)_isPointInWindowSpace:(struct CGPoint { double x1; double x2; })arg1 insideCell:(id)arg2;
@@ -86,12 +87,12 @@
 - (bool)hasVisibleContent;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (id)init;
-- (void)insertNotificationRequest:(id)arg1;
+- (bool)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetMargins;
 - (bool)isBackgroundBlurred;
 - (bool)isContentExtensionVisible:(id)arg1;
 - (void)longLookWillPresentForNotificationViewController:(id)arg1;
-- (void)modifyNotificationRequest:(id)arg1;
+- (bool)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (bool)needsReloadData;
 - (void)notificationListCell:(id)arg1 requestsClearingNotificationRequest:(id)arg2;
 - (void)notificationListCell:(id)arg1 requestsPerformAction:(id)arg2 forNotificationRequest:(id)arg3 completion:(id /* block */)arg4;
@@ -118,7 +119,7 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)reloadRequestsWithSuppressedContent;
 - (void)removeContentObserver:(id)arg1;
-- (void)removeNotificationRequest:(id)arg1;
+- (void)removeNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

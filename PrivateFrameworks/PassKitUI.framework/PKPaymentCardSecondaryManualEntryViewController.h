@@ -16,7 +16,6 @@
 - (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (id)readonlyFieldIdentifiers;
 - (void)setSuppressPrimarySetupFields:(bool)arg1;
-- (bool)shouldAppearWithFirstEmptyFieldAsFirstResponder;
 - (bool)suppressPrimarySetupFields;
 - (void)viewDidLoad;
 - (id)visibleFieldIdentifiers;

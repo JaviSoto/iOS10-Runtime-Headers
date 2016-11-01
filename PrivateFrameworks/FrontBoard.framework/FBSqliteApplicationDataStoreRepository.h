@@ -25,6 +25,7 @@
 - (id)_dbQueue_applicationIdentifiersWithState;
 - (bool)_dbQueue_containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)_dbQueue_createTables;
+- (bool)_dbQueue_databaseIntegrityCheck;
 - (long long)_dbQueue_databaseVersion;
 - (bool)_dbQueue_executeStatement:(id)arg1 bindings:(id)arg2 resultRowHandler:(id /* block */)arg3;
 - (bool)_dbQueue_executeStatement:(id)arg1 bindings:(id)arg2 resultRowHandler:(id /* block */)arg3 error:(out id*)arg4;
@@ -36,10 +37,14 @@
 - (void)_dbQueue_notifyDelegateOfStoreInvalidationForIdentifier:(id)arg1;
 - (id)_dbQueue_objectForKey:(id)arg1 forApplication:(id)arg2;
 - (id)_dbQueue_objectsForKeys:(id)arg1;
+- (id)_dbQueue_openDatabase;
 - (void)_dbQueue_performWithSavepoint:(id)arg1 handler:(id /* block */)arg2;
+- (bool)_dbQueue_setAsideDamagedDatabase;
 - (bool)_isEligibleForSaving:(id)arg1;
+- (bool)_setAsideFileAtURL:(id)arg1;
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
+- (void)close;
 - (bool)containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
@@ -55,5 +60,6 @@
 - (void)removeObjectsForKeys:(id)arg1 forApplication:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3;
+- (id)urlByAppendingString:(id)arg1 toURL:(id)arg2;
 
 @end

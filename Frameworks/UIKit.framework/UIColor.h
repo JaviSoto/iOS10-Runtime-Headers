@@ -397,10 +397,6 @@
 
 + (id)ak_colorWithServerRGBRepresentation:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-
-+ (id)cam_lightenColor:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
 + (id)CertUIVerifiedColor;
@@ -409,11 +405,6 @@
 
 - (id)colorByBlendingWithColor:(id)arg1;
 - (id)colorByBlendingWithColor:(id)arg1 withFraction:(double)arg2;
-
-// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
-
-- (id)JSONObjectRepresentation;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
@@ -436,30 +427,6 @@
 // Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
 
 + (id)fmfOrangeColor;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)fu_platterBlueColor;
-+ (id)fu_platterDaliTealColor;
-+ (id)fu_platterGreenColor;
-+ (id)fu_platterOrangeColor;
-+ (id)fu_platterPinkColor;
-+ (id)fu_platterPurpleColor;
-+ (id)fu_platterRedColor;
-+ (id)fu_platterTealBlueColor;
-+ (id)fu_platterWhiteColor;
-+ (id)fu_platterYellowColor;
-+ (id)fu_systemBlueColor;
-+ (id)fu_systemGreenColor;
-+ (id)fu_systemGreyColor;
-+ (id)fu_systemMintColor;
-+ (id)fu_systemOrangeColor;
-+ (id)fu_systemPinkColor;
-+ (id)fu_systemPurpleColor;
-+ (id)fu_systemRedColor;
-+ (id)fu_systemTealBlueColor;
-+ (id)fu_systemTextGreyColor;
-+ (id)fu_systemYellowColor;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
@@ -530,18 +497,6 @@
 + (id)mt_tintColor;
 + (id)mt_wakeColor;
 + (id)mt_worldClockMapLandColor;
-
-// Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
-
-+ (id)colorWithWebColor:(id)arg1;
-+ (id)colorWithWebColorName:(id)arg1;
-+ (id)colorWithWebHexTriplet:(id)arg1;
-+ (id)colorWithWebRgb:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
-
-- (id)brightenBy:(double)arg1;
-- (id)colorByBoostingSaturation:(double)arg1 lightness:(double)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 

@@ -6,6 +6,7 @@
 @optional
 
 - (void)homeKitDispatcher:(HFHomeKitDispatcher *)arg1 manager:(HMHomeManager *)arg2 didChangeHome:(HMHome *)arg3;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateAccessAllowedWhenLocked:(bool)arg2;
 - (void)homeManager:(HMHomeManager *)arg1 didUpdateResidentEnabledForThisDevice:(bool)arg2;
 - (void)homeManager:(HMHomeManager *)arg1 didUpdateStateForIncomingInvitations:(NSArray *)arg2;
 - (void)homeManager:(HMHomeManager *)arg1 residentProvisioningStatusChanged:(unsigned long long)arg2;

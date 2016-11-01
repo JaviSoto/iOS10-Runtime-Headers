@@ -41,14 +41,6 @@
 
 - (id)extendedDescription;
 
-// Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
-
-- (id)nfmDescription;
-
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (id)npkDescription;
-
 // Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
 
 - (id)pbDescription;

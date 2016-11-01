@@ -2,26 +2,28 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface WALockscreenWidgetViewController : UIViewController {
+@interface WALockscreenWidgetViewController : UIViewController <WATodayModelObserver> {
     WAForecastModel * _currentForecastModel;
     <WAWidgetDelegate> * _delegate;
     bool  _locationServicesActive;
     WATodayModel * _todayModel;
     WATodayPadView * _todayView;
     double  _updateInterval;
-    bool  _updateIsInProgress;
     NSDate * _updateLastCompletionDate;
     NSTimer * _updateTimer;
 }
 
 @property (nonatomic, copy) WAForecastModel *currentForecastModel;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WAWidgetDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool locationServicesActive;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) WATodayModel *todayModel;
 @property (nonatomic, retain) WATodayPadView *todayView;
 @property (nonatomic, readonly) bool todayViewIsVisible;
 @property (nonatomic) double updateInterval;
-@property (nonatomic) bool updateIsInProgress;
 @property (nonatomic, copy) NSDate *updateLastCompletionDate;
 @property (nonatomic, retain) NSTimer *updateTimer;
 
@@ -35,7 +37,6 @@
 - (void)_delegateUpdateDidFailWithError:(id)arg1;
 - (void)_delegateWillUpdate;
 - (id)_locationName;
-- (void)_modelWantsUpdate:(id)arg1;
 - (void)_scheduleNewTimer;
 - (void)_setTodayViewHidden:(bool)arg1;
 - (void)_setupWeatherModel;
@@ -57,16 +58,16 @@
 - (void)setTodayModel:(id)arg1;
 - (void)setTodayView:(id)arg1;
 - (void)setUpdateInterval:(double)arg1;
-- (void)setUpdateIsInProgress:(bool)arg1;
 - (void)setUpdateLastCompletionDate:(id)arg1;
 - (void)setUpdateTimer:(id)arg1;
 - (bool)shouldFakeWeather;
 - (id)todayModel;
+- (void)todayModel:(id)arg1 forecastWasUpdated:(id)arg2;
+- (void)todayModelWantsUpdate:(id)arg1;
 - (id)todayView;
 - (bool)todayViewIsVisible;
 - (void)updateForChangedSettings:(id)arg1;
 - (double)updateInterval;
-- (bool)updateIsInProgress;
 - (id)updateLastCompletionDate;
 - (id)updateTimer;
 - (void)updateWeather;

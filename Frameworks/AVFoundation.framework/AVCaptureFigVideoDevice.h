@@ -24,12 +24,14 @@
     bool  _adjustingFocus;
     bool  _adjustingWB;
     long long  _autoFocusRangeRestriction;
+    bool  _autoShallowDepthOfFieldEffectEnabled;
     bool  _automaticallyAdjustsImageControlMode;
     bool  _automaticallyAdjustsVideoHDREnabled;
     bool  _automaticallyEnablesLowLightBoostWhenAvailable;
     NSArray * _availableBoxedMetadataFormatDescriptions;
     bool  _avcaptureDeviceAutoFlashEnabled;
     AVCaptureDeviceControlRequestQueue * _biasedExposureControlRequests;
+    NSString * _bravoCameraSelectionBehavior;
     NSMutableDictionary * _cachedFigCaptureSourceProperties;
     bool  _cachesFigCaptureSourceConfigurationChanges;
     struct CGRect { 
@@ -129,6 +131,7 @@
     bool  _sceneIsHighDynamicRange;
     NSObject<OS_dispatch_semaphore> * _serverConnectionDiedSemaphore;
     NSDictionary * _sessionPresetCompressionSettings;
+    long long  _shallowDepthOfFieldEffectStatus;
     bool  _smileDetectionEnabled;
     bool  _smoothAutoFocusEnabled;
     bool  _subjectMonitoringEnabled;
@@ -191,6 +194,7 @@
 - (bool)_isHighDynamicRangeScene;
 - (bool)_isStillImageStabilizationScene;
 - (bool)_isWBSeedEnabled;
+- (int)_orderInDevicesArray;
 - (void)_performBlockOnMainThread:(id /* block */)arg1;
 - (double)_predictedTempForGains:(struct { float x1; float x2; float x3; })arg1;
 - (void)_rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2 duration:(double)arg3 rampType:(int)arg4;
@@ -204,6 +208,7 @@
 - (void)_setAdjustingExposure:(bool)arg1;
 - (void)_setAdjustingFocus:(bool)arg1;
 - (void)_setAdjustingWhiteBalance:(bool)arg1;
+- (void)_setBravoCameraSelectionBehavior:(id)arg1;
 - (int)_setExposureWithMode:(long long)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ISO:(float)arg3 requestID:(int)arg4 newMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg5;
 - (int)_setFaceDetectionFeatureEnabled:(bool)arg1 enabledState:(bool*)arg2;
 - (void)_setFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
@@ -220,6 +225,7 @@
 - (void)_setIsStillImageStabilizationScene:(bool)arg1;
 - (void)_setLowLightBoostEnabled:(bool)arg1;
 - (void)_setMinAvailableVideoZoomFactor:(double)arg1;
+- (void)_setShallowDepthOfFieldEffectStatus:(long long)arg1;
 - (void)_setStillImageStabilizationAutomaticallyEnabled:(bool)arg1;
 - (void)_setStillImageStabilizationDetectionEnabled:(bool)arg1;
 - (void)_setTorchActive:(bool)arg1;
@@ -245,6 +251,7 @@
 - (bool)automaticallyAdjustsVideoHDREnabled;
 - (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (id)availableBoxedMetadataFormatDescriptions;
+- (id)bravoCameraSelectionBehavior;
 - (bool)cachesFigCaptureSourceConfigurationChanges;
 - (void)cancelVideoZoomRamp;
 - (struct { float x1; float x2; })chromaticityValuesForDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1;
@@ -253,6 +260,7 @@
 - (struct OpaqueCMClock { }*)deviceClock;
 - (id)deviceFormatForSessionPreset:(id)arg1 videoFormat:(unsigned int)arg2;
 - (long long)deviceSourceOrigin;
+- (id)deviceType;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGains;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGainsForChromaticityValues:(struct { float x1; float x2; })arg1;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGainsForTemperatureAndTintValues:(struct { float x1; float x2; })arg1;
@@ -282,6 +290,7 @@
 - (bool)isAdjustingFocus;
 - (bool)isAdjustingWhiteBalance;
 - (bool)isAutoFocusRangeRestrictionSupported;
+- (bool)isAutoShallowDepthOfFieldEffectEnabled;
 - (bool)isConnected;
 - (bool)isExposureModeSupported:(long long)arg1;
 - (bool)isExposurePointOfInterestSupported;
@@ -304,6 +313,8 @@
 - (bool)isInUseByAnotherApplication;
 - (bool)isLensStabilizationSupported;
 - (bool)isLockedForConfiguration;
+- (bool)isLockingFocusWithCustomLensPositionSupported;
+- (bool)isLockingWhiteBalanceWithCustomDeviceGainsSupported;
 - (bool)isLowLightBoostEnabled;
 - (bool)isLowLightBoostSupported;
 - (bool)isMachineReadableCodeDetectionSupported;
@@ -348,6 +359,7 @@
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setAutoFocusRangeRestriction:(long long)arg1;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(bool)arg1;
 - (void)setAutomaticallyAdjustsImageControlMode:(bool)arg1;
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(bool)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
@@ -381,6 +393,7 @@
 - (void)setVideoZoomUpscaleStageHint:(long long)arg1;
 - (void)setWhiteBalanceMode:(long long)arg1;
 - (void)setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 completionHandler:(id /* block */)arg2;
+- (long long)shallowDepthOfFieldEffectStatus;
 - (bool)smileDetectionEnabled;
 - (id)supportedMetadataObjectIdentifiers;
 - (bool)supportsAVCaptureSessionPreset:(id)arg1;

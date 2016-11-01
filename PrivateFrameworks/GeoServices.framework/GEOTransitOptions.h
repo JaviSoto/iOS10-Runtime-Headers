@@ -20,7 +20,10 @@
 @property (nonatomic, retain) GEOFareOptions *fareOptions;
 @property (nonatomic, readonly) bool hasFareOptions;
 @property (nonatomic) bool hasPrioritization;
+@property (nonatomic, readonly) bool hasSurchargeOption;
 @property (nonatomic) int prioritization;
+@property (nonatomic) bool showICFares;
+@property (nonatomic) int surchargeOption;
 
 - (int)StringAsAvoidedModes:(id)arg1;
 - (int)StringAsPrioritization:(id)arg1;
@@ -38,6 +41,7 @@
 - (id)fareOptions;
 - (bool)hasFareOptions;
 - (bool)hasPrioritization;
+- (bool)hasSurchargeOption;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -48,6 +52,10 @@
 - (void)setFareOptions:(id)arg1;
 - (void)setHasPrioritization:(bool)arg1;
 - (void)setPrioritization:(int)arg1;
+- (void)setShowICFares:(bool)arg1;
+- (void)setSurchargeOption:(int)arg1;
+- (bool)showICFares;
+- (int)surchargeOption;
 - (void)writeTo:(id)arg1;
 
 @end

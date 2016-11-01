@@ -437,22 +437,12 @@
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)ml_stringValueForSQL;
 
-// Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
-
-- (id)compressedData;
-- (id)decompressedData;
-
 // Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
 
 + (id)dataWithRandomBytesOfSize:(unsigned long long)arg1;
 
 - (id)NRSHA256;
 - (void)NRSHA256:(unsigned char)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoResourceGrabber.framework/NanoResourceGrabber
-
-- (void)MD5:(unsigned char)arg1;
-- (id)hexString;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 

@@ -10,7 +10,7 @@
     NSLayoutConstraint * _containerScrollViewXConstraint;
     unsigned long long  _currentPresentationPhase;
     bool  _didSendBeginEvent;
-    _UISystemSoundPlayer * _feedbackBehavior;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
     <_UIForcePresentationControllerDelegate> * _forcePresentationControllerDelegate;
     bool  _hasAskedForCommitInternally;
     bool  _hasAskedForDismissalInternally;
@@ -56,7 +56,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didSendBeginEvent;
-@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (nonatomic) <_UIForcePresentationControllerDelegate> *forcePresentationControllerDelegate;
 @property (nonatomic) bool hasAskedForCommitInternally;
 @property (nonatomic) bool hasAskedForDismissalInternally;

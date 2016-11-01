@@ -27,8 +27,6 @@
 @property (nonatomic, readonly) bool stretches;
 @property (nonatomic, readonly) bool tiles;
 
-// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
-
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(double*)arg3;
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(double*)arg3 preferredScreenScale:(double)arg4 suffix:(id)arg5;
 + (id)hashOfImageNamed:(id)arg1 inBundle:(id)arg2;
@@ -56,6 +54,8 @@
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 orientation:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 scale:(double)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToImage:(id)arg1;
 - (long long)orientation;
 - (void)preheatBitmapData;
 - (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
@@ -66,9 +66,5 @@
 - (struct CGSize { double x1; double x2; })size;
 - (bool)stretches;
 - (bool)tiles;
-
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (id)resizedImageToCover:(struct CGSize { double x1; double x2; })arg1;
 
 @end

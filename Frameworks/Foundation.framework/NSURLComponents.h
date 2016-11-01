@@ -90,11 +90,6 @@
 - (id)parsec_normalizedURLStringForTLDFeatures;
 - (id)parsec_normalizedURLStringWithOptions:(unsigned long long)arg1;
 
-// Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
-
-- (id)rms_componentsByAddingQueryParameters:(id)arg1;
-- (id)rms_componentsByAddingQueryParameters:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
 - (bool)containsQueryItemWithName:(id)arg1;

@@ -8,6 +8,8 @@
     NSString * _buyParameters;
     unsigned long long  _endpointType;
     MPStoreRedownloadProductResponse * _redownloadProductResponse;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     NSError * _responseError;
     bool  _shouldUseStreamingRedownload;
 }
@@ -15,6 +17,8 @@
 @property (nonatomic, readonly, copy) NSString *buyParameters;
 @property (nonatomic, readonly) unsigned long long endpointType;
 @property (nonatomic, readonly) MPStoreRedownloadProductResponse *redownloadProductResponse;
+@property (nonatomic, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic, readonly, copy) NSError *responseError;
 
 - (void).cxx_destruct;
@@ -26,6 +30,10 @@
 - (id)initWithBuyParameters:(id)arg1 endpointType:(unsigned long long)arg2 shouldUseStreamingRedownload:(bool)arg3;
 - (void)main;
 - (id)redownloadProductResponse;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
 - (id)responseError;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 
 @end

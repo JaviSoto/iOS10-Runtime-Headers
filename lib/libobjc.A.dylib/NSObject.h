@@ -759,10 +759,6 @@
 - (bool)ml_matchesValue:(id)arg1 usingComparison:(int)arg2;
 - (id)ml_stringValueForSQL;
 
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (void)npkFakeArcRetain;
-
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
 - (void)_na_addNotificationObserverProxy:(id)arg1;
@@ -885,14 +881,6 @@
 - (void)appendJsonStringToString:(id)arg1;
 - (void)performSelector:(SEL)arg1 withValue:(id)arg2;
 - (void)tsu_runBlock;
-
-// Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
-
-+ (void)NPHRequestIdleTimeNotification;
-+ (void)_NPHIdleTimeNotification:(id)arg1;
-+ (void)performBlockAtIdle:(id /* block */)arg1;
-
-- (void)nph_debounce:(SEL)arg1 delay:(double)arg2;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

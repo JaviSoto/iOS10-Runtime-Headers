@@ -9,6 +9,7 @@
     GEOPDSearchBrowseCategorySuggestionParameters * _browseCategorySuggestionParameters;
     GEOPDCanonicalLocationSearchParameters * _canonicalLocationSearchParameters;
     GEOPDCategorySearchParameters * _categorySearchParameters;
+    GEOPDExternalTransitLookupParameters * _externalTransitLookupParameters;
     GEOPDFeatureIdGeocodingParameters * _featureIdGeocodingParameters;
     GEOPDGeocodingParameters * _geocodingParameters;
     GEOPDLocationDirectedSearchParameters * _locationDirectedSearchParameters;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) GEOPDSearchBrowseCategorySuggestionParameters *browseCategorySuggestionParameters;
 @property (nonatomic, retain) GEOPDCanonicalLocationSearchParameters *canonicalLocationSearchParameters;
 @property (nonatomic, retain) GEOPDCategorySearchParameters *categorySearchParameters;
+@property (nonatomic, retain) GEOPDExternalTransitLookupParameters *externalTransitLookupParameters;
 @property (nonatomic, retain) GEOPDFeatureIdGeocodingParameters *featureIdGeocodingParameters;
 @property (nonatomic, retain) GEOPDGeocodingParameters *geocodingParameters;
 @property (nonatomic, readonly) bool hasAddressObjectGeocodingParameters;
@@ -41,6 +43,7 @@
 @property (nonatomic, readonly) bool hasBrowseCategorySuggestionParameters;
 @property (nonatomic, readonly) bool hasCanonicalLocationSearchParameters;
 @property (nonatomic, readonly) bool hasCategorySearchParameters;
+@property (nonatomic, readonly) bool hasExternalTransitLookupParameters;
 @property (nonatomic, readonly) bool hasFeatureIdGeocodingParameters;
 @property (nonatomic, readonly) bool hasGeocodingParameters;
 @property (nonatomic, readonly) bool hasLocationDirectedSearchParameters;
@@ -82,6 +85,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)externalTransitLookupParameters;
 - (id)featureIdGeocodingParameters;
 - (id)geocodingParameters;
 - (bool)hasAddressObjectGeocodingParameters;
@@ -90,6 +94,7 @@
 - (bool)hasBrowseCategorySuggestionParameters;
 - (bool)hasCanonicalLocationSearchParameters;
 - (bool)hasCategorySearchParameters;
+- (bool)hasExternalTransitLookupParameters;
 - (bool)hasFeatureIdGeocodingParameters;
 - (bool)hasGeocodingParameters;
 - (bool)hasLocationDirectedSearchParameters;
@@ -108,6 +113,7 @@
 - (unsigned long long)hash;
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1;
 - (id)initWithExternalBusinessID:(id)arg1 contentProvider:(id)arg2;
+- (id)initWithExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithMUIDs:(id)arg1 resultProviderID:(int)arg2;
@@ -142,6 +148,7 @@
 - (void)setBrowseCategorySuggestionParameters:(id)arg1;
 - (void)setCanonicalLocationSearchParameters:(id)arg1;
 - (void)setCategorySearchParameters:(id)arg1;
+- (void)setExternalTransitLookupParameters:(id)arg1;
 - (void)setFeatureIdGeocodingParameters:(id)arg1;
 - (void)setGeocodingParameters:(id)arg1;
 - (void)setLocationDirectedSearchParameters:(id)arg1;

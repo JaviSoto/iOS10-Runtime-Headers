@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentTopName;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } aggregateAcknowledgmentTranscriptBalloonSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } appIconSize;
+@property (nonatomic, readonly) UIFont *appLabelFont;
 @property (nonatomic, readonly) UIImage *arouetReplyImage;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } attachmentBalloonSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } attachmentBrowserDefaultSizeForSquare;
@@ -62,6 +63,7 @@
 @property (nonatomic, readonly) double bottomConversationListSpace;
 @property (nonatomic, readonly) double bottomTranscriptSpace;
 @property (nonatomic, readonly) double browserSwitcherGutterWidth;
+@property (nonatomic, readonly) double browserSwitcherScrollerHeight;
 @property (nonatomic, readonly) bool calculatesWidthForAttachmentBalloons;
 @property (nonatomic, readonly) bool cameraIsWhitelisted;
 @property (nonatomic, readonly) bool canAccessContacts;
@@ -243,6 +245,7 @@
 @property (nonatomic, readonly) UIFont *readerFont;
 @property (nonatomic, readonly) UIFont *recipientNameFont;
 @property (nonatomic, readonly) bool recordsRecentContact;
+@property (nonatomic, readonly) UIImage *replayImage;
 @property (nonatomic, readonly) bool resetsIdleTimer;
 @property (nonatomic, readonly) double resizeMessageEntryViewAnimationDuration;
 @property (nonatomic, readonly) double resumeToConversationListTimeInterval;
@@ -389,6 +392,7 @@
 - (id)aggregateAcknowledgmentTopName;
 - (struct CGSize { double x1; double x2; })aggregateAcknowledgmentTranscriptBalloonSize;
 - (struct CGSize { double x1; double x2; })appIconSize;
+- (id)appLabelFont;
 - (id)arouetReplyImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsetsWithTailShape:(BOOL)arg1;
@@ -446,6 +450,7 @@
 - (double)bottomTranscriptSpace;
 - (id)breadcrumbTranscriptTextAttributes;
 - (double)browserSwitcherGutterWidth;
+- (double)browserSwitcherScrollerHeight;
 - (bool)calculatesWidthForAttachmentBalloons;
 - (bool)cameraIsWhitelisted;
 - (bool)canAccessContacts;
@@ -658,6 +663,7 @@
 - (id)recipientNameFont;
 - (bool)recordsRecentContact;
 - (id)red_chevronImage;
+- (id)replayImage;
 - (bool)resetsIdleTimer;
 - (double)resizeMessageEntryViewAnimationDuration;
 - (double)resumeToConversationListTimeInterval;

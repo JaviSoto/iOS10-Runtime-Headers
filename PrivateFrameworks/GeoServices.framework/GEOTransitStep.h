@@ -5,6 +5,7 @@
 @interface GEOTransitStep : PBCodable <NSCopying> {
     unsigned int  _accessPointZilchIndex;
     GEOTransitArrivalInfo * _arrivalInfo;
+    GEOTransitBaseFare * _baseFare;
     unsigned int  _defaultVehicleInfoIndex;
     unsigned int  _departureFrequency;
     unsigned int  _distanceInMeters;
@@ -47,6 +48,7 @@
         unsigned long long size; 
     }  _steppingArtworkIndexs;
     unsigned int  _steppingTransitIncidentMessageIndex;
+    GEOTransitSurcharge * _surcharge;
     NSMutableArray * _transferInfos;
     NSMutableArray * _vehicleInfos;
     unsigned int  _walkingIndex;
@@ -55,6 +57,7 @@
 
 @property (nonatomic) unsigned int accessPointZilchIndex;
 @property (nonatomic, retain) GEOTransitArrivalInfo *arrivalInfo;
+@property (nonatomic, retain) GEOTransitBaseFare *baseFare;
 @property (nonatomic) unsigned int defaultVehicleInfoIndex;
 @property (nonatomic) unsigned int departureFrequency;
 @property (nonatomic) unsigned int distanceInMeters;
@@ -62,6 +65,7 @@
 @property (nonatomic, retain) NSMutableArray *enterExitInfos;
 @property (nonatomic) bool hasAccessPointZilchIndex;
 @property (nonatomic, readonly) bool hasArrivalInfo;
+@property (nonatomic, readonly) bool hasBaseFare;
 @property (nonatomic) bool hasDefaultVehicleInfoIndex;
 @property (nonatomic) bool hasDepartureFrequency;
 @property (nonatomic) bool hasDistanceInMeters;
@@ -76,6 +80,7 @@
 @property (nonatomic) bool hasStartingStopIndex;
 @property (nonatomic) bool hasStartingTime;
 @property (nonatomic) bool hasSteppingTransitIncidentMessageIndex;
+@property (nonatomic, readonly) bool hasSurcharge;
 @property (nonatomic) bool hasWalkingIndex;
 @property (nonatomic) bool hasZilchIndex;
 @property (nonatomic, retain) GEOInstructionSet *instructions;
@@ -92,6 +97,7 @@
 @property (nonatomic, readonly) unsigned int*steppingArtworkIndexs;
 @property (nonatomic, readonly) unsigned long long steppingArtworkIndexsCount;
 @property (nonatomic) unsigned int steppingTransitIncidentMessageIndex;
+@property (nonatomic, retain) GEOTransitSurcharge *surcharge;
 @property (nonatomic, retain) NSMutableArray *transferInfos;
 @property (nonatomic, retain) NSMutableArray *vehicleInfos;
 @property (nonatomic) unsigned int walkingIndex;
@@ -110,6 +116,7 @@
 - (void)addTransferInfo:(id)arg1;
 - (void)addVehicleInfo:(id)arg1;
 - (id)arrivalInfo;
+- (id)baseFare;
 - (void)clearEnterExitInfos;
 - (void)clearRouteDetailsPrimaryArtworkIndexs;
 - (void)clearSteppingArtworkIndexs;
@@ -129,6 +136,7 @@
 - (unsigned long long)enterExitInfosCount;
 - (bool)hasAccessPointZilchIndex;
 - (bool)hasArrivalInfo;
+- (bool)hasBaseFare;
 - (bool)hasDefaultVehicleInfoIndex;
 - (bool)hasDepartureFrequency;
 - (bool)hasDistanceInMeters;
@@ -143,6 +151,7 @@
 - (bool)hasStartingStopIndex;
 - (bool)hasStartingTime;
 - (bool)hasSteppingTransitIncidentMessageIndex;
+- (bool)hasSurcharge;
 - (bool)hasWalkingIndex;
 - (bool)hasZilchIndex;
 - (unsigned long long)hash;
@@ -162,6 +171,7 @@
 - (unsigned int)routeDetailsSecondaryArtworkIndex;
 - (void)setAccessPointZilchIndex:(unsigned int)arg1;
 - (void)setArrivalInfo:(id)arg1;
+- (void)setBaseFare:(id)arg1;
 - (void)setDefaultVehicleInfoIndex:(unsigned int)arg1;
 - (void)setDepartureFrequency:(unsigned int)arg1;
 - (void)setDistanceInMeters:(unsigned int)arg1;
@@ -194,6 +204,7 @@
 - (void)setStartingTime:(unsigned int)arg1;
 - (void)setSteppingArtworkIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setSteppingTransitIncidentMessageIndex:(unsigned int)arg1;
+- (void)setSurcharge:(id)arg1;
 - (void)setTransferInfos:(id)arg1;
 - (void)setVehicleInfos:(id)arg1;
 - (void)setWalkingIndex:(unsigned int)arg1;
@@ -206,6 +217,7 @@
 - (unsigned int*)steppingArtworkIndexs;
 - (unsigned long long)steppingArtworkIndexsCount;
 - (unsigned int)steppingTransitIncidentMessageIndex;
+- (id)surcharge;
 - (id)transferInfoAtIndex:(unsigned long long)arg1;
 - (id)transferInfos;
 - (unsigned long long)transferInfosCount;

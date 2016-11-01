@@ -7,6 +7,7 @@
     NSString * _cacheKey;
     bool  _canceled;
     PHFace * _face;
+    bool  _fullResMissing;
     int  _imageManagerRequestID;
     struct CGSize { 
         double width; 
@@ -41,6 +42,7 @@
         unsigned long long cropFactor; 
         bool round; 
         bool cropBounded; 
+        bool acceptsVeryLowQuality; 
     }  _params;
     int  _requestID;
 }
@@ -49,12 +51,13 @@
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (getter=isCanceled) bool canceled;
 @property (nonatomic, retain) PHFace *face;
+@property (getter=isFullResMissing) bool fullResMissing;
 @property int imageManagerRequestID;
 @property (nonatomic) struct CGSize { double x1; double x2; } lastDeliveredSize;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedActualFaceRect;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedFaceCropRect;
 @property (nonatomic, retain) PHObject *originalRequestObject;
-@property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; } params;
+@property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; } params;
 @property (nonatomic, readonly) int requestID;
 
 - (void).cxx_destruct;
@@ -63,17 +66,19 @@
 - (void)cancel;
 - (id)face;
 - (int)imageManagerRequestID;
-- (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; })arg3;
+- (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; })arg3;
 - (bool)isCanceled;
+- (bool)isFullResMissing;
 - (struct CGSize { double x1; double x2; })lastDeliveredSize;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedActualFaceRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedFaceCropRect;
 - (id)originalRequestObject;
-- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; })params;
+- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; })params;
 - (int)requestID;
 - (void)setAssetContainingFace:(id)arg1;
 - (void)setCanceled:(bool)arg1;
 - (void)setFace:(id)arg1;
+- (void)setFullResMissing:(bool)arg1;
 - (void)setImageManagerRequestID:(int)arg1;
 - (void)setLastDeliveredSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setNormalizedActualFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

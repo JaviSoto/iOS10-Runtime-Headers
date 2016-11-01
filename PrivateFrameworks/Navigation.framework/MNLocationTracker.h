@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) bool hasArrived;
 @property (nonatomic, readonly) MNLocation *lastMatchedLocation;
 @property (nonatomic, readonly) MNNavigationSession *navigationSession;
+@property (nonatomic, readonly) bool shouldProjectAlongRoute;
 @property (setter=_setState:, nonatomic) int state;
 @property (nonatomic, readonly) int transportType;
 
@@ -42,6 +43,7 @@
 - (void)setGuidancePromptsEnabled:(bool)arg1;
 - (void)setVoiceGuidanceEnabled:(bool)arg1;
 - (bool)shouldAllowPause;
+- (bool)shouldProjectAlongRoute;
 - (void)startTracking;
 - (void)startTrackingWithGuidanceEnabled:(bool)arg1 midRoute:(bool)arg2;
 - (int)state;

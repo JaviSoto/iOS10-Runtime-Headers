@@ -10,6 +10,7 @@
     HUGridCellLayoutOptions * _layoutOptions;
     long long  _primaryState;
     bool  _rearranging;
+    double  _secondaryContentDimmingFactor;
 }
 
 @property (getter=areCellContentsHidden, nonatomic) bool cellContentsHidden;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) HUGridCellLayoutOptions *layoutOptions;
 @property (nonatomic) long long primaryState;
 @property (getter=isRearranging, nonatomic) bool rearranging;
+@property (nonatomic) double secondaryContentDimmingFactor;
 @property (readonly) Class superclass;
 
 + (id)_jitterPositionAnimation;
@@ -37,7 +39,7 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (bool)areCellContentsHidden;
 - (id)contentEffect;
-- (void)contentEffectDidChange;
+- (void)displayStyleDidChange;
 - (id)gridBackgroundView;
 - (id)gridForegroundContentView;
 - (id)gridForegroundView;
@@ -52,6 +54,7 @@
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (long long)primaryState;
+- (double)secondaryContentDimmingFactor;
 - (void)setCellContentsHidden:(bool)arg1;
 - (void)setContentEffect:(id)arg1;
 - (void)setGridBackgroundView:(id)arg1;
@@ -61,6 +64,7 @@
 - (void)setLayoutOptions:(id)arg1;
 - (void)setPrimaryState:(long long)arg1;
 - (void)setRearranging:(bool)arg1;
+- (void)setSecondaryContentDimmingFactor:(double)arg1;
 - (void)updateUIWithAnimation:(bool)arg1;
 - (void)updateUIWithPrimaryState:(long long)arg1 animate:(bool)arg2;
 

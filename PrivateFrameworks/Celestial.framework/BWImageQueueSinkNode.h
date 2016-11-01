@@ -15,6 +15,7 @@
     unsigned int  _imageQueueWidth;
     double  _lastDisplayTime;
     double  _lastFramePTS;
+    double  _lateFrameIntervalStartPTS;
     unsigned long long  _numFramesReceived;
     struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;

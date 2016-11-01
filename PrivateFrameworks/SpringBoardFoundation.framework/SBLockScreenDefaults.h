@@ -8,6 +8,7 @@
 @property (nonatomic, readonly) bool lostModeDisableDashBoard;
 @property (nonatomic) bool showAuthenticationEngineeringUI;
 @property (nonatomic, readonly) bool showLegalText;
+@property (nonatomic) bool showSupervisionText;
 @property (nonatomic) bool useDashBoard;
 
 - (void)_bindAndRegisterDefaults;

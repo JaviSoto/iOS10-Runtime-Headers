@@ -19,11 +19,12 @@
 - (id)_shortLookViewIfLoaded;
 - (id)_shortLookViewLoadingIfNecessary:(bool)arg1;
 - (id)delegate;
-- (id)initWithWidgetHost:(id)arg1;
+- (id)initWithWidgetInfo:(id)arg1;
 - (bool)isWidgetExtensionVisible:(id)arg1;
 - (long long)largestAvailableDisplayModeForWidget:(id)arg1;
 - (void)loadView;
 - (struct CGSize { double x1; double x2; })maxSizeForWidget:(id)arg1 forDisplayMode:(long long)arg2;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)remoteViewControllerDidConnectForWidget:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidget:(id)arg1;
 - (void)setDelegate:(id)arg1;

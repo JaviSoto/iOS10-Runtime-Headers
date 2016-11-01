@@ -6,6 +6,9 @@
     NSString * _administrativeArea;
     NSDecimalNumber * _amount;
     NSString * _currencyCode;
+    bool  _enRoute;
+    NSString * _endStation;
+    NSData * _endStationCode;
     bool  _hasAssociatedPaymentApplication;
     bool  _hasNotificationServiceData;
     NSString * _identifier;
@@ -19,19 +22,28 @@
     PKMerchant * _merchant;
     bool  _processedForLocation;
     bool  _processedForMerchantCleanup;
+    bool  _processedForStations;
     NSString * _serviceIdentifier;
+    NSString * _startStation;
+    NSData * _startStationCode;
+    NSString * _stationCodeProvider;
     long long  _technologyType;
     NSDate * _transactionDate;
     NSString * _transactionIdentifier;
     unsigned long long  _transactionSource;
     long long  _transactionStatus;
     long long  _transactionType;
+    unsigned long long  _transitModifiers;
+    long long  _transitType;
 }
 
 @property (nonatomic, retain) NSString *administrativeArea;
 @property (nonatomic, copy) NSDecimalNumber *amount;
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic, readonly) NSString *displayLocation;
+@property (nonatomic) bool enRoute;
+@property (nonatomic, copy) NSString *endStation;
+@property (nonatomic, copy) NSData *endStationCode;
 @property (nonatomic) bool hasAssociatedPaymentApplication;
 @property (nonatomic, readonly) bool hasBackingData;
 @property (nonatomic) bool hasNotificationServiceData;
@@ -48,13 +60,19 @@
 @property (nonatomic, retain) PKMerchant *merchant;
 @property (nonatomic) bool processedForLocation;
 @property (nonatomic) bool processedForMerchantCleanup;
+@property (nonatomic) bool processedForStations;
 @property (nonatomic, copy) NSString *serviceIdentifier;
+@property (nonatomic, copy) NSString *startStation;
+@property (nonatomic, copy) NSData *startStationCode;
+@property (nonatomic, copy) NSString *stationCodeProvider;
 @property (nonatomic) long long technologyType;
 @property (nonatomic, copy) NSDate *transactionDate;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 @property (nonatomic) unsigned long long transactionSource;
 @property (nonatomic) long long transactionStatus;
 @property (nonatomic) long long transactionType;
+@property (nonatomic) unsigned long long transitModifiers;
+@property (nonatomic) long long transitType;
 
 + (id)paymentTransactionFromSource:(unsigned long long)arg1;
 + (id)paymentTransactionWithSource:(unsigned long long)arg1;
@@ -71,7 +89,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayLocation;
+- (bool)enRoute;
 - (void)encodeWithCoder:(id)arg1;
+- (id)endStation;
+- (id)endStationCode;
 - (bool)hasAssociatedPaymentApplication;
 - (bool)hasBackingData;
 - (bool)hasNotificationServiceData;
@@ -93,10 +114,14 @@
 - (id)merchant;
 - (bool)processedForLocation;
 - (bool)processedForMerchantCleanup;
+- (bool)processedForStations;
 - (id)serviceIdentifier;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
+- (void)setEnRoute:(bool)arg1;
+- (void)setEndStation:(id)arg1;
+- (void)setEndStationCode:(id)arg1;
 - (void)setHasAssociatedPaymentApplication:(bool)arg1;
 - (void)setHasNotificationServiceData:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -111,18 +136,29 @@
 - (void)setMerchant:(id)arg1;
 - (void)setProcessedForLocation:(bool)arg1;
 - (void)setProcessedForMerchantCleanup:(bool)arg1;
+- (void)setProcessedForStations:(bool)arg1;
 - (void)setServiceIdentifier:(id)arg1;
+- (void)setStartStation:(id)arg1;
+- (void)setStartStationCode:(id)arg1;
+- (void)setStationCodeProvider:(id)arg1;
 - (void)setTechnologyType:(long long)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (void)setTransactionSource:(unsigned long long)arg1;
 - (void)setTransactionStatus:(long long)arg1;
 - (void)setTransactionType:(long long)arg1;
+- (void)setTransitModifiers:(unsigned long long)arg1;
+- (void)setTransitType:(long long)arg1;
+- (id)startStation;
+- (id)startStationCode;
+- (id)stationCodeProvider;
 - (long long)technologyType;
 - (id)transactionDate;
 - (id)transactionIdentifier;
 - (unsigned long long)transactionSource;
 - (long long)transactionStatus;
 - (long long)transactionType;
+- (unsigned long long)transitModifiers;
+- (long long)transitType;
 
 @end

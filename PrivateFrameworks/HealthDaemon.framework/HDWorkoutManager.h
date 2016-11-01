@@ -30,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (void)_associationsSyncedForWorkout:(id)arg1;
+- (long long)_cmSwimLocationForHKSwimmingLocation:(long long)arg1;
 - (id)_coreMotionWorkoutManager;
 - (id)_mainQueue_locationManager;
 - (void)_queue_didUpdateCurrentWorkoutSession;
@@ -69,6 +70,8 @@
 - (void)foregroundClientProcessesDidChange:(id)arg1;
 - (void)generateMarkerEventWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (bool)hasAnyActiveWorkouts;
+- (void)hk_fakeLapEventWithDate:(id)arg1 strokeStyle:(long long)arg2;
+- (void)hk_fakeStopEventWithDate:(id)arg1;
 - (id)initWithPrimaryProfile:(id)arg1;
 - (void)pauseCurrentWorkoutWithCompletion:(id /* block */)arg1;
 - (void)pauseWorkoutSessionWithUUID:(id)arg1 completion:(id /* block */)arg2;

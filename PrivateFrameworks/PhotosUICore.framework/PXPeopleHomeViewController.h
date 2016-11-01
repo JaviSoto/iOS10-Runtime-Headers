@@ -20,6 +20,7 @@
     }  _lastDragPoint;
     UIBarButtonItem * _mergeToolbarItem;
     unsigned long long  _mode;
+    bool  _needToCheckProgress;
     struct CGSize { 
         double width; 
         double height; 
@@ -47,6 +48,7 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } lastDragPoint;
 @property (nonatomic, retain) UIBarButtonItem *mergeToolbarItem;
 @property (nonatomic) unsigned long long mode;
+@property bool needToCheckProgress;
 @property struct CGSize { double x1; double x2; } nonPriorityItemSize;
 @property (nonatomic) bool pendingChanges;
 @property struct CGSize { double x1; double x2; } priorityItemSize;
@@ -134,6 +136,7 @@
 - (struct CGPoint { double x1; double x2; })lastDragPoint;
 - (id)mergeToolbarItem;
 - (unsigned long long)mode;
+- (bool)needToCheckProgress;
 - (struct CGSize { double x1; double x2; })nonPriorityItemSize;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (bool)pendingChanges;
@@ -156,6 +159,7 @@
 - (void)setLastDragPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setMergeToolbarItem:(id)arg1;
 - (void)setMode:(unsigned long long)arg1;
+- (void)setNeedToCheckProgress:(bool)arg1;
 - (void)setNonPriorityItemSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPendingChanges:(bool)arg1;
 - (void)setPriorityItemSize:(struct CGSize { double x1; double x2; })arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFBrowserContentViewController : UIViewController <SFReaderAppearanceViewControllerDelegate, SFReaderEnabledWebViewControllerDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, _SFActivityViewControllerDelegate, _SFBrowserToolbarDataSource, _SFBrowserToolbarDelegate, _SFDownloadControllerDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFSafeBrowsingControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate> {
+@interface _SFBrowserContentViewController : UIViewController <SFReaderAppearanceViewControllerDelegate, SFReaderEnabledWebViewControllerDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, _SFActivityViewControllerDelegate, _SFBrowserToolbarDataSource, _SFBrowserToolbarDelegate, _SFDownloadControllerDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFSafeBrowsingControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate, _SFTelephonyNavigationMitigationPolicyDelegate> {
     NSString * _EVOrganizationName;
     bool  _EVOrganizationNameIsValid;
     _SFURLSpoofingMitigator * _URLSpoofingMitigator;
@@ -21,6 +21,7 @@
     WBSFluidProgressController * _fluidProgressController;
     WBSFluidProgressState * _fluidProgressState;
     bool  _interfaceFillsScreen;
+    bool  _isDisplayingTelephonyPrompt;
     bool  _isShowingSheetController;
     bool  _isSuppressingPreviewProgressAnimation;
     WKBackForwardListItem * _lastBackFowardListItemOnWhichReaderWasActivated;
@@ -42,6 +43,7 @@
     UITapGestureRecognizer * _showBarsFromBottomBarRecognizer;
     bool  _showingCrashBanner;
     bool  _showingReader;
+    _SFTelephonyNavigationMitigationPolicy * _telephonyNavigationPolicy;
     bool  _updatingGeometryFromDynamicBarAnimator;
     bool  _usesNarrowLayout;
     SFReaderEnabledWebViewController * _webViewController;
@@ -187,6 +189,7 @@
 - (id)preferredControlTintColor;
 - (long long)preferredStatusBarStyle;
 - (long long)preferredWhitePointAdaptivityStyle;
+- (void)presentDialog:(id)arg1 forTelephonyNavigationPolicy:(id)arg2;
 - (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)presentingViewControllerForAlertInAuthenticationManager:(id)arg1;
 - (id)presentingViewControllerForWebViewController:(id)arg1;

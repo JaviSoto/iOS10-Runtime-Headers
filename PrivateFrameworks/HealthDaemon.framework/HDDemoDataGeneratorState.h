@@ -30,6 +30,7 @@
 @property (nonatomic, retain) NSDate *lastSampleDate;
 @property (getter=isRunning, nonatomic, readonly) bool running;
 @property (nonatomic) double startTime;
+@property (getter=isSwimming, nonatomic, readonly) bool swimming;
 @property (nonatomic, retain) HDDemoDataGeneratorWorkoutConfiguration *workoutConfiguration;
 
 + (bool)supportsSecureCoding;
@@ -50,6 +51,7 @@
 - (bool)isFinished;
 - (bool)isFirstRun;
 - (bool)isRunning;
+- (bool)isSwimming;
 - (id)lastRunDate;
 - (id)lastSampleDate;
 - (void)setCurrentDay:(long long)arg1;

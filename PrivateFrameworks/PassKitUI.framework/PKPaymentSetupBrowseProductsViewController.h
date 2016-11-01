@@ -21,7 +21,7 @@
 - (bool)_isLikelySection:(long long)arg1;
 - (bool)_isUnlikelySection:(long long)arg1;
 - (void)_nextTapped:(id)arg1;
-- (void)_notifyDelegateDidSelectProduct:(id)arg1;
+- (void)_notifyDelegateDidSelectProduct:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)_productAtIndexPath:(id)arg1;
 - (bool)_searchUIEnabled;
 - (void)_setNavigationBarEnabled:(bool)arg1;

@@ -84,6 +84,7 @@
 - (id)initWithCategory:(id)arg1 routeInfo:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (id)initWithComponents:(id)arg1 muid:(unsigned long long)arg2 resultProviderID:(int)arg3 traits:(id)arg4;
 - (id)initWithExternalBusinessID:(id)arg1 contentProvider:(id)arg2 includeETA:(bool)arg3 traits:(id)arg4;
+- (id)initWithExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4 traits:(id)arg5;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(bool)arg3 traits:(id)arg4;

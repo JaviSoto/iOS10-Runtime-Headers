@@ -4,6 +4,7 @@
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
     NSArray * availableVideoCodecs;
+    NSString * bravoCameraSelectionBehaviorForRecording;
     NSMutableArray * connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
     NSArray * metadata;
     struct { 

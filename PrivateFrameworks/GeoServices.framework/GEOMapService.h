@@ -4,6 +4,8 @@
 
 @interface GEOMapService : NSObject {
     int  _additionalEnabledMarketsChangedToken;
+    NSCache * _handleCache;
+    <NSCacheDelegate> * _handleCacheDelegate;
     int  _overriddenResultProviderID;
     NSObject<OS_dispatch_queue> * _placeDataObserverQueue;
     NSMutableArray * _placeDataObservers;
@@ -38,7 +40,7 @@
 - (void)notifyPlaceDataRequestObserversThatTicket:(id)arg1 didCompleteWithMapItems:(id)arg2;
 - (void)removePlaceDataRequestObserver:(id)arg1;
 - (void)resolveMapItemFromHandle:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 useCache:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)serializedClientMetadataForParsec;
 - (id)serializedClientMetadataForSiri;
 - (id)serializedClientMetadataForTraits:(id)arg1;
@@ -48,6 +50,7 @@
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForCategoryListWithTraits:(id)arg1;
 - (id)ticketForExternalBusinessID:(id)arg1 contentProvider:(id)arg2 includeETA:(bool)arg3 traits:(id)arg4;
+- (id)ticketForExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4 traits:(id)arg5;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForForwardGeocodeAddressDictionary:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForForwardGeocodeString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;

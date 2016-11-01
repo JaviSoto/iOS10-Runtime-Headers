@@ -165,6 +165,7 @@
     double  _previousInteractiveTransitionTimeStamp;
     NSMutableArray * _reloadItems;
     long long  _reloadingSuspendedCount;
+    _UIFeedbackDragSnappingBehavior * _reorderFeedbackBehavior;
     NSMutableArray * _reorderedItems;
     struct CGPoint { 
         double x; 
@@ -366,6 +367,7 @@
 - (bool)_remembersPreviouslyFocusedItem;
 - (void)_removeAnyAncestorScrollViewNotifications;
 - (void)_removeContainerScrollViewForNotifications:(id)arg1;
+- (id)_reorderFeedbackBehavior;
 - (id)_reorderPrefetchCandidates:(id)arg1 forPrefetchVelocity:(struct CGVector { double x1; double x2; })arg2 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)_reorderedItemForView:(id)arg1;
 - (id)_reorderedItems;
@@ -406,6 +408,7 @@
 - (void)_setNeedsVisibleCellsUpdate:(bool)arg1 withLayoutAttributes:(bool)arg2;
 - (void)_setObject:(id)arg1 inDictionary:(id)arg2 forKind:(id)arg3 indexPath:(id)arg4;
 - (void)_setRemembersPreviouslyFocusedItem:(bool)arg1;
+- (void)_setReorderFeedbackBehavior:(id)arg1;
 - (void)_setShouldDeriveVisibleBoundsFromContainingScrollView:(bool)arg1;
 - (void)_setShouldPrefetchCellsWhenPerformingReloadData:(bool)arg1;
 - (void)_setVisibleView:(id)arg1 forLayoutAttributes:(id)arg2;

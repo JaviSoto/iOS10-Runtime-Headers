@@ -6,6 +6,7 @@
     NSString * _bundleIdentifier;
     NSObject<OS_dispatch_queue> * _callOutQueue;
     <FBProcessDelegate> * _delegate;
+    NSNumber * _executablePartitionNumber;
     FBSProcessHandle * _handle;
     NSString * _jobLabel;
     NSString * _name;
@@ -23,6 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBProcessDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool executableLivesOnSystemPartition;
 @property (getter=isForeground, nonatomic, readonly) bool foreground;
 @property (nonatomic, readonly, retain) FBSProcessHandle *handle;
 @property (readonly) unsigned long long hash;
@@ -79,6 +81,7 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
+- (bool)executableLivesOnSystemPartition;
 - (id)handle;
 - (bool)hasEntitlement:(id)arg1;
 - (id)init;

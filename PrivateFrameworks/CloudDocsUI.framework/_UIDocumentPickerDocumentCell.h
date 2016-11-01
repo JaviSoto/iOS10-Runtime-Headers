@@ -8,6 +8,7 @@
 
 @property (nonatomic) bool enabled;
 
+- (void)_showPickableDiagnostic;
 - (bool)enabled;
 - (void)prepareForReuse;
 - (void)reloadItem:(bool)arg1;

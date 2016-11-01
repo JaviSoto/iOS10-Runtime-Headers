@@ -38,6 +38,8 @@
 - (double)_computeExerciseTimeFromCurrentTime:(double)arg1 mean:(double)arg2 stdDev:(double)arg3;
 - (id)_computeFlightsClimbedForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_computePercentCooledForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (id)_computeSwimmingDistanceForDemoPerson:(id)arg1;
+- (id)_computeSwimmingStrokesFromDistance:(id)arg1 demoPerson:(id)arg2;
 - (double)_computeUVIndexForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)_computeWalkingRunningDistanceWithStepCount:(id)arg1 demoPerson:(id)arg2;
 - (id)_exerciseMinuteSampleForDemoPerson:(id)arg1 atTime:(double)arg2 date:(id)arg3;
@@ -46,7 +48,7 @@
 - (bool)_isDemoPersonWalking:(id)arg1 atTime:(double)arg2 samplePeriod:(double)arg3;
 - (long long)_pickActivityForTime:(double)arg1;
 - (id)_sumQuantity:(id)arg1 withQuantity:(id)arg2;
-- (void)_updateWorkoutStateWithActiveEnergyBurned:(id)arg1 distanceWalking:(id)arg2 distanceCycling:(id)arg3 currentTime:(double)arg4 date:(id)arg5 objectCollection:(id)arg6;
+- (void)_updateWorkoutStateWithActiveEnergyBurned:(id)arg1 distanceWalking:(id)arg2 distanceCycling:(id)arg3 distanceSwimming:(id)arg4 swimmingStrokes:(id)arg5 currentTime:(double)arg6 date:(id)arg7 objectCollection:(id)arg8;
 - (id)activeCaloriesForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)appleStandHourForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)encodeWithCoder:(id)arg1;

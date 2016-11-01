@@ -51,8 +51,4 @@
 
 - (id)mr_valueForPotentiallyUndefinedKey:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
-
-- (id)nmr_valueForPotentiallyUndefinedKey:(id)arg1;
-
 @end

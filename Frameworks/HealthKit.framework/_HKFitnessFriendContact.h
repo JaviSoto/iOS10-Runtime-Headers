@@ -20,8 +20,6 @@
 @property (nonatomic, copy) _HKFitnessFriendsRelationship *remoteRelationship;
 @property (nonatomic, copy) NSString *shortName;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -44,11 +42,5 @@
 - (void)setRemoteRelationship:(id)arg1;
 - (void)setShortName:(id)arg1;
 - (id)shortName;
-
-// Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
-
-- (id)_bestDestinationForContact:(id)arg1;
-- (id)_bestDestinationFromKnownDestinations;
-- (id)primaryDestinationForMessaging;
 
 @end

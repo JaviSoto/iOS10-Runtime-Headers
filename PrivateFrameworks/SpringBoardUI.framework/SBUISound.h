@@ -8,7 +8,7 @@
     AVItem * _avItem;
     id /* block */  _completionBlock;
     NSDictionary * _controllerAttributes;
-    unsigned int  _eventType;
+    long long  _eventType;
     double  _maxDuration;
     bool  _repeats;
     unsigned int  _resolvedSystemSoundID;
@@ -25,7 +25,7 @@
 @property (nonatomic) long long alertType;
 @property (nonatomic, retain) AVItem *avItem;
 @property (nonatomic, retain) NSDictionary *controllerAttributes;
-@property (nonatomic) unsigned int eventType;
+@property (nonatomic) long long eventType;
 @property (nonatomic) double maxDuration;
 @property (getter=isRepeating, nonatomic) bool repeats;
 @property (nonatomic, retain) NSString *ringtoneName;
@@ -35,7 +35,7 @@
 @property (nonatomic) unsigned int systemSoundID;
 @property (nonatomic, retain) NSDictionary *vibrationPattern;
 
-+ (id)soundWithFeedbackEventType:(unsigned int)arg1;
++ (id)soundWithFeedbackEventType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id /* block */)_completionBlock;
@@ -47,9 +47,9 @@
 - (id)avItem;
 - (id)controllerAttributes;
 - (id)description;
-- (unsigned int)eventType;
+- (long long)eventType;
 - (id)initWithAVItem:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;
-- (id)initWithFeedbackEventType:(unsigned int)arg1;
+- (id)initWithFeedbackEventType:(long long)arg1;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;
 - (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;
 - (id)initWithSystemSoundID:(unsigned int)arg1 behavior:(unsigned long long)arg2 vibrationPattern:(id)arg3;
@@ -65,7 +65,7 @@
 - (void)setAlertType:(long long)arg1;
 - (void)setAvItem:(id)arg1;
 - (void)setControllerAttributes:(id)arg1;
-- (void)setEventType:(unsigned int)arg1;
+- (void)setEventType:(long long)arg1;
 - (void)setMaxDuration:(double)arg1;
 - (void)setRepeats:(bool)arg1;
 - (void)setRingtoneName:(id)arg1;

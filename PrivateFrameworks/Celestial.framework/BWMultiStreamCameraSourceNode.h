@@ -5,6 +5,8 @@
 @interface BWMultiStreamCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     float  _aeMaxGain;
     struct OpaqueFigCaptureISPProcessingSession { } * _bayerProcessingSession;
+    unsigned int  _bravoShiftCorrectionFlags;
+    float  _bravoShiftMitigationMaxZoomFactor;
     BWFigVideoCaptureDevice * _captureDevice;
     BWFigVideoCaptureStream * _captureStream;
     bool  _chromaNoiseReductionEnabled;
@@ -55,6 +57,7 @@
         double height; 
     }  _overscanPercentage;
     float  _overscanPercentageForZoom;
+    float  _pixelsPerMicron;
     struct { 
         int width; 
         int height; 
@@ -121,6 +124,7 @@
 + (id)cameraSourceNodeWithCaptureDevice:(id)arg1 captureStream:(id)arg2;
 + (void)initialize;
 
+- (struct CGPoint { double x1; double x2; })_bravoShiftMitigationCropOffset:(struct opaqueCMSampleBuffer { }*)arg1 totalZoom:(float)arg2;
 - (int)_bringStreamUpToDate;
 - (id)_colorInfoForOutputID:(id)arg1 videoOutputsColorInfo:(id)arg2;
 - (void)_enableStreamOutputs;
@@ -153,6 +157,7 @@
 - (id)_videoFormatRequirementsForOutputID:(id)arg1 configuration:(id)arg2;
 - (float)aeMaxGain;
 - (struct OpaqueFigCaptureISPProcessingSession { }*)bayerProcessingSession;
+- (float)bravoShiftMitigationMaxZoomFactor;
 - (id)captureDevice;
 - (id)captureStream;
 - (bool)chromaNoiseReductionEnabled;
@@ -190,6 +195,7 @@
 - (struct { int x1; int x2; })sensorCropDimensions;
 - (void)setAeMaxGain:(float)arg1;
 - (void)setBayerProcessingSession:(struct OpaqueFigCaptureISPProcessingSession { }*)arg1;
+- (void)setBravoShiftMitigationMaxZoomFactor:(float)arg1;
 - (void)setChromaNoiseReductionEnabled:(bool)arg1;
 - (void)setColorSpaceProperties:(int)arg1;
 - (void)setCropAspectRatio:(struct { int x1; int x2; })arg1;

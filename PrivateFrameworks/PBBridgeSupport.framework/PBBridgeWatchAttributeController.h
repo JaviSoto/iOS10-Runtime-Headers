@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) unsigned long long size;
 @property (nonatomic, retain) NSCache *stringCache;
 
++ (unsigned long long)_materialForCLHSValue:(unsigned long long)arg1;
 + (id)editionDescription:(unsigned long long)arg1;
 + (id)hwBehaviorDescription:(unsigned long long)arg1;
 + (id)materialDescription:(unsigned long long)arg1;
@@ -33,6 +34,7 @@
 
 - (void).cxx_destruct;
 - (void)_populateMaterialDetailsWithDMinProperities:(id)arg1;
+- (void)_setMaterialWithCLHSValue:(unsigned long long)arg1;
 - (id)attributesDescription;
 - (id)device;
 - (unsigned long long)edition;

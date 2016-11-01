@@ -14,6 +14,7 @@
     NSString * _hostAppLocalizedName;
     NSString * _hostApplicationIdentifier;
     bool  _ignoreProximity;
+    PKRemotePaymentInstrument * _initialRemotePaymentInstrument;
     NSMapTable * _instrumentToDeviceMap;
     NSMutableArray * _items;
     PKPassLibrary * _library;
@@ -55,6 +56,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *hostAppLocalizedName;
 @property (nonatomic, retain) NSString *hostApplicationIdentifier;
+@property (nonatomic, retain) PKRemotePaymentInstrument *initialRemotePaymentInstrument;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, retain) PKPassLibrary *library;
 @property (nonatomic, readonly) NSString *merchantName;
@@ -112,6 +114,7 @@
 - (id)hostApplicationIdentifier;
 - (id)init;
 - (id)initWithMode:(long long)arg1;
+- (id)initialRemotePaymentInstrument;
 - (bool)isShippingEditable;
 - (bool)isValidWithError:(id*)arg1;
 - (id)itemForType:(long long)arg1;
@@ -134,6 +137,7 @@
 - (void)setDefaults:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;
 - (void)setHostApplicationIdentifier:(id)arg1;
+- (void)setInitialRemotePaymentInstrument:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPass:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;

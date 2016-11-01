@@ -23,6 +23,8 @@
 @property (nonatomic, readonly, copy) NSDictionary *metadata;
 @property (getter=isOriginal, nonatomic, readonly) bool original;
 @property (getter=isOriginalForHDR, nonatomic, readonly) bool originalForHDR;
+@property (getter=isOriginalForPortraitEffect, nonatomic, readonly) bool originalForPortraitEffect;
+@property (getter=isPortraitEffectImageWithCorrespondingOriginal, nonatomic, readonly) bool portraitEffectImageWithCorrespondingOriginal;
 @property (getter=isProcessedImageWithCorrespondingOriginal, nonatomic, readonly) bool processedImageWithCorrespondingOriginal;
 @property (nonatomic, readonly) struct __IOSurface { }*stillImageFilteredPreviewSurface;
 @property (nonatomic, readonly) struct opaqueCMSampleBuffer { }*stillImageFullsizeSampleBuffer;
@@ -43,6 +45,8 @@
 - (bool)isHDRImageWithCorrespondingOriginal;
 - (bool)isOriginal;
 - (bool)isOriginalForHDR;
+- (bool)isOriginalForPortraitEffect;
+- (bool)isPortraitEffectImageWithCorrespondingOriginal;
 - (bool)isProcessedImageWithCorrespondingOriginal;
 - (id)metadata;
 - (struct __IOSurface { }*)stillImageFilteredPreviewSurface;

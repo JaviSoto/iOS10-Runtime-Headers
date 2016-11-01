@@ -3,9 +3,13 @@
  */
 
 @interface MPStoreAVItem : MPAVItem {
+    NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _alternativeConfigurationOptions;
     unsigned long long  _assetQuality;
+    NSString * _assetSourceStoreFrontID;
+    NSNumber * _bookmarkTime;
     bool  _didDeferLeaseStart;
+    long long  _equivalencySourceAdamID;
     bool  _hasEverPrioritizedPlayerItem;
     bool  _hasPrioritizedPlayWhileDownloadSession;
     bool  _hasPrioritizedStreamingDownloadSession;
@@ -14,28 +18,43 @@
     unsigned long long  _options;
     MPStorePlayWhileDownloadSession * _playWhileDownloadSession;
     MPMediaPlaybackItemMetadata * _playbackItemMetadata;
+    SBCPlaybackPositionDomain * _playbackPositionDomain;
+    SBCPlaybackPositionEntity * _playbackPositionEntity;
+    long long  _playbackPositionEntityRevision;
+    SBCPlaybackPositionValueService * _playbackPositionService;
     unsigned long long  _preferredAssetQuality;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     unsigned long long  _streamType;
     MPStreamingDownloadSession * _streamingDownloadSession;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *alternativeConfigurationOptions;
+@property (nonatomic, copy) NSString *assetSourceStoreFrontID;
+@property (nonatomic) long long equivalencySourceAdamID;
 @property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) MPMediaPlaybackItemMetadata *playbackItemMetadata;
+@property (nonatomic, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic, readonly) unsigned long long streamType;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)_assetURLForCachedLocalPlaybackAssetFilePathForPlaybackItemMetadata:(id)arg1 withMinimumAssetQuality:(unsigned long long)arg2 assetOptions:(id)arg3 returningProtectionType:(unsigned long long*)arg4 assetQuality:(unsigned long long*)arg5 usesPurchaseBundle:(bool*)arg6;
 + (unsigned long long)_currentPreferredAssetQualityForPlaybackItemMetadata:(id)arg1;
-+ (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
++ (bool)hasNominalAmountBeenPlayedForElapsedTime:(double)arg1 startTime:(double)arg2 stopTime:(double)arg3;
 + (bool)isPlaybackItemMetadataStreamingForAssetCreation:(id)arg1 returningProtectionType:(unsigned long long*)arg2;
 + (bool)isPlaybackItemMetadataValidForAssetCreation:(id)arg1;
++ (double)nominalHasBeenPlayedThresholdForDuration:(double)arg1;
++ (bool)shouldIncrementPlayCountForElapsedTime:(double)arg1 startTime:(double)arg2 stopTime:(double)arg3;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfo;
+- (id)_bookmarkTime;
 - (id)_chapterTitleForTime:(double)arg1;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
+- (double)_expectedStartTimeWithPlaybackInfo:(id)arg1;
+- (double)_expectedStopTimeWithPlaybackInfo:(id)arg1;
 - (bool)_getAssetURL:(id*)arg1 playWhileDownloadSession:(id*)arg2 assetQuality:(unsigned long long*)arg3 error:(id*)arg4 usingStoreDownload:(id)arg5 assetOptions:(id)arg6 shouldStartDownload:(bool)arg7;
 - (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
 - (void)_handleUpdatedLikedState:(long long)arg1 completion:(id /* block */)arg2;
@@ -44,7 +63,13 @@
 - (void)_mediaPlaybackItemMetadataLikedStateDidChangeNotification:(id)arg1;
 - (id)_newTimeMarkersForChapterType:(long long)arg1;
 - (long long)_persistedLikedState;
+- (id)_playbackPositionDomain;
+- (id)_playbackPositionEntity;
+- (id)_playbackPositionEntityWithLoadedStoreUbiquitousIdentifier:(id)arg1;
+- (id)_playbackPositionService;
 - (void)_prioritizeDownloadSessionsIfNeeded;
+- (bool)_shouldRememberBookmarkTime;
+- (id)_storeUbiquitousIdentifier;
 - (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(bool)arg2;
 - (void)_willBecomeActivePlayerItem;
 - (void)_willResignActivePlayerItem;
@@ -62,6 +87,7 @@
 - (long long)artistStoreID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkers;
+- (id)assetSourceStoreFrontID;
 - (bool)canSeedGenius;
 - (id)chapterTimeMarkers;
 - (id)composer;
@@ -74,9 +100,11 @@
 - (unsigned long long)discNumber;
 - (id)displayableText;
 - (double)durationFromExternalMetadata;
+- (long long)equivalencySourceAdamID;
 - (id)genre;
 - (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
 - (bool)hasAlternatesForTypes:(unsigned long long)arg1;
+- (id)init;
 - (id)initWithPlaybackItemMetadata:(id)arg1 options:(unsigned long long)arg2;
 - (bool)isAssetURLValid;
 - (bool)isCloudItem;
@@ -91,20 +119,29 @@
 - (id)mediaItem;
 - (id)modelObject;
 - (id)modelSong;
+- (long long)mpcReporting_equivalencySourceAdamID;
+- (id)mpcReporting_requestingBundleIdentifier;
+- (id)mpcReporting_requestingBundleVersion;
 - (void)notePlaybackFinishedByHittingEnd;
 - (unsigned long long)options;
 - (unsigned long long)persistentID;
-- (double)playbackCheckpointCurrentTime;
+- (id)playbackInfo;
 - (id)playbackItemMetadata;
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)reevaluateType;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
 - (void)setAlternateAudioTrackID:(int)arg1;
 - (void)setAlternateAudioTrackLocale:(id)arg1;
+- (void)setAssetSourceStoreFrontID:(id)arg1;
+- (void)setEquivalencySourceAdamID:(long long)arg1;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)setPlaybackCheckpointCurrentTime:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setRating:(float)arg1;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 - (id)storeDownload;
 - (long long)storeItemInt64ID;
 - (long long)storePlaybackEndpointType;

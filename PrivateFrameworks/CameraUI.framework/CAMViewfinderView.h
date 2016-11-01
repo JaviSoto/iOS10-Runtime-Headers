@@ -23,13 +23,17 @@
     long long  _maskingAspectRatio;
     long long  _orientation;
     CAMPanoramaView * _panoramaView;
+    CAMPortraitModeDescriptionOverlayView * _portraitModeDescriptionOverlayView;
+    CAMPortraitModeInstructionLabel * _portraitModeInstructionLabel;
     CAMPreviewView * _previewView;
     long long  _previewViewOrientation;
+    CAMShallowDepthOfFieldBadge * _shallowDepthOfFieldBadge;
     CUShutterButton * _shutterButton;
     CAMShutterIndicatorView * _shutterIndicatorView;
     CAMTimerIndicatorView * _timerIndicatorView;
     CAMTopBar * _topBar;
     <CAMControlVisibilityDelegate> * _visibilityDelegate;
+    CAMZoomControl * _zoomControl;
     CAMZoomSlider * _zoomSlider;
 }
 
@@ -53,13 +57,17 @@
 @property (nonatomic) long long maskingAspectRatio;
 @property (nonatomic) long long orientation;
 @property (nonatomic, retain) CAMPanoramaView *panoramaView;
+@property (nonatomic, retain) CAMPortraitModeDescriptionOverlayView *portraitModeDescriptionOverlayView;
+@property (nonatomic, retain) CAMPortraitModeInstructionLabel *portraitModeInstructionLabel;
 @property (nonatomic, retain) CAMPreviewView *previewView;
 @property (nonatomic) long long previewViewOrientation;
+@property (nonatomic, retain) CAMShallowDepthOfFieldBadge *shallowDepthOfFieldBadge;
 @property (nonatomic, retain) CUShutterButton *shutterButton;
 @property (nonatomic, retain) CAMShutterIndicatorView *shutterIndicatorView;
 @property (nonatomic, retain) CAMTimerIndicatorView *timerIndicatorView;
 @property (nonatomic, retain) CAMTopBar *topBar;
 @property (nonatomic) <CAMControlVisibilityDelegate> *visibilityDelegate;
+@property (nonatomic, retain) CAMZoomControl *zoomControl;
 @property (nonatomic, retain) CAMZoomSlider *zoomSlider;
 
 + (Class)layerClass;
@@ -78,18 +86,20 @@
 - (bool)_isAdjustingTopBarOrientationForLayoutStyle:(long long)arg1;
 - (void)_layoutBadgeForTinyLayoutStyle:(id)arg1;
 - (void)_layoutBadgesForLayoutStyle:(long long)arg1;
-- (void)_layoutBottomCenteredView:(id)arg1 forLayoutStyle:(long long)arg2;
+- (void)_layoutBottomCenteredView:(id)arg1 aboveView:(id)arg2 aboveViewSpacing:(double)arg3 forLayoutStyle:(long long)arg4;
 - (void)_layoutBurstIndicatorForLayoutStyle:(long long)arg1;
 - (void)_layoutElapsedTimeViewForLayoutStyle:(long long)arg1;
 - (void)_layoutFlipButtonForLayoutStyle:(long long)arg1;
 - (void)_layoutFramerateIndicatorViewForLayoutStyle:(long long)arg1;
 - (void)_layoutPanoramaViewForLayoutStyle:(long long)arg1;
+- (void)_layoutPortraitModeDescriptionOverlayView;
 - (void)_layoutShutterButtonForLayoutStyle:(long long)arg1;
 - (void)_layoutShutterIndicatorForLayoutStyle:(long long)arg1;
 - (void)_layoutSnapshotsOfPreviewView;
 - (void)_layoutTimerIndicatorViewForLayoutStyle:(long long)arg1;
 - (void)_layoutTopBarForLayoutStyle:(long long)arg1;
 - (void)_layoutTopCenteredView:(id)arg1 belowView:(id)arg2 belowViewSpacing:(double)arg3 forLayoutStyle:(long long)arg4;
+- (void)_layoutZoomControlForLayoutStyle:(long long)arg1;
 - (void)_layoutZoomSliderForLayoutStyle:(long long)arg1;
 - (double)_multiplierForAspectRatio:(long long)arg1;
 - (id)_openAndCloseTransition;
@@ -124,6 +134,8 @@
 - (void)openForReason:(long long)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (long long)orientation;
 - (id)panoramaView;
+- (id)portraitModeDescriptionOverlayView;
+- (id)portraitModeInstructionLabel;
 - (void)prepareForAutorotation;
 - (id)previewView;
 - (long long)previewViewOrientation;
@@ -146,14 +158,19 @@
 - (void)setOrientation:(long long)arg1;
 - (void)setOrientation:(long long)arg1 animated:(bool)arg2;
 - (void)setPanoramaView:(id)arg1;
+- (void)setPortraitModeDescriptionOverlayView:(id)arg1;
+- (void)setPortraitModeInstructionLabel:(id)arg1;
 - (void)setPreviewView:(id)arg1;
 - (void)setPreviewViewOrientation:(long long)arg1;
+- (void)setShallowDepthOfFieldBadge:(id)arg1;
 - (void)setShutterButton:(id)arg1;
 - (void)setShutterIndicatorView:(id)arg1;
 - (void)setTimerIndicatorView:(id)arg1;
 - (void)setTopBar:(id)arg1;
 - (void)setVisibilityDelegate:(id)arg1;
+- (void)setZoomControl:(id)arg1;
 - (void)setZoomSlider:(id)arg1;
+- (id)shallowDepthOfFieldBadge;
 - (id)shutterButton;
 - (id)shutterIndicatorView;
 - (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
@@ -161,6 +178,7 @@
 - (id)topBar;
 - (void)updateBadgeLayoutForZoomSliderVisibilityChangedAnimated:(bool)arg1;
 - (id)visibilityDelegate;
+- (id)zoomControl;
 - (id)zoomSlider;
 
 @end

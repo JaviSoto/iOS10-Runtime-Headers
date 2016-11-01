@@ -52,6 +52,7 @@
 - (void)_enumerateAvailableItemsForLibraryItems:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_fireFinishLoadBlocksIfNecessary;
 - (bool)_gratisStateIsValid;
+- (bool)_isPurchaseForOffDeviceContent:(id)arg1;
 - (id)_jobManager;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_newPurchaseWithItem:(id)arg1 offer:(id)arg2;

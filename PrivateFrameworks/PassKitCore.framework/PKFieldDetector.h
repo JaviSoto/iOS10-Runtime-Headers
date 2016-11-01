@@ -10,6 +10,7 @@
     PKFieldProperties * _fieldProperties;
     NSHashTable * _observers;
     NSObject<OS_dispatch_queue> * _observersConcurrentQueue;
+    NSObject<OS_dispatch_queue> * _replyQueue;
     unsigned long long  _valueAddedServiceLookupMode;
     NFLoyaltyAndPaymentSession * _valueAddedServiceLookupSession;
     NSObject<NFSession> * _valueAddedServiceLookupSessionHandle;

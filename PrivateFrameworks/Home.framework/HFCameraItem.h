@@ -13,9 +13,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
-@property (nonatomic, readonly) bool isLocallyReachable;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
+
++ (void)getErrorDescription:(out id*)arg1 detailedErrorDescription:(out id*)arg2 forCameraStreamError:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
@@ -27,21 +28,13 @@
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (bool)hasRemoteMicrophoneControl;
-- (bool)hasRemoteSpeakerControl;
 - (id)homeKitObject;
 - (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithValueSource:(id)arg1 cameraProfile:(id)arg2;
-- (bool)isLocallyReachable;
 - (id)primaryStateControlItem;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)services;
-- (void)setLocalMicrophoneEnabled:(bool)arg1;
-- (void)setLocalSpeakerVolume:(float)arg1;
-- (void)startCameraStream;
-- (void)stopCameraStream;
-- (void)takeCameraSnapshot;
 - (id)valueSource;
 
 @end

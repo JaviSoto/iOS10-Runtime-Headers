@@ -16,6 +16,7 @@
 @property <NFContactlessPaymentSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long numberOfActiveSecureElements;
 @property (readonly) Class superclass;
 
 - (id)activeApplet;
@@ -29,13 +30,19 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1;
 - (void)didFailDeferredAuthorization;
+- (void)didFelicaStateChange:(id)arg1;
+- (void)didReceiveActivityTimeout;
 - (void)didReceiveButtonPressForApplet:(id)arg1;
+- (void)didReceivePendingServerRequest;
 - (void)didSelectApplet:(id)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
+- (id)felicaAppletState:(id)arg1;
+- (unsigned long long)numberOfActiveSecureElements;
 - (bool)setActivePaymentApplet:(id)arg1 authorization:(id)arg2;
 - (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2 authorization:(id)arg3;
 - (void)setDelegate:(id)arg1;

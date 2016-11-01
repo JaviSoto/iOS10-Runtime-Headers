@@ -8,6 +8,7 @@
     struct { 
         unsigned int actionPlatterViewControllerShouldRespondToTouches : 1; 
     }  _delegateRespondsTo;
+    _UIFeedbackRetargetBehavior * _feedbackRetargetBehavior;
     UILongPressGestureRecognizer * _gestureRecognizer;
     long long  _imagePosition;
     UIView * _keylinesContainerView;

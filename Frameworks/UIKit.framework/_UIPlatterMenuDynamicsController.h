@@ -30,6 +30,7 @@
     _UIPlatterMenuSnapBehavior * _platterSnapBehavior;
     UIView * _platterView;
     long long  _state;
+    _UIFeedbackStatesBehavior * _swipeFeedbackBehavior;
     bool  _trailingSwipeActionViewSelected;
     double  _trailingSwipeEdgeMultiplier;
 }
@@ -64,13 +65,18 @@
 @property (nonatomic) UIView *platterView;
 @property (nonatomic) long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *swipeFeedbackBehavior;
 @property (nonatomic) bool trailingSwipeActionViewSelected;
 @property (nonatomic) double trailingSwipeEdgeMultiplier;
 
 - (void).cxx_destruct;
+- (void)_activateFeedbackIfNeeded;
 - (void)_animateToPlatterPresentedWithVelocity:(struct CGVector { double x1; double x2; })arg1;
 - (void)_beginInYLockedStatePresented;
 - (void)_configureAnimator;
+- (void)_configureFeedbackBehavior;
+- (void)_deactivateFeedbackIfNeeded;
+- (void)_fireConfirmFeedbackIfNeededForInitialSelectionState:(bool)arg1 finalSelectionState:(bool)arg2;
 - (bool)_isPlatterInYLockedPosition;
 - (void)_positionSwipeActionViewsForCurrentPlatterViewPosition;
 - (long long)_stateForPosition:(struct CGPoint { double x1; double x2; })arg1 offset:(struct CGVector { double x1; double x2; })arg2 velocity:(struct CGVector { double x1; double x2; })arg3;
@@ -150,10 +156,12 @@
 - (void)setPlatterSnapBehavior:(id)arg1;
 - (void)setPlatterView:(id)arg1;
 - (void)setState:(long long)arg1;
+- (void)setSwipeFeedbackBehavior:(id)arg1;
 - (void)setTrailingSwipeActionViewSelected:(bool)arg1;
 - (void)setTrailingSwipeEdgeMultiplier:(double)arg1;
 - (long long)state;
 - (void)stopObservingBehavior;
+- (id)swipeFeedbackBehavior;
 - (void)toggleAnimatorDebugState;
 - (bool)trailingSwipeActionViewSelected;
 - (double)trailingSwipeEdgeMultiplier;

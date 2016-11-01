@@ -4,6 +4,7 @@
 
 @interface _HKFitnessFriend : NSObject <NSCopying, NSSecureCoding> {
     _HKFitnessFriendContact * _contact;
+    NSNumber * _currentCacheIndex;
     NSDictionary * _friendAchievements;
     NSDictionary * _friendWorkouts;
     NSDictionary * _snapshots;
@@ -28,8 +29,6 @@
 @property (nonatomic, readonly) bool isMuted;
 @property (nonatomic, readonly) bool sentInviteRequestToMe;
 @property (nonatomic, retain) NSDictionary *snapshots;
-
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (bool)supportsSecureCoding;
 
@@ -68,16 +67,5 @@
 - (void)setSnapshots:(id)arg1;
 - (id)snapshots;
 - (id)timeZone;
-
-// Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
-
-- (id)detailedSharingDurationString;
-- (id)fullName;
-- (id)invitedDurationString;
-- (bool)isMe;
-- (id)name;
-- (id)simpleHiddenFromString;
-- (id)simpleSharingDurationString;
-- (id)snapshotForIndex:(long long)arg1;
 
 @end

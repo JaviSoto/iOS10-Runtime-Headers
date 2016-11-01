@@ -278,10 +278,6 @@
 
 - (void)findFirstResponder:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
-
-- (bool)_ntk_becomeFirstResponder;
-
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
 - (id)_SKUIView;

@@ -7,6 +7,7 @@
     _UIBackdropView * _backgroundBlurView;
     UIView * _backgroundDarkeningView;
     bool  _didPlayDismissHaptic;
+    _UIFeedbackStatesBehavior * _dismissFeedbackBehavior;
     UILabel * _dismissLabel;
     UIView * _dismissLabelContainerView;
     struct CGRect { 

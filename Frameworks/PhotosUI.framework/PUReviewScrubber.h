@@ -8,6 +8,7 @@
     UICollectionView * __collectionView;
     PUHorizontalCollectionViewLayout * __collectionViewLayout;
     bool  __ignoreScrollViewDidScrollUpdate;
+    _UIFeedbackImpactBehavior * __impactFeedbackBehavior;
     NSIndexPath * __indexPathForPreviousFeedbackQuery;
     unsigned long long  __numberOfPhotos;
     bool  __performingInteractiveUpdate;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) UICollectionView *_collectionView;
 @property (nonatomic, readonly) PUHorizontalCollectionViewLayout *_collectionViewLayout;
 @property (nonatomic, readonly) bool _ignoreScrollViewDidScrollUpdate;
+@property (nonatomic, readonly) _UIFeedbackImpactBehavior *_impactFeedbackBehavior;
 @property (setter=_setIndexPathForPreviousFeedbackQuery:, nonatomic, retain) NSIndexPath *_indexPathForPreviousFeedbackQuery;
 @property (nonatomic, readonly) unsigned long long _numberOfPhotos;
 @property (nonatomic, readonly) bool _performingInteractiveUpdate;
@@ -47,6 +49,7 @@
 - (void)_handleTapAtIndexPath:(id)arg1;
 - (void)_handleTapOnReviewScrubber:(id)arg1;
 - (bool)_ignoreScrollViewDidScrollUpdate;
+- (id)_impactFeedbackBehavior;
 - (long long)_indexOfCellAtContentOffset:(struct CGPoint { double x1; double x2; })arg1 ofScrollView:(id)arg2;
 - (id)_indexPathForPreviousFeedbackQuery;
 - (id)_indexPathInCollectionView:(id)arg1 closestToPoint:(struct CGPoint { double x1; double x2; })arg2 excludingIndexPath:(id)arg3;

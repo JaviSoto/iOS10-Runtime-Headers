@@ -26,6 +26,8 @@
     NSString * _personalizedContainerID;
     unsigned long long  _reasonHintType;
     NSData * _recommendationData;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     unsigned long long  _sourceType;
     unsigned long long  _storeAccountID;
     NSString * _storeFrontID;
@@ -59,6 +61,8 @@
 @property (nonatomic, readonly, copy) NSString *personalizedContainerID;
 @property (nonatomic, readonly) unsigned long long reasonHintType;
 @property (nonatomic, readonly, copy) NSData *recommendationData;
+@property (nonatomic, readonly, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, readonly, copy) NSString *requestingBundleVersion;
 @property (nonatomic, readonly) unsigned long long sourceType;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
 @property (nonatomic, readonly, copy) NSString *storeFrontID;
@@ -104,6 +108,8 @@
 - (id)personalizedContainerID;
 - (unsigned long long)reasonHintType;
 - (id)recommendationData;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
 - (unsigned long long)sourceType;
 - (unsigned long long)storeAccountID;
 - (id)storeFrontID;

@@ -3,25 +3,31 @@
  */
 
 @interface BWStillImageCaptureSettings : NSObject {
-    BWStillImageCaptureStreamSettings * _captureStreamSettings;
+    NSArray * _captureStreamSettings;
     int  _captureType;
     bool  _deliverOriginalImage;
+    bool  _deliverProcessedImage;
     bool  _deliverSushiRaw;
 }
 
-@property (nonatomic, readonly) BWStillImageCaptureStreamSettings *captureStreamSettings;
+@property (nonatomic, readonly) NSArray *captureStreamSettings;
 @property (nonatomic, readonly) int captureType;
 @property (nonatomic, readonly) bool deliverOriginalImage;
+@property (nonatomic, readonly) bool deliverProcessedImage;
 @property (nonatomic, readonly) bool deliverSushiRaw;
 @property (nonatomic, readonly) int expectedClientImageCount;
+@property (getter=isMultiCameraCaptureAndFusion, nonatomic, readonly) bool multiCameraCaptureAndFusion;
 
 - (id)captureStreamSettings;
+- (id)captureStreamSettingsForPortType:(id)arg1;
 - (int)captureType;
 - (void)dealloc;
 - (bool)deliverOriginalImage;
+- (bool)deliverProcessedImage;
 - (bool)deliverSushiRaw;
 - (id)description;
 - (int)expectedClientImageCount;
-- (id)initWithCaptureType:(int)arg1 deliverOriginalImage:(bool)arg2 deliverSushiRaw:(bool)arg3 captureStreamSettings:(id)arg4;
+- (id)initWithCaptureType:(int)arg1 deliverProcessedImage:(bool)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 captureStreamSettings:(id)arg5;
+- (bool)isMultiCameraCaptureAndFusion;
 
 @end

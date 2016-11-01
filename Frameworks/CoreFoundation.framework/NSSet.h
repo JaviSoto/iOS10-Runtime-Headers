@@ -216,10 +216,6 @@
 - (id)mf_flatten;
 - (id)mf_map:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (id)npkComprehension:(id /* block */)arg1;
-
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
 + (id)na_setWithSafeObject:(id)arg1;

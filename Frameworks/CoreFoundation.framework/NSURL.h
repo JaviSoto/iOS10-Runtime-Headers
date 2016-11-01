@@ -507,11 +507,6 @@
 - (id)CNFQueryDictionary;
 - (id)URLByAppendingCNFQueryDictionary:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
-
-+ (id)_SYTemporaryFileURL:(id*)arg1;
-+ (id)_SYURLForNewTemporaryFile:(id*)arg1;
-
 // Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
 
 - (bool)_isPhoneNumberID:(id)arg1;

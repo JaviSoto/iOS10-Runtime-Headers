@@ -3,17 +3,21 @@
  */
 
 @interface _MPStreamingDownloadSessionUniqueKey : NSObject {
+    bool  _allowForeignAssetPlayback;
     NSString * _buyParameters;
     long long  _storeAdamID;
 }
 
+@property (nonatomic) bool allowForeignAssetPlayback;
 @property (nonatomic, copy) NSString *buyParameters;
 @property (nonatomic) long long storeAdamID;
 
 - (void).cxx_destruct;
+- (bool)allowForeignAssetPlayback;
 - (id)buyParameters;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (void)setAllowForeignAssetPlayback:(bool)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setStoreAdamID:(long long)arg1;
 - (long long)storeAdamID;

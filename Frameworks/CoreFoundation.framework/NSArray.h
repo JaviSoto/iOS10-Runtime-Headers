@@ -678,12 +678,6 @@
 - (void)mf_enumerateByStoreUsingBlock:(id /* block */)arg1;
 - (unsigned long long)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-- (id)npkComprehension:(id /* block */)arg1;
-- (id)npkFindFirstObjectMatchingCondition:(id /* block */)arg1;
-- (id)npkSafeObjectAtIndex:(unsigned long long)arg1;
-
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 - (id)_navigation_firstObjectPassingTest:(id /* block */)arg1;
@@ -879,6 +873,8 @@
 - (id)_pl_filter:(id /* block */)arg1;
 - (id)_pl_firstObjectPassingTest:(id /* block */)arg1;
 - (id)_pl_flatMap:(id /* block */)arg1;
+- (id)_pl_groupBy:(id /* block */)arg1;
+- (id)_pl_indexBy:(id /* block */)arg1;
 - (id)_pl_map:(id /* block */)arg1;
 - (id)pl_arrayOfUniqueObjectsNotInOrderedSet:(id)arg1;
 - (unsigned long long)pl_countOfObjectsPassingTest:(id /* block */)arg1;
@@ -979,14 +975,6 @@
 - (id)objectAfterObjectIdenticalTo:(id)arg1;
 - (id)objectBeforeObjectIdenticalTo:(id)arg1;
 - (id)rangeCheckedObjectAtIndex:(unsigned long long)arg1;
-
-// Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
-
-- (id)firstObjectPassingTest:(id /* block */)arg1;
-- (bool)hasObjectPassingTest:(id /* block */)arg1;
-- (id)map:(id /* block */)arg1;
-- (id)max:(id /* block */)arg1;
-- (id)objectsPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 

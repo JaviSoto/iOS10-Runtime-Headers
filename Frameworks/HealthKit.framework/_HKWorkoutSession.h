@@ -19,6 +19,7 @@
 @property (nonatomic) long long state;
 @property (nonatomic, readonly, copy) HKWorkoutConfiguration *workoutConfiguration;
 
++ (bool)areSwimmingSessionsAvailable;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

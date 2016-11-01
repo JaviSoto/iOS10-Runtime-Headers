@@ -4,6 +4,7 @@
 
 @interface CNContactActionsTableView : UITableView <UIGestureRecognizerDelegate> {
     UIGestureRecognizer * _additionalSelectionGestureRecognizer;
+    _UIFeedbackRetargetBehavior * _retargetBehavior;
     UILongPressGestureRecognizer * _selectionGestureRecognizer;
     _CNContactActionsTableViewPermissiveGestureRecognizerDelegate * _selectionGestureRecognizerDelegate;
     NSIndexPath * _trackedElementIndexPath;
@@ -14,6 +15,7 @@
 @property (nonatomic) <CNContactActionsTableViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _UIFeedbackRetargetBehavior *retargetBehavior;
 @property (nonatomic, retain) UILongPressGestureRecognizer *selectionGestureRecognizer;
 @property (nonatomic, retain) _CNContactActionsTableViewPermissiveGestureRecognizerDelegate *selectionGestureRecognizerDelegate;
 @property (readonly) Class superclass;
@@ -33,9 +35,11 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (bool)location:(struct CGPoint { double x1; double x2; })arg1 isInHeaderAccessoryViewTouchArea:(id)arg2;
 - (void)notifyDelegateWithSelectionEventAtPoint:(struct CGPoint { double x1; double x2; })arg1 trackedElementIndexPath:(id)arg2;
+- (id)retargetBehavior;
 - (id)selectionGestureRecognizer;
 - (id)selectionGestureRecognizerDelegate;
 - (void)setAdditionalSelectionGestureRecognizer:(id)arg1;
+- (void)setRetargetBehavior:(id)arg1;
 - (void)setSelectionGestureRecognizer:(id)arg1;
 - (void)setSelectionGestureRecognizerDelegate:(id)arg1;
 - (void)setTrackedElementIndexPath:(id)arg1;

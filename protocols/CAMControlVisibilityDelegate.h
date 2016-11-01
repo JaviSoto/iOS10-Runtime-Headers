@@ -14,6 +14,8 @@
 - (bool)shouldHideHDRButton;
 - (bool)shouldHideIrisButton;
 - (bool)shouldHideLivePhotoBadge;
+- (bool)shouldHidePortraitModeInstructionLabel;
+- (bool)shouldHideShallowDepthOfFieldBadge;
 - (bool)shouldHideTimerButton;
 - (bool)shouldHideTopBar;
 

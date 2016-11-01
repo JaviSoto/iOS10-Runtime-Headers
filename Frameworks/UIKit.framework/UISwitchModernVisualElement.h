@@ -53,6 +53,7 @@
 - (id)_effectiveOnTintColor;
 - (id)_effectiveThumbImage;
 - (id)_effectiveTintColor;
+- (bool)_feedbackEnabled;
 - (void)_handleLongPress:(id)arg1;
 - (void)_handleLongPressWithGestureLocationInBounds:(struct CGPoint { double x1; double x2; })arg1 gestureState:(long long)arg2;
 - (void)_handlePan:(id)arg1;
@@ -98,6 +99,7 @@
 - (bool)on;
 - (id)onImage;
 - (id)pan;
+- (void)performStateChangeFeedback;
 - (bool)pressed;
 - (void)sendStateChangeActions;
 - (void)setGestureTrackingSession:(id)arg1;

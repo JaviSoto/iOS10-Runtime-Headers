@@ -19,6 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_group, nonatomic, readonly) NSString *group;
 @property (readonly) unsigned long long hash;
+@property (getter=_previouslyVisibleWidgetIDs, setter=_setPreviouslyVisibleWidgetIDs:, nonatomic, retain) NSArray *previouslyVisibleWidgetIDs;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long widgetCount;
 @property (nonatomic, readonly) UIScrollView *widgetListView;
@@ -36,10 +37,12 @@
 - (void)_invokeBlock:(id /* block */)arg1 withShortLookViewsPassingTest:(id /* block */)arg2;
 - (void)_invokeBlockWithShortLookViewsVisibleInBounds:(id /* block */)arg1;
 - (void)_invokeBlockWithShortLookViewsVisibleInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 block:(id /* block */)arg2;
+- (id)_previouslyVisibleWidgetIDs;
 - (void)_repopulateStackViewForColumnMode:(long long)arg1;
 - (id)_repopulateStackViewWithWidgetIdentifiers:(id)arg1 forColumnMode:(long long)arg2;
 - (id)_scrollViewIfLoaded;
 - (id)_scrollViewLoadingIfNecessary:(bool)arg1;
+- (void)_setPreviouslyVisibleWidgetIDs:(id)arg1;
 - (id)_shortLookViewAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_shortLookViewForMeasuring;
 - (id)_shortLookViewForWidget:(id)arg1;

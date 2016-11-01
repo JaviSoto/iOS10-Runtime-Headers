@@ -23,5 +23,6 @@
 - (void)_unregisterForWorkoutEvents;
 - (void)dealloc;
 - (id)init;
+- (id)swimWorkoutInstance:(id)arg1;
 
 @end

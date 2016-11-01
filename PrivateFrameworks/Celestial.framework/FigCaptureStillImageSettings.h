@@ -6,8 +6,10 @@
     int  _HDRMode;
     float * _ISOs;
     int  _SISMode;
+    bool  _autoShallowDepthOfFieldEffectEnabled;
     unsigned int  _bracketImageCount;
     int  _bracketType;
+    int  _bravoImageFusionMode;
     struct { long long x1; int x2; unsigned int x3; long long x4; } * _exposureDurations;
     float * _exposureTargetBiases;
     int  _flashMode;
@@ -43,8 +45,10 @@
 @property (nonatomic) int HDRMode;
 @property (nonatomic, readonly) float*ISOs;
 @property (nonatomic) int SISMode;
+@property (nonatomic) bool autoShallowDepthOfFieldEffectEnabled;
 @property (nonatomic, readonly) unsigned int bracketImageCount;
 @property (nonatomic, readonly) int bracketType;
+@property (nonatomic) int bravoImageFusionMode;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; }*exposureDurations;
 @property (nonatomic, readonly) float*exposureTargetBiases;
 @property (nonatomic) int flashMode;
@@ -84,8 +88,10 @@
 - (float*)ISOs;
 - (int)SISMode;
 - (void)_teardownBracketStorage;
+- (bool)autoShallowDepthOfFieldEffectEnabled;
 - (unsigned int)bracketImageCount;
 - (int)bracketType;
+- (int)bravoImageFusionMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -116,7 +122,9 @@
 - (bool)providesOriginalImage;
 - (unsigned int)rawOutputFormat;
 - (float)scaleFactor;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(bool)arg1;
 - (void)setBracketType:(int)arg1 imageCount:(unsigned int)arg2;
+- (void)setBravoImageFusionMode:(int)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setHDRMode:(int)arg1;
 - (void)setLensStabilizationDuringBracketEnabled:(bool)arg1;

@@ -97,6 +97,7 @@
 - (NSData *)encodedData;
 - (NSDate *)eventDate;
 - (NSString *)eventName;
+- (NSData *)externalTransitStationCode;
 - (GEOAddress *)geoAddress;
 - (GEOMapRegion *)geoFenceMapRegion;
 - (bool)hasExpiredComponents;

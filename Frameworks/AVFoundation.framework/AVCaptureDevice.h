@@ -18,9 +18,14 @@
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (id)_devices;
++ (id)_devicesWithDeviceTypes:(id)arg1 mediaType:(id)arg2 position:(long long)arg3;
++ (void)_filterConnectedDevices:(id)arg1 withDeviceTypes:(id)arg2 mediaType:(id)arg3 position:(long long)arg4;
++ (void)_filterConnectedLegacyDevices:(id)arg1;
++ (id)_legacyDevicesWithMediaType:(id)arg1;
 + (void)_reconnectDevices:(id)arg1;
 + (void)_registerOnceForServerConnectionDiedNotification;
 + (long long)authorizationStatusForMediaType:(id)arg1;
++ (id)defaultDeviceWithDeviceType:(id)arg1 mediaType:(id)arg2 position:(long long)arg3;
 + (id)defaultDeviceWithMediaType:(id)arg1;
 + (id)deviceWithUniqueID:(id)arg1;
 + (id)devices;
@@ -52,6 +57,7 @@
 - (bool)automaticallyAdjustsVideoHDREnabled;
 - (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (id)availableBoxedMetadataFormatDescriptions;
+- (id)bravoCameraSelectionBehavior;
 - (bool)cachesFigCaptureSourceConfigurationChanges;
 - (void)cancelVideoZoomRamp;
 - (struct { float x1; float x2; })chromaticityValuesForDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1;
@@ -61,6 +67,7 @@
 - (id)description;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (long long)deviceSourceOrigin;
+- (id)deviceType;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGains;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGainsForChromaticityValues:(struct { float x1; float x2; })arg1;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGainsForTemperatureAndTintValues:(struct { float x1; float x2; })arg1;
@@ -89,6 +96,7 @@
 - (bool)isAdjustingFocus;
 - (bool)isAdjustingWhiteBalance;
 - (bool)isAutoFocusRangeRestrictionSupported;
+- (bool)isAutoShallowDepthOfFieldEffectEnabled;
 - (bool)isConnected;
 - (bool)isExposureModeSupported:(long long)arg1;
 - (bool)isExposurePointOfInterestSupported;
@@ -111,6 +119,8 @@
 - (bool)isInUseByAnotherApplication;
 - (bool)isLensStabilizationSupported;
 - (bool)isLockedForConfiguration;
+- (bool)isLockingFocusWithCustomLensPositionSupported;
+- (bool)isLockingWhiteBalanceWithCustomDeviceGainsSupported;
 - (bool)isLowLightBoostEnabled;
 - (bool)isLowLightBoostSupported;
 - (bool)isMachineReadableCodeDetectionSupported;
@@ -152,9 +162,11 @@
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setAutoFocusRangeRestriction:(long long)arg1;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(bool)arg1;
 - (void)setAutomaticallyAdjustsImageControlMode:(bool)arg1;
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(bool)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
+- (void)setBravoCameraSelectionBehavior:(id)arg1;
 - (void)setCachesFigCaptureSourceConfigurationChanges:(bool)arg1;
 - (void)setContrast:(float)arg1;
 - (void)setExposureMode:(long long)arg1;
@@ -181,6 +193,7 @@
 - (void)setVideoZoomFactor:(double)arg1;
 - (void)setWhiteBalanceMode:(long long)arg1;
 - (void)setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 completionHandler:(id /* block */)arg2;
+- (long long)shallowDepthOfFieldEffectStatus;
 - (bool)smileDetectionEnabled;
 - (bool)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;

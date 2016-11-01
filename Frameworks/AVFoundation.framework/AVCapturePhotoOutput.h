@@ -62,6 +62,7 @@
 - (void)_updateAvailablePhotoCodecTypesForSourceDevice:(id)arg1;
 - (void)_updateAvailablePhotoPixelFormatTypesForSourceDevice:(id)arg1;
 - (void)_updateAvailableRawPhotoPixelFormatTypesForSourceDevice:(id)arg1;
+- (void)_updateBravoImageFusionSupportedForSourceDevice:(id)arg1;
 - (void)_updateLensStabilizationDuringBracketedCaptureSupportedForSourceDevice:(id)arg1;
 - (void)_updateLivePhotoCaptureSupportedForSourceDevice:(id)arg1;
 - (void)_updateLivePhotoMovieDimensionsForSourceDevice:(id)arg1;
@@ -85,6 +86,7 @@
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)figCaptureIrisPreparedSettings;
 - (id)init;
+- (bool)isBravoImageFusionSupported;
 - (bool)isFlashScene;
 - (bool)isHDRScene;
 - (bool)isHighResolutionCaptureEnabled;

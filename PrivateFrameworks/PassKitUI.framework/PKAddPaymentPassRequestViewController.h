@@ -7,6 +7,7 @@
     PKAddPaymentPassRequestConfiguration * _configuration;
     NSObject<OS_dispatch_source> * _datasourceTimeout;
     <PKAddPaymentPassRequestViewControllerDelegate> * _delegate;
+    NSArray * _details;
     long long  _headerState;
     PKTableHeaderView * _headerView;
     bool  _hidePrivacy;

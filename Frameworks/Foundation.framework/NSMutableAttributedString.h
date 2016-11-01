@@ -47,13 +47,6 @@
 - (void)dd_resetResults;
 - (bool)dd_urlifyResult:(id)arg1 withBlock:(id /* block */)arg2 referenceDate:(id)arg3 context:(id)arg4;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (struct CGSize { double x1; double x2; })scaleFontAndKerningToFitSize:(struct CGSize { double x1; double x2; })arg1 minimumFontSize:(double)arg2 minimumKerning:(double)arg3 stillDidntFit:(bool*)arg4;
-- (double)scaleFontSizeByAmount:(double)arg1 minimumFontSize:(double)arg2;
-- (double)scaleNumericAttribute:(id)arg1 byAmount:(double)arg2;
-- (void)scaleToFitWidth:(double)arg1;
-
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)removeCharactersWithAttribute:(id)arg1;

@@ -10,6 +10,7 @@
 }
 
 @property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) bool appliesOneTimeUserInitiatedActionPolicy;
 @property (nonatomic, readonly) LSApplicationProxy *externalApplication;
 @property (nonatomic, readonly) long long externalApplicationCategory;
 @property (nonatomic, readonly) long long type;
@@ -21,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (id)_initWithType:(long long)arg1 URL:(id)arg2 externalApplication:(id)arg3;
+- (bool)appliesOneTimeUserInitiatedActionPolicy;
 - (id)externalApplication;
 - (long long)externalApplicationCategory;
 - (long long)type;

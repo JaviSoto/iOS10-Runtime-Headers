@@ -67,6 +67,7 @@
         double bottom; 
         double right; 
     }  _gradientMaskLengths;
+    _UIFeedbackEdgeBehavior * _horizontalFeedbackBehavior;
     UIImageView * _horizontalScrollIndicator;
     double  _horizontalVelocity;
     struct CGSize { 
@@ -202,6 +203,7 @@
     id  _touchDelayGestureRecognizer;
     long long  _touchLevel;
     bool  _useContentDimensionVariablesForConstraintLowering;
+    _UIFeedbackEdgeBehavior * _verticalFeedbackBehavior;
     UIImageView * _verticalScrollIndicator;
     double  _verticalVelocity;
     struct CGPoint { 
@@ -210,6 +212,7 @@
     }  _zoomAnchorPoint;
     id  _zoomAnimation;
     unsigned long long  _zoomAnimationCount;
+    _UIFeedbackZoomEdgeBehavior * _zoomFeedbackBehavior;
     UIView * _zoomView;
 }
 
@@ -266,7 +269,6 @@
 @property (getter=isScrollEnabled, nonatomic) bool scrollEnabled;
 @property (getter=_scrollHysteresis, nonatomic, readonly) double scrollHysteresis;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } scrollIndicatorInsets;
-@property (nonatomic, retain) UIScrollTestToBottomParameters *scrollTestParameters;
 @property (nonatomic, retain) id scrollTestParameters;
 @property (getter=_isScrollingToTop, nonatomic, readonly) bool scrollingToTop;
 @property (nonatomic) bool scrollsToTop;
@@ -291,6 +293,8 @@
 - (unsigned long long)_abuttedEdgesForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (unsigned long long)_abuttedPagingEdges;
 - (void)_accumulateViewConstraintsIntoArray:(id)arg1;
+- (void)_activateScrollFeedback;
+- (void)_activateZoomFeedback;
 - (void)_addContentSubview:(id)arg1 atBack:(bool)arg2;
 - (void)_addScrollNotificationView:(id)arg1;
 - (void)_adjustBackgroundShadowsForContentSizeForcedVisible:(bool)arg1;
@@ -380,6 +384,7 @@
 - (void)_handleLowFidelitySwipe:(id)arg1;
 - (void)_handleSwipe:(id)arg1;
 - (void)_hideScrollIndicators;
+- (id)_horizontalFeedbackBehavior;
 - (double)_horizontalVelocity;
 - (void)_incrementForScrollTest;
 - (struct CGSize { double x1; double x2; })_interpageSpacing;
@@ -482,6 +487,7 @@
 - (void)_setGradientMaskEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setGradientMaskInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setGradientMaskLengths:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setHorizontalFeedbackBehavior:(id)arg1;
 - (void)_setInterpageSpacing:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setLayoutObserver:(id)arg1;
 - (void)_setMaskView:(id)arg1;
@@ -497,8 +503,10 @@
 - (void)_setTransfersScrollToContainer:(bool)arg1;
 - (void)_setUseContentDimensionVariablesForConstraintLowering:(bool)arg1;
 - (void)_setUsesStaticScrollBar:(bool)arg1;
+- (void)_setVerticalFeedbackBehavior:(id)arg1;
 - (void)_setWantsConstrainedContentSize:(bool)arg1;
 - (void)_setZoomAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setZoomFeedbackBehavior:(id)arg1;
 - (double)_shadowHeightOffset;
 - (bool)_shouldScrollToContentBeginningInRightToLeft;
 - (bool)_shouldTrackImmediatelyWhileDecelerating;
@@ -552,6 +560,7 @@
 - (bool)_useContentDimensionVariablesForConstraintLowering;
 - (bool)_usesLowFidelityPanning;
 - (struct CGPoint { double x1; double x2; })_velocityForAnimatedScrollFromOffset:(struct CGPoint { double x1; double x2; })arg1 toOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_verticalFeedbackBehavior;
 - (double)_verticalVelocity;
 - (bool)_viewIsInsideNavigationController;
 - (bool)_wantsConstrainedContentSize;
@@ -560,6 +569,7 @@
 - (struct CGPoint { double x1; double x2; })_zoomAnchorPoint;
 - (void)_zoomAnimationDidStop;
 - (float)_zoomAnimationDurationForScale:(double)arg1;
+- (id)_zoomFeedbackBehavior;
 - (double)_zoomRubberBandScaleForScale:(double)arg1;
 - (double)_zoomScaleForRubberBandScale:(double)arg1;
 - (double)_zoomScaleFromPresentationLayer:(bool)arg1;
@@ -750,21 +760,6 @@
 - (struct CGPoint { double x1; double x2; })__ck_scrollToBottomContentOffset;
 - (void)__ck_scrollToTop:(bool)arg1;
 - (struct CGPoint { double x1; double x2; })__ck_scrollToTopContentOffset;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)_implicitAnimationCulprits;
-
-- (void)_incrementForScrollTest;
-- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
-- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
-- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5;
-- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(int)arg4;
-- (void)_reenableImplicitAnimationsAfterScrollTest;
-- (id)_scrollTestExtraResults:(id)arg1;
-- (void)_suppressImplicitAnimationsForScrollTest;
-- (id)scrollTestParameters;
-- (void)setScrollTestParameters:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

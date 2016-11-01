@@ -37,6 +37,7 @@
 @property (getter=_disambiguationName, nonatomic, readonly) NSString *disambiguationName;
 @property (getter=_displayMapRegion, nonatomic, readonly) GEOMapRegion *displayMapRegion;
 @property (getter=_encyclopedicInfo, nonatomic, readonly) <GEOEncyclopedicInfo> *encyclopedicInfo;
+@property (getter=_externalTransitStationCode, nonatomic, readonly) NSData *externalTransitStationCode;
 @property (getter=_firstLocalizedCategoryName, nonatomic, readonly) NSString *firstLocalizedCategoryName;
 @property (getter=_flyover, nonatomic, readonly) GEOPDFlyover *flyover;
 @property (getter=_flyoverAnnouncementMessage, nonatomic, readonly) NSString *flyoverAnnouncementMessage;
@@ -167,6 +168,7 @@
 - (id)_disambiguationName;
 - (id)_displayMapRegion;
 - (id)_encyclopedicInfo;
+- (id)_externalTransitStationCode;
 - (id)_firstLocalizedCategoryName;
 - (id)_flyover;
 - (id)_flyoverAnnouncementMessage;

@@ -9,6 +9,7 @@
     NSArray * availableRawPhotoPixelFormatTypes;
     NSObject<OS_dispatch_group> * beginEndIrisMovieCaptureHostTimeDispatchGroup;
     NSObject<OS_dispatch_queue> * beginEndIrisMovieCaptureHostTimeQueue;
+    bool  bravoImageFusionSupported;
     int  flashSceneObserverCount;
     bool  highResolutionCaptureEnabled;
     bool  imageOptimizationForOfflineVideoStabilizationSupported;

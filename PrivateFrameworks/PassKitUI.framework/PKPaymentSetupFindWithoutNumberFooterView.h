@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupFindWithoutNumberFooterView : UIView {
+@interface PKPaymentSetupFindWithoutNumberFooterView : PKTableFooterView {
     long long  _context;
     UIButton * _noNumberButton;
 }
@@ -17,6 +17,7 @@
 - (bool)isBuddyiPad;
 - (void)layoutSubviews;
 - (id)noNumberButton;
+- (void)setButtonsEnabled:(bool)arg1;
 - (void)setContext:(long long)arg1;
 - (void)setNoNumberButton:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

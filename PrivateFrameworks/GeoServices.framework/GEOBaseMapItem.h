@@ -33,6 +33,7 @@
 @property (getter=_encyclopedicInfo, nonatomic, readonly) <GEOEncyclopedicInfo> *encyclopedicInfo;
 @property (nonatomic, readonly) NSDate *eventDate;
 @property (nonatomic, readonly) NSString *eventName;
+@property (nonatomic, readonly) NSData *externalTransitStationCode;
 @property (getter=_featureLink, nonatomic, readonly) GEORestaurantFeaturesLink *featureLink;
 @property (getter=_flyover, nonatomic, readonly) GEOPDFlyover *flyover;
 @property (getter=_flyoverAnnouncementMessage, nonatomic, readonly) NSString *flyoverAnnouncementMessage;
@@ -196,6 +197,7 @@
 - (id)encodedData;
 - (id)eventDate;
 - (id)eventName;
+- (id)externalTransitStationCode;
 - (id)geoAddress;
 - (id)geoFenceMapRegion;
 - (bool)hasExpiredComponents;

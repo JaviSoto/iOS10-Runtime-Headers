@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) double distanceInKilometers;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) NSNumber *endDate;
+@property (nonatomic, readonly) bool isFirstParty;
 @property (nonatomic, readonly) NSNumber *startDate;
 @property (nonatomic, readonly) unsigned long long type;
 
@@ -21,6 +22,7 @@
 - (double)duration;
 - (id)endDate;
 - (id)initWithWorkout:(id)arg1;
+- (bool)isFirstParty;
 - (id)startDate;
 - (unsigned long long)type;
 

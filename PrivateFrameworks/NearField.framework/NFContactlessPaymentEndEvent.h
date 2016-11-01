@@ -9,6 +9,7 @@
     unsigned short  _command;
     NSString * _currency;
     bool  _didError;
+    NSDictionary * _felicaInfo;
     unsigned short  _informative;
     unsigned short  _result;
     unsigned short  _status;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) unsigned short command;
 @property (nonatomic, readonly) NSString *currency;
 @property (nonatomic, readonly) bool didError;
+@property (nonatomic, readonly) NSDictionary *felicaInfo;
 @property (nonatomic, readonly) unsigned short informative;
 @property (nonatomic, readonly) unsigned short result;
 @property (nonatomic, readonly) unsigned short status;
@@ -43,6 +45,7 @@
 - (id)description;
 - (bool)didError;
 - (void)encodeWithCoder:(id)arg1;
+- (id)felicaInfo;
 - (unsigned short)informative;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

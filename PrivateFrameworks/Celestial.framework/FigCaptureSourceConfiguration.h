@@ -4,6 +4,7 @@
 
 @interface FigCaptureSourceConfiguration : NSObject <FigXPCCoding, NSCopying> {
     bool  _applyMaxIntegrationTimeOverrideWhenAvailable;
+    bool  _autoShallowDepthOfFieldEffectEnabled;
     bool  _automaticallyEnablesLowLightBoostWhenAvailable;
     int  _colorSpace;
     NSDictionary * _faceDetectionConfiguration;
@@ -22,6 +23,7 @@
 }
 
 @property (nonatomic) bool applyMaxIntegrationTimeOverrideWhenAvailable;
+@property (nonatomic) bool autoShallowDepthOfFieldEffectEnabled;
 @property (nonatomic) bool automaticallyEnablesLowLightBoostWhenAvailable;
 @property (nonatomic) int colorSpace;
 @property (readonly, copy) NSString *debugDescription;
@@ -51,6 +53,7 @@
 - (int)_sourceToken;
 - (id)_sourceUID;
 - (bool)applyMaxIntegrationTimeOverrideWhenAvailable;
+- (bool)autoShallowDepthOfFieldEffectEnabled;
 - (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (int)colorSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -69,6 +72,7 @@
 - (float)requiredMinFrameRate;
 - (bool)sensorHDREnabled;
 - (void)setApplyMaxIntegrationTimeOverrideWhenAvailable:(bool)arg1;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(bool)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setColorSpace:(int)arg1;
 - (void)setFaceDetectionConfiguration:(id)arg1;

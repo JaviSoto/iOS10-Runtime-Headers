@@ -172,13 +172,6 @@
 - (id)cutRandomTemporaryPathWithFileName:(id)arg1;
 - (id)cutUniqueFilename:(id)arg1 atPath:(id)arg2 ofType:(id)arg3;
 
-// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
-
-- (id)dataForExtendedAttribute:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
-- (bool)setExtendedAttributeData:(id)arg1 forKey:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
-- (bool)setExtendedAttributeValue:(id)arg1 forKey:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
-- (id)stringForExtendedAttribute:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
-
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
 - (id)_cn_extendedAttributeForKey:(id)arg1 path:(id)arg2 error:(id*)arg3;

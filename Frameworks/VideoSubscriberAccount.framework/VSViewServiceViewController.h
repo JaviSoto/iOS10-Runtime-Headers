@@ -9,6 +9,7 @@
     bool  _didAuthenticateAccount;
     VSIdentityProviderController * _identityProviderController;
     bool  _identityProviderPickerRequired;
+    VSPreferences * _preferences;
     bool  _presentedInHost;
     NSOperationQueue * _privateQueue;
     VSRemoteNotifier * _remoteNotifier;
@@ -23,6 +24,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSIdentityProviderController *identityProviderController;
 @property (getter=isIdentityProviderPickerRequired, nonatomic) bool identityProviderPickerRequired;
+@property (nonatomic, retain) VSPreferences *preferences;
 @property (getter=isPresentedInHost, nonatomic) bool presentedInHost;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
@@ -75,6 +77,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)isIdentityProviderPickerRequired;
 - (bool)isPresentedInHost;
+- (id)preferences;
 - (id)privateQueue;
 - (id)remoteNotifier;
 - (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
@@ -84,6 +87,7 @@
 - (void)setDidAuthenticateAccount:(bool)arg1;
 - (void)setIdentityProviderController:(id)arg1;
 - (void)setIdentityProviderPickerRequired:(bool)arg1;
+- (void)setPreferences:(id)arg1;
 - (void)setPresentedInHost:(bool)arg1;
 - (void)setPrivateQueue:(id)arg1;
 - (void)setRemoteNotifier:(id)arg1;

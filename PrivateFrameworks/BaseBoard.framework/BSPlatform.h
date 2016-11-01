@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) int deviceClass;
 @property (nonatomic, readonly) bool hasGasGauge;
 @property (nonatomic, readonly) bool hasOrbCapability;
+@property (nonatomic, readonly) long long homeButtonType;
 @property (getter=isInternalInstall, nonatomic, readonly) bool internalInstall;
 @property (nonatomic, readonly, copy) NSString *localizedProductName;
 @property (nonatomic, readonly) double mainScreenOrientation;
@@ -29,6 +30,7 @@
 - (int)deviceClass;
 - (bool)hasGasGauge;
 - (bool)hasOrbCapability;
+- (long long)homeButtonType;
 - (id)init;
 - (bool)isCarrierInstall;
 - (bool)isDeveloperInstall;

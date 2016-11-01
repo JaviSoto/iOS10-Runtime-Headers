@@ -29,7 +29,9 @@
 - (id)description;
 - (unsigned long long)eventType;
 - (id)forecastDetail;
+- (unsigned long long)hash;
 - (long long)hourIndex;
+- (bool)isEqual:(id)arg1;
 - (float)percentPrecipitation;
 - (void)setConditionCode:(long long)arg1;
 - (void)setEventType:(unsigned long long)arg1;

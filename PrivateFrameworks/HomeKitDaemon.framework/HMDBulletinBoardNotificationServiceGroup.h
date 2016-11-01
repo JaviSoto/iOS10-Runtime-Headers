@@ -6,7 +6,6 @@
     NSSet * _associatedServiceUUIDs;
     NSArray * _associatedServices;
     NSHashTable * _associatedServicesTable;
-    bool  _associationEvaluatedFirstTime;
     HMDBulletinBoardNotification * _bulletinBoardNotification;
     NSSet * _cameraProfileUUIDs;
     NSArray * _cameraProfiles;
@@ -17,11 +16,9 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic, readonly) NSDictionary *actionContext;
 @property (nonatomic, retain) NSSet *associatedServiceUUIDs;
 @property (nonatomic, retain) NSArray *associatedServices;
 @property (nonatomic, readonly, copy) NSHashTable *associatedServicesTable;
-@property (nonatomic) bool associationEvaluatedFirstTime;
 @property (nonatomic, readonly) HMDBulletinBoardNotification *bulletinBoardNotification;
 @property (nonatomic, retain) NSSet *cameraProfileUUIDs;
 @property (nonatomic, retain) NSArray *cameraProfiles;
@@ -41,7 +38,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_gatherServices:(bool)arg1;
+- (id)_cameraProfileWithID:(id)arg1;
+- (id)_gatherServices;
 - (void)_handleBulletinBoardNotificationServiceGroupRequest:(id)arg1;
 - (bool)_isAlarmService:(id)arg1;
 - (bool)_isNotificationGeneratingService:(id)arg1;
@@ -49,24 +47,22 @@
 - (id)_prepareServiceGroupPayload;
 - (void)_registerNotificationHandlers;
 - (void)_sendNotification:(id)arg1;
-- (void)_updateAssociatedService:(id)arg1 associatedCameras:(id)arg2 forceGather:(bool)arg3;
+- (id)_updateAssociatedService:(id)arg1 associatedCameras:(id)arg2;
 - (void)_updateAssociatedServicesTable:(id)arg1;
 - (void)_updateCameraProfilesTable:(id)arg1;
-- (id)actionContext;
+- (id)actionContextForCameraProfileID:(id)arg1;
 - (id)associatedServiceUUIDs;
 - (id)associatedServices;
 - (id)associatedServicesTable;
-- (bool)associationEvaluatedFirstTime;
 - (id)bulletinBoardNotification;
 - (id)cameraProfileUUIDs;
 - (id)cameraProfiles;
 - (id)cameraProfilesTable;
-- (void)configureBulletinBoardNotification:(id)arg1;
+- (void)configureBulletinNotification:(id /* block */)arg1;
 - (void)configureMsgDispatcher:(id)arg1;
 - (void)dealloc;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
-- (void)gatherServices;
 - (id)init;
 - (id)initWithBulletinBoardNotification:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -78,7 +74,6 @@
 - (void)setAssociatedServiceUUIDs:(id)arg1;
 - (void)setAssociatedServices:(id)arg1;
 - (void)setAssociatedServicesTable:(id)arg1;
-- (void)setAssociationEvaluatedFirstTime:(bool)arg1;
 - (void)setCameraProfileUUIDs:(id)arg1;
 - (void)setCameraProfiles:(id)arg1;
 - (void)setCameraProfilesTable:(id)arg1;

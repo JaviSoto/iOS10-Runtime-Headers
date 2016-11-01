@@ -139,10 +139,6 @@
 - (void)safelyMapKey:(id)arg1 toObject:(id)arg2;
 - (void)safelySetObject:(id)arg1 forKey:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (void)fiui_incrementValueForKey:(id)arg1 byValue:(double)arg2;
-
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 - (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
@@ -214,13 +210,6 @@
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)mergeWithDictionary:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
-
-+ (bool)_processArgumentWithMutableDictionary:(id)arg1 object:(id)arg2 key:(id)arg3;
-+ (id)npkDictionaryWithObjectsAndKeys:(id)arg1;
-
-- (void)npkSetObject:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 

@@ -28,6 +28,7 @@
 @property (nonatomic, retain) MPAVRoute *route;
 
 - (void).cxx_destruct;
+- (id)_airpodsIconImageName;
 - (void)_configureDetailLabel:(id)arg1;
 - (void)_configureLabel:(id)arg1;
 - (id)_currentDeviceRoutingIconImageName;
