@@ -35,4 +35,4 @@
 - (void)stopCore;
 - (id)storage;
 
-@end
+
